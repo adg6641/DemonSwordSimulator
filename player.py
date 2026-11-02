@@ -33,6 +33,7 @@ class Player:
     CROUCH_SPEED = 85.0
     AIR_SPEED = 285.0
     DASH_SPEED = 850.0
+    COMBO_MOVE_SPEED = 55.0
     JUMP_SPEED = 850.0
     GRAVITY = 2200.0
 
@@ -69,7 +70,9 @@ class Player:
             if self.mode == 'combo':
                 self.combo_queued = self.combo_step < 3
             elif self.mode == 'dash':
-                self._action('dash_slash', 'dash_attack_recovery')
+                # 중간 입력은 저장하지 않는다. 대시 이동을 마친 뒤에만 베기를 허용한다.
+                if self.animation.name in {'dash_end', 'air_dash_recovery'}:
+                    self._action('dash_slash', 'dash_attack_recovery')
             elif self.mode == 'free':
                 if not self.grounded:
                     self._action('air_slash')
@@ -130,7 +133,7 @@ class Player:
             if anim.name == 'dash_start':
                 anim.play('dash_ground', fps=40, once=True)
             elif anim.name == 'dash_ground':
-                anim.play('dash_end', fps=64)
+                anim.play('dash_end', fps=48)
             elif anim.name == 'dash_air':
                 anim.play('air_dash_recovery')
             else:
@@ -190,6 +193,10 @@ class Player:
                 speed = direction * (self.RUN_SPEED if self.move_time >= 0.55 else self.WALK_SPEED)
             if self.mode == 'free':
                 self._locomotion(direction, keys)
+        elif self.mode == 'combo':
+            if direction and not keys & CTRL:
+                self.facing = direction
+                speed = direction * self.COMBO_MOVE_SPEED
         elif self.mode == 'dash':
             name = self.animation.name
             dash_speed = self.DASH_SPEED if name in {'dash_ground', 'dash_air'} else 120.0

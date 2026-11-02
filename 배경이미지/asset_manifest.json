@@ -18,12 +18,26 @@
       },
       "ground": {
         "file": "01_마을_출발/지면.png",
-        "width": 2172,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. Make a PRODUCTION GAME TERRAIN SPRITE for an original 2D side-scrolling medieval fantasy action game, matching finely detailed restrained hand-painted pixel art, clustered pixels, natural earthy materials, not 3D and not photorealistic. One single ultra-wide horizontal ground strip on TRUE TRANSPARENT background, ideally 3072x1024, at least 3:1 aspect ratio. Camera is STRICT FRONT SIDE ELEVATION as a platformer cross section. The walkable upper surface runs perfectly horizontally at the same height across the entire canvas, approximately 22 percent down from the top. Thin visible material cap, no sloping top-down floor plane, no perspective shrinking. Terrain extends continuously from the LEFT IMAGE EDGE to the RIGHT IMAGE EDGE, with NO rounded free ends, no end caps, no gap, no pits, no stairs. Treat left and right sides as cropped continuations of a longer level. Leave the upper roughly 20 percent of the canvas genuinely empty alpha so the scene background can show through. Below the flat walking edge, carefully draw the vertical cutaway terrain face all the way to the BOTTOM EDGE. Bottom edge is intentionally cropped, not a floating island. Surface texture has fine believable wear and subtle variations, while the overall walk line stays flat. No tall plants, obstacles, pillars, people, monsters, weapons, HUD, labels, text, watermarks or backdrop. No sky, no opaque solid-color background, no shadows outside the terrain, no fake checkerboard drawn into the image. Limited small grass tufts may rise slightly above the surface only where requested. Output one isolated cutout sprite, not an atlas and not an example scene. Material for the sunny starting village: a thin worn beige compacted-earth path mixed with a few small old limestone pavers across the top, soft moss and low tiny grass only along the edge; side face is warm brown compacted soil with embedded irregular gray fieldstones, tiny roots and occasional subtle green moss. Modest natural morning light from upper left. Low saturation sage green and warm earth, no flowers sticking into the gameplay zone. Carefully textured believable walkable village verge.",
-        "transparentPixels": 303930,
-        "opaquePixels": 1
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Starting village in gentle morning daylight. New flat compacted beige earth walking cap interspersed with a few small weathered limestone pavers. Below the edge: natural warm brown soil with tiny embedded rounded fieldstones, delicate grass roots and subtle moss in low saturation sage green. Neat readable earth structure, no large boulders, no gigantic deep cliff. Keep the lip narrow and ground marks fine enough for a character about 150 pixels tall.",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceCrop": {
+          "left": 446,
+          "top": 373,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 21629,
+        "opaquePixels": 3
       },
       "preview": {
         "backgroundSize": [
@@ -31,10 +45,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 331,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -52,12 +66,26 @@
       },
       "ground": {
         "file": "02_숲_초입/지면.png",
-        "width": 2172,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. Make a PRODUCTION GAME TERRAIN SPRITE for an original 2D side-scrolling medieval fantasy action game, matching finely detailed restrained hand-painted pixel art, clustered pixels, natural earthy materials, not 3D and not photorealistic. One single ultra-wide horizontal ground strip on TRUE TRANSPARENT background, ideally 3072x1024, at least 3:1 aspect ratio. Camera is STRICT FRONT SIDE ELEVATION as a platformer cross section. The walkable upper surface runs perfectly horizontally at the same height across the entire canvas, approximately 22 percent down from the top. Thin visible material cap, no sloping top-down floor plane, no perspective shrinking. Terrain extends continuously from the LEFT IMAGE EDGE to the RIGHT IMAGE EDGE, with NO rounded free ends, no end caps, no gap, no pits, no stairs. Treat left and right sides as cropped continuations of a longer level. Leave the upper roughly 20 percent of the canvas genuinely empty alpha so the scene background can show through. Below the flat walking edge, carefully draw the vertical cutaway terrain face all the way to the BOTTOM EDGE. Bottom edge is intentionally cropped, not a floating island. Surface texture has fine believable wear and subtle variations, while the overall walk line stays flat. No tall plants, obstacles, pillars, people, monsters, weapons, HUD, labels, text, watermarks or backdrop. No sky, no opaque solid-color background, no shadows outside the terrain, no fake checkerboard drawn into the image. Limited small grass tufts may rise slightly above the surface only where requested. Output one isolated cutout sprite, not an atlas and not an example scene. Material for a bright forest entrance: a flat compressed brown woodland path cap, intermittent short sage green grass at the front edge, cutaway rich earth with embedded small stones and delicate branching roots, a few restrained moss patches. High craft natural soil layering, not repeating obvious motifs, shaded neutral olive and earthy brown with soft daylight. No thick roots crossing above the walking line. All terrain is cropped at both sides and bottom.",
-        "transparentPixels": 450172,
-        "opaquePixels": 50
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Forest entrance in soft natural daylight. Thin level earthy-brown woodland trail cap, small muted olive moss along the lip, tiny sparse grass blades no taller than 6 pixels. The side-face is rich dark brown soil with fine narrow roots and SMALL slate pebbles. Clear restrained pixel-art material, natural edge, no huge rocks or thick tree roots. The top is completely walkable and unobstructed.",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceCrop": {
+          "left": 446,
+          "top": 400,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 15885,
+        "opaquePixels": 11
       },
       "preview": {
         "backgroundSize": [
@@ -65,10 +93,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 334,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -86,12 +114,26 @@
       },
       "ground": {
         "file": "03_깊은숲_상인/지면.png",
-        "width": 2171,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Dark ancient forest path at sunset. A thin flat compacted woodland soil surface with only low moss and scattered tiny fallen amber leaves. Vertical side shows dark cool brown soil, embedded gray slate stones and delicate old roots. Restrained amber light on the surface, deep desaturated moss-green and brown beneath. More aged and shaded than a sunny forest edge. No thick root across the walking surface, no bright colored flowers. The edges reach both sides.",
-        "transparentPixels": 553802,
-        "opaquePixels": 260
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Deep forest at sunset, merchant clearing. Thin level dark earthen walking cap with a few SMALL muted amber fallen leaves lying flat, sparse low moss at the lip. Below: dark warm umber soil, fine narrow roots and small slate fragments. Restrained amber highlights from the setting sun, cooler brown and moss shadows. Elegant readable earthy texture with no fiery orange glow, no big leaves, no gritty visual noise. Small scale features fitting native 1:1 rendering.",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceCrop": {
+          "left": 446,
+          "top": 336,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 18328,
+        "opaquePixels": 0
       },
       "preview": {
         "backgroundSize": [
@@ -99,10 +141,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 289,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -120,12 +162,26 @@
       },
       "ground": {
         "file": "04_폐허_진입/지면.png",
-        "width": 2171,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Walkway through ruined medieval cloister outskirts. Flat horizontal cap of worn irregular gray limestone paving slabs, fine muted moss in seams, tiny chips but no gaps. Below: a solid vertical cutaway of old block masonry with sparse ivy, weathered mortar, small embedded stones at the base. Neutral cool gray with subtle blue twilight shadows, quiet green moss and worn edges. More constructed stone than dirt. No archway gaps or background showing through in this strip. No loose large obstacles on top.",
-        "transparentPixels": 595504,
-        "opaquePixels": 6
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Ruined cloister exterior at blue hour. Thin perfectly level cap of SMALL worn gray limestone paving slabs with tiny chips and subtle moss in seams. Below: old stone block foundation, modest 30-60 pixel masonry blocks with clear but not noisy mortar lines and a few thin ivy roots. Cool neutral limestone and sage moss, restrained twilight lighting, no huge columns, no ornamental arch taller than the tile, no perspective floor plane. Native screen-scale detail.",
+        "sourceSize": [
+          2171,
+          724
+        ],
+        "sourceCrop": {
+          "left": 445,
+          "top": 321,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 20252,
+        "opaquePixels": 3
       },
       "preview": {
         "backgroundSize": [
@@ -133,10 +189,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 264,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -154,12 +210,26 @@
       },
       "ground": {
         "file": "05_고대_제단/지면.png",
-        "width": 2171,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Ground of a ruined ancient altar sanctuary at moonlit blue hour: an absolutely flat cap of worn cool gray slate and limestone floor slabs, shallow old cracks but intact continuous walking line. Vertical face of dark antique dressed stone blocks, a narrow eroded geometric carved frieze below the top, scant moss in seams, tiny root strands lower down. Cool slate gray and muted blue shadows with a trace of warm candle reflection, low saturation. No glowing runes, no stairs, no large rubble, no vivid trim. Carefully aged stone, richer carving than the exterior ruin walkway.",
-        "transparentPixels": 667251,
-        "opaquePixels": 32
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Ancient altar sanctuary floor in cool moonlight. Level thin dark slate paving cap with SMALL old stone slabs, delicate cracks, dull edges and faint moss only in seams. Side face is timeworn limestone foundation with a fine eroded geometric molding just below the lip. No glowing runes, no giant carvings, no bright white stone. Small coherent stone details and a quiet cool gray-blue palette with very restrained warm candle reflections. Everything fits a thin low gameplay strip.",
+        "sourceSize": [
+          2171,
+          724
+        ],
+        "sourceCrop": {
+          "left": 445,
+          "top": 373,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 19267,
+        "opaquePixels": 0
       },
       "preview": {
         "backgroundSize": [
@@ -167,10 +237,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 245,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -188,12 +258,26 @@
       },
       "ground": {
         "file": "06_마왕성_성문/지면.png",
-        "width": 2170,
-        "height": 725,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Ground of a fortress approach bridge at stormy dusk. Flat cap of broad weathered charcoal-gray paving stones, chipped slab front edges at the SAME walk height. Below: a sturdy vertical masonry bridge face with chunky old stone courses, subtle buttress joints and very shallow recessed pointed-arch reliefs, muted ivy at the lower edge, no actual open arch holes. Cold gray granite, desaturated blue-violet shadows, restrained natural wear, no bright flowers or snow. Catches only dim twilight; avoid bright white stone. Flat uninterrupted walking surface, no railing or objects above it.",
-        "transparentPixels": 493513,
-        "opaquePixels": 43
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Castle gate approach bridge under a dim stormy sky. Continuous flat thin cap of small charcoal granite flagstones. Side face uses regular old dark-gray masonry blocks with subtle worn joints and a narrow understated border. Occasional sparse dried ivy strands below the edge. Small clear stones with deep desaturated blue-gray shadows, slightly lighter top for foot contact. No giant arches, no large buttress filling the tile, no railing, no bright glow. Carefully readable fine pixel texture at native resolution.",
+        "sourceSize": [
+          2170,
+          725
+        ],
+        "sourceCrop": {
+          "left": 445,
+          "top": 362,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 21869,
+        "opaquePixels": 95
       },
       "preview": {
         "backgroundSize": [
@@ -201,10 +285,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 321,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -222,12 +306,26 @@
       },
       "ground": {
         "file": "07_마왕성_회랑/지면.png",
-        "width": 2171,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. Create an original production terrain cutout for a premium 2D side-scrolling medieval fantasy action game. Beautiful finely detailed restrained hand-painted pixel art with coherent clustered pixels, not 3D, not isometric, not photorealistic. Strict FRONT SIDE ELEVATION. One continuous ultrawide horizontal ground strip on TRUE TRANSPARENCY, 3:1 canvas approximately 2172x724. The walkable top is a PERFECTLY HORIZONTAL thin slab cap at approximately y=220, with empty alpha above it. The vertical terrain face fills the entire rest of the image to the bottom. Left, right and bottom are cropped continuations of a larger level, no free ends, no floating island, no gaps, no pits, no stairs, no perspective floor plane. Match dim natural castle twilight lighting and low saturation. No people, monsters, weapons, scene background, HUD, text, symbols or watermarks, no opaque matte, no fake checkerboard, no colored cutout fringes. This is an asset on genuine transparent background, NOT a complete gameplay screenshot. Nothing should protrude high above the flat walking surface. A narrow long castle-gallery stone platform. Worn flat dark gray limestone paving, subtle thin bevels catching a little cold window light. Below the cap: deep charcoal masonry with a small antique Gothic molding band, regular weathered stone courses, restrained carved pointed-arch relief patterns and dark old mortar. Sparse old wear, no mossy garden and no glowing ornament. Upper edge clearly readable but not bright white, a dim warm candle reflection here and there. Intact continuous walkway, all detail confined below the walking line.",
-        "transparentPixels": 659796,
-        "opaquePixels": 1710
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Interior castle gallery in soft cold window light and restrained candle reflections. Flat thin cap of SMALL worn dark-gray limestone floor slabs. Beneath: a narrow simple aged Gothic molding then compact clear stone courses with delicate small recesses. Muted gray-brown and cool charcoal, sophisticated subdued material with only fine natural cracks. No big elaborate arches, no gigantic structural beams, no muddy blur. Designed for a slim foreground game platform at native screen resolution.",
+        "sourceSize": [
+          2171,
+          724
+        ],
+        "sourceCrop": {
+          "left": 445,
+          "top": 352,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 23793,
+        "opaquePixels": 0
       },
       "preview": {
         "backgroundSize": [
@@ -235,10 +333,10 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 254,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     },
@@ -256,12 +354,26 @@
       },
       "ground": {
         "file": "08_최종보스_왕좌/지면.png",
-        "width": 2171,
-        "height": 724,
+        "width": 1280,
+        "height": 256,
         "alpha": true,
-        "prompt": "Use case: stylized-concept. Create an original production terrain cutout for a premium 2D side-scrolling medieval fantasy action game. Beautiful finely detailed restrained hand-painted pixel art with coherent clustered pixels, not 3D, not isometric, not photorealistic. Strict FRONT SIDE ELEVATION. One continuous ultrawide horizontal ground strip on TRUE TRANSPARENCY, 3:1 canvas approximately 2172x724. The walkable top is a PERFECTLY HORIZONTAL thin slab cap at approximately y=220, with empty alpha above it. The vertical terrain face fills the entire rest of the image to the bottom. Left, right and bottom are cropped continuations of a larger level, no free ends, no floating island, no gaps, no pits, no stairs, no perspective floor plane. Match dim natural castle twilight lighting and low saturation. No people, monsters, weapons, scene background, HUD, text, symbols or watermarks, no opaque matte, no fake checkerboard, no colored cutout fringes. This is an asset on genuine transparent background, NOT a complete gameplay screenshot. Nothing should protrude high above the flat walking surface. FINAL BOSS ARENA MASTER TERRAIN, exceptional craft and detail matching a monumental ruined gothic throne cathedral. Long heavy dark granite battle dais, a broad flat continuous walkable cap with carefully worn slab joints, chipping and fine hairline cracks but no broken gaps. Beneath the edge: a finely eroded double Gothic molding, pointed arch carvings and royal stone relief panels with restrained aged bronze inlays; a few narrow faded burgundy cloth fragments hang down on the FRONT FACE ONLY and never over the walking surface; deep antique stone blocks and subtle cold violet shadows, small quiet amber reflected candle light. More ceremonial and richer material detail than any previous walkway, while retaining natural worn textures, low saturation and very clean gameplay silhouette. No active glowing runes, no spikes, no braziers above the floor, no rubble obstacles. Continuous sturdy level strip touching both image side edges and the bottom edge.",
-        "transparentPixels": 644580,
-        "opaquePixels": 250
+        "surfaceY": 24,
+        "displayScale": 1,
+        "tileMode": "mirror_repeat",
+        "generation_method": "built-in image_gen",
+        "prompt": "Use case: stylized-concept. Generate a NEW original 2D side-scrolling fantasy game GROUND TEXTURE asset for Demon Sword Simulator. Production crisp hand-painted pixel art with clean controlled clusters and restrained detail, coherent fine edges, NO fuzzy brushwork, NO blurry surface, NO film grain, NO oversharpened noise, not 3D, not isometric. One long horizontal continuous terrain cross-section on TRUE TRANSPARENCY. Ultrawide 3:1 source canvas approximately 2172x724. This source will be cropped WITHOUT RESIZING into a 1280x256 game tile, displayed at one source pixel per screen pixel, so keep stones and texture features SMALL, typically 24-60 source pixels wide. A thin flat horizontal walking cap begins around y=160 across the FULL canvas width. Above is empty transparent alpha. BELOW the cap the vertical side-face terrain fills continuously all the way to the bottom edge. Absolutely level top across the entire strip; visible top-surface lip at most 8-12 pixels thick, not a receding top-down plane. Both horizontal image edges are cropped continuations, with same material and same cap height; no free island ends, no gaps, no slopes, no raised obstacles. Fine texture is subordinate to readable material shapes. No scene background, sky, people, creatures, weapons, UI, labels or text. No fake checkerboard, no bright matte fringe. Decorative details only BELOW the walking edge. Top edge clean, naturally worn but almost straight. Make the usable 256-pixel band directly under the walking cap especially well resolved and consistent. Final boss throne-room arena, especially well-crafted native-resolution terrain. An absolutely level thin cap of carefully worn dark granite floor slabs, fine readable cracks and subtle edge chips. Immediately BELOW the cap: a beautiful narrow antique Gothic carved border, then SMALL royal stone relief panels roughly 70-100 pixels high with restrained aged brass accents and occasional narrow faded burgundy cloth strips on the vertical front face. Deep neutral charcoal, slate violet shadows, tiny restrained warm candle highlights. Elegant and detailed but very clean and not noisy; all carving contained in the first 220 pixels below the walk line so the 1280x256 native crop shows the ceremonial craftsmanship. No glow, spikes, obstacles, bright outlines or huge 3D architecture.",
+        "sourceSize": [
+          2172,
+          724
+        ],
+        "sourceCrop": {
+          "left": 446,
+          "top": 337,
+          "width": 1280,
+          "height": 256
+        },
+        "transparentPixels": 20072,
+        "opaquePixels": 0
       },
       "preview": {
         "backgroundSize": [
@@ -269,12 +381,13 @@
           720
         ],
         "groundSize": [
-          2160,
-          720
+          1280,
+          256
         ],
-        "groundTopOffset": 258,
+        "groundTopOffset": 536,
         "approximateWalkingY": 560
       }
     }
-  ]
+  ],
+  "ground_revision": "native_1280x256_v2"
 }

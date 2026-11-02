@@ -47,15 +47,15 @@ class World:
         self.ground_top = source_top * self.width / self.ground.w
 
     def change_stage(self, player):
-        if player.x >= self.width - 32 and self.index < len(self.stages) - 1:
+        if player.x >= self.width - 96 and self.index < len(self.stages) - 1:
             self.set_stage(self.index + 1)
-            player.x = 96.0
+            player.x = 180.0
             return True
-        if player.x <= 32 and self.index > 0:
+        if player.x <= 96 and self.index > 0:
             self.set_stage(self.index - 1)
-            player.x = self.width - 96.0
+            player.x = self.width - 180.0
             return True
-        player.x = max(32.0, min(self.width - 32.0, player.x))
+        player.x = max(96.0, min(self.width - 96.0, player.x))
         return False
 
     def draw(self, camera):

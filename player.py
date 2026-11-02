@@ -33,6 +33,7 @@ class Player:
     CROUCH_SPEED = 85.0
     AIR_SPEED = 285.0
     DASH_SPEED = 850.0
+    DASH_ATTACK_GRACE = 0.4
     COMBO_MOVE_SPEED = 55.0
     JUMP_SPEED = 850.0
     GRAVITY = 2200.0
@@ -49,6 +50,7 @@ class Player:
         self.combo_step = 0
         self.combo_queued = False
         self.air_dash_ready = True
+        self.dash_attack_remaining = 0.0
         self.jump_launched = False
 
     @property
@@ -67,12 +69,17 @@ class Player:
         if self.mode == 'free' and direction:
             self.facing = direction
         if key == SDLK_c:
-            if self.mode == 'combo':
+            landing = self.mode == 'action' and self.animation.name in {
+                'land_soft', 'land_hard', 'air_attack_land',
+            }
+            if self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
+                self.dash_attack_remaining = 0.0
+                self._action('dash_slash', 'dash_attack_recovery')
+            elif self.mode == 'combo':
                 self.combo_queued = self.combo_step < 3
             elif self.mode == 'dash':
-                # 중간 입력은 저장하지 않는다. 대시 이동을 마친 뒤에만 베기를 허용한다.
-                if self.animation.name in {'dash_end', 'air_dash_recovery'}:
-                    self._action('dash_slash', 'dash_attack_recovery')
+                # 대시 이동 중에는 C를 무시하며 나중에 자동 발동하도록 저장하지 않는다.
+                return
             elif self.mode == 'free':
                 if not self.grounded:
                     self._action('air_slash')
@@ -85,11 +92,13 @@ class Player:
         elif key == SDLK_SPACE:
             landing = self.animation.name in {'land_soft', 'land_hard', 'air_attack_land'}
             if self.grounded and (self.mode == 'free' or landing):
+                self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'jump', None
                 self.jump_launched = False
                 self.animation.play('jump_takeoff', fps=64)
-        elif key in SHIFT and self.mode == 'free':
+        elif key in SHIFT and (self.mode == 'free' or self.mode == 'jump' and not self.grounded):
             if self.grounded or self.air_dash_ready:
+                self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'dash', None
                 if self.grounded:
                     self.animation.play('dash_start', fps=64)
@@ -98,6 +107,7 @@ class Player:
                     self.vy = 0.0
                     self.animation.play('dash_air', fps=40, once=True)
         elif key == SDLK_z and self.mode == 'free' and self.grounded:
+            self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'magic', None
             self.animation.play('magic_charge')
 
@@ -133,8 +143,10 @@ class Player:
             if anim.name == 'dash_start':
                 anim.play('dash_ground', fps=40, once=True)
             elif anim.name == 'dash_ground':
+                self.dash_attack_remaining = self.DASH_ATTACK_GRACE
                 anim.play('dash_end', fps=48)
             elif anim.name == 'dash_air':
+                self.dash_attack_remaining = self.DASH_ATTACK_GRACE
                 anim.play('air_dash_recovery')
             else:
                 self.mode = 'free'
@@ -151,6 +163,7 @@ class Player:
                     self.mode = 'free'
 
         if self.mode == 'free' and self.grounded and SDLK_x in keys:
+            self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'guard', None
             anim.play('guard_raise')
 
@@ -172,6 +185,9 @@ class Player:
             self.animation.play(target)
 
     def update(self, dt, keys):
+        # Shift를 누르는 동안 대시 후 C 연결을 유지하고, 놓아도 잠깐의 여유를 준다.
+        if not keys & SHIFT:
+            self.dash_attack_remaining = max(0.0, self.dash_attack_remaining - dt)
         self.animation.update(dt)
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if direction and direction == self.previous_direction:
@@ -216,7 +232,10 @@ class Player:
         if self.y <= 0:
             self.y, self.vy = 0.0, 0.0
             self.air_dash_ready = True
-            if airborne:
+            keep_dash_attack = self.mode == 'action' and self.animation.name in {
+                'dash_slash', 'dash_attack_recovery',
+            }
+            if airborne and not keep_dash_attack:
                 landing = 'air_attack_land' if self.animation.name == 'air_slash' else 'land_soft'
                 self._action(landing)
 

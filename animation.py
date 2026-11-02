@@ -2,7 +2,14 @@
 
 import json
 
-from pico2d import load_image
+from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest
+
+
+def load_pixel_image(path):
+    image = load_image(str(path))
+    # 확대할 때 이웃 픽셀의 색을 섞지 않아 지면과 스프라이트가 흐려지지 않는다.
+    SDL_SetTextureScaleMode(image.texture, SDL_ScaleModeNearest)
+    return image
 
 
 class Animation:
@@ -34,18 +41,22 @@ class Animation:
 
     def draw(self, x, y, facing, camera, scale=1.0):
         if self.name not in self.images:
-            self.images[self.name] = load_image(str(self.folder / self.clip['file']))
+            self.images[self.name] = load_pixel_image(self.folder / self.clip['file'])
         count = self.clip['frameCount']
         frame = int(self.elapsed * self.fps)
         frame = frame % count if self.loop else min(frame, count - 1)
         cell = self.clip['frames'][frame]
         width, height = cell['width'], cell['height']
         pivot = self.clip['pivot']
-        # 모든 동작에서 발 기준점을 같은 월드 좌표에 놓는다.
-        center_x = x - camera.x + facing * (width / 2 - pivot['x']) * scale
-        center_y = y - camera.y + (pivot['y'] - height / 2) * scale
+        # 큰 프레임만 같은 비율로 축소한다. 발 기준점과 팔다리 비율은 유지한다.
+        scale *= cell.get('renderScale', 1.0)
+        draw_width, draw_height = round(width * scale), round(height * scale)
+        pivot_x = pivot['x'] if facing > 0 else width - pivot['x']
+        left = round(x - camera.x - pivot_x * scale)
+        bottom = round(y - camera.y - (height - pivot['y']) * scale)
         self.images[self.name].clip_composite_draw(
             cell['x'], cell['pico2dY'], width, height,
             0, 'h' if facing < 0 else '',
-            center_x, center_y, width * scale, height * scale,
+            left + draw_width / 2, bottom + draw_height / 2,
+            draw_width, draw_height,
         )

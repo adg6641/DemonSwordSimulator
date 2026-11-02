@@ -3,7 +3,7 @@
 import json
 from math import exp
 
-from pico2d import load_image
+from animation import load_pixel_image
 
 
 class Camera:
@@ -36,15 +36,15 @@ class World:
     def set_stage(self, index):
         self.index = index
         self.stage = self.stages[index]
-        self.background = load_image(str(self.folder / self.stage['bg']['file']))
-        self.ground = load_image(str(self.folder / self.stage['ground']['file']))
-        self.width = self.stage['bg']['width'] * self.GROUND_SCALE
+        self.background = load_pixel_image(self.folder / self.stage['bg']['file'])
+        self.ground = load_pixel_image(self.folder / self.stage['ground']['file'])
+        self.width = round(self.ground.w * self.GROUND_SCALE)
         preview = self.stage['preview']
         # 미리보기의 지면 상단을 실제 그림 크기로 환산한다. 충돌 바닥은 y=0.
         top = preview['approximateWalkingY'] - preview['groundTopOffset']
         source_top = top / preview['groundSize'][1] * self.ground.h
-        self.ground_height = self.ground.h * self.width / self.ground.w
-        self.ground_top = source_top * self.width / self.ground.w
+        self.ground_height = round(self.ground.h * self.GROUND_SCALE)
+        self.ground_top = source_top * self.GROUND_SCALE
 
     def change_stage(self, player):
         if player.x >= self.width - 96 and self.index < len(self.stages) - 1:
@@ -59,19 +59,18 @@ class World:
         return False
 
     def draw(self, camera):
-        bg_width = self.background.w * self.BACKGROUND_SCALE
-        bg_height = self.background.h * self.BACKGROUND_SCALE
+        bg_width = round(self.background.w * self.BACKGROUND_SCALE)
+        bg_height = round(self.background.h * self.BACKGROUND_SCALE)
         # 원경은 지면보다 천천히 이동한다. 양 끝에서도 빈 화면이 생기지 않는다.
         progress = camera.x / max(1.0, self.width - self.screen_width)
         bg_scroll = progress * (bg_width - self.screen_width)
         bg_bottom = -bg_height * (1.0 - 560.0 / 720.0)
-        self.background.draw(
-            bg_width / 2 - bg_scroll,
-            bg_bottom + bg_height / 2 - camera.y,
-            bg_width, bg_height,
-        )
+        # 그리기 좌표만 픽셀에 맞춘다. 실제 이동과 카메라 계산은 실수로 유지한다.
+        left, bottom = round(-bg_scroll), round(bg_bottom - camera.y)
+        self.background.draw(left + bg_width / 2, bottom + bg_height / 2, bg_width, bg_height)
+        left = round(-camera.x)
+        bottom = round(self.ground_top - self.ground_height - camera.y)
         self.ground.draw(
-            self.width / 2 - camera.x,
-            self.ground_top - self.ground_height / 2 - camera.y,
+            left + self.width / 2, bottom + self.ground_height / 2,
             self.width, self.ground_height,
         )

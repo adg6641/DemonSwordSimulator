@@ -3,14 +3,13 @@
 from collections import deque
 
 from pico2d import (
-    SDLK_LEFT, SDLK_RIGHT, SDLK_SPACE, SDLK_LCTRL, SDLK_RCTRL,
+    SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN,
     SDLK_LSHIFT, SDLK_RSHIFT, SDLK_c, SDLK_x, SDLK_z,
 )
 
 from animation import Animation
 
 
-CTRL = {SDLK_LCTRL, SDLK_RCTRL}
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
 MOVE_TRANSITIONS = {
     ('idle_breathe', 'walk'): 'idle_to_walk',
@@ -83,13 +82,13 @@ class Player:
             elif self.mode == 'free':
                 if not self.grounded:
                     self._action('air_slash')
-                elif keys & CTRL:
+                elif SDLK_DOWN in keys:
                     self._action('crouch_slash', 'crouch_attack_recovery')
                 else:
                     self.mode, self.gait = 'combo', None
                     self.combo_step, self.combo_queued = 1, False
                     self.animation.play('slash_1')
-        elif key == SDLK_SPACE:
+        elif key == SDLK_UP:
             landing = self.animation.name in {'land_soft', 'land_hard', 'air_attack_land'}
             if self.grounded and (self.mode == 'free' or landing):
                 self.dash_attack_remaining = 0.0
@@ -170,7 +169,7 @@ class Player:
     def _locomotion(self, direction, keys):
         if not self.grounded:
             target = 'jump_rise' if self.vy > 100 else 'jump_apex' if self.vy > -100 else 'fall'
-        elif keys & CTRL:
+        elif SDLK_DOWN in keys:
             target = 'crouch_walk' if direction else 'crouch_idle'
         elif direction:
             target = 'run' if self.move_time >= 0.55 else 'walk'
@@ -203,14 +202,14 @@ class Player:
                 self.facing = direction
             if not self.grounded:
                 speed = direction * self.AIR_SPEED
-            elif keys & CTRL:
+            elif SDLK_DOWN in keys:
                 speed = direction * self.CROUCH_SPEED
             else:
                 speed = direction * (self.RUN_SPEED if self.move_time >= 0.55 else self.WALK_SPEED)
             if self.mode == 'free':
                 self._locomotion(direction, keys)
         elif self.mode == 'combo':
-            if direction and not keys & CTRL:
+            if direction and SDLK_DOWN not in keys:
                 self.facing = direction
                 speed = direction * self.COMBO_MOVE_SPEED
         elif self.mode == 'dash':

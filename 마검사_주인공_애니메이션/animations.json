@@ -1,0 +1,5381 @@
+{
+  "title": "마검사 주인공 애니메이션",
+  "version": 1,
+  "conventions": {
+    "frameWidth": 384,
+    "frameHeight": 384,
+    "columns": 4,
+    "readingOrder": "왼쪽에서 오른쪽으로 읽고, 다음 줄로 내려갑니다",
+    "groundPivot": {
+      "x": 192,
+      "y": 320
+    },
+    "facing": "right",
+    "leftFacing": "게임에서 좌우 반전",
+    "alpha": true,
+    "rootMotion": "제자리 모션. 화면의 이동과 점프 높이는 게임 코드에서 적용",
+    "sheetLayout": "4열, 동작별 2행(8프레임) 또는 3행(12프레임). 각 동작의 rows와 frameCount 참조"
+  },
+  "connections": [
+    {
+      "clip": "idle_to_walk",
+      "from": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "to": {
+        "clip": "walk",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "walk_to_idle",
+      "from": {
+        "clip": "walk",
+        "frame": 11
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "walk_to_run",
+      "from": {
+        "clip": "walk",
+        "frame": 11
+      },
+      "to": {
+        "clip": "run",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "run_to_walk",
+      "from": {
+        "clip": "run",
+        "frame": 11
+      },
+      "to": {
+        "clip": "walk",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "run_stop",
+      "from": {
+        "clip": "run",
+        "frame": 11
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "crouch_down",
+      "from": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "to": {
+        "clip": "crouch_idle",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": true
+    },
+    {
+      "clip": "crouch_up",
+      "from": {
+        "clip": "crouch_idle",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "jump_takeoff",
+      "from": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "to": {
+        "clip": "jump_rise",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": true
+    },
+    {
+      "clip": "land_soft",
+      "from": {
+        "clip": "fall",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "land_hard",
+      "from": {
+        "clip": "fall",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "dash_start",
+      "from": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "to": {
+        "clip": "dash_ground",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "dash_end",
+      "from": {
+        "clip": "dash_ground",
+        "frame": 11
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "attack_recovery",
+      "from": {
+        "clip": "slash_1",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "magic_recovery",
+      "from": {
+        "clip": "magic_release",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": false
+    },
+    {
+      "clip": "guard_raise",
+      "from": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "to": {
+        "clip": "guard_idle",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": true
+    },
+    {
+      "clip": "guard_lower",
+      "from": {
+        "clip": "guard_idle",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "guard_impact",
+      "from": {
+        "clip": "guard_idle",
+        "frame": 0
+      },
+      "to": {
+        "clip": "guard_idle",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": true
+    },
+    {
+      "clip": "guard_break",
+      "from": {
+        "clip": "guard_idle",
+        "frame": 0
+      },
+      "to": {
+        "clip": "hurt_recovery",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": true
+    },
+    {
+      "clip": "hurt_recovery",
+      "from": {
+        "clip": "hurt",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "get_up",
+      "from": {
+        "clip": "knockdown",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "combo_1_to_2",
+      "from": {
+        "clip": "slash_1",
+        "frame": 7
+      },
+      "to": {
+        "clip": "slash_2",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": true
+    },
+    {
+      "clip": "combo_2_to_3",
+      "from": {
+        "clip": "slash_2",
+        "frame": 7
+      },
+      "to": {
+        "clip": "slash_3",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": true
+    },
+    {
+      "clip": "air_attack_land",
+      "from": {
+        "clip": "air_slash",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "crouch_attack_recovery",
+      "from": {
+        "clip": "crouch_slash",
+        "frame": 7
+      },
+      "to": {
+        "clip": "crouch_idle",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": true
+    },
+    {
+      "clip": "air_dash_recovery",
+      "from": {
+        "clip": "dash_air",
+        "frame": 11
+      },
+      "to": {
+        "clip": "fall",
+        "frame": 0
+      },
+      "firstMatches": false,
+      "lastMatches": true
+    },
+    {
+      "clip": "slash_2_recovery",
+      "from": {
+        "clip": "slash_2",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "slash_3_recovery",
+      "from": {
+        "clip": "slash_3",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "heavy_recovery",
+      "from": {
+        "clip": "heavy_slash",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "thrust_recovery",
+      "from": {
+        "clip": "thrust",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    },
+    {
+      "clip": "dash_attack_recovery",
+      "from": {
+        "clip": "dash_slash",
+        "frame": 7
+      },
+      "to": {
+        "clip": "idle_breathe",
+        "frame": 0
+      },
+      "firstMatches": true,
+      "lastMatches": false
+    }
+  ],
+  "clips": [
+    {
+      "id": "idle_breathe",
+      "label": "숨쉬며 대기",
+      "folder": "01_기본동작",
+      "fps": 4,
+      "playback": "loop",
+      "motion": "Planted feet with a small breathing cycle: head, torso, sword arm, hips and knees move gently while both soles stay at the same floor line; return to the starting pose.",
+      "index": 1,
+      "file": "01_기본동작/01_idle_breathe.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "walk",
+      "label": "걷기",
+      "folder": "01_기본동작",
+      "fps": 12,
+      "playback": "loop",
+      "motion": "in-place complete walk cycle: right heel contact, right foot down, legs passing, right leg trailing, left heel contact, left foot down, legs passing, left leg trailing; relaxed sword held low and no root travel",
+      "index": 2,
+      "file": "01_기본동작/02_walk.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 1152,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "label": "달리기",
+      "folder": "01_기본동작",
+      "fps": 15,
+      "playback": "loop",
+      "motion": "in-place complete run cycle: right forward contact, compress, passing legs, suspended stride, left forward contact, compress, passing legs, suspended stride; body leans forward, scarf follows",
+      "index": 3,
+      "file": "01_기본동작/03_run.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 1152,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "crouch_idle",
+      "label": "웅크려 대기",
+      "folder": "01_기본동작",
+      "fps": 8,
+      "playback": "loop",
+      "motion": "low crouched guard breathing loop, both feet planted, knees deeply bent, torso forward, sword low forward, soft inhale then exhale and return exactly to first crouched pose",
+      "index": 4,
+      "file": "01_기본동작/04_crouch_idle.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "crouch_walk",
+      "label": "웅크려 걷기",
+      "folder": "01_기본동작",
+      "fps": 12,
+      "playback": "loop",
+      "motion": "complete stealth crouch walk cycle in place, stay low: front foot reaches, planted front foot, back foot slides forward, legs pass, opposite foot reaches, planted, back slides, legs pass",
+      "index": 5,
+      "file": "01_기본동작/05_crouch_walk.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "jump_rise",
+      "label": "점프 상승",
+      "folder": "01_기본동작",
+      "fps": 20,
+      "playback": "hold",
+      "motion": "already airborne rising poses, body root remains in fixed cell, knees bend backwards then lift toward torso, scarf and cloak hang downward from upward motion, sword held close, transition to tucked apex pose",
+      "index": 6,
+      "file": "01_기본동작/06_jump_rise.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "jump_apex",
+      "label": "점프 최고점",
+      "folder": "01_기본동작",
+      "fps": 24,
+      "playback": "hold",
+      "motion": "airborne jump apex, knees tucked, torso slightly untucks, scarf briefly floats upward, eight distinct small easing poses ending with feet beginning to extend for fall; root remains fixed",
+      "index": 7,
+      "file": "01_기본동작/07_jump_apex.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "fall",
+      "label": "낙하",
+      "folder": "01_기본동작",
+      "fps": 14,
+      "playback": "loop",
+      "motion": "airborne falling loop, legs extended slightly bent ready to land, cloak and scarf lifted above shoulders, controlled small flutter, fixed root, no ground or movement across cell",
+      "index": 8,
+      "file": "01_기본동작/08_fall.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "dash_ground",
+      "label": "지상 대시",
+      "folder": "02_공격과마법/02_대시공격",
+      "fps": 16,
+      "playback": "loop",
+      "motion": "fast low grounded dash held loop, body nearly horizontal leaning right, bent leading knee, trailing leg extended, sword tightly behind and scarf streams left, small alternating leg motions without root travel",
+      "index": 9,
+      "file": "02_공격과마법/02_대시공격/09_dash_ground.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 1152,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "dash_air",
+      "label": "공중 대시",
+      "folder": "02_공격과마법/02_대시공격",
+      "fps": 14,
+      "playback": "once",
+      "motion": "airborne forward dash: tighten core, lean horizontally right, extend trailing legs, stable fast flying pose, scarf snaps left, head lifts, legs tuck, end with airborne bent-knee pose; root fixed",
+      "index": 10,
+      "file": "02_공격과마법/02_대시공격/10_dash_air.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 1152,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "slash_1",
+      "label": "기본 베기 1타",
+      "folder": "02_공격과마법/01_3연속베기",
+      "fps": 24,
+      "playback": "once",
+      "motion": "one complete horizontal sword slash: neutral low sword, draw sword back left, coil torso, sword crosses front right, full rightward horizontal extension, torso follows, decelerate, finish sword extended low right; no magical slash trail",
+      "index": 11,
+      "file": "02_공격과마법/01_3연속베기/11_slash_1.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "slash_2",
+      "label": "연속 베기 2타",
+      "folder": "02_공격과마법/01_3연속베기",
+      "fps": 26,
+      "playback": "once",
+      "motion": "one rising diagonal sword slash: start with sword chambered low left, knees bent, unwind torso, sword rises across chest, blade crosses above head, extend arm upward right, settle hips, end sword raised above right shoulder",
+      "index": 12,
+      "file": "02_공격과마법/01_3연속베기/12_slash_2.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "slash_3",
+      "label": "연속 베기 3타",
+      "folder": "02_공격과마법/01_3연속베기",
+      "fps": 24,
+      "playback": "once",
+      "motion": "strong downward finishing slash: begin sword above head, elbow coils, lift on toes, shoulders drive down, sword cuts diagonally down right, knee compresses, blade decelerates near low right, finish deep forward follow-through",
+      "index": 13,
+      "file": "02_공격과마법/01_3연속베기/13_slash_3.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "heavy_charge",
+      "label": "강공격 힘 모으기",
+      "folder": "05_추가_공격동작_보관",
+      "fps": 12,
+      "playback": "hold",
+      "motion": "heavy sword attack windup only: neutral, two hands grip hilt, sword pulled back, weight shifts rear foot, knees bend, sword rises above head, torso coils, hold deep overhead charged stance; no energy effect",
+      "index": 14,
+      "file": "05_추가_공격동작_보관/14_heavy_charge.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "heavy_slash",
+      "label": "강공격 내려베기",
+      "folder": "05_추가_공격동작_보관",
+      "fps": 22,
+      "playback": "once",
+      "motion": "heavy overhead release from charged stance: sword overhead, weight forward, hips rotate, blade accelerating down, strong impact pose low right, deep knee compression, sword settles low right, hold deep heavy follow-through; no explosion",
+      "index": 15,
+      "file": "05_추가_공격동작_보관/15_heavy_slash.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "thrust",
+      "label": "찌르기",
+      "folder": "05_추가_공격동작_보관",
+      "fps": 26,
+      "playback": "once",
+      "motion": "sword thrust: neutral low guard, raise blade horizontally chest height, retract elbow, lean forward, fully extend right arm and sword right, front knee compresses, slight retract, end blade horizontal forward at chest height",
+      "index": 16,
+      "file": "05_추가_공격동작_보관/16_thrust.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "air_slash",
+      "label": "공중 베기",
+      "folder": "05_추가_공격동작_보관",
+      "fps": 26,
+      "playback": "once",
+      "motion": "airborne sword slash with no ground: tucked jump pose, sword draws back, torso rotates, slash forward right, blade extended diagonally, knees extend down, sword settles down right, end falling ready pose",
+      "index": 17,
+      "file": "05_추가_공격동작_보관/17_air_slash.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "dash_slash",
+      "label": "대시 베기",
+      "folder": "02_공격과마법/02_대시공격",
+      "fps": 30,
+      "playback": "once",
+      "motion": "dashing slash in place: low dash pose sword trailing, shoulders coil, sword accelerates across front, blade extends right horizontally, low lunge, scarf follows, braking knee bends, end low sword-forward lunge; no afterimage",
+      "index": 18,
+      "file": "02_공격과마법/02_대시공격/18_dash_slash.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "crouch_slash",
+      "label": "웅크려 베기",
+      "folder": "05_추가_공격동작_보관",
+      "fps": 26,
+      "playback": "once",
+      "motion": "low crouching sword slash: crouched guard, draw sword to side, twist hips while low, sweep blade at shin height right, extend blade, keep knees bent, decelerate sword, end low crouched forward sword extension",
+      "index": 19,
+      "file": "05_추가_공격동작_보관/19_crouch_slash.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "magic_charge",
+      "label": "마법 준비",
+      "folder": "02_공격과마법/03_마법공격",
+      "fps": 12,
+      "playback": "hold",
+      "motion": "magic charge body motion only: neutral sword low in right hand, lift empty left hand, open palm right, shoulders pull back, knees brace, palm draws close to chest, look forward, hold prepared casting stance; absolutely no glow or magic effects",
+      "index": 20,
+      "file": "02_공격과마법/03_마법공격/20_magic_charge.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "magic_release",
+      "label": "마법 발사",
+      "folder": "02_공격과마법/03_마법공격",
+      "fps": 22,
+      "playback": "once",
+      "motion": "magic release body motion only: start empty left palm near chest, elbow draws back, palm pushes right, full arm extension right, small torso recoil, left hand remains forward, shoulder relaxes, finish palm extended forward; sword held low in right hand, no projectile",
+      "index": 21,
+      "file": "02_공격과마법/03_마법공격/21_magic_release.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "guard_idle",
+      "label": "방어 유지",
+      "folder": "03_방어와피격",
+      "fps": 8,
+      "playback": "loop",
+      "motion": "steady sword guard breathing loop: sword vertical diagonal in front of face and chest, right hand near waist with left supporting grip, knees soft, inhale and exhale, minimal shield-like protective posture; no shield object",
+      "index": 22,
+      "file": "03_방어와피격/22_guard_idle.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "hurt",
+      "label": "가벼운 피격",
+      "folder": "03_방어와피격",
+      "fps": 28,
+      "playback": "once",
+      "motion": "non-graphic light hit reaction: neutral, shoulders jolt backward, head leans back, front knee buckles, cloak follows, torso recoils, head returns forward, finish slight backward stagger with sword low; no blood or flashes",
+      "index": 23,
+      "file": "03_방어와피격/23_hurt.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "knockdown",
+      "label": "넘어짐",
+      "folder": "03_방어와피격",
+      "fps": 22,
+      "playback": "hold",
+      "motion": "non-graphic knockdown: off balance standing, lean backward, knees buckle, hips drop, elbow reaches ground, torso rolls onto side, legs fold, finish lying on side on ground with sword beside hand; face still points right",
+      "index": 24,
+      "file": "03_방어와피격/24_knockdown.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "death",
+      "label": "쓰러져 패배",
+      "folder": "03_방어와피격",
+      "fps": 12,
+      "playback": "hold",
+      "motion": "non-graphic defeat animation: neutral exhausted, knees soften, shoulders slump, drop to one knee, head lowers, elbow reaches floor, torso slumps onto side, lie still with sword beside hand; no blood no disintegration",
+      "index": 25,
+      "file": "03_방어와피격/25_death.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "idle_to_walk",
+      "label": "대기에서 걷기",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "bridge neutral idle to walk: neutral low sword ready stance, weight shifts rear foot, heel lifts, front knee bends, front foot begins reach, torso leans slightly, heel approaches floor, end exactly right heel contact walk pose",
+      "index": 26,
+      "file": "04_전환동작/26_idle_to_walk.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "walk_to_idle",
+      "label": "걷기에서 대기",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "bridge walk to idle: right heel contact walking pose, plant foot, trailing foot comes forward, shorten stride, torso straightens, both feet shoulder width, scarf settles, end canonical neutral low sword idle pose",
+      "index": 27,
+      "file": "04_전환동작/27_walk_to_idle.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "walk_to_run",
+      "label": "걷기에서 달리기",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "accelerate walking into running in place: walk contact, shorten body, lean forward, bend elbows, push off, increase stride, scarf rises left, end right forward contact run pose",
+      "index": 28,
+      "file": "04_전환동작/28_walk_to_run.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "run_to_walk",
+      "label": "달리기에서 걷기",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "decelerate run into walk in place: run contact leaning forward, torso lifts, shorten stride, elbows lower, scarf settles, reduce knee height, upright step, end right heel contact walk pose",
+      "index": 29,
+      "file": "04_전환동작/29_run_to_walk.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "run_stop",
+      "label": "달리다 멈추기",
+      "folder": "04_전환동작",
+      "fps": 28,
+      "playback": "once",
+      "motion": "run braking transition in place: running contact, front foot plants, lean backward braking, knees compress, trailing foot catches up, torso straightens, scarf swings forward then settles, end canonical neutral sword-low idle",
+      "index": 30,
+      "file": "04_전환동작/30_run_stop.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "crouch_down",
+      "label": "웅크리기 시작",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "neutral idle to crouch: sword low, knees start bend, hips lower, torso tilts forward, head lowers, rear knee folds, sword moves low forward, end canonical low crouched guard",
+      "index": 31,
+      "file": "04_전환동작/31_crouch_down.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "crouch_up",
+      "label": "웅크리기 해제",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "low crouch to idle: crouched guard, weight centered, front knee extends, hips rise, torso unfolds, head rises, cloak settles, end canonical neutral low sword idle",
+      "index": 32,
+      "file": "04_전환동작/32_crouch_up.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "jump_takeoff",
+      "label": "점프 준비와 이륙",
+      "folder": "04_전환동작",
+      "fps": 36,
+      "playback": "once",
+      "motion": "jump anticipation and takeoff without root travel: neutral, knees soften, squat deeper, swing empty arm back, explosive leg extension, heel rises, toes leave baseline, knees begin tuck into first jump rise pose",
+      "index": 33,
+      "file": "04_전환동작/33_jump_takeoff.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "land_soft",
+      "label": "가벼운 착지",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "soft jump landing: airborne falling feet extended, toes touch baseline, knees absorb landing, moderate crouch, cloak settles down, hips rise, torso straightens, end canonical neutral low sword idle",
+      "index": 34,
+      "file": "04_전환동작/34_land_soft.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "land_hard",
+      "label": "높은 곳에서 착지",
+      "folder": "04_전환동작",
+      "fps": 28,
+      "playback": "once",
+      "motion": "heavy fall landing: feet about to touch ground, feet contact, knees bend deeply, one free hand touches floor, cloak drops, hand lifts, hips rise, end canonical neutral low sword idle",
+      "index": 35,
+      "file": "04_전환동작/35_land_hard.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "dash_start",
+      "label": "지상 대시 시작",
+      "folder": "04_전환동작",
+      "fps": 36,
+      "playback": "once",
+      "motion": "dash anticipation from neutral: weight forward, front knee bends, torso lowers, rear foot pushes, sword moves behind, body leans almost horizontal, scarf whips left, end canonical low ground dash pose",
+      "index": 36,
+      "file": "04_전환동작/36_dash_start.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "dash_end",
+      "label": "지상 대시 종료",
+      "folder": "04_전환동작",
+      "fps": 36,
+      "playback": "once",
+      "motion": "ground dash braking: low dash, leading foot plants, knee absorbs, torso begins rise, trailing foot catches up, sword lowers to side, cloak settles, end canonical neutral low sword idle",
+      "index": 37,
+      "file": "04_전환동작/37_dash_end.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "attack_recovery",
+      "label": "1타 후 자세 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "horizontal slash recovery: start sword extended low right, elbow softens, hips untwist, sword lowers, rear foot settles, torso upright, scarf returns, end canonical neutral low sword idle",
+      "index": 38,
+      "file": "04_전환동작/38_attack_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "magic_recovery",
+      "label": "마법 후 자세 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "magic release recovery: start left palm fully extended right and right sword low, relax fingers, bend left elbow, lower hand, center shoulders, straighten knees, cloak settles, end canonical neutral low sword idle",
+      "index": 39,
+      "file": "04_전환동작/39_magic_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "guard_raise",
+      "label": "방어 시작",
+      "folder": "04_전환동작",
+      "fps": 36,
+      "playback": "once",
+      "motion": "idle to guarding: neutral sword low, raise sword grip, left hand reaches hilt, sword rotates vertical in front, knees soften, shoulders brace, chin tucks, end canonical sword guard pose",
+      "index": 40,
+      "file": "04_전환동작/40_guard_raise.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "guard_lower",
+      "label": "방어 해제",
+      "folder": "04_전환동작",
+      "fps": 36,
+      "playback": "once",
+      "motion": "guard to idle: sword vertical guard, shoulders relax, left hand releases grip, sword tilts down, elbows lower, knees straighten, cloak settles, end canonical neutral low sword idle",
+      "index": 41,
+      "file": "04_전환동작/41_guard_lower.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "guard_impact",
+      "label": "방어 중 충격 흡수",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "block impact and regain guard: canonical sword guard, grip braces, torso pushes backward a little, knees compress, blade wobbles slightly, body pushes forward, knees recover, return exactly to canonical sword guard; no sparks",
+      "index": 42,
+      "file": "04_전환동작/42_guard_impact.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "guard_break",
+      "label": "방어가 깨짐",
+      "folder": "04_전환동작",
+      "fps": 28,
+      "playback": "once",
+      "motion": "guard break stagger: sword guard, arms pushed open, sword tilts outward, chest opens, torso recoils, rear knee bends, sword falls low, end backward stagger matching hurt end; no broken blade",
+      "index": 43,
+      "file": "04_전환동작/43_guard_break.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "hurt_recovery",
+      "label": "피격 후 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "recover stagger to idle: start leaning backward hurt pose, brace rear foot, head forward, chest centers, hips center, knees straighten, sword held low, end canonical neutral low sword idle",
+      "index": 44,
+      "file": "04_전환동작/44_hurt_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "get_up",
+      "label": "넘어진 뒤 일어나기",
+      "folder": "04_전환동작",
+      "fps": 26,
+      "playback": "once",
+      "motion": "get up from knockdown: lying on right-facing side holding sword, free hand supports floor, torso lifts, one knee plants, kneel upright, push through front foot, rise almost standing, end canonical neutral low sword idle",
+      "index": 45,
+      "file": "04_전환동작/45_get_up.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "combo_1_to_2",
+      "label": "1타에서 2타 연결",
+      "folder": "04_전환동작",
+      "fps": 40,
+      "playback": "once",
+      "motion": "attack combo bridge: start first horizontal slash end blade low right, elbow retracts, blade circles down along side, weight shifts rear, knees bend, blade chambers low left, torso coils, end exact rising-slash windup blade low left",
+      "index": 46,
+      "file": "04_전환동작/46_combo_1_to_2.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "combo_2_to_3",
+      "label": "2타에서 3타 연결",
+      "folder": "04_전환동작",
+      "fps": 40,
+      "playback": "once",
+      "motion": "attack combo bridge: start rising slash ending sword above right shoulder, wrist pivots, left hand joins grip, sword rotates overhead, hips turn, lift on toes, shoulders coil, end exact third slash overhead windup",
+      "index": 47,
+      "file": "04_전환동작/47_combo_2_to_3.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "air_attack_land",
+      "label": "공중 공격 후 착지",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "air attack landing: start falling with sword down right, extend feet, toes contact floor, knees bend and free hand balances, blade held low away from feet, rise from crouch, shoulders square, end canonical neutral low sword idle",
+      "index": 48,
+      "file": "04_전환동작/48_air_attack_land.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "crouch_attack_recovery",
+      "label": "앉은 공격 후 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "crouching slash recovery without standing: start low forward sword extension, elbow retracts, shoulders untwist, knees stay deeply bent, sword lowers close to front knee, torso centers, scarf settles, end canonical crouch guard pose",
+      "index": 49,
+      "file": "04_전환동작/49_crouch_attack_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "air_dash_recovery",
+      "label": "공중 대시에서 낙하",
+      "folder": "04_전환동작",
+      "fps": 36,
+      "playback": "once",
+      "motion": "air dash to fall transition with fixed root: start horizontal airborne dash, chest lifts, feet drop under hips, scarf floats up, torso upright, knees slightly bent, sword close, end canonical falling ready pose",
+      "index": 50,
+      "file": "04_전환동작/50_air_dash_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "slash_2_recovery",
+      "label": "2타 후 자세 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "rising slash recovery: start blade high above right shoulder, elbow bends, blade rotates down forward, shoulders uncoil, sword lowers at side, hips center, scarf settles, end canonical neutral low sword idle",
+      "index": 51,
+      "file": "04_전환동작/51_slash_2_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "slash_3_recovery",
+      "label": "3타 후 자세 회복",
+      "folder": "04_전환동작",
+      "fps": 30,
+      "playback": "once",
+      "motion": "downward finisher recovery: start deep forward follow-through blade low right, knees absorb, elbow loosens, blade lifts slightly clear of floor, hips rise, torso straightens, feet center, end canonical neutral low sword idle",
+      "index": 52,
+      "file": "04_전환동작/52_slash_3_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "heavy_recovery",
+      "label": "강공격 후 자세 회복",
+      "folder": "04_전환동작",
+      "fps": 28,
+      "playback": "once",
+      "motion": "heavy attack recovery: start deep two-handed low sword follow-through, pause compressed, loosen shoulders, sword lifts clear of floor, hips rise slowly, left hand releases, torso upright, end canonical neutral low sword idle",
+      "index": 53,
+      "file": "04_전환동작/53_heavy_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "thrust_recovery",
+      "label": "찌르기 후 자세 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "thrust recovery: sword extended horizontally right at chest height, elbow retracts straight back, front knee relaxes, blade tilts downward, torso recenters, grip lowers, scarf settles, end canonical neutral low sword idle",
+      "index": 54,
+      "file": "04_전환동작/54_thrust_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "dash_attack_recovery",
+      "label": "대시 공격 후 회복",
+      "folder": "04_전환동작",
+      "fps": 32,
+      "playback": "once",
+      "motion": "dash slash recovery: start low sword-forward lunge, leading foot brakes, rear leg catches up, sword lowers, torso rises, shoulders uncoil, cloak settles, end canonical neutral low sword idle",
+      "index": 55,
+      "file": "04_전환동작/55_dash_attack_recovery.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "facing": "right",
+      "width": 1536,
+      "height": 768,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    }
+  ]
+}

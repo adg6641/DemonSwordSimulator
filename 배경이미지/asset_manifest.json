@@ -1,0 +1,280 @@
+{
+  "name": "마검사 시뮬레이터 배경과 지면",
+  "generation_method": "built-in image_gen",
+  "reference": "기존 발표·기획서의 2D 판타지 환경과 게임 진행",
+  "coordinate_origin": "top-left for preview positioning",
+  "stages": [
+    {
+      "id": "01_village",
+      "title": "마을 출발",
+      "role": "주인공의 마을과 모험의 출발점",
+      "directory": "01_마을_출발",
+      "bg": {
+        "file": "01_마을_출발/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: the peaceful starting village at morning, an isolated small medieval settlement on a wooded mountain valley. Warm cream plaster and aged oak half-timber houses with terracotta roofs arranged behind the gameplay plane, gardens, understated wooden sign brackets WITHOUT writing, little church tower, distant pale mountain silhouettes, river valley, a very distant dark castle on the far right hill as subtle narrative foreshadowing. Fresh natural sage greens, warm limestone, soft blue sky. Side-scrolling panoramic elevation with a gentle progression from village houses on the left to open wooded countryside on the right. No large foreground trees blocking characters. Keep all props behind the movement plane. A polished believable lived-in place, not a busy illustration."
+      },
+      "ground": {
+        "file": "01_마을_출발/지면.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. Make a PRODUCTION GAME TERRAIN SPRITE for an original 2D side-scrolling medieval fantasy action game, matching finely detailed restrained hand-painted pixel art, clustered pixels, natural earthy materials, not 3D and not photorealistic. One single ultra-wide horizontal ground strip on TRUE TRANSPARENT background, ideally 3072x1024, at least 3:1 aspect ratio. Camera is STRICT FRONT SIDE ELEVATION as a platformer cross section. The walkable upper surface runs perfectly horizontally at the same height across the entire canvas, approximately 22 percent down from the top. Thin visible material cap, no sloping top-down floor plane, no perspective shrinking. Terrain extends continuously from the LEFT IMAGE EDGE to the RIGHT IMAGE EDGE, with NO rounded free ends, no end caps, no gap, no pits, no stairs. Treat left and right sides as cropped continuations of a longer level. Leave the upper roughly 20 percent of the canvas genuinely empty alpha so the scene background can show through. Below the flat walking edge, carefully draw the vertical cutaway terrain face all the way to the BOTTOM EDGE. Bottom edge is intentionally cropped, not a floating island. Surface texture has fine believable wear and subtle variations, while the overall walk line stays flat. No tall plants, obstacles, pillars, people, monsters, weapons, HUD, labels, text, watermarks or backdrop. No sky, no opaque solid-color background, no shadows outside the terrain, no fake checkerboard drawn into the image. Limited small grass tufts may rise slightly above the surface only where requested. Output one isolated cutout sprite, not an atlas and not an example scene. Material for the sunny starting village: a thin worn beige compacted-earth path mixed with a few small old limestone pavers across the top, soft moss and low tiny grass only along the edge; side face is warm brown compacted soil with embedded irregular gray fieldstones, tiny roots and occasional subtle green moss. Modest natural morning light from upper left. Low saturation sage green and warm earth, no flowers sticking into the gameplay zone. Carefully textured believable walkable village verge.",
+        "transparentPixels": 303930,
+        "opaquePixels": 1
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 331,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "02_forest_edge",
+      "title": "숲 초입",
+      "role": "기본 조작과 첫 전투를 연습하는 숲길",
+      "directory": "02_숲_초입",
+      "bg": {
+        "file": "02_숲_초입/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: the forest entrance after leaving the village, late morning. Wide horizontal woodland panorama, widely spaced ancient oak trees, layers of beech saplings and muted fern undergrowth behind the gameplay plane, a modest moss-covered dry-stone boundary wall in the midground, distant glimpse of blue hills between trunks, traces of old farmland on the left gradually giving way to denser trees on the right. Dappled sunlight, natural olive and moss greens, cool desaturated distant trees. Bottom quarter subdued and clear behind a separate walking ground. No village houses, no frontmost platforms."
+      },
+      "ground": {
+        "file": "02_숲_초입/지면.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. Make a PRODUCTION GAME TERRAIN SPRITE for an original 2D side-scrolling medieval fantasy action game, matching finely detailed restrained hand-painted pixel art, clustered pixels, natural earthy materials, not 3D and not photorealistic. One single ultra-wide horizontal ground strip on TRUE TRANSPARENT background, ideally 3072x1024, at least 3:1 aspect ratio. Camera is STRICT FRONT SIDE ELEVATION as a platformer cross section. The walkable upper surface runs perfectly horizontally at the same height across the entire canvas, approximately 22 percent down from the top. Thin visible material cap, no sloping top-down floor plane, no perspective shrinking. Terrain extends continuously from the LEFT IMAGE EDGE to the RIGHT IMAGE EDGE, with NO rounded free ends, no end caps, no gap, no pits, no stairs. Treat left and right sides as cropped continuations of a longer level. Leave the upper roughly 20 percent of the canvas genuinely empty alpha so the scene background can show through. Below the flat walking edge, carefully draw the vertical cutaway terrain face all the way to the BOTTOM EDGE. Bottom edge is intentionally cropped, not a floating island. Surface texture has fine believable wear and subtle variations, while the overall walk line stays flat. No tall plants, obstacles, pillars, people, monsters, weapons, HUD, labels, text, watermarks or backdrop. No sky, no opaque solid-color background, no shadows outside the terrain, no fake checkerboard drawn into the image. Limited small grass tufts may rise slightly above the surface only where requested. Output one isolated cutout sprite, not an atlas and not an example scene. Material for a bright forest entrance: a flat compressed brown woodland path cap, intermittent short sage green grass at the front edge, cutaway rich earth with embedded small stones and delicate branching roots, a few restrained moss patches. High craft natural soil layering, not repeating obvious motifs, shaded neutral olive and earthy brown with soft daylight. No thick roots crossing above the walking line. All terrain is cropped at both sides and bottom.",
+        "transparentPixels": 450172,
+        "opaquePixels": 50
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 334,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "03_deep_forest",
+      "title": "깊은 숲과 상인",
+      "role": "상인 사건이 일어나는 해 질 녘의 공터",
+      "directory": "03_깊은숲_상인",
+      "bg": {
+        "file": "03_깊은숲_상인/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: deep forest at sunset, the injured merchant encounter clearing BEFORE any characters arrive. Ancient dark oaks framing an open horizontal clearing, a modest abandoned weathered canvas wagon parked entirely in the rear midground to the far right, one broken wheel leaning behind it, old dry-stone wall and small amber unlit lantern housings, hazy layered woods and a sliver of sunset reflected in a distant lake. Warm burnt sienna sunset above, subdued blue-green forest below. Strong visual depth, restrained light, quiet negative space across lower gameplay area. No merchant, no hero, no blood, no combat props."
+      },
+      "ground": {
+        "file": "03_깊은숲_상인/지면.png",
+        "width": 2171,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Dark ancient forest path at sunset. A thin flat compacted woodland soil surface with only low moss and scattered tiny fallen amber leaves. Vertical side shows dark cool brown soil, embedded gray slate stones and delicate old roots. Restrained amber light on the surface, deep desaturated moss-green and brown beneath. More aged and shaded than a sunny forest edge. No thick root across the walking surface, no bright colored flowers. The edges reach both sides.",
+        "transparentPixels": 553802,
+        "opaquePixels": 260
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 289,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "04_ruin_outskirts",
+      "title": "폐허 진입",
+      "role": "숲에서 제단으로 이어지는 옛 수도원 외곽",
+      "directory": "04_폐허_진입",
+      "bg": {
+        "file": "04_폐허_진입/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: the forest gives way to an abandoned medieval monastery complex at blue hour. Long panorama of weathered grey limestone arches and broken cloister walls in the midground, partially collapsed bell tower far left, moss and ivy, dark tree silhouettes beyond, a distant narrow waterfall and misty gorge visible through missing arches. Muted slate blue, moss, old ochre masonry. Beautiful aging and layered natural overgrowth. Ruins stay behind the separately rendered gameplay platform. No centered perspective path or wide ground plane. Broad low-contrast lower band."
+      },
+      "ground": {
+        "file": "04_폐허_진입/지면.png",
+        "width": 2171,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Walkway through ruined medieval cloister outskirts. Flat horizontal cap of worn irregular gray limestone paving slabs, fine muted moss in seams, tiny chips but no gaps. Below: a solid vertical cutaway of old block masonry with sparse ivy, weathered mortar, small embedded stones at the base. Neutral cool gray with subtle blue twilight shadows, quiet green moss and worn edges. More constructed stone than dirt. No archway gaps or background showing through in this strip. No loose large obstacles on top.",
+        "transparentPixels": 595504,
+        "opaquePixels": 6
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 264,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "05_ancient_altar",
+      "title": "고대 제단",
+      "role": "정화와 흡수의 선택이 일어나는 성소",
+      "directory": "05_고대_제단",
+      "bg": {
+        "file": "05_고대_제단/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: the ancient altar inside a ruined forest sanctuary, a contemplative dangerous story-choice stage. Deep ruined stone sanctuary seen SIDE ON, a small worn altar in the background slightly right of center, damaged pointed arches and rib vaults above, ivy entering the broken roof, pale moonlight filtering between trees beyond the roof, an old stone relief of a sword as a weathered architectural carving, NOT a glowing weapon. Tiny restrained violet light only inside a hairline altar fissure, mostly natural slate stone, dusty sage plants and candle ochre. Pillars recede horizontally behind the gameplay band. Bottom quarter quiet shadowed masonry, no foreground steps or standing platform. Detailed restrained pixel art, serious and believable."
+      },
+      "ground": {
+        "file": "05_고대_제단/지면.png",
+        "width": 2171,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Ground of a ruined ancient altar sanctuary at moonlit blue hour: an absolutely flat cap of worn cool gray slate and limestone floor slabs, shallow old cracks but intact continuous walking line. Vertical face of dark antique dressed stone blocks, a narrow eroded geometric carved frieze below the top, scant moss in seams, tiny root strands lower down. Cool slate gray and muted blue shadows with a trace of warm candle reflection, low saturation. No glowing runes, no stairs, no large rubble, no vivid trim. Carefully aged stone, richer carving than the exterior ruin walkway.",
+        "transparentPixels": 667251,
+        "opaquePixels": 32
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 245,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "06_castle_gate",
+      "title": "마왕성 성문",
+      "role": "마왕의 전령과 만나는 성문 앞 구간",
+      "directory": "06_마왕성_성문",
+      "bg": {
+        "file": "06_마왕성_성문/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: the approach to the demon king's castle where the herald confrontation occurs, viewed perfectly side-on as an ultrawide castle exterior backdrop. Monumental weathered gothic gatehouse slightly right of center, fortress curtain walls stretching horizontally, layered narrow spires above, a ravine and slate mountains visible behind, sparse dead trees and thin ivy clinging to old stone, muted dark burgundy hanging banners with abstract plain markings and NO readable text. Desaturated stormy indigo twilight, a few distant candle windows, no lava, no glowing magical barriers. Lower quarter is calm distant stone wall shadow, a separate foreground bridge platform will cover this band. Architecture should feel large but never like a 3D rendered castle. Quiet ominous transition to finale."
+      },
+      "ground": {
+        "file": "06_마왕성_성문/지면.png",
+        "width": 2170,
+        "height": 725,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. A production GAME TERRAIN SPRITE for a 2D side-scrolling medieval fantasy action game, premium restrained hand-painted pixel art with coherent clustered pixels and finely detailed natural materials. Strict FRONT SIDE ELEVATION cross section. One ultrawide horizontal strip, 3:1 canvas approximately 2172x724. TRUE TRANSPARENT background in upper 25 percent. Flat walkable upper surface at a CONSTANT height near y=220, a thin visible top cap only, no top-down floor plane. Earth or masonry fills the area below the walking line to the bottom edge. Terrain must be CROPPED CONTINUOUSLY at left and right and bottom image edges, no isolated free ends, no floating island, no gaps, no pits, no slopes, no steps. Small surface details may rise a few pixels. Believable restrained textures, no people, animals, monsters, weapons, interface, symbols, writing, scenery or sky. No opaque background, no drawn checkerboard, no colored matte fringes. Not 3D, not isometric, not photorealistic. Asset only, no example game screen. Ground of a fortress approach bridge at stormy dusk. Flat cap of broad weathered charcoal-gray paving stones, chipped slab front edges at the SAME walk height. Below: a sturdy vertical masonry bridge face with chunky old stone courses, subtle buttress joints and very shallow recessed pointed-arch reliefs, muted ivy at the lower edge, no actual open arch holes. Cold gray granite, desaturated blue-violet shadows, restrained natural wear, no bright flowers or snow. Catches only dim twilight; avoid bright white stone. Flat uninterrupted walking surface, no railing or objects above it.",
+        "transparentPixels": 493513,
+        "opaquePixels": 43
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 321,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "07_castle_gallery",
+      "title": "마왕성 회랑",
+      "role": "최종 결전 직전의 성 내부",
+      "directory": "07_마왕성_회랑",
+      "bg": {
+        "file": "07_마왕성_회랑/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. Scene: the interior gallery before the final boss chamber, a long SIDE ON gothic castle hall. A rhythm of tall stone pointed arches and narrow traceried windows revealing a distant misty city and mountains at twilight, layered columns, worn wall niches, modest iron candle sconces, faded burgundy tapestries and dust-softened carved masonry. A closed tall door at the far right suggests the throne room beyond. Cool charcoal and slate-violet stone with tiny warm candle accents. The foreground is entirely absent; the lower quarter is dark rear wall and shadow, ready for a separate stone platform. No visible top-down floor, no receding corridor toward the horizon, no monsters, no statues resembling living characters."
+      },
+      "ground": {
+        "file": "07_마왕성_회랑/지면.png",
+        "width": 2171,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. Create an original production terrain cutout for a premium 2D side-scrolling medieval fantasy action game. Beautiful finely detailed restrained hand-painted pixel art with coherent clustered pixels, not 3D, not isometric, not photorealistic. Strict FRONT SIDE ELEVATION. One continuous ultrawide horizontal ground strip on TRUE TRANSPARENCY, 3:1 canvas approximately 2172x724. The walkable top is a PERFECTLY HORIZONTAL thin slab cap at approximately y=220, with empty alpha above it. The vertical terrain face fills the entire rest of the image to the bottom. Left, right and bottom are cropped continuations of a larger level, no free ends, no floating island, no gaps, no pits, no stairs, no perspective floor plane. Match dim natural castle twilight lighting and low saturation. No people, monsters, weapons, scene background, HUD, text, symbols or watermarks, no opaque matte, no fake checkerboard, no colored cutout fringes. This is an asset on genuine transparent background, NOT a complete gameplay screenshot. Nothing should protrude high above the flat walking surface. A narrow long castle-gallery stone platform. Worn flat dark gray limestone paving, subtle thin bevels catching a little cold window light. Below the cap: deep charcoal masonry with a small antique Gothic molding band, regular weathered stone courses, restrained carved pointed-arch relief patterns and dark old mortar. Sparse old wear, no mossy garden and no glowing ornament. Upper edge clearly readable but not bright white, a dim warm candle reflection here and there. Intact continuous walkway, all detail confined below the walking line.",
+        "transparentPixels": 659796,
+        "opaquePixels": 1710
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 254,
+        "approximateWalkingY": 560
+      }
+    },
+    {
+      "id": "08_throne_boss",
+      "title": "최종 보스 왕좌",
+      "role": "마왕과 마지막 결전을 벌이는 전장",
+      "directory": "08_최종보스_왕좌",
+      "bg": {
+        "file": "08_최종보스_왕좌/뒷배경.png",
+        "width": 2172,
+        "height": 724,
+        "alpha": false,
+        "prompt": "Use case: stylized-concept. Deliverable: an original production 2D side-scrolling dark medieval fantasy game environment for Demon Sword Simulator. Premium detailed hand-painted pixel art with crisp clustered pixels and controlled texture, restrained natural color and atmospheric depth, matching an earthy medieval village / dusky forest / ruined gothic castle art direction. NOT 3D, NOT isometric, NOT top-down, NOT a painting with brush smears. Strict side elevation camera at character eye height, no perspective road leading into the center, no camera roll. Ultrawide horizontal canvas approximately 3:1, ideally 3072x1024. One continuous environment fills the image, not panels, not a sprite contact sheet. No people, no hero, no monsters, no weapons, no HUD, no text, no UI, no logos, no borders. This is ONLY THE BACKGROUND LAYER. No foreground walkable platform, no cutaway soil strip, no foreground railing crossing the lower gameplay band. Leave the lower quarter calm and visually unobstructed for a separately drawn foreground platform and moving characters. Architecture can continue behind this area. Keep distant detail lower in contrast and saturation, readable layered depth, softly unified lighting, detailed but quiet. Avoid intense bloom, neon, particles and excessive clutter. FINAL BOSS MASTER BACKGROUND: spend exceptional care on the architectural composition and tiny coherent material details. A vast ruined gothic throne cathedral inside the demon king's fortress, very wide SIDE ELEVATION environment, monumental scale, no characters. A haunting central-right recessed throne backed by a huge weathered HOODED STONE ARCHITECTURAL RELIEF, completely inanimate, folds eroded and stone chipped; slender clustered stone columns, ribs and elaborate tracery; shattered tall pointed windows across the left and right sides showing distant layered castle spires under a muted mauve dusk sky; aged iron chains hanging high above gameplay, long faded deep burgundy banners, small groups of warm real candles on rear-wall ledges; exposed old masonry, restrained dust and subtle shafts of cold moonlight. Main focal point above the right half, broad quiet battle space across the entire lower third. The environment feels imposing and crafted, with foreground/middle/distant contrast separation, but no busy noisy details where player or boss will fight. No neon magic, no lava, no excessive fog, no effects, no huge red glowing sigils, no big spikes on floor. NO BOSS, NO HERO, NO HUD, NO HEALTH BARS. Only background architecture; a matching separate horizontal ground strip will be composited below. Premium original dark fantasy pixel-art environment with beautiful structural precision, highest detail of the set, very carefully unified lighting, not photorealistic and not a 3D render."
+      },
+      "ground": {
+        "file": "08_최종보스_왕좌/지면.png",
+        "width": 2171,
+        "height": 724,
+        "alpha": true,
+        "prompt": "Use case: stylized-concept. Create an original production terrain cutout for a premium 2D side-scrolling medieval fantasy action game. Beautiful finely detailed restrained hand-painted pixel art with coherent clustered pixels, not 3D, not isometric, not photorealistic. Strict FRONT SIDE ELEVATION. One continuous ultrawide horizontal ground strip on TRUE TRANSPARENCY, 3:1 canvas approximately 2172x724. The walkable top is a PERFECTLY HORIZONTAL thin slab cap at approximately y=220, with empty alpha above it. The vertical terrain face fills the entire rest of the image to the bottom. Left, right and bottom are cropped continuations of a larger level, no free ends, no floating island, no gaps, no pits, no stairs, no perspective floor plane. Match dim natural castle twilight lighting and low saturation. No people, monsters, weapons, scene background, HUD, text, symbols or watermarks, no opaque matte, no fake checkerboard, no colored cutout fringes. This is an asset on genuine transparent background, NOT a complete gameplay screenshot. Nothing should protrude high above the flat walking surface. FINAL BOSS ARENA MASTER TERRAIN, exceptional craft and detail matching a monumental ruined gothic throne cathedral. Long heavy dark granite battle dais, a broad flat continuous walkable cap with carefully worn slab joints, chipping and fine hairline cracks but no broken gaps. Beneath the edge: a finely eroded double Gothic molding, pointed arch carvings and royal stone relief panels with restrained aged bronze inlays; a few narrow faded burgundy cloth fragments hang down on the FRONT FACE ONLY and never over the walking surface; deep antique stone blocks and subtle cold violet shadows, small quiet amber reflected candle light. More ceremonial and richer material detail than any previous walkway, while retaining natural worn textures, low saturation and very clean gameplay silhouette. No active glowing runes, no spikes, no braziers above the floor, no rubble obstacles. Continuous sturdy level strip touching both image side edges and the bottom edge.",
+        "transparentPixels": 644580,
+        "opaquePixels": 250
+      },
+      "preview": {
+        "backgroundSize": [
+          2160,
+          720
+        ],
+        "groundSize": [
+          2160,
+          720
+        ],
+        "groundTopOffset": 258,
+        "approximateWalkingY": 560
+      }
+    }
+  ]
+}

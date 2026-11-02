@@ -1,0 +1,16 @@
+# 운영체제와 편집기 임시 파일
+Thumbs.db
+Desktop.ini
+.DS_Store
+~$*
+*.tmp
+
+# 이후 Python 개발 시 생성되는 파일
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# 개인별 VS Code 상태
+.vscode/

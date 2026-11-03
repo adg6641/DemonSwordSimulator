@@ -19,14 +19,22 @@ class Animation:
         self.clips = {clip['id']: clip for clip in data['clips']}
         self.images = {}
         self.name = ''
+        self.serial = 0
         self.play('idle_breathe')
 
     def play(self, name, *, fps=None, once=False):
         self.name = name
+        self.serial += 1
         self.clip = self.clips[name]
         self.fps = fps or self.clip['fps']
         self.loop = self.clip['playback'] == 'loop' and not once
         self.elapsed = 0.0
+
+    @property
+    def frame(self):
+        count = self.clip['frameCount']
+        frame = int(self.elapsed * self.fps)
+        return frame % count if self.loop else min(frame, count - 1)
 
     @property
     def duration(self):
@@ -42,9 +50,7 @@ class Animation:
     def draw(self, x, y, facing, camera, scale=1.0):
         if self.name not in self.images:
             self.images[self.name] = load_pixel_image(self.folder / self.clip['file'])
-        count = self.clip['frameCount']
-        frame = int(self.elapsed * self.fps)
-        frame = frame % count if self.loop else min(frame, count - 1)
+        frame = self.frame
         cell = self.clip['frames'][frame]
         width, height = cell['width'], cell['height']
         pivot = self.clip['pivot']

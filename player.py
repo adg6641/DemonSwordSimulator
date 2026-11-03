@@ -8,6 +8,7 @@ from pico2d import (
 )
 
 from animation import Animation
+from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
@@ -39,6 +40,9 @@ class Player:
 
     def __init__(self, sprite_folder):
         self.animation = Animation(sprite_folder)
+        self.effects = CombatEffects(sprite_folder.parent / 'effects')
+        self.hp = 100
+        self.invulnerable = 0.0
         self.x, self.y, self.vy = 220.0, 0.0, 0.0
         self.facing = 1
         self.mode = 'free'
@@ -63,7 +67,21 @@ class Player:
         self.followups = deque(followups)
         self.animation.play(clip)
 
+    def take_damage(self, amount):
+        if self.mode == 'dead' or self.invulnerable > 0:
+            return
+        damage = max(1, round(amount * .25)) if self.mode == 'guard' else max(0, amount)
+        self.hp = max(0, self.hp - damage)
+        self.invulnerable = .65
+        self.effects.buff_remaining = 0.0
+        self.dash_attack_remaining = 0.0
+        self.followups.clear()
+        self.mode, self.gait = ('dead' if self.hp == 0 else 'hurt'), None
+        self.animation.play('death' if self.hp == 0 else 'hurt')
+
     def press(self, key, keys):
+        if self.mode in {'hurt', 'dead'}:
+            return
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if self.mode == 'free' and direction:
             self.facing = direction
@@ -150,8 +168,12 @@ class Player:
             else:
                 self.mode = 'free'
         elif self.mode == 'magic':
-            if anim.finished and SDLK_z not in keys:
+            if anim.finished:
+                # 집중을 마치면 5초 동안 기본 베기마다 마검파를 발사한다.
+                self.effects.activate()
                 self._action('magic_release', 'magic_recovery')
+        elif self.mode == 'hurt' and anim.finished:
+            self.mode = 'free'
         elif self.mode == 'guard':
             if SDLK_x not in keys and anim.name != 'guard_lower':
                 anim.play('guard_lower')
@@ -187,6 +209,7 @@ class Player:
         # Shift를 누르는 동안 대시 후 C 연결을 유지하고, 놓아도 잠깐의 여유를 준다.
         if not keys & SHIFT:
             self.dash_attack_remaining = max(0.0, self.dash_attack_remaining - dt)
+        self.invulnerable = max(0.0, self.invulnerable - dt)
         self.animation.update(dt)
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if direction and direction == self.previous_direction:
@@ -234,9 +257,13 @@ class Player:
             keep_dash_attack = self.mode == 'action' and self.animation.name in {
                 'dash_slash', 'dash_attack_recovery',
             }
-            if airborne and not keep_dash_attack:
+            if airborne and not keep_dash_attack and self.mode not in {'hurt', 'dead'}:
                 landing = 'air_attack_land' if self.animation.name == 'air_slash' else 'land_soft'
                 self._action(landing)
 
+        self.effects.update(dt, self)
+
     def draw(self, camera):
         self.animation.draw(self.x, self.y, self.facing, camera)
+        self.effects.draw_aura(self, camera)
+        self.effects.draw(self, camera)

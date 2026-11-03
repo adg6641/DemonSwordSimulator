@@ -4,7 +4,7 @@ from pathlib import Path
 from time import perf_counter
 
 from pico2d import (
-    SDL_KEYDOWN, SDL_KEYUP, SDL_QUIT, SDL_GetKeyboardFocus, SDLK_ESCAPE, SDLK_1, SDLK_8,
+    SDL_KEYDOWN, SDL_KEYUP, SDL_QUIT, SDL_GetKeyboardFocus, SDLK_ESCAPE, SDLK_1, SDLK_8, SDLK_F1, SDLK_F7,
     open_canvas, close_canvas, clear_canvas, update_canvas, get_events,
 )
 
@@ -21,8 +21,8 @@ def main():
     open_canvas(WIDTH, HEIGHT, sync=True)
     player = world = None
     try:
-        world = World(ROOT / '배경이미지', WIDTH)
-        player = Player(ROOT / '마검사_주인공_애니메이션')
+        world = World(ROOT / 'assets/world', WIDTH)
+        player = Player(ROOT / 'assets/hero')
         camera = Camera(WIDTH, HEIGHT)
         camera.follow(player, world.width, snap=True)
         keys = set()
@@ -40,9 +40,11 @@ def main():
                 elif event.type == SDL_KEYDOWN:
                     if event.key == SDLK_ESCAPE:
                         running = False
+                    elif SDLK_F1 <= event.key <= SDLK_F7:
+                        player.effects.level = event.key - SDLK_F1 + 1
                     elif SDLK_1 <= event.key <= SDLK_8:
                         world.set_stage(event.key - SDLK_1)
-                        player = Player(ROOT / '마검사_주인공_애니메이션')
+                        player = Player(ROOT / 'assets/hero')
                         keys.clear()
                         accumulated = 0.0
                         camera.follow(player, world.width, snap=True)

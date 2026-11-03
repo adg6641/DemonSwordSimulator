@@ -2553,101 +2553,6 @@
       ]
     },
     {
-      "id": "hurt",
-      "label": "가벼운 피격",
-      "folder": "03_방어와피격",
-      "fps": 28,
-      "playback": "once",
-      "motion": "non-graphic light hit reaction: neutral, shoulders jolt backward, head leans back, front knee buckles, cloak follows, torso recoils, head returns forward, finish slight backward stagger with sword low; no blood or flashes",
-      "index": 23,
-      "file": "03_방어와피격/23_hurt.png",
-      "frameCount": 8,
-      "columns": 4,
-      "rows": 2,
-      "frameWidth": 384,
-      "frameHeight": 384,
-      "pivot": {
-        "x": 192,
-        "y": 320
-      },
-      "facing": "right",
-      "width": 1536,
-      "height": 768,
-      "frames": [
-        {
-          "index": 0,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 1,
-          "x": 384,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.9607
-        },
-        {
-          "index": 2,
-          "x": 768,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.9379
-        },
-        {
-          "index": 3,
-          "x": 1152,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.9199
-        },
-        {
-          "index": 4,
-          "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.921
-        },
-        {
-          "index": 5,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.919
-        },
-        {
-          "index": 6,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.9272
-        },
-        {
-          "index": 7,
-          "x": 1152,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.9802
-        }
-      ]
-    },
-    {
       "id": "knockdown",
       "label": "넘어짐",
       "folder": "03_방어와피격",
@@ -2739,95 +2644,6 @@
           "width": 384,
           "height": 384,
           "renderScale": 0.9995
-        }
-      ]
-    },
-    {
-      "id": "death",
-      "label": "쓰러져 패배",
-      "folder": "03_방어와피격",
-      "fps": 12,
-      "playback": "hold",
-      "motion": "non-graphic defeat animation: neutral exhausted, knees soften, shoulders slump, drop to one knee, head lowers, elbow reaches floor, torso slumps onto side, lie still with sword beside hand; no blood no disintegration",
-      "index": 25,
-      "file": "03_방어와피격/25_death.png",
-      "frameCount": 8,
-      "columns": 4,
-      "rows": 2,
-      "frameWidth": 384,
-      "frameHeight": 384,
-      "pivot": {
-        "x": 192,
-        "y": 320
-      },
-      "facing": "right",
-      "width": 1536,
-      "height": 768,
-      "frames": [
-        {
-          "index": 0,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384,
-          "renderScale": 0.9802
-        },
-        {
-          "index": 1,
-          "x": 384,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 2,
-          "x": 768,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 3,
-          "x": 1152,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 4,
-          "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 5,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 6,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 7,
-          "x": 1152,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
         }
       ]
     },
@@ -5579,6 +5395,248 @@
           "index": 7,
           "x": 1152,
           "yTop": 384,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "hurt",
+      "label": "피격 후 자세 회복",
+      "file": "03_방어와피격/hurt_latest.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "width": 1536,
+      "height": 1152,
+      "fps": 20,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "sha256": "4674ef97745a520d7d9ea5f788df186bea731c9bc61d5562c22c1d2afc2c3989",
+      "kind": "character",
+      "motion": "hurt",
+      "playback": "once",
+      "packingScale": 0.7183098591549296,
+      "standingHeight": 153,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "id": "death",
+      "label": "HP 0 · 쓰러짐",
+      "file": "03_방어와피격/death_latest.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 384,
+      "frameHeight": 384,
+      "width": 1536,
+      "height": 1152,
+      "fps": 14,
+      "pivot": {
+        "x": 192,
+        "y": 320
+      },
+      "sha256": "36c8328393b5216af9f269c84aa921dec1f381b21944296b3837dad9fad307a0",
+      "kind": "character",
+      "motion": "death",
+      "playback": "hold",
+      "packingScale": 0.6023622047244095,
+      "standingHeight": 153,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 1,
+          "x": 384,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 2,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 3,
+          "x": 1152,
+          "yTop": 0,
+          "pico2dY": 768,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 5,
+          "x": 384,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 6,
+          "x": 768,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 7,
+          "x": 1152,
+          "yTop": 384,
+          "pico2dY": 384,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 9,
+          "x": 384,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 10,
+          "x": 768,
+          "yTop": 768,
+          "pico2dY": 0,
+          "width": 384,
+          "height": 384
+        },
+        {
+          "index": 11,
+          "x": 1152,
+          "yTop": 768,
           "pico2dY": 0,
           "width": 384,
           "height": 384

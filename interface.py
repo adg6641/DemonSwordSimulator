@@ -2,14 +2,14 @@
 
 from ctypes import byref, c_int
 import json
-from math import sin
 from pathlib import Path
 
 import pico2d.pico2d as engine
 from pico2d import (load_font, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderFillRect,
-                    SDL_RenderDrawRect, SDL_SetRenderDrawBlendMode, SDL_BLENDMODE_BLEND, TTF_SizeUTF8)
+                    SDL_RenderDrawRect, SDL_SetRenderDrawBlendMode, SDL_BLENDMODE_BLEND, TTF_SizeUTF8, SDL_SetTextureColorMod)
 
 from animation import load_pixel_image
+from scene_layout import sword_layout, socket_layout, smoke_sites
 
 
 def fill(x, y, width, height, color):
@@ -26,11 +26,18 @@ class Interface:
         font = Path('C:/Windows/Fonts/malgun.ttf')
         bold = Path('C:/Windows/Fonts/malgunbd.ttf')
         self.fonts = {size: load_font(str(bold if size >= 30 else font), size) for size in (16, 18, 20, 22, 26, 34, 48, 76)}
-        self.background = load_pixel_image(assets / 'ui/menu_plate.png')
+        self.background = load_pixel_image(assets / 'ui/menu_background.png')
         self.book = load_pixel_image(assets / 'ui/controls_book.png')
         data = json.loads((assets / 'cinematic/cinematic.json').read_text(encoding='utf8'))
-        self.surge_clip = data['assets']['dark_surge']
-        self.surge = load_pixel_image(assets / 'cinematic' / self.surge_clip['file'])
+        self.layout = data['menuLayout']
+        self.weapon = data['assets']['black_sword']
+        self.socket = data['assets']['soil_socket']
+        self.smoke = data['assets']['menu_smoke']
+        self.sword_image = load_pixel_image(assets / 'cinematic' / self.weapon['file'])
+        self.socket_image = load_pixel_image(assets / 'cinematic' / self.socket['file'])
+        self.smoke_image = load_pixel_image(assets / 'ui' / self.smoke['file'])
+        SDL_SetTextureColorMod(self.sword_image.texture, *self.layout['swordTint'])
+        SDL_SetTextureColorMod(self.socket_image.texture, *self.layout['socketTint'])
         self.time = 0.0
 
     def text(self, value, x, y, size=22, color=(233, 229, 239), center=False):
@@ -51,19 +58,33 @@ class Interface:
                 return i
         return None
 
-    def _storm(self, phase, x, y, width, alpha, flip=''):
-        clip = self.surge_clip
-        frame = clip['frames'][int(self.time * 13 + phase) % len(clip['frames'])]
-        self.surge.opacify(alpha)
-        self.surge.clip_composite_draw(frame['x'], self.surge.h - frame['y'] - frame['h'],
-            frame['w'], frame['h'], 0, flip, x, y, width, width)
-        self.surge.opacify(1.0)
+    @staticmethod
+    def _piece(image, geometry):
+        x0, y0, x1, y1 = geometry['crop']
+        image.clip_draw(round(x0), image.h - round(y1), round(x1 - x0), round(y1 - y0),
+            round(geometry['left'] + geometry['width'] / 2),
+            round(720 - geometry['top'] - geometry['height'] / 2),
+            round(geometry['width']), round(geometry['height']))
+
+    def _blade_smoke(self, geometry):
+        sites = smoke_sites(geometry, self.layout['bladeEmitters'])
+        sites.append(geometry['ground'])
+        for i, (x, y) in enumerate(sites):
+            frame = self.smoke['frames'][(int(self.time * self.smoke['fps']) + i * 3) % self.smoke['frameCount']]
+            scale = self.layout['socketSmokeScale'] if i == len(sites) - 1 else self.layout['smokeScale']
+            ox, oy = self.smoke['emitter']
+            self.smoke_image.opacify(self.layout['smokeOpacity'])
+            self._piece(self.smoke_image, {'crop': (frame['x'], frame['y'], frame['x'] + frame['w'], frame['y'] + frame['h']),
+                'left': x - ox * scale, 'top': y - oy * scale, 'width': frame['w'] * scale, 'height': frame['h'] * scale})
+        self.smoke_image.opacify(1.0)
 
     def draw_menu(self, selected):
-        zoom = 1.025 + .006 * sin(self.time * .38)
-        self.background.draw(640 + sin(self.time * .22) * 5, 360, 1280 * zoom, 720 * zoom)
-        self._storm(4, 940, 360, 1280, .22 + .035 * sin(self.time * .9))
-        self._storm(10, 1220, 300, 1100, .10, 'h')
+        self.background.draw(640, 360, 1280, 720)
+        geometry = sword_layout(self.weapon, self.layout)
+        self._piece(self.socket_image, socket_layout(self.socket, self.layout))
+        self._piece(self.sword_image, geometry)
+        self._piece(self.socket_image, socket_layout(self.socket, self.layout, front=True))
+        self._blade_smoke(geometry)
         for x in range(0, 660, 20):
             fill(x, 0, 20, 720, (5, 8, 16, round(85 * (1 - x / 660) ** 2)))
         self.text('DEMON SWORD', 122, 619, 18, (166, 151, 190))

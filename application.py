@@ -125,7 +125,6 @@ class GameApplication:
             fill(0, 0, 1280, 720, (0, 0, 0, 255))
         elif self.state == 'intro':
             self.video.draw()
-            self.ui.text('Enter · 건너뛰기', 1122, 28, 16, (180, 176, 187))
         elif self.state == 'menu':
             self.ui.draw_menu(self.selected)
             if self.elapsed < .7:

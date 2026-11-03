@@ -24,424 +24,6 @@
       "generationMethod": "built-in image_gen",
       "sha256": "b8e7251a46847f753251546775f85b04c81d63c379ebd2d4ec1208cff95cf826"
     },
-    "walk_unarmed": {
-      "file": "walk_unarmed.png",
-      "width": 1448,
-      "height": 1086,
-      "prompt": "Original 2D dark medieval fantasy game cinematic, high quality hand-painted PIXEL ART with crisp deliberate pixel clusters, earthy medieval palette, atmospheric depth, cinematic lighting and material detail. NOT 3D, not photorealistic, not smooth vector. No captions, words, logos, watermark or UI. Input is exact HERO IDENTITY. SAME brown-haired adolescent boy, navy-blue short scarf/cape, dark charcoal tunic, gray trousers, brown leather gloves/belt/boots, identical proportions/colors/head size. ONLY change REMOVE sword, hands EMPTY. Production animation sprite sheet exactly TWELVE consecutive unarmed casual walking frames facing RIGHT, equal4columns by3rows grid, landscape4:3 canvas ideally1536x1152, equal square cells. True RGBA transparency around each isolated fullbody. Fixed same-size character and feet ground baseline at84percent cellheight, fixed hip around cellcenter. Comfortable alternating steps, both legs crossing, heel landing/toe push-off, gentle arm swing/cape follow-through, seamless frame12 to1. Body bounce under2percent, NO scale/costume changes. Crisp outlines, modest pixel resolution like reference but clearer cinematic detail. Full head/body/boots/cape always inside cell with12percent margins. NO sword/floor/shadow/text/numbers/borders/gridlines. One character percell, no extra frames.",
-      "generationMethod": "built-in image_gen",
-      "sha256": "bf95d19e31056a066db6abf84012c656497422a33dd6b39e59c1467db268c4f5",
-      "columns": 4,
-      "rows": 3,
-      "frameCount": 12,
-      "frames": [
-        {
-          "x": 0,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            59,
-            27,
-            292,
-            328
-          ]
-        },
-        {
-          "x": 362,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            57,
-            27,
-            280,
-            328
-          ]
-        },
-        {
-          "x": 724,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            57,
-            27,
-            280,
-            328
-          ]
-        },
-        {
-          "x": 1086,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            56,
-            27,
-            295,
-            328
-          ]
-        },
-        {
-          "x": 0,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            56,
-            28,
-            295,
-            330
-          ]
-        },
-        {
-          "x": 362,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            56,
-            28,
-            280,
-            330
-          ]
-        },
-        {
-          "x": 724,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            57,
-            28,
-            280,
-            330
-          ]
-        },
-        {
-          "x": 1086,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            55,
-            28,
-            314,
-            330
-          ]
-        },
-        {
-          "x": 0,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            55,
-            28,
-            305,
-            330
-          ]
-        },
-        {
-          "x": 362,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            57,
-            29,
-            280,
-            330
-          ]
-        },
-        {
-          "x": 724,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            57,
-            28,
-            284,
-            330
-          ]
-        },
-        {
-          "x": 1086,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            331.0
-          ],
-          "bounds": [
-            55,
-            29,
-            280,
-            330
-          ]
-        }
-      ]
-    },
-    "pull_sword": {
-      "file": "pull_sword.png",
-      "width": 1448,
-      "height": 1086,
-      "prompt": "Original 2D dark medieval fantasy game cinematic, high quality hand-painted PIXEL ART with crisp deliberate pixel clusters, earthy medieval palette, atmospheric depth, cinematic lighting and material detail. NOT 3D, not photorealistic, not smooth vector. No captions, words, logos, watermark or UI. Input is exact HERO IDENTITY and slim near-black violet-edged sword design. SAME adolescent boy, messy brown hair, navy scarf/cape, charcoal tunic, gray trousers, brown gloves/boots, stable head/body proportions. 12-frame cinematic acting sheet EXACT equal4columns by3rows landscape4:3 canvas, squarecells. Facing RIGHT, fixed camera/scale/bootbaseline at84percent cellheight. Frame1 standing looking down at sword;2-3 crouch leaning reaching;4-5 both hands grasp dark sword hilt;6-8 bracing boots leaning back pulling hard UPWARD with strained effort;9 blade breaks free;10-12 boy rises holding freed slim straight BLACK sword with thin violet edge UPRIGHT, surprised and slightly recoiling. SAME single sword in each cell (embedded tip low frames1-8, raised free9-12), no extra sword. Clearly distinct sequential body motion, believable elbows/twohands. Lastpose not attack. Wholehead/hands/weapon/cape/boots inside EACH cell withwidepadding, raisedblade mustfit. ONLY boy and sword on TRUE TRANSPARENT RGBA; NO ground/rocks/shadows/smokeFX/labels/numbers/grid. Redraw consistent hero poses.",
-      "generationMethod": "built-in image_gen",
-      "sha256": "7ac225d399b499d960e766354eef286a137145efe8a6a1577404942fc130b217",
-      "columns": 4,
-      "rows": 3,
-      "frameCount": 12,
-      "frames": [
-        {
-          "x": 0,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            47,
-            32,
-            314,
-            328
-          ]
-        },
-        {
-          "x": 362,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            43,
-            53,
-            307,
-            328
-          ]
-        },
-        {
-          "x": 724,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            46,
-            86,
-            308,
-            328
-          ]
-        },
-        {
-          "x": 1086,
-          "y": 0,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            46,
-            108,
-            310,
-            328
-          ]
-        },
-        {
-          "x": 0,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            328.0
-          ],
-          "bounds": [
-            51,
-            114,
-            309,
-            328
-          ]
-        },
-        {
-          "x": 362,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            43,
-            79,
-            309,
-            328
-          ]
-        },
-        {
-          "x": 724,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            38,
-            49,
-            310,
-            328
-          ]
-        },
-        {
-          "x": 1086,
-          "y": 362,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            329.0
-          ],
-          "bounds": [
-            23,
-            33,
-            309,
-            328
-          ]
-        },
-        {
-          "x": 0,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            350.0
-          ],
-          "bounds": [
-            22,
-            53,
-            300,
-            349
-          ]
-        },
-        {
-          "x": 362,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            350.0
-          ],
-          "bounds": [
-            26,
-            56,
-            275,
-            349
-          ]
-        },
-        {
-          "x": 724,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            350.0
-          ],
-          "bounds": [
-            38,
-            33,
-            258,
-            349
-          ]
-        },
-        {
-          "x": 1086,
-          "y": 724,
-          "w": 362,
-          "h": 362,
-          "pivot": [
-            188.24,
-            350.0
-          ],
-          "bounds": [
-            37,
-            9,
-            250,
-            349
-          ]
-        }
-      ]
-    },
-    "sword_prop": {
-      "file": "sword_prop.png",
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Original premium 2D dark medieval fantasy, beautiful detailed hand-painted PIXEL ART, crisp deliberate pixel clusters and controlled textures, cinematic light, not3D/notphotoreal/notvector. No words, numbers, logos, watermark or UI. Reference shows the exact slender BLACK SWORD with a thin muted VIOLET cutting edge; draw ONLY that one sword, larger detailed cinematic prop. Plain dark narrow straight blade, dark simple short crossguard, wrapped black grip, small dark diamond pommel, no giant greatsword. Whole single sword centered on TRUE RGBA transparent canvas with generous20percent margin on all sides. Hilt upper left, tip lower right in natural45degree diagonal, not bent. No hand/character/ground/shadow/smoke or other objects. High readability, precise consistent silhouette. This single prop is planted tip-first diagonally into roadside soil, but DO NOT draw soil.",
-      "generationMethod": "built-in image_gen",
-      "sha256": "c1e6cfffad568b86e7d6623e6b865135ca576cd2bfed3b7a833e31e6945de67b"
-    },
     "dark_surge": {
       "file": "dark_surge.png",
       "width": 1254,
@@ -711,14 +293,6 @@
         }
       ]
     },
-    "menu_plate": {
-      "file": "menu_plate.png",
-      "width": 1672,
-      "height": 941,
-      "prompt": "Original premium 2D dark medieval fantasy, beautiful detailed hand-painted PIXEL ART, crisp deliberate pixel clusters and controlled textures, cinematic light, not3D/notphotoreal/notvector. No words, numbers, logos, watermark or UI. Image1 reference for black/violet slim sword ONLY, image2 woodland/village world reference. SINGLE widescreen16:9 cinematic TITLE SCREEN background with NO TEXT. The sword embedded in cracked black roadside stone at x62percent, huge in foreground angled slightly, recognizable narrow black blade, small darkcrossguard/grip. Towering shadowy BLACK MAGIC AURA curls upward around blade like ash and ink in air and spreads subtly to ALL FOUR SCREEN EDGES, restrained mutedviolet rimlight reveals sculptural smoke in darkblue/charcoal. Distant same medieval village and forest now dusk/overcast faint in background. Low camera looking up at sword with dramatic depth and moody rim light, floating ash tiny, exquisite pixel-art atmosphere, no overbrightbloom. LEFT40percent deliberately dark calm negative space for game title and three menu buttons, no objects covering left text zone. Whole scene fills frame. No hero, no enemy, no lettering, no labels, no UI.",
-      "generationMethod": "built-in image_gen",
-      "sha256": "bf75247a3ddd824619f795c08b12c7dbef27f96ba3fc352964f5bbb5581a41d6"
-    },
     "controls_book": {
       "file": "controls_book.png",
       "width": 1672,
@@ -726,14 +300,6 @@
       "prompt": "Original premium 2D dark medieval fantasy, beautiful detailed hand-painted PIXEL ART, crisp deliberate pixel clusters and controlled textures, cinematic light, not3D/notphotoreal/notvector. No words, numbers, logos, watermark or UI. SINGLE widescreen16:9 illustration for game's readable controls page: a huge OPEN aged medieval leatherbound book laid almost flat on dark wood desk, viewed close from near straight-on overhead so BOTH facing parchment pages form LARGE FLAT CLEAR rectangles. Book fills about88percent frame width and82percent height, centered, pageleft x16-46percent and pageright x54-84percent both blank in middle; wide uncluttered writing areas from y20to78percent. Warm ivory parchment, thin antique gold corner ornaments, stitching, small nicks and deep brown central binding. Subtle candle illumination at far outer edges only, dark desk border frames book, paper not overly stained. NO TEXT AT ALL and no fake writing, no diagrams on pages; controls will be typeset clearly by the game. Keep horizontal text zones unwarped/unobstructed, realistic page thickness but no strongly curled surfaces. Crisp beautiful pixel art, natural warm-cool contrast, only one open book, no hands or people.",
       "generationMethod": "built-in image_gen",
       "sha256": "0a1061a18505b71f67b024ae4662b962248e2a9d715aae99b30e78713bcec252"
-    },
-    "grip_closeup": {
-      "file": "grip_closeup.png",
-      "width": 1672,
-      "height": 941,
-      "prompt": "Premium original 2D pixel-art dark medieval fantasy game cinematic. Crisp fine pixel clusters, beautiful controlled detail, earthy palette and dramatic cinematic lighting; no photoreal/3D/vector. No text/UI/logo/watermark. Reference1 hero appearance, reference2 EXACT sword design, reference3 roadside environment. SINGLE widescreen16:9 extreme cinematic close-up: brown-gloved hands of the same navy-caped boy are only just closing around wrapped black sword hilt on the right side of frame, forearms tense and sleeve/cape edges visible. Sword still planted tip-first DIAGONALLY down-right in compact earth and weathered stone, same small dark crossguard and violet hairline edge. Camera very low near soil, compelling diagonal composition, soil grit/moss in sharp foreground, quiet trees soft in background, thin faint black ash rising from blade. Warm sunlight on fingers clashes with subtle cold violet under blade. One moment before extraction, anticipatory stillness; fullboy face NOT visible, no duplicate sword/extra hands, anatomically exactly two hands.",
-      "generationMethod": "built-in image_gen",
-      "sha256": "a5f3aa22e31170890b1bf1a754fd0fb3a86e25614a556ef0137f75fbcadb9914"
     },
     "awakened_keyart": {
       "file": "awakened_keyart.png",
@@ -1011,6 +577,2256 @@
           ]
         }
       ]
+    },
+    "walk_cycle": {
+      "file": "walk_cycle.png",
+      "prompt": "Premium crisp hand-pixelled 2D fantasy game animation, transparent RGBA, no text/numbers/borders/gridlines/background/shadow. EXACT SAME adolescent brownhaired boy as reference, navy scarf/cape, charcoal tunic, graytrousers, brown boots/leathergloves/belt, identical head/body size and costume. EMPTY hands no sword. Input1 HEROIDENTITY. Input2 EXACT24walkingPOSES and ordering guide, NOTartstyle. Red and blue guide limbs are near/farlegs/arms; draw both in normalgraytrousers/brownboots, never output coloredguidebones. Renderexactlyonehero on EACH corresponding guidepose, equal6columns x4rows1536x1024. Followfoot/knee/hip/arm coordinates in input2 faithfully: plantedfoot moves smoothly fronttoback, otherfoot swings forward, feet switch roles exactlyafter12frames, armscounter-swing opposite legs. Gentle normalhuman walk, softknees, no jumping/marching/kicking or huge strides. Frame24 flows seamlessly into1, one FULL left-right walkingcycle in24distinct evenlypacedframes. Fixedgroundbaseline85-88percentcellheight, tinybob only2px, invariantphysicalbody/headsize, alignedhipx55percent. Fullycontainedhead/body/feet/cape everycell. Removeallguidecircles/lines/floor/coloredmarks; trueemptyalphaoutsidecharacter, no brownwash. Repaint as samehero, not a stickfigure.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "7340418094245523d14640d39afcf0613206dbe8cf842cc3c682007616bc93f1",
+      "width": 1536,
+      "height": 1024,
+      "frameCount": 24,
+      "columns": 6,
+      "rows": 4,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            47,
+            28,
+            205,
+            232
+          ],
+          "bodyHeight": 204,
+          "supportX": 184.0,
+          "travel": 0.0
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            231
+          ],
+          "bounds": [
+            43,
+            28,
+            199,
+            231
+          ],
+          "bodyHeight": 202,
+          "supportX": 178.5,
+          "travel": 5.5
+        },
+        {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            232
+          ],
+          "bounds": [
+            42,
+            28,
+            188,
+            232
+          ],
+          "bodyHeight": 203,
+          "supportX": 167.0,
+          "travel": 17.0
+        },
+        {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            42,
+            28,
+            186,
+            232
+          ],
+          "bodyHeight": 204,
+          "supportX": 158.5,
+          "travel": 25.5
+        },
+        {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            43,
+            28,
+            185,
+            233
+          ],
+          "bodyHeight": 204,
+          "supportX": 148.5,
+          "travel": 35.5
+        },
+        {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            44,
+            28,
+            186,
+            232
+          ],
+          "bodyHeight": 204,
+          "supportX": 140.5,
+          "travel": 43.5
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            43,
+            28,
+            186,
+            233
+          ],
+          "bodyHeight": 203,
+          "supportX": 134.0,
+          "travel": 50.0
+        },
+        {
+          "x": 256,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            43,
+            28,
+            186,
+            233
+          ],
+          "bodyHeight": 204,
+          "supportX": 128.5,
+          "travel": 55.5
+        },
+        {
+          "x": 512,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            234
+          ],
+          "bounds": [
+            47,
+            28,
+            194,
+            233
+          ],
+          "bodyHeight": 204,
+          "supportX": 125.5,
+          "travel": 58.5
+        },
+        {
+          "x": 768,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            234
+          ],
+          "bounds": [
+            49,
+            28,
+            194,
+            234
+          ],
+          "bodyHeight": 204,
+          "supportX": 120.0,
+          "travel": 64.0
+        },
+        {
+          "x": 1024,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            234
+          ],
+          "bounds": [
+            49,
+            28,
+            202,
+            234
+          ],
+          "bodyHeight": 204,
+          "supportX": 109.0,
+          "travel": 75.0
+        },
+        {
+          "x": 1280,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            236
+          ],
+          "bounds": [
+            51,
+            27,
+            208,
+            235
+          ],
+          "bodyHeight": 207,
+          "supportX": 111.5,
+          "travel": 72.5
+        },
+        {
+          "x": 0,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            236
+          ],
+          "bounds": [
+            48,
+            28,
+            208,
+            236
+          ],
+          "bodyHeight": 207,
+          "supportX": 189.0,
+          "travel": 79.0909090909091
+        },
+        {
+          "x": 256,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            235
+          ],
+          "bounds": [
+            49,
+            27,
+            205,
+            235
+          ],
+          "bodyHeight": 206,
+          "supportX": 185.0,
+          "travel": 83.0909090909091
+        },
+        {
+          "x": 512,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            236
+          ],
+          "bounds": [
+            50,
+            27,
+            190,
+            236
+          ],
+          "bodyHeight": 207,
+          "supportX": 171.0,
+          "travel": 97.0909090909091
+        },
+        {
+          "x": 768,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            236
+          ],
+          "bounds": [
+            55,
+            28,
+            190,
+            236
+          ],
+          "bodyHeight": 207,
+          "supportX": 157.0,
+          "travel": 111.0909090909091
+        },
+        {
+          "x": 1024,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            236
+          ],
+          "bounds": [
+            56,
+            27,
+            189,
+            235
+          ],
+          "bodyHeight": 207,
+          "supportX": 154.5,
+          "travel": 113.5909090909091
+        },
+        {
+          "x": 1280,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            236
+          ],
+          "bounds": [
+            62,
+            27,
+            186,
+            235
+          ],
+          "bodyHeight": 207,
+          "supportX": 140.5,
+          "travel": 127.5909090909091
+        },
+        {
+          "x": 0,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            234
+          ],
+          "bounds": [
+            59,
+            28,
+            186,
+            233
+          ],
+          "bodyHeight": 204,
+          "supportX": 131.5,
+          "travel": 136.5909090909091
+        },
+        {
+          "x": 256,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            52,
+            28,
+            187,
+            233
+          ],
+          "bodyHeight": 203,
+          "supportX": 130.5,
+          "travel": 137.5909090909091
+        },
+        {
+          "x": 512,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            45,
+            29,
+            194,
+            233
+          ],
+          "bodyHeight": 203,
+          "supportX": 125.0,
+          "travel": 143.0909090909091
+        },
+        {
+          "x": 768,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            41,
+            29,
+            195,
+            233
+          ],
+          "bodyHeight": 203,
+          "supportX": 121.5,
+          "travel": 146.5909090909091
+        },
+        {
+          "x": 1024,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            39,
+            28,
+            200,
+            233
+          ],
+          "bodyHeight": 203,
+          "supportX": 109.5,
+          "travel": 158.5909090909091
+        },
+        {
+          "x": 1280,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            233
+          ],
+          "bounds": [
+            36,
+            29,
+            204,
+            233
+          ],
+          "bodyHeight": 203,
+          "supportX": 99.5,
+          "travel": 168.5909090909091
+        }
+      ],
+      "referenceHeight": 204.0,
+      "stride": 176.72727272727272,
+      "fps": 24,
+      "stanceSwitches": [
+        0,
+        12
+      ],
+      "phase": 5
+    },
+    "walk_start": {
+      "file": "walk_start.png",
+      "prompt": "Premium original 2D pixel-art dark medieval fantasy game asset. Crisp deliberate pixel clusters, stable exact silhouette and fine material details; not3D/notphotoreal/notsmoothvector. No text/UI/labels/borders/gridlines/watermark. Input is EXACT character identity reference. SAME brown-haired adolescent boy, navy-blue scarf/cape, charcoal tunic, gray trousers, brown leather belt/gloves/boots. Same head size, face, hair, clothing, two arms/two legs and body proportions in EVERY frame. EMPTY hands, NO sword. Natural small relaxed movements, no huge marching kicks/no crouch-lunges/no skating/no size morphing. Natural walk START animation, EXACT12frames equal4columns x3rows grid on4:3 landscape. FacingRIGHT sideprofile. Frame1 calm upright idle emptyhands;2-4 slight weight shift/forward lean, lookahead;5-8 backtoe gently pushes as front heel reachesforward;9-12 settles into first confident walking step. Subtle normalhuman start, realistic ankles/knees/elbows/cape followthrough, no sprint/no exaggeratedbounce. Same fixedhip at cellx52percent, feet baseline85percent, constantbodyheight65percent cellheight; same physical size as reference. Fullycontainedposes padded10percent. True transparent RGBA background. No sword, props, floor, shadows.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "eb5346fc61cddec6e473c47ab2ba93426f2d97b5ca240f3e129cacd5c89b176c",
+      "width": 1448,
+      "height": 1086,
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            345
+          ],
+          "bounds": [
+            85,
+            68,
+            264,
+            345
+          ],
+          "bodyHeight": 276
+        },
+        {
+          "x": 362,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            345
+          ],
+          "bounds": [
+            79,
+            71,
+            261,
+            345
+          ],
+          "bodyHeight": 273
+        },
+        {
+          "x": 724,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            345
+          ],
+          "bounds": [
+            71,
+            71,
+            258,
+            344
+          ],
+          "bodyHeight": 273
+        },
+        {
+          "x": 1086,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            344
+          ],
+          "bounds": [
+            69,
+            73,
+            255,
+            344
+          ],
+          "bodyHeight": 271
+        },
+        {
+          "x": 0,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            318
+          ],
+          "bounds": [
+            84,
+            45,
+            269,
+            317
+          ],
+          "bodyHeight": 272
+        },
+        {
+          "x": 362,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            317
+          ],
+          "bounds": [
+            79,
+            48,
+            266,
+            317
+          ],
+          "bodyHeight": 268
+        },
+        {
+          "x": 724,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            317
+          ],
+          "bounds": [
+            70,
+            48,
+            280,
+            317
+          ],
+          "bodyHeight": 268
+        },
+        {
+          "x": 1086,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            318
+          ],
+          "bounds": [
+            62,
+            50,
+            273,
+            317
+          ],
+          "bodyHeight": 267
+        },
+        {
+          "x": 0,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            299
+          ],
+          "bounds": [
+            78,
+            24,
+            272,
+            298
+          ],
+          "bodyHeight": 274
+        },
+        {
+          "x": 362,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            299
+          ],
+          "bounds": [
+            77,
+            27,
+            266,
+            298
+          ],
+          "bodyHeight": 272
+        },
+        {
+          "x": 724,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            299
+          ],
+          "bounds": [
+            77,
+            29,
+            264,
+            298
+          ],
+          "bodyHeight": 269
+        },
+        {
+          "x": 1086,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            299
+          ],
+          "bounds": [
+            79,
+            30,
+            260,
+            298
+          ],
+          "bodyHeight": 268
+        }
+      ],
+      "referenceHeight": 273.0
+    },
+    "walk_stop": {
+      "file": "walk_stop.png",
+      "prompt": "Original premium crisp 2D pixel-art fantasy game animation. No labels/numerals/gridlines/text/UI/watermark. True RGBA transparent background for sprite sheets. SAMEexact brown-haired adolescent boy fromreference, navy scarf/cape, charcoal tunic,graytrousers,brownleathergloves/belt/boots. Constantheadsize/costume/bodyheight, 2arms2legs, emptyhands NO WEAPON. Sideprofile facingRIGHT, hipatcellx52percent andbootbaseline85percent, bodyheight65percentcellheight, fullfigureinsideowncell with10percentpadding. EXACT16sequentialframes equal4columns4rows squaregrid. Natural slow WALK DECELERATES ANDSTOPS when boy notices sword offscreen below-right. Frames1-4 shortlaststep, modeststride with heelcontact and otherfootfollowing;5-8 weight settles with kneesverysoft and arms stop swinging;9-12 both boots planted withsmallsigh/capefollowthrough, headgentlytilts down-right;13-16 stable curious upright unarmedstanding pose facingright. Finalpose feetstaysameposition, calm notcrouched, bodydoesnotgrow/shrink. NO weapon/prop/ground/shadow, no violentmotion. Smooth realistic transitions, not randomposes.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "a62e414a8198a363512d066500cbdd11bf40aaf3942cb4004abacacf86149c82",
+      "width": 1261,
+      "height": 1247,
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            286
+          ],
+          "bounds": [
+            45,
+            28,
+            257,
+            286
+          ],
+          "bodyHeight": 257
+        },
+        {
+          "x": 315,
+          "y": 0,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            286
+          ],
+          "bounds": [
+            50,
+            27,
+            235,
+            286
+          ],
+          "bodyHeight": 257
+        },
+        {
+          "x": 630,
+          "y": 0,
+          "w": 316,
+          "h": 312,
+          "pivot": [
+            164.32,
+            286
+          ],
+          "bounds": [
+            55,
+            27,
+            236,
+            286
+          ],
+          "bodyHeight": 257
+        },
+        {
+          "x": 946,
+          "y": 0,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            286
+          ],
+          "bounds": [
+            60,
+            26,
+            235,
+            286
+          ],
+          "bodyHeight": 259
+        },
+        {
+          "x": 0,
+          "y": 312,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            285
+          ],
+          "bounds": [
+            66,
+            24,
+            234,
+            285
+          ],
+          "bodyHeight": 259
+        },
+        {
+          "x": 315,
+          "y": 312,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            285
+          ],
+          "bounds": [
+            68,
+            24,
+            235,
+            285
+          ],
+          "bodyHeight": 259
+        },
+        {
+          "x": 630,
+          "y": 312,
+          "w": 316,
+          "h": 312,
+          "pivot": [
+            164.32,
+            285
+          ],
+          "bounds": [
+            69,
+            24,
+            236,
+            285
+          ],
+          "bodyHeight": 260
+        },
+        {
+          "x": 946,
+          "y": 312,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            285
+          ],
+          "bounds": [
+            71,
+            23,
+            235,
+            285
+          ],
+          "bodyHeight": 261
+        },
+        {
+          "x": 0,
+          "y": 624,
+          "w": 315,
+          "h": 311,
+          "pivot": [
+            163.8,
+            283
+          ],
+          "bounds": [
+            71,
+            21,
+            237,
+            283
+          ],
+          "bodyHeight": 260
+        },
+        {
+          "x": 315,
+          "y": 624,
+          "w": 315,
+          "h": 311,
+          "pivot": [
+            163.8,
+            283
+          ],
+          "bounds": [
+            73,
+            22,
+            239,
+            283
+          ],
+          "bodyHeight": 260
+        },
+        {
+          "x": 630,
+          "y": 624,
+          "w": 316,
+          "h": 311,
+          "pivot": [
+            164.32,
+            283
+          ],
+          "bounds": [
+            76,
+            25,
+            241,
+            283
+          ],
+          "bodyHeight": 258
+        },
+        {
+          "x": 946,
+          "y": 624,
+          "w": 315,
+          "h": 311,
+          "pivot": [
+            163.8,
+            283
+          ],
+          "bounds": [
+            77,
+            27,
+            242,
+            283
+          ],
+          "bodyHeight": 255
+        },
+        {
+          "x": 0,
+          "y": 935,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            284
+          ],
+          "bounds": [
+            76,
+            26,
+            241,
+            284
+          ],
+          "bodyHeight": 257
+        },
+        {
+          "x": 315,
+          "y": 935,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            284
+          ],
+          "bounds": [
+            74,
+            23,
+            237,
+            284
+          ],
+          "bodyHeight": 259
+        },
+        {
+          "x": 630,
+          "y": 935,
+          "w": 316,
+          "h": 312,
+          "pivot": [
+            164.32,
+            284
+          ],
+          "bounds": [
+            75,
+            23,
+            236,
+            284
+          ],
+          "bodyHeight": 260
+        },
+        {
+          "x": 946,
+          "y": 935,
+          "w": 315,
+          "h": 312,
+          "pivot": [
+            163.8,
+            284
+          ],
+          "bounds": [
+            73,
+            22,
+            235,
+            284
+          ],
+          "bodyHeight": 260
+        }
+      ],
+      "referenceHeight": 259.0
+    },
+    "reach_pull": {
+      "file": "reach_pull.png",
+      "prompt": "Original premium crisp 2D pixel-art fantasy game animation. No labels/numerals/gridlines/text/UI/watermark. True RGBA transparent background for sprite sheets. SAMEexact brown-haired adolescent boy fromreference, navy scarf/cape, charcoal tunic,graytrousers,brownleathergloves/belt/boots. Constantheadsize/costume/bodyheight, 2arms2legs, emptyhands NO WEAPON. Sideprofile facingRIGHT, hipatcellx52percent andbootbaseline85percent, bodyheight65percentcellheight, fullfigureinsideowncell with10percentpadding. EXACT24sequential ACTING frames equal6columns4rows onlandscape3:2 canvas1536x1024. Boy reaches for an INVISIBLE fixed sword hilt; do NOTdrawsword/prop. Frame1 curiousstanding;2-6 bends softly at knees/hips and reaches bothhands forward;7-10 wraps both EMPTY glovedhands around imagined vertical grip at EXACT SAMEcellposition x75percent,y45percent (hands oneaboveother);11-17 bracesfeet and leansback PULLINGUP, bothhandsremainat fixedhiltpoint untilframe17;18-21 hands/swordgrip finallymovesupby12percentcellheight while boy straightens/recoils;22-24 surprisedstanding withbothhandsheldforward/up. Realisticelbows, samebodysize, feetgroundedbaseline85percent throughout, no jumping. Hands clearlyvisible for compositing real sword separately. No weapon, soil, background, shadow, glow orFX. Exactidentity invariant no head enlargement, allfullposescontained.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "dac869ed45665d90735e8d0e7839e722bed9e350000dc08da9b750080bf86f70",
+      "width": 1536,
+      "height": 1024,
+      "frameCount": 24,
+      "columns": 6,
+      "rows": 4,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            58,
+            13,
+            202,
+            238
+          ],
+          "bodyHeight": 222,
+          "grip": [
+            191.0,
+            142.0
+          ]
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            52,
+            17,
+            207,
+            237
+          ],
+          "bodyHeight": 218,
+          "grip": [
+            174.0,
+            144.0
+          ]
+        },
+        {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            43,
+            32,
+            211,
+            237
+          ],
+          "bodyHeight": 203,
+          "grip": [
+            179.0,
+            150.0
+          ]
+        },
+        {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            38,
+            45,
+            219,
+            237
+          ],
+          "bodyHeight": 190,
+          "grip": [
+            186.0,
+            141.0
+          ]
+        },
+        {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            35,
+            49,
+            229,
+            237
+          ],
+          "bodyHeight": 186,
+          "grip": [
+            186.0,
+            140.0
+          ]
+        },
+        {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            34,
+            55,
+            230,
+            237
+          ],
+          "bodyHeight": 180,
+          "grip": [
+            183.0,
+            142.0
+          ]
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            39,
+            56,
+            218,
+            238
+          ],
+          "bodyHeight": 180,
+          "grip": [
+            175.0,
+            143.0
+          ]
+        },
+        {
+          "x": 256,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            38,
+            54,
+            209,
+            238
+          ],
+          "bodyHeight": 182,
+          "grip": [
+            192.0,
+            142.0
+          ]
+        },
+        {
+          "x": 512,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            36,
+            50,
+            205,
+            238
+          ],
+          "bodyHeight": 185,
+          "grip": [
+            190.0,
+            142.0
+          ]
+        },
+        {
+          "x": 768,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            38,
+            50,
+            202,
+            238
+          ],
+          "bodyHeight": 185,
+          "grip": [
+            189.0,
+            143.0
+          ]
+        },
+        {
+          "x": 1024,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            40,
+            45,
+            197,
+            238
+          ],
+          "bodyHeight": 191,
+          "grip": [
+            184.0,
+            143.0
+          ]
+        },
+        {
+          "x": 1280,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            47,
+            40,
+            197,
+            237
+          ],
+          "bodyHeight": 197,
+          "grip": [
+            180.0,
+            141.0
+          ]
+        },
+        {
+          "x": 0,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            51,
+            35,
+            207,
+            238
+          ],
+          "bodyHeight": 202,
+          "grip": [
+            182.5,
+            132.0
+          ]
+        },
+        {
+          "x": 256,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            49,
+            34,
+            208,
+            238
+          ],
+          "bodyHeight": 201,
+          "grip": [
+            182.0,
+            129.0
+          ]
+        },
+        {
+          "x": 512,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            46,
+            34,
+            206,
+            238
+          ],
+          "bodyHeight": 203,
+          "grip": [
+            174.0,
+            124.0
+          ]
+        },
+        {
+          "x": 768,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            41,
+            34,
+            208,
+            238
+          ],
+          "bodyHeight": 202,
+          "grip": [
+            173.0,
+            123.0
+          ]
+        },
+        {
+          "x": 1024,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            239
+          ],
+          "bounds": [
+            36,
+            35,
+            207,
+            238
+          ],
+          "bodyHeight": 201,
+          "grip": [
+            168.0,
+            120.0
+          ]
+        },
+        {
+          "x": 1280,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            239
+          ],
+          "bounds": [
+            34,
+            32,
+            204,
+            239
+          ],
+          "bodyHeight": 205,
+          "grip": [
+            165.0,
+            114.0
+          ]
+        },
+        {
+          "x": 0,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            33,
+            24,
+            208,
+            237
+          ],
+          "bodyHeight": 212,
+          "grip": [
+            166.0,
+            108.0
+          ]
+        },
+        {
+          "x": 256,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            32,
+            20,
+            203,
+            237
+          ],
+          "bodyHeight": 215,
+          "grip": [
+            165.5,
+            101.0
+          ]
+        },
+        {
+          "x": 512,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            31,
+            18,
+            193,
+            237
+          ],
+          "bodyHeight": 219,
+          "grip": [
+            164.0,
+            95.0
+          ]
+        },
+        {
+          "x": 768,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            29,
+            16,
+            187,
+            237
+          ],
+          "bodyHeight": 221,
+          "grip": [
+            162.0,
+            92.0
+          ]
+        },
+        {
+          "x": 1024,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            24,
+            16,
+            181,
+            237
+          ],
+          "bodyHeight": 221,
+          "grip": [
+            162.0,
+            90.0
+          ]
+        },
+        {
+          "x": 1280,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            238
+          ],
+          "bounds": [
+            25,
+            15,
+            175,
+            237
+          ],
+          "bodyHeight": 222,
+          "grip": [
+            162.0,
+            90.0
+          ]
+        }
+      ],
+      "referenceHeight": 210.5
+    },
+    "extract_actor": {
+      "file": "extract_actor.png",
+      "prompt": "Edit this exact 12-pose character sprite sheet. Preserve all 12 motions, exact boy identity/costume and the upward two-handed pulling gesture in order. Fix cell alignment and clipping: EXACT equal4columns by3rows on landscape4:3 canvas, each pose must be fully contained INSIDE its own cell, with at least12percent alpha-zero empty space between character and EACH cell edge. Reduce each complete boy including overhead fists to fit ONLY70percent of cell HEIGHT and70percent width. Keep a CONSTANT PHYSICAL BOY SIZE across frames; do not make crouched poses bigger. Boots rest on fixed cellbaseline88percent, so raised fists still have wide clear space above them. Head/hair/cape/fists/boots must NEVER touch any cellboundary or neighboring pose. One boy percell, no intercell bleed. Remove ALL brown background wash/halos: truly transparent RGBA outside precise character silhouette, no shadows or floor. Keep crisp pixel art. Hands EMPTY, no sword, no text/labels/borders/gridlines. Final poses must keep both fists moving upward as in source.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "785a8b2b73090ec32d4ffa3b0a2f1fcfa345176ac5f15fee4888c6b2b4ca33cb",
+      "width": 1448,
+      "height": 1086,
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            315
+          ],
+          "bounds": [
+            78,
+            82,
+            274,
+            314
+          ],
+          "bodyHeight": 233,
+          "grip": [
+            229.0,
+            204.0
+          ]
+        },
+        {
+          "x": 362,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            315
+          ],
+          "bounds": [
+            76,
+            81,
+            274,
+            314
+          ],
+          "bodyHeight": 234,
+          "grip": [
+            234.0,
+            194.0
+          ]
+        },
+        {
+          "x": 724,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            315
+          ],
+          "bounds": [
+            77,
+            81,
+            274,
+            314
+          ],
+          "bodyHeight": 234,
+          "grip": [
+            236.0,
+            184.0
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            315
+          ],
+          "bounds": [
+            77,
+            77,
+            274,
+            314
+          ],
+          "bodyHeight": 237,
+          "grip": [
+            237.0,
+            173.0
+          ]
+        },
+        {
+          "x": 0,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            307
+          ],
+          "bounds": [
+            77,
+            64,
+            274,
+            307
+          ],
+          "bodyHeight": 242,
+          "grip": [
+            240.0,
+            151.0
+          ]
+        },
+        {
+          "x": 362,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            307
+          ],
+          "bounds": [
+            76,
+            61,
+            274,
+            307
+          ],
+          "bodyHeight": 245,
+          "grip": [
+            244.0,
+            137.0
+          ]
+        },
+        {
+          "x": 724,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            307
+          ],
+          "bounds": [
+            78,
+            59,
+            274,
+            307
+          ],
+          "bodyHeight": 247,
+          "grip": [
+            244.0,
+            133.5
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            307
+          ],
+          "bounds": [
+            76,
+            58,
+            275,
+            307
+          ],
+          "bodyHeight": 248,
+          "grip": [
+            246.0,
+            114.0
+          ]
+        },
+        {
+          "x": 0,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            305
+          ],
+          "bounds": [
+            70,
+            53,
+            274,
+            304
+          ],
+          "bodyHeight": 251,
+          "grip": [
+            242.0,
+            105.0
+          ]
+        },
+        {
+          "x": 362,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            305
+          ],
+          "bounds": [
+            67,
+            52,
+            274,
+            304
+          ],
+          "bodyHeight": 252,
+          "grip": [
+            238.0,
+            83.0
+          ]
+        },
+        {
+          "x": 724,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            305
+          ],
+          "bounds": [
+            63,
+            48,
+            274,
+            304
+          ],
+          "bodyHeight": 256,
+          "grip": [
+            226.0,
+            75.0
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            305
+          ],
+          "bounds": [
+            64,
+            39,
+            274,
+            305
+          ],
+          "bodyHeight": 265,
+          "grip": [
+            224.0,
+            67.0
+          ]
+        }
+      ],
+      "referenceHeight": 234.0
+    },
+    "black_sword": {
+      "file": "black_sword.png",
+      "prompt": "Premium original 2D pixel-art dark medieval fantasy game asset. Crisp deliberate pixel clusters, stable exact silhouette and fine material details; not3D/notphotoreal/notsmoothvector. No text/UI/labels/borders/gridlines/watermark. Reference is exact dark sword design/materials ONLY. Create ONE whole slim straight black one-handed sword with muted narrow violet edge, same simple small darkcrossguard, wrappedblackgrip and small diamondpommel. IMPORTANT change orientation to near VERTICAL, hilt at TOP and tip at BOTTOM, only8degrees tilt so hilt slightlyLEFT oftip. Portrait canvas, whole weapon centered, entire tip/crossguard/pommel safelyinside with15percentmargin. Sword is a physical object, consistent straightaxis, NO giant broadgreatsword, NO magic/no smoke/no lightaura/no glowhalo. TRUE TRANSPARENT RGBA, no hand/character/soil/ground/shadow. This single canonical weapon will be partly hidden belowsoil in all shots; show fullweapon here for animation.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "9f8dfef29d2cd405a38926528ab8176dd782563f43b7182a40ebea19afd5a1d3",
+      "width": 1024,
+      "height": 1536,
+      "crop": [
+        386,
+        123,
+        589,
+        1418
+      ],
+      "grip": [
+        474,
+        285
+      ],
+      "bladeStart": [
+        497,
+        452
+      ],
+      "tip": [
+        575,
+        1412
+      ]
+    },
+    "soil_socket": {
+      "file": "soil_socket.png",
+      "prompt": "Premium original 2D pixel-art dark medieval fantasy game asset. Crisp deliberate pixel clusters, stable exact silhouette and fine material details; not3D/notphotoreal/notsmoothvector. No text/UI/labels/borders/gridlines/watermark. One small ground socket for a sword planted deep in compact medieval roadside earth. ONLY a low elliptical ring of disturbed brownsoil and chippedoldmossystone with a NARROW DARK VERTICAL SLIT atcenter where a blade enters. Small crumbs and 2-3shortgrasssprigs, eye-levelsideview, shallow natural frontlip slightlyraised to cover buriedblade. Wide 3:1 silhouette, about12pixelsdeep material atgame scale, not giantcrater. Keep under90percentcanvaswidth withgenerousmargin, centered. NO sword/no weapon/no smoke/no flame/no column/no character/no scenery. TRUE transparentRGBA outside the soil/stonepatch and inside slit if possible. Pixel-art texture matches quiet rural dirt path, no harshblackshadow.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "1454f8e31706890561de8fe4c9e8077113667151cfc2de429ab53cfda8e6b7d1",
+      "width": 2172,
+      "height": 724,
+      "crop": [
+        547,
+        305,
+        1616,
+        491
+      ],
+      "socket": [
+        1092,
+        395
+      ]
+    },
+    "menu_background": {
+      "file": "menu_background.png",
+      "prompt": "Edit this widescreen 2D pixel-art forest title background. REMOVE THE ENTIRE SWORD and ALL MAGIC SMOKE/AURAS/TENDRILS/SWIRLINGSHADOWS/FLYINGASH. Repaint their places as natural calm slate-blue dark woodland air, distant dim village, and a low plain mossy roadside stone mound at bottom-right. Keep the exact same beautiful crisp pixel-art style, framing, 16:9 composition, darkleft40percent negative space for title/buttons, foregroundtrees anddistantvillage. RIGHTside is now empty ofweapons, with a clear low stone footing around x78percent,y80percent for a separately compositedsword. NO darkcloudaura anywhere, no glowingcracks, no person, no text/UI. Quiet atmospheric twilight and restrainednaturallighting, no big whitegodray. Clean continuoussinglebackground.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "52173354cff4927cc99e0f2f26e97b2c09ef14f546794c0c773593909d4d14fa",
+      "width": 1672,
+      "height": 941,
+      "crop": [
+        0,
+        0,
+        1672,
+        941
+      ]
+    },
+    "menu_smoke": {
+      "file": "menu_smoke.png",
+      "prompt": "Premium crisp hand-pixelled 2D fantasy game animation, transparent RGBA, no text/numbers/borders/gridlines/background/shadow. Production24-frame subdued BLACKASH WISP animation, EXACT6columns x4rows equalgrid landscape3:2. Eachcell has one VERY NARROW SMALL soft-edged pixel smoke wisp that rises UP from SAME fixed emitter x50percent,y82percent. Wisp width ONLY18percentcellwidth andheight40percentcellheight, tiny separatedashflakes. All24frames coherent rising/curling/dissipatingmotion and seamlessloop, abouttwo tinywisps alternatetoavoidpopping. Charcoalblack/darkgraphite with a few slightly lightergraypixels, inherentlypartlytransparent. NO vortex, no circle, no giantcloud, no floorpuff or smoke puddle, no brightglow/nopurplefire. Largeemptytransparentmargins70percent+canvaspercell. It will be emitted in smallamounts ALONG a sword'sblade, neverfromgroundawayfromsword. No weapon/person/ground/text/grid. True RGBAalpha0 betweenwisps andcells.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "9569b754bc2b454060e8db847d1e89aab535eb6cab91113c52b537e72d3691eb",
+      "width": 1536,
+      "height": 1024,
+      "frameCount": 24,
+      "columns": 6,
+      "rows": 4,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            126,
+            217,
+            131,
+            225
+          ],
+          "bodyHeight": -2
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            124,
+            197,
+            138,
+            225
+          ],
+          "bodyHeight": 18
+        },
+        {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            122,
+            199,
+            133,
+            225
+          ],
+          "bodyHeight": 16
+        },
+        {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            120,
+            193,
+            130,
+            225
+          ],
+          "bodyHeight": 22
+        },
+        {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            117,
+            200,
+            130,
+            225
+          ],
+          "bodyHeight": 15
+        },
+        {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            111,
+            200,
+            129,
+            225
+          ],
+          "bodyHeight": 15
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            119,
+            197,
+            135,
+            225
+          ],
+          "bodyHeight": 18
+        },
+        {
+          "x": 256,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            120,
+            168,
+            149,
+            225
+          ],
+          "bodyHeight": 47
+        },
+        {
+          "x": 512,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            119,
+            167,
+            146,
+            225
+          ],
+          "bodyHeight": 48
+        },
+        {
+          "x": 768,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            118,
+            163,
+            141,
+            225
+          ],
+          "bodyHeight": 52
+        },
+        {
+          "x": 1024,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            114,
+            161,
+            145,
+            225
+          ],
+          "bodyHeight": 54
+        },
+        {
+          "x": 1280,
+          "y": 256,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            109,
+            163,
+            141,
+            225
+          ],
+          "bodyHeight": 52
+        },
+        {
+          "x": 0,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            110,
+            168,
+            134,
+            222
+          ],
+          "bodyHeight": 47
+        },
+        {
+          "x": 256,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            122,
+            156,
+            144,
+            221
+          ],
+          "bodyHeight": 59
+        },
+        {
+          "x": 512,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            108,
+            122,
+            157,
+            221
+          ],
+          "bodyHeight": 93
+        },
+        {
+          "x": 768,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            123,
+            137,
+            142,
+            222
+          ],
+          "bodyHeight": 78
+        },
+        {
+          "x": 1024,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            103,
+            150,
+            139,
+            222
+          ],
+          "bodyHeight": 65
+        },
+        {
+          "x": 1280,
+          "y": 512,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            117,
+            138,
+            145,
+            222
+          ],
+          "bodyHeight": 77
+        },
+        {
+          "x": 0,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            119,
+            133,
+            150,
+            215
+          ],
+          "bodyHeight": 82
+        },
+        {
+          "x": 256,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            123,
+            199,
+            133,
+            215
+          ],
+          "bodyHeight": 16
+        },
+        {
+          "x": 512,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            119,
+            193,
+            130,
+            215
+          ],
+          "bodyHeight": 22
+        },
+        {
+          "x": 768,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            120,
+            179,
+            131,
+            215
+          ],
+          "bodyHeight": 36
+        },
+        {
+          "x": 1024,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            118,
+            195,
+            127,
+            215
+          ],
+          "bodyHeight": 20
+        },
+        {
+          "x": 1280,
+          "y": 768,
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            133.12,
+            215
+          ],
+          "bounds": [
+            121,
+            185,
+            129,
+            215
+          ],
+          "bodyHeight": 30
+        }
+      ],
+      "referenceHeight": 0,
+      "emitter": [
+        128.0,
+        232.96
+      ],
+      "fps": 24
     }
   },
   "shots": [
@@ -1027,12 +2843,12 @@
     {
       "start": 9,
       "end": 11,
-      "name": "검의 클로즈업"
+      "name": "같은 위치의 박힌 검 클로즈업"
     },
     {
       "start": 11,
       "end": 16,
-      "name": "호기심과 검 뽑기"
+      "name": "검에 손을 뻗고 같은 검을 위로 뽑기"
     },
     {
       "start": 16,
@@ -1054,5 +2870,42 @@
       "end": 34,
       "name": "마검사 타이틀"
     }
-  ]
+  ],
+  "version": "2026-11-04-continuity-v2",
+  "subtitles": false,
+  "narration": false,
+  "newActorFrames": 88,
+  "objectLayout": {
+    "ground": [
+      876,
+      625
+    ],
+    "visibleHeight": 145,
+    "visibleFraction": 0.6,
+    "socketWidth": 100
+  },
+  "menuLayout": {
+    "ground": [
+      1000,
+      580
+    ],
+    "visibleHeight": 520,
+    "visibleFraction": 0.6,
+    "socketWidth": 165,
+    "smokeOpacity": 0.46,
+    "smokeScale": 0.58,
+    "socketSmokeScale": 0.8,
+    "bladeEmitters": 7,
+    "coordinateOrigin": "top-left",
+    "swordTint": [
+      190,
+      194,
+      215
+    ],
+    "socketTint": [
+      155,
+      158,
+      180
+    ]
+  }
 }

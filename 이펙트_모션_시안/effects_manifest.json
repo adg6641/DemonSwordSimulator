@@ -1,6 +1,6 @@
 {
   "title": "피격 · 쓰러짐 · 7단계 공격 이펙트 시안",
-  "version": "2026-11-03-fx-size-alpha-v3",
+  "version": "2026-11-03-sword-ash-v4",
   "generationMethod": "built-in image_gen",
   "frameWidth": 384,
   "frameHeight": 384,
@@ -1231,6 +1231,33 @@
       "peakSize": 315,
       "packingScale": 1.7403314917127073,
       "sourceAtlasRow": 6
+    },
+    {
+      "id": "sword_ash_aura",
+      "label": "검은 재 오라 · 12프레임 반복",
+      "file": "05_검은재오라/검은재_오라_12프레임.png",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "frameWidth": 362,
+      "frameHeight": 362,
+      "width": 1448,
+      "height": 1086,
+      "fps": 10,
+      "pivot": {
+        "x": 181.0,
+        "y": 181.0
+      },
+      "emitter": {
+        "x": 181.0,
+        "y": 306
+      },
+      "sha256": "ac946a7c1087bd213af8ba26909ddea0bb2a2e526fa895de2e1805f5e0e008d9",
+      "kind": "aura",
+      "motion": "sword_aura",
+      "playback": "loop",
+      "alpha": true,
+      "generationMethod": "built-in image_gen"
     }
   ],
   "generation": [
@@ -1287,6 +1314,16 @@
       "source": "C:\\Users\\adg66\\.codex\\generated_images\\01a192dd-8898-7883-9f43-63b3b65afa20\\exec-d8883b09-9b4e-4e9e-989d-5130c1ecd721.png",
       "prompt": "Use case: stylized-concept. Game-ready 2D PIXEL-ART COMBAT VFX ANIMATION ATLAS, TRUE ALPHA TRANSPARENCY, no background. Eight equal SQUARE columns, six equal SQUARE rows, 48 separate frames in EXACT grid, target2048x1536. Each of six rows is a DIFFERENT eight-frame motion, read left to right. Large empty alpha gutters, no bleeding between frames. No text, grids, labels, weapons or people. Effects-only assets for a medieval boy swordsman. CRISP clean shaped pixel edges, bright solid core with restrained narrow glow. Empty space MUST be fully alpha0, absolutely no white matte/mist, noise cloud or all-sheet wash.\nLEVEL 7/7 VIOLET PURPLE, strongest final upgrade. Rich violet/purple outer edges, lavender and pale lilac-white hot core. DISTINCT from indigo blue. Peak occupies82% of cell, preserving 9% transparent margin on ALL sides. Wide layered crescent with a slim second and third echo arc, fine controlled lightning-like branches at the trailing tips, sparse purple crystalline sparks, ornate triple-ring concentration aura with empty inner center. Final sword wave has a LARGE double crescent blade and flowing forked trail. Visually widest and most elaborate but still readable, restrained glow and no opaque screen flash.\nRow1: descending right-facing crescent slash, eight progressive poses: tiny anticipation, grows, reaches peak f4-f5, dissipates f6-f8.\nRow2: REVERSE upward crescent sword slash with opposite diagonal sweep, eight-frame anticipation/strike/trail/fade.\nRow3: heavier downward finishing sword crescent, still clear single readable silhouette, eight-frame lifecycle.\nRow4: horizontal RIGHT-facing DASH SLASH jet, tapered tip to right, long trailing edge left, eight-frame burst and fade. Clearly more horizontal than rows1-3.\nRow5: MANA CONCENTRATION aura centered on empty space where hero will be layered, concentric broken ring and inward drawn motes. f1-f4 gather, f5-f8 pulse, keep inner center uncluttered.\nRow6: FLYING DEMON SWORD WAVE PROJECTILE, right-facing convex crescent head, swept tail left, eight DIFFERENT flow frames, loop last-to-first, no impact explosion. Head stays around same central place in each cell; movement occurs in game.\nStable direction and center per row, time progresses coherently with distinct frames. No rainbow. No giant all-screen flash or opaque rectangular panels.",
       "method": "built-in image_gen"
+    },
+    {
+      "prompt": "Use case: stylized-concept. Asset type: production 2D pixel-art animation sprite sheet, aura FX ONLY. Create a restrained BLACK ASH aura emitting slowly upward for a dark fantasy cursed sword. Exactly 12 sequential frames in an equal 4-column by 3-row grid, read left to right then top to bottom. Landscape 4:3 canvas, preferably 1536x1152, all 12 square cells identical dimensions and EXACT evenly spaced grid. No grid lines or labels. Each cell contains ONE SMALL airy narrow wisp made of near-black charcoal pixel clusters and a few detached tiny ash flakes: about 35% of cell width, about 50% of cell height, centered horizontally, the SAME FIXED emitter point at 75% of the cell height. Sparse subdued curling soot drifts UPWARD from that fixed low point. Each next frame the same wisps rise a little, break into 1-3-pixel ash flecks, fade while a new small wisp starts at the bottom; last frame blends naturally back into first frame, no sudden whole-cloud growth. Crisp hand-pixelled dark contours and tiny visible square clusters, no antialias blur. Very dark black/charcoal ONLY (#090b10, #151820, #252a32); subtle translucency, wisps themselves partly transparent, large alpha-zero gaps between flakes. No white or brightly colored outlines, no purple or glowing particles, no flame columns, no huge dense smoke cloud. All wisps and flakes stay safely inside their own cells with at least 15% empty padding, no cross-cell bleed. True RGBA TRANSPARENT BACKGROUND including the space between cells. No opaque background, checkerboard, floor, shadow, words, numerals, border, character, sword, weapon, person, props or UI. This is an aura overlay to repeat very subtly ALONG a sword in-game; DO NOT draw the sword. Keep every cell's plume scale consistent, animate only upward ash drift and dissipation.",
+      "source": "C:\\Users\\adg66\\.codex\\generated_images\\01a192dd-8898-7883-9f43-63b3b65afa20\\exec-dad0a8b4-2304-435d-b690-c5bcf6814f85.png",
+      "generationMethod": "built-in image_gen",
+      "frameCount": 12,
+      "columns": 4,
+      "rows": 3,
+      "file": "05_검은재오라/검은재_오라_12프레임.png",
+      "name": "검은 재 오라"
     }
   ],
   "preview": {
@@ -9031,6 +9068,22 @@
       "scale": 1.5,
       "opacity": 0.75,
       "description": "각 단계의 기존 크기에서 1.5배 확대 · 기존 페이드에 불투명도 75% 적용 · 검끝 정렬 유지"
+    },
+    "waveMotion": {
+      "speedMultiplier": 2.0,
+      "growDuration": 0.06,
+      "straightenDuration": 0.08,
+      "fps": 24,
+      "lifetime": 1.15,
+      "fadeDuration": 0.15
+    },
+    "dashForwardOffset": 10,
+    "swordAura": {
+      "clip": "sword_ash_aura",
+      "opacity": 0.46,
+      "spriteScale": 0.13,
+      "spacing": 12,
+      "description": "검 손잡이부터 검끝까지 고르게 붙이고 재는 화면 위쪽으로 피어오름. 검의 프레임별 위치와 좌우 반전을 함께 적용."
     }
   },
   "baseClips": [

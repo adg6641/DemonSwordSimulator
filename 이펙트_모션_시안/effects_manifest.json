@@ -1,6 +1,6 @@
 {
   "title": "피격 · 쓰러짐 · 7단계 공격 이펙트 시안",
-  "version": "2026-11-03-sword-v2",
+  "version": "2026-11-03-fx-size-alpha-v3",
   "generationMethod": "built-in image_gen",
   "frameWidth": 384,
   "frameHeight": 384,
@@ -9026,7 +9026,12 @@
         "direction": "forward"
       }
     },
-    "alignmentNotes": "실제 원본 프레임의 손잡이·검끝과 renderScale을 함께 적용. 베기 끝의 검기에 검끝을 맞추고, 준비/회수 동작에서는 감쇠. 좌우 반전은 캐릭터 원점에서 함께 처리."
+    "alignmentNotes": "실제 원본 프레임의 손잡이·검끝과 renderScale을 함께 적용. 베기 끝의 검기에 검끝을 맞추고, 준비/회수 동작에서는 감쇠. 좌우 반전은 캐릭터 원점에서 함께 처리.",
+    "effectStyle": {
+      "scale": 1.5,
+      "opacity": 0.75,
+      "description": "각 단계의 기존 크기에서 1.5배 확대 · 기존 페이드에 불투명도 75% 적용 · 검끝 정렬 유지"
+    }
   },
   "baseClips": [
     {

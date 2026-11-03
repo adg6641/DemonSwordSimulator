@@ -3,6 +3,7 @@
 from ctypes import byref, c_int
 import json
 from pathlib import Path
+from math import sin
 
 import pico2d.pico2d as engine
 from pico2d import (load_font, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderFillRect,
@@ -66,25 +67,28 @@ class Interface:
             round(720 - geometry['top'] - geometry['height'] / 2),
             round(geometry['width']), round(geometry['height']))
 
-    def _blade_smoke(self, geometry):
-        sites = smoke_sites(geometry, self.layout['bladeEmitters'])
-        sites.append(geometry['ground'])
+    def _blade_smoke(self, geometry, front=False):
+        sites = smoke_sites(geometry, 4)[1:3] if front else smoke_sites(geometry, self.layout['bladeEmitters']) + [geometry['ground']]
         for i, (x, y) in enumerate(sites):
             frame = self.smoke['frames'][(int(self.time * self.smoke['fps']) + i * 3) % self.smoke['frameCount']]
             scale = self.layout['socketSmokeScale'] if i == len(sites) - 1 else self.layout['smokeScale']
+            if front:
+                scale *= .65
             ox, oy = self.smoke['emitter']
-            self.smoke_image.opacify(self.layout['smokeOpacity'])
+            self.smoke_image.opacify(.22 if front else self.layout['smokeOpacity'])
             self._piece(self.smoke_image, {'crop': (frame['x'], frame['y'], frame['x'] + frame['w'], frame['y'] + frame['h']),
-                'left': x - ox * scale, 'top': y - oy * scale, 'width': frame['w'] * scale, 'height': frame['h'] * scale})
+                'left': x - ox * scale + sin(self.time * .8 + i * 1.7) * 14, 'top': y - oy * scale,
+                'width': frame['w'] * scale, 'height': frame['h'] * scale})
         self.smoke_image.opacify(1.0)
 
     def draw_menu(self, selected):
         self.background.draw(640, 360, 1280, 720)
         geometry = sword_layout(self.weapon, self.layout)
         self._piece(self.socket_image, socket_layout(self.socket, self.layout))
+        self._blade_smoke(geometry)
         self._piece(self.sword_image, geometry)
         self._piece(self.socket_image, socket_layout(self.socket, self.layout, front=True))
-        self._blade_smoke(geometry)
+        self._blade_smoke(geometry, front=True)
         for x in range(0, 660, 20):
             fill(x, 0, 20, 720, (5, 8, 16, round(85 * (1 - x / 660) ** 2)))
         self.text('DEMON SWORD', 122, 619, 18, (166, 151, 190))

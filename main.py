@@ -1,15 +1,13 @@
-"""마검사 시뮬레이터: 배경과 주인공 조작 프로토타입."""
+"""마검사 시뮬레이터. 실행하면 인트로와 시작 화면이 먼저 나타난다."""
 
 from pathlib import Path
 from time import perf_counter
 
-from pico2d import (
-    SDL_KEYDOWN, SDL_KEYUP, SDL_QUIT, SDL_GetKeyboardFocus, SDLK_ESCAPE, SDLK_1, SDLK_8, SDLK_F1, SDLK_F7,
-    open_canvas, close_canvas, clear_canvas, update_canvas, get_events,
-)
+import pico2d.pico2d as engine
+from pico2d import (open_canvas, close_canvas, hide_lattice, clear_canvas, update_canvas,
+                    get_events, SDL_GetKeyboardFocus, SDL_SetWindowTitle)
 
-from player import Player
-from world import Camera, World
+from application import GameApplication
 
 
 WIDTH, HEIGHT = 1280, 720
@@ -19,59 +17,34 @@ ROOT = Path(__file__).resolve().parent
 
 def main():
     open_canvas(WIDTH, HEIGHT, sync=True)
-    player = world = None
+    hide_lattice()
+    engine.SDL_SetRenderDrawColor(engine.renderer, 0, 0, 0, 255)
+    engine.SDL_RenderClear(engine.renderer)
+    update_canvas()
+    app = None
     try:
-        world = World(ROOT / 'assets/world', WIDTH)
-        player = Player(ROOT / 'assets/hero')
-        camera = Camera(WIDTH, HEIGHT)
-        camera.follow(player, world.width, snap=True)
-        keys = set()
-        running = True
-        previous = perf_counter()
-        accumulated = 0.0
-
-        while running:
+        app = GameApplication(ROOT)
+        previous, accumulated = perf_counter(), 0.0
+        while app.running:
             now = perf_counter()
-            accumulated += min(now - previous, 0.1)
+            accumulated += min(now - previous, .1)
             previous = now
             for event in get_events():
-                if event.type == SDL_QUIT:
-                    running = False
-                elif event.type == SDL_KEYDOWN:
-                    if event.key == SDLK_ESCAPE:
-                        running = False
-                    elif SDLK_F1 <= event.key <= SDLK_F7:
-                        player.effects.level = event.key - SDLK_F1 + 1
-                    elif SDLK_1 <= event.key <= SDLK_8:
-                        world.set_stage(event.key - SDLK_1)
-                        player = Player(ROOT / 'assets/hero')
-                        keys.clear()
-                        accumulated = 0.0
-                        camera.follow(player, world.width, snap=True)
-                    else:
-                        keys.add(event.key)
-                        player.press(event.key, keys)
-                elif event.type == SDL_KEYUP:
-                    keys.discard(event.key)
-            if not running:
+                app.handle(event)
+            if not app.running:
                 break
+            SDL_SetWindowTitle(engine.window, '마검사 시뮬레이터'.encode('utf8'))
             if not SDL_GetKeyboardFocus():
-                keys.clear()
-
-            # 화면 주사율과 관계없이 이동과 점프를 같은 시간 간격으로 계산한다.
+                app.keys.clear()
             while accumulated >= STEP:
-                player.update(STEP, keys)
-                changed = world.change_stage(player)
-                camera.follow(player, world.width, STEP, snap=changed)
+                app.update(STEP)
                 accumulated -= STEP
-
             clear_canvas()
-            world.draw(camera)
-            player.draw(camera)
+            app.draw()
             update_canvas()
     finally:
-        # pico2d의 렌더러를 닫기 전에 이미지 참조를 정리한다.
-        player = world = None
+        if app:
+            app.close()
         close_canvas()
 
 

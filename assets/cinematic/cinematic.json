@@ -1,0 +1,1058 @@
+{
+  "title": "마검사 시뮬레이터 · 마검의 각성",
+  "fps": 60,
+  "duration": 34.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "generationMethod": "built-in image_gen",
+  "assets": {
+    "village": {
+      "file": "village.png",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Original 2D dark medieval fantasy game cinematic, high quality hand-painted PIXEL ART with crisp deliberate pixel clusters, earthy medieval palette, atmospheric depth, cinematic lighting and material detail. NOT 3D, not photorealistic, not smooth vector. No captions, words, logos, watermark or UI. Input image is ART DIRECTION and village architecture reference. SINGLE immersive widescreen16:9 establishing shot of this same isolated rural valley village on peaceful morning. Timber-and-cream-plaster houses, terracotta roofs, gardens, hanging linen, soft chimney smoke, distant mountain and church tower. Wide eye-level camera from road, level sunlit compacted earth lane spans bottom quarter, lush trees framing corners, subtle long shadows. Tiny distant villagers doing chores acceptable, no central/foreground character, NO weapons. Lived-in ordinary peaceful village. One continuous scene, not panels. Keep lower quarter open for animated boy walking.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "9ceb77ef84834cac21077d8d3d6055db794a57b8f6198ad92f88d4c97b07d186"
+    },
+    "clearing": {
+      "file": "clearing.png",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Original 2D dark medieval fantasy game cinematic, high quality hand-painted PIXEL ART with crisp deliberate pixel clusters, earthy medieval palette, atmospheric depth, cinematic lighting and material detail. NOT 3D, not photorealistic, not smooth vector. No captions, words, logos, watermark or UI. Input is palette/style reference ONLY. SINGLE widescreen16:9 cinematic scene of quiet roadside woodland clearing just outside same village. Eye-level side view of walkable flat pale dirt path across lower quarter, small sunken old flat stone and disturbed dark soil at right-of-center x70percent, nothing standing on it. Ferns/roots along road, mossy trunks, soft sun rays, village roof barely visible far left through trees. Morning turning mysteriously still, gentle green and cool slate. Empty roadside patch is focal area for a separately added embedded sword and boy. NO characters, NO weapons, NO magicalFX, no foreground trunk blocking stage, no panels.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "b8e7251a46847f753251546775f85b04c81d63c379ebd2d4ec1208cff95cf826"
+    },
+    "walk_unarmed": {
+      "file": "walk_unarmed.png",
+      "width": 1448,
+      "height": 1086,
+      "prompt": "Original 2D dark medieval fantasy game cinematic, high quality hand-painted PIXEL ART with crisp deliberate pixel clusters, earthy medieval palette, atmospheric depth, cinematic lighting and material detail. NOT 3D, not photorealistic, not smooth vector. No captions, words, logos, watermark or UI. Input is exact HERO IDENTITY. SAME brown-haired adolescent boy, navy-blue short scarf/cape, dark charcoal tunic, gray trousers, brown leather gloves/belt/boots, identical proportions/colors/head size. ONLY change REMOVE sword, hands EMPTY. Production animation sprite sheet exactly TWELVE consecutive unarmed casual walking frames facing RIGHT, equal4columns by3rows grid, landscape4:3 canvas ideally1536x1152, equal square cells. True RGBA transparency around each isolated fullbody. Fixed same-size character and feet ground baseline at84percent cellheight, fixed hip around cellcenter. Comfortable alternating steps, both legs crossing, heel landing/toe push-off, gentle arm swing/cape follow-through, seamless frame12 to1. Body bounce under2percent, NO scale/costume changes. Crisp outlines, modest pixel resolution like reference but clearer cinematic detail. Full head/body/boots/cape always inside cell with12percent margins. NO sword/floor/shadow/text/numbers/borders/gridlines. One character percell, no extra frames.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "bf95d19e31056a066db6abf84012c656497422a33dd6b39e59c1467db268c4f5",
+      "columns": 4,
+      "rows": 3,
+      "frameCount": 12,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            59,
+            27,
+            292,
+            328
+          ]
+        },
+        {
+          "x": 362,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            57,
+            27,
+            280,
+            328
+          ]
+        },
+        {
+          "x": 724,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            57,
+            27,
+            280,
+            328
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            56,
+            27,
+            295,
+            328
+          ]
+        },
+        {
+          "x": 0,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            56,
+            28,
+            295,
+            330
+          ]
+        },
+        {
+          "x": 362,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            56,
+            28,
+            280,
+            330
+          ]
+        },
+        {
+          "x": 724,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            57,
+            28,
+            280,
+            330
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            55,
+            28,
+            314,
+            330
+          ]
+        },
+        {
+          "x": 0,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            55,
+            28,
+            305,
+            330
+          ]
+        },
+        {
+          "x": 362,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            57,
+            29,
+            280,
+            330
+          ]
+        },
+        {
+          "x": 724,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            57,
+            28,
+            284,
+            330
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            331.0
+          ],
+          "bounds": [
+            55,
+            29,
+            280,
+            330
+          ]
+        }
+      ]
+    },
+    "pull_sword": {
+      "file": "pull_sword.png",
+      "width": 1448,
+      "height": 1086,
+      "prompt": "Original 2D dark medieval fantasy game cinematic, high quality hand-painted PIXEL ART with crisp deliberate pixel clusters, earthy medieval palette, atmospheric depth, cinematic lighting and material detail. NOT 3D, not photorealistic, not smooth vector. No captions, words, logos, watermark or UI. Input is exact HERO IDENTITY and slim near-black violet-edged sword design. SAME adolescent boy, messy brown hair, navy scarf/cape, charcoal tunic, gray trousers, brown gloves/boots, stable head/body proportions. 12-frame cinematic acting sheet EXACT equal4columns by3rows landscape4:3 canvas, squarecells. Facing RIGHT, fixed camera/scale/bootbaseline at84percent cellheight. Frame1 standing looking down at sword;2-3 crouch leaning reaching;4-5 both hands grasp dark sword hilt;6-8 bracing boots leaning back pulling hard UPWARD with strained effort;9 blade breaks free;10-12 boy rises holding freed slim straight BLACK sword with thin violet edge UPRIGHT, surprised and slightly recoiling. SAME single sword in each cell (embedded tip low frames1-8, raised free9-12), no extra sword. Clearly distinct sequential body motion, believable elbows/twohands. Lastpose not attack. Wholehead/hands/weapon/cape/boots inside EACH cell withwidepadding, raisedblade mustfit. ONLY boy and sword on TRUE TRANSPARENT RGBA; NO ground/rocks/shadows/smokeFX/labels/numbers/grid. Redraw consistent hero poses.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "7ac225d399b499d960e766354eef286a137145efe8a6a1577404942fc130b217",
+      "columns": 4,
+      "rows": 3,
+      "frameCount": 12,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            47,
+            32,
+            314,
+            328
+          ]
+        },
+        {
+          "x": 362,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            43,
+            53,
+            307,
+            328
+          ]
+        },
+        {
+          "x": 724,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            46,
+            86,
+            308,
+            328
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 0,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            46,
+            108,
+            310,
+            328
+          ]
+        },
+        {
+          "x": 0,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            328.0
+          ],
+          "bounds": [
+            51,
+            114,
+            309,
+            328
+          ]
+        },
+        {
+          "x": 362,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            43,
+            79,
+            309,
+            328
+          ]
+        },
+        {
+          "x": 724,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            38,
+            49,
+            310,
+            328
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            329.0
+          ],
+          "bounds": [
+            23,
+            33,
+            309,
+            328
+          ]
+        },
+        {
+          "x": 0,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            350.0
+          ],
+          "bounds": [
+            22,
+            53,
+            300,
+            349
+          ]
+        },
+        {
+          "x": 362,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            350.0
+          ],
+          "bounds": [
+            26,
+            56,
+            275,
+            349
+          ]
+        },
+        {
+          "x": 724,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            350.0
+          ],
+          "bounds": [
+            38,
+            33,
+            258,
+            349
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "pivot": [
+            188.24,
+            350.0
+          ],
+          "bounds": [
+            37,
+            9,
+            250,
+            349
+          ]
+        }
+      ]
+    },
+    "sword_prop": {
+      "file": "sword_prop.png",
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Original premium 2D dark medieval fantasy, beautiful detailed hand-painted PIXEL ART, crisp deliberate pixel clusters and controlled textures, cinematic light, not3D/notphotoreal/notvector. No words, numbers, logos, watermark or UI. Reference shows the exact slender BLACK SWORD with a thin muted VIOLET cutting edge; draw ONLY that one sword, larger detailed cinematic prop. Plain dark narrow straight blade, dark simple short crossguard, wrapped black grip, small dark diamond pommel, no giant greatsword. Whole single sword centered on TRUE RGBA transparent canvas with generous20percent margin on all sides. Hilt upper left, tip lower right in natural45degree diagonal, not bent. No hand/character/ground/shadow/smoke or other objects. High readability, precise consistent silhouette. This single prop is planted tip-first diagonally into roadside soil, but DO NOT draw soil.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "c1e6cfffad568b86e7d6623e6b865135ca576cd2bfed3b7a833e31e6945de67b"
+    },
+    "dark_surge": {
+      "file": "dark_surge.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Edit this 16-frame black smoke animation atlas. KEEP EXACT16FRAMES in same4column4row equal grid, same charcoal-black spectral vortex with tiny dim violet rims and same animation order. Fix the clipping and adjacent-cell bleed: within EACH of the16equal squarecells REDRAW/SHRINK the whole individual puff to occupy ONLY60percent of that cell width and60percentheight, leaving at least20percent COMPLETELY TRANSPARENT EMPTY MARGIN ON ALL FOUR sides of EVERYCELL. All separate wisps and ashflecks also inside this60percent area. The peaks must be small enough to fit, NO touching neighboring cells or outeredges. Keep each cell's emittercentered at x50percent,y75percent and preserve frame progression small brewingcurl->bigengulfingvortex->dissipation. Same crisp detailed 2D pixel-art style and true RGBA transparency. No new background, checkerboard, labels, lines, frames, weapons or characters. One puff percell, exactly4x4. Make entire16sprite atlas square.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "330cff96f7c9bd1552becd01b507cc3247bcae3a1d2654a17a4c4002b88d8f0e",
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            263.76
+          ],
+          "bounds": [
+            99,
+            196,
+            223,
+            265
+          ]
+        },
+        {
+          "x": 314,
+          "y": 0,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            263.76
+          ],
+          "bounds": [
+            87,
+            154,
+            229,
+            265
+          ]
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            263.76
+          ],
+          "bounds": [
+            72,
+            119,
+            227,
+            265
+          ]
+        },
+        {
+          "x": 940,
+          "y": 0,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            263.76
+          ],
+          "bounds": [
+            63,
+            74,
+            236,
+            265
+          ]
+        },
+        {
+          "x": 0,
+          "y": 314,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            262.92
+          ],
+          "bounds": [
+            75,
+            71,
+            238,
+            252
+          ]
+        },
+        {
+          "x": 314,
+          "y": 314,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            262.92
+          ],
+          "bounds": [
+            71,
+            66,
+            240,
+            252
+          ]
+        },
+        {
+          "x": 627,
+          "y": 314,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            262.92
+          ],
+          "bounds": [
+            65,
+            64,
+            240,
+            252
+          ]
+        },
+        {
+          "x": 940,
+          "y": 314,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            262.92
+          ],
+          "bounds": [
+            63,
+            56,
+            243,
+            252
+          ]
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            262.92
+          ],
+          "bounds": [
+            68,
+            56,
+            244,
+            246
+          ]
+        },
+        {
+          "x": 314,
+          "y": 627,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            262.92
+          ],
+          "bounds": [
+            67,
+            60,
+            243,
+            246
+          ]
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            262.92
+          ],
+          "bounds": [
+            63,
+            58,
+            240,
+            246
+          ]
+        },
+        {
+          "x": 940,
+          "y": 627,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            262.92
+          ],
+          "bounds": [
+            68,
+            61,
+            243,
+            246
+          ]
+        },
+        {
+          "x": 0,
+          "y": 940,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            263.76
+          ],
+          "bounds": [
+            74,
+            59,
+            238,
+            240
+          ]
+        },
+        {
+          "x": 314,
+          "y": 940,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            263.76
+          ],
+          "bounds": [
+            80,
+            66,
+            232,
+            240
+          ]
+        },
+        {
+          "x": 627,
+          "y": 940,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            263.76
+          ],
+          "bounds": [
+            82,
+            110,
+            224,
+            240
+          ]
+        },
+        {
+          "x": 940,
+          "y": 940,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            263.76
+          ],
+          "bounds": [
+            95,
+            172,
+            217,
+            240
+          ]
+        }
+      ]
+    },
+    "menu_plate": {
+      "file": "menu_plate.png",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Original premium 2D dark medieval fantasy, beautiful detailed hand-painted PIXEL ART, crisp deliberate pixel clusters and controlled textures, cinematic light, not3D/notphotoreal/notvector. No words, numbers, logos, watermark or UI. Image1 reference for black/violet slim sword ONLY, image2 woodland/village world reference. SINGLE widescreen16:9 cinematic TITLE SCREEN background with NO TEXT. The sword embedded in cracked black roadside stone at x62percent, huge in foreground angled slightly, recognizable narrow black blade, small darkcrossguard/grip. Towering shadowy BLACK MAGIC AURA curls upward around blade like ash and ink in air and spreads subtly to ALL FOUR SCREEN EDGES, restrained mutedviolet rimlight reveals sculptural smoke in darkblue/charcoal. Distant same medieval village and forest now dusk/overcast faint in background. Low camera looking up at sword with dramatic depth and moody rim light, floating ash tiny, exquisite pixel-art atmosphere, no overbrightbloom. LEFT40percent deliberately dark calm negative space for game title and three menu buttons, no objects covering left text zone. Whole scene fills frame. No hero, no enemy, no lettering, no labels, no UI.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "bf75247a3ddd824619f795c08b12c7dbef27f96ba3fc352964f5bbb5581a41d6"
+    },
+    "controls_book": {
+      "file": "controls_book.png",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Original premium 2D dark medieval fantasy, beautiful detailed hand-painted PIXEL ART, crisp deliberate pixel clusters and controlled textures, cinematic light, not3D/notphotoreal/notvector. No words, numbers, logos, watermark or UI. SINGLE widescreen16:9 illustration for game's readable controls page: a huge OPEN aged medieval leatherbound book laid almost flat on dark wood desk, viewed close from near straight-on overhead so BOTH facing parchment pages form LARGE FLAT CLEAR rectangles. Book fills about88percent frame width and82percent height, centered, pageleft x16-46percent and pageright x54-84percent both blank in middle; wide uncluttered writing areas from y20to78percent. Warm ivory parchment, thin antique gold corner ornaments, stitching, small nicks and deep brown central binding. Subtle candle illumination at far outer edges only, dark desk border frames book, paper not overly stained. NO TEXT AT ALL and no fake writing, no diagrams on pages; controls will be typeset clearly by the game. Keep horizontal text zones unwarped/unobstructed, realistic page thickness but no strongly curled surfaces. Crisp beautiful pixel art, natural warm-cool contrast, only one open book, no hands or people.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "0a1061a18505b71f67b024ae4662b962248e2a9d715aae99b30e78713bcec252"
+    },
+    "grip_closeup": {
+      "file": "grip_closeup.png",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Premium original 2D pixel-art dark medieval fantasy game cinematic. Crisp fine pixel clusters, beautiful controlled detail, earthy palette and dramatic cinematic lighting; no photoreal/3D/vector. No text/UI/logo/watermark. Reference1 hero appearance, reference2 EXACT sword design, reference3 roadside environment. SINGLE widescreen16:9 extreme cinematic close-up: brown-gloved hands of the same navy-caped boy are only just closing around wrapped black sword hilt on the right side of frame, forearms tense and sleeve/cape edges visible. Sword still planted tip-first DIAGONALLY down-right in compact earth and weathered stone, same small dark crossguard and violet hairline edge. Camera very low near soil, compelling diagonal composition, soil grit/moss in sharp foreground, quiet trees soft in background, thin faint black ash rising from blade. Warm sunlight on fingers clashes with subtle cold violet under blade. One moment before extraction, anticipatory stillness; fullboy face NOT visible, no duplicate sword/extra hands, anatomically exactly two hands.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "a5f3aa22e31170890b1bf1a754fd0fb3a86e25614a556ef0137f75fbcadb9914"
+    },
+    "awakened_keyart": {
+      "file": "awakened_keyart.png",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Premium original 2D pixel-art dark medieval fantasy game cinematic. Crisp fine pixel clusters, beautiful controlled detail, earthy palette and dramatic cinematic lighting; no photoreal/3D/vector. No text/UI/logo/watermark. Reference1 EXACT adolescent boy identity/costume, reference2 exact black slim violet-edged sword, reference3 same wooded roadside. SINGLE widescreen16:9 dramatic low-angle concluding cinematic keyart. SAME short messy brown-haired boy with navy scarf/cape, dark tunic,graytrousers,brownboots, youthfulsamehead. He has just survived overwhelming magic, standing right-of-center on that roadside, holding ONE freed black sword DOWN in right hand, staring at his own left palm in disbelief. Subtle dim violet glimmer in eyes, feet firmly grounded, cape swept sideways, composed vulnerability and dawning resolve. Camera near ground looking up, sword blade prominent lowerforeground but entire body and sword visible. Forest behind is temporarily overcast, black ash in air and faint broken rings of shadow around him, distant same village at left. Dramatic cold rim light, no neonexcess/no armorchange/nohairchange/noadultredesign. Leave frameleft atmospherically calm for native subtitle, no lettering.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "6b8f5b9f0ae14aa243a76774669cc25da717a7e2eccac2489a14d30172658462"
+    },
+    "awakening_actor": {
+      "file": "awakening_actor.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Premium original 2D pixel-art dark medieval fantasy game cinematic. Crisp fine pixel clusters, beautiful controlled detail, earthy palette and dramatic cinematic lighting; no photoreal/3D/vector. No text/UI/logo/watermark. Exact same adolescent boy identity from reference, navycape,brownhair,graytrousers,brownboots and ONE slim black violet-edged sword. Transparent production ACTING animation sheet EXACT16sequentialframes equal4columns4rows squarecanvas, one fullboy percell, constant head/body/costume/size. FacingRIGHT in3/4sideview, fixed bootbaseline at83percent cellheight and fixed bodyroot. Frames1-4 shocked recoil, sword raised right hand, left hand opens;5-8 forcefully leaning back while cape/hair lift and left arm shields face, no heightchange;9-12 both shoulders tense, gripping sword close while black power is absorbed (DO NOT drawpowerFX);13-16 knees soften then returns to standing, sword lowered, stunned breathing. Believable continuous gentle inbetweens, SAME figure 2arms2legs, no weaponsduplicates or costumechanges. Every head/boot/hand/cape/sword entirely inside owncell with15percent padding; characters occupy ONLY60percent ofcellwidth/height includingweapon to avoidcutoff. TRUE transparentalpha, NO background/ground/shadow/particles/aura, no labels/numbers/grid.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "7be027226e0b8e895dd5938634dbfab0024c80d703c7f599318c5ca57cc592c3",
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            283.0
+          ],
+          "bounds": [
+            55,
+            79,
+            263,
+            283
+          ]
+        },
+        {
+          "x": 314,
+          "y": 0,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            283.0
+          ],
+          "bounds": [
+            57,
+            78,
+            257,
+            283
+          ]
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            283.0
+          ],
+          "bounds": [
+            40,
+            78,
+            243,
+            283
+          ]
+        },
+        {
+          "x": 940,
+          "y": 0,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            283.0
+          ],
+          "bounds": [
+            35,
+            77,
+            233,
+            283
+          ]
+        },
+        {
+          "x": 0,
+          "y": 314,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            283.0
+          ],
+          "bounds": [
+            34,
+            75,
+            235,
+            282
+          ]
+        },
+        {
+          "x": 314,
+          "y": 314,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            283.0
+          ],
+          "bounds": [
+            30,
+            79,
+            229,
+            282
+          ]
+        },
+        {
+          "x": 627,
+          "y": 314,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            283.0
+          ],
+          "bounds": [
+            33,
+            71,
+            225,
+            282
+          ]
+        },
+        {
+          "x": 940,
+          "y": 314,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            283.0
+          ],
+          "bounds": [
+            25,
+            69,
+            216,
+            282
+          ]
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            283.0
+          ],
+          "bounds": [
+            29,
+            65,
+            217,
+            283
+          ]
+        },
+        {
+          "x": 314,
+          "y": 627,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            283.0
+          ],
+          "bounds": [
+            31,
+            80,
+            223,
+            283
+          ]
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            162.76000000000002,
+            283.0
+          ],
+          "bounds": [
+            33,
+            82,
+            227,
+            283
+          ]
+        },
+        {
+          "x": 940,
+          "y": 627,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            163.28,
+            283.0
+          ],
+          "bounds": [
+            38,
+            82,
+            233,
+            282
+          ]
+        },
+        {
+          "x": 0,
+          "y": 940,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            284.0
+          ],
+          "bounds": [
+            40,
+            83,
+            238,
+            283
+          ]
+        },
+        {
+          "x": 314,
+          "y": 940,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            284.0
+          ],
+          "bounds": [
+            40,
+            82,
+            233,
+            283
+          ]
+        },
+        {
+          "x": 627,
+          "y": 940,
+          "w": 313,
+          "h": 314,
+          "pivot": [
+            162.76000000000002,
+            284.0
+          ],
+          "bounds": [
+            42,
+            78,
+            230,
+            283
+          ]
+        },
+        {
+          "x": 940,
+          "y": 940,
+          "w": 314,
+          "h": 314,
+          "pivot": [
+            163.28,
+            284.0
+          ],
+          "bounds": [
+            40,
+            79,
+            232,
+            283
+          ]
+        }
+      ]
+    }
+  },
+  "shots": [
+    {
+      "start": 0,
+      "end": 5,
+      "name": "평범한 마을의 아침"
+    },
+    {
+      "start": 5,
+      "end": 9,
+      "name": "길가에서 검 발견"
+    },
+    {
+      "start": 9,
+      "end": 11,
+      "name": "검의 클로즈업"
+    },
+    {
+      "start": 11,
+      "end": 16,
+      "name": "호기심과 검 뽑기"
+    },
+    {
+      "start": 16,
+      "end": 22,
+      "name": "검은 마력의 폭발과 흡수"
+    },
+    {
+      "start": 22,
+      "end": 27,
+      "name": "각성 뒤의 정적"
+    },
+    {
+      "start": 27,
+      "end": 32,
+      "name": "마검을 얻은 소년"
+    },
+    {
+      "start": 32,
+      "end": 34,
+      "name": "마검사 타이틀"
+    }
+  ]
+}

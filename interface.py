@@ -3,14 +3,14 @@
 from ctypes import byref, c_int
 import json
 from pathlib import Path
-from math import sin
 
 import pico2d.pico2d as engine
 from pico2d import (load_font, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderFillRect,
                     SDL_RenderDrawRect, SDL_SetRenderDrawBlendMode, SDL_BLENDMODE_BLEND, TTF_SizeUTF8, SDL_SetTextureColorMod)
 
 from animation import load_pixel_image
-from scene_layout import sword_layout, socket_layout, smoke_sites
+from scene_layout import sword_layout, socket_layout
+from aura_motion import smoke_draws
 
 
 def fill(x, y, width, height, color):
@@ -68,17 +68,9 @@ class Interface:
             round(geometry['width']), round(geometry['height']))
 
     def _blade_smoke(self, geometry, front=False):
-        sites = smoke_sites(geometry, 4)[1:3] if front else smoke_sites(geometry, self.layout['bladeEmitters']) + [geometry['ground']]
-        for i, (x, y) in enumerate(sites):
-            frame = self.smoke['frames'][(int(self.time * self.smoke['fps']) + i * 3) % self.smoke['frameCount']]
-            scale = self.layout['socketSmokeScale'] if i == len(sites) - 1 else self.layout['smokeScale']
-            if front:
-                scale *= .65
-            ox, oy = self.smoke['emitter']
-            self.smoke_image.opacify(.22 if front else self.layout['smokeOpacity'])
-            self._piece(self.smoke_image, {'crop': (frame['x'], frame['y'], frame['x'] + frame['w'], frame['y'] + frame['h']),
-                'left': x - ox * scale + sin(self.time * .8 + i * 1.7) * 14, 'top': y - oy * scale,
-                'width': frame['w'] * scale, 'height': frame['h'] * scale})
+        for item in smoke_draws(geometry, self.layout, self.smoke, self.time, front):
+            self.smoke_image.opacify(item['opacity'])
+            self._piece(self.smoke_image, item['geometry'])
         self.smoke_image.opacify(1.0)
 
     def draw_menu(self, selected):

@@ -1,4 +1,4 @@
-"""1초 대기 → 인트로 → 시작 화면 → 조작 설명 또는 본 게임."""
+"""실행 즉시 인트로(처음 3초 검은 화면) → 시작 화면 → 본 게임."""
 
 import pico2d.pico2d as engine
 from pico2d import (
@@ -21,7 +21,9 @@ class GameApplication:
         self.music = load_music(str(self.assets / 'cinematic/intro.ogg')) if engine.audio_on else None
         if self.music:
             self.music.set_volume(72)
-        self.state, self.elapsed = 'boot', 0.0
+        self.state, self.elapsed = 'intro', 0.0
+        if self.music:
+            self.music.play()
         self.running, self.selected = True, 0
         self.player = self.world = self.camera = None
         self.keys = set()
@@ -54,8 +56,6 @@ class GameApplication:
     def handle(self, event):
         if event.type == SDL_QUIT:
             self.running = False
-            return
-        if self.state == 'boot':
             return
         if self.state == 'intro':
             if event.type == SDL_KEYDOWN and event.key in {SDLK_RETURN, SDLK_SPACE, SDLK_ESCAPE}:
@@ -103,13 +103,7 @@ class GameApplication:
 
     def update(self, dt):
         self.ui.update(dt)
-        if self.state == 'boot':
-            self.elapsed += dt
-            if self.elapsed >= 1.0:
-                self.state = 'intro'
-                if self.music:
-                    self.music.play()
-        elif self.state == 'intro':
+        if self.state == 'intro':
             self.video.update(dt)
             if self.video.finished:
                 self._menu()
@@ -121,9 +115,7 @@ class GameApplication:
             self.camera.follow(self.player, self.world.width, dt, snap=changed)
 
     def draw(self):
-        if self.state == 'boot':
-            fill(0, 0, 1280, 720, (0, 0, 0, 255))
-        elif self.state == 'intro':
+        if self.state == 'intro':
             self.video.draw()
         elif self.state == 'menu':
             self.ui.draw_menu(self.selected)

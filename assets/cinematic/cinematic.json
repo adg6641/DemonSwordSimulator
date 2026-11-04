@@ -1040,764 +1040,522 @@
     },
     "walk_cycle": {
       "file": "walk_cycle.png",
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Precise animation atlas edit. Only fix ARMS of BOTTOM12sprites, allotherpixels/legs/heads/capes/boots/cellpositions unchanged. Exact24frames6columns4rows1536x1024RGBAtransparent.\nTOP12 sprites (rows1and2) arm swing is correct and MUST REMAINUNCHANGED.\nBOTTOM12 sprite arms must be the TOP12 arm poses IN REVERSE ORDER, so swing returns smoothly tobeginning. Map ARMS ONLY:\nrow3col1 = row2col6 arms\nrow3col2 = row2col5 arms\nrow3col3 = row2col4 arms\nrow3col4 = row2col3 arms\nrow3col5 = row2col2 arms\nrow3col6 = row2col1 arms\nrow4col1 = row1col6 arms\nrow4col2 = row1col5 arms\nrow4col3 = row1col4 arms\nrow4col4 = row1col3 arms\nrow4col5 = row1col2 arms\nrow4col6 = row1col1 arms.\nRepaint arms cleanly attached to SAMEshoulders, fill uncoveredtunic naturally. Neararm overcape/torso swings BACK at row3left, passes DOWN BYTHIGH in middle, swings FORWARD visibly acrossfrontoftorso atROW4RIGHT. Thus final sprite nearhand is OUTFRONT just like FIRSTsprite, andcycle seam is seamless. Fararm doesopposite. Preserve alloriginal LEGPOSES andtheirsideidentity. Do not copylegs. Do not movebody orresize. Relaxednaturalwalk, emptyhands, notboxing. TrueRGBAalpha0emptybackground, no graywash/shadows/grid/text/newprops. Mostimportant FINALSPRITEarms must MATCH FIRSTSPRITEarms, bothfront-handextendedright, while ROW3LEFTarms match ROW2RIGHT backwardarm.",
-      "sourcePrompt": "Use case: compositing, identity-preserve.\nAsset: game cinematic WALK animation atlas, EXACT24frames6columns4rows1536x1024, true transparentRGBA.\nImage1 is ONLY character appearance reference: preserve exact face, brown hair, navy cape, charcoal tunic, gray pants, brown wristguards/boots, upright proportions and size. Image2 is an EXACT anatomical POSE GUIDE for every frame. Render the hero over EACH corresponding stick pose of image2, with same pelvis, contactfoot and limb directions, while removing every guide mark and colored stick. Red guide limbs are the camera-near arm+leg; blue are far arm+leg. Notice RED ARM points BACKWARD when RED LEG is FORWARD; the BLUE ARM is thenFORWARD. At frame13 redarmFORWARD/redlegBACK and bluearmBACK/bluelegFORWARD. At frames7 and19 arms pass neutrally beside torso. ALL24frame armpositions follow this counter-swing and return smoothly from24to1. Slow relaxed walk, not run. Both hands EMPTY, wrists downaroundupperthighheight, elbows slightlysoft10degrees not90degrees. Draw FULL ARMS DOWN ratherthan folded forearms hovering aroundwaist. Arm swings startatshoulder, extend naturally behind hip, ahead ofhip, with pendulum rhythm opposite SAMEleg. Keep hands/arms separate and readable, no missingneararm. Cape sits behindback and doesn't conceal neararm.\nPreserve level groundcontact atsamecellbaseline and tiny natural bodybob, not crouch or knee-high march. Fullsamebodysize allframes. Crisp premium2Dpixelart with same reference texture. No weapon, text, groundshadow, background, gridlines or colored limb marks. All emptyspace actualalpha0, no matte/graywash. EXACT24sequentialposes following guide order: row1firsthalf contact-to-pass, row2pass-to-oppositecontact, row3oppositecontact-to-pass,row4pass-to-initialcontact. No repeated halfstride copied to secondhalf: leg identities switch. Anatomy and arms/legs phase mostimportant.",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Use case: identity-preserve. Generate a completely NEW production animation sheet, not a correction of an old walk image. EXACT16frames4columns4rows on1536x1536canvas, one COMPLETE natural walk cycle read left-to-right then nextrow. Image1 character appearance only. Image2 exact pose/phase guide only. Same EXACT hero from image1: brown-haired adolescent boy, navy scarf/cape, charcoal short tunic, lightgray sleeves, gray trousers, brown gloves/wristguards and boots. Same face, hair, head size and upright body proportions. Premium crisp 2D game pixel-art matching image1. EMPTY HANDS, no sword. True transparentRGBA alpha0 outside each figure, no ground/shadow, no matte/background, no words/numbers/grid. Constant physical body height, same planted-foot baseline in each cell, all hair/cape/hands/feet inside cells with generous clear margins.\nMovement studied from a natural game-animation side-view walk: upright chest, shoulders over hips, gentle weight transfer, heel contact then weight over foot then toe release, low swinging foot clearsground, no crouch/run/skating. Follow image2 poses: red limbs CAMERA-NEAR side, blue limbs FAR side. The red ARM swings BACK while red LEG swings FORWARD, then reverses; the blue arm counter-swings. Near arm is visibly in foreground and cannot disappear behind cape. Relaxed elbows almoststraight, hands hang at upper thigh, small shoulder-driven 15degree arm swing. Do not hold forearms up like boxing or jogging. Atpose1 nearlegFORWARD/nearhandBACK, pose5 nearlegpassing/neararmneutral, pose9 nearlegBACK/nearhandFORWARD, pose13 passing/armneutral, pose16nearlymatchespose1. Preserve leg identity through entire16posecycle; do not repeat samehalf twice. Smooth phase progression and seamless16to1. Cape gently follows movement, body never changes size. Render ONLY hero not colored guide; remove all guide marks.",
+      "sourcePrompt": "",
       "generationMethod": "built-in image_gen",
-      "sha256": "4b58bd039e9d6d7bc1c15a5467f7f7b9f8c061050bcb5fcb0183906f2337af7f",
+      "sha256": "f35c33cbe78eaf805eddaba47b4a9c21a6e718fa45b14c538e3af47eb2311bcb",
       "frames": [
         {
           "sourceIndex": 0,
           "x": 0,
           "y": 0,
-          "w": 256,
-          "h": 256,
+          "w": 314,
+          "h": 314,
           "pivot": [
-            139.0,
-            244.0
+            166.5,
+            300.0
           ],
-          "bodyHeight": 230.0,
+          "bodyHeight": 281.0,
           "headBox": [
-            106,
-            14,
-            66,
-            49
+            128,
+            19,
+            77,
+            60
           ],
           "supportCandidates": [
-            101.5,
-            172.5
+            126.0,
+            205.5
           ],
           "bounds": [
-            45,
-            13,
-            195,
-            244
+            52,
+            18,
+            242,
+            300
           ],
-          "supportX": 172.5,
-          "tractionQ": 33.5,
+          "supportX": 205.5,
+          "tractionQ": 39.0,
           "travel": 0.0
         },
         {
           "sourceIndex": 1,
-          "x": 256,
+          "x": 314,
           "y": 0,
-          "w": 256,
-          "h": 256,
+          "w": 313,
+          "h": 314,
           "pivot": [
-            139.0,
-            242.0
+            166.0,
+            301.0
           ],
-          "bodyHeight": 228.0,
+          "bodyHeight": 282.0,
           "headBox": [
-            106,
-            14,
-            66,
-            49
+            127,
+            19,
+            78,
+            60
           ],
           "supportCandidates": [
-            111.5,
-            167.5
+            123.0,
+            202.0
           ],
           "bounds": [
-            46,
-            13,
-            190,
-            243
+            58,
+            18,
+            231,
+            302
           ],
-          "supportX": 167.5,
-          "tractionQ": 28.5,
-          "travel": 5.0
+          "supportX": 202.0,
+          "tractionQ": 36.0,
+          "travel": 3.0
         },
         {
           "sourceIndex": 2,
-          "x": 512,
+          "x": 627,
           "y": 0,
-          "w": 256,
-          "h": 256,
+          "w": 313,
+          "h": 314,
           "pivot": [
-            139.5,
-            244.0
+            166.5,
+            302.0
           ],
-          "bodyHeight": 230.0,
+          "bodyHeight": 282.0,
           "headBox": [
-            107,
-            14,
-            65,
-            49
+            128,
+            20,
+            77,
+            60
           ],
           "supportCandidates": [
-            120.5,
-            155.5
+            183.0
           ],
           "bounds": [
-            47,
-            13,
-            176,
-            244
+            62,
+            19,
+            209,
+            302
           ],
-          "supportX": 155.5,
-          "tractionQ": 17.0,
-          "travel": 16.5
+          "supportX": 183.0,
+          "tractionQ": 16.5,
+          "travel": 22.5
         },
         {
           "sourceIndex": 3,
-          "x": 768,
+          "x": 940,
           "y": 0,
-          "w": 256,
-          "h": 256,
+          "w": 314,
+          "h": 314,
           "pivot": [
-            139.5,
-            243.0
+            167.5,
+            302.0
           ],
-          "bodyHeight": 229.0,
+          "bodyHeight": 282.0,
           "headBox": [
-            107,
-            14,
-            65,
-            49
+            129,
+            20,
+            77,
+            60
           ],
           "supportCandidates": [
-            157.5
+            167.5
           ],
           "bounds": [
-            51,
-            13,
-            179,
-            244
+            72,
+            19,
+            206,
+            302
           ],
-          "supportX": 157.5,
-          "tractionQ": 17.0,
-          "travel": 16.55
-        },
-        {
-          "sourceIndex": 4,
-          "x": 1024,
-          "y": 0,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            15,
-            65,
-            48
-          ],
-          "supportCandidates": [
-            151.5
-          ],
-          "bounds": [
-            52,
-            13,
-            174,
-            244
-          ],
-          "supportX": 151.5,
-          "tractionQ": 12.0,
-          "travel": 21.5
-        },
-        {
-          "sourceIndex": 5,
-          "x": 1280,
-          "y": 0,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            140.5,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            108,
-            15,
-            65,
-            48
-          ],
-          "supportCandidates": [
-            143.0
-          ],
-          "bounds": [
-            54,
-            14,
-            176,
-            244
-          ],
-          "supportX": 143.0,
-          "tractionQ": 2.5,
-          "travel": 31.0
-        },
-        {
-          "sourceIndex": 6,
-          "x": 0,
-          "y": 256,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 231.0,
-          "headBox": [
-            107,
-            13,
-            65,
-            50
-          ],
-          "supportCandidates": [
-            137.5
-          ],
-          "bounds": [
-            52,
-            13,
-            175,
-            245
-          ],
-          "supportX": 137.5,
-          "tractionQ": -1.0,
-          "travel": 34.5
-        },
-        {
-          "sourceIndex": 7,
-          "x": 256,
-          "y": 256,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            243.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            14,
-            65,
-            49
-          ],
-          "supportCandidates": [
-            139.5
-          ],
-          "bounds": [
-            52,
-            13,
-            176,
-            244
-          ],
-          "supportX": 139.5,
-          "tractionQ": -1.0,
-          "travel": 34.55
-        },
-        {
-          "sourceIndex": 8,
-          "x": 512,
-          "y": 256,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 230.0,
-          "headBox": [
-            107,
-            14,
-            65,
-            49
-          ],
-          "supportCandidates": [
-            134.0
-          ],
-          "bounds": [
-            53,
-            13,
-            184,
-            245
-          ],
-          "supportX": 134.0,
-          "tractionQ": -5.5,
+          "supportX": 167.5,
+          "tractionQ": 0.0,
           "travel": 39.0
         },
         {
-          "sourceIndex": 9,
-          "x": 768,
-          "y": 256,
-          "w": 256,
-          "h": 256,
+          "sourceIndex": 4,
+          "x": 0,
+          "y": 314,
+          "w": 314,
+          "h": 313,
           "pivot": [
-            139.5,
-            244.0
+            167.0,
+            301.0
           ],
-          "bodyHeight": 230.0,
+          "bodyHeight": 281.0,
           "headBox": [
-            107,
-            14,
-            65,
-            49
+            128,
+            20,
+            78,
+            60
           ],
           "supportCandidates": [
-            124.0
+            159.5
           ],
           "bounds": [
-            51,
-            13,
-            188,
-            245
+            72,
+            19,
+            207,
+            302
           ],
-          "supportX": 124.0,
-          "tractionQ": -15.5,
-          "travel": 49.0
+          "supportX": 159.5,
+          "tractionQ": -7.5,
+          "travel": 46.5
+        },
+        {
+          "sourceIndex": 5,
+          "x": 314,
+          "y": 314,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            166.5,
+            302.0
+          ],
+          "bodyHeight": 282.0,
+          "headBox": [
+            128,
+            20,
+            77,
+            64
+          ],
+          "supportCandidates": [
+            147.0
+          ],
+          "bounds": [
+            67,
+            19,
+            207,
+            302
+          ],
+          "supportX": 147.0,
+          "tractionQ": -19.5,
+          "travel": 58.5
+        },
+        {
+          "sourceIndex": 6,
+          "x": 627,
+          "y": 314,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            167.0,
+            301.0
+          ],
+          "bodyHeight": 281.0,
+          "headBox": [
+            129,
+            20,
+            76,
+            60
+          ],
+          "supportCandidates": [
+            136.0
+          ],
+          "bounds": [
+            66,
+            19,
+            209,
+            301
+          ],
+          "supportX": 136.0,
+          "tractionQ": -31.0,
+          "travel": 70.0
+        },
+        {
+          "sourceIndex": 7,
+          "x": 940,
+          "y": 314,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            168.0,
+            300.0
+          ],
+          "bodyHeight": 280.0,
+          "headBox": [
+            130,
+            20,
+            76,
+            61
+          ],
+          "supportCandidates": [
+            127.0,
+            209.5
+          ],
+          "bounds": [
+            70,
+            19,
+            245,
+            301
+          ],
+          "supportX": 127.0,
+          "tractionQ": -41.0,
+          "travel": 80.0
+        },
+        {
+          "sourceIndex": 8,
+          "x": 0,
+          "y": 627,
+          "w": 314,
+          "h": 313,
+          "pivot": [
+            167.0,
+            301.0
+          ],
+          "bodyHeight": 281.0,
+          "headBox": [
+            129,
+            20,
+            76,
+            61
+          ],
+          "supportCandidates": [
+            114.0,
+            207.5
+          ],
+          "bounds": [
+            64,
+            20,
+            238,
+            302
+          ],
+          "supportX": 207.5,
+          "tractionQ": 40.5,
+          "travel": 90.75
+        },
+        {
+          "sourceIndex": 9,
+          "x": 314,
+          "y": 627,
+          "w": 313,
+          "h": 313,
+          "pivot": [
+            165.5,
+            301.0
+          ],
+          "bodyHeight": 281.0,
+          "headBox": [
+            127,
+            20,
+            77,
+            61
+          ],
+          "supportCandidates": [
+            188.5
+          ],
+          "bounds": [
+            63,
+            20,
+            215,
+            301
+          ],
+          "supportX": 188.5,
+          "tractionQ": 23.0,
+          "travel": 108.25
         },
         {
           "sourceIndex": 10,
-          "x": 1024,
-          "y": 256,
-          "w": 256,
-          "h": 256,
+          "x": 627,
+          "y": 627,
+          "w": 313,
+          "h": 313,
           "pivot": [
-            139.5,
-            244.0
+            166.5,
+            301.0
           ],
-          "bodyHeight": 230.0,
+          "bodyHeight": 281.0,
           "headBox": [
-            107,
-            14,
-            65,
-            49
+            128,
+            20,
+            77,
+            60
           ],
           "supportCandidates": [
-            110.0,
-            172.0
+            169.5
           ],
           "bounds": [
-            49,
-            13,
-            193,
-            245
+            63,
+            20,
+            206,
+            302
           ],
-          "supportX": 110.0,
-          "tractionQ": -29.5,
-          "travel": 63.0
+          "supportX": 169.5,
+          "tractionQ": 3.0,
+          "travel": 128.25
         },
         {
           "sourceIndex": 11,
-          "x": 1280,
-          "y": 256,
-          "w": 256,
-          "h": 256,
+          "x": 940,
+          "y": 627,
+          "w": 314,
+          "h": 313,
           "pivot": [
-            140.5,
-            244.0
+            167.5,
+            302.0
           ],
-          "bodyHeight": 229.0,
+          "bodyHeight": 282.0,
           "headBox": [
-            108,
-            15,
-            65,
-            48
+            129,
+            20,
+            77,
+            59
           ],
           "supportCandidates": [
-            102.5,
-            185.0
+            163.5
           ],
           "bounds": [
-            48,
-            14,
-            208,
-            244
+            72,
+            20,
+            206,
+            303
           ],
-          "supportX": 102.5,
-          "tractionQ": -38.0,
-          "travel": 71.5
+          "supportX": 163.5,
+          "tractionQ": -4.0,
+          "travel": 135.25
         },
         {
           "sourceIndex": 12,
           "x": 0,
-          "y": 512,
-          "w": 256,
-          "h": 256,
+          "y": 940,
+          "w": 314,
+          "h": 314,
           "pivot": [
-            139.5,
-            244.0
+            167.0,
+            303.0
           ],
-          "bodyHeight": 229.0,
+          "bodyHeight": 282.0,
           "headBox": [
-            107,
-            15,
-            65,
-            48
+            128,
+            21,
+            78,
+            59
           ],
           "supportCandidates": [
-            98.0,
-            185.0
+            158.0
           ],
           "bounds": [
-            45,
-            14,
-            207,
-            244
+            70,
+            21,
+            209,
+            303
           ],
-          "supportX": 185.0,
-          "tractionQ": 45.5,
-          "travel": 80.75
+          "supportX": 158.0,
+          "tractionQ": -9.0,
+          "travel": 140.25
         },
         {
           "sourceIndex": 13,
-          "x": 256,
-          "y": 512,
-          "w": 256,
-          "h": 256,
+          "x": 314,
+          "y": 940,
+          "w": 313,
+          "h": 314,
           "pivot": [
-            139.0,
-            243.0
+            166.5,
+            301.0
           ],
-          "bodyHeight": 229.0,
+          "bodyHeight": 279.0,
           "headBox": [
-            107,
-            14,
-            64,
-            49
+            128,
+            22,
+            77,
+            59
           ],
           "supportCandidates": [
-            108.5,
-            163.0
+            146.0
           ],
           "bounds": [
-            45,
-            14,
-            183,
-            243
+            69,
+            21,
+            210,
+            302
           ],
-          "supportX": 163.0,
-          "tractionQ": 24.0,
-          "travel": 102.25
+          "supportX": 146.0,
+          "tractionQ": -20.5,
+          "travel": 151.75
         },
         {
           "sourceIndex": 14,
-          "x": 512,
-          "y": 512,
-          "w": 256,
-          "h": 256,
+          "x": 627,
+          "y": 940,
+          "w": 313,
+          "h": 314,
           "pivot": [
-            139.5,
-            244.0
+            167.0,
+            302.0
           ],
-          "bodyHeight": 229.0,
+          "bodyHeight": 281.0,
           "headBox": [
-            107,
-            15,
-            65,
-            48
+            128,
+            21,
+            78,
+            64
           ],
           "supportCandidates": [
-            154.0
+            130.0,
+            205.0
           ],
           "bounds": [
-            47,
-            14,
-            175,
-            245
+            61,
+            20,
+            238,
+            302
           ],
-          "supportX": 154.0,
-          "tractionQ": 14.5,
-          "travel": 111.75
+          "supportX": 130.0,
+          "tractionQ": -37.0,
+          "travel": 168.25
         },
         {
           "sourceIndex": 15,
-          "x": 768,
-          "y": 512,
-          "w": 256,
-          "h": 256,
+          "x": 940,
+          "y": 940,
+          "w": 314,
+          "h": 314,
           "pivot": [
-            139.5,
-            244.0
+            167.5,
+            301.0
           ],
-          "bodyHeight": 230.0,
+          "bodyHeight": 279.0,
           "headBox": [
-            107,
-            14,
-            65,
-            49
+            129,
+            22,
+            77,
+            58
           ],
           "supportCandidates": [
-            148.5
+            108.5,
+            128.5,
+            208.0
           ],
           "bounds": [
-            51,
-            14,
-            174,
-            244
+            54,
+            21,
+            244,
+            301
           ],
-          "supportX": 148.5,
-          "tractionQ": 9.0,
-          "travel": 117.25
-        },
-        {
-          "sourceIndex": 16,
-          "x": 1024,
-          "y": 512,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            15,
-            65,
-            48
-          ],
-          "supportCandidates": [
-            144.5
-          ],
-          "bounds": [
-            51,
-            14,
-            176,
-            244
-          ],
-          "supportX": 144.5,
-          "tractionQ": 5.0,
-          "travel": 121.25
-        },
-        {
-          "sourceIndex": 17,
-          "x": 1280,
-          "y": 512,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            140.0,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            108,
-            15,
-            64,
-            48
-          ],
-          "supportCandidates": [
-            141.5
-          ],
-          "bounds": [
-            53,
-            14,
-            177,
-            245
-          ],
-          "supportX": 141.5,
-          "tractionQ": 1.5,
-          "travel": 124.75
-        },
-        {
-          "sourceIndex": 18,
-          "x": 0,
-          "y": 768,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.0,
-            244.0
-          ],
-          "bodyHeight": 230.0,
-          "headBox": [
-            106,
-            14,
-            66,
-            49
-          ],
-          "supportCandidates": [
-            135.5
-          ],
-          "bounds": [
-            48,
-            13,
-            174,
-            244
-          ],
-          "supportX": 135.5,
-          "tractionQ": -3.5,
-          "travel": 129.75
-        },
-        {
-          "sourceIndex": 19,
-          "x": 256,
-          "y": 768,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.0,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            15,
-            64,
-            48
-          ],
-          "supportCandidates": [
-            132.0
-          ],
-          "bounds": [
-            50,
-            14,
-            181,
-            244
-          ],
-          "supportX": 132.0,
-          "tractionQ": -7.0,
-          "travel": 133.25
-        },
-        {
-          "sourceIndex": 20,
-          "x": 512,
-          "y": 768,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            15,
-            65,
-            48
-          ],
-          "supportCandidates": [
-            130.5
-          ],
-          "bounds": [
-            47,
-            14,
-            189,
-            244
-          ],
-          "supportX": 130.5,
-          "tractionQ": -9.0,
-          "travel": 135.25
-        },
-        {
-          "sourceIndex": 21,
-          "x": 768,
-          "y": 768,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            15,
-            65,
-            48
-          ],
-          "supportCandidates": [
-            121.5
-          ],
-          "bounds": [
-            47,
-            14,
-            192,
-            244
-          ],
-          "supportX": 121.5,
-          "tractionQ": -18.0,
-          "travel": 144.25
-        },
-        {
-          "sourceIndex": 22,
-          "x": 1024,
-          "y": 768,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            139.5,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            107,
-            15,
-            65,
-            49
-          ],
-          "supportCandidates": [
-            112.0,
-            179.0
-          ],
-          "bounds": [
-            47,
-            14,
-            203,
-            244
-          ],
-          "supportX": 112.0,
-          "tractionQ": -27.5,
-          "travel": 153.75
-        },
-        {
-          "sourceIndex": 23,
-          "x": 1280,
-          "y": 768,
-          "w": 256,
-          "h": 256,
-          "pivot": [
-            140.0,
-            244.0
-          ],
-          "bodyHeight": 229.0,
-          "headBox": [
-            108,
-            15,
-            64,
-            49
-          ],
-          "supportCandidates": [
-            102.0,
-            181.0
-          ],
-          "bounds": [
-            48,
-            14,
-            204,
-            244
-          ],
-          "supportX": 102.0,
-          "tractionQ": -38.0,
-          "travel": 164.25
+          "supportX": 108.5,
+          "tractionQ": -59.0,
+          "travel": 190.25
         }
       ],
-      "frameCount": 24,
-      "columns": 6,
+      "frameCount": 16,
+      "columns": 4,
       "rows": 4,
-      "sourceFrameCount": 24,
-      "referenceHeight": 229.0,
+      "sourceFrameCount": 16,
+      "referenceHeight": 281.0,
       "registeredPivot": [
-        139.5,
-        244.0
+        167.0,
+        301.0
       ],
-      "stride": 173.5,
+      "stride": 204.25,
       "distanceRetiming": true,
       "stanceSwitches": [
         0,
-        12
+        8
       ],
       "qualityReport": {
-        "sourceFrameCount": 24,
+        "sourceFrameCount": 16,
         "backgroundCornerMaxAlpha": 0,
         "headLandmarkXRange": [
-          139.0,
-          140.5
+          165.5,
+          168.0
         ],
         "usableIndices": [
           0,
@@ -1815,15 +1573,7 @@
           12,
           13,
           14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22,
-          23
+          15
         ],
         "discardedIndices": [],
         "phases": [
@@ -1837,638 +1587,619 @@
               4,
               5,
               6,
-              7,
-              8,
-              9,
-              10,
-              11
+              7
             ],
             "rawQ": [
-              33.5,
-              28.5,
-              16.0,
-              18.0,
-              12.0,
-              2.5,
-              -2.0,
+              39.0,
+              36.0,
+              16.5,
               0.0,
-              -5.5,
-              -15.5,
-              -29.5,
-              -38.0
+              -7.5,
+              -19.5,
+              -31.0,
+              -41.0
             ],
             "fittedQ": [
-              33.5,
-              28.5,
-              17.0,
-              17.0,
-              12.0,
-              2.5,
-              -1.0,
-              -1.0,
-              -5.5,
-              -15.5,
-              -29.5,
-              -38.0
+              39.0,
+              36.0,
+              16.5,
+              0.0,
+              -7.5,
+              -19.5,
+              -31.0,
+              -41.0
             ],
-            "maximumCorrection": 1.0,
-            "phaseDistance": 80.75
+            "maximumCorrection": 0.0,
+            "phaseDistance": 90.75
           },
           {
             "half": 1,
             "sourceIndices": [
+              8,
+              9,
+              10,
+              11,
               12,
               13,
               14,
-              15,
-              16,
-              17,
-              18,
-              19,
-              20,
-              21,
-              22,
-              23
+              15
             ],
             "rawQ": [
-              45.5,
-              24.0,
-              14.5,
-              9.0,
-              5.0,
-              1.5,
-              -3.5,
-              -7.0,
+              40.5,
+              23.0,
+              3.0,
+              -4.0,
               -9.0,
-              -18.0,
-              -27.5,
-              -38.0
+              -20.5,
+              -37.0,
+              -59.0
             ],
             "fittedQ": [
-              45.5,
-              24.0,
-              14.5,
-              9.0,
-              5.0,
-              1.5,
-              -3.5,
-              -7.0,
+              40.5,
+              23.0,
+              3.0,
+              -4.0,
               -9.0,
-              -18.0,
-              -27.5,
-              -38.0
+              -20.5,
+              -37.0,
+              -59.0
             ],
             "maximumCorrection": 0.0,
-            "phaseDistance": 92.75
+            "phaseDistance": 113.5
           }
         ],
-        "stride": 173.5,
+        "stride": 204.25,
         "noLegWarp": true,
         "rootMotion": "constant forward speed; pose cursor retimed by supporting-foot distance"
       },
       "worldSpeed": 140,
-      "phase": 0
+      "phase": 0,
+      "motionReference": {
+        "url": "https://www.youtube.com/watch?v=wstHO9G-Tq0",
+        "title": "게임 애니메이션 걷기 습작 Game Animation Walk Cycle Practice 01",
+        "observed": "side-view heel contact, toe release, opposing relaxed arm swing and small vertical weight shift; original hero artwork generated anew"
+      }
     },
     "walk_start": {
       "file": "walk_start.png",
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Use case: background-extraction. EDITTARGET attached atlas. REMOVE ONLY THE BACKGROUND/MATTE/GRID AND GROUND SHADOW, make actual RGBAalpha0 outside all character silhouettes and BETWEEN ALL frames. Some background is semitransparent gray/white cloudy wash; remove ALL that wash, not just its outer boundary. Keep exactly SAME 12 characters, 4columns3rows, positions, legposes, armposes, individualboots, hair, scarf/cape fabric and ALL characterpaintcolors/shape/details untouched. No repaint of hero, no reposing, no body/head size change, no optical blur or zoom, no crop or resizing. Preserve each cape as opaque blue fabric, preserve fine hair/fringes. Remove squarecell borders and floorcontactshadows outside boot. Empty pixel interiors actualalpha0, including cellcorners. Sprite atlas is production game asset, not mockup. Same1536x1024canvas samegrid 4x3, genuinely transparentRGBA.",
-      "sourcePrompt": "Use case: precise-object-edit, identity-preserve. Image1 EDIT TARGET is exact existing 12-frame stand-to-walk transition, 4columns3rows. Regenerate same high-quality 2D pixel-art hero and exact same12 full-body poses and leg placements, head size, upright height, costume and crop layout. Image2 gamehero is identity reference only. Correct arms so starting to walk uses NATURAL relaxed counter-swing: each arm swings from SHOULDER opposite its SAME-SIDE leg, and forward together with the OPPOSITE leg. Early frames1-3 relaxed hands down near thighs;4-8 arms gradually begin opposite-phase with stepping legs;9-12 fully walking arm swing at hipheight. No two hands held forward, no boxing/jogging right-angle bent elbows, no rigid one-arm pose. Elbows slightly soft, palms relaxed empty. Preserve exact successful leg stride, head/torso size, standing highhips, feetbaseline, cape and facialidentity oftarget. Small incremental movement continuous into walkingcycle, not crouching or running. Exactly12frames4x3 on1536x1024canvas, allbody insidecells withclearspace. Truly transparentRGBA outsidefigures alpha0; no gray/white background wash, no ground/shadow/text/lines/weapons.",
+      "width": 1448,
+      "height": 1086,
+      "prompt": "Use case: identity-preserve. NEW12frame4column3row1536x1152production spritesheet. Image1 is character appearance only. Same EXACT hero from image1: brown-haired adolescent boy, navy scarf/cape, charcoal short tunic, lightgray sleeves, gray trousers, brown gloves/wristguards and boots. Same face, hair, head size and upright body proportions. Premium crisp 2D game pixel-art matching image1. EMPTY HANDS, no sword. True transparentRGBA alpha0 outside each figure, no ground/shadow, no matte/background, no words/numbers/grid. Constant physical body height, same planted-foot baseline in each cell, all hair/cape/hands/feet inside cells with generous clear margins.\nONE natural transition from upright relaxedstanding to normalwalkingRIGHT. Frames1-3 stand quietly, arms hang by thighs;4-6 shiftsweight into firststep;7-9 gently advances near leg forward while nearARM swingsBACK fromshoulder andfarARM forward;10-12 begins oppositelegstride, arms follow in relaxedcounterphase. Both palms empty/relaxed, elbows onlyslightlysoft, wrists remain nearupperthighheight. No boxing/bentforearms/run/crouch. Chest staysupright, feet rollheel-to-toe withsmallweighttransfer andnaturalanklemotion. Small consecutive changes, no body/headscalechange, no hugecapeflutter. Fullbodyall12cells. Constant baseline and scale; natural blend intowalkcycle.",
+      "sourcePrompt": "",
       "generationMethod": "built-in image_gen",
-      "sha256": "a58a40821808064e407267c1412b6a8963e127d819cf6c03efd08dbecf3cf0d8",
+      "sha256": "6f986e4677b36485646b249abea789288ee09338d567a6fbbd0c6183a433fe78",
       "frames": [
         {
           "x": 0,
           "y": 0,
-          "w": 384,
-          "h": 341,
-          "headX": 207.0,
+          "w": 362,
+          "h": 362,
+          "headX": 208.5,
           "pivot": [
-            207.0,
-            318.0
+            208.5,
+            341.0
           ],
-          "bodyHeight": 294.0,
+          "bodyHeight": 326.0,
           "bounds": [
-            94,
-            24,
-            248,
-            318
+            87,
+            15,
+            256,
+            341
           ]
         },
         {
-          "x": 384,
+          "x": 362,
           "y": 0,
-          "w": 384,
-          "h": 341,
-          "headX": 143.0,
+          "w": 362,
+          "h": 362,
+          "headX": 209.0,
           "pivot": [
-            143.0,
-            318.0
+            209.0,
+            341.0
           ],
-          "bodyHeight": 294.0,
+          "bodyHeight": 326.0,
           "bounds": [
-            32,
-            24,
-            184,
-            318
+            87,
+            14,
+            256,
+            341
           ]
         },
         {
-          "x": 768,
+          "x": 724,
           "y": 0,
-          "w": 384,
-          "h": 341,
-          "headX": 124.5,
+          "w": 362,
+          "h": 362,
+          "headX": 209.0,
           "pivot": [
-            124.5,
-            318.0
+            209.0,
+            341.0
           ],
-          "bodyHeight": 294.0,
+          "bodyHeight": 326.0,
           "bounds": [
-            1,
-            24,
-            384,
-            319
+            88,
+            14,
+            259,
+            341
           ]
         },
         {
-          "x": 1152,
+          "x": 1086,
           "y": 0,
-          "w": 384,
-          "h": 341,
-          "headX": 108.0,
+          "w": 362,
+          "h": 362,
+          "headX": 209.5,
           "pivot": [
-            108.0,
-            318.0
+            209.5,
+            341.0
           ],
-          "bodyHeight": 288.0,
+          "bodyHeight": 326.0,
           "bounds": [
-            0,
-            24,
-            135,
-            318
+            87,
+            14,
+            262,
+            341
           ]
         },
         {
           "x": 0,
-          "y": 341,
-          "w": 384,
-          "h": 342,
-          "headX": 207.0,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "headX": 209.5,
           "pivot": [
-            207.0,
-            317.0
+            209.5,
+            341.0
           ],
-          "bodyHeight": 293.0,
+          "bodyHeight": 325.0,
+          "bounds": [
+            87,
+            16,
+            271,
+            342
+          ]
+        },
+        {
+          "x": 362,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "headX": 210.0,
+          "pivot": [
+            210.0,
+            339.0
+          ],
+          "bodyHeight": 322.0,
+          "bounds": [
+            88,
+            16,
+            277,
+            340
+          ]
+        },
+        {
+          "x": 724,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "headX": 211.0,
+          "pivot": [
+            211.0,
+            338.0
+          ],
+          "bodyHeight": 321.0,
+          "bounds": [
+            89,
+            16,
+            286,
+            339
+          ]
+        },
+        {
+          "x": 1086,
+          "y": 362,
+          "w": 362,
+          "h": 362,
+          "headX": 212.5,
+          "pivot": [
+            212.5,
+            339.0
+          ],
+          "bodyHeight": 322.0,
           "bounds": [
             90,
-            24,
-            265,
-            318
-          ]
-        },
-        {
-          "x": 384,
-          "y": 341,
-          "w": 384,
-          "h": 342,
-          "headX": 143.0,
-          "pivot": [
-            143.0,
-            317.0
-          ],
-          "bodyHeight": 293.0,
-          "bounds": [
-            24,
-            24,
-            384,
-            318
-          ]
-        },
-        {
-          "x": 768,
-          "y": 341,
-          "w": 384,
-          "h": 342,
-          "headX": 124.5,
-          "pivot": [
-            124.5,
-            317.0
-          ],
-          "bodyHeight": 293.0,
-          "bounds": [
-            0,
-            24,
-            384,
-            318
-          ]
-        },
-        {
-          "x": 1152,
-          "y": 341,
-          "w": 384,
-          "h": 342,
-          "headX": 108.5,
-          "pivot": [
-            108.5,
-            317.0
-          ],
-          "bodyHeight": 288.0,
-          "bounds": [
-            0,
-            24,
-            163,
-            318
+            16,
+            289,
+            340
           ]
         },
         {
           "x": 0,
-          "y": 683,
-          "w": 384,
-          "h": 341,
-          "headX": 207.0,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "headX": 213.5,
           "pivot": [
-            207.0,
-            316.0
+            213.5,
+            340.0
           ],
-          "bodyHeight": 291.0,
+          "bodyHeight": 322.0,
           "bounds": [
-            83,
-            25,
-            290,
-            317
+            89,
+            17,
+            292,
+            341
           ]
         },
         {
-          "x": 384,
-          "y": 683,
-          "w": 384,
-          "h": 341,
-          "headX": 143.0,
+          "x": 362,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "headX": 214.5,
           "pivot": [
-            143.0,
-            313.0
+            214.5,
+            341.0
           ],
-          "bodyHeight": 288.0,
+          "bodyHeight": 320.0,
           "bounds": [
+            92,
             20,
-            25,
-            384,
-            314
+            295,
+            342
           ]
         },
         {
-          "x": 768,
-          "y": 683,
-          "w": 384,
-          "h": 341,
-          "headX": 124.5,
+          "x": 724,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "headX": 217.0,
           "pivot": [
-            124.5,
-            313.0
+            217.0,
+            340.0
           ],
-          "bodyHeight": 288.0,
+          "bodyHeight": 318.0,
           "bounds": [
-            0,
-            25,
-            384,
-            314
+            97,
+            21,
+            283,
+            341
           ]
         },
         {
-          "x": 1152,
-          "y": 683,
-          "w": 384,
-          "h": 341,
-          "headX": 108.0,
+          "x": 1086,
+          "y": 724,
+          "w": 362,
+          "h": 362,
+          "headX": 218.0,
           "pivot": [
-            108.0,
-            313.0
+            218.0,
+            340.0
           ],
-          "bodyHeight": 282.0,
+          "bodyHeight": 318.0,
           "bounds": [
-            0,
-            24,
-            163,
-            315
+            101,
+            21,
+            267,
+            341
           ]
         }
       ],
       "frameCount": 12,
       "columns": 4,
       "rows": 3,
-      "referenceHeight": 292.0,
+      "referenceHeight": 322.0,
       "registeredPivot": [
-        133.75,
-        317.0
+        210.5,
+        340.5
       ]
     },
     "walk_stop": {
       "file": "walk_stop.png",
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Use case: background-extraction. EDITTARGET attached atlas. REMOVE ONLY THE BACKGROUND/MATTE/GRID AND GROUND SHADOW, make actual RGBAalpha0 outside all character silhouettes and BETWEEN ALL frames. Some background is semitransparent gray/white cloudy wash; remove ALL that wash, not just its outer boundary. Keep exactly SAME 16 characters, 4columns4rows, positions, legposes, armposes, individualboots, hair, scarf/cape fabric and ALL characterpaintcolors/shape/details untouched. No repaint of hero, no reposing, no body/head size change, no optical blur or zoom, no crop or resizing. Preserve each cape as opaque blue fabric, preserve fine hair/fringes. Remove squarecell borders and floorcontactshadows outside boot. Empty pixel interiors actualalpha0, including cellcorners. Sprite atlas is production game asset, not mockup. Same1536x1024canvas samegrid 4x4, genuinely transparentRGBA.",
-      "sourcePrompt": "Use case: precise-object-edit, identity-preserve. Image1 EDIT TARGET exact existing16-frame walk-to-stop then look down transition 4columns4rows. Image2 gamehero identity reference only. Regenerate SAME high-quality 2D pixel-art character, identical proportions/headheight/costume/legposes/footposition/cape/actionsequence. Fix only arms: frames1-6 walking arms pendulum softly fromshoulder in CORRECT COUNTERPHASE to same-sideleg, oppositearm andleg advance together. Hands atupperthigh/hipheight, slightly bent elbows, no jogging/boxing posture. As hero decelerates frames7-9 swings naturally damp out, hands come down bythighs. Frames10-16 feetfullyplanted, standing upright sameposition withrelaxedarms andhero graduallylookingdown. No leg stance redesign, no crouch, no body/head resize, no jump. Natural tiny increments, all16poses fullbody inclcape/feet/arms contained. Exactly16frames4x4 on1536x1024atlas. True transparentRGBA alpha0 outsideallfigures, no graywash/matte, no background/shadow/ground/grid/labels/weapon.",
+      "width": 1024,
+      "height": 1536,
+      "prompt": "Use case: identity-preserve. NEW16frame4column4row1536x1536production spritesheet. Image1 characterappearance only. Same EXACT hero from image1: brown-haired adolescent boy, navy scarf/cape, charcoal short tunic, lightgray sleeves, gray trousers, brown gloves/wristguards and boots. Same face, hair, head size and upright body proportions. Premium crisp 2D game pixel-art matching image1. EMPTY HANDS, no sword. True transparentRGBA alpha0 outside each figure, no ground/shadow, no matte/background, no words/numbers/grid. Constant physical body height, same planted-foot baseline in each cell, all hair/cape/hands/feet inside cells with generous clear margins.\nONE continuous walk-to-stop and noticeobjectonroad action. Frames1-4 normalupright RIGHTwalk, nearlegFORWARD with neararmBACK andfararmFORWARD, thenlegs passwhilearms soften. Frames5-8 lastsmallstep decelerates andfeet settle side-by-side beneathhips. Frames9-12 entirelyplantedfeet, arms relaxbesidethighs, torso upright. Frames13-16 sameplantedfeet, calmlyturnseyes/headslightlydownright as ifnoticing buriedsword. Arms swingfromshoulders withsoftelbows counterphase tosame-sideleg duringfirststeps thennaturallystop. No foldedboxingforearms, no crouch, no knee-highlift, no size/proportionchange orfloatingsoles. All16frames sequentialtinychanges; hand/face/cape/boots consistent. No actualobject inatlas.",
+      "sourcePrompt": "",
       "generationMethod": "built-in image_gen",
-      "sha256": "d56c93d6e0cf2305c198935f82fae99a02071f8ca6fad693754f928ab0e1b51c",
+      "sha256": "f72931dd6a8080b9d6301a8abc0ad9e93b2ec5f995f04d7fc20b31e055238457",
       "frames": [
         {
           "x": 0,
           "y": 0,
-          "w": 384,
-          "h": 256,
-          "headX": 200.5,
+          "w": 256,
+          "h": 384,
+          "headX": 158.5,
           "pivot": [
-            199.0,
-            234.0
+            161.0,
+            349.0
           ],
-          "bodyHeight": 205.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            103,
-            28,
-            259,
-            235
+            22,
+            26,
+            241,
+            350
           ]
         },
         {
-          "x": 384,
+          "x": 256,
           "y": 0,
-          "w": 384,
-          "h": 256,
-          "headX": 182.5,
+          "w": 256,
+          "h": 384,
+          "headX": 160.0,
           "pivot": [
-            181.0,
-            234.0
+            162.5,
+            349.0
           ],
-          "bodyHeight": 206.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            87,
-            27,
-            229,
-            234
-          ]
-        },
-        {
-          "x": 768,
-          "y": 0,
-          "w": 384,
-          "h": 256,
-          "headX": 168.5,
-          "pivot": [
-            167.0,
-            234.0
-          ],
-          "bodyHeight": 206.0,
-          "bounds": [
-            76,
-            27,
-            202,
-            235
-          ]
-        },
-        {
-          "x": 1152,
-          "y": 0,
-          "w": 384,
-          "h": 256,
-          "headX": 169.5,
-          "pivot": [
-            168.0,
-            234.0
-          ],
-          "bodyHeight": 206.0,
-          "bounds": [
-            82,
-            27,
-            213,
-            235
-          ]
-        },
-        {
-          "x": 0,
-          "y": 256,
-          "w": 384,
-          "h": 256,
-          "headX": 200.0,
-          "pivot": [
-            198.5,
-            235.0
-          ],
-          "bodyHeight": 207.0,
-          "bounds": [
-            114,
-            27,
-            240,
-            235
-          ]
-        },
-        {
-          "x": 384,
-          "y": 256,
-          "w": 384,
-          "h": 256,
-          "headX": 182.5,
-          "pivot": [
-            181.0,
-            234.0
-          ],
-          "bodyHeight": 206.0,
-          "bounds": [
-            98,
-            27,
-            220,
-            235
-          ]
-        },
-        {
-          "x": 768,
-          "y": 256,
-          "w": 384,
-          "h": 256,
-          "headX": 171.0,
-          "pivot": [
-            169.5,
-            235.0
-          ],
-          "bodyHeight": 207.0,
-          "bounds": [
-            86,
-            27,
-            202,
-            235
-          ]
-        },
-        {
-          "x": 1152,
-          "y": 256,
-          "w": 384,
-          "h": 256,
-          "headX": 170.5,
-          "pivot": [
-            169.0,
-            235.0
-          ],
-          "bodyHeight": 207.0,
-          "bounds": [
-            84,
-            27,
-            201,
-            235
-          ]
-        },
-        {
-          "x": 0,
-          "y": 512,
-          "w": 384,
-          "h": 256,
-          "headX": 201.0,
-          "pivot": [
-            203.0,
-            235.0
-          ],
-          "bodyHeight": 207.0,
-          "bounds": [
-            115,
-            27,
-            231,
-            235
-          ]
-        },
-        {
-          "x": 384,
-          "y": 512,
-          "w": 384,
-          "h": 256,
-          "headX": 181.5,
-          "pivot": [
-            182.5,
-            235.0
-          ],
-          "bodyHeight": 205.0,
-          "bounds": [
-            96,
             29,
-            212,
-            235
+            26,
+            230,
+            349
+          ]
+        },
+        {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 384,
+          "headX": 160.5,
+          "pivot": [
+            163.0,
+            349.0
+          ],
+          "bodyHeight": 323.0,
+          "bounds": [
+            34,
+            25,
+            208,
+            350
           ]
         },
         {
           "x": 768,
-          "y": 512,
-          "w": 384,
-          "h": 256,
-          "headX": 171.0,
+          "y": 0,
+          "w": 256,
+          "h": 384,
+          "headX": 159.0,
           "pivot": [
-            170.5,
-            235.0
+            161.5,
+            349.0
           ],
-          "bodyHeight": 204.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            85,
-            30,
-            201,
-            236
+            34,
+            26,
+            205,
+            350
           ]
         },
         {
-          "x": 1152,
-          "y": 512,
-          "w": 384,
-          "h": 256,
-          "headX": 173.0,
+          "x": 0,
+          "y": 384,
+          "w": 256,
+          "h": 384,
+          "headX": 159.5,
           "pivot": [
-            171.0,
-            235.0
+            162.0,
+            349.0
           ],
-          "bodyHeight": 202.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            85,
-            32,
-            203,
-            235
+            38,
+            26,
+            215,
+            349
+          ]
+        },
+        {
+          "x": 256,
+          "y": 384,
+          "w": 256,
+          "h": 384,
+          "headX": 160.0,
+          "pivot": [
+            162.5,
+            348.0
+          ],
+          "bodyHeight": 322.0,
+          "bounds": [
+            45,
+            26,
+            206,
+            349
+          ]
+        },
+        {
+          "x": 512,
+          "y": 384,
+          "w": 256,
+          "h": 384,
+          "headX": 160.0,
+          "pivot": [
+            162.5,
+            350.0
+          ],
+          "bodyHeight": 324.0,
+          "bounds": [
+            41,
+            26,
+            209,
+            350
+          ]
+        },
+        {
+          "x": 768,
+          "y": 384,
+          "w": 256,
+          "h": 384,
+          "headX": 160.5,
+          "pivot": [
+            163.0,
+            350.0
+          ],
+          "bodyHeight": 324.0,
+          "bounds": [
+            47,
+            25,
+            206,
+            350
           ]
         },
         {
           "x": 0,
           "y": 768,
-          "w": 384,
-          "h": 256,
-          "headX": 205.0,
+          "w": 256,
+          "h": 384,
+          "headX": 160.0,
           "pivot": [
-            203.0,
-            235.0
+            162.5,
+            350.0
           ],
-          "bodyHeight": 200.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            115,
-            34,
-            234,
-            236
+            49,
+            26,
+            206,
+            350
           ]
         },
         {
-          "x": 384,
+          "x": 256,
           "y": 768,
-          "w": 384,
-          "h": 256,
-          "headX": 184.0,
+          "w": 256,
+          "h": 384,
+          "headX": 160.5,
           "pivot": [
-            183.0,
-            235.0
+            163.0,
+            350.0
           ],
-          "bodyHeight": 200.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            96,
-            34,
-            213,
-            236
+            49,
+            26,
+            206,
+            350
+          ]
+        },
+        {
+          "x": 512,
+          "y": 768,
+          "w": 256,
+          "h": 384,
+          "headX": 160.0,
+          "pivot": [
+            162.5,
+            350.0
+          ],
+          "bodyHeight": 323.0,
+          "bounds": [
+            49,
+            26,
+            206,
+            350
           ]
         },
         {
           "x": 768,
           "y": 768,
-          "w": 384,
-          "h": 256,
-          "headX": 174.0,
+          "w": 256,
+          "h": 384,
+          "headX": 160.0,
           "pivot": [
-            171.0,
-            235.0
+            163.5,
+            350.0
           ],
-          "bodyHeight": 200.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            86,
-            34,
-            202,
-            236
+            48,
+            26,
+            206,
+            350
           ]
         },
         {
-          "x": 1152,
-          "y": 768,
-          "w": 384,
-          "h": 256,
-          "headX": 174.5,
+          "x": 0,
+          "y": 1152,
+          "w": 256,
+          "h": 384,
+          "headX": 160.5,
           "pivot": [
-            171.0,
-            235.0
+            163.0,
+            350.0
           ],
-          "bodyHeight": 200.0,
+          "bodyHeight": 323.0,
           "bounds": [
-            85,
-            35,
-            203,
-            236
+            49,
+            26,
+            206,
+            350
+          ]
+        },
+        {
+          "x": 256,
+          "y": 1152,
+          "w": 256,
+          "h": 384,
+          "headX": 161.5,
+          "pivot": [
+            163.5,
+            350.0
+          ],
+          "bodyHeight": 322.0,
+          "bounds": [
+            49,
+            27,
+            208,
+            350
+          ]
+        },
+        {
+          "x": 512,
+          "y": 1152,
+          "w": 256,
+          "h": 384,
+          "headX": 165.0,
+          "pivot": [
+            163.0,
+            350.0
+          ],
+          "bodyHeight": 320.0,
+          "bounds": [
+            48,
+            29,
+            210,
+            350
+          ]
+        },
+        {
+          "x": 768,
+          "y": 1152,
+          "w": 256,
+          "h": 384,
+          "headX": 167.5,
+          "pivot": [
+            163.0,
+            350.0
+          ],
+          "bodyHeight": 320.0,
+          "bounds": [
+            48,
+            30,
+            213,
+            350
           ]
         }
       ],
       "frameCount": 16,
       "columns": 4,
       "rows": 4,
-      "referenceHeight": 205.5,
+      "referenceHeight": 323.0,
       "registeredPivot": [
-        176.0,
-        235.0
+        162.75,
+        350.0
       ]
     },
     "reach_pull": {
@@ -4131,11 +3862,11 @@
     },
     {
       "start": 8,
-      "end": 13.02345601996257,
+      "end": 12.583833248601932,
       "name": "길가의 마검을 발견하고 멈추기"
     },
     {
-      "start": 13.02345601996257,
+      "start": 12.583833248601932,
       "end": 16.5,
       "name": "같은 자리에 박힌 마검 관찰"
     },
@@ -4165,10 +3896,10 @@
       "name": "마검 타이틀"
     }
   ],
-  "version": "2026-11-04-arm-gait-direct-cut-v5",
+  "version": "2026-11-04-close-follow-natural-walk-v6",
   "subtitles": false,
   "narration": false,
-  "newActorFrames": 132,
+  "newActorFrames": 124,
   "objectLayout": {
     "ground": [
       876,
@@ -4214,5 +3945,27 @@
   ],
   "walkingRootMotion": "distance-retimed opposing arm/leg source poses; no limb deformation",
   "initialBlackSeconds": 3,
-  "playDuringBlack": true
+  "playDuringBlack": true,
+  "cameraDirection": {
+    "walkingZoom": [
+      1.65,
+      1.7
+    ],
+    "discoveryZoom": [
+      1.62,
+      1.7
+    ],
+    "observationZoom": [
+      2.02,
+      2.08
+    ],
+    "reachZoom": [
+      1.85,
+      1.9
+    ],
+    "extractionZoom": 1.85,
+    "awakeningZoom": 1.62,
+    "walkingScreenAnchorX": 0.44,
+    "sourceImagesUnchangedExceptWalkSheets": true
+  }
 }

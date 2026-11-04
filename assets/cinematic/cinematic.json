@@ -1076,7 +1076,15 @@
           ],
           "supportX": 205.5,
           "tractionQ": 39.0,
-          "travel": 0.0
+          "travel": 0.0,
+          "emotionCrown": [
+            166.5,
+            19.0
+          ],
+          "emotionFace": [
+            189.6,
+            91.0
+          ]
         },
         {
           "sourceIndex": 1,
@@ -1107,7 +1115,15 @@
           ],
           "supportX": 202.0,
           "tractionQ": 36.0,
-          "travel": 3.0
+          "travel": 3.0,
+          "emotionCrown": [
+            166.0,
+            19.0
+          ],
+          "emotionFace": [
+            189.4,
+            91.0
+          ]
         },
         {
           "sourceIndex": 2,
@@ -1137,7 +1153,15 @@
           ],
           "supportX": 183.0,
           "tractionQ": 16.5,
-          "travel": 22.5
+          "travel": 22.5,
+          "emotionCrown": [
+            166.5,
+            20.0
+          ],
+          "emotionFace": [
+            189.6,
+            92.0
+          ]
         },
         {
           "sourceIndex": 3,
@@ -1167,7 +1191,15 @@
           ],
           "supportX": 167.5,
           "tractionQ": 0.0,
-          "travel": 39.0
+          "travel": 39.0,
+          "emotionCrown": [
+            167.5,
+            20.0
+          ],
+          "emotionFace": [
+            190.6,
+            92.0
+          ]
         },
         {
           "sourceIndex": 4,
@@ -1197,7 +1229,15 @@
           ],
           "supportX": 159.5,
           "tractionQ": -7.5,
-          "travel": 46.5
+          "travel": 46.5,
+          "emotionCrown": [
+            167.0,
+            20.0
+          ],
+          "emotionFace": [
+            190.4,
+            92.0
+          ]
         },
         {
           "sourceIndex": 5,
@@ -1227,7 +1267,15 @@
           ],
           "supportX": 147.0,
           "tractionQ": -19.5,
-          "travel": 58.5
+          "travel": 58.5,
+          "emotionCrown": [
+            166.5,
+            20.0
+          ],
+          "emotionFace": [
+            189.6,
+            96.8
+          ]
         },
         {
           "sourceIndex": 6,
@@ -1257,7 +1305,15 @@
           ],
           "supportX": 136.0,
           "tractionQ": -31.0,
-          "travel": 70.0
+          "travel": 70.0,
+          "emotionCrown": [
+            167.0,
+            20.0
+          ],
+          "emotionFace": [
+            189.8,
+            92.0
+          ]
         },
         {
           "sourceIndex": 7,
@@ -1288,7 +1344,15 @@
           ],
           "supportX": 127.0,
           "tractionQ": -41.0,
-          "travel": 80.0
+          "travel": 80.0,
+          "emotionCrown": [
+            168.0,
+            20.0
+          ],
+          "emotionFace": [
+            190.8,
+            93.2
+          ]
         },
         {
           "sourceIndex": 8,
@@ -1319,7 +1383,15 @@
           ],
           "supportX": 207.5,
           "tractionQ": 40.5,
-          "travel": 90.75
+          "travel": 90.75,
+          "emotionCrown": [
+            167.0,
+            20.0
+          ],
+          "emotionFace": [
+            189.8,
+            93.2
+          ]
         },
         {
           "sourceIndex": 9,
@@ -1349,7 +1421,15 @@
           ],
           "supportX": 188.5,
           "tractionQ": 23.0,
-          "travel": 108.25
+          "travel": 108.25,
+          "emotionCrown": [
+            165.5,
+            20.0
+          ],
+          "emotionFace": [
+            188.6,
+            93.2
+          ]
         },
         {
           "sourceIndex": 10,
@@ -1379,7 +1459,15 @@
           ],
           "supportX": 169.5,
           "tractionQ": 3.0,
-          "travel": 128.25
+          "travel": 128.25,
+          "emotionCrown": [
+            166.5,
+            20.0
+          ],
+          "emotionFace": [
+            189.6,
+            92.0
+          ]
         },
         {
           "sourceIndex": 11,
@@ -1409,7 +1497,15 @@
           ],
           "supportX": 163.5,
           "tractionQ": -4.0,
-          "travel": 135.25
+          "travel": 135.25,
+          "emotionCrown": [
+            167.5,
+            20.0
+          ],
+          "emotionFace": [
+            190.6,
+            90.8
+          ]
         },
         {
           "sourceIndex": 12,
@@ -1439,7 +1535,15 @@
           ],
           "supportX": 158.0,
           "tractionQ": -9.0,
-          "travel": 140.25
+          "travel": 140.25,
+          "emotionCrown": [
+            167.0,
+            21.0
+          ],
+          "emotionFace": [
+            190.4,
+            91.8
+          ]
         },
         {
           "sourceIndex": 13,
@@ -1469,7 +1573,15 @@
           ],
           "supportX": 146.0,
           "tractionQ": -20.5,
-          "travel": 151.75
+          "travel": 151.75,
+          "emotionCrown": [
+            166.5,
+            22.0
+          ],
+          "emotionFace": [
+            189.6,
+            92.8
+          ]
         },
         {
           "sourceIndex": 14,
@@ -1500,7 +1612,15 @@
           ],
           "supportX": 130.0,
           "tractionQ": -37.0,
-          "travel": 168.25
+          "travel": 168.25,
+          "emotionCrown": [
+            167.0,
+            21.0
+          ],
+          "emotionFace": [
+            190.4,
+            97.8
+          ]
         },
         {
           "sourceIndex": 15,
@@ -1532,7 +1652,15 @@
           ],
           "supportX": 108.5,
           "tractionQ": -59.0,
-          "travel": 190.25
+          "travel": 190.25,
+          "emotionCrown": [
+            167.5,
+            22.0
+          ],
+          "emotionFace": [
+            190.6,
+            91.6
+          ]
         }
       ],
       "frameCount": 16,
@@ -1685,6 +1813,14 @@
             15,
             256,
             341
+          ],
+          "emotionCrown": [
+            208.5,
+            19.0
+          ],
+          "emotionFace": [
+            234.0,
+            98.2
           ]
         },
         {
@@ -1703,6 +1839,14 @@
             14,
             256,
             341
+          ],
+          "emotionCrown": [
+            209.0,
+            19.0
+          ],
+          "emotionFace": [
+            234.2,
+            105.39999999999999
           ]
         },
         {
@@ -1721,6 +1865,14 @@
             14,
             259,
             341
+          ],
+          "emotionCrown": [
+            209.0,
+            19.0
+          ],
+          "emotionFace": [
+            234.2,
+            104.2
           ]
         },
         {
@@ -1739,6 +1891,14 @@
             14,
             262,
             341
+          ],
+          "emotionCrown": [
+            209.5,
+            19.0
+          ],
+          "emotionFace": [
+            234.4,
+            104.2
           ]
         },
         {
@@ -1757,6 +1917,14 @@
             16,
             271,
             342
+          ],
+          "emotionCrown": [
+            209.5,
+            19.0
+          ],
+          "emotionFace": [
+            235.0,
+            105.39999999999999
           ]
         },
         {
@@ -1775,6 +1943,14 @@
             16,
             277,
             340
+          ],
+          "emotionCrown": [
+            210.0,
+            19.0
+          ],
+          "emotionFace": [
+            235.2,
+            105.39999999999999
           ]
         },
         {
@@ -1793,6 +1969,14 @@
             16,
             286,
             339
+          ],
+          "emotionCrown": [
+            211.0,
+            19.0
+          ],
+          "emotionFace": [
+            236.2,
+            106.6
           ]
         },
         {
@@ -1811,6 +1995,14 @@
             16,
             289,
             340
+          ],
+          "emotionCrown": [
+            212.5,
+            19.0
+          ],
+          "emotionFace": [
+            237.4,
+            106.6
           ]
         },
         {
@@ -1829,6 +2021,14 @@
             17,
             292,
             341
+          ],
+          "emotionCrown": [
+            213.5,
+            19.0
+          ],
+          "emotionFace": [
+            238.4,
+            109.0
           ]
         },
         {
@@ -1847,6 +2047,14 @@
             20,
             295,
             342
+          ],
+          "emotionCrown": [
+            214.5,
+            21.0
+          ],
+          "emotionFace": [
+            239.4,
+            109.8
           ]
         },
         {
@@ -1865,6 +2073,14 @@
             21,
             283,
             341
+          ],
+          "emotionCrown": [
+            217.0,
+            22.0
+          ],
+          "emotionFace": [
+            241.6,
+            109.6
           ]
         },
         {
@@ -1883,6 +2099,14 @@
             21,
             267,
             341
+          ],
+          "emotionCrown": [
+            218.0,
+            22.0
+          ],
+          "emotionFace": [
+            242.6,
+            108.39999999999999
           ]
         }
       ],
@@ -1920,6 +2144,14 @@
             26,
             241,
             350
+          ],
+          "emotionCrown": [
+            158.5,
+            26.0
+          ],
+          "emotionFace": [
+            185.8,
+            114.8
           ]
         },
         {
@@ -1938,6 +2170,14 @@
             26,
             230,
             349
+          ],
+          "emotionCrown": [
+            160.0,
+            26.0
+          ],
+          "emotionFace": [
+            187.0,
+            113.6
           ]
         },
         {
@@ -1956,6 +2196,14 @@
             25,
             208,
             350
+          ],
+          "emotionCrown": [
+            160.5,
+            26.0
+          ],
+          "emotionFace": [
+            187.2,
+            116.0
           ]
         },
         {
@@ -1974,6 +2222,14 @@
             26,
             205,
             350
+          ],
+          "emotionCrown": [
+            159.0,
+            26.0
+          ],
+          "emotionFace": [
+            186.0,
+            116.0
           ]
         },
         {
@@ -1992,6 +2248,14 @@
             26,
             215,
             349
+          ],
+          "emotionCrown": [
+            159.5,
+            26.0
+          ],
+          "emotionFace": [
+            186.8,
+            112.39999999999999
           ]
         },
         {
@@ -2010,6 +2274,14 @@
             26,
             206,
             349
+          ],
+          "emotionCrown": [
+            160.0,
+            26.0
+          ],
+          "emotionFace": [
+            187.0,
+            112.39999999999999
           ]
         },
         {
@@ -2028,6 +2300,14 @@
             26,
             209,
             350
+          ],
+          "emotionCrown": [
+            160.0,
+            26.0
+          ],
+          "emotionFace": [
+            187.0,
+            116.0
           ]
         },
         {
@@ -2046,6 +2326,14 @@
             25,
             206,
             350
+          ],
+          "emotionCrown": [
+            160.5,
+            26.0
+          ],
+          "emotionFace": [
+            187.2,
+            113.6
           ]
         },
         {
@@ -2064,6 +2352,14 @@
             26,
             206,
             350
+          ],
+          "emotionCrown": [
+            160.0,
+            27.0
+          ],
+          "emotionFace": [
+            187.0,
+            115.8
           ]
         },
         {
@@ -2082,6 +2378,14 @@
             26,
             206,
             350
+          ],
+          "emotionCrown": [
+            160.5,
+            27.0
+          ],
+          "emotionFace": [
+            187.2,
+            113.39999999999999
           ]
         },
         {
@@ -2100,6 +2404,14 @@
             26,
             206,
             350
+          ],
+          "emotionCrown": [
+            160.0,
+            27.0
+          ],
+          "emotionFace": [
+            187.0,
+            113.39999999999999
           ]
         },
         {
@@ -2118,6 +2430,14 @@
             26,
             206,
             350
+          ],
+          "emotionCrown": [
+            160.0,
+            27.0
+          ],
+          "emotionFace": [
+            187.0,
+            113.39999999999999
           ]
         },
         {
@@ -2136,6 +2456,14 @@
             26,
             206,
             350
+          ],
+          "emotionCrown": [
+            160.5,
+            27.0
+          ],
+          "emotionFace": [
+            187.2,
+            113.39999999999999
           ]
         },
         {
@@ -2154,6 +2482,14 @@
             27,
             208,
             350
+          ],
+          "emotionCrown": [
+            161.5,
+            28.0
+          ],
+          "emotionFace": [
+            188.8,
+            121.6
           ]
         },
         {
@@ -2172,6 +2508,14 @@
             29,
             210,
             350
+          ],
+          "emotionCrown": [
+            165.0,
+            30.0
+          ],
+          "emotionFace": [
+            192.0,
+            123.6
           ]
         },
         {
@@ -2190,6 +2534,14 @@
             30,
             213,
             350
+          ],
+          "emotionCrown": [
+            167.5,
+            30.0
+          ],
+          "emotionFace": [
+            194.2,
+            126.0
           ]
         }
       ],
@@ -2230,6 +2582,14 @@
           "grip": [
             122.0,
             166.0
+          ],
+          "emotionCrown": [
+            138.0,
+            20.0
+          ],
+          "emotionFace": [
+            154.2,
+            76.4
           ]
         },
         {
@@ -2252,6 +2612,14 @@
           "grip": [
             122.83631134033203,
             165.83734130859375
+          ],
+          "emotionCrown": [
+            137.5,
+            20.0
+          ],
+          "emotionFace": [
+            153.4,
+            77.6
           ]
         },
         {
@@ -2274,6 +2642,14 @@
           "grip": [
             124.56316375732422,
             165.6169891357422
+          ],
+          "emotionCrown": [
+            137.5,
+            20.0
+          ],
+          "emotionFace": [
+            153.4,
+            76.4
           ]
         },
         {
@@ -2296,6 +2672,14 @@
           "grip": [
             129.50076293945312,
             165.64320373535156
+          ],
+          "emotionCrown": [
+            137.5,
+            21.0
+          ],
+          "emotionFace": [
+            153.4,
+            75.0
           ]
         },
         {
@@ -2318,6 +2702,14 @@
           "grip": [
             142.06304931640625,
             154.99151611328125
+          ],
+          "emotionCrown": [
+            138.0,
+            20.0
+          ],
+          "emotionFace": [
+            154.2,
+            76.4
           ]
         },
         {
@@ -2340,6 +2732,14 @@
           "grip": [
             155.47718811035156,
             145.8724365234375
+          ],
+          "emotionCrown": [
+            138.0,
+            20.0
+          ],
+          "emotionFace": [
+            154.2,
+            76.4
           ]
         },
         {
@@ -2362,6 +2762,14 @@
           "grip": [
             166.13230895996094,
             141.79238891601562
+          ],
+          "emotionCrown": [
+            137.5,
+            20.0
+          ],
+          "emotionFace": [
+            153.4,
+            77.6
           ]
         },
         {
@@ -2384,6 +2792,14 @@
           "grip": [
             169.99269104003906,
             135.1737518310547
+          ],
+          "emotionCrown": [
+            137.5,
+            20.0
+          ],
+          "emotionFace": [
+            153.4,
+            77.6
           ]
         },
         {
@@ -2406,6 +2822,14 @@
           "grip": [
             174.37120056152344,
             135.28549194335938
+          ],
+          "emotionCrown": [
+            138.5,
+            21.0
+          ],
+          "emotionFace": [
+            155.0,
+            76.19999999999999
           ]
         },
         {
@@ -2428,6 +2852,14 @@
           "grip": [
             176.38565063476562,
             135.53546142578125
+          ],
+          "emotionCrown": [
+            137.5,
+            20.0
+          ],
+          "emotionFace": [
+            154.0,
+            76.4
           ]
         },
         {
@@ -2450,6 +2882,14 @@
           "grip": [
             177.1454620361328,
             135.76165771484375
+          ],
+          "emotionCrown": [
+            137.5,
+            21.0
+          ],
+          "emotionFace": [
+            154.0,
+            84.6
           ]
         },
         {
@@ -2472,6 +2912,14 @@
           "grip": [
             177.15476989746094,
             136.28309631347656
+          ],
+          "emotionCrown": [
+            137.5,
+            20.0
+          ],
+          "emotionFace": [
+            153.4,
+            77.6
           ]
         },
         {
@@ -2494,6 +2942,14 @@
           "grip": [
             177.29774475097656,
             135.66705322265625
+          ],
+          "emotionCrown": [
+            137.5,
+            21.0
+          ],
+          "emotionFace": [
+            154.0,
+            77.4
           ]
         },
         {
@@ -2516,6 +2972,14 @@
           "grip": [
             176.95164489746094,
             137.087646484375
+          ],
+          "emotionCrown": [
+            137.0,
+            22.0
+          ],
+          "emotionFace": [
+            153.2,
+            78.4
           ]
         },
         {
@@ -2538,6 +3002,14 @@
           "grip": [
             177.27003479003906,
             136.77442932128906
+          ],
+          "emotionCrown": [
+            133.0,
+            23.0
+          ],
+          "emotionFace": [
+            149.2,
+            79.4
           ]
         },
         {
@@ -2560,6 +3032,14 @@
           "grip": [
             177.53457641601562,
             135.823486328125
+          ],
+          "emotionCrown": [
+            130.0,
+            25.0
+          ],
+          "emotionFace": [
+            146.8,
+            79.0
           ]
         },
         {
@@ -2582,6 +3062,14 @@
           "grip": [
             178.4038543701172,
             134.73028564453125
+          ],
+          "emotionCrown": [
+            130.0,
+            25.0
+          ],
+          "emotionFace": [
+            146.8,
+            79.0
           ]
         },
         {
@@ -2604,6 +3092,14 @@
           "grip": [
             179.4229278564453,
             134.22210693359375
+          ],
+          "emotionCrown": [
+            130.0,
+            25.0
+          ],
+          "emotionFace": [
+            146.8,
+            79.0
           ]
         },
         {
@@ -2626,6 +3122,14 @@
           "grip": [
             179.719970703125,
             133.35421752929688
+          ],
+          "emotionCrown": [
+            128.0,
+            25.0
+          ],
+          "emotionFace": [
+            144.2,
+            79.0
           ]
         },
         {
@@ -2648,6 +3152,14 @@
           "grip": [
             180.03094482421875,
             132.9044189453125
+          ],
+          "emotionCrown": [
+            125.5,
+            24.0
+          ],
+          "emotionFace": [
+            141.4,
+            78.0
           ]
         },
         {
@@ -2670,6 +3182,14 @@
           "grip": [
             180.08750915527344,
             132.8094482421875
+          ],
+          "emotionCrown": [
+            124.5,
+            24.0
+          ],
+          "emotionFace": [
+            141.0,
+            78.0
           ]
         },
         {
@@ -2692,6 +3212,14 @@
           "grip": [
             180.28225708007812,
             132.36851501464844
+          ],
+          "emotionCrown": [
+            123.0,
+            24.0
+          ],
+          "emotionFace": [
+            138.6,
+            78.0
           ]
         },
         {
@@ -2714,6 +3242,14 @@
           "grip": [
             180.8441925048828,
             132.27426147460938
+          ],
+          "emotionCrown": [
+            122.0,
+            23.0
+          ],
+          "emotionFace": [
+            137.6,
+            78.19999999999999
           ]
         },
         {
@@ -2736,6 +3272,14 @@
           "grip": [
             183.0,
             132.0
+          ],
+          "emotionCrown": [
+            121.0,
+            24.0
+          ],
+          "emotionFace": [
+            136.0,
+            79.19999999999999
           ]
         }
       ],
@@ -2777,6 +3321,14 @@
           "grip": [
             170.1918604651163,
             148.6046511627907
+          ],
+          "emotionCrown": [
+            147.5,
+            32.0
+          ],
+          "emotionFace": [
+            163.4,
+            83.6
           ]
         },
         {
@@ -2799,6 +3351,14 @@
           "grip": [
             165.10628019323673,
             148.9855072463768
+          ],
+          "emotionCrown": [
+            142.0,
+            32.0
+          ],
+          "emotionFace": [
+            157.6,
+            83.6
           ]
         },
         {
@@ -2821,6 +3381,14 @@
           "grip": [
             159.9951690821256,
             146.83091787439614
+          ],
+          "emotionCrown": [
+            137.0,
+            32.0
+          ],
+          "emotionFace": [
+            152.6,
+            83.6
           ]
         },
         {
@@ -2843,6 +3411,14 @@
           "grip": [
             155.13440860215053,
             143.30645161290323
+          ],
+          "emotionCrown": [
+            132.0,
+            32.0
+          ],
+          "emotionFace": [
+            147.6,
+            83.6
           ]
         },
         {
@@ -2865,6 +3441,14 @@
           "grip": [
             150.1766917293233,
             136.47368421052633
+          ],
+          "emotionCrown": [
+            125.5,
+            32.0
+          ],
+          "emotionFace": [
+            141.4,
+            83.6
           ]
         },
         {
@@ -2887,6 +3471,14 @@
           "grip": [
             143.296875,
             131.828125
+          ],
+          "emotionCrown": [
+            120.5,
+            32.0
+          ],
+          "emotionFace": [
+            135.8,
+            83.6
           ]
         },
         {
@@ -2909,6 +3501,14 @@
           "grip": [
             174.271375464684,
             117.19330855018588
+          ],
+          "emotionCrown": [
+            147.5,
+            31.0
+          ],
+          "emotionFace": [
+            163.4,
+            82.6
           ]
         },
         {
@@ -2931,6 +3531,14 @@
           "grip": [
             166.32841328413284,
             107.43911439114392
+          ],
+          "emotionCrown": [
+            141.5,
+            32.0
+          ],
+          "emotionFace": [
+            157.4,
+            83.6
           ]
         },
         {
@@ -2953,6 +3561,14 @@
           "grip": [
             161.70762711864407,
             97.27118644067797
+          ],
+          "emotionCrown": [
+            135.0,
+            31.0
+          ],
+          "emotionFace": [
+            150.6,
+            82.6
           ]
         },
         {
@@ -2975,6 +3591,14 @@
           "grip": [
             156.50710900473933,
             87.81516587677726
+          ],
+          "emotionCrown": [
+            130.0,
+            32.0
+          ],
+          "emotionFace": [
+            146.2,
+            87.19999999999999
           ]
         },
         {
@@ -2997,6 +3621,14 @@
           "grip": [
             152.318407960199,
             79.40796019900498
+          ],
+          "emotionCrown": [
+            124.0,
+            31.0
+          ],
+          "emotionFace": [
+            139.6,
+            82.6
           ]
         },
         {
@@ -3019,6 +3651,14 @@
           "grip": [
             137.0391156462585,
             69.31122448979592
+          ],
+          "emotionCrown": [
+            118.5,
+            31.0
+          ],
+          "emotionFace": [
+            133.8,
+            82.6
           ]
         },
         {
@@ -3041,6 +3681,14 @@
           "grip": [
             174.26819923371647,
             62.41379310344828
+          ],
+          "emotionCrown": [
+            141.5,
+            29.0
+          ],
+          "emotionFace": [
+            156.8,
+            80.6
           ]
         },
         {
@@ -3063,6 +3711,14 @@
           "grip": [
             166.13452914798205,
             51.488789237668165
+          ],
+          "emotionCrown": [
+            146.0,
+            28.0
+          ],
+          "emotionFace": [
+            167.6,
+            133.6
           ]
         },
         {
@@ -3085,6 +3741,14 @@
           "grip": [
             156.74887892376682,
             41.36322869955157
+          ],
+          "emotionCrown": [
+            134.0,
+            28.0
+          ],
+          "emotionFace": [
+            153.8,
+            133.6
           ]
         },
         {
@@ -3107,6 +3771,14 @@
           "grip": [
             145.47008547008548,
             31.641025641025642
+          ],
+          "emotionCrown": [
+            132.0,
+            29.0
+          ],
+          "emotionFace": [
+            154.2,
+            98.6
           ]
         },
         {
@@ -3129,6 +3801,14 @@
           "grip": [
             138.8125,
             24.279166666666665
+          ],
+          "emotionCrown": [
+            124.0,
+            25.0
+          ],
+          "emotionFace": [
+            145.6,
+            94.6
           ]
         },
         {
@@ -3151,6 +3831,14 @@
           "grip": [
             134.33624454148472,
             18.480349344978166
+          ],
+          "emotionCrown": [
+            120.5,
+            17.0
+          ],
+          "emotionFace": [
+            141.8,
+            92.6
           ]
         },
         {
@@ -3173,6 +3861,14 @@
           "grip": [
             156.52845528455285,
             14.66260162601626
+          ],
+          "emotionCrown": [
+            145.0,
+            14.0
+          ],
+          "emotionFace": [
+            166.0,
+            89.6
           ]
         },
         {
@@ -3195,6 +3891,14 @@
           "grip": [
             150.83333333333334,
             14.342105263157896
+          ],
+          "emotionCrown": [
+            139.5,
+            14.0
+          ],
+          "emotionFace": [
+            160.8,
+            89.6
           ]
         },
         {
@@ -3217,6 +3921,14 @@
           "grip": [
             145.65098039215687,
             12.909803921568628
+          ],
+          "emotionCrown": [
+            133.0,
+            13.0
+          ],
+          "emotionFace": [
+            154.6,
+            87.39999999999999
           ]
         },
         {
@@ -3239,6 +3951,14 @@
           "grip": [
             140.48837209302326,
             11.590697674418605
+          ],
+          "emotionCrown": [
+            127.0,
+            13.0
+          ],
+          "emotionFace": [
+            148.0,
+            85.0
           ]
         },
         {
@@ -3261,6 +3981,14 @@
           "grip": [
             135.4908256880734,
             12.03211009174312
+          ],
+          "emotionCrown": [
+            122.0,
+            13.0
+          ],
+          "emotionFace": [
+            143.0,
+            83.8
           ]
         },
         {
@@ -3283,6 +4011,14 @@
           "grip": [
             129.7689075630252,
             11.659663865546218
+          ],
+          "emotionCrown": [
+            117.0,
+            13.0
+          ],
+          "emotionFace": [
+            138.0,
+            83.8
           ]
         }
       ],
@@ -3852,6 +4588,524 @@
         115.449,
         139.0
       ]
+    },
+    "emotion_humming": {
+      "file": "emotions/humming.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Precise-object-edit/background-extraction. Keep SAME16frames4x4 musicalnoteatlas SAMEcanvas. Remove ALL gray/white/yellow HALO CLOUDS, outerglow and fog aroundthenotes in EVERYcell. Keep ONLY the two solid pixel-art golden musicalnotes andtheir thinbrownoutlines, no speechcloud. Redraw each pair SMALLER andCENTERED wellinside EACH equalcell, occupyingonly central45percentwidth/45percentheight; at least25percent completelyalpha0padding onALLSIDES ofEVERYcell. No clipping betweenframes orcanvasedge. Keepnatural16posegentlerise/tilt butSMALLtravel, constantglyphsize, firstlastnotesstillcleanwithoutlargefadingcloud. True transparentRGBAoutsideactualnoteedges, actualalpha0atallcellmargins. Remove strayredpixelnoise/fringes. No text/grid/numbers/newobjects. Crisp handpaintedpixelartmusicnotes ONLY; noblur.",
+      "sourcePrompt": "Use case: stylized-concept. Production2D pixel-art game cinematic VFX SPRITE ATLAS. EXACT16frames4columns4rows on1024x1024transparentRGBAcanvas. ONLY a small floating pair of musicalnotes to indicate a silent hero cheerfully humming while walking. Warm ivory and subdued antique gold, thin darkbrownoutline, crisp deliberate pixels matching detailed fantasygame pixelart, not neon or flat vector. Same2notes ineachcell followONEcontinuous rise: firstframes emerge nearbottomleft, middle gently bobdiagonallyupright, finalframes drift towardupperright anddissolve. Tiny rhythmic tilt, sameglyphshape andsize exceptinitial/finalgentleopacityfade. Oneeighthnote plusonesmallquavernote, no stave/speechbubble or text. Each256cell all marks insidecentral60percent width/70percentheight with15percentcleanpaddingallaround. Plenty of emptyspace; restrainednaturalemotion effect, not big flashy magic. True alpha0 emptybackground andbetweenframes, no checkerboard/graywash/floor/shadow/grid/numbers/borders/character/face/body/weapon. Everycell EXACTsame dimensions, read left-to-right then nextrow. Smooth16frame motion, clean semitransparentantialias outeredges.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "e8276e7e5dda09c36d98104d677f9b1c9ed07324505c5ea5b79d7a92aa2a869e",
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "frames": [
+        {
+          "x": 75,
+          "y": 45,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 389,
+          "y": 45,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 702,
+          "y": 45,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 1015,
+          "y": 45,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 75,
+          "y": 359,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 389,
+          "y": 359,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 702,
+          "y": 359,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 1015,
+          "y": 359,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 75,
+          "y": 672,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 389,
+          "y": 672,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 702,
+          "y": 672,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 1015,
+          "y": 672,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 75,
+          "y": 985,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 389,
+          "y": 985,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 702,
+          "y": 985,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        },
+        {
+          "x": 1015,
+          "y": 985,
+          "w": 146,
+          "h": 243,
+          "pivot": [
+            73.0,
+            121.5
+          ]
+        }
+      ],
+      "registeredPivot": [
+        73.0,
+        121.5
+      ],
+      "referenceHeight": 243,
+      "contentRect": [
+        75,
+        45,
+        221,
+        288
+      ],
+      "noSpokenText": true
+    },
+    "emotion_question": {
+      "file": "emotions/question.png",
+      "width": 1448,
+      "height": 1086,
+      "prompt": "Use case: stylized-concept. Production cinematic pixel-art EMOTION effect sheet, EXACT12frames4columns3rows1024x768transparentRGBA. Only ONE simple readable floating QUESTIONMARK, warm ivory filled withsubtledimantiquegoldhighlight and darkbrown2pixeloutline; a separate rounddot below thecurvedstroke asnormalquestionmark. Detailedcrisp2Dfantasypixelart no3D/vector/neon. ONE continuous surprise/confusionpop: frames1-3 smallquestionmark appearsandgrows softly;4-6 tinyupwardbounce;7-10 settlesupright andremainsreadable;11-12 gentlyshrinks/fades. SAMEQUESTIONMARK identitythroughallframes, notchangingtootherletters. Centeredineach256x256cell occupying60percentheight, allpaintinsidecentral70percentarea, generous15percentalpha0paddingALLSIDES andbetweencells. No speechbubble, exclamation, words, labels, numbers, grids, backgrounds, shadows, characters or props. Clean true transparentRGBA includingallcellcorners, intentionalpixeledgeswithsoftlimitededgealpha. Emotion forhero discoveringmysterioussword, subtlelightheartedreadable.",
+      "sourcePrompt": "",
+      "generationMethod": "built-in image_gen",
+      "sha256": "d1f8bea5bf5828ba95d862aa4cba665f6236e29d117285409818b5cb0e8c5039",
+      "columns": 4,
+      "rows": 3,
+      "frameCount": 12,
+      "frames": [
+        {
+          "x": 95,
+          "y": 49,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 457,
+          "y": 49,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 819,
+          "y": 49,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 1181,
+          "y": 49,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 95,
+          "y": 411,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 457,
+          "y": 411,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 819,
+          "y": 411,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 1181,
+          "y": 411,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 95,
+          "y": 773,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 457,
+          "y": 773,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 819,
+          "y": 773,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        },
+        {
+          "x": 1181,
+          "y": 773,
+          "w": 172,
+          "h": 250,
+          "pivot": [
+            86.0,
+            125.0
+          ]
+        }
+      ],
+      "registeredPivot": [
+        86.0,
+        125.0
+      ],
+      "referenceHeight": 250,
+      "contentRect": [
+        95,
+        49,
+        267,
+        299
+      ],
+      "noSpokenText": true
+    },
+    "emotion_effort": {
+      "file": "emotions/effort.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Precise-object-edit on16frame4x4 transparentstrainFXatlas. KEEP twoPALEBLUE SWEATDROPLETS onleft andtiny breathpuff atlowerright, keep samegrid/canvas/16motionframes. REMOVE thebigbrown/red BLOB entirely: it lookslikeahand, thisiswrong. Replace itineachcellwith ONLY THREE SHORT THIN separate mutedred angledSTRESSDASHES, eachdashabout10pxlong3pxwide, spacedapart, notconnected, nohand/palm/fingers. Sweatdropletsarestillprimaryelement, redmarksTINYsecondaryelement. Keep allmarksinsidecentral50percentofeachcellandatleast20percenttruealpha0marginallsides. RemoveALLgrayhalo/wash/strayrednoise/backgroundandbetweenframes. SubtlecrispPIXELART emotionalstrain/sweat, not3D/vector, nocharacter/face/body/hand/text/soundwords/grid. Smooth16framegentledropletrolldown/puffdriftrightandfadingstresspulse, noflashyexplosion. TruecleantransparentRGBA.",
+      "sourcePrompt": "Use case: stylized-concept. Generate ONLY an animated nonverbal STRAIN/SWEAT VFX SPRITE SHEET for a 2D darkfantasygame hero strugglingtopull a buriedsword. EXACT16frames4columns4rows1024x1024, true transparentRGBA. NO character/head/face/body/object included. Eachcell a compactcluster: two small pale bluegray sweatdroplets withivoryhighlights toleft, three tiny warmredbrown angledstrainlines nearcenter, a verysmall palegray breathpuff atlowerright. Same arrangementconstantly, smoothlyanimated. Motionframes1-4 gentleeffortpulse andsmalldropletforming;5-8 dropletrollsdown8pixels andlittlebreathpuffdriftsright;9-12 secondsofterstrainpulse, dropletshrinks;13-16 settle/dissipate backintoframe1. Subtlehand-drawn crisp PIXEL ART matching richfantasygamepalette; not flatvector, no neon, no explosiveFX. Restrainedemotiongraphicthatwillfloatbesidehero'stemple whilehands lift, notcoverface. Marks stayinsidecentral60percentwidth/height ofeach256cell, allfourmarginsfullyalpha0, noadjacentcellbleed. No text/soundwords/numbers, no speechbubble, no graywash/background/checkerboard/grid/borders/shadow orweapon. Distinct16smoothconsecutiveframes lefttoright then nextrow, glyphpositionsnearstablewithjustshortdownwardsweatandoutwardsbreathdrift.",
+      "generationMethod": "built-in image_gen",
+      "sha256": "6d73b9d390e9827dd7dd99c9cdedc93a89c1fdb893f0d7b9cddbb55d9f834752",
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "frames": [
+        {
+          "x": 76,
+          "y": 82,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 390,
+          "y": 82,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 703,
+          "y": 82,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 1016,
+          "y": 82,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 76,
+          "y": 396,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 390,
+          "y": 396,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 703,
+          "y": 396,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 1016,
+          "y": 396,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 76,
+          "y": 709,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 390,
+          "y": 709,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 703,
+          "y": 709,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 1016,
+          "y": 709,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 76,
+          "y": 1022,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 390,
+          "y": 1022,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 703,
+          "y": 1022,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        },
+        {
+          "x": 1016,
+          "y": 1022,
+          "w": 175,
+          "h": 158,
+          "pivot": [
+            87.5,
+            79.0
+          ]
+        }
+      ],
+      "registeredPivot": [
+        87.5,
+        79.0
+      ],
+      "referenceHeight": 158,
+      "contentRect": [
+        76,
+        82,
+        251,
+        240
+      ],
+      "noSpokenText": true
     }
   },
   "shots": [
@@ -3896,7 +5150,7 @@
       "name": "마검 타이틀"
     }
   ],
-  "version": "2026-11-04-close-follow-natural-walk-v6",
+  "version": "2026-11-04-foreground-sword-emotion-v7",
   "subtitles": false,
   "narration": false,
   "newActorFrames": 124,
@@ -3967,5 +5221,43 @@
     "awakeningZoom": 1.62,
     "walkingScreenAnchorX": 0.44,
     "sourceImagesUnchangedExceptWalkSheets": true
+  },
+  "dialogue": false,
+  "audioPolicy": "non-vocal sound effects only; no human humming, speech, narration or background score",
+  "emotionCues": {
+    "humming": {
+      "start": 3,
+      "end": 11.583833248601932,
+      "cycleSeconds": 2.1,
+      "meaning": "silent cheerful humming shown by floating notes"
+    },
+    "question": {
+      "start": 11.733833248601933,
+      "duration": 2.8,
+      "meaning": "noticing the sword"
+    },
+    "effort": {
+      "start": 19,
+      "end": 23,
+      "cycleSeconds": 1.15,
+      "meaning": "sweat, strain marks and little breath puffs; no vocal grunts"
+    }
+  },
+  "sceneLayers": {
+    "discovery": [
+      "background",
+      "hero",
+      "sword",
+      "front soil",
+      "emotion"
+    ],
+    "graspAndPull": [
+      "background",
+      "hero",
+      "sword",
+      "front soil",
+      "hands",
+      "emotion"
+    ]
   }
 }

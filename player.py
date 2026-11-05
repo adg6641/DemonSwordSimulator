@@ -42,6 +42,8 @@ class Player:
         self.animation = Animation(sprite_folder)
         self.effects = CombatEffects(sprite_folder.parent / 'effects')
         self.hp = 100
+        self.floor_y = 0.0
+        self.dash_unlocked = self.magic_unlocked = True
         self.invulnerable = 0.0
         self.x, self.y, self.vy = 220.0, 0.0, 0.0
         self.facing = 1
@@ -58,7 +60,7 @@ class Player:
 
     @property
     def grounded(self):
-        return self.y <= 0.0 and self.vy <= 0.0
+        return self.y <= self.floor_y + .01 and self.vy <= 0.0
 
     def _action(self, clip, *followups):
         self.mode = 'action'
@@ -69,8 +71,8 @@ class Player:
 
     def take_damage(self, amount):
         if self.mode == 'dead' or self.invulnerable > 0:
-            return
-        damage = max(1, round(amount * .25)) if self.mode == 'guard' else max(0, amount)
+            return 0
+        damage = max(1, round(amount * .25)) if self.mode == 'guard' else max(0, round(amount))
         self.hp = max(0, self.hp - damage)
         self.invulnerable = .65
         self.effects.buff_remaining = 0.0
@@ -78,6 +80,7 @@ class Player:
         self.followups.clear()
         self.mode, self.gait = ('dead' if self.hp == 0 else 'hurt'), None
         self.animation.play('death' if self.hp == 0 else 'hurt')
+        return damage
 
     def press(self, key, keys):
         if self.mode in {'hurt', 'dead'}:
@@ -89,7 +92,7 @@ class Player:
             landing = self.mode == 'action' and self.animation.name in {
                 'land_soft', 'land_hard', 'air_attack_land',
             }
-            if self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
+            if self.dash_unlocked and self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
                 self.dash_attack_remaining = 0.0
                 self._action('dash_slash', 'dash_attack_recovery')
             elif self.mode == 'combo':
@@ -123,7 +126,7 @@ class Player:
                     self.air_dash_ready = False
                     self.vy = 0.0
                     self.animation.play('dash_air', fps=40, once=True)
-        elif key == SDLK_z and self.mode == 'free' and self.grounded:
+        elif key == SDLK_z and self.magic_unlocked and self.mode == 'free' and self.grounded:
             self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'magic', None
             self.animation.play('magic_charge')
@@ -242,7 +245,7 @@ class Player:
         elif self.mode == 'action':
             if self.animation.name == 'dash_slash':
                 speed = self.facing * 420.0
-            elif self.y > 0:
+            elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt
 
@@ -251,8 +254,8 @@ class Player:
         if airborne and not floating_dash:
             self.y += self.vy * dt - self.GRAVITY * dt * dt / 2
             self.vy -= self.GRAVITY * dt
-        if self.y <= 0:
-            self.y, self.vy = 0.0, 0.0
+        if self.y <= self.floor_y:
+            self.y, self.vy = self.floor_y, 0.0
             self.air_dash_ready = True
             keep_dash_attack = self.mode == 'action' and self.animation.name in {
                 'dash_slash', 'dash_attack_recovery',

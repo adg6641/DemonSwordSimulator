@@ -22,6 +22,11 @@ class Animation:
         self.serial = 0
         self.play('idle_breathe')
 
+    def add_story_clips(self, assets):
+        for key, clip in assets.clips.items():
+            if key.startswith('adv/hero_'):
+                self.clips[key] = dict(clip, file=clip['path'])
+
     def play(self, name, *, fps=None, once=False):
         self.name = name
         self.serial += 1

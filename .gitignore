@@ -5,12 +5,14 @@ Desktop.ini
 ~$*
 *.tmp
 
-# 이후 Python 개발 시 생성되는 파일
+# Python 개발 중 생성되는 파일
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 .env
 
-# 개인별 VS Code 상태
-.vscode/
+# 진행·엔딩 기록과 개인별 편집기 상태
+userdata/
+.vscode/*
+!.vscode/launch.json

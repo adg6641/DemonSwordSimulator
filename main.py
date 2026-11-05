@@ -2,6 +2,8 @@
 
 from pathlib import Path
 from time import perf_counter
+import argparse
+import gc
 
 import pico2d.pico2d as engine
 from pico2d import (open_canvas, close_canvas, hide_lattice, clear_canvas, update_canvas,
@@ -16,6 +18,9 @@ ROOT = Path(__file__).resolve().parent
 
 
 def main():
+    parser = argparse.ArgumentParser(description='마검사 시뮬레이터')
+    parser.add_argument('--skip-intro', action='store_true', help='인트로를 건너뛰고 시작 화면 표시')
+    options = parser.parse_args()
     open_canvas(WIDTH, HEIGHT, sync=True)
     hide_lattice()
     engine.SDL_SetRenderDrawColor(engine.renderer, 0, 0, 0, 255)
@@ -23,7 +28,7 @@ def main():
     update_canvas()
     app = None
     try:
-        app = GameApplication(ROOT)
+        app = GameApplication(ROOT, skip_intro=options.skip_intro)
         previous, accumulated = perf_counter(), 0.0
         while app.running:
             now = perf_counter()
@@ -45,6 +50,7 @@ def main():
     finally:
         if app:
             app.close()
+        gc.collect()
         close_canvas()
 
 

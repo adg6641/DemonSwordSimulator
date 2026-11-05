@@ -42,6 +42,8 @@ class Interface:
         self.time = 0.0
 
     def text(self, value, x, y, size=22, color=(233, 229, 239), center=False):
+        if size not in self.fonts:
+            self.fonts[size] = load_font('C:/Windows/Fonts/malgun.ttf', size)
         font = self.fonts[size]
         if center:
             width, height = c_int(), c_int()
@@ -102,10 +104,10 @@ class Interface:
         self.text('이동과 생존', 365, 587, 34, ink, True)
         self.text('마검의 힘', 922, 587, 34, ink, True)
         left = [('←  →', '걷기 · 계속 누르면 달리기'), ('↑', '점프'), ('↓', '웅크리기 · 웅크려 이동'),
-                ('Shift', '지상 대시 · 공중 대시'), ('X', '방어'), ('Esc', '시작 화면으로 돌아가기')]
+                ('Shift', '지상 대시 · 공중 대시'), ('X', '방어 · 정확히 막으면 피해 0'), ('Esc', '일시 정지 · 저장 · 돌아가기')]
         right = [('C 연속 입력', '기본 베기 1 → 2 → 3'), ('대시 끝에서 C', '대시 베기 · 대시 중 입력은 무시'),
-                 ('Z → C', '마력 집중 후 5초간 마검파'), ('F1 ~ F7', '7단계 검기 선택'), ('1 ~ 8', '해당 맵으로 이동'),
-                 ('↑ ↓ / Enter', '메뉴 선택 / 확인')]
+                 ('Z → C', '해금 후 집중 → 마검파'), ('E / H / Q', '상호작용 / 회복 / 동료 지원'), ('Tab / L / 1~8', '기록책 / 성장 / 열린 지역 이동'),
+                 ('↑ ↓ / Enter', '선택창 선택 / 확인')]
         for x, rows in ((181, left), (738, right)):
             for i, (key, detail) in enumerate(rows):
                 y = 517 - i * 58

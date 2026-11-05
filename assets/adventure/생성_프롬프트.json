@@ -1,0 +1,939 @@
+{
+  "method": "built-in image_gen",
+  "records": [
+    {
+      "id": "terrain",
+      "label": "8개 지역 발판과 엄폐 지형",
+      "source": "제안서 7~8쪽 / PPT 10쪽",
+      "refs": [
+        "forest.jpg",
+        "ruins.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "ruins.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: A short horizontal oak plank platform on two small wooden supports, side elevation, FLAT bright thin walkable top.\nCELL 2: A low pair of worn warm limestone steps, flat horizontal top edges, side elevation.\nCELL 3: A fallen oak log with a narrow flat mossy top, visible bark side, NOT a receding top-down surface.\nCELL 4: A sturdy twisted root ledge with a level soil-covered walking cap.\nCELL 5: A short level plank bridge section with rope ends below its walkable top, no obstructing tall railing.\nCELL 6: A compact moss earth ledge with exposed roots on the side and a level upper edge.\nCELL 7: A horizontal ancient limestone slab resting on a short cracked arch, side elevation, clear level upper edge.\nCELL 8: A waist-high broken limestone wall fragment with ivy, stable flat base, readable solid cover.\nCELL 9: A flat pale stone altar step with subtle crescent inlay on the side, not text.\nCELL 10: A narrow flat-topped carved moon-memory pedestal platform, tarnished brass trim.\nCELL 11: A short black-iron grate platform, strong horizontal walkable lip, side view.\nCELL 12: A small charcoal stone battlement block, worn bronze bolts, flat base.\nCELL 13: A low horizontal broken column section used as a platform, dark limestone and faded burgundy detail.\nCELL 14: A short raised gothic stone threshold with level thin pale edge.\nCELL 15: A broad low black basalt slab with restrained brass split-crown side motif.\nCELL 16: A short horizontal seal stone ledge, dark slate with quiet broken crescent inlay.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-6cbc6efe-9752-413c-9e4f-b186730adfc3.png"
+    },
+    {
+      "id": "story_props",
+      "label": "이야기 장치와 봉인 물건",
+      "source": "제안서 8, 13~14, 23~29쪽 / 스토리북 봉인·기록",
+      "refs": [
+        "forest.jpg",
+        "altar.jpg",
+        "lunea.png"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "altar.jpg",
+        "lunea.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: A sturdy low fallen tree trunk, moss and roots, side-on cover object.\nCELL 2: An arched tree root framing a LOW crawl-through opening, complete arch on transparent background, horizontal floor omitted.\nCELL 3: A palm-sized oak-framed pale teal wardstone set on a short cart bracket, whole and quiet.\nCELL 4: The SAME oak-framed pale teal wardstone with one readable diagonal fracture and dim light.\nCELL 5: A black iron ring anchor with a short heavy chain hanging, intact.\nCELL 6: The SAME iron anchor with a snapped chain end, no flying debris.\nCELL 7: A short waist-high dark iron lever with handle tilted up, stone mount.\nCELL 8: The SAME lever with handle pulled down, identical mount.\nCELL 9: A compact stone wall seal-cover with a crescent inset, closed and opaque.\nCELL 10: The SAME crescent cover slid aside exposing a small dark passage opening, no scene behind it.\nCELL 11: A weathered dark slate tablet with a simple night-well pictogram, NO lettering.\nCELL 12: A pale stone tablet with crescent and three star pictograms, NO lettering.\nCELL 13: An aged brass-edged tablet with a small path returning to a rising sun pictogram, NO lettering.\nCELL 14: An elegant small ivory-brass crescent talisman on a dark cord, matching Lunea, no background.\nCELL 15: The SAME crescent talisman with a fine visible fracture.\nCELL 16: The SAME talisman neatly repaired with a restrained fine silver seam, no huge glow.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-4529a367-5a74-40e0-8768-36206ebd6af5.png"
+    },
+    {
+      "id": "merchant_cart",
+      "label": "상인 수레 상태",
+      "source": "제안서 7~8, 13~14쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 2 COLUMNS by 2 ROWS equally sized invisible cells, 4 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: A complete side-on medieval two-wheel merchant handcart, one tilted cracked wheel, simple olive canvas hood, small wardstone bracket, supplies tied inside, damaged but plausible.\nCELL 2: The SAME exact cart, canvas a little torn, wardstone fractured, wheel still present, same size and viewpoint.\nCELL 3: The SAME cart, repaired wheel with one neat wooden brace, modest warm wardstone, supplies secure.\nCELL 4: The SAME repaired cart now loaded with a small marked supply crate and folded blanket, no merchant or horse, no text.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-799af449-2f4a-4225-8f3e-b5da9d526456.png"
+    },
+    {
+      "id": "crate_break",
+      "label": "연습 상자 파괴",
+      "source": "제안서 7~8쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One small square oak crate bound by simple iron strips. Frames1-4 intact with slight response, 5-8 growing cracks after hits, 9-12 wooden boards break outward in a short restrained burst, 13-16 settle into a low pile of COMPLETE splintered boards. SAME crate volume and location, no loot or people. Do not vanish or enlarge.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-f2c0c6b2-cf52-470e-a85a-d71529c72281.png"
+    },
+    {
+      "id": "barrier_break",
+      "label": "나무 장벽 파괴",
+      "source": "제안서 7~8쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One short rustic fence-like plank barrier across a side-scroller path, low enough to see over. Frames1-4 intact,5-8 cracks at central boards,9-12 a clean sword cut breaks boards,13-16 boards fall and settle leaving an open gap. Keep bottom anchors fixed; no weapon or character drawn.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-a249829e-acc1-4de0-b68e-c56cb92e87d0.png"
+    },
+    {
+      "id": "reward_chest",
+      "label": "회복·보급 상자 열기",
+      "source": "제안서 14,16쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One modest oak supply chest with iron bands and a small cloth crescent merchant mark, NO writing. Frames1-4 closed,5-10 lid opens gradually on rear hinge,11-14 one folded bandage and tiny recovery vial visible with a very quiet warm glint,15-16 holds open. No shower of gold or giant glow, fixed base and scale.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-366dd9ef-d212-43c7-a354-82874d6e94e0.png"
+    },
+    {
+      "id": "sign_torch",
+      "label": "표지판과 횃불",
+      "source": "제안서 8,19쪽",
+      "refs": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8: ONE rustic hanging wooden road sign on a short complete bracket, blank face with only a small path-arrow pictogram, gently sways in breeze in a seamless cycle. Frames9-16: ONE small gothic iron wall torch and bracket, restrained warm orange flame licks slowly upward in a seamless cycle, charcoal metal stays absolutely still. Two separate objects, not the same object morphing.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-f9e66252-7a7a-4300-bcf0-f9253a9135f2.png"
+    },
+    {
+      "id": "campfire",
+      "label": "쉼터 모닥불",
+      "source": "제안서 16,29쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A small safe-camp stone ring with three short charred logs, low warm ember fire, no characters. Sixteen chronological looping flame and ember poses. Stones and logs absolutely fixed, subtle orange light near logs, a few tiny fading sparks, no large smoke cloud, no background glow rectangle. Quiet welcoming medieval camp.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-415eed1c-132b-4f47-adbb-5ac650c079cc.png"
+    },
+    {
+      "id": "mirror_pool",
+      "label": "거울 웅덩이",
+      "source": "제안서 23~24쪽 / 스토리북 pool",
+      "refs": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A shallow wide oval forest mirror pool seen from a LOW SIDE-SCROLLER angle, rim of muted mossy stones and a thin reflective surface, NOT an overhead map. It reflects a small crescent and dark night water despite daylight. Three tiny seal knots along near rim with ONE fine black thread each curving toward center. Sixteen subtle looping ripple frames; rim position, reflection shape and knots remain fixed, water barely moves. NO character or reflection of a person, no scenery beyond the object.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-e929b316-5293-41fe-a49e-eec46680a35a.png"
+    },
+    {
+      "id": "altar_states",
+      "label": "제단의 두 상태",
+      "source": "제안서 14,28~29쪽",
+      "refs": [
+        "altar.jpg"
+      ],
+      "referenceFiles": [
+        "altar.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. The SAME complete compact ancient moon-memory altar on a low three-step base, limestone and tarnished brass crescent, three small sockets. Frames1-8 subtle seamless CORRUPTED state: restrained violet-black inner ash under a cracked center seal. Frames9-16 subtle seamless PURIFIED state: repaired pale teal crescent and quiet silver motes. Geometry, base and size identical in both sets; no person, no background architecture.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-c2144dc3-260d-4fe1-9cfd-a8f3c4eb28ff.png"
+    },
+    {
+      "id": "mirror_well",
+      "label": "검은 거울과 밤의 우물",
+      "source": "스토리북 mirror / 밤의 우물",
+      "refs": [
+        "ruins.jpg",
+        "king.png"
+      ],
+      "referenceFiles": [
+        "ruins.jpg",
+        "king.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8: a tall weathered gothic BLACK MIRROR in a thin stone-brass standing frame, surface contains a faint CLOSED-crown-helmet silhouette of the king as a warning, dark ripples shift slowly; do NOT show any face. Frames9-16: a low circular ancient NIGHT WELL rim seen from side, black water inside with faint tiny memory flecks drifting inward, worn slate and root cracks. Each eight-frame set loops smoothly. Two separate complete objects, fixed silhouettes, no background scene.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-fdaba97e-92e5-4216-990b-b90a42255209.png"
+    },
+    {
+      "id": "gate_open",
+      "label": "사슬 성문 열림",
+      "source": "제안서 8,28쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One complete gothic castle stone doorway with short iron chain mechanism and black portcullis, no wall beyond its narrow arch frame. Sixteen frames:1-3 fully closed,4-12 portcullis rises smoothly into the arch lintel as chains roll,13-16 completely open dark TRANSPARENT passage. Stone arch fixed, bars retract inside header rather than disappear outside cell, no scene through door, no person.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-47942d10-e04f-4842-9c1a-782fb73fd350.png"
+    },
+    {
+      "id": "pillar_break",
+      "label": "왕좌 봉인 기둥 파괴",
+      "source": "제안서 8,17쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One complete short black limestone seal pillar with quiet brass split-crown inlay and small pale moon vein, readable side-scroller cover. Frames1-4 intact,5-8 spreading visible cracks,9-12 upper blocks crack and buckle into a compact collapse,13-16 stones settle as rubble at SAME base. Restrained dust; no giant explosion, no background throne, whole broken blocks inside cell.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-379543f3-3fae-4dd4-9251-7bc513b9b7df.png"
+    },
+    {
+      "id": "falling_stone",
+      "label": "낙석 예고와 충돌",
+      "source": "제안서 8쪽",
+      "refs": [
+        "ruins.jpg"
+      ],
+      "referenceFiles": [
+        "ruins.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8: ONE small suspended weathered ruin block, starts shaking with a few subtle dust grains, then drops vertically within the cell to the same bottom baseline; keep its size identical, fixed camera. Frames9-16: matching small limestone impact debris and dust, starts compact, fragments bounce a little and settle, NO floating intact block. Both actions fully inside their cells, not a whole scene.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-208f472d-aeda-4490-b349-01c94f162c82.png"
+    },
+    {
+      "id": "magic_wind",
+      "label": "회랑 마력 바람",
+      "source": "제안서 8,19쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One restrained horizontal low magic gust of slate-gray translucent wisps with just a few dull violet ash flecks. Sixteen looping sequential frames flowing LEFT to RIGHT, gentle curved movement, clear transparent gaps, a small quiet core and soft fading edges, at most a few narrow bands. NO solid rectangle, character, floor or glowing tornado. Readable over dark castle while not obscuring attack telegraphs.",
+      "correctionPrompt": "Generate ONLY an environmental wind EFFECT sprite sheet, NOT a person or action character. TRUE transparent background, no scenery. EXACT 4 columns x 4 rows, SIXTEEN chronological frames of ONE faint horizontal breeze of magical ash: 3 narrow gently curved slate-gray smoke wisps moving LEFT TO RIGHT, a few tiny dull violet specks. 2D hand-painted PIXEL ART overlay for a medieval fantasy castle corridor. Each effect is 65% cell width and only 20% cell height, centered in each cell with generous empty space, semitransparent 15–50% opacity with softly fading edges. Slowly undulate across all16 frames and loop smoothly back. Absolutely no humanoid, character, armor, weapon, hands, limbs, face, floor, castle, tornado, lighting burst, opaque panel, text or labels. Only floating narrow gray smoke streaks and a few ash flecks on alpha-zero emptiness.",
+      "generatedFile": "exec-bb90aab4-6b5a-450e-ab93-cdaeddf2f2fa.png"
+    },
+    {
+      "id": "npc_merchant",
+      "label": "숲의 상인",
+      "source": "제안서 13~16,19,28쪽",
+      "refs": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A kind stocky middle-aged human merchant man, warm brown short beard, olive canvas hood thrown back, patched brown wool vest, cream sleeves, rust scarf, plain boots, small leather satchel and bandage on one forearm. No weapon, no crown, no hero blue cape. Face LEFT in all poses, both legs and hands visible, anatomy and face constant. EXACT frames1-4 quiet breathing idle; frames5-12 one full smooth 8-frame heel-to-toe walk in-place with opposite arm/leg coordination; frames13-16 small friendly acknowledgement / cautious formal head inclination for envoy, then return neutral. No action effects or backdrop. Keep full standing height about 65% cell and baseline84%.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-e0935d83-a0da-40c1-997b-c19e0f5cccd8.png"
+    },
+    {
+      "id": "npc_elder",
+      "label": "마을의 어른",
+      "source": "제안서 13~16,19,28쪽",
+      "refs": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A slim elderly human village man with short white beard and gray eyebrows, weathered gentle face, simple russet wool tunic with rope belt, faded charcoal trousers, brown boots, one short oak walking staff. No wizard hat or magic staff. Face LEFT in all poses, both legs and hands visible, anatomy and face constant. EXACT frames1-4 quiet breathing idle; frames5-12 one full smooth 8-frame heel-to-toe walk in-place with opposite arm/leg coordination; frames13-16 small friendly acknowledgement / cautious formal head inclination for envoy, then return neutral. No action effects or backdrop. Keep full standing height about 65% cell and baseline84%.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-f12ec4d7-1a6b-447f-8442-2295ed39f2c3.png"
+    },
+    {
+      "id": "npc_healer",
+      "label": "보급을 건네는 주민",
+      "source": "제안서 13~16,19,28쪽",
+      "refs": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A practical adult human village woman with dark brown braided hair, muted forest-green dress over gray leggings, cream apron, rolled sleeves, plain sturdy boots, small folded bandage pouch at belt. Warm calm expression, no silver hair or noble ornaments. Face LEFT in all poses, both legs and hands visible, anatomy and face constant. EXACT frames1-4 quiet breathing idle; frames5-12 one full smooth 8-frame heel-to-toe walk in-place with opposite arm/leg coordination; frames13-16 small friendly acknowledgement / cautious formal head inclination for envoy, then return neutral. No action effects or backdrop. Keep full standing height about 65% cell and baseline84%.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-93fbaf1f-eba7-4211-958e-b4ecb6966976.png"
+    },
+    {
+      "id": "npc_envoy",
+      "label": "마왕의 전령",
+      "source": "제안서 13~16,19,28쪽",
+      "refs": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. An original tall thin royal messenger, adult nonhuman humanoid, completely closed plain dark bronze face mask with narrow amber eye slit, charcoal-gray mantle with restrained dusty-teal lining, split-crown brass seal at chest, dark boots, ONE rolled blank contract parchment in a gloved hand. Calm formal silhouette, no huge horns, sword or exposed face. Face LEFT in all poses, both legs and hands visible, anatomy and face constant. EXACT frames1-4 quiet breathing idle; frames5-12 one full smooth 8-frame heel-to-toe walk in-place with opposite arm/leg coordination; frames13-16 small friendly acknowledgement / cautious formal head inclination for envoy, then return neutral. No action effects or backdrop. Keep full standing height about 65% cell and baseline84%.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-88fb5734-bdad-454a-a06f-91da89c39931.png"
+    },
+    {
+      "id": "merchant_event",
+      "label": "상인 구조와 보답",
+      "source": "제안서 13~16쪽",
+      "refs": [
+        "$npc_merchant",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "exec-e0935d83-a0da-40c1-997b-c19e0f5cccd8.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EXACT same merchant as reference. Frames1-8: neutral standing, wince, hold bandaged arm, slowly sit down and lean in an injured but non-gory resting pose; last pose sits still. Frames9-16: neutral standing, bow gratefully, extend ONE small supply pouch with both hands, return neutral. Consistent face, scale and boots; no cart or other character drawn.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-140ee257-b380-4f66-ba22-7e95e160026a.png"
+    },
+    {
+      "id": "envoy_event",
+      "label": "전령의 계약과 경고",
+      "source": "PPT 6쪽 / 스토리북 envoy",
+      "refs": [
+        "$npc_envoy",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "exec-88fb5734-bdad-454a-a06f-91da89c39931.png",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EXACT same masked envoy as reference. Frames1-8: standing guard, lift the blank contract scroll, offer it forward LEFT with open offhand, retract to neutral. Frames9-16: standing, turn shoulder slightly, point toward an unseen distant village LEFT, lower hand and return neutral. Mask never opens, full body, small cloth follow-through, no symbols floating around.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-93a30451-8b7c-4738-a5b5-00536d3c856d.png"
+    },
+    {
+      "id": "hero_pickup",
+      "label": "주인공 물건 확인",
+      "source": "제안서 16쪽",
+      "refs": [
+        "hero_template.png",
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero_template.png",
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied hero 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 40% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: upright ready stance, lower sword safely by right side, bend knees naturally, kneel and reach with free hand toward a small unseen ground object. Frames9-16: begin in that same kneeling reach, bring free hand back to chest, rise smoothly, return original standing stance. Sword stays attached to sword hand and never changes design. No object is baked into the hand.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-4e3df9c4-3794-4abb-84c6-350ac186fa2b.png"
+    },
+    {
+      "id": "hero_camp",
+      "label": "주인공 쉼터 전환",
+      "source": "제안서 16,29쪽",
+      "refs": [
+        "hero_template.png",
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero_template.png",
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied hero 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 40% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8 stand, place dark sword safely beside right boot with hand following it, ease into a relaxed seated-on-low-stone posture (no stone drawn), hands resting on knees. Frames9-16 start in matching seated pose, take sword and rise gradually to original upright stance. Keep sword, cape and brown hair coherent, planted boots, natural knees, no growing head.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-bd1a64dd-6611-4a05-a8aa-202894c69973.png"
+    },
+    {
+      "id": "hero_story",
+      "label": "주인공 지도와 인사",
+      "source": "제안서 19,29쪽",
+      "refs": [
+        "hero_template.png",
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero_template.png",
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied hero 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 40% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: already seated naturally with boots on ground, hold a small blank folded parchment map in both hands, tiny eye/head movement reading, seamless loop, sword rests low beside hip. Frames9-16: upright original pose, lift free hand for a restrained greeting then nod once and lower it; sword remains in sword hand. Both sequences keep normal size.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-62e53a2f-8e51-465d-973f-7cb402722d91.png"
+    },
+    {
+      "id": "lunea_look",
+      "label": "루네아 시선과 문양 확인",
+      "source": "제안서 26,28,33쪽",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: begin facing right, eyes look back left first, neck and shoulders gently follow into a small over-shoulder look, then return right; feet do NOT spin or slide. Frames9-16: upright, lift the crescent pendant and point with the free hand at an unseen inscription ahead-right, inspect it, gently lower both hands and return idle. Hair and cape follow with subtle delay.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-e0425e63-05a1-4a96-9c72-94c5d192ff44.png"
+    },
+    {
+      "id": "lunea_camp",
+      "label": "루네아 쉼터 전환",
+      "source": "제안서 29,34쪽",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: upright, gather the ivory coat hem modestly with one hand, lower gracefully onto an unseen low seat, both boots grounded, hair settles behind shoulders. Frames9-16: start in matching seated pose, shift weight to boots, rise elegantly, release hem and return exact original idle. Same slim form, face, crescent hair ornament and clothing, not a different dress.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-75b74d46-be7d-42ec-b3b5-5347e94ccb53.png"
+    },
+    {
+      "id": "lunea_story",
+      "label": "루네아 쉼터와 약속",
+      "source": "제안서 29쪽",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: already seated with knees and boots together naturally, subtle breathing and blink, look toward an unseen companion on left, calm seamless idle. Frames9-16: matching seated pose, look at a small blank parchment map in lap, gently point to a spot and look toward companion, return to reading. Keep silver hair volume and face constant, no magical effects.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-017e5f27-58ee-4169-9a97-cf81f278a623.png"
+    },
+    {
+      "id": "lunea_rescue",
+      "label": "루네아 구출 장면",
+      "source": "제안서 23~24쪽 / 스토리북 pool",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: upright at same ground line, one hand holds crescent pendant close and other reaches slightly down to an unseen seal knot, restrained struggling breaths and worried glances, feet stay planted; no rope, pool or effects baked in. Frames9-16: tension eases, exhale, straighten upper body, look to the rescuer left, small relieved nod and return calm idle. No fainting, torn clothing or size change.",
+      "correctionPrompt": "Keep all sixteen poses; remove only white/gray haze and ground shadows; true RGBA alpha zero outside characters.",
+      "generatedFile": "exec-90fdf00d-bbfa-4597-abf7-5adda3a6e4f2.png"
+    },
+    {
+      "id": "lunea_ritual",
+      "label": "루네아 기억 의식과 작별",
+      "source": "제안서 29쪽 / 스토리북 moon_duty",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: upright, bring crescent pendant to chest, close eyes briefly, raise it gently forward at shoulder height in a moon-memory ritual, lower to idle. Frames9-16: original stance, soft bittersweet smile, lift one hand in a small farewell wave, lower it and look ahead. Pure character motion without huge effects, same face and size, beautiful restrained gestures.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-9bd6b62e-c6bb-4ff4-9973-bc6743a1fd62.png"
+    },
+    {
+      "id": "portrait_hero",
+      "label": "주인공 대화 표정",
+      "source": "제안서 19,29,32쪽",
+      "refs": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, calm neutral. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 2: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, small warm smile. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 3: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, quiet worry. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 4: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, determined focused eyes. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 5: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, small startled realization. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 6: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, restrained sadness, no exaggerated sobbing. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 7: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, thoughtful listening. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 8: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, relieved exhale. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 9: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, tired but composed. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 10: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, contained fear. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 11: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, uncertain hesitation. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 12: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, gentle grateful expression. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 13: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, quiet hopeful eyes. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 14: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, earnest vulnerable trust. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 15: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, bittersweet farewell smile. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 16: The EXACT SAME brown-haired boy hero with navy blue cape, gray tunic, youthful recognizable face as reference, a consistently cropped head-and-shoulders three-quarter portrait facing right, calm concentration. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-61eb60e3-9870-4114-930d-66e2f0e10d36.png"
+    },
+    {
+      "id": "portrait_lunea",
+      "label": "루네아 대화 표정",
+      "source": "제안서 19,29,32쪽",
+      "refs": [
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, calm neutral. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 2: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, small warm smile. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 3: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, quiet worry. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 4: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, determined focused eyes. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 5: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, small startled realization. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 6: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, restrained sadness, no exaggerated sobbing. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 7: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, thoughtful listening. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 8: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, relieved exhale. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 9: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, tired but composed. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 10: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, contained fear. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 11: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, uncertain hesitation. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 12: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, gentle grateful expression. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 13: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, quiet hopeful eyes. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 14: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, earnest vulnerable trust. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 15: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, bittersweet farewell smile. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.\nCELL 16: The EXACT SAME beautiful silver-haired Lunea with blue-gray eyes, crescent hair ornament, dusty-teal cape and ivory travel coat as reference, a consistently cropped head-and-shoulders three-quarter portrait facing left, calm concentration. Identical face geometry, head size, hairstyle and framing; only expression changes; transparent outside bust, no card frame.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-8cd7be86-a45d-4cf2-95cc-2d57884b3c1a.png"
+    },
+    {
+      "id": "portrait_npcs",
+      "label": "상인·주민·전령 초상",
+      "source": "제안서 13~16,19쪽",
+      "refs": [
+        "$npc_merchant",
+        "$npc_elder",
+        "$npc_healer",
+        "$npc_envoy"
+      ],
+      "referenceFiles": [
+        "exec-e0935d83-a0da-40c1-997b-c19e0f5cccd8.png",
+        "exec-f12ec4d7-1a6b-447f-8442-2295ed39f2c3.png",
+        "exec-93fbaf1f-eba7-4211-958e-b4ecb6966976.png",
+        "exec-88fb5734-bdad-454a-a06f-91da89c39931.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: Head-and-shoulders portrait of EXACT 숲의 상인 from corresponding supplied reference (A kind stocky middle-aged human merchant man, warm brown short beard, olive canvas hood thrown back, patched brown wool vest, cream sleeves, rust scarf, plain boots, small leather satchel and bandage on one forearm. No weapon, no crown, no hero blue cape.), neutral, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 2: Head-and-shoulders portrait of EXACT 숲의 상인 from corresponding supplied reference (A kind stocky middle-aged human merchant man, warm brown short beard, olive canvas hood thrown back, patched brown wool vest, cream sleeves, rust scarf, plain boots, small leather satchel and bandage on one forearm. No weapon, no crown, no hero blue cape.), grateful for humans, formally courteous for masked envoy, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 3: Head-and-shoulders portrait of EXACT 숲의 상인 from corresponding supplied reference (A kind stocky middle-aged human merchant man, warm brown short beard, olive canvas hood thrown back, patched brown wool vest, cream sleeves, rust scarf, plain boots, small leather satchel and bandage on one forearm. No weapon, no crown, no hero blue cape.), concerned attentive, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 4: Head-and-shoulders portrait of EXACT 숲의 상인 from corresponding supplied reference (A kind stocky middle-aged human merchant man, warm brown short beard, olive canvas hood thrown back, patched brown wool vest, cream sleeves, rust scarf, plain boots, small leather satchel and bandage on one forearm. No weapon, no crown, no hero blue cape.), firm resolve, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 5: Head-and-shoulders portrait of EXACT 마을의 어른 from corresponding supplied reference (A slim elderly human village man with short white beard and gray eyebrows, weathered gentle face, simple russet wool tunic with rope belt, faded charcoal trousers, brown boots, one short oak walking staff. No wizard hat or magic staff.), neutral, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 6: Head-and-shoulders portrait of EXACT 마을의 어른 from corresponding supplied reference (A slim elderly human village man with short white beard and gray eyebrows, weathered gentle face, simple russet wool tunic with rope belt, faded charcoal trousers, brown boots, one short oak walking staff. No wizard hat or magic staff.), grateful for humans, formally courteous for masked envoy, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 7: Head-and-shoulders portrait of EXACT 마을의 어른 from corresponding supplied reference (A slim elderly human village man with short white beard and gray eyebrows, weathered gentle face, simple russet wool tunic with rope belt, faded charcoal trousers, brown boots, one short oak walking staff. No wizard hat or magic staff.), concerned attentive, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 8: Head-and-shoulders portrait of EXACT 마을의 어른 from corresponding supplied reference (A slim elderly human village man with short white beard and gray eyebrows, weathered gentle face, simple russet wool tunic with rope belt, faded charcoal trousers, brown boots, one short oak walking staff. No wizard hat or magic staff.), firm resolve, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 9: Head-and-shoulders portrait of EXACT 보급을 건네는 주민 from corresponding supplied reference (A practical adult human village woman with dark brown braided hair, muted forest-green dress over gray leggings, cream apron, rolled sleeves, plain sturdy boots, small folded bandage pouch at belt. Warm calm expression, no silver hair or noble ornaments.), neutral, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 10: Head-and-shoulders portrait of EXACT 보급을 건네는 주민 from corresponding supplied reference (A practical adult human village woman with dark brown braided hair, muted forest-green dress over gray leggings, cream apron, rolled sleeves, plain sturdy boots, small folded bandage pouch at belt. Warm calm expression, no silver hair or noble ornaments.), grateful for humans, formally courteous for masked envoy, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 11: Head-and-shoulders portrait of EXACT 보급을 건네는 주민 from corresponding supplied reference (A practical adult human village woman with dark brown braided hair, muted forest-green dress over gray leggings, cream apron, rolled sleeves, plain sturdy boots, small folded bandage pouch at belt. Warm calm expression, no silver hair or noble ornaments.), concerned attentive, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 12: Head-and-shoulders portrait of EXACT 보급을 건네는 주민 from corresponding supplied reference (A practical adult human village woman with dark brown braided hair, muted forest-green dress over gray leggings, cream apron, rolled sleeves, plain sturdy boots, small folded bandage pouch at belt. Warm calm expression, no silver hair or noble ornaments.), firm resolve, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 13: Head-and-shoulders portrait of EXACT 마왕의 전령 from corresponding supplied reference (An original tall thin royal messenger, adult nonhuman humanoid, completely closed plain dark bronze face mask with narrow amber eye slit, charcoal-gray mantle with restrained dusty-teal lining, split-crown brass seal at chest, dark boots, ONE rolled blank contract parchment in a gloved hand. Calm formal silhouette, no huge horns, sword or exposed face.), neutral, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 14: Head-and-shoulders portrait of EXACT 마왕의 전령 from corresponding supplied reference (An original tall thin royal messenger, adult nonhuman humanoid, completely closed plain dark bronze face mask with narrow amber eye slit, charcoal-gray mantle with restrained dusty-teal lining, split-crown brass seal at chest, dark boots, ONE rolled blank contract parchment in a gloved hand. Calm formal silhouette, no huge horns, sword or exposed face.), grateful for humans, formally courteous for masked envoy, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 15: Head-and-shoulders portrait of EXACT 마왕의 전령 from corresponding supplied reference (An original tall thin royal messenger, adult nonhuman humanoid, completely closed plain dark bronze face mask with narrow amber eye slit, charcoal-gray mantle with restrained dusty-teal lining, split-crown brass seal at chest, dark boots, ONE rolled blank contract parchment in a gloved hand. Calm formal silhouette, no huge horns, sword or exposed face.), concerned attentive, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.\nCELL 16: Head-and-shoulders portrait of EXACT 마왕의 전령 from corresponding supplied reference (An original tall thin royal messenger, adult nonhuman humanoid, completely closed plain dark bronze face mask with narrow amber eye slit, charcoal-gray mantle with restrained dusty-teal lining, split-crown brass seal at chest, dark boots, ONE rolled blank contract parchment in a gloved hand. Calm formal silhouette, no huge horns, sword or exposed face.), firm resolve, face LEFT. Each ROW is ONE character, row1 merchant,row2 elder,row3 healer,row4 masked envoy, mask stays closed, no card border.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-d51132a1-5ccd-487d-a038-23d7b37e64b2.png"
+    },
+    {
+      "id": "projectiles",
+      "label": "적 투사체 4종",
+      "source": "적 몬스터 공격 / 제안서 10,17쪽",
+      "refs": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Four SEPARATE four-frame looping projectile sprites. Frames1-4 a small olive organic spore sack tumbles LEFT, exact same size. Frames5-8 a pair of folded ivory paper darts fly LEFT with subtle flutter. Frames9-12 ONE copper sewing needle flies LEFT with one short taut ash-red thread trailing right, no character. Frames13-16 a restrained black-violet night orb/crescent moves LEFT with fading ash tail. Complete readable silhouettes, small controlled trails, no caster or background.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-7d9767b6-e7a3-4063-b284-c1c72c32aea4.png"
+    },
+    {
+      "id": "projectile_impacts",
+      "label": "투사체 명중·소멸",
+      "source": "공통 공격 판정 반응",
+      "refs": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Four SEPARATE four-frame short impact animations. Frames1-4 a small muted olive spore sack bursts into a few pale ochre spores and fades. Frames5-8 folded ivory paper darts tear into three tiny pieces and settle. Frames9-12 a thin ash-red thread snaps with a few dull copper flecks, fades. Frames13-16 a small black-violet orb breaks into soft charcoal ash flecks and fades. No white flash wall, bodies or scenery.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-1eb389ac-05cf-4fbd-b36c-3e972e2a30ce.png"
+    },
+    {
+      "id": "root_spike",
+      "label": "땅속 뿌리 공격",
+      "source": "숲 적·녹각 공격 / 제안서 8쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One dark oak three-pronged root spike hazard, no creature. Sixteen chronological frames:1-4 a tiny patch of dust and small root tip warns at fixed floor,5-8 root unfurls upward to a clear sharp woody claw,9-12 holds then bends back,13-16 retracts into ground leaving a few tiny particles. Fixed base, same woody material as forest guardians, whole tip inside every cell, no giant green glow.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-b89005fb-9ad4-4270-bd97-202fef1593f5.png"
+    },
+    {
+      "id": "seal_warning",
+      "label": "봉인 위험 예고와 발동",
+      "source": "서기관·각인 공격 / 제안서 8~10쪽",
+      "refs": [
+        "altar.jpg"
+      ],
+      "referenceFiles": [
+        "altar.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8: a small low elliptical floor seal, THREE-NOTCH geometric motif only, pale dusty teal outline slowly brightens in a seamless readable warning, center stays transparent. Frames9-16: matching seal activates in one short restrained vertical pale-teal shard pulse then fades. No writing, no opaque disk, no enormous circle or caster.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-67c68a2a-f4f7-477d-9d1a-9c6420001b5c.png"
+    },
+    {
+      "id": "hit_impacts",
+      "label": "검 타격과 금속 충돌",
+      "source": "제안서 7,9쪽",
+      "refs": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8: one small ivory-amber sword-contact hit spark, narrow diagonal starburst expands a little then fades to a few short pixels. Frames9-16: a matching small muted brass METAL CLANG spark sprays a short fan and fades. No weapon, blood, character or giant circle. Restrained alpha, good readability over the game forest and castle.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-764fd3c7-a801-4db8-acd4-44cb82bc856d.png"
+    },
+    {
+      "id": "guard_fx",
+      "label": "방어와 정확한 방어",
+      "source": "제안서 9쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8: small warm white-gray curved guard-contact flash on the left-facing edge of an invisible sword, compact impact then fading dust. Frames9-16: precise parry reward, one thin pale-gold crescent arc and short restrained glint expand slightly then fade, no huge shield wall. Clear difference in SHAPE as well as color, no character or letters.",
+      "correctionPrompt": "Create EFFECTS ONLY, nothing else: a 4 columns x 4 rows transparent RGBA sprite sheet, 16 frames, hand-painted pixel-art medieval action game. NO character, body, face, hands, weapon, shield object, ground, scene, text or labels. Each drawing centered and generously padded. Frames1-8: a SHORT silver-white curved guard impact arc, grows from tiny spark to a thin curved shield of LIGHT (not a solid object), deflects 3 tiny muted sparks, then fades to barely visible glints. Frames9-16: the SAME action with a small warm ivory-gold perfect-deflection arc and a single diamond glint, expands then smoothly fades. Only thin arcs and small sparks floating in empty alpha-zero space. Low saturation, no huge explosion, no bloom, no neon. Fixed camera; effect changes shape organically through anticipation, impact, fade.",
+      "generatedFile": "exec-3f3c47f0-ea09-4947-97cb-61e05b635161.png"
+    },
+    {
+      "id": "levelup_fx",
+      "label": "성장과 기술 해금",
+      "source": "PPT 17~18쪽 / 제안서 11~12쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A restrained level-up / skill-unlock effect around an EMPTY standing character silhouette: thin antique gold ring at feet, a few ivory-gold shard motes rise around the sides, open clear center, then fade gradually in 16 chronological frames. No character, words, digits, UI frame or blinding pillar of light. Elegant medieval rune-like geometry without text, small warm center and translucent outer edges.",
+      "correctionPrompt": "Preserve all16 exact gold level-up effect poses and their fixed size and location in this 4x4 sprite sheet. Remove the entire white/gray background and opaque wash. TRUE transparent RGBA: outside effect shapes must be alpha ZERO. Preserve just golden rings and rising glints as semitransparent light. No extra shapes, no character, no background or checkerboard.",
+      "generatedFile": "exec-8ac5f4d2-73dd-4232-be00-addbce6fb74c.png"
+    },
+    {
+      "id": "pickup_fx",
+      "label": "발견과 보상 획득",
+      "source": "제안서 16,19쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Sixteen chronological frames of one small warm-silver discovery glint above an unseen pickup: a tiny four-point star appears, two delicate curved motes rise, sparkle softly and vanish to almost clear. Quiet natural color, no letter E, digits or big aura. This is a reusable effect only, not the item.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-20b2071d-ab74-4788-8d9c-c1c0d173e663.png"
+    },
+    {
+      "id": "failure_respawn",
+      "label": "실패 환영과 체크포인트 복귀",
+      "source": "최신 스토리북: HP0는 종료 엔딩이 아닌 이전 체크포인트 복귀",
+      "refs": [
+        "castle.jpg",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Two different eight-frame non-gory overlays, no bodies or text. Frames1-8: a small broken dark crescent with charcoal ash drifting inward and a low dark veil, indicating a brief bad future vision; do NOT form a solid black rectangle. Frames9-16: a fine silver crescent reforms with a few quiet pale motes moving outward, then fades, indicating return to a checkpoint. Sparse effects with transparent centers and margins, avoid flashing.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-03d0948f-64cc-4747-a6b0-54eed39a3e6f.png"
+    },
+    {
+      "id": "grass_dust",
+      "label": "풀잎과 발걸음 먼지",
+      "source": "제안서 19쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8 one small rooted tuft of sage forest grass gently bends and returns in a seamless wind loop, base fixed. Frames9-16 a small low tan walking/landing dust puff expands at floor then falls and fades. Two distinct eight-frame objects, no character, background or large cloud. Fine readable pixel clusters, transparent gaps.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-5b7a9e58-0afa-42e0-be01-0e662db40e3d.png"
+    },
+    {
+      "id": "leaves_fireflies",
+      "label": "낙엽과 숲의 작은 불빛",
+      "source": "제안서 19쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Frames1-8 a very small cluster of three individual muted olive/ocher leaves slowly tumble diagonally in a seamless light breeze cycle, ample clear space. Frames9-16 three tiny warm firefly points drift slowly with soft restrained pulses, sparse and not a fireworks cloud, keep their brightness low. Separate effect groups, no scene or characters.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-13c11675-667e-41eb-a5de-01d1880d541f.png"
+    },
+    {
+      "id": "night_mist",
+      "label": "밤의 얕은 안개",
+      "source": "제안서 19쪽 / 밤과 달 스토리",
+      "refs": [
+        "ruins.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "ruins.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. One narrow horizontal layer of very subtle cool charcoal-blue low mist with tiny drifting ash specks, sixteen seamless slow animation frames. Long soft wisps separated by clear gaps, about 20-35% alpha near a wisp core and much more transparent outward. No solid full-cell rectangle, opaque black smoke, neon, eye shapes, character or scenery. Natural atmospheric background layer, does not obscure combat.",
+      "correctionPrompt": "ONLY atmospheric MIST, NO characters, armor, weapons or objects. Create an EXACT 4-column 4-row sheet of 16 sequential animation frames of one quiet LOW LYING night fog patch. Transparent RGBA background with alpha ZERO empty areas. Pixel-art hand-painted small irregular clusters; charcoal slate-gray and muted blue-gray, faint translucency 15-35 percent. Fog occupies a wide flat oval, 70 percent cell width and20 percent cell height, middle of cell, generous clear gap between cells. Small wisps slowly curl and drift right, gently reshaping across16frames, last frame joins first for calm loop. No glowing magic, no human, no face, no floor strip, no background scenery, no rectangle, no text, no labels. Only soft quiet fog.",
+      "generatedFile": "exec-c5f25b9e-d38d-4abc-abbc-aba8f3dbb95c.png"
+    },
+    {
+      "id": "ui_panels",
+      "label": "선택·성장·기록 화면 틀",
+      "source": "PPT 5,17~18,20쪽 / 제안서 13,20~21쪽",
+      "refs": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 2 COLUMNS by 2 ROWS equally sized invisible cells, 4 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: One WIDE horizontal blank dialogue panel, weathered dark oak edge and thin antique brass corners, quiet nearly opaque charcoal interior, subtle crescent corner notch. Empty readable text area, restrained medieval game UI, transparent outside panel.\nCELL 2: One WIDE blank choice-list panel with three empty horizontal recessed slots, dusty teal and oak, soft brass edge, no wording or icons, generous clean interior.\nCELL 3: One broad blank growth modal frame with three empty equal card recesses, charcoal wood, restrained brass and ivory accents, empty areas for labels and values.\nCELL 4: One open medieval journal with TWO blank parchment pages, warm worn brown leather binding and modest brass clasp, broad readable pale empty page centers, no text or drawings, gentle side view suitable for UI.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-5704426f-f61c-4f86-84b4-5022ef89d307.png"
+    },
+    {
+      "id": "ui_hud",
+      "label": "HP·MP·경험치와 기술 HUD",
+      "source": "PPT 10,17~18쪽 / 제안서 20쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: Small circular dark brass portrait medallion frame, EMPTY transparent center.\nCELL 2: Compact horizontal charcoal-oak player name/level plaque, blank center.\nCELL 3: Slim long empty HP bar frame, dark iron and tiny subdued brass endcaps, transparent center.\nCELL 4: Matching slim long empty MP bar frame, same restrained shape.\nCELL 5: Matching very thin long experience bar frame, same style.\nCELL 6: A wider long empty boss-health frame with tiny split-crown endpoints, not overly ornate.\nCELL 7: One flat horizontal muted deep-red bar fill strip, subtle light top edge, no surrounding frame.\nCELL 8: Matching muted desaturated blue bar fill strip.\nCELL 9: Matching quiet antique gold bar fill strip.\nCELL 10: One empty square skill socket frame in dark slate and brass, no icon.\nCELL 11: One empty circular crescent-shaped companion cooldown socket, dusty teal edge.\nCELL 12: A small whole charcoal crescent with a pale silver edge, quiet intact.\nCELL 13: The SAME crescent with one tiny fine violet crack.\nCELL 14: The SAME crescent with two clear cracks and a little inward ash.\nCELL 15: The SAME crescent heavily cracked with a few dark ash flecks, NOT an ending icon.\nCELL 16: One short horizontal blank parchment-and-dark-wood notification plaque, no text.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-7a951e50-11c9-48f7-abf0-45c980de40f6.png"
+    },
+    {
+      "id": "ui_controls",
+      "label": "버튼과 선택 상태",
+      "source": "PPT 5,17~18,20쪽 / 제안서 20쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: Blank wide rounded-rectangle dark oak/brass button in normal state.\nCELL 2: The SAME blank wide button with a thin restrained pale gold focus edge.\nCELL 3: The SAME blank button pressed inward, slightly darker center.\nCELL 4: The SAME blank button muted gray, shape intact.\nCELL 5: Blank parchment-and-charcoal choice card with clean center, no text.\nCELL 6: The SAME card with soft thin teal-gold outline.\nCELL 7: The SAME card with a small unobtrusive brass checkmark in one corner.\nCELL 8: The SAME card subdued with one small closed-lock corner mark.\nCELL 9: One small plain blank leather journal tab.\nCELL 10: The SAME journal tab with pale parchment face and thin brass line.\nCELL 11: One small empty square dark iron checkbox.\nCELL 12: The SAME checkbox with a clear ivory tick.\nCELL 13: Small medieval iron padlock closed.\nCELL 14: The SAME small padlock open.\nCELL 15: Small simple ivory left-pointing chevron inside dark brass setting.\nCELL 16: Matching right-pointing chevron.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-6faddaeb-f10f-42b2-9d37-6fe8c6b93086.png"
+    },
+    {
+      "id": "stat_icons",
+      "label": "전투·관계 능력 아이콘",
+      "source": "PPT 17~18,20쪽 / 제안서 11,25,29쪽",
+      "refs": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: A simple red heart carved from a small ruby-like stone, no jewelry setting.\nCELL 2: A small quiet blue drop-shaped crystal.\nCELL 3: A small amber diamond shard.\nCELL 4: A short black-silver straight sword silhouette.\nCELL 5: A violet crescent cupped above a small crystal.\nCELL 6: A sturdy leather boot beside a short forward sword stroke.\nCELL 7: A small crossed sword and crescent balanced evenly.\nCELL 8: A plain worn steel shield.\nCELL 9: A small open training scroll with simple geometric lines, no words.\nCELL 10: Two simple gloved hands supporting a warm small lantern.\nCELL 11: A charcoal crescent with one violet crack.\nCELL 12: An ivory crescent talisman with a small silver seam.\nCELL 13: Two small travel cloaks beside one warm ember.\nCELL 14: A small folded map with TWO simple path marks, no text.\nCELL 15: Three logs under a tiny warm flame.\nCELL 16: One small open gloved hand over a subtle brass dot, no letter E.",
+      "correctionPrompt": "Keep the exact sixteen icon drawings in this exact 4x4 atlas, unchanged size, materials, color and position. Remove ONLY the white gray paper haze and every drop shadow outside all icon silhouettes. Make the whole empty canvas alpha ZERO, true transparent RGBA. Keep pale ivory paper, silver metal and highlights within the objects. No red or colored matte; no checkerboard; no new icons; no text.",
+      "generatedFile": "exec-0acbcc24-d0c2-4082-bfd4-33f096625a20.png"
+    },
+    {
+      "id": "perk_icons",
+      "label": "성장 방향별 강화 아이콘",
+      "source": "PPT 17~18쪽 / 제안서 11~12쪽",
+      "refs": [
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: Sword with one small upward brass chevron.\nCELL 2: Violet crystal with one small upward silver chevron.\nCELL 3: Boot and forward blade arc with tiny brass star.\nCELL 4: Narrow violet sword wave with tiny silver star.\nCELL 5: Red heart inside small plain shield.\nCELL 6: Blue drop beside small reserve crystal.\nCELL 7: Boot with TWO short spaced forward arrows.\nCELL 8: Short sword beside a small hourglass.\nCELL 9: One narrow blade stroke hitting ONE small dark target.\nCELL 10: Broad restrained sword crescent crossing three small dots.\nCELL 11: One narrow wave passes through three spaced dark dots.\nCELL 12: One slightly wider translucent purple wave with small side brackets.\nCELL 13: Violet crystal beside a small almost empty hourglass.\nCELL 14: Quiet crescent and a small full hourglass.\nCELL 15: A small sword stroke joins a violet wave through one silver link.\nCELL 16: Small bandage roll and blue recovery drop, restrained.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-dbed47ea-eb69-4bcf-b26d-177eff6922b9.png"
+    },
+    {
+      "id": "reward_icons",
+      "label": "보상과 기록 물건",
+      "source": "제안서 14,16,23~29쪽 / 스토리북 세 기록",
+      "refs": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: Small smooth pale green recovery shard.\nCELL 2: Tiny medieval glass vial with muted ruby-red liquid and cork.\nCELL 3: Matching small blue liquid vial with cork.\nCELL 4: Small clean rolled linen bandage tied with brown cord.\nCELL 5: Small oak token with a simple cart-wheel and crescent pictogram, no writing.\nCELL 6: One modest violet-edged dark metal shard.\nCELL 7: Small dark slate tablet with a night-well pictogram.\nCELL 8: Small ivory tablet with a crescent pictogram.\nCELL 9: Small brass-edged tablet with a returning path pictogram.\nCELL 10: Lunea crescent talisman intact.\nCELL 11: The SAME talisman with one fine fracture.\nCELL 12: The SAME talisman with a silver repaired seam.\nCELL 13: A rolled blank parchment with charcoal split-crown wax seal.\nCELL 14: Folded blank parchment with a warm small lantern seal, no writing.\nCELL 15: A short worn brass crescent key.\nCELL 16: A small unfolded blank parchment map with a few simple path dots, no lettering.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-dd5eef69-782f-434a-b96f-75c7e9f0fd80.png"
+    },
+    {
+      "id": "growth_cards",
+      "label": "세 성장 방향 그림",
+      "source": "PPT 17~18쪽 / 제안서 11~12쪽",
+      "refs": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 2 COLUMNS by 2 ROWS equally sized invisible cells, 4 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: A vertical action vignette of the EXACT boy hero making a compact forward dash sword slash, strong physical stance, navy cape gray tunic brown boots, small amber-white blade trace. Transparent outside the isolated vignette, no frame or text.\nCELL 2: The SAME boy at exactly same body proportions, steady stance focusing a quiet violet crescent at sword tip, one narrow restrained magic wave. Transparent outside character and small effect, no card text.\nCELL 3: The SAME boy in versatile guard, dark sword in one hand and a small quiet violet wave alongside a short physical sword trace, equally balanced, no duplicate bodies or extra arms.\nCELL 4: The SAME boy in a composed defensive sword guard with a small plain shield-like pale glint, no real new shield item added, reassuring restrained pose.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-39c539b5-ca46-4cde-975b-777207f56f25.png"
+    },
+    {
+      "id": "ending_badges",
+      "label": "아홉 엔딩과 기록 표시",
+      "source": "최신 스토리북 6진엔딩·2배드·1히든 / PPT 20쪽",
+      "refs": [
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: Small antique-brass crest of TWO travel cloaks under a rising sun.\nCELL 2: TWO small paired footsteps following a winding road under a crescent.\nCELL 3: A silver crescent above TWO small separated yet linked lights.\nCELL 4: A dark broken crown beside TWO dim lantern lights.\nCELL 5: ONE travel cloak beside three tiny village windows and a rising sun.\nCELL 6: ONE pair of footsteps on a winding road below a pale moon.\nCELL 7: A silver crescent above ONE small road lantern.\nCELL 8: ONE dark cracked crown over a small dim ember.\nCELL 9: A cracked black mirror crescent reflecting TWO matching small silhouettes, no readable face.\nCELL 10: Small leather book with a simple brass clasp closed.\nCELL 11: The SAME small leather book half-open with one returning arrow pictogram.\nCELL 12: Two small parchment cards side by side, no text.\nCELL 13: Small plain closed brass seal with a question-like curved NOT LETTER mark.\nCELL 14: Two simple small ivory right chevrons on dark brass.\nCELL 15: Small worn brass gear with a crescent hub.\nCELL 16: A small medieval handbell with two short curved sound marks.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-091e17fc-97d6-4339-ba40-13eafde61611.png"
+    },
+    {
+      "id": "hidden_reveal",
+      "label": "히든 · 투구 속의 자신",
+      "source": "스토리북 hidden_truth",
+      "refs": [
+        "king_template.png",
+        "hero.png",
+        "C:/Users/adg66/OneDrive/바탕 화면/마검사_시뮬레이터/docs/스토리북_삽화/13_어둠끝의진실_벗겨진투구.png"
+      ],
+      "referenceFiles": [
+        "king_template.png",
+        "hero.png",
+        "13_어둠끝의진실_벗겨진투구.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Use the king template as closed-helmet armor identity and scale; story illustration supplies ONLY the older boy face identity, hero supplies the younger identity. Sixteen chronological frames: closed-helmet king kneels on one knee after defeat; slowly lift the crown helmet with one hand, remove it fully, reveal an OLDER version of the brown-haired boy (same hair pattern, brown eyes and curved crescent scratch on RIGHT hand), gray tired face, SAME black armor/ivory pauldron/wine-red cloak. End holding removed helmet low and opening scarred hand toward viewer. No generic gray-haired demon, no exposed horn on face, no extra sword; empty royal scabbard stays beside him. Full body stays in frame, non-gory, no background or writing.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-7a898694-d9bf-48c3-88c5-f013dfce6f44.png"
+    },
+    {
+      "id": "hidden_grab",
+      "label": "히든 · 거대한 그림자의 손",
+      "source": "스토리북 hidden_end",
+      "refs": [
+        "hero.png",
+        "C:/Users/adg66/OneDrive/바탕 화면/마검사_시뮬레이터/docs/스토리북_삽화/14_두개의그림자가사라질때.png"
+      ],
+      "referenceFiles": [
+        "hero.png",
+        "14_두개의그림자가사라질때.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. A transparent cinematic COMPOSITE LAYER, same fixed camera in all16 cells, matching the story illustration. One enormous charcoal-black older-boy SHADOW upper body at LEFT and ONE tiny full-body navy-caped boy at right/lower side, same identities as references, size ratio4:1. Frames1-4 boy stands still as giant slowly reaches ONE large RIGHT hand,5-9 fingers curl around boy TORSO carefully leaving face visible,10-13 giant lifts him with that SAME SINGLE HAND,14-16 holds him at chest height. No gore, crushing, dismemberment or new attack; dramatic quiet final embrace of darkness. Shadow near hand darker, edges translucent ash. Entire composition including boy feet and fingers inside EACH cell; no throne/background/text.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-c9cbe003-72d8-4ed9-88e1-08f14fb2e2f3.png"
+    },
+    {
+      "id": "hidden_dissolve",
+      "label": "히든 · 두 그림자의 소멸",
+      "source": "스토리북 hidden_end",
+      "refs": [
+        "$hidden_grab",
+        "C:/Users/adg66/OneDrive/바탕 화면/마검사_시뮬레이터/docs/스토리북_삽화/14_두개의그림자가사라질때.png"
+      ],
+      "referenceFiles": [
+        "exec-c9cbe003-72d8-4ed9-88e1-08f14fb2e2f3.png",
+        "14_두개의그림자가사라질때.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. Transparent cinematic COMPOSITE layer continuing the FINAL POSE of the supplied grab-sheet: ONE enormous older-boy charcoal shadow holding ONE tiny navy-caped hero in ONE RIGHT HAND at chest height. Fixed camera and positions. Sixteen slow chronological frames:1-4 matching held pose;5-8 both silhouettes begin unraveling at edges into fine black-gray ash pixels;9-12 ash spreads softly upward while body silhouettes become translucent;13-16 only sparse dim ash remnants, final frame nearly empty transparent. Both die and disappear TOGETHER; no rescue, second fight, gore, replacement body or background. Keep scale unchanged while dissolving, do not shrink figures like toys. Same one-handed grip and character design.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-b9dc10bd-7a7f-4947-aa05-b66bef426479.png"
+    },
+    {
+      "id": "lunea_turn",
+      "label": "루네아 온몸 방향 전환",
+      "source": "제안서 26,33~34쪽",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. Frames1-8: face RIGHT in original stance, eyes lead toward left, then head, shoulders, hips and finally planted boots rotate smoothly through a brief back three-quarter view, END facing LEFT. Frames9-16: start in that exact left-facing pose, eyes lead and the body turns back, END original RIGHT idle. Feet pivot in place rather than slide, pendant and hair follow shoulders, same face, size and outfit. This is a FULL BODY turn, not instant mirroring.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-ea0606bc-0bf1-4001-9697-e8a1966ee5bb.png"
+    },
+    {
+      "id": "lunea_crouch_walk",
+      "label": "루네아 낮은 통로 이동",
+      "source": "제안서 7,26쪽",
+      "refs": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "referenceFiles": [
+        "lunea_template.png",
+        "lunea.png",
+        "forest.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT the supplied lunea 4x4 standing TEMPLATE into the requested chronological new motions. Template is identity AND SCALE/POSITION reference. Keep exactly that character, face, hair, clothes, boots and normal-size proportions, do NOT enlarge figures to fill empty space. Standing height stays 74% of cell; large empty headroom when sitting. Ground baseline84%, feet at same plane. Character faces RIGHT. Do not cut at knees or separate body parts. Head, torso, hands, held items and cloth respond together naturally. A seamless SIXTEEN-frame full crouched-walking cycle facing RIGHT. Bend knees and hips naturally, head at a stable lower height, both knees remain fully drawn, alternate two boots heel-to-toe with real weight transfer. One boot stays in contact while other passes, hands keep coat hem clear modestly, crescent pendant and hair follow torso. Do NOT enlarge the crouched body to fill the cell; preserve original head size and all large empty space above her. No gliding, no detached upper torso.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-7277325b-252d-4c7b-97bf-6bfe92971943.png"
+    },
+    {
+      "id": "king_charge",
+      "label": "마왕의 돌진과 제동",
+      "source": "제안서 17쪽 / PPT 19쪽",
+      "refs": [
+        "king_template.png",
+        "king.png",
+        "castle.jpg"
+      ],
+      "referenceFiles": [
+        "king_template.png",
+        "king.png",
+        "castle.jpg"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. These are NEW chronological animation poses, not the same pose repeated. Fixed side camera, fixed proportions and body scale WITHIN each action. Same equipment and colors. Objects stay in-place; no camera movement. Ground baseline 84% down each cell unless explicitly an airborne effect. First and last poses of a loop should join smoothly. Use anticipation, weight transfer and follow-through. EDIT closed-helmet king TEMPLATE, exact same black plate, ivory pauldron, wine-red mantle and long EMPTY royal scabbard. Face LEFT. Sixteen chronological frames:1-4 calm guard then lower body and draw empty scabbard back in a very readable charge telegraph;5-10 a powerful short forward TWO-LEGGED running charge in-place, feet alternating, scabbard stays gripped;11-14 planted-boot braking with cape overshoot;15-16 return composed original guard. No sword appears, helmet stays closed, no giant effects. Full scale unchanged, all equipment inside cell.",
+      "correctionPrompt": null,
+      "generatedFile": "exec-c8d9aefe-d3ca-4c03-bb99-96809419e9c7.png"
+    },
+    {
+      "id": "seal_knots",
+      "label": "구출 봉인의 개별 문양",
+      "source": "제안서 23~24,27~28쪽 / 스토리북 pool",
+      "refs": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "referenceFiles": [
+        "forest.jpg",
+        "lunea.png"
+      ],
+      "prompt": "Create a production asset for the existing original medieval fantasy 2D SIDE-SCROLLING game DARK SWORD SIMULATOR. Detailed crisp hand-painted PIXEL-ART clusters, readable controlled texture, subdued natural sage, oak brown, limestone, charcoal iron, dusty teal, ivory, restrained brass, small amber or moonlight accents. Match the supplied existing game background and character art. NOT photorealistic, NOT 3D, NOT isometric, no neon, no excessive bloom. Real TRANSPARENT PNG outside the assets, alpha ZERO in empty areas, no white/gray paper wash, no fake checkerboard, no ground shadows behind the figures, no background scenery. Do not copy the background reference into the output: it is STYLE / PALETTE reference ONLY. No text, digits, letters, labels, logos, HUD writing, grid lines or borders. Every drawing must be COMPLETE with generous transparent padding, including all weapon tips, hair and particles; never cross a cell boundary. EXACT 4 COLUMNS by 4 ROWS equally sized invisible cells, 16 drawings total, left to right then top to bottom. Aim for a high resolution square sheet. Keep at least 10-15% transparent margin around EVERY drawing. This is a STATIC asset atlas: one different requested item in each cell. No extras, no numbers. CELL 1: One small brass-rimmed ivory CRESCENT seal knot medallion, dormant dark inner line.\nCELL 2: The SAME crescent knot with a quiet readable pale teal outline.\nCELL 3: The SAME crescent knot split open cleanly with a slack short black thread.\nCELL 4: The SAME crescent knot whole again with a fine silver repair seam.\nCELL 5: One matching small STAR pictogram seal knot, dormant.\nCELL 6: The SAME star knot with a quiet pale teal outline.\nCELL 7: The SAME star knot opened with a slack short black thread.\nCELL 8: The SAME star knot whole with a silver repair seam.\nCELL 9: One matching small broken-CIRCLE pictogram seal knot, dormant.\nCELL 10: The SAME circle knot with quiet pale teal outline.\nCELL 11: The SAME circle knot opened with a slack short black thread.\nCELL 12: The SAME circle knot whole with silver repair seam.\nCELL 13: A small roadside wood-and-white-cloth aid marker tied with a crescent cord, no letters.\nCELL 14: One short curved thin charcoal seal thread with a small tied knot, complete isolated segment.\nCELL 15: The SAME thread untied and slack, two loose ends.\nCELL 16: Three tiny quiet pale-teal crescent stones marking a path, no words or arrow UI.",
+      "correctionPrompt": "Preserve this exact 4x4 sixteen-item medieval seal atlas and its ivory/brass material, size, position, every symbol and every knot. Change ONLY the outside background: remove ALL white/gray paper haze and drop shadows. TRUE transparent RGBA alpha zero outside individual objects, including inside open loops and rings. No new imagery, no text, no labels, no checkerboard. Retain ivory surfaces as solid artwork.",
+      "generatedFile": "exec-276fc1ec-d331-4a86-923c-44caadb04404.png"
+    }
+  ]
+}

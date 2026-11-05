@@ -1,0 +1,714 @@
+{
+  "version": "2026-11-05-v1",
+  "sourcePriority": [
+    "최신 밤과 달 스토리북",
+    "최신 게임플레이·동료 제안서",
+    "PPT와 게임기획서"
+  ],
+  "scope": "이미지와 프레임 자료 준비. 새 게임 규칙은 아직 본 코드에 적용하지 않음.",
+  "features": [
+    {
+      "id": "F01",
+      "title": "8개 지역과 횡스크롤 지형",
+      "source": "제안서 7~8쪽 / PPT 10쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "terrain",
+        "story_props"
+      ],
+      "existing": [
+        "world"
+      ],
+      "assets": [
+        "terrain__village_wood",
+        "terrain__village_step",
+        "terrain__forest_log",
+        "terrain__forest_root",
+        "terrain__forest_bridge",
+        "terrain__forest_earth",
+        "terrain__ruin_platform",
+        "terrain__ruin_cover",
+        "terrain__altar_step",
+        "terrain__altar_plinth",
+        "terrain__gate_grate",
+        "terrain__gate_bastion",
+        "terrain__hall_pillar",
+        "terrain__hall_threshold",
+        "terrain__throne_plinth",
+        "terrain__throne_seal",
+        "story_props__log_cover",
+        "story_props__root_tunnel",
+        "story_props__ward_whole",
+        "story_props__ward_cracked",
+        "story_props__chain_anchor",
+        "story_props__chain_broken",
+        "story_props__switch_up",
+        "story_props__switch_down",
+        "story_props__seal_cover",
+        "story_props__seal_cover_open",
+        "story_props__record_night",
+        "story_props__record_moon",
+        "story_props__record_return",
+        "story_props__charm_whole",
+        "story_props__charm_cracked",
+        "story_props__charm_restored"
+      ],
+      "note": "기존 8개 배경·지면에 지역별 발판·엄폐물·낮은 통로를 얹는다."
+    },
+    {
+      "id": "F02",
+      "title": "파괴·전환 가능한 지형 장치",
+      "source": "제안서 7~8쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "crate_break",
+        "barrier_break",
+        "gate_open",
+        "pillar_break",
+        "falling_stone",
+        "magic_wind"
+      ],
+      "existing": [],
+      "assets": [
+        "crate_break__crate_break",
+        "barrier_break__barrier_break",
+        "gate_open__gate_open",
+        "pillar_break__pillar_break",
+        "falling_stone__stone_fall",
+        "falling_stone__stone_impact",
+        "magic_wind__magic_wind"
+      ],
+      "note": "상자·목책·사슬문·봉인 기둥·낙석·마력 바람의 단계별 모션. 충돌 범위는 별도 코드로 지정한다."
+    },
+    {
+      "id": "F03",
+      "title": "마을 인물과 사건",
+      "source": "제안서 13~16쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "npc_merchant",
+        "npc_elder",
+        "npc_healer",
+        "npc_envoy",
+        "merchant_event",
+        "envoy_event",
+        "merchant_cart"
+      ],
+      "existing": [],
+      "assets": [
+        "npc_merchant__idle",
+        "npc_merchant__walk",
+        "npc_merchant__greet",
+        "npc_elder__idle",
+        "npc_elder__walk",
+        "npc_elder__greet",
+        "npc_healer__idle",
+        "npc_healer__walk",
+        "npc_healer__greet",
+        "npc_envoy__idle",
+        "npc_envoy__walk",
+        "npc_envoy__greet",
+        "merchant_event__merchant_injured",
+        "merchant_event__merchant_gift",
+        "envoy_event__envoy_contract",
+        "envoy_event__envoy_warning",
+        "merchant_cart__cart_broken",
+        "merchant_cart__cart_cracked",
+        "merchant_cart__cart_repaired",
+        "merchant_cart__cart_supplies"
+      ],
+      "note": "상인·촌장·치유사·전령의 대기·이동·인사와 부상·보답·계약·경고 동작."
+    },
+    {
+      "id": "F04",
+      "title": "보물·표지·조명·쉼터",
+      "source": "제안서 16,19쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "reward_chest",
+        "sign_torch",
+        "campfire"
+      ],
+      "existing": [],
+      "assets": [
+        "reward_chest__reward_chest",
+        "sign_torch__sign_sway",
+        "sign_torch__torch_loop",
+        "campfire__campfire"
+      ],
+      "note": "상자 열기, 흔들리는 표지판, 횃불, 모닥불."
+    },
+    {
+      "id": "F05",
+      "title": "주인공의 탐색·야영 상호작용",
+      "source": "제안서 16,19,29쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "hero_pickup",
+        "hero_camp",
+        "hero_story"
+      ],
+      "existing": [
+        "hero"
+      ],
+      "assets": [
+        "hero_pickup__hero_reach",
+        "hero_pickup__hero_reach_up",
+        "hero_camp__hero_sit_down",
+        "hero_camp__hero_stand_up",
+        "hero_story__hero_read_map",
+        "hero_story__hero_greet"
+      ],
+      "note": "손 뻗기·일어나기·앉기·지도 읽기·고개 인사. 기존 걷기·점프·전투 동작에 연결한다."
+    },
+    {
+      "id": "F06",
+      "title": "루네아의 추적과 시선 반응",
+      "source": "제안서 26,33~34쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "lunea_look",
+        "lunea_turn",
+        "lunea_crouch_walk"
+      ],
+      "existing": [
+        "lunea"
+      ],
+      "assets": [
+        "lunea_look__lunea_look_back",
+        "lunea_look__lunea_read_seal",
+        "lunea_turn__lunea_turn_left",
+        "lunea_turn__lunea_turn_right",
+        "lunea_crouch_walk__lunea_crouch_walk"
+      ],
+      "note": "고개 돌리기·봉인 살피기·양방향 전신 회전·낮은 통로 이동. 기존 달리기·점프·착지 활용."
+    },
+    {
+      "id": "F07",
+      "title": "거울 웅덩이 구출과 두 구출 방식",
+      "source": "제안서 23~24쪽 / 스토리북 구출 장면",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "mirror_pool",
+        "seal_knots",
+        "lunea_rescue"
+      ],
+      "existing": [],
+      "assets": [
+        "mirror_pool__mirror_pool",
+        "seal_knots__crescent_dormant",
+        "seal_knots__crescent_active",
+        "seal_knots__crescent_cut",
+        "seal_knots__crescent_clear",
+        "seal_knots__star_dormant",
+        "seal_knots__star_active",
+        "seal_knots__star_cut",
+        "seal_knots__star_clear",
+        "seal_knots__circle_dormant",
+        "seal_knots__circle_active",
+        "seal_knots__circle_cut",
+        "seal_knots__circle_clear",
+        "seal_knots__aid_mark",
+        "seal_knots__shadow_thread",
+        "seal_knots__thread_released",
+        "seal_knots__moon_path",
+        "lunea_rescue__lunea_trapped",
+        "lunea_rescue__lunea_freed"
+      ],
+      "note": "초승달·별·원 매듭의 대기·활성·절단·해제 상태. 신중한 해제와 강제 절단 모두 동료 합류 가능."
+    },
+    {
+      "id": "F08",
+      "title": "쉼터의 비밀·기억·계획 약속",
+      "source": "제안서 29쪽 / 최신 스토리북",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "lunea_camp",
+        "lunea_story"
+      ],
+      "existing": [],
+      "assets": [
+        "lunea_camp__lunea_sit_down",
+        "lunea_camp__lunea_stand_up",
+        "lunea_story__lunea_seated",
+        "lunea_story__lunea_map"
+      ],
+      "note": "앉고 서기·야영 대기·지도 보기. 감정 표정과 선택창을 함께 사용한다."
+    },
+    {
+      "id": "F09",
+      "title": "부적의 균열과 기억 복구",
+      "source": "제안서 24,29쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "altar_states",
+        "lunea_ritual"
+      ],
+      "existing": [],
+      "assets": [
+        "altar_states__altar_corrupt",
+        "altar_states__altar_purified",
+        "lunea_ritual__lunea_memory_ritual",
+        "lunea_ritual__lunea_farewell"
+      ],
+      "note": "타락·정화 제단과 기억 의식·작별 손짓. 부적 3상태는 이야기 소품 묶음에 포함."
+    },
+    {
+      "id": "F10",
+      "title": "밤·달·귀환의 세 기록",
+      "source": "최신 스토리북 / 제안서 28쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "mirror_well"
+      ],
+      "existing": [],
+      "assets": [
+        "mirror_well__black_mirror",
+        "mirror_well__night_well"
+      ],
+      "note": "검은 거울·밤의 우물, 세 기록 소품·아이콘. 기록 조사 글은 게임에서 표시한다."
+    },
+    {
+      "id": "F11",
+      "title": "대화와 감정 표현",
+      "source": "제안서 19,29,32쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "portrait_hero",
+        "portrait_lunea",
+        "portrait_npcs"
+      ],
+      "existing": [],
+      "assets": [
+        "portrait_hero__hero_neutral",
+        "portrait_hero__hero_smile",
+        "portrait_hero__hero_worry",
+        "portrait_hero__hero_resolve",
+        "portrait_hero__hero_surprise",
+        "portrait_hero__hero_sad",
+        "portrait_hero__hero_think",
+        "portrait_hero__hero_relief",
+        "portrait_hero__hero_tired",
+        "portrait_hero__hero_fear",
+        "portrait_hero__hero_doubt",
+        "portrait_hero__hero_grateful",
+        "portrait_hero__hero_hope",
+        "portrait_hero__hero_secret",
+        "portrait_hero__hero_farewell",
+        "portrait_hero__hero_focus",
+        "portrait_lunea__lunea_neutral",
+        "portrait_lunea__lunea_smile",
+        "portrait_lunea__lunea_worry",
+        "portrait_lunea__lunea_resolve",
+        "portrait_lunea__lunea_surprise",
+        "portrait_lunea__lunea_sad",
+        "portrait_lunea__lunea_think",
+        "portrait_lunea__lunea_relief",
+        "portrait_lunea__lunea_tired",
+        "portrait_lunea__lunea_fear",
+        "portrait_lunea__lunea_doubt",
+        "portrait_lunea__lunea_grateful",
+        "portrait_lunea__lunea_hope",
+        "portrait_lunea__lunea_secret",
+        "portrait_lunea__lunea_farewell",
+        "portrait_lunea__lunea_focus",
+        "portrait_npcs__merchant_neutral",
+        "portrait_npcs__merchant_thanks",
+        "portrait_npcs__merchant_worried",
+        "portrait_npcs__merchant_decisive",
+        "portrait_npcs__elder_neutral",
+        "portrait_npcs__elder_thanks",
+        "portrait_npcs__elder_worried",
+        "portrait_npcs__elder_decisive",
+        "portrait_npcs__healer_neutral",
+        "portrait_npcs__healer_thanks",
+        "portrait_npcs__healer_worried",
+        "portrait_npcs__healer_decisive",
+        "portrait_npcs__envoy_neutral",
+        "portrait_npcs__envoy_thanks",
+        "portrait_npcs__envoy_worried",
+        "portrait_npcs__envoy_decisive"
+      ],
+      "note": "주인공 16표정·루네아 16표정·마을 인물 16표정. 초상화는 동일한 틀로 교체 가능."
+    },
+    {
+      "id": "F12",
+      "title": "기본·대시·마검파의 7단계 성장",
+      "source": "PPT 17~18쪽 / 제안서 11~12쪽",
+      "status": "이미지 준비 완료",
+      "collections": [],
+      "existing": [
+        "hero",
+        "effects"
+      ],
+      "assets": [],
+      "note": "기존 7단계 베기·대시·마검파·집중 효과 및 검은 재 오라를 재사용한다."
+    },
+    {
+      "id": "F13",
+      "title": "적 20종과 중간보스·마왕",
+      "source": "PPT 19쪽 / 제안서 10,17쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "king_charge"
+      ],
+      "existing": [
+        "enemies"
+      ],
+      "assets": [
+        "king_charge__king_charge"
+      ],
+      "note": "기존 20종·125개 모션에 마왕의 예고→돌진→제동 동작 추가. 무기는 기존 왕의 빈 칼집 유지."
+    },
+    {
+      "id": "F14",
+      "title": "적의 투사체와 명중 반응",
+      "source": "적 공격 기획 / 제안서 10,17쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "projectiles",
+        "projectile_impacts",
+        "root_spike",
+        "seal_warning"
+      ],
+      "existing": [],
+      "assets": [
+        "projectiles__spore_fly",
+        "projectiles__paper_fly",
+        "projectiles__needle_fly",
+        "projectiles__night_orb",
+        "projectile_impacts__spore_burst",
+        "projectile_impacts__paper_break",
+        "projectile_impacts__thread_snap",
+        "projectile_impacts__night_impact",
+        "root_spike__root_spike",
+        "seal_warning__seal_telegraph",
+        "seal_warning__seal_burst"
+      ],
+      "note": "포자·종이·실바늘·밤 구체, 각 명중 모션, 뿌리 가시와 바닥 예고."
+    },
+    {
+      "id": "F15",
+      "title": "타격·방어·정확한 방어",
+      "source": "제안서 7,9쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "hit_impacts",
+        "guard_fx"
+      ],
+      "existing": [
+        "hero"
+      ],
+      "assets": [
+        "hit_impacts__hit_soft",
+        "hit_impacts__hit_metal",
+        "guard_fx__guard_hit",
+        "guard_fx__perfect_guard"
+      ],
+      "note": "연한 명중·금속 충돌·방어·정확한 방어 효과."
+    },
+    {
+      "id": "F16",
+      "title": "성장·획득 피드백",
+      "source": "PPT 17~18쪽 / 제안서 11~12,16쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "levelup_fx",
+        "pickup_fx"
+      ],
+      "existing": [],
+      "assets": [
+        "levelup_fx__levelup",
+        "pickup_fx__pickup"
+      ],
+      "note": "레벨업 상승광과 아이템 획득의 짧고 절제된 효과."
+    },
+    {
+      "id": "F17",
+      "title": "HP 0 실패와 체크포인트 복귀",
+      "source": "최신 스토리북",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "failure_respawn"
+      ],
+      "existing": [
+        "hero"
+      ],
+      "assets": [
+        "failure_respawn__failure_vision",
+        "failure_respawn__checkpoint_return"
+      ],
+      "note": "기본 실패는 세계가 어둠에 잠기는 짧은 환영 후 이전 저장점 복귀. 최종 엔딩 수집에 넣지 않는다."
+    },
+    {
+      "id": "F18",
+      "title": "자연스러운 작은 환경 반응",
+      "source": "제안서 19쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "grass_dust",
+        "leaves_fireflies",
+        "night_mist"
+      ],
+      "existing": [],
+      "assets": [
+        "grass_dust__grass_sway",
+        "grass_dust__foot_dust",
+        "leaves_fireflies__leaf_drift",
+        "leaves_fireflies__fireflies",
+        "night_mist__night_mist"
+      ],
+      "note": "풀 흔들림·발먼지·낙엽·반딧불·느리게 흐르는 밤 안개."
+    },
+    {
+      "id": "F19",
+      "title": "인터랙티브 픽션과 선택 화면",
+      "source": "PPT 5~6쪽 / 제안서 13,20쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "ui_panels",
+        "ui_controls"
+      ],
+      "existing": [],
+      "assets": [
+        "ui_panels__dialogue_panel",
+        "ui_panels__choice_panel",
+        "ui_panels__growth_panel",
+        "ui_panels__record_book",
+        "ui_controls__button_normal",
+        "ui_controls__button_focus",
+        "ui_controls__button_pressed",
+        "ui_controls__button_disabled",
+        "ui_controls__choice_normal",
+        "ui_controls__choice_focus",
+        "ui_controls__choice_selected",
+        "ui_controls__choice_disabled",
+        "ui_controls__tab_normal",
+        "ui_controls__tab_active",
+        "ui_controls__checkbox_empty",
+        "ui_controls__checkbox_checked",
+        "ui_controls__lock_closed",
+        "ui_controls__lock_open",
+        "ui_controls__arrow_left",
+        "ui_controls__arrow_right"
+      ],
+      "note": "대화·선택·성장 창·기록책과 버튼·선택지·탭·잠금 상태. 글은 별도로 그려 선명하게 유지."
+    },
+    {
+      "id": "F20",
+      "title": "전투 HUD와 동료·잠식 표시",
+      "source": "PPT 10,17~18쪽 / 제안서 20쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "ui_hud"
+      ],
+      "existing": [],
+      "assets": [
+        "ui_hud__portrait_socket",
+        "ui_hud__player_plate",
+        "ui_hud__hp_frame",
+        "ui_hud__mp_frame",
+        "ui_hud__xp_frame",
+        "ui_hud__boss_frame",
+        "ui_hud__hp_fill",
+        "ui_hud__mp_fill",
+        "ui_hud__xp_fill",
+        "ui_hud__skill_socket",
+        "ui_hud__companion_socket",
+        "ui_hud__erosion_0",
+        "ui_hud__erosion_1",
+        "ui_hud__erosion_2",
+        "ui_hud__erosion_3",
+        "ui_hud__notification"
+      ],
+      "note": "HP·MP·경험치·보스 바, 기술·동료 틀, 잠식 4상태, 알림. 잠식 3만으로 엔딩이 나지는 않는다."
+    },
+    {
+      "id": "F21",
+      "title": "물리·마법·균형 성장과 특성",
+      "source": "PPT 17~18쪽 / 제안서 11~12쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "stat_icons",
+        "perk_icons",
+        "growth_cards"
+      ],
+      "existing": [],
+      "assets": [
+        "stat_icons__hp",
+        "stat_icons__mp",
+        "stat_icons__xp",
+        "stat_icons__attack",
+        "stat_icons__magic",
+        "stat_icons__dash",
+        "stat_icons__balance",
+        "stat_icons__guard",
+        "stat_icons__skill",
+        "stat_icons__trust",
+        "stat_icons__erosion",
+        "stat_icons__memory",
+        "stat_icons__secret",
+        "stat_icons__plan",
+        "stat_icons__checkpoint",
+        "stat_icons__interaction",
+        "perk_icons__atk_up",
+        "perk_icons__magic_up",
+        "perk_icons__dash_level",
+        "perk_icons__wave_level",
+        "perk_icons__hp_up",
+        "perk_icons__mp_up",
+        "perk_icons__dash_distance",
+        "perk_icons__quick_recover",
+        "perk_icons__single_hit",
+        "perk_icons__wide_slash",
+        "perk_icons__piercing",
+        "perk_icons__wide_wave",
+        "perk_icons__fast_focus",
+        "perk_icons__long_duration",
+        "perk_icons__hybrid_link",
+        "perk_icons__common_supply",
+        "growth_cards__path_physical",
+        "growth_cards__path_magic",
+        "growth_cards__path_balance",
+        "growth_cards__path_survival"
+      ],
+      "note": "세 성장 방향과 생존 카드, 능력치·기술·강화 특성 아이콘. 수치·계수는 게임 코드에서 처리."
+    },
+    {
+      "id": "F22",
+      "title": "보급과 이야기 보상",
+      "source": "제안서 14,16,23~29쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "reward_icons"
+      ],
+      "existing": [],
+      "assets": [
+        "reward_icons__healing_shard",
+        "reward_icons__hp_vial",
+        "reward_icons__mp_vial",
+        "reward_icons__bandage",
+        "reward_icons__supply_token",
+        "reward_icons__upgrade_shard",
+        "reward_icons__night_record",
+        "reward_icons__moon_record",
+        "reward_icons__return_record",
+        "reward_icons__charm_whole",
+        "reward_icons__charm_cracked",
+        "reward_icons__charm_repaired",
+        "reward_icons__contract",
+        "reward_icons__warning_letter",
+        "reward_icons__key",
+        "reward_icons__map"
+      ],
+      "note": "회복 파편·물약·붕대·보급 증표·강화 재료·세 기록·부적·계약·경고·열쇠·지도."
+    },
+    {
+      "id": "F23",
+      "title": "회차 기록·이전 캐릭터 비교·설정",
+      "source": "PPT 20쪽 / 제안서 21쪽",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "ending_badges"
+      ],
+      "existing": [],
+      "assets": [
+        "ending_badges__D1",
+        "ending_badges__D2",
+        "ending_badges__D3",
+        "ending_badges__D4",
+        "ending_badges__S1",
+        "ending_badges__S2",
+        "ending_badges__S3",
+        "ending_badges__S4",
+        "ending_badges__H1",
+        "ending_badges__save",
+        "ending_badges__load",
+        "ending_badges__compare",
+        "ending_badges__locked_ending",
+        "ending_badges__skip",
+        "ending_badges__settings",
+        "ending_badges__sound"
+      ],
+      "note": "9결말 배지, 저장·불러오기·비교·잠금·건너뛰기·설정·음량 기호. 로컬 기록 데이터는 후속 구현."
+    },
+    {
+      "id": "F24",
+      "title": "9가지 최종 엔딩과 사건 삽화",
+      "source": "밤과 달 스토리북 44쪽",
+      "status": "이미지 준비 완료",
+      "collections": [],
+      "existing": [],
+      "assets": [
+        "cg_01",
+        "cg_02",
+        "cg_03",
+        "cg_04",
+        "cg_05",
+        "cg_06",
+        "cg_07",
+        "cg_08",
+        "cg_09",
+        "cg_10",
+        "cg_11",
+        "cg_12",
+        "cg_13",
+        "cg_14",
+        "cg_15"
+      ],
+      "note": "진엔딩 6·배드 엔딩 2·히든 엔딩 1. 기존 그림책 원화 14장과 구출 장면 1장을 장면 폴더에 정리."
+    },
+    {
+      "id": "F25",
+      "title": "히든 엔딩: 투구 속의 자신",
+      "source": "스토리북 어둠 끝에 마주한 진실",
+      "status": "이미지 준비 완료",
+      "collections": [
+        "hidden_reveal",
+        "hidden_grab",
+        "hidden_dissolve"
+      ],
+      "existing": [],
+      "assets": [
+        "hidden_reveal__hidden_reveal",
+        "hidden_grab__hidden_grab",
+        "hidden_dissolve__hidden_dissolve"
+      ],
+      "note": "더 늙은 주인공의 얼굴 공개→거대한 그림자가 한 손으로 붙잡음→둘이 함께 소멸. 독립 종료 엔딩."
+    },
+    {
+      "id": "F26",
+      "title": "시작 화면·인트로·조작 설명",
+      "source": "기존 인트로·시작 화면 기획",
+      "status": "이미지 준비 완료",
+      "collections": [],
+      "existing": [
+        "intro"
+      ],
+      "assets": [],
+      "note": "이미 완성한 무성 시네마틱·시작 화면·책 조작 안내를 유지한다."
+    },
+    {
+      "id": "F27",
+      "title": "루네아의 달빛 지원 기술",
+      "source": "제안서 27~28쪽",
+      "status": "이미지 준비 완료",
+      "collections": [],
+      "existing": [
+        "lunea"
+      ],
+      "assets": [],
+      "note": "기존 봉인·투사체·보호막·회복 효과를 재사용. 12초 대기·예고 연장 등 수치는 후속 코드에서 처리."
+    }
+  ],
+  "plannedCollections": 59,
+  "coveredCollections": 59,
+  "unmappedCollections": [],
+  "endingRules": {
+    "trueEndings": 6,
+    "badEndings": 2,
+    "hiddenEndings": 1,
+    "hpZero": "직전 체크포인트 복귀",
+    "hidden": "배분한 모든 능력치 포인트가 마력이며 미배분 0, 총 배분 > 0. 장비·기본 수치·MP·스킬 레벨 제외. 마왕전 생존 승리 후 판정."
+  }
+}

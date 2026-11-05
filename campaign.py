@@ -63,6 +63,7 @@ class Campaign:
         self.toast, self.toast_time = text, seconds
 
     def open(self, title, text, options, portrait=None, kind='dialogue', visual=None):
+        self.toast_time = 0
         self.modal = dict(title=title, text=text, options=options, portrait=portrait, kind=kind, visual=visual)
         self.selected = 0
         self.interaction_age = 0
@@ -136,6 +137,7 @@ class Campaign:
         self.keys.clear()
         self.sync_stats()
         self.camera.follow(self.player, self.world.width, snap=True)
+        self.burst('adv/failure_respawn__checkpoint_return', self.player.x, 0, .8)
 
     def sync_stats(self):
         p, r = self.player, self.run
@@ -256,6 +258,7 @@ class Campaign:
             if self.run.shards <= 0:
                 self.notify('회복 파편이 없습니다. 상자와 쉼터를 찾아보세요.')
             elif p.hp > 0 and p.hp < self.run.max_hp:
+                self.sounds.play('pickup')
                 self.run.shards -= 1
                 p.hp = min(self.run.max_hp, p.hp+45+8*self.run.skills.get('supply', 0))
                 self.burst('pickup_fx__pickup', p.x, p.y+60, .55)
@@ -390,6 +393,7 @@ class Campaign:
         kind, uid = obj['kind'], self.obj_uid(obj)
         if kind == 'record':
             if obj['record'] not in self.run.records:
+                self.sounds.play('pickup')
                 self.run.records.append(obj['record'])
                 self.gain_xp(30)
                 self.player._action('adv/hero_pickup__hero_reach', 'adv/hero_pickup__hero_reach_up')
@@ -399,6 +403,7 @@ class Campaign:
                 self.notify('이미 기록책에 적어 둔 문양입니다.')
         elif kind == 'chest':
             if uid not in self.run.taken:
+                self.sounds.play('pickup')
                 self.run.taken.append(uid)
                 self.run.shards += 2
                 self.gain_xp(25)

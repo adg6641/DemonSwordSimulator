@@ -38,7 +38,6 @@ def main():
                 app.handle(event)
             if not app.running:
                 break
-            SDL_SetWindowTitle(engine.window, '마검사 시뮬레이터'.encode('utf8'))
             if not SDL_GetKeyboardFocus():
                 app.keys.clear()
             while accumulated >= STEP:
@@ -47,6 +46,7 @@ def main():
             clear_canvas()
             app.draw()
             update_canvas()
+            SDL_SetWindowTitle(engine.window, '마검사 시뮬레이터'.encode('utf8'))
     finally:
         if app:
             app.close()

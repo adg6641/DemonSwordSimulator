@@ -360,5 +360,6 @@ class CampaignView:
         if s.modal:
             self.modal()
         if s.toast_time > 0:
-            fill(170, 475, 940, 54, (10, 21, 29, 240))
-            self.wrap(s.toast, 195, 511, 890, 17, GOLD, 1.2, 2)
+            bottom = 366 if s.modal else 475
+            fill(170, bottom, 940, 54, (10, 21, 29, 240))
+            self.wrap(s.toast, 195, bottom+36, 890, 17, GOLD, 1.2, 2)

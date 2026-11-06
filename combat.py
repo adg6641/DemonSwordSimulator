@@ -208,6 +208,7 @@ class Enemy:
 
 
 class Companion:
+    SCALE = .48
     def __init__(self, assets, x):
         self.assets = assets
         self.x, self.y, self.vy = x, 0.0, 0.0
@@ -313,4 +314,4 @@ class Companion:
         return True
 
     def draw(self, scene):
-        self.motion.draw(self.x, self.y, scene.camera, .6, self.facing)
+        self.motion.draw(self.x, self.y, scene.camera, self.SCALE, self.facing)

@@ -4,6 +4,7 @@ from pico2d import SDL_RenderSetScale
 from interface import fill, speech_tail
 from progress import Run, ENDINGS
 from story import CHAPTERS, objective, choice_label
+from combat import Companion
 
 CREAM = (237, 228, 209)
 MUTED = (170, 191, 187)
@@ -98,7 +99,7 @@ class CampaignView:
             if event == 'rescue':
                 a.draw(key, o['x'], 0, s.camera, .62, age)
                 if not s.run.companion:
-                    a.draw('adv/lunea_rescue__lunea_trapped', o['x']+35, 0, s.camera, .6, age)
+                    a.draw('adv/lunea_rescue__lunea_trapped', o['x']+35, 0, s.camera, Companion.SCALE, age)
                     for i, name in enumerate(['crescent', 'star', 'circle']):
                         a.draw('adv/seal_knots__'+name+('_active' if int(age*1.2)%3==i else '_dormant'), o['x']-90+i*90, 10, s.camera, .16)
                     if s.run.has('aid_marker'):
@@ -157,11 +158,11 @@ class CampaignView:
             s.assets.draw(clip, s.player.x, s.player.y, s.camera, 1, age)
             if s.companion:
                 clip = 'adv/lunea_camp__lunea_sit_down' if age < .67 else 'adv/lunea_story__lunea_map'
-                s.assets.draw(clip, s.player.x-145, 0, s.camera, .6, age)
+                s.assets.draw(clip, s.player.x-145, 0, s.camera, Companion.SCALE, age)
         else:
             if s.companion:
                 if visual == 'memory':
-                    s.assets.draw('adv/lunea_ritual__lunea_memory_ritual', s.companion.x, s.companion.y, s.camera, .6, s.interaction_age)
+                    s.assets.draw('adv/lunea_ritual__lunea_memory_ritual', s.companion.x, s.companion.y, s.camera, Companion.SCALE, s.interaction_age)
                 else:
                     s.companion.draw(s)
             if not (s.player.invulnerable>.05 and int(s.time*16)%2 and s.player.mode not in {'hurt', 'dead'}):

@@ -1,6 +1,7 @@
 """키 입력, 주인공의 상태 전환과 지면 위 이동."""
 
 from collections import deque
+from math import sin, pi
 
 from pico2d import (
     SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN,
@@ -14,6 +15,8 @@ from effects import CombatEffects
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
 MOVE_TRANSITIONS = {
     ('idle_breathe', 'walk'): 'idle_to_walk',
+    ('idle_breathe', 'run'): 'run_start',
+    ('idle_breathe', 'crouch_walk'): 'crouch_down',
     ('walk', 'idle_breathe'): 'walk_to_idle',
     ('walk', 'run'): 'walk_to_run',
     ('run', 'walk'): 'run_to_walk',
@@ -24,6 +27,9 @@ MOVE_TRANSITIONS = {
     ('crouch_idle', 'idle_breathe'): 'crouch_up',
     ('crouch_walk', 'walk'): 'crouch_up',
     ('crouch_walk', 'run'): 'crouch_up',
+    ('crouch_walk', 'idle_breathe'): 'crouch_up',
+    ('crouch_idle', 'walk'): 'crouch_up',
+    ('crouch_idle', 'run'): 'crouch_up',
 }
 
 
@@ -60,12 +66,16 @@ class Player:
         self.air_dash_ready = True
         self.dash_attack_remaining = 0.0
         self.jump_launched = False
+        self.horizontal_speed = self.brake_speed = 0.0
+        self.attack_pending = False
 
     @property
     def grounded(self):
         return self.y <= self.floor_y + .01 and self.vy <= 0.0
 
     def _action(self, clip, *followups):
+        self.attack_pending=False
+        self.brake_speed=0.0
         self.mode = 'action'
         self.gait = None
         self.combo_queued = False
@@ -81,6 +91,7 @@ class Player:
         self.effects.buff_remaining = 0.0
         self.dash_attack_remaining = 0.0
         self.followups.clear()
+        self.attack_pending=False
         self.mode, self.gait = ('dead' if self.hp == 0 else 'hurt'), None
         self.animation.play('death' if self.hp == 0 else 'hurt')
         if self.hp>0 and self.forced_crouch:
@@ -101,10 +112,14 @@ class Player:
                 'land_soft', 'land_hard', 'air_attack_land',
             }
             if self.dash_unlocked and self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
+                entry=4 if self.mode=='dash' else 0
                 self.dash_attack_remaining = 0.0
                 self._action('dash_slash')
+                if entry:self.animation.play('dash_slash',start_frame=entry)
             elif self.mode == 'combo':
                 self.combo_queued = self.combo_step < 3
+            elif self.attack_pending:
+                self.combo_queued=True
             elif self.mode == 'dash':
                 # 대시 이동 중에는 C를 무시하며 나중에 자동 발동하도록 저장하지 않는다.
                 return
@@ -112,11 +127,26 @@ class Player:
                 if not self.grounded:
                     self._action('air_slash')
                 elif SDLK_DOWN in keys:
-                    self._action('crouch_slash')
+                    if self.animation.name=='crouch_down' and not self.animation.finished:
+                        self.mode,self.gait='action',None
+                        self.followups=deque(['crouch_slash','crouch_attack_recovery'])
+                    elif self.animation.name in {'crouch_idle','crouch_walk','crouch_attack_recovery'}:
+                        self._action('crouch_slash','crouch_attack_recovery')
+                    else:
+                        self._action('crouch_down','crouch_slash','crouch_attack_recovery')
                 else:
-                    self.mode, self.gait = 'combo', None
-                    self.combo_step, self.combo_queued = 1, False
-                    self.animation.play('slash_1')
+                    moving=self.animation.name in {'run','walk','walk_to_run','idle_to_walk'}
+                    if moving:
+                        name='run_stop' if abs(self.horizontal_speed)>220 else 'walk_to_idle'
+                        entries=self.animation.clips[name].get('entryFrames',{}).get(self.animation.name,[])
+                        entry=entries[min(self.animation.frame,len(entries)-1)] if entries else 0
+                        speed=self.horizontal_speed;self._action(name)
+                        self.animation.play(name,fps=self.animation.clip['frameCount']/.12,start_frame=entry)
+                        self.brake_speed=speed;self.attack_pending=True
+                    else:
+                        self.mode, self.gait = 'combo', None
+                        self.combo_step, self.combo_queued = 1, False
+                        self.animation.play('slash_1')
         elif key == SDLK_UP:
             if self.forced_crouch:return
             if self.grounded and self.floor_y>0 and SDLK_DOWN in keys:
@@ -148,11 +178,13 @@ class Player:
         name = self.animation.name
         if name.startswith('combo_'):
             self.combo_step += 1
-            self.animation.play(f'slash_{self.combo_step}')
+            name=f'slash_{self.combo_step}'
+            self.animation.play(name,start_frame=self.animation.clips[name].get('comboStartFrame',0))
         elif self.combo_queued and self.combo_step < 3:
             self.combo_queued = False
-            self.combo_step+=1
-            self.animation.play(f'slash_{self.combo_step}')
+            self.animation.play(f'combo_{self.combo_step}_to_{self.combo_step+1}')
+        elif self.combo_step==3:
+            self._action('slash_3_recovery')
         else:
             self.mode,self.gait='free',None
 
@@ -165,10 +197,13 @@ class Player:
                 self.jump_launched = True
             if anim.finished:
                 self.mode = 'free'
-        elif self.mode == 'combo' and anim.finished:
+        elif self.mode == 'combo' and (anim.finished or self.combo_queued and anim.frame>=anim.clip.get('chainFrame',anim.clip['frameCount'])):
             self._finish_combo()
         elif self.mode == 'action' and anim.finished:
-            if self.followups:
+            if self.attack_pending:
+                self.attack_pending=False;self.mode='combo';self.combo_step=1
+                anim.play('slash_1',start_frame=4)
+            elif self.followups:
                 anim.play(self.followups.popleft())
             else:
                 self.mode = 'free'
@@ -215,9 +250,18 @@ class Player:
             target = 'idle_breathe'
 
         if target != self.gait:
-            transition = MOVE_TRANSITIONS.get((self.gait, target))
+            prior=self.gait
+            if prior is None and self.grounded:
+                prior='crouch_idle' if self.animation.name in {'crouch_idle','crouch_walk','crouch_slash','crouch_attack_recovery'} else 'idle_breathe'
+            transition = MOVE_TRANSITIONS.get((prior, target))
             self.gait = target
-            self.animation.play(transition or target)
+            name=transition or target
+            entry=0
+            if name in {'run_stop','walk_to_idle'}:
+                entries=self.animation.clips[name].get('entryFrames',{}).get(self.animation.name,[])
+                if entries:entry=entries[min(self.animation.frame,len(entries)-1)]
+                self.brake_speed=self.horizontal_speed
+            self.animation.play(name,start_frame=entry)
         elif self.animation.name != target and self.animation.finished:
             self.animation.play(target)
 
@@ -251,6 +295,8 @@ class Player:
                 speed = direction * (self.RUN_SPEED if self.move_time >= 0.55 else self.WALK_SPEED)
             if self.mode == 'free':
                 self._locomotion(direction, keys)
+                if not direction and self.grounded and self.animation.name in {'run_stop','walk_to_idle'}:
+                    speed=self.brake_speed*(1-self.animation.progress)**2
         elif self.mode == 'combo':
             if direction and SDLK_DOWN not in keys:
                 self.facing = direction
@@ -260,12 +306,15 @@ class Player:
             dash_speed = self.DASH_SPEED if name in {'dash_ground', 'dash_air'} else 120.0
             speed = self.facing * dash_speed
         elif self.mode == 'action':
-            if self.animation.name == 'dash_slash':
+            if self.attack_pending:
+                speed=self.brake_speed*(1-self.animation.progress)**2
+            elif self.animation.name == 'dash_slash':
                 phase=self.animation.pose_time/self.animation.clip['frameCount']
-                speed = self.facing * 420.0 if .32<phase<.68 else 0
+                speed = self.facing * 850.0 * sin(pi*(phase-.18)/.42)**.7 if .18<phase<.60 else 0
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt
+        self.horizontal_speed=speed
         if self.mode=='free' and self.animation.name in {'walk','run','crouch_walk'} and speed:
             stride={'walk':160,'run':255,'crouch_walk':110}[self.animation.name]
             self.animation.elapsed+=abs(speed*dt)/stride*self.animation.duration-dt

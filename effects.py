@@ -43,7 +43,13 @@ class CombatEffects:
     def activate(self):
         self.buff_remaining = self.buff_duration
 
+    def timing(self, animation, motion):
+        return self.settings.get('clipTiming',{}).get(animation.name,self.settings['strikeTiming'][motion])
+
     def blade(self, animation):
+        rigid=getattr(animation,'weapon_pose',None)
+        if rigid:
+            return rigid
         track = self.settings['swordTracks'].get(animation.name)
         if not track:
             return None
@@ -81,7 +87,7 @@ class CombatEffects:
         motion = self.ATTACKS.get(animation.name)
         if not motion or motion == 'dash' or self.fired or self.buff_remaining <= 0:
             return
-        timing = self.settings['strikeTiming'][motion]
+        timing = self.timing(animation,motion)
         time = animation.pose_time * 8 / animation.clip['frameCount']
         if time >= timing['fire']:
             pose = self.blade(animation)
@@ -140,7 +146,7 @@ class CombatEffects:
         pose = self.blade(animation)
         if not motion or not pose:
             return
-        timing = self.settings['strikeTiming'][motion]
+        timing = self.timing(animation,motion)
         time = animation.pose_time * 8 / animation.clip['frameCount']
         if not timing['start'] < time < timing['end']:
             return

@@ -83,6 +83,9 @@ class Campaign:
         self.toast_time = 0
         self.modal = dict(title=title, text=text, options=options, portrait=portrait, kind=kind, visual=visual)
         if kind in {'dialogue', 'boss', 'final'}:
+            if self.player.attack_pending:
+                self.player.attack_pending=False;self.player.mode='free';self.player.gait=None
+                self.player.followups.clear();self.player.combo_queued=False
             context = self.story_context
             obj = next((o for o in self.objects if o.get('event')==context), None)
             name = speaker or SPEAKERS.get(context, '루네아' if portrait and 'lunea' in portrait else '소년')
@@ -154,6 +157,8 @@ class Campaign:
                 self.enemies.append(Enemy(self.assets, number, position+(rng.uniform(-55, 55) if number < 16 else 0), index, uid, rng))
         self.player.x, self.player.y, self.player.vy, self.player.floor_y = x, 0.0, 0.0, 0.0
         self.player.mode, self.player.gait = 'free', None
+        self.player.attack_pending=False;self.player.brake_speed=self.player.horizontal_speed=0
+        self.player.combo_queued=False;self.player.followups.clear()
         self.player.forced_crouch=self.player.crouching=False
         self.player.animation.play('idle_breathe')
         self.player.effects.waves.clear()
@@ -743,11 +748,13 @@ class Campaign:
             if a.name == 'dash_slash':
                 self.hybrid_time = 4
             if a.name in p.effects.ATTACKS or 'recovery' in a.name:
+                previous=a.fps
                 a.fps = a.clip['fps'] * (1 + .025*r.skills.get('recovery', 0))
+                a.elapsed*=previous/a.fps;a.started_at*=previous/a.fps
         motion = p.effects.ATTACKS.get(a.name)
         if not motion or p.hp <= 0:
             return
-        timing = p.effects.settings['strikeTiming'][motion]
+        timing = p.effects.timing(a,motion)
         progress = a.pose_time*8/a.clip['frameCount']
         if not timing['start'] <= progress <= timing['end']:
             return

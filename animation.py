@@ -3,6 +3,8 @@
 import json
 from bisect import bisect_right
 from itertools import accumulate
+from math import cos, sin, pi
+from collections import OrderedDict
 
 from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest, SDL_ScaleModeLinear
 
@@ -19,7 +21,8 @@ class Animation:
         self.folder = folder
         data = json.loads((folder / 'animations.json').read_text(encoding='utf-8'))
         self.clips = {clip['id']: clip for clip in data['clips']}
-        self.images = {}
+        self.weapon = data.get('weapon')
+        self.images = OrderedDict()
         self.name = ''
         self.serial = 0
         self.play('idle_breathe')
@@ -29,7 +32,7 @@ class Animation:
             if key.startswith('adv/hero_'):
                 self.clips[key] = dict(clip, file=clip['path'])
 
-    def play(self, name, *, fps=None, once=False):
+    def play(self, name, *, fps=None, once=False, start_frame=0):
         self.name = name
         self.serial += 1
         self.clip = self.clips[name]
@@ -37,7 +40,13 @@ class Animation:
         durations=self.clip.get('frameDurations') if fps is None else None
         self.frame_ends=list(accumulate(durations)) if durations else None
         self.loop = self.clip['playback'] == 'loop' and not once
-        self.elapsed = 0.0
+        start_frame=max(0,min(self.clip['frameCount']-1,start_frame))
+        self.elapsed=(self.frame_ends[start_frame-1]*self.clip['fps']/self.fps if start_frame and self.frame_ends else start_frame/self.fps)
+        self.started_at=self.elapsed
+
+    @property
+    def progress(self):
+        return max(0,min(1,(self.elapsed-self.started_at)/max(.001,self.duration-self.started_at)))
 
     @property
     def frame(self):
@@ -67,10 +76,35 @@ class Animation:
     def update(self, dt):
         self.elapsed += dt
 
+    def image(self,path):
+        if path not in self.images:self.images[path]=load_pixel_image(path,smooth=True)
+        self.images.move_to_end(path)
+        while len(self.images)>10:self.images.popitem(last=False)
+        return self.images[path]
+
+    @property
+    def weapon_pose(self):
+        """손은 현재 그림에 고정하고, 검은 길이를 바꾸지 않은 채 회전한다."""
+        if not self.weapon:
+            return None
+        frames=self.clip['frames'];cell=frames[self.frame];point=cell.get('weapon')
+        if not point:
+            return None
+        following=frames[(self.frame+1)%len(frames)] if self.loop or self.frame+1<len(frames) else cell
+        angle=point['angle'];next_angle=following.get('weapon',point)['angle']
+        turn=(next_angle-angle+pi)%(2*pi)-pi
+        angle+=turn*(self.pose_time%1)
+        factor=cell.get('renderScale',1);pivot=self.clip['pivot']
+        hand=tuple((point['hand'][i]-pivot[k])*factor for i,k in enumerate(('x','y')))
+        length=self.weapon['handToTip']
+        tip=(hand[0]+cos(angle)*length,hand[1]+sin(angle)*length)
+        return dict(hand=hand,tip=tip,angle=angle,length=length)
+
     def draw(self, x, y, facing, camera, scale=1.0):
-        path=str(self.folder/self.clip['file'])
-        if path not in self.images:
-            self.images[path] = load_pixel_image(path,smooth=True)
+        from pathlib import Path
+        sheet_path=self.folder/self.clip['file']
+        path=str(sheet_path.parent/self.clip['bodyFile'] if self.clip.get('bodyFile') else sheet_path)
+        body=self.image(path)
         frame = self.frame
         cell = self.clip['frames'][frame]
         width, height = cell['width'], cell['height']
@@ -81,9 +115,26 @@ class Animation:
         pivot_x = pivot['x'] if facing > 0 else width - pivot['x']
         left = round(x - camera.x - pivot_x * scale)
         bottom = round(y - camera.y - (height - pivot['y']) * scale)
-        self.images[path].clip_composite_draw(
+        body.clip_composite_draw(
             cell['x'], cell['pico2dY'], width, height,
             0, 'h' if facing < 0 else '',
             left + draw_width / 2, bottom + draw_height / 2,
             draw_width, draw_height,
         )
+        pose=self.weapon_pose
+        if pose:
+            sword_path=str(self.folder/self.weapon['file'])
+            extra=scale/cell.get('renderScale',1)
+            image=self.image(sword_path);grip=self.weapon['grip'];s=self.weapon['scale']*extra
+            dx,dy=(image.w/2-grip['x'])*s,(image.h/2-grip['y'])*s
+            angle=pose['angle'];cx=pose['hand'][0]*extra+dx*cos(angle)-dy*sin(angle);cy=pose['hand'][1]*extra+dx*sin(angle)+dy*cos(angle)
+            image.composite_draw(-angle*facing,'h' if facing<0 else '',
+                x-camera.x+facing*cx,y-camera.y-cy,image.w*s,image.h*s)
+            # 검 손잡이 앞에 같은 원화의 손·손목만 다시 그려 자연스럽게 쥔다.
+            hand_file=self.clip.get('handFile')
+            if hand_file:
+                hand_path=str(sheet_path.parent/hand_file)
+                hand=self.image(hand_path);p=cell['weapon']['patch'];w,h=p['width'],p['height']
+                cx=x-camera.x+facing*(p['left']+w/2-pivot['x'])*scale
+                cy=y-camera.y+(pivot['y']-p['top']-h/2)*scale
+                hand.clip_composite_draw(p['x'],p['pico2dY'],w,h,0,'h' if facing<0 else '',cx,cy,w*scale,h*scale)

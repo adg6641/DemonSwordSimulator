@@ -1,4 +1,5 @@
 """플레이 화면·선택창·성장창·기록책. 그림은 생성한 PNG, 글자는 선명한 글꼴로 표시한다."""
+from math import sin
 import pico2d.pico2d as engine
 from pico2d import SDL_RenderSetScale
 from interface import fill, speech_tail
@@ -49,8 +50,19 @@ class CampaignView:
         if abs(o['x']-s.camera.x-640)>1000:
             return
         if kind == 'platform':
+            if s.time<o.get('disabled_until',0):return
             key = o['visual']
             scale = 1
+            if o.get('motion')=='crumble' and o.get('stepped',0)>.3:
+                a.draw(key,o['x'],y,s.camera,scale,alpha=.35 if int(s.time*18)%2 else 1)
+                return
+        elif kind=='crystal':
+            if uid in s.run.taken:return
+            a.draw('v3/crystal',o['x'],y+sin(s.time*2+o['x'])*4,s.camera,.22,s.time)
+            return
+        elif kind=='spring':
+            a.draw('v3/spring',o['x'],y,s.camera,.45,s.time)
+            return
         elif kind in {'crate', 'barrier', 'pillar'}:
             scale = .43 if kind == 'crate' else .62 if kind == 'pillar' else .5
             if uid in s.run.broken:
@@ -136,6 +148,10 @@ class CampaignView:
     def world(self):
         s = self.s
         s.world.draw(s.camera)
+        # 발판 뒤의 받침 구조는 원경과 인물 사이 깊이에 놓는다.
+        for x in (1700,2710):
+            if abs(x-s.camera.x-640)<1100:
+                s.assets.draw('v3/support_wood' if s.run.stage<3 else 'v3/support_stone',x,0,s.camera,alpha=.78)
         for o in s.objects:
             self.object(o)
         # 장식의 위치는 화면이 아니라 월드에 고정한다.
@@ -158,7 +174,7 @@ class CampaignView:
             s.assets.draw(clip, s.player.x, s.player.y, s.camera, 1, age)
             if s.companion:
                 clip = 'adv/lunea_camp__lunea_sit_down' if age < .67 else 'adv/lunea_story__lunea_map'
-                s.assets.draw(clip, s.player.x-145, 0, s.camera, Companion.SCALE, age)
+                s.assets.draw(clip, s.player.x-85, s.player.y, s.camera, Companion.SCALE, age)
         else:
             if s.companion:
                 if visual == 'memory':
@@ -223,6 +239,10 @@ class CampaignView:
             self.text(f'L  새 성장 포인트 {r.unspent+r.skill_points}',36,119,17,GOLD)
         if p.effects.buff_remaining>0:
             self.text(f'마검파 {p.effects.buff_remaining:.1f}초', 680,43,16,TEAL)
+        if p.floor_y>0:
+            self.text('↓ + ↑  발판 아래로',640,78,16,MUTED,True)
+        elif any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects):
+            self.text('도약 문양 위에서 ↑  높이 점프',640,78,16,TEAL,True)
         boss=next((e for e in s.enemies if e.boss and e.alive and abs(e.x-p.x)<900),None)
         if boss:
             fill(420,100,540,9,(37,23,30,240))
@@ -246,7 +266,12 @@ class CampaignView:
         bottom=max(459,min(487,sy+18))
         show=min(1,s.interaction_age/.18)
         visible=m['text'] if m.get('revealed') else m['text'][:int(s.interaction_age*38)]
-        if m['kind']=='boss' and m['speaker']=='바르켄':
+        if m.get('cine'):
+            image=self.a.image(self.a.clips['polish/speech_body']['path'])
+            image.opacify(show);image.draw(640,310,1104,184);image.opacify(1)
+            self.text(m['speaker'],150,365,22,GOLD)
+            self.wrap(visible,150,328,980,20,CREAM,1.35,3)
+        elif m['kind']=='boss' and m['speaker']=='바르켄':
             # 거인의 얼굴 앞에 큰 말풍선을 덮지 않고 빈 왼쪽 공간을 쓴다.
             cx,bottom=360,492
             self.a.fit('polish/speech_body',cx,bottom+87,680,174,alpha=show)
@@ -295,6 +320,28 @@ class CampaignView:
         fill(410,y-46,460,110,(5,13,22,round(alpha*180)))
         self.title_image(b['image'],640,y+12,430,alpha)
         self.text(b['subtitle'],640,y-32,17,MUTED,True)
+
+    def cinematic(self):
+        s=self.s
+        cine=s.modal.get('cine') if s.modal else s.cine_out
+        if not cine:return
+        age=s.interaction_age if s.modal else cine['age']
+        alpha=1 if s.modal else max(0,1-age/.6)
+        t=min(1,age/5);t=t*t*(3-2*t)
+        start,end=cine.get('zoom',(1,1.05));z=start+(end-start)*t
+        dx=cine.get('pan',(1-t)*10)
+        if cine.get('shake') and age<.5:dx+=sin(age*56)*(1-age/.5)*7
+        key='v3/rescue_'+cine['image']
+        if s.modal and cine.get('previous'):
+            self.a.cover('v3/rescue_'+cine['previous'],640+cine.get('previous_pan',0),360,1280,720,zoom=cine.get('previous_zoom',start))
+            alpha=min(1,age/.4)
+        self.a.cover(key,640+dx,360,1280,720,zoom=max(1,z),alpha=alpha)
+        fill(0,696,1280,24,(3,7,14,230))
+        if cine.get('fx') and s.modal:
+            fx_x,fx_y=(710,450) if cine['image']=='pull' else (890,445)
+            self.a.draw('v3/rescue_glow',fx_x,fx_y,None,.55,s.interaction_age,alpha=.25+.15*sin(age*2)**2)
+            if cine['fx']=='break' and age<1.3:
+                self.a.draw('v3/rescue_break',fx_x,fx_y,None,.85,age,alpha=max(0,1-age/1.3))
 
     def modal(self):
         s, m = self.s, self.s.modal
@@ -424,6 +471,7 @@ class CampaignView:
                 self.world()
             finally:
                 SDL_RenderSetScale(engine.renderer, 1, 1)
+            self.cinematic()
             if not s.modal:
                 self.hud()
                 self.banner()

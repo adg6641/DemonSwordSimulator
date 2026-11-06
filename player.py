@@ -43,6 +43,7 @@ class Player:
         self.effects = CombatEffects(sprite_folder.parent / 'effects')
         self.hp = 100
         self.floor_y = 0.0
+        self.drop_timer = 0.0
         self.dash_unlocked = self.magic_unlocked = True
         self.invulnerable = 0.0
         self.x, self.y, self.vy = 220.0, 0.0, 0.0
@@ -110,22 +111,26 @@ class Player:
                     self.combo_step, self.combo_queued = 1, False
                     self.animation.play('slash_1')
         elif key == SDLK_UP:
+            if self.grounded and self.floor_y>0 and SDLK_DOWN in keys:
+                self.drop_timer=.28;self.floor_y=0;self.y-=5;self.vy=-90
+                self.mode,self.gait='free',None
+                return
             landing = self.animation.name in {'land_soft', 'land_hard', 'air_attack_land'}
             if self.grounded and (self.mode == 'free' or landing):
                 self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'jump', None
                 self.jump_launched = False
-                self.animation.play('jump_takeoff', fps=64)
+                self.animation.play('jump_takeoff', fps=self.animation.clips['jump_takeoff']['frameCount']/.125)
         elif key in SHIFT and (self.mode == 'free' or self.mode == 'jump' and not self.grounded):
             if self.grounded or self.air_dash_ready:
                 self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'dash', None
                 if self.grounded:
-                    self.animation.play('dash_start', fps=64)
+                    self.animation.play('dash_start', fps=self.animation.clips['dash_start']['frameCount']/.125)
                 else:
                     self.air_dash_ready = False
                     self.vy = 0.0
-                    self.animation.play('dash_air', fps=40, once=True)
+                    self.animation.play('dash_air', fps=self.animation.clips['dash_air']['frameCount']/.3, once=True)
         elif key == SDLK_z and self.magic_unlocked and self.mode == 'free' and self.grounded:
             self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'magic', None
@@ -138,10 +143,10 @@ class Player:
             self.animation.play(f'slash_{self.combo_step}')
         elif self.combo_queued and self.combo_step < 3:
             self.combo_queued = False
-            self.animation.play(f'combo_{self.combo_step}_to_{self.combo_step + 1}')
+            self.combo_step+=1
+            self.animation.play(f'slash_{self.combo_step}')
         else:
-            recovery = {1: 'attack_recovery', 2: 'slash_2_recovery', 3: 'slash_3_recovery'}
-            self._action(recovery[self.combo_step])
+            self.mode,self.gait='free',None
 
     def _update_action(self, keys):
         anim = self.animation
@@ -161,10 +166,10 @@ class Player:
                 self.mode = 'free'
         elif self.mode == 'dash' and anim.finished:
             if anim.name == 'dash_start':
-                anim.play('dash_ground', fps=40, once=True)
+                anim.play('dash_ground', fps=anim.clips['dash_ground']['frameCount']/.3, once=True)
             elif anim.name == 'dash_ground':
                 self.dash_attack_remaining = self.DASH_ATTACK_GRACE
-                anim.play('dash_end', fps=48)
+                anim.play('dash_end', fps=anim.clips['dash_end']['frameCount']/(8/48))
             elif anim.name == 'dash_air':
                 self.dash_attack_remaining = self.DASH_ATTACK_GRACE
                 anim.play('air_dash_recovery')
@@ -209,6 +214,7 @@ class Player:
             self.animation.play(target)
 
     def update(self, dt, keys):
+        self.drop_timer=max(0,self.drop_timer-dt)
         # Shift를 누르는 동안 대시 후 C 연결을 유지하고, 놓아도 잠깐의 여유를 준다.
         if not keys & SHIFT:
             self.dash_attack_remaining = max(0.0, self.dash_attack_remaining - dt)
@@ -248,6 +254,9 @@ class Player:
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt
+        if self.mode=='free' and self.animation.name in {'walk','run','crouch_walk'} and speed:
+            stride={'walk':155,'run':200,'crouch_walk':110}[self.animation.name]
+            self.animation.elapsed+=abs(speed*dt)/stride*self.animation.duration-dt
 
         airborne = not self.grounded
         floating_dash = self.mode == 'dash' and self.animation.name == 'dash_air'

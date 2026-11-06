@@ -75,6 +75,22 @@ def objects(stage):
         result += [dict(id='pillar', kind='pillar', x=1800, y=0, w=70, hp=35, asset='pillar_break__pillar_break'),
                    dict(id='final', kind='event', x=3150, y=0, event='final', asset='terrain__throne_seal')]
         result[2:2] = [dict(id='last_camp', kind='camp', x=580, y=0, asset='campfire__campfire')]
+    # 지상 길은 이어 두고, 점프와 대시로 오르는 두 개의 상층 탐색 길을 만든다.
+    stairs=[(1050,110),(1510,240),(1700,355),(1510,470),(1710,585),(1900,700),
+            (2080,110),(2530,260),(2730,375),(2530,490),(2740,605),(2940,720)]
+    for i,(x,y) in enumerate(stairs):
+        result.append(dict(id='upper_'+str(i),kind='platform',x=x,y=y,w=240,
+                           asset='terrain__'+TERRAIN[stage][0],visual='polish/platform_'+str(stage+1)))
+    result += [
+        dict(id='lift',kind='platform',x=920,y=95,w=240,visual='polish/platform_'+str(stage+1),motion='lift',base_x=920,base_y=95,travel=245,period=9),
+        dict(id='moving',kind='platform',x=3130,y=250,w=240,visual='polish/platform_'+str(stage+1),motion='moving',base_x=3130,base_y=250,travel=160,period=7),
+        dict(id='crumble',kind='platform',x=2090,y=565,w=240,visual='polish/platform_'+str(stage+1),motion='crumble',stepped=0,disabled_until=0),
+        dict(id='spring',kind='spring',x=1990,y=0,asset='spring'),
+        dict(id='upper_chest',kind='chest',x=2940,y=720,asset='reward_chest__reward_chest'),
+        dict(id='upper_camp',kind='camp',x=1900,y=700,asset='campfire__campfire'),
+    ]
+    for i,(x,y) in enumerate([(1510,290),(1700,405),(1510,520),(1710,635),(1900,755),(2530,310),(2730,425),(2740,655),(2940,775)]):
+        result.append(dict(id='moon_shard_'+str(i),kind='crystal',x=x,y=y,asset='crystal'))
     return result
 
 

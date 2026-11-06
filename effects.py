@@ -4,7 +4,7 @@ import json
 from math import atan2, ceil, cos, hypot, sin
 
 import pico2d.pico2d as engine
-from pico2d import SDL_Rect, SDL_RenderSetClipRect
+from pico2d import SDL_Rect, SDL_RenderSetClipRect, SDL_SetTextureColorMod
 
 from animation import load_pixel_image
 
@@ -36,7 +36,7 @@ class CombatEffects:
         self.serial, self.fired = -1, False
         for name, frames in self.settings['effectGeometry'].items():
             self.radii[name] = max(4.0, *(hypot(x - f['origin'][0], y - f['origin'][1])
-                for f in frames[2:6] for x in (f['bounds'][0], f['bounds'][2])
+                for f in frames for x in (f['bounds'][0], f['bounds'][2])
                 for y in (f['bounds'][1], f['bounds'][3])))
 
     def activate(self):
@@ -52,8 +52,13 @@ class CombatEffects:
             return None
         scale = animation.clip['frames'][frame].get('renderScale', 1.0)
         pivot = animation.clip['pivot']
-        hand, tip = ((tuple((point[i] - pivot[axis]) * scale for i, axis in enumerate(('x', 'y'))))
-                     for point in (points['hand'], points['tip']))
+        # 원화 프레임 사이에서도 검기와 검의 오라는 같은 손잡이/검끝 경로를 따라간다.
+        following=track[(frame+1)%len(track)] if animation.loop or frame+1<len(track) else points
+        phase=animation.elapsed*animation.fps%1
+        if following is None:following=points
+        hand, tip = ((tuple(((point[i]*(1-phase)+nxt[i]*phase) - pivot[axis]) * scale
+                      for i, axis in enumerate(('x', 'y'))))
+                     for point,nxt in zip((points['hand'],points['tip']),(following['hand'],following['tip'])))
         return {'hand': hand, 'tip': tip, 'angle': atan2(tip[1] - hand[1], tip[0] - hand[0]),
                 'length': hypot(tip[0] - hand[0], tip[1] - hand[1])}
 
@@ -81,9 +86,10 @@ class CombatEffects:
             self.fired = True
 
     def _image(self, name):
-        if name not in self.images:
-            self.images[name] = load_pixel_image(self.folder / self.clips[name]['file'])
-        return self.images[name]
+        path=self.clips[name]['file']
+        if path not in self.images:
+            self.images[path] = load_pixel_image(self.folder / path,smooth=True)
+        return self.images[path]
 
     def _paint(self, name, frame, anchor, camera, x=0, y=0, scale=1, angle=0,
                facing=1, opacity=1, origin=None):
@@ -96,12 +102,14 @@ class CombatEffects:
         center_x = x + dx * cos(angle) - dy * sin(angle)
         center_y = y + dx * sin(angle) + dy * cos(angle)
         image.opacify(clamp(opacity))
+        SDL_SetTextureColorMod(image.texture,*clip.get('tint',[255,255,255]))
         image.clip_composite_draw(frame % clip['columns'] * w,
             image.h - (frame // clip['columns'] + 1) * h, w, h,
             -angle * facing, 'h' if facing < 0 else '',
             round(anchor[0] - camera.x + facing * center_x),
             round(anchor[1] - camera.y - center_y), round(w * scale), round(h * scale))
         image.opacify(1.0)
+        SDL_SetTextureColorMod(image.texture,255,255,255)
 
     def draw_aura(self, player, camera):
         pose = self.blade(player.animation)
@@ -130,10 +138,11 @@ class CombatEffects:
         time = animation.elapsed * animation.fps * 8 / animation.clip['frameCount']
         if not timing['start'] < time < timing['end']:
             return
-        progress = ((time - timing['start']) / (timing['peak'] - timing['start']) * 3.5
-                    if time <= timing['peak'] else 3.5 + (time - timing['peak']) / (timing['end'] - timing['peak']) * 4.49)
-        frame = min(7, int(progress))
         name = f'{motion}_lv{self.level}'
+        count=self.clips[name]['frameCount'];middle=(count-1)*.46
+        progress = ((time - timing['start']) / (timing['peak'] - timing['start']) * middle
+                    if time <= timing['peak'] else middle + (time - timing['peak']) / (timing['end'] - timing['peak']) * (count-middle-.01))
+        frame = min(count-1, int(progress))
         geometry = self.settings['effectGeometry'][name][frame]
         origin = geometry['origin']
         lead = geometry['ccw' if timing['direction'] == 'ccw' else 'cw']
@@ -170,8 +179,10 @@ class CombatEffects:
     def wave_geometry(self, wave):
         style = self.settings['waveMotion']
         age, level = wave['age'], wave['level']
-        frame = int(age*style['fps'])%8
         name = f'wave_lv{level}'
+        # 가운데의 안정된 12프레임을 반복하고 수명 끝에는 알파만 천천히 줄인다.
+        count=self.clips[name]['frameCount']
+        frame = 2+int(age*style['fps'])%max(1,count-4)
         bounds = self.settings['effectGeometry'][name][frame]['bounds']
         origin = (bounds[0]+(bounds[2]-bounds[0])*.12, (bounds[1]+bounds[3])/2)
         scale = (.32+.68*smooth(age/style['growDuration']))*self.settings['effectStyle']['scale']*wave.get('size', 1)
@@ -191,7 +202,7 @@ class CombatEffects:
         if active and self.buff_remaining <= 0:
             return
         if not active:
-            point = self.settings['chargePalm'][min(7, animation.frame)]
+            point = self.settings['chargePalm'][min(len(self.settings['chargePalm'])-1, animation.frame)]
             pivot = animation.clip['pivot']
             factor = animation.clip['frames'][animation.frame].get('renderScale', 1.0)
             x, y = (point[0] - pivot['x']) * factor, (point[1] - pivot['y']) * factor
@@ -199,7 +210,8 @@ class CombatEffects:
             x, y = (pose['hand'][i] + (pose['tip'][i] - pose['hand'][i]) * .3 for i in (0, 1))
         name = f'charge_lv{self.level}'
         diameter = 28 + self.level * 3 if active else 42 + self.level * 6
-        frame = 3 + int(self.time * 8) % 3 if active else min(7, animation.frame)
+        count=self.clips[name]['frameCount']
+        frame = 5 + int(self.time * 12) % max(1,count-9) if active else min(count-1,int(animation.frame/animation.clip['frameCount']*count))
         style = self.settings['effectStyle']
         self._paint(name, frame, (player.x, player.y), camera, x, y,
             diameter / self.clips[name]['peakSize'] * style['scale'], facing=player.facing,
@@ -207,8 +219,9 @@ class CombatEffects:
 
     def draw(self, player, camera):
         # 검기가 지면 속으로 파고들지 않도록 실제 바닥 아래만 가린다.
+        zoom=getattr(camera,'zoom',1)
         bottom = round(camera.height + camera.y)
-        SDL_RenderSetClipRect(engine.renderer, SDL_Rect(0, 0, camera.width, max(0, bottom)))
+        SDL_RenderSetClipRect(engine.renderer, SDL_Rect(0, 0, round(camera.width/zoom), max(0, bottom)))
         pose = self.blade(player.animation)
         if pose and player.mode != 'dead':
             self._concentrate(player, camera, pose)

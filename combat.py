@@ -2,6 +2,7 @@
 from dataclasses import dataclass, field
 from math import sin, hypot
 from game_assets import Motion
+from navigation import waypoint
 
 
 @dataclass
@@ -219,6 +220,7 @@ class Companion:
         self.skill = 0.0
         self.crouched = False
         self.stride = 0.0
+        self.nav_target = None
 
     @property
     def grounded(self):
@@ -236,6 +238,14 @@ class Companion:
                 if left <= p.x <= right:
                     target = max(left+18, min(right-18, target))
         target = max(80, min(scene.world.width-80, target))
+        target_y=p.floor_y
+        if not self.grounded and self.nav_target:
+            target,target_y=self.nav_target
+        elif target_y>self.y+25:
+            target,target_y=waypoint(scene,self,target,target_y)
+            self.nav_target=(target,target_y)
+        else:
+            self.nav_target=None
         if abs(self.x-p.x) > 1050:
             self.x, self.y, self.vy = target, p.floor_y, 0
         self.floor_y = scene.floor_beneath(self)
@@ -246,12 +256,12 @@ class Companion:
         crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x)
         moving = abs(dx) > 10
         speed = min(410, max(90, abs(dx)*3.1)) if not crouch else 80
-        if p.floor_y>self.floor_y+18 and not crouch:
+        if target_y>self.floor_y+18 and not crouch:
             speed = max(330, speed)
         old_x, old_y = self.x, self.y
         # 발판과 낮은 엄폐물에 앞서 점프. 주인공과 같은 중력·착지 판정을 쓴다.
         obstacle = any(o['kind'] == 'cover' and abs(o['x']-self.x)<140 and (o['x']-self.x)*self.facing>0 for o in scene.objects)
-        if self.grounded and not crouch and abs(dx)<300 and (p.floor_y>self.y+18 or p.y>self.y+75 or obstacle):
+        if self.grounded and not crouch and abs(dx)<300 and (target_y>self.y+18 or p.y>self.y+75 and p.floor_y<=self.floor_y+165 or obstacle):
             self.vy = 900
             self.motion.play('lunea/jump_takeoff')
         if moving and self.skill <= 0:
@@ -290,7 +300,7 @@ class Companion:
             key = 'lunea/run' if speed > 240 else 'lunea/walk'
             self.motion.play(key)
             # 이동한 거리로 프레임을 고른다. 느려질 때 발만 빨리 도는 현상을 막는다.
-            self.motion.age = self.stride/(340 if key.endswith('/run') else 190)*self.assets.duration(key)
+            self.motion.age = self.stride/(270 if key.endswith('/run') else 150)*self.assets.duration(key)
         elif self.motion.key in {'lunea/run', 'lunea/walk'}:
             self.motion.play('lunea/move_stop')
         else:

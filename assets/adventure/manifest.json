@@ -1,9 +1,9 @@
 {
   "title": "마검사 시뮬레이터 · 모험 구현용 이미지",
-  "version": "2026-11-05-v1",
+  "version": "2026-11-06-hd",
   "generationMethod": "built-in image_gen",
-  "scope": "기획 구현에 필요한 추가 이미지·모션 준비. 게임 시스템 연결 작업과 구분.",
-  "runtimeApplied": false,
+  "scope": "본 게임과 연결된 모험 원화·새 주인공 추가동작",
+  "runtimeApplied": true,
   "conventions": {
     "alpha": true,
     "readingOrder": "왼쪽부터 읽고 다음 줄",
@@ -5529,19 +5529,19 @@
       "collection": "hero_pickup",
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
-      "file": "03_주인공과_루네아_추가모션/hero_pickup/hero_reach.png",
-      "frameCount": 8,
+      "file": "../hero/HD/interaction.png",
+      "frameCount": 16,
       "columns": 4,
-      "rows": 2,
-      "width": 1536,
-      "height": 768,
-      "frameWidth": 384,
-      "frameHeight": 384,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
       "pivot": {
-        "x": 192,
-        "y": 320
+        "x": 256,
+        "y": 448
       },
-      "fps": 12,
+      "fps": 16,
       "playback": "once",
       "actor": "hero",
       "facing": "right",
@@ -5549,80 +5549,152 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 16쪽",
-      "sha256": "3cfd6bc79d4fbd359f9f6b5201409a3b554badb9550e2a595498e73faf348209",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "2b255bc64ca9cf61750c1969d02d6798884d91ae1b7114650e05c899d8df3667",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 1,
-          "sourceIndex": 1,
-          "x": 384,
+          "x": 640,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 2,
-          "sourceIndex": 2,
-          "x": 768,
+          "x": 1280,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 3,
-          "sourceIndex": 3,
-          "x": 1152,
+          "x": 1920,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 4,
-          "sourceIndex": 4,
           "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 5,
-          "sourceIndex": 5,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 6,
-          "sourceIndex": 6,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 7,
-          "sourceIndex": 7,
-          "x": 1152,
-          "yTop": 384,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         }
       ],
       "anchorType": "ground",
@@ -5639,19 +5711,19 @@
       "collection": "hero_pickup",
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
-      "file": "03_주인공과_루네아_추가모션/hero_pickup/hero_reach_up.png",
-      "frameCount": 8,
+      "file": "../hero/HD/interaction.png",
+      "frameCount": 16,
       "columns": 4,
-      "rows": 2,
-      "width": 1536,
-      "height": 768,
-      "frameWidth": 384,
-      "frameHeight": 384,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
       "pivot": {
-        "x": 192,
-        "y": 320
+        "x": 256,
+        "y": 448
       },
-      "fps": 12,
+      "fps": 16,
       "playback": "once",
       "actor": "hero",
       "facing": "right",
@@ -5659,80 +5731,152 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 16쪽",
-      "sha256": "ab085a69a8d61beab4600201236ba86010ae62cea5120d3a5cf9afe727961d65",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "2b255bc64ca9cf61750c1969d02d6798884d91ae1b7114650e05c899d8df3667",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 8,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 1,
-          "sourceIndex": 9,
-          "x": 384,
+          "x": 640,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 2,
-          "sourceIndex": 10,
-          "x": 768,
+          "x": 1280,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 3,
-          "sourceIndex": 11,
-          "x": 1152,
+          "x": 1920,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 4,
-          "sourceIndex": 12,
           "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 5,
-          "sourceIndex": 13,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 6,
-          "sourceIndex": 14,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 7,
-          "sourceIndex": 15,
-          "x": 1152,
-          "yTop": 384,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         }
       ],
       "anchorType": "ground",
@@ -5749,19 +5893,19 @@
       "collection": "hero_camp",
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
-      "file": "03_주인공과_루네아_추가모션/hero_camp/hero_sit_down.png",
-      "frameCount": 8,
+      "file": "../hero/HD/camp.png",
+      "frameCount": 16,
       "columns": 4,
-      "rows": 2,
-      "width": 1536,
-      "height": 768,
-      "frameWidth": 384,
-      "frameHeight": 384,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
       "pivot": {
-        "x": 192,
-        "y": 320
+        "x": 256,
+        "y": 448
       },
-      "fps": 12,
+      "fps": 16,
       "playback": "once",
       "actor": "hero",
       "facing": "right",
@@ -5769,80 +5913,152 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 16,29쪽",
-      "sha256": "2769b4094305e7829aacb31a709557efa50d95ae192623ce4cef2125916e15fc",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "40533cab67c814a7b991dbe0efbc7c7e5147a0a827027dcc5d79e7bcfba01d19",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 1,
-          "sourceIndex": 1,
-          "x": 384,
+          "x": 640,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 2,
-          "sourceIndex": 2,
-          "x": 768,
+          "x": 1280,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 3,
-          "sourceIndex": 3,
-          "x": 1152,
+          "x": 1920,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 4,
-          "sourceIndex": 4,
           "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 5,
-          "sourceIndex": 5,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 6,
-          "sourceIndex": 6,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 7,
-          "sourceIndex": 7,
-          "x": 1152,
-          "yTop": 384,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         }
       ],
       "anchorType": "ground",
@@ -5859,19 +6075,19 @@
       "collection": "hero_camp",
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
-      "file": "03_주인공과_루네아_추가모션/hero_camp/hero_stand_up.png",
-      "frameCount": 8,
+      "file": "../hero/HD/camp.png",
+      "frameCount": 16,
       "columns": 4,
-      "rows": 2,
-      "width": 1536,
-      "height": 768,
-      "frameWidth": 384,
-      "frameHeight": 384,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
       "pivot": {
-        "x": 192,
-        "y": 320
+        "x": 256,
+        "y": 448
       },
-      "fps": 12,
+      "fps": 16,
       "playback": "once",
       "actor": "hero",
       "facing": "right",
@@ -5879,80 +6095,152 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 16,29쪽",
-      "sha256": "6a2ce42f093e26f498470ac5db84ffb8a60e95c32a757c39f865a934fab795ec",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "40533cab67c814a7b991dbe0efbc7c7e5147a0a827027dcc5d79e7bcfba01d19",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 8,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 1,
-          "sourceIndex": 9,
-          "x": 384,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 2,
-          "sourceIndex": 10,
-          "x": 768,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 3,
-          "sourceIndex": 11,
-          "x": 1152,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 4,
-          "sourceIndex": 12,
-          "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 5,
-          "sourceIndex": 13,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 6,
-          "sourceIndex": 14,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 7,
-          "sourceIndex": 15,
-          "x": 1152,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 0,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 1920,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 1280,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         }
       ],
       "anchorType": "ground",
@@ -5969,19 +6257,19 @@
       "collection": "hero_story",
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
-      "file": "03_주인공과_루네아_추가모션/hero_story/hero_read_map.png",
-      "frameCount": 8,
+      "file": "../hero/HD/camp.png",
+      "frameCount": 4,
       "columns": 4,
-      "rows": 2,
-      "width": 1536,
-      "height": 768,
-      "frameWidth": 384,
-      "frameHeight": 384,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
       "pivot": {
-        "x": 192,
-        "y": 320
+        "x": 256,
+        "y": 448
       },
-      "fps": 8,
+      "fps": 6,
       "playback": "loop",
       "actor": "hero",
       "facing": "right",
@@ -5989,80 +6277,44 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29쪽",
-      "sha256": "7b8d101ed1ebef1ccc45e8d13d6581c2d500fab2c2e6ec3ddbba9e205bf2b741",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "40533cab67c814a7b991dbe0efbc7c7e5147a0a827027dcc5d79e7bcfba01d19",
       "frames": [
         {
-          "index": 0,
-          "sourceIndex": 0,
+          "index": 12,
           "x": 0,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 1,
-          "sourceIndex": 1,
-          "x": 384,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 2,
-          "sourceIndex": 2,
-          "x": 768,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 3,
-          "sourceIndex": 3,
-          "x": 1152,
-          "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
-        },
-        {
-          "index": 4,
-          "sourceIndex": 4,
-          "x": 0,
-          "yTop": 384,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
-          "index": 5,
-          "sourceIndex": 5,
-          "x": 384,
-          "yTop": 384,
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
-          "index": 6,
-          "sourceIndex": 6,
-          "x": 768,
-          "yTop": 384,
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
-          "index": 7,
-          "sourceIndex": 7,
-          "x": 1152,
-          "yTop": 384,
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         }
       ],
       "anchorType": "ground",
@@ -6079,19 +6331,19 @@
       "collection": "hero_story",
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
-      "file": "03_주인공과_루네아_추가모션/hero_story/hero_greet.png",
-      "frameCount": 8,
+      "file": "../hero/HD/interaction.png",
+      "frameCount": 16,
       "columns": 4,
-      "rows": 2,
-      "width": 1536,
-      "height": 768,
-      "frameWidth": 384,
-      "frameHeight": 384,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
       "pivot": {
-        "x": 192,
-        "y": 320
+        "x": 256,
+        "y": 448
       },
-      "fps": 12,
+      "fps": 16,
       "playback": "once",
       "actor": "hero",
       "facing": "right",
@@ -6099,80 +6351,152 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29쪽",
-      "sha256": "43ba3d829fb2aee269cf224e0147ad23b41f9ea64691aaf4c6bd55c98a163c2f",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "2b255bc64ca9cf61750c1969d02d6798884d91ae1b7114650e05c899d8df3667",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 8,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 1,
-          "sourceIndex": 9,
-          "x": 384,
+          "x": 640,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 2,
-          "sourceIndex": 10,
-          "x": 768,
+          "x": 1280,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 3,
-          "sourceIndex": 11,
-          "x": 1152,
+          "x": 1920,
           "yTop": 0,
-          "pico2dY": 384,
-          "width": 384,
-          "height": 384
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 4,
-          "sourceIndex": 12,
           "x": 0,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 5,
-          "sourceIndex": 13,
-          "x": 384,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 6,
-          "sourceIndex": 14,
-          "x": 768,
-          "yTop": 384,
-          "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         },
         {
           "index": 7,
-          "sourceIndex": 15,
-          "x": 1152,
-          "yTop": 384,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
           "pico2dY": 0,
-          "width": 384,
-          "height": 384
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
         }
       ],
       "anchorType": "ground",
@@ -7289,17 +7613,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_neutral.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7309,17 +7633,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "87e948fe16006ce57719c396af91ff042f464661529454e0c18b2f7ca1bf9f64",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "pico2dY": 984,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7336,17 +7659,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_smile.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7356,17 +7679,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "f68f553bc7feb2de0cac460ae5c6fab1f511c1982d7d25315edd05f1592e4f78",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 1,
-          "x": 0,
+          "x": 300,
           "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "pico2dY": 984,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7383,17 +7705,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_worry.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 149.5,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7403,17 +7725,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "c9bd22cdcd3402f03ea439d660a02539d8909612d09e8c99ddb8fc667db11856",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 2,
-          "x": 0,
+          "x": 600,
           "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "pico2dY": 984,
+          "width": 299,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7430,17 +7751,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_resolve.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7450,17 +7771,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "21c34942823b10272609dd65fe08c51e9636ea73ae89f7c080bfe0bd9654c0e2",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 3,
-          "x": 0,
+          "x": 899,
           "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "pico2dY": 984,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7477,17 +7797,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_surprise.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7497,17 +7817,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "638554a20c39112a838835c93cfec63c32cc84c3e6738b5a329adc12858b7a78",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 4,
           "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7524,17 +7843,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_sad.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7544,17 +7863,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "7f25d269a06fdc5501dc8c5bbd282054b2b03cc52f9c77cb8a1348454edca1c4",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 5,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "x": 300,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7571,17 +7889,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_think.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 149.5,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7591,17 +7909,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "5df548d9a80d5967809cbf75246e1065b8b9b34547efb5e46168d61fbd9f15bd",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 6,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "x": 600,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 299,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7618,17 +7935,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_relief.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7638,17 +7955,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "2942ff3d66d78ab958808fc59a4c8f735d3c5f70a374a566defaf9cd304ee322",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 7,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "x": 899,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7665,17 +7981,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_tired.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7685,17 +8001,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "29a4f58e00128b67d1e7f064e1b13a7faad08a54e6d40d39dc6c3cb06dfa7e9c",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 8,
           "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7712,17 +8027,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_fear.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7732,17 +8047,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "d05ba6c7d7c998c73ce3363398ada283b6cba79d23ceaf88b6c7bba295cdc9b9",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 9,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "x": 300,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7759,17 +8073,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_doubt.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 149.5,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7779,17 +8093,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "95bc8235a62967f7ba02d5b45ce563b9a65bb378d4d8f5c39bf91a7ae193b839",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 10,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "x": 600,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 299,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7806,17 +8119,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_grateful.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7826,17 +8139,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "f0aff783dbec2e199f13aa66a19b8d7afbd0f4bc36bec52295eb03e9766b58ad",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 11,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "x": 899,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7853,17 +8165,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_hope.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7873,17 +8185,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "e27653829b0003cca9cd87a3f01a76d5f6d2f131eadaf3ef118103eff9a8a5d7",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 12,
           "x": 0,
-          "yTop": 0,
+          "yTop": 984,
           "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7900,17 +8211,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_secret.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7920,17 +8231,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "f13a081ab52597493ccf471d42540adf767d30026bb9acfd9137d2d166c5da21",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 13,
-          "x": 0,
-          "yTop": 0,
+          "x": 300,
+          "yTop": 984,
           "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7947,17 +8257,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_farewell.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 149.5,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -7967,17 +8277,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "8c2033034f4baaf90f9d81def5ec6976d10b207cc0379bcfd5d1cf403a1c5b94",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 14,
-          "x": 0,
-          "yTop": 0,
+          "x": 600,
+          "yTop": 984,
           "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "width": 299,
+          "height": 328
         }
       ],
       "anchorType": "center",
@@ -7994,17 +8303,17 @@
       "collection": "portrait_hero",
       "group": "04_대화_초상화",
       "kind": "image",
-      "file": "04_대화_초상화/portrait_hero/hero_focus.png",
+      "file": "../expansion/hero_expressions.png",
       "frameCount": 1,
-      "columns": 1,
-      "rows": 1,
-      "width": 512,
-      "height": 512,
-      "frameWidth": 512,
-      "frameHeight": 512,
+      "columns": 4,
+      "rows": 4,
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
       "pivot": {
-        "x": 256,
-        "y": 256
+        "x": 150.0,
+        "y": 164.0
       },
       "fps": 0,
       "playback": "still",
@@ -8014,17 +8323,16 @@
       "recommendedScale": 1,
       "spoiler": false,
       "allowEmptyEnd": false,
-      "source": "제안서 19,29,32쪽",
-      "sha256": "e3690c1f9111f2553e4ed1ad9331d0bc73a107abff79d6cfe4c272ff8a02a41c",
+      "source": "새 고해상도 주인공 원화 · 2026-11-06",
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4",
       "frames": [
         {
           "index": 0,
-          "sourceIndex": 15,
-          "x": 0,
-          "yTop": 0,
+          "x": 899,
+          "yTop": 984,
           "pico2dY": 0,
-          "width": 512,
-          "height": 512
+          "width": 300,
+          "height": 328
         }
       ],
       "anchorType": "center",

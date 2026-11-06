@@ -1,0 +1,2103 @@
+{
+  "version": 3,
+  "clips": [
+    {
+      "id": "crystal",
+      "file": "crystal.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 312,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 1,
+          "x": 315,
+          "yTop": 0,
+          "pico2dY": 312,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 2,
+          "x": 630,
+          "yTop": 0,
+          "pico2dY": 312,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 3,
+          "x": 945,
+          "yTop": 0,
+          "pico2dY": 312,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 312,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 5,
+          "x": 315,
+          "yTop": 312,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 6,
+          "x": 630,
+          "yTop": 312,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        },
+        {
+          "index": 7,
+          "x": 945,
+          "yTop": 312,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 312,
+          "renderScale": 1
+        }
+      ],
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "width": 1260,
+      "height": 624,
+      "frameWidth": 315,
+      "frameHeight": 312,
+      "pivot": {
+        "x": 157.5,
+        "y": 156.0
+      },
+      "fps": 12,
+      "playback": "loop",
+      "recommendedScale": 1,
+      "facing": "right"
+    },
+    {
+      "id": "spring",
+      "file": "spring.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 311,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 1,
+          "x": 315,
+          "yTop": 0,
+          "pico2dY": 311,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 2,
+          "x": 630,
+          "yTop": 0,
+          "pico2dY": 311,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 3,
+          "x": 945,
+          "yTop": 0,
+          "pico2dY": 311,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 311,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 5,
+          "x": 315,
+          "yTop": 311,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 6,
+          "x": 630,
+          "yTop": 311,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        },
+        {
+          "index": 7,
+          "x": 945,
+          "yTop": 311,
+          "pico2dY": 0,
+          "width": 315,
+          "height": 311,
+          "renderScale": 1
+        }
+      ],
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "width": 1260,
+      "height": 622,
+      "frameWidth": 315,
+      "frameHeight": 311,
+      "pivot": {
+        "x": 157.5,
+        "y": 274.56
+      },
+      "fps": 12,
+      "playback": "loop",
+      "recommendedScale": 1,
+      "facing": "right"
+    },
+    {
+      "id": "rescue_discovery",
+      "file": "rescue_discovery.jpg",
+      "width": 1672,
+      "height": 941,
+      "frameCount": 1,
+      "columns": 1,
+      "rows": 1,
+      "frameWidth": 1672,
+      "frameHeight": 941,
+      "fps": 0,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1672,
+          "height": 941
+        }
+      ],
+      "pivot": {
+        "x": 836.0,
+        "y": 470.5
+      }
+    },
+    {
+      "id": "rescue_reflection",
+      "file": "rescue_reflection.jpg",
+      "width": 1672,
+      "height": 941,
+      "frameCount": 1,
+      "columns": 1,
+      "rows": 1,
+      "frameWidth": 1672,
+      "frameHeight": 941,
+      "fps": 0,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1672,
+          "height": 941
+        }
+      ],
+      "pivot": {
+        "x": 836.0,
+        "y": 470.5
+      }
+    },
+    {
+      "id": "rescue_pull",
+      "file": "rescue_pull.jpg",
+      "width": 1672,
+      "height": 941,
+      "frameCount": 1,
+      "columns": 1,
+      "rows": 1,
+      "frameWidth": 1672,
+      "frameHeight": 941,
+      "fps": 0,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1672,
+          "height": 941
+        }
+      ],
+      "pivot": {
+        "x": 836.0,
+        "y": 470.5
+      }
+    },
+    {
+      "id": "rescue_glow",
+      "file": "rescue_glow.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 1,
+          "x": 320,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 2,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 3,
+          "x": 960,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 5,
+          "x": 320,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 6,
+          "x": 640,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 7,
+          "x": 960,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 9,
+          "x": 320,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 10,
+          "x": 640,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 11,
+          "x": 960,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 13,
+          "x": 320,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 14,
+          "x": 640,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 15,
+          "x": 960,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        }
+      ],
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 1280,
+      "height": 1280,
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "pivot": {
+        "x": 160.0,
+        "y": 160.0
+      },
+      "fps": 24,
+      "playback": "loop",
+      "recommendedScale": 1,
+      "facing": "right"
+    },
+    {
+      "id": "rescue_break",
+      "file": "rescue_break.png",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 1,
+          "x": 320,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 2,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 3,
+          "x": 960,
+          "yTop": 0,
+          "pico2dY": 960,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 5,
+          "x": 320,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 6,
+          "x": 640,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 7,
+          "x": 960,
+          "yTop": 320,
+          "pico2dY": 640,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 9,
+          "x": 320,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 10,
+          "x": 640,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 11,
+          "x": 960,
+          "yTop": 640,
+          "pico2dY": 320,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 13,
+          "x": 320,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 14,
+          "x": 640,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        },
+        {
+          "index": 15,
+          "x": 960,
+          "yTop": 960,
+          "pico2dY": 0,
+          "width": 320,
+          "height": 320,
+          "renderScale": 1
+        }
+      ],
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 1280,
+      "height": 1280,
+      "frameWidth": 320,
+      "frameHeight": 320,
+      "pivot": {
+        "x": 160.0,
+        "y": 160.0
+      },
+      "fps": 24,
+      "playback": "loop",
+      "recommendedScale": 1,
+      "facing": "right"
+    },
+    {
+      "id": "hero_pickup__hero_reach",
+      "label": "무릎을 굽혀 물건 확인",
+      "collection": "hero_pickup",
+      "group": "03_주인공과_루네아_추가모션",
+      "kind": "character",
+      "file": "../hero/HD/interaction.png",
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
+      "pivot": {
+        "x": 256,
+        "y": 448
+      },
+      "fps": 16,
+      "playback": "once",
+      "actor": "hero",
+      "facing": "right",
+      "flippable": true,
+      "recommendedScale": 1,
+      "spoiler": false,
+      "allowEmptyEnd": false,
+      "source": "제안서 16쪽",
+      "sha256": "3cfd6bc79d4fbd359f9f6b5201409a3b554badb9550e2a595498e73faf348209",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        }
+      ],
+      "anchorType": "ground",
+      "thumb": {
+        "x": 1024,
+        "y": 640,
+        "width": 128,
+        "height": 128
+      }
+    },
+    {
+      "id": "hero_pickup__hero_reach_up",
+      "label": "물건 확인 후 일어나기",
+      "collection": "hero_pickup",
+      "group": "03_주인공과_루네아_추가모션",
+      "kind": "character",
+      "file": "../hero/HD/interaction.png",
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
+      "pivot": {
+        "x": 256,
+        "y": 448
+      },
+      "fps": 16,
+      "playback": "once",
+      "actor": "hero",
+      "facing": "right",
+      "flippable": true,
+      "recommendedScale": 1,
+      "spoiler": false,
+      "allowEmptyEnd": false,
+      "source": "제안서 16쪽",
+      "sha256": "ab085a69a8d61beab4600201236ba86010ae62cea5120d3a5cf9afe727961d65",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        }
+      ],
+      "anchorType": "ground",
+      "thumb": {
+        "x": 1152,
+        "y": 640,
+        "width": 128,
+        "height": 128
+      }
+    },
+    {
+      "id": "hero_camp__hero_sit_down",
+      "label": "쉼터에 앉기",
+      "collection": "hero_camp",
+      "group": "03_주인공과_루네아_추가모션",
+      "kind": "character",
+      "file": "../hero/HD/camp.png",
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
+      "pivot": {
+        "x": 256,
+        "y": 448
+      },
+      "fps": 16,
+      "playback": "once",
+      "actor": "hero",
+      "facing": "right",
+      "flippable": true,
+      "recommendedScale": 1,
+      "spoiler": false,
+      "allowEmptyEnd": false,
+      "source": "제안서 16,29쪽",
+      "sha256": "2769b4094305e7829aacb31a709557efa50d95ae192623ce4cef2125916e15fc",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        }
+      ],
+      "anchorType": "ground",
+      "thumb": {
+        "x": 1280,
+        "y": 640,
+        "width": 128,
+        "height": 128
+      }
+    },
+    {
+      "id": "hero_camp__hero_stand_up",
+      "label": "쉼터에서 일어나기",
+      "collection": "hero_camp",
+      "group": "03_주인공과_루네아_추가모션",
+      "kind": "character",
+      "file": "../hero/HD/camp.png",
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
+      "pivot": {
+        "x": 256,
+        "y": 448
+      },
+      "fps": 16,
+      "playback": "once",
+      "actor": "hero",
+      "facing": "right",
+      "flippable": true,
+      "recommendedScale": 1,
+      "spoiler": false,
+      "allowEmptyEnd": false,
+      "source": "제안서 16,29쪽",
+      "sha256": "6a2ce42f093e26f498470ac5db84ffb8a60e95c32a757c39f865a934fab795ec",
+      "frames": [
+        {
+          "index": 0,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 1,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 2,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 3,
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 4,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 5,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 6,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 7,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 0,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 1920,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 1280,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        }
+      ],
+      "anchorType": "ground",
+      "thumb": {
+        "x": 1408,
+        "y": 640,
+        "width": 128,
+        "height": 128
+      }
+    },
+    {
+      "id": "hero_story__hero_read_map",
+      "label": "앉아서 지도 살피기",
+      "collection": "hero_story",
+      "group": "03_주인공과_루네아_추가모션",
+      "kind": "character",
+      "file": "../hero/HD/camp.png",
+      "frameCount": 4,
+      "columns": 4,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
+      "pivot": {
+        "x": 256,
+        "y": 448
+      },
+      "fps": 6,
+      "playback": "loop",
+      "actor": "hero",
+      "facing": "right",
+      "flippable": true,
+      "recommendedScale": 1,
+      "spoiler": false,
+      "allowEmptyEnd": false,
+      "source": "제안서 19,29쪽",
+      "sha256": "7b8d101ed1ebef1ccc45e8d13d6581c2d500fab2c2e6ec3ddbba9e205bf2b741",
+      "frames": [
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        }
+      ],
+      "anchorType": "ground",
+      "thumb": {
+        "x": 0,
+        "y": 768,
+        "width": 128,
+        "height": 128
+      }
+    },
+    {
+      "id": "hero_story__hero_greet",
+      "label": "고개 끄덕이며 인사",
+      "collection": "hero_story",
+      "group": "03_주인공과_루네아_추가모션",
+      "kind": "character",
+      "file": "../hero/HD/interaction.png",
+      "frameCount": 16,
+      "columns": 4,
+      "rows": 4,
+      "width": 2560,
+      "height": 2048,
+      "frameWidth": 640,
+      "frameHeight": 512,
+      "pivot": {
+        "x": 256,
+        "y": 448
+      },
+      "fps": 16,
+      "playback": "once",
+      "actor": "hero",
+      "facing": "right",
+      "flippable": true,
+      "recommendedScale": 1,
+      "spoiler": false,
+      "allowEmptyEnd": false,
+      "source": "제안서 19,29쪽",
+      "sha256": "43ba3d829fb2aee269cf224e0147ad23b41f9ea64691aaf4c6bd55c98a163c2f",
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 1,
+          "x": 640,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 2,
+          "x": 1280,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 3,
+          "x": 1920,
+          "yTop": 0,
+          "pico2dY": 1536,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 6,
+          "x": 1280,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 7,
+          "x": 1920,
+          "yTop": 512,
+          "pico2dY": 1024,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 9,
+          "x": 640,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 10,
+          "x": 1280,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 11,
+          "x": 1920,
+          "yTop": 1024,
+          "pico2dY": 512,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 13,
+          "x": 640,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 14,
+          "x": 1280,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        },
+        {
+          "index": 15,
+          "x": 1920,
+          "yTop": 1536,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 512,
+          "renderScale": 0.6
+        }
+      ],
+      "anchorType": "ground",
+      "thumb": {
+        "x": 128,
+        "y": 768,
+        "width": 128,
+        "height": 128
+      }
+    },
+    {
+      "id": "rescue_after",
+      "file": "rescue_after.jpg",
+      "width": 1672,
+      "height": 941,
+      "frameCount": 1,
+      "columns": 1,
+      "rows": 1,
+      "frameWidth": 1672,
+      "frameHeight": 941,
+      "fps": 0,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1672,
+          "height": 941
+        }
+      ],
+      "pivot": {
+        "x": 836.0,
+        "y": 470.5
+      }
+    },
+    {
+      "id": "support_wood",
+      "file": "support_wood.png",
+      "width": 1024,
+      "height": 1536,
+      "frameCount": 1,
+      "columns": 1,
+      "rows": 1,
+      "frameWidth": 1024,
+      "frameHeight": 1536,
+      "fps": 0,
+      "recommendedScale": 0.5338541666666666,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1024,
+          "height": 1536
+        }
+      ],
+      "pivot": {
+        "x": 512.0,
+        "y": 1505.28
+      }
+    },
+    {
+      "id": "support_stone",
+      "file": "support_stone.png",
+      "width": 1024,
+      "height": 1536,
+      "frameCount": 1,
+      "columns": 1,
+      "rows": 1,
+      "frameWidth": 1024,
+      "frameHeight": 1536,
+      "fps": 0,
+      "recommendedScale": 0.5338541666666666,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1024,
+          "height": 1536
+        }
+      ],
+      "pivot": {
+        "x": 512.0,
+        "y": 1505.28
+      }
+    },
+    {
+      "id": "hero_portrait_neutral",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 984,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_smile",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 300,
+          "yTop": 0,
+          "pico2dY": 984,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_worry",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 600,
+          "yTop": 0,
+          "pico2dY": 984,
+          "width": 299,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 149.5,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_resolve",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 899,
+          "yTop": 0,
+          "pico2dY": 984,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_surprise",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_sad",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 300,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_think",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 600,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 299,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 149.5,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_relief",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 899,
+          "yTop": 328,
+          "pico2dY": 656,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_tired",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_fear",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 300,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_doubt",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 600,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 299,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 149.5,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_grateful",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 899,
+          "yTop": 656,
+          "pico2dY": 328,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_hope",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 984,
+          "pico2dY": 0,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_secret",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 300,
+          "yTop": 984,
+          "pico2dY": 0,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_farewell",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 299,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 600,
+          "yTop": 984,
+          "pico2dY": 0,
+          "width": 299,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 149.5,
+        "y": 164.0
+      }
+    },
+    {
+      "id": "hero_portrait_focus",
+      "file": "hero_expressions.png",
+      "width": 1199,
+      "height": 1312,
+      "frameWidth": 300,
+      "frameHeight": 328,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 899,
+          "yTop": 984,
+          "pico2dY": 0,
+          "width": 300,
+          "height": 328
+        }
+      ],
+      "fps": 0,
+      "pivot": {
+        "x": 150.0,
+        "y": 164.0
+      }
+    }
+  ],
+  "overrides": {
+    "adv/hero_pickup__hero_reach": "hero_pickup__hero_reach",
+    "adv/hero_pickup__hero_reach_up": "hero_pickup__hero_reach_up",
+    "adv/hero_camp__hero_sit_down": "hero_camp__hero_sit_down",
+    "adv/hero_camp__hero_stand_up": "hero_camp__hero_stand_up",
+    "adv/hero_story__hero_read_map": "hero_story__hero_read_map",
+    "adv/hero_story__hero_greet": "hero_story__hero_greet",
+    "adv/portrait_hero__hero_neutral": "hero_portrait_neutral",
+    "adv/portrait_hero__hero_smile": "hero_portrait_smile",
+    "adv/portrait_hero__hero_worry": "hero_portrait_worry",
+    "adv/portrait_hero__hero_resolve": "hero_portrait_resolve",
+    "adv/portrait_hero__hero_surprise": "hero_portrait_surprise",
+    "adv/portrait_hero__hero_sad": "hero_portrait_sad",
+    "adv/portrait_hero__hero_think": "hero_portrait_think",
+    "adv/portrait_hero__hero_relief": "hero_portrait_relief",
+    "adv/portrait_hero__hero_tired": "hero_portrait_tired",
+    "adv/portrait_hero__hero_fear": "hero_portrait_fear",
+    "adv/portrait_hero__hero_doubt": "hero_portrait_doubt",
+    "adv/portrait_hero__hero_grateful": "hero_portrait_grateful",
+    "adv/portrait_hero__hero_hope": "hero_portrait_hope",
+    "adv/portrait_hero__hero_secret": "hero_portrait_secret",
+    "adv/portrait_hero__hero_farewell": "hero_portrait_farewell",
+    "adv/portrait_hero__hero_focus": "hero_portrait_focus"
+  }
+}

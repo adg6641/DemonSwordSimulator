@@ -1,6 +1,7 @@
 """한 판의 진행: 실제 전투, 사건, 성장, 체크포인트, 아홉 결말을 연결한다."""
 import copy
 import random
+from math import sin,pi
 from pico2d import (
     SDL_KEYDOWN, SDL_KEYUP, SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN, SDL_BUTTON_LEFT,
     SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN, SDLK_RETURN, SDLK_SPACE, SDLK_ESCAPE,
@@ -46,6 +47,8 @@ class Campaign:
         self.hitboxes = []
         self.banner, self.banner_queue = None, []
         self.story_context = None
+        self.rescue = None
+        self.cine_out = None
         self.companion = None
         self.last_max_hp = self.run.max_hp
         point = store.restore() if resume else None
@@ -86,7 +89,7 @@ class Campaign:
                 elif name=='상인' and obj: sx=obj['x']+190
                 elif name in {'소년','이야기'}: sx=self.player.x
             sx = max(self.player.x-620, min(self.player.x+620, sx))
-            self.modal.update(speaker=name, speaker_x=sx, speaker_y=165,
+            self.modal.update(speaker=name, speaker_x=sx, speaker_y=max(0,self.player.y)+165,
                               focus_x=(self.player.x+sx)/2, focus_y=max(0,self.player.y)+10,
                               emphasis=emphasis, revealed=False)
             if obj and obj.get('npc') and abs(sx-self.player.x)<96 and self.player.grounded:
@@ -105,6 +108,11 @@ class Campaign:
         self.keys.clear()
 
     def close_modal(self):
+        if self.modal and self.modal.get('cine'):
+            self.cine_out=dict(self.modal['cine'],age=0)
+            t=min(1,self.interaction_age/5);t=t*t*(3-2*t)
+            start,end=self.cine_out.get('zoom',(1,1));z=max(1,start+(end-start)*t)
+            self.cine_out.update(zoom=(z,z),pan=(1-t)*10)
         visual = self.modal.get('visual') if self.modal else None
         story = self.modal and self.modal['kind'] in {'dialogue','boss','final'}
         self.modal = None
@@ -409,7 +417,7 @@ class Campaign:
                    ('안전한 현재 위치 저장', self.manual_save), ('시작 화면으로 · 마지막 저장 유지', lambda: setattr(self, 'request', 'menu'))], kind='pause')
 
     def manual_save(self):
-        if any(e.alive and abs(e.x-self.player.x) < 650 for e in self.enemies) or self.shots or self.hazards or not self.player.grounded:
+        if any(e.alive and abs(e.x-self.player.x) < 650 and abs(e.y-self.player.y)<220 for e in self.enemies) or any(abs(s.y-self.player.y)<180 for s in self.shots) or (self.hazards and self.player.y<180) or not self.player.grounded:
             self.notify('주변이 위험합니다. 모닥불 곁이나 적이 없는 지상에서 저장하세요.')
             return
         self.save_checkpoint()
@@ -477,6 +485,9 @@ class Campaign:
 
     def event(self, key):
         self.story_context = key
+        if key=='rescue' and not self.run.companion:
+            from rescue_story import RescueStory
+            self.rescue=RescueStory(self);self.rescue.start();return
         if key == 'final':
             if not self.run.has('boss_won'):
                 self.notify('먼저 바르켄을 쓰러뜨려야 합니다.')
@@ -612,7 +623,7 @@ class Campaign:
                   speaker='루네아' if key in {'rescue','memory'} and r.companion else '상인' if key=='merchant' and value=='help' else {'elder':'촌장','healer':'치유사','mirror':'소년'}.get(key,'이야기'))
 
     def camp(self):
-        if any(e.alive and abs(e.x-self.player.x) < 650 for e in self.enemies) or self.shots or self.hazards:
+        if any(e.alive and abs(e.x-self.player.x) < 650 and abs(e.y-self.player.y)<220 for e in self.enemies) or any(abs(s.y-self.player.y)<180 for s in self.shots) or (self.hazards and self.player.y<180):
             self.notify('주변의 위협을 정리한 뒤 모닥불에서 쉴 수 있습니다.')
             return
         self.save_checkpoint(heal=True)
@@ -785,14 +796,40 @@ class Campaign:
         return (o['x']-o['w']/2+surface.get('left', 6),
                 o['x']-o['w']/2+surface.get('right', o['w']-6))
 
+    def solid_platforms(self):
+        return [o for o in self.objects if o['kind']=='platform' and getattr(self,'time',0)>=o.get('disabled_until',0)]
+
+    def update_terrain(self,dt):
+        actors=[self.player]+([self.companion] if self.companion else [])
+        for o in self.objects:
+            if o['kind']!='platform': continue
+            previous_x,previous_y=o['x'],o['y']
+            riders=[p for p in actors if abs(p.y-previous_y)<2 and p.vy<=0 and self.platform_span(o)[0]<=p.x<=self.platform_span(o)[1]]
+            motion=o.get('motion')
+            if motion=='lift':
+                o['y']=o['base_y']+o['travel']*(.5-.5*sin(self.time*2*pi/o['period']+pi/2))
+            elif motion=='moving':
+                o['x']=o['base_x']+o['travel']*sin(self.time*2*pi/o['period'])
+            elif motion=='crumble':
+                if self.time<o.get('disabled_until',0): continue
+                o['stepped']=o.get('stepped',0)+dt if riders else max(0,o.get('stepped',0)-dt)
+                if o['stepped']>.75:
+                    o['disabled_until']=self.time+4;o['stepped']=0
+                    self.burst('adv/hit_impacts__hit_metal',o['x'],o['y'],.35)
+                    continue
+            for p in riders:
+                p.x+=o['x']-previous_x;p.y+=o['y']-previous_y;p.floor_y=o['y']
+
     def floor_beneath(self, actor):
-        return max((o['y'] for o in self.objects if o['kind']=='platform'
-                    and self.platform_span(o)[0] <= actor.x <= self.platform_span(o)[1]
+        if getattr(actor,'drop_timer',0)>0: return 0
+        return max((o['y'] for o in self.solid_platforms()
+                    if self.platform_span(o)[0] <= actor.x <= self.platform_span(o)[1]
                     and abs(actor.y-o['y'])<2 and actor.vy<=0), default=0)
 
     def platforms(self, old_y, actor=None):
         p = self.player if actor is None else actor
-        tops = [o for o in self.objects if o['kind'] == 'platform' and self.platform_span(o)[0] <= p.x <= self.platform_span(o)[1]]
+        if getattr(p,'drop_timer',0)>0: return
+        tops = [o for o in self.solid_platforms() if self.platform_span(o)[0] <= p.x <= self.platform_span(o)[1]]
         if p.vy <= 0:
             landed = [o for o in tops if old_y >= o['y']-1 and p.y <= o['y']]
             if landed:
@@ -829,6 +866,9 @@ class Campaign:
 
     def update(self, dt):
         self.time += dt
+        if self.cine_out:
+            self.cine_out['age']+=dt
+            if self.cine_out['age']>.6:self.cine_out=None
         self.toast_time = max(0, self.toast_time-dt)
         for b in self.bursts:
             b['age'] += dt
@@ -866,7 +906,7 @@ class Campaign:
                         self.modal['speaker_x']=self.companion.x
                         self.modal['speaker_y']=self.companion.y+175
                         self.modal['focus_x']=(self.player.x+self.companion.x)/2
-                self.camera.focus(self.modal['focus_x'], self.modal['focus_y'], self.world.width, dt)
+                self.camera.focus(self.modal['focus_x'], self.modal['focus_y'], self.world.width, dt,self.modal.get('shot_zoom',1.18))
             else:
                 self.camera.follow(self.player, self.world.width, dt)
             return
@@ -893,11 +933,22 @@ class Campaign:
         self.shield = max(0, self.shield-dt)
         self.hybrid_time = max(0, self.hybrid_time-dt)
         self.mp = min(r.max_mp, self.mp+dt*(7 if p.mode == 'free' else 2.5))
-        old_x, old_y = p.x, p.y
+        self.update_terrain(dt)
+        old_x,old_y=p.x,p.y
         p.floor_y = self.floor_beneath(p)
         p.update(dt, self.keys)
         self.platforms(old_y)
         self.blockers(old_x)
+        for o in self.objects:
+            if o['kind']=='spring' and abs(p.x-o['x'])<52 and p.mode=='jump' and p.jump_launched and p.y<55 and p.vy>300 and self.time>=o.get('next_bounce',0):
+                p.vy=1160;p.floor_y=0;p.mode='free';p.gait=None;p.air_dash_ready=True
+                o['next_bounce']=self.time+1
+                self.sounds.play('jump')
+                self.burst('adv/pickup_fx__pickup',o['x'],0,.5)
+            elif o['kind']=='crystal' and self.obj_uid(o) not in r.taken and abs(p.x-o['x'])<42 and abs(p.y+65-o['y'])<65:
+                r.taken.append(self.obj_uid(o));self.mp=min(r.max_mp,self.mp+12)
+                self.gain_xp(28);self.sounds.play('pickup')
+                self.burst('adv/pickup_fx__pickup',o['x'],o['y'],.3)
         p.x = max(75, min(self.world.width-75, p.x))
         boss = next((e for e in self.enemies if e.boss and e.alive and abs(e.x-p.x)<620), None)
         if boss and p.grounded and p.mode=='free' and not r.has('met_boss_'+str(boss.number)):
@@ -974,7 +1025,7 @@ class Campaign:
         elif p.x <= 85 and r.stage > 0:
             self.enter_stage(r.stage-1, self.world.width-210)
         self.sync_stats()
-        self.camera.follow(p, self.world.width, dt)
+        self.camera.follow(p, self.world.width, dt,combat_wide=any(e.alive and e.boss and abs(e.x-p.x)<600 for e in self.enemies))
 
     def draw(self):
         self.view.draw()

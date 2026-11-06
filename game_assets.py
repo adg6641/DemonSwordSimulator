@@ -29,12 +29,19 @@ class Assets:
             self.bodies = data['bodies']
             for c in data['clips']:
                 self.clips['polish/'+c['id']] = dict(c, path=polish.parent/c['file'])
+        extra=root/'expansion/manifest.json'
+        if extra.exists():
+            data=json.loads(extra.read_text(encoding='utf8'))
+            for c in data['clips']:
+                self.clips['v3/'+c['id']]=dict(c,path=extra.parent/c['file'])
+            for target,source in data.get('overrides',{}).items():
+                self.clips[target]=self.clips['v3/'+source]
         self.by_group = {}
         for key, clip in self.clips.items():
             self.by_group.setdefault(clip.get('group', '기존 동작'), []).append(key)
 
     def image(self, path):
-        key = str(path)
+        key = str(path.resolve())
         if key not in self.images:
             # 고해상도 채색화는 축소 시 부드럽게 표본화한다. 픽셀 지면은 별도 1:1 렌더링.
             self.images[key] = load_pixel_image(path, smooth=True)
@@ -76,6 +83,13 @@ class Assets:
         image.opacify(alpha)
         image.clip_draw(f['x'], f['pico2dY'], f['width'], f['height'], round(x), round(y), max(1, round(f['width']*s)), max(1, round(f['height']*s)))
         image.opacify(1)
+
+    def cover(self,key,x,y,width,height,zoom=1,pan=0,alpha=1):
+        c=self.clips[key];im=self.image(c['path'])
+        scale=max(width/im.w,height/im.h)*zoom
+        im.opacify(max(0,min(1,alpha)))
+        im.draw(round(x+pan),round(y),round(im.w*scale),round(im.h*scale))
+        im.opacify(1)
 
     def panel(self, key, left, bottom, width, height, alpha=1):
         """모서리는 유지하고 가운데만 늘려 글을 올릴 틀을 만든다."""

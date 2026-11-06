@@ -53,8 +53,9 @@ class Animation:
         self.elapsed += dt
 
     def draw(self, x, y, facing, camera, scale=1.0):
-        if self.name not in self.images:
-            self.images[self.name] = load_pixel_image(self.folder / self.clip['file'])
+        path=str(self.folder/self.clip['file'])
+        if path not in self.images:
+            self.images[path] = load_pixel_image(path,smooth=True)
         frame = self.frame
         cell = self.clip['frames'][frame]
         width, height = cell['width'], cell['height']
@@ -65,7 +66,7 @@ class Animation:
         pivot_x = pivot['x'] if facing > 0 else width - pivot['x']
         left = round(x - camera.x - pivot_x * scale)
         bottom = round(y - camera.y - (height - pivot['y']) * scale)
-        self.images[self.name].clip_composite_draw(
+        self.images[path].clip_composite_draw(
             cell['x'], cell['pico2dY'], width, height,
             0, 'h' if facing < 0 else '',
             left + draw_width / 2, bottom + draw_height / 2,

@@ -48,7 +48,9 @@ def objects(stage):
                    dict(id='healer', kind='event', x=2700, y=0, event='healer', npc='npc_healer')]
     if stage == 1:
         result += [dict(id='pool', kind='event', x=900, y=0, event='rescue', asset='mirror_pool__mirror_pool'),
-                   dict(id='root', kind='crawl', x=1850, y=0, w=170, asset='story_props__root_tunnel'),
+                   dict(id='root', kind='crawl', x=1850, y=0, w=440,ceiling=134,roof=172, asset='story_props__root_tunnel'),
+                   dict(id='root_step_l',kind='platform',x=1605,y=45,w=100,visual='polish/platform_2'),
+                   dict(id='root_step_r',kind='platform',x=2095,y=45,w=100,visual='polish/platform_2'),
                    dict(id='wood', kind='barrier', x=3070, y=0, hp=42, asset='barrier_break__barrier_break')]
     if stage == 2:
         result += [dict(id='merchant', kind='event', x=900, y=0, event='merchant', asset='merchant_cart__cart_broken'),

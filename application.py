@@ -9,6 +9,7 @@ from interface import Interface, fill
 from video import IntroVideo
 from progress import SaveStore
 from campaign import Campaign
+from transitions import FrameBlend
 
 
 class GameApplication:
@@ -27,6 +28,7 @@ class GameApplication:
         self.keys = set()
         self.game = None
         self.new_selected = 1
+        self.blend=FrameBlend()
 
     @property
     def player(self):
@@ -106,6 +108,7 @@ class GameApplication:
             self.game.handle(event)
 
     def update(self, dt):
+        self.blend.update(dt)
         self.ui.update(dt)
         if self.state == 'intro':
             self.video.update(dt)
@@ -121,6 +124,12 @@ class GameApplication:
                 self._start(resume=False)
 
     def draw(self):
+        s=self.game
+        key=(self.state,id(s),s.run.stage if s else -1,s.ui_serial if s else 0,
+             s.journal_page if s and s.modal and s.modal['kind']=='journal' else -1,s.run.ending if s else '')
+        self.blend.draw(self.draw_content,key)
+
+    def draw_content(self):
         if self.state == 'intro':
             self.video.draw()
         elif self.state in {'menu', 'confirm_new'}:
@@ -143,6 +152,7 @@ class GameApplication:
             self.game.draw()
 
     def close(self):
+        self.blend.close()
         if self.video:
             self.video.close()
             self.video = None

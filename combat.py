@@ -232,8 +232,8 @@ class Companion:
         p = scene.player
         target = p.x-p.facing*105
         # 주인공이 밟은 발판 안으로 목표점을 잡아 가장자리 밖에서 허공을 밟지 않는다.
-        for o in scene.objects:
-            if o['kind'] == 'platform' and abs(p.y-o['y']) < 2:
+        for o in scene.solid_platforms():
+            if abs(p.y-o['y']) < 2:
                 left, right = scene.platform_span(o)
                 if left <= p.x <= right:
                     target = max(left+18, min(right-18, target))
@@ -253,7 +253,7 @@ class Companion:
         if abs(dx) > 24:
             self.facing = 1 if dx > 0 else -1
         from pico2d import SDLK_DOWN
-        crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x)
+        crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x,self.y)
         moving = abs(dx) > 10
         speed = min(410, max(90, abs(dx)*3.1)) if not crouch else 80
         if target_y>self.floor_y+18 and not crouch:

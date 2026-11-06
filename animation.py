@@ -1,6 +1,8 @@
 """동작 정보에 맞춰 스프라이트 시트의 한 칸을 그린다."""
 
 import json
+from bisect import bisect_right
+from itertools import accumulate
 
 from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest, SDL_ScaleModeLinear
 
@@ -32,18 +34,31 @@ class Animation:
         self.serial += 1
         self.clip = self.clips[name]
         self.fps = fps or self.clip['fps']
+        durations=self.clip.get('frameDurations') if fps is None else None
+        self.frame_ends=list(accumulate(durations)) if durations else None
         self.loop = self.clip['playback'] == 'loop' and not once
         self.elapsed = 0.0
 
     @property
     def frame(self):
         count = self.clip['frameCount']
+        if self.frame_ends:
+            time=(self.elapsed%self.duration if self.loop else self.elapsed)*self.fps/self.clip['fps']
+            return min(count-1,bisect_right(self.frame_ends,time))
         frame = int(self.elapsed * self.fps)
         return frame % count if self.loop else min(frame, count - 1)
 
     @property
     def duration(self):
-        return self.clip['frameCount'] / self.fps
+        return self.frame_ends[-1]*self.clip['fps']/self.fps if self.frame_ends else self.clip['frameCount'] / self.fps
+
+    @property
+    def pose_time(self):
+        """현재 자세 번호와 그 자세 안에서 흘러간 비율. 검기 판정도 같은 시계를 쓴다."""
+        if not self.frame_ends:return self.elapsed*self.fps
+        i=self.frame;start=self.frame_ends[i-1] if i else 0
+        phase=max(0,min(1,(self.elapsed*self.fps/self.clip['fps']-start)/(self.frame_ends[i]-start)))
+        return i+phase
 
     @property
     def finished(self):

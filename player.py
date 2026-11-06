@@ -44,6 +44,8 @@ class Player:
         self.hp = 100
         self.floor_y = 0.0
         self.drop_timer = 0.0
+        self.forced_crouch=False
+        self.crouching=False
         self.dash_unlocked = self.magic_unlocked = True
         self.invulnerable = 0.0
         self.x, self.y, self.vy = 220.0, 0.0, 0.0
@@ -81,10 +83,15 @@ class Player:
         self.followups.clear()
         self.mode, self.gait = ('dead' if self.hp == 0 else 'hurt'), None
         self.animation.play('death' if self.hp == 0 else 'hurt')
+        if self.hp>0 and self.forced_crouch:
+            self.animation.play('crouch_idle',fps=self.animation.clips['crouch_idle']['frameCount']/.28,once=True)
         return damage
 
     def press(self, key, keys):
+        keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
         if self.mode in {'hurt', 'dead'}:
+            return
+        if self.forced_crouch and (key in SHIFT or key in {SDLK_UP,SDLK_z}):
             return
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if self.mode == 'free' and direction:
@@ -95,7 +102,7 @@ class Player:
             }
             if self.dash_unlocked and self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
                 self.dash_attack_remaining = 0.0
-                self._action('dash_slash', 'dash_attack_recovery')
+                self._action('dash_slash')
             elif self.mode == 'combo':
                 self.combo_queued = self.combo_step < 3
             elif self.mode == 'dash':
@@ -105,12 +112,13 @@ class Player:
                 if not self.grounded:
                     self._action('air_slash')
                 elif SDLK_DOWN in keys:
-                    self._action('crouch_slash', 'crouch_attack_recovery')
+                    self._action('crouch_slash')
                 else:
                     self.mode, self.gait = 'combo', None
                     self.combo_step, self.combo_queued = 1, False
                     self.animation.play('slash_1')
         elif key == SDLK_UP:
+            if self.forced_crouch:return
             if self.grounded and self.floor_y>0 and SDLK_DOWN in keys:
                 self.drop_timer=.28;self.floor_y=0;self.y-=5;self.vy=-90
                 self.mode,self.gait='free',None
@@ -179,7 +187,7 @@ class Player:
             if anim.finished:
                 # 집중을 마치면 5초 동안 기본 베기마다 마검파를 발사한다.
                 self.effects.activate()
-                self._action('magic_release', 'magic_recovery')
+                self._action('magic_release')
         elif self.mode == 'hurt' and anim.finished:
             self.mode = 'free'
         elif self.mode == 'guard':
@@ -191,7 +199,7 @@ class Player:
                 elif anim.name == 'guard_lower':
                     self.mode = 'free'
 
-        if self.mode == 'free' and self.grounded and SDLK_x in keys:
+        if self.mode == 'free' and self.grounded and SDLK_x in keys and not self.forced_crouch:
             self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'guard', None
             anim.play('guard_raise')
@@ -214,6 +222,9 @@ class Player:
             self.animation.play(target)
 
     def update(self, dt, keys):
+        keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
+        self.crouching=(SDLK_DOWN in keys and self.grounded and self.mode=='free') or self.animation.name in {
+            'crouch_idle','crouch_walk','crouch_down','crouch_slash','crouch_attack_recovery'}
         self.drop_timer=max(0,self.drop_timer-dt)
         # Shift를 누르는 동안 대시 후 C 연결을 유지하고, 놓아도 잠깐의 여유를 준다.
         if not keys & SHIFT:
@@ -250,12 +261,13 @@ class Player:
             speed = self.facing * dash_speed
         elif self.mode == 'action':
             if self.animation.name == 'dash_slash':
-                speed = self.facing * 420.0
+                phase=self.animation.pose_time/self.animation.clip['frameCount']
+                speed = self.facing * 420.0 if .32<phase<.68 else 0
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt
         if self.mode=='free' and self.animation.name in {'walk','run','crouch_walk'} and speed:
-            stride={'walk':155,'run':200,'crouch_walk':110}[self.animation.name]
+            stride={'walk':160,'run':255,'crouch_walk':110}[self.animation.name]
             self.animation.elapsed+=abs(speed*dt)/stride*self.animation.duration-dt
 
         airborne = not self.grounded

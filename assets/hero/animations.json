@@ -1,14 +1,14 @@
 {
   "title": "마검사 주인공 애니메이션",
-  "version": 3,
+  "version": 4,
   "conventions": {
     "frameWidth": 640,
-    "frameHeight": 512,
+    "frameHeight": 640,
     "columns": 4,
     "readingOrder": "왼쪽에서 오른쪽으로 읽고, 다음 줄로 내려갑니다",
     "groundPivot": {
       "x": 256,
-      "y": 448
+      "y": 568
     },
     "facing": "right",
     "leftFacing": "게임에서 좌우 반전",
@@ -23,7 +23,7 @@
       "id": "idle_breathe",
       "label": "숨쉬며 대기",
       "folder": "HD",
-      "fps": 8.0,
+      "fps": 5.714285714285714,
       "playback": "loop",
       "motion": "Planted feet with a small breathing cycle: head, torso, sword arm, hips and knees move gently while both soles stay at the same floor line; return to the starting pose.",
       "index": 1,
@@ -32,167 +32,167 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "d82bb85e2fed5b5d24398dca2846ed5a462304a137a67a92f16b84cb3f20cf60"
+      "sha256": "e34d23bb782419c7ee9f914092b9aac3206d6ef066fba8a5eef1f21649af6fbf"
     },
     {
       "id": "walk",
       "label": "걷기",
       "folder": "HD",
-      "fps": 16.0,
+      "fps": 16.842105263157894,
       "playback": "loop",
       "motion": "in-place complete walk cycle: right heel contact, right foot down, legs passing, right leg trailing, left heel contact, left foot down, legs passing, left leg trailing; relaxed sword held low and no root travel",
       "index": 2,
@@ -201,167 +201,167 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "25df73efb3a08f00585cf2a874bb6f069e2b34ea4c4e5014a4e662bce0806381"
+      "sha256": "ee6e889f35168dbd4c891f0c83d2a8aa0e2fabf4a2c5ba89ad1bd98b4d8df3eb"
     },
     {
       "id": "run",
       "label": "달리기",
       "folder": "HD",
-      "fps": 20.0,
+      "fps": 20.51282051282051,
       "playback": "loop",
       "motion": "in-place complete run cycle: right forward contact, compress, passing legs, suspended stride, left forward contact, compress, passing legs, suspended stride; body leans forward, scarf follows",
       "index": 3,
@@ -370,167 +370,167 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "4a1966c0e78816c0b9a90ff0e54799e048fb53cc57210f72998bb7db90810de3"
+      "sha256": "701d1424e92995a25d0f0ce80bc72adaf6061e7f5e9860a41e66b373b982b8ee"
     },
     {
       "id": "crouch_idle",
       "label": "웅크려 대기",
       "folder": "HD",
-      "fps": 6.0,
+      "fps": 3.0,
       "playback": "loop",
       "motion": "low crouched guard breathing loop, both feet planted, knees deeply bent, torso forward, sword low forward, soft inhale then exhale and return exactly to first crouched pose",
       "index": 4,
@@ -539,77 +539,77 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "ca21bf9130e0b6ebf7b0ee3e68765fb3bb6c069b7cd32d5284092a4bbb83ad4f"
+      "sha256": "ad1eb2ba221a351f3a5c47e4895e662349611845cf84db84ed705aadc62e0a84"
     },
     {
       "id": "crouch_walk",
       "label": "웅크려 걷기",
       "folder": "HD",
-      "fps": 24.0,
+      "fps": 13.913043478260871,
       "playback": "loop",
       "motion": "complete stealth crouch walk cycle in place, stay low: front foot reaches, planted front foot, back foot slides forward, legs pass, opposite foot reaches, planted, back slides, legs pass",
       "index": 5,
@@ -618,161 +618,161 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "bda59fbde8ce92144fd0b4237e704c3dd7d0a9e2fb5f0b60c79ab4a7ad51b3d8"
+      "sha256": "9ce57ab9dbfe0fded6a7caab6272ed639397d6126ac468693446efe47958df13"
     },
     {
       "id": "jump_rise",
@@ -787,71 +787,71 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "0d3e7104673cb4758952c7112370e8cb51a2bc4afc43953d8ff053328907fb00"
+      "sha256": "90b11521fbfd99026df28211b35198e7fa6d9fe35936bf8f8cac7cf80d21b5b9"
     },
     {
       "id": "jump_apex",
@@ -866,71 +866,71 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "0d3e7104673cb4758952c7112370e8cb51a2bc4afc43953d8ff053328907fb00"
+      "sha256": "90b11521fbfd99026df28211b35198e7fa6d9fe35936bf8f8cac7cf80d21b5b9"
     },
     {
       "id": "fall",
@@ -945,125 +945,125 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "0d3e7104673cb4758952c7112370e8cb51a2bc4afc43953d8ff053328907fb00"
+      "sha256": "90b11521fbfd99026df28211b35198e7fa6d9fe35936bf8f8cac7cf80d21b5b9"
     },
     {
       "id": "dash_ground",
@@ -1078,89 +1078,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "202021283afc2410ef475617acfb8647443ad243d353035dfd790993b044318f"
+      "sha256": "efc169ae47efcd15e243bb88e759de9efa4fbd47017474ae323dcd8e6c28243c"
     },
     {
       "id": "dash_air",
@@ -1171,171 +1171,99 @@
       "motion": "airborne forward dash: tighten core, lean horizontally right, extend trailing legs, stable fast flying pose, scarf snaps left, head lifts, legs tuck, end with airborne bent-knee pose; root fixed",
       "index": 10,
       "file": "HD/dash.png",
-      "frameCount": 16,
+      "frameCount": 8,
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
-        {
-          "index": 0,
-          "x": 0,
-          "yTop": 0,
-          "pico2dY": 1536,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 1,
-          "x": 640,
-          "yTop": 0,
-          "pico2dY": 1536,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 2,
-          "x": 1280,
-          "yTop": 0,
-          "pico2dY": 1536,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 3,
-          "x": 1920,
-          "yTop": 0,
-          "pico2dY": 1536,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 12,
-          "x": 0,
-          "yTop": 1536,
-          "pico2dY": 0,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 13,
-          "x": 640,
-          "yTop": 1536,
-          "pico2dY": 0,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 14,
-          "x": 1280,
-          "yTop": 1536,
-          "pico2dY": 0,
-          "width": 640,
-          "height": 512,
-          "renderScale": 0.6
-        },
-        {
-          "index": 15,
-          "x": 1920,
-          "yTop": 1536,
-          "pico2dY": 0,
-          "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "202021283afc2410ef475617acfb8647443ad243d353035dfd790993b044318f"
+      "sha256": "efc169ae47efcd15e243bb88e759de9efa4fbd47017474ae323dcd8e6c28243c"
     },
     {
       "id": "slash_1",
       "label": "기본 베기 1타",
       "folder": "HD",
-      "fps": 48.0,
+      "fps": 24.242424242424242,
       "playback": "once",
       "motion": "one complete horizontal sword slash: neutral low sword, draw sword back left, coil torso, sword crosses front right, full rightward horizontal extension, torso follows, decelerate, finish sword extended low right; no magical slash trail",
       "index": 11,
@@ -1344,167 +1272,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "d8ca1b56471d6cc10ead310609c5582c5c1e93e4e85fb56f88dd4cf4a7429a4c"
+      "sha256": "626a6feec807baa322f4732bfb4de939724bcad843045d3d749c700c2fc17b81",
+      "frameDurations": [
+        0.040203,
+        0.040203,
+        0.046904,
+        0.053604,
+        0.056954,
+        0.050254,
+        0.033503,
+        0.021777,
+        0.021777,
+        0.026802,
+        0.033503,
+        0.040203,
+        0.046904,
+        0.050254,
+        0.050254,
+        0.046904
+      ]
     },
     {
       "id": "slash_2",
       "label": "연속 베기 2타",
       "folder": "HD",
-      "fps": 52.0,
+      "fps": 23.52941176470588,
       "playback": "once",
       "motion": "one rising diagonal sword slash: start with sword chambered low left, knees bent, unwind torso, sword rises across chest, blade crosses above head, extend arm upward right, settle hips, end sword raised above right shoulder",
       "index": 12,
@@ -1513,167 +1459,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "31c5521f5b1a0e20f7f12072321f78ee4038ea32fe4d67cb538e095465d9de55"
+      "sha256": "c47b6d8f269123f424d782bfd94b4a5d3c6e1157fb4f3d0b7ad96a9c1d521cac",
+      "frameDurations": [
+        0.041421,
+        0.041421,
+        0.048325,
+        0.055228,
+        0.05868,
+        0.051777,
+        0.034518,
+        0.022437,
+        0.022437,
+        0.027614,
+        0.034518,
+        0.041421,
+        0.048325,
+        0.051777,
+        0.051777,
+        0.048325
+      ]
     },
     {
       "id": "slash_3",
       "label": "연속 베기 3타",
       "folder": "HD",
-      "fps": 48.0,
+      "fps": 19.51219512195122,
       "playback": "once",
       "motion": "strong downward finishing slash: begin sword above head, elbow coils, lift on toes, shoulders drive down, sword cuts diagonally down right, knee compresses, blade decelerates near low right, finish deep forward follow-through",
       "index": 13,
@@ -1682,167 +1646,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "88d6dcbf1cfb201f67f032bba373104b9d12d63084af9a40f17fac92a926e6b8"
+      "sha256": "bdc8243f5cc361e334e2ddd549e7fa0b00bbfcdd3c218fad365edf3154c3552a",
+      "frameDurations": [
+        0.049949,
+        0.049949,
+        0.058274,
+        0.066599,
+        0.070761,
+        0.062437,
+        0.041624,
+        0.027056,
+        0.027056,
+        0.033299,
+        0.041624,
+        0.049949,
+        0.058274,
+        0.062437,
+        0.062437,
+        0.058274
+      ]
     },
     {
       "id": "heavy_charge",
       "label": "강공격 힘 모으기",
       "folder": "HD",
-      "fps": 12.0,
+      "fps": 10.666666666666666,
       "playback": "hold",
       "motion": "heavy sword attack windup only: neutral, two hands grip hilt, sword pulled back, weight shifts rear foot, knees bend, sword rises above head, torso coils, hold deep overhead charged stance; no energy effect",
       "index": 14,
@@ -1851,95 +1833,95 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "88d6dcbf1cfb201f67f032bba373104b9d12d63084af9a40f17fac92a926e6b8"
+      "sha256": "bdc8243f5cc361e334e2ddd549e7fa0b00bbfcdd3c218fad365edf3154c3552a"
     },
     {
       "id": "heavy_slash",
       "label": "강공격 내려베기",
       "folder": "HD",
-      "fps": 22.0,
+      "fps": 12.307692307692307,
       "playback": "once",
       "motion": "heavy overhead release from charged stance: sword overhead, weight forward, hips rotate, blade accelerating down, strong impact pose low right, deep knee compression, sword settles low right, hold deep heavy follow-through; no explosion",
       "index": 15,
@@ -1948,95 +1930,105 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "88d6dcbf1cfb201f67f032bba373104b9d12d63084af9a40f17fac92a926e6b8"
+      "sha256": "bdc8243f5cc361e334e2ddd549e7fa0b00bbfcdd3c218fad365edf3154c3552a",
+      "frameDurations": [
+        0.08125,
+        0.08125,
+        0.08125,
+        0.08125,
+        0.08125,
+        0.08125,
+        0.08125,
+        0.08125
+      ]
     },
     {
       "id": "thrust",
       "label": "찌르기",
       "folder": "HD",
-      "fps": 52.0,
+      "fps": 27.586206896551726,
       "playback": "once",
       "motion": "sword thrust: neutral low guard, raise blade horizontally chest height, retract elbow, lean forward, fully extend right arm and sword right, front knee compresses, slight retract, end blade horizontal forward at chest height",
       "index": 16,
@@ -2045,167 +2037,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "5561521b04db779dc1427c900672bfc8b0ae49a0b06b38f503ab3e68cefd2297"
+      "sha256": "8e6176635d1bc47c9c22e9e67b67f10fa8072776a998b5760c3f27d66e10f93a",
+      "frameDurations": [
+        0.03533,
+        0.03533,
+        0.041218,
+        0.047107,
+        0.050051,
+        0.044162,
+        0.029442,
+        0.019137,
+        0.019137,
+        0.023553,
+        0.029442,
+        0.03533,
+        0.041218,
+        0.044162,
+        0.044162,
+        0.041218
+      ]
     },
     {
       "id": "air_slash",
       "label": "공중 베기",
       "folder": "HD",
-      "fps": 52.0,
+      "fps": 26.666666666666668,
       "playback": "once",
       "motion": "airborne sword slash with no ground: tucked jump pose, sword draws back, torso rotates, slash forward right, blade extended diagonally, knees extend down, sword settles down right, end falling ready pose",
       "index": 17,
@@ -2214,167 +2224,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "ae45d6d851cf37f532013620df275000e6060d720e6f878a3acd5f6c3f7696ad"
+      "sha256": "ee0deb7dfb6f06fb6adc102cbd66387ee774834008dc1293a8206c15ef82412d",
+      "frameDurations": [
+        0.036548,
+        0.036548,
+        0.04264,
+        0.048731,
+        0.051777,
+        0.045685,
+        0.030457,
+        0.019797,
+        0.019797,
+        0.024365,
+        0.030457,
+        0.036548,
+        0.04264,
+        0.045685,
+        0.045685,
+        0.04264
+      ]
     },
     {
       "id": "dash_slash",
       "label": "대시 베기",
       "folder": "HD",
-      "fps": 60.0,
+      "fps": 26.666666666666668,
       "playback": "once",
       "motion": "dashing slash in place: low dash pose sword trailing, shoulders coil, sword accelerates across front, blade extends right horizontally, low lunge, scarf follows, braking knee bends, end low sword-forward lunge; no afterimage",
       "index": 18,
@@ -2383,167 +2411,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "64275fb738ff98e08749b608fecdecfb8b4a6e14d40fe5e9e231a59557e48650"
+      "sha256": "c0335fda7507bb2bb0045d54b6fe5a75443c20f2808452c21c9fcae64027a7b1",
+      "frameDurations": [
+        0.036548,
+        0.036548,
+        0.04264,
+        0.048731,
+        0.051777,
+        0.045685,
+        0.030457,
+        0.019797,
+        0.019797,
+        0.024365,
+        0.030457,
+        0.036548,
+        0.04264,
+        0.045685,
+        0.045685,
+        0.04264
+      ]
     },
     {
       "id": "crouch_slash",
       "label": "웅크려 베기",
       "folder": "HD",
-      "fps": 52.0,
+      "fps": 27.586206896551726,
       "playback": "once",
       "motion": "low crouching sword slash: crouched guard, draw sword to side, twist hips while low, sweep blade at shin height right, extend blade, keep knees bent, decelerate sword, end low crouched forward sword extension",
       "index": 19,
@@ -2552,167 +2598,185 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "76b6ebc738eee51ba913b3b3ce434e9510729ea51bd2f67195581d95d07cec54"
+      "sha256": "8870b639eb5906ee240d48783be0b2b6a417f08221473891ec910b15974c6eae",
+      "frameDurations": [
+        0.03533,
+        0.03533,
+        0.041218,
+        0.047107,
+        0.050051,
+        0.044162,
+        0.029442,
+        0.019137,
+        0.019137,
+        0.023553,
+        0.029442,
+        0.03533,
+        0.041218,
+        0.044162,
+        0.044162,
+        0.041218
+      ]
     },
     {
       "id": "magic_charge",
       "label": "마법 준비",
       "folder": "HD",
-      "fps": 18.0,
+      "fps": 13.333333333333332,
       "playback": "hold",
       "motion": "magic charge body motion only: neutral sword low in right hand, lift empty left hand, open palm right, shoulders pull back, knees brace, palm draws close to chest, look forward, hold prepared casting stance; absolutely no glow or magic effects",
       "index": 20,
@@ -2721,131 +2785,131 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "bc3a80c833463a03d49a0fab5a5a29bf1eacde80a69618590eab0f394dcf5944"
+      "sha256": "6b00be5823ad64264ea245302d1107645dbb00c0d5b3a8ad67689db0319e5d2d"
     },
     {
       "id": "magic_release",
       "label": "마법 발사",
       "folder": "HD",
-      "fps": 33.0,
+      "fps": 26.666666666666664,
       "playback": "once",
       "motion": "magic release body motion only: start empty left palm near chest, elbow draws back, palm pushes right, full arm extension right, small torso recoil, left hand remains forward, shoulder relaxes, finish palm extended forward; sword held low in right hand, no projectile",
       "index": 21,
@@ -2854,131 +2918,131 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "bc3a80c833463a03d49a0fab5a5a29bf1eacde80a69618590eab0f394dcf5944"
+      "sha256": "6b00be5823ad64264ea245302d1107645dbb00c0d5b3a8ad67689db0319e5d2d"
     },
     {
       "id": "guard_idle",
       "label": "방어 유지",
       "folder": "HD",
-      "fps": 10.0,
+      "fps": 6.666666666666667,
       "playback": "loop",
       "motion": "steady sword guard breathing loop: sword vertical diagonal in front of face and chest, right hand near waist with left supporting grip, knees soft, inhale and exhale, minimal shield-like protective posture; no shield object",
       "index": 22,
@@ -2987,107 +3051,107 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 1536,
+          "yTop": 1280,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "8ec9a2ff9a723b6b574e8470acf78a6d055fe9c4cd98ea4b98aff7f596c0ab81"
+      "sha256": "72b198c5c34552cee830df339fa0f65e0ec4021851e95db7d8a92474112a0308"
     },
     {
       "id": "knockdown",
@@ -3102,125 +3166,125 @@
       "columns": 4,
       "rows": 5,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2560,
+      "height": 3200,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "31311327b15e12eeb1f4b6538b5c27767859a4cb12ed4ed6378b0556cf7c8e00"
+      "sha256": "54ee6e04fb00be2105fa87956eb81df17caeb24142a1bc3d45e9d7553492aea2"
     },
     {
       "id": "idle_to_walk",
@@ -3235,53 +3299,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "25df73efb3a08f00585cf2a874bb6f069e2b34ea4c4e5014a4e662bce0806381"
+      "sha256": "ee6e889f35168dbd4c891f0c83d2a8aa0e2fabf4a2c5ba89ad1bd98b4d8df3eb"
     },
     {
       "id": "walk_to_idle",
@@ -3296,89 +3360,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "2e0df965b01789421eeb0957434f728713075f61d82f6c79aeff015f8fc15b1e"
+      "sha256": "f073fd33fc9f1674e4548d4b3900868c8f4300e67ccfc9b67a8d2daab28890da"
     },
     {
       "id": "walk_to_run",
@@ -3393,53 +3457,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "4a1966c0e78816c0b9a90ff0e54799e048fb53cc57210f72998bb7db90810de3"
+      "sha256": "701d1424e92995a25d0f0ce80bc72adaf6061e7f5e9860a41e66b373b982b8ee"
     },
     {
       "id": "run_to_walk",
@@ -3454,89 +3518,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "25df73efb3a08f00585cf2a874bb6f069e2b34ea4c4e5014a4e662bce0806381"
+      "sha256": "ee6e889f35168dbd4c891f0c83d2a8aa0e2fabf4a2c5ba89ad1bd98b4d8df3eb"
     },
     {
       "id": "run_stop",
@@ -3551,89 +3615,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "2e0df965b01789421eeb0957434f728713075f61d82f6c79aeff015f8fc15b1e"
+      "sha256": "f073fd33fc9f1674e4548d4b3900868c8f4300e67ccfc9b67a8d2daab28890da"
     },
     {
       "id": "crouch_down",
@@ -3648,80 +3712,80 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "ca21bf9130e0b6ebf7b0ee3e68765fb3bb6c069b7cd32d5284092a4bbb83ad4f"
+      "sha256": "ad1eb2ba221a351f3a5c47e4895e662349611845cf84db84ed705aadc62e0a84"
     },
     {
       "id": "crouch_up",
@@ -3736,80 +3800,80 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "ca21bf9130e0b6ebf7b0ee3e68765fb3bb6c069b7cd32d5284092a4bbb83ad4f"
+      "sha256": "ad1eb2ba221a351f3a5c47e4895e662349611845cf84db84ed705aadc62e0a84"
     },
     {
       "id": "jump_takeoff",
@@ -3824,53 +3888,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "ca21bf9130e0b6ebf7b0ee3e68765fb3bb6c069b7cd32d5284092a4bbb83ad4f"
+      "sha256": "ad1eb2ba221a351f3a5c47e4895e662349611845cf84db84ed705aadc62e0a84"
     },
     {
       "id": "land_soft",
@@ -3885,134 +3949,134 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "2e0df965b01789421eeb0957434f728713075f61d82f6c79aeff015f8fc15b1e"
+      "sha256": "f073fd33fc9f1674e4548d4b3900868c8f4300e67ccfc9b67a8d2daab28890da"
     },
     {
       "id": "land_hard",
@@ -4027,161 +4091,161 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "2e0df965b01789421eeb0957434f728713075f61d82f6c79aeff015f8fc15b1e"
+      "sha256": "f073fd33fc9f1674e4548d4b3900868c8f4300e67ccfc9b67a8d2daab28890da"
     },
     {
       "id": "dash_start",
@@ -4196,53 +4260,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "202021283afc2410ef475617acfb8647443ad243d353035dfd790993b044318f"
+      "sha256": "efc169ae47efcd15e243bb88e759de9efa4fbd47017474ae323dcd8e6c28243c"
     },
     {
       "id": "dash_end",
@@ -4257,53 +4321,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "202021283afc2410ef475617acfb8647443ad243d353035dfd790993b044318f"
+      "sha256": "efc169ae47efcd15e243bb88e759de9efa4fbd47017474ae323dcd8e6c28243c"
     },
     {
       "id": "attack_recovery",
@@ -4318,53 +4382,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "d8ca1b56471d6cc10ead310609c5582c5c1e93e4e85fb56f88dd4cf4a7429a4c"
+      "sha256": "626a6feec807baa322f4732bfb4de939724bcad843045d3d749c700c2fc17b81"
     },
     {
       "id": "magic_recovery",
@@ -4379,53 +4443,53 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "bc3a80c833463a03d49a0fab5a5a29bf1eacde80a69618590eab0f394dcf5944"
+      "sha256": "6b00be5823ad64264ea245302d1107645dbb00c0d5b3a8ad67689db0319e5d2d"
     },
     {
       "id": "guard_raise",
@@ -4440,71 +4504,71 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 2560,
+          "pico2dY": 3200,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 2048,
+          "yTop": 640,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "8ec9a2ff9a723b6b574e8470acf78a6d055fe9c4cd98ea4b98aff7f596c0ab81"
+      "sha256": "72b198c5c34552cee830df339fa0f65e0ec4021851e95db7d8a92474112a0308"
     },
     {
       "id": "guard_lower",
@@ -4519,71 +4583,71 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 1280,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 1920,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 0,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 640,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 1280,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 1920,
-          "yTop": 2560,
+          "yTop": 3200,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "8ec9a2ff9a723b6b574e8470acf78a6d055fe9c4cd98ea4b98aff7f596c0ab81"
+      "sha256": "72b198c5c34552cee830df339fa0f65e0ec4021851e95db7d8a92474112a0308"
     },
     {
       "id": "guard_impact",
@@ -4598,71 +4662,71 @@
       "columns": 4,
       "rows": 6,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 3072,
+      "height": 3840,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
-          "pico2dY": 1024,
+          "yTop": 1920,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 2048,
-          "pico2dY": 512,
+          "yTop": 2560,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "8ec9a2ff9a723b6b574e8470acf78a6d055fe9c4cd98ea4b98aff7f596c0ab81"
+      "sha256": "72b198c5c34552cee830df339fa0f65e0ec4021851e95db7d8a92474112a0308"
     },
     {
       "id": "guard_break",
@@ -4677,89 +4741,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "9ddd749dd741ac08359233775a2c381e2024f0e40571366a2803426ec85445ac"
+      "sha256": "252f5570a32e13f3cec68ccd7a28a318d49fdfb03c51aa5e3b11d9ec5ec4b3cc"
     },
     {
       "id": "hurt_recovery",
@@ -4774,89 +4838,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "9ddd749dd741ac08359233775a2c381e2024f0e40571366a2803426ec85445ac"
+      "sha256": "252f5570a32e13f3cec68ccd7a28a318d49fdfb03c51aa5e3b11d9ec5ec4b3cc"
     },
     {
       "id": "get_up",
@@ -4871,89 +4935,89 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "2e0df965b01789421eeb0957434f728713075f61d82f6c79aeff015f8fc15b1e"
+      "sha256": "f073fd33fc9f1674e4548d4b3900868c8f4300e67ccfc9b67a8d2daab28890da"
     },
     {
       "id": "combo_1_to_2",
@@ -4968,53 +5032,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "d8ca1b56471d6cc10ead310609c5582c5c1e93e4e85fb56f88dd4cf4a7429a4c"
+      "sha256": "626a6feec807baa322f4732bfb4de939724bcad843045d3d749c700c2fc17b81"
     },
     {
       "id": "combo_2_to_3",
@@ -5029,53 +5093,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "31c5521f5b1a0e20f7f12072321f78ee4038ea32fe4d67cb538e095465d9de55"
+      "sha256": "c47b6d8f269123f424d782bfd94b4a5d3c6e1157fb4f3d0b7ad96a9c1d521cac"
     },
     {
       "id": "air_attack_land",
@@ -5090,134 +5154,134 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "2e0df965b01789421eeb0957434f728713075f61d82f6c79aeff015f8fc15b1e"
+      "sha256": "f073fd33fc9f1674e4548d4b3900868c8f4300e67ccfc9b67a8d2daab28890da"
     },
     {
       "id": "crouch_attack_recovery",
@@ -5232,53 +5296,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "76b6ebc738eee51ba913b3b3ce434e9510729ea51bd2f67195581d95d07cec54"
+      "sha256": "8870b639eb5906ee240d48783be0b2b6a417f08221473891ec910b15974c6eae"
     },
     {
       "id": "air_dash_recovery",
@@ -5293,53 +5357,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "202021283afc2410ef475617acfb8647443ad243d353035dfd790993b044318f"
+      "sha256": "efc169ae47efcd15e243bb88e759de9efa4fbd47017474ae323dcd8e6c28243c"
     },
     {
       "id": "slash_2_recovery",
@@ -5354,53 +5418,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "31c5521f5b1a0e20f7f12072321f78ee4038ea32fe4d67cb538e095465d9de55"
+      "sha256": "c47b6d8f269123f424d782bfd94b4a5d3c6e1157fb4f3d0b7ad96a9c1d521cac"
     },
     {
       "id": "slash_3_recovery",
@@ -5415,53 +5479,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "88d6dcbf1cfb201f67f032bba373104b9d12d63084af9a40f17fac92a926e6b8"
+      "sha256": "bdc8243f5cc361e334e2ddd549e7fa0b00bbfcdd3c218fad365edf3154c3552a"
     },
     {
       "id": "heavy_recovery",
@@ -5476,53 +5540,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "88d6dcbf1cfb201f67f032bba373104b9d12d63084af9a40f17fac92a926e6b8"
+      "sha256": "bdc8243f5cc361e334e2ddd549e7fa0b00bbfcdd3c218fad365edf3154c3552a"
     },
     {
       "id": "thrust_recovery",
@@ -5537,53 +5601,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "5561521b04db779dc1427c900672bfc8b0ae49a0b06b38f503ab3e68cefd2297"
+      "sha256": "8e6176635d1bc47c9c22e9e67b67f10fa8072776a998b5760c3f27d66e10f93a"
     },
     {
       "id": "dash_attack_recovery",
@@ -5598,53 +5662,53 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "facing": "right",
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frames": [
         {
           "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
-      "sha256": "64275fb738ff98e08749b608fecdecfb8b4a6e14d40fe5e9e231a59557e48650"
+      "sha256": "c0335fda7507bb2bb0045d54b6fe5a75443c20f2808452c21c9fcae64027a7b1"
     },
     {
       "id": "hurt",
@@ -5654,15 +5718,15 @@
       "columns": 4,
       "rows": 4,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "width": 2560,
-      "height": 2048,
-      "fps": 26.66667,
+      "height": 2560,
+      "fps": 24.615384615384613,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
-      "sha256": "9ddd749dd741ac08359233775a2c381e2024f0e40571366a2803426ec85445ac",
+      "sha256": "252f5570a32e13f3cec68ccd7a28a318d49fdfb03c51aa5e3b11d9ec5ec4b3cc",
       "kind": "character",
       "motion": "hurt",
       "playback": "once",
@@ -5673,144 +5737,144 @@
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -5824,15 +5888,15 @@
       "columns": 4,
       "rows": 5,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "width": 2560,
-      "height": 2560,
-      "fps": 23.33333,
+      "height": 3200,
+      "fps": 14.285714285714286,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
-      "sha256": "31311327b15e12eeb1f4b6538b5c27767859a4cb12ed4ed6378b0556cf7c8e00",
+      "sha256": "54ee6e04fb00be2105fa87956eb81df17caeb24142a1bc3d45e9d7553492aea2",
       "kind": "character",
       "motion": "death",
       "playback": "hold",
@@ -5843,185 +5907,185 @@
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 2048,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 2048,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 2048,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 2048,
+          "pico2dY": 2560,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1536,
+          "yTop": 640,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1536,
+          "yTop": 640,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1536,
+          "yTop": 640,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1536,
+          "yTop": 640,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 1024,
+          "yTop": 1280,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
-          "pico2dY": 512,
+          "yTop": 1920,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 16,
           "x": 0,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 17,
           "x": 640,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 18,
           "x": 1280,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 19,
           "x": 1920,
-          "yTop": 2048,
+          "yTop": 2560,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
       "folder": "HD"
     }
   ],
-  "quality": "새로 생성한 채색화 16~24프레임 원화, 발 기준 정렬, 신체 전체의 균일 배율"
+  "quality": "새 compact 비율 원화 · 자세별 준비/베기/회수 시간 · 전체 신체 균일 배율"
 }

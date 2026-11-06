@@ -11,31 +11,63 @@ class Camera:
         self.width, self.height = width, height
         self.x, self.y = 0.0, -160.0
         self.zoom = 1.0
+        self.vx=self.vy=self.vz=0.0
+        self.anchor=self.anchor_velocity=self.look=self.look_velocity=0.0
+
+    @staticmethod
+    def damp(value,target,velocity,dt,omega,limit):
+        """급히 목표를 쫓지 않고, 속도를 가진 채 부드럽게 다가간다."""
+        if dt<=0:return value,velocity
+        offset=value-target;decay=exp(-omega*dt)
+        change=(velocity+omega*offset)*dt
+        new=target+(offset+change)*decay
+        new_velocity=(velocity-omega*change)*decay
+        delta=max(-limit*dt,min(limit*dt,new-value))
+        if abs(delta-(new-value))>1e-7:new_velocity=delta/dt
+        return value+delta,new_velocity
+
+    def settle(self,x,y,zoom,world_width,dt):
+        self.zoom,self.vz=self.damp(self.zoom,zoom,self.vz,dt,2.5,.065)
+        x=max(0,min(max(0,world_width-self.width/self.zoom),x(self.zoom)))
+        y=y(self.zoom)
+        self.x,self.vx=self.damp(self.x,x,self.vx,dt,4.2,620)
+        self.y,self.vy=self.damp(self.y,y,self.vy,dt,3.6,360)
 
     def project(self, x, y):
         return (x-self.x)*self.zoom, 720-(720-y+self.y)*self.zoom
 
     def focus(self, x, y, world_width, dt, zoom=1.18):
         """월드의 두 인물을 향해 이동한다. UI와 말풍선은 확대하지 않는다."""
-        weight = 1-exp(-4.0*dt)
-        self.zoom += (zoom-self.zoom)*weight
-        target_x = max(0, min(world_width-self.width/self.zoom, x-self.width/(2*self.zoom)))
-        target_y = y-720+(720-315)/self.zoom
-        self.x += (target_x-self.x)*weight
-        self.y += (target_y-self.y)*weight
+        self.anchor,self.anchor_velocity=self.damp(self.anchor,max(0,y),self.anchor_velocity,dt,3.0,300)
+        self.settle(lambda z:x-self.width/(2*z),lambda z:y-720+(720-315)/z,
+                    max(.94,min(1.12,zoom)),world_width,dt)
 
     def follow(self, player, world_width, dt=0.0, *, snap=False, combat_wide=False):
         # 이동 방향을 조금 더 보여 주고, 낮은 점프에는 화면이 덜 흔들리게 한다.
-        desired_zoom = .84 if player.y>480 else .88 if combat_wide else .91 if player.y>220 else 1.0
         anchor_y = max(0, player.floor_y, player.y-130)
-        feet_screen = 160+min(80,anchor_y*.2)
-        weight = 1.0 if snap else 1.0 - exp(-8.0 * dt)
-        self.zoom += (desired_zoom-self.zoom)*weight
-        target_x = player.x+player.facing*85-self.width/(2*self.zoom)
-        target_x = max(0,min(world_width-self.width/self.zoom,target_x))
-        target_y = anchor_y-720+(720-feet_screen)/self.zoom
-        self.x += (target_x - self.x) * weight
-        self.y += (target_y - self.y) * weight
+        if snap:
+            self.anchor=anchor_y;self.anchor_velocity=self.vx=self.vy=self.vz=0
+            self.look=self.look_velocity=0
+        else:
+            self.anchor,self.anchor_velocity=self.damp(self.anchor,anchor_y,self.anchor_velocity,dt,3.2,360)
+            goal=player.facing*60 if getattr(player,'previous_direction',0) else 0
+            self.look,self.look_velocity=self.damp(self.look,goal,self.look_velocity,dt,2.8,90)
+        height=max(0,min(1,(self.anchor-120)/620));height=height*height*(3-2*height)
+        tension=max(0,min(1,float(combat_wide)));tension=tension*tension*(3-2*tension)
+        desired_zoom=min(1-.12*height,1-.08*tension)
+        feet_screen=160+min(65,self.anchor*.11)
+        center=self.x+self.width/(2*self.zoom)
+        focus=player.x+self.look
+        # 작은 좌우 전환과 점프에는 화면을 그대로 두는 여유 구간을 둔다.
+        delta=focus-center
+        center+=max(0,delta-80) if delta>0 else min(0,delta+80)
+        if snap:
+            self.zoom=desired_zoom
+            self.x=max(0,min(world_width-self.width/self.zoom,player.x-self.width/(2*self.zoom)))
+            self.y=self.anchor-720+(720-feet_screen)/self.zoom
+        else:
+            self.settle(lambda z:center-self.width/(2*z),lambda z:self.anchor-720+(720-feet_screen)/z,
+                        desired_zoom,world_width,dt)
 
 
 class World:

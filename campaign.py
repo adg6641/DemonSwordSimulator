@@ -36,6 +36,7 @@ class Campaign:
         self.bursts, self.numbers, self.shots, self.hazards = [], [], [], []
         self.hit_ids, self.wave_ids = set(), set()
         self.last_serial = -1
+        self.slash_sound_serial=-1
         self.shield = self.hitstop = self.death_age = 0.0
         self.hybrid_time = 0.0
         self.finished_age = 0.0
@@ -49,6 +50,8 @@ class Campaign:
         self.story_context = None
         self.rescue = None
         self.cine_out = None
+        self.stage_settle=0.0
+        self.ui_serial=0
         self.companion = None
         self.last_max_hp = self.run.max_hp
         point = store.restore() if resume else None
@@ -76,6 +79,7 @@ class Campaign:
             self.banner = item
 
     def open(self, title, text, options, portrait=None, kind='dialogue', visual=None, speaker=None, focus=None, emphasis=None):
+        self.ui_serial+=1
         self.toast_time = 0
         self.modal = dict(title=title, text=text, options=options, portrait=portrait, kind=kind, visual=visual)
         if kind in {'dialogue', 'boss', 'final'}:
@@ -108,6 +112,7 @@ class Campaign:
         self.keys.clear()
 
     def close_modal(self):
+        self.ui_serial+=1
         if self.modal and self.modal.get('cine'):
             self.cine_out=dict(self.modal['cine'],age=0)
             t=min(1,self.interaction_age/5);t=t*t*(3-2*t)
@@ -149,6 +154,7 @@ class Campaign:
                 self.enemies.append(Enemy(self.assets, number, position+(rng.uniform(-55, 55) if number < 16 else 0), index, uid, rng))
         self.player.x, self.player.y, self.player.vy, self.player.floor_y = x, 0.0, 0.0, 0.0
         self.player.mode, self.player.gait = 'free', None
+        self.player.forced_crouch=self.player.crouching=False
         self.player.animation.play('idle_breathe')
         self.player.effects.waves.clear()
         self.player.dash_attack_remaining = 0
@@ -174,6 +180,17 @@ class Campaign:
         self.last_max_hp = self.run.max_hp
         self.enter_stage(self.run.stage, point['x'], checkpoint=False)
         self.player.y = point.get('y', 0)
+        self.player.floor_y=self.floor_beneath(self.player)
+        self.player.forced_crouch=self.under_root(self.player.x,self.player.y)
+        if self.player.forced_crouch:
+            self.player.crouching=True;self.player.animation.play('crouch_idle')
+        if self.companion:
+            self.companion.y=self.player.y;self.companion.vy=0
+            for o in self.solid_platforms():
+                left,right=self.platform_span(o)
+                if abs(o['y']-self.player.y)<2 and left<=self.player.x<=right:
+                    self.companion.x=max(left+18,min(right-18,self.companion.x))
+            self.companion.floor_y=self.floor_beneath(self.companion)
         self.player.hp, self.mp = point['hp'], point['mp']
         by_id = {e['uid']: e for e in point.get('enemies', [])}
         for enemy in self.enemies:
@@ -184,6 +201,7 @@ class Campaign:
         self.modal = None
         self.keys.clear()
         self.sync_stats()
+        self.ui_serial+=1
         self.camera.follow(self.player, self.world.width, snap=True)
         self.burst('adv/failure_respawn__checkpoint_return', self.player.x, 0, .8)
         self.highlight('checkpoint', '저장했던 불빛 곁에서 다시 시작합니다')
@@ -300,7 +318,9 @@ class Campaign:
         return damage
 
     def press(self, key):
+        if self.stage_settle>0:return
         p = self.player
+        self.update_posture(p)
         if key == SDLK_e:
             self.interact()
             return
@@ -349,6 +369,8 @@ class Campaign:
         if event.type == SDL_KEYUP:
             self.keys.discard(event.key)
             return
+        if event.type==SDL_KEYDOWN and getattr(event,'repeat',0):return
+        if self.stage_settle>0:return
         if self.modal:
             if self.modal['kind'] == 'journal':
                 if event.type == SDL_KEYDOWN:
@@ -402,7 +424,7 @@ class Campaign:
         elif SDLK_1 <= event.key <= SDLK_8:
             index = event.key-SDLK_1
             if self.developer or index <= self.run.unlocked:
-                self.enter_stage(index)
+                self.travel_stage(index)
             else:
                 self.notify('아직 가 보지 않은 지역입니다. 오른쪽 길을 따라 진행하세요.')
         elif self.developer and SDLK_F1 <= event.key <= SDLK_F7:
@@ -430,8 +452,13 @@ class Campaign:
     def obj_uid(self, obj):
         return f'{self.run.stage}:{obj["id"]}'
 
-    def under_root(self, x):
-        return any(o['kind'] == 'crawl' and abs(o['x']-x) < o['w']/2+35 for o in self.objects)
+    def under_root(self, x, y=0):
+        return any(o['kind']=='crawl' and abs(o['x']-x)<o['w']/2+22
+                   and o['y']<=y<o['y']+o.get('ceiling',112) for o in self.objects)
+
+    def update_posture(self,p):
+        # 먼저 웅크려 들어가야 한다. 안에서 키를 놓아도 나올 때까지 자세를 유지한다.
+        p.forced_crouch=self.under_root(p.x,p.y) and (p.crouching or p.forced_crouch or p.drop_timer>0)
 
     def nearest(self):
         interactable = [o for o in self.objects if o['kind'] in {'event', 'record', 'camp', 'chest', 'lever'}
@@ -716,16 +743,16 @@ class Campaign:
             if a.name == 'dash_slash':
                 self.hybrid_time = 4
             if a.name in p.effects.ATTACKS or 'recovery' in a.name:
-                a.fps = a.clip['fps'] * (1 + .07*r.skills.get('recovery', 0))
-            if a.name in p.effects.ATTACKS:
-                self.sounds.play('slash')
+                a.fps = a.clip['fps'] * (1 + .025*r.skills.get('recovery', 0))
         motion = p.effects.ATTACKS.get(a.name)
         if not motion or p.hp <= 0:
             return
         timing = p.effects.settings['strikeTiming'][motion]
-        progress = a.elapsed*a.fps*8/a.clip['frameCount']
+        progress = a.pose_time*8/a.clip['frameCount']
         if not timing['start'] <= progress <= timing['end']:
             return
+        if self.slash_sound_serial!=a.serial:
+            self.sounds.play('slash');self.slash_sound_serial=a.serial
         bounds = p.effects.strike_bounds(p)
         blade = p.effects.blade(a)
         if blade:
@@ -793,11 +820,16 @@ class Campaign:
     def platform_span(self, o):
         c = self.assets.clips.get(o.get('visual', ''), {})
         surface = c.get('surface', {})
-        return (o['x']-o['w']/2+surface.get('left', 6),
-                o['x']-o['w']/2+surface.get('right', o['w']-6))
+        scale=o['w']/c.get('frameWidth',o['w'])
+        left=surface.get('left',6/scale)*scale
+        right=surface.get('right',(o['w']-6)/scale)*scale
+        return o['x']-o['w']/2+left,o['x']-o['w']/2+right
 
     def solid_platforms(self):
-        return [o for o in self.objects if o['kind']=='platform' and getattr(self,'time',0)>=o.get('disabled_until',0)]
+        result=[o for o in self.objects if o['kind']=='platform' and getattr(self,'time',0)>=o.get('disabled_until',0)]
+        result += [dict(o,kind='platform',y=o['y']+o.get('roof',154),id=o.get('id','root')+'_roof')
+                   for o in self.objects if o['kind']=='crawl']
+        return result
 
     def update_terrain(self,dt):
         actors=[self.player]+([self.companion] if self.companion else [])
@@ -829,6 +861,12 @@ class Campaign:
     def platforms(self, old_y, actor=None):
         p = self.player if actor is None else actor
         if getattr(p,'drop_timer',0)>0: return
+        height=126 if getattr(p,'crouching',getattr(p,'crouched',False)) else 150
+        for o in self.objects:
+            if o['kind']=='crawl' and abs(p.x-o['x'])<o['w']/2:
+                ceiling=o['y']+o.get('ceiling',112)
+                if p.vy>0 and old_y+height<=ceiling and p.y+height>=ceiling:
+                    p.y=ceiling-height;p.vy=0
         tops = [o for o in self.solid_platforms() if self.platform_span(o)[0] <= p.x <= self.platform_span(o)[1]]
         if p.vy <= 0:
             landed = [o for o in tops if old_y >= o['y']-1 and p.y <= o['y']]
@@ -851,14 +889,19 @@ class Campaign:
             if kind == 'gate' and self.run.has('gate_open'):
                 continue
             block = height and p.y < height-8
-            if kind == 'crawl':
-                low = crouched if p is not self.player else SDLK_DOWN in self.keys and p.mode == 'free'
-                block = p.y < 125 and not low
             radius = obj.get('w', 80)/2+20
-            if block and abs(p.x-obj['x']) < radius:
-                p.x = obj['x'] + (-1 if old_x < obj['x'] else 1)*radius
-                if kind == 'crawl' and p is self.player:
-                    self.notify('↓를 누른 채 이동하면 낮은 뿌리 아래를 지날 수 있습니다.', 1)
+            if kind=='crawl':
+                height=126 if (crouched or getattr(p,'crouching',False) or getattr(p,'forced_crouch',False)) else 150
+                block=p.y<obj['y']+obj.get('roof',154)-1 and p.y+height>obj['y']+obj.get('ceiling',112)
+            left,right=obj['x']-radius,obj['x']+radius
+            if block and (min(old_x,p.x)<right and max(old_x,p.x)>left):
+                if old_x<=left:p.x=min(p.x,left)
+                elif old_x>=right:p.x=max(p.x,right)
+                elif kind!='crawl':p.x=old_x
+
+    def travel_stage(self,index,x=180):
+        """지역을 바꾼 직후 잠깐 멈춰 교차 전환을 읽을 시간을 준다."""
+        self.keys.clear();self.enter_stage(index,x);self.stage_settle=.65
 
     def exit_ready(self):
         boss = BOSSES.get(self.run.stage)
@@ -866,6 +909,9 @@ class Campaign:
 
     def update(self, dt):
         self.time += dt
+        if self.stage_settle>0:
+            self.stage_settle=max(0,self.stage_settle-dt)
+            return
         if self.cine_out:
             self.cine_out['age']+=dt
             if self.cine_out['age']>.6:self.cine_out=None
@@ -936,6 +982,7 @@ class Campaign:
         self.update_terrain(dt)
         old_x,old_y=p.x,p.y
         p.floor_y = self.floor_beneath(p)
+        self.update_posture(p)
         p.update(dt, self.keys)
         self.platforms(old_y)
         self.blockers(old_x)
@@ -983,7 +1030,7 @@ class Campaign:
                 if obj['kind'] == 'cover' and abs(shot.x-obj['x']) < obj.get('w', 100)/2 and 0 < shot.y < obj.get('h', 72):
                     shot.age = shot.life
                     self.burst('hit_impacts__hit_metal', shot.x, shot.y, .3)
-            if not shot.dead and abs(shot.x-p.x) < shot.radius+20 and p.y+15 < shot.y+shot.radius and shot.y-shot.radius < p.y+(65 if SDLK_DOWN in self.keys else 135):
+            if not shot.dead and abs(shot.x-p.x) < shot.radius+20 and p.y+15 < shot.y+shot.radius and shot.y-shot.radius < p.y+(88 if p.crouching else 150):
                 self.damage_player(shot.damage, shot.x)
                 shot.age = shot.life
                 kind = 'spore_burst' if 'spore' in shot.key else 'paper_break' if 'paper' in shot.key else 'thread_snap' if 'needle' in shot.key else 'night_impact'
@@ -1018,14 +1065,15 @@ class Campaign:
             return
         if p.x >= self.world.width-110 and r.stage < 7:
             if self.exit_ready():
-                self.enter_stage(r.stage+1)
+                self.travel_stage(r.stage+1)
             else:
                 p.x = self.world.width-115
                 self.notify('길이 막혀 있다. 파수자를 쓰러뜨리고, 성문이라면 사슬 스위치를 찾아보자.', 2)
         elif p.x <= 85 and r.stage > 0:
-            self.enter_stage(r.stage-1, self.world.width-210)
+            self.travel_stage(r.stage-1, self.world.width-210)
         self.sync_stats()
-        self.camera.follow(p, self.world.width, dt,combat_wide=any(e.alive and e.boss and abs(e.x-p.x)<600 for e in self.enemies))
+        proximity=max((max(0,min(1,(900-abs(e.x-p.x))/500)) for e in self.enemies if e.alive and e.boss),default=0)
+        self.camera.follow(p, self.world.width, dt,combat_wide=proximity)
 
     def draw(self):
         self.view.draw()

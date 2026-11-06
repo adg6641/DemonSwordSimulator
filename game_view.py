@@ -52,7 +52,7 @@ class CampaignView:
         if kind == 'platform':
             if s.time<o.get('disabled_until',0):return
             key = o['visual']
-            scale = 1
+            scale = o['w']/a.clips[key]['frameWidth']
             if o.get('motion')=='crumble' and o.get('stepped',0)>.3:
                 a.draw(key,o['x'],y,s.camera,scale,alpha=.35 if int(s.time*18)%2 else 1)
                 return
@@ -86,7 +86,8 @@ class CampaignView:
         elif kind == 'cover':
             scale = o['w']/a.clips[key]['frameWidth']
         elif kind == 'crawl':
-            scale = .7
+            key='v3/vine_tunnel'
+            scale=None
         elif kind == 'record':
             if o['record'] in s.run.records:
                 a.draw(key, o['x'], y, s.camera, age=age, alpha=.4)
@@ -243,6 +244,8 @@ class CampaignView:
             self.text('↓ + ↑  발판 아래로',640,78,16,MUTED,True)
         elif any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects):
             self.text('도약 문양 위에서 ↑  높이 점프',640,78,16,TEAL,True)
+        elif any(o['kind']=='crawl' and abs(o['x']-p.x)<210 and p.y<o.get('roof',154) for o in s.objects):
+            self.text('↓  웅크려 지나가기',640,78,16,MUTED,True)
         boss=next((e for e in s.enemies if e.boss and e.alive and abs(e.x-p.x)<900),None)
         if boss:
             fill(420,100,540,9,(37,23,30,240))

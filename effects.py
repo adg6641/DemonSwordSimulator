@@ -34,6 +34,7 @@ class CombatEffects:
         self.reach_scale = 1.0
         self.waves = []
         self.serial, self.fired = -1, False
+        self.trail=None
         for name, frames in self.settings['effectGeometry'].items():
             self.radii[name] = max(4.0, *(hypot(x - f['origin'][0], y - f['origin'][1])
                 for f in frames for x in (f['bounds'][0], f['bounds'][2])
@@ -54,7 +55,7 @@ class CombatEffects:
         pivot = animation.clip['pivot']
         # 원화 프레임 사이에서도 검기와 검의 오라는 같은 손잡이/검끝 경로를 따라간다.
         following=track[(frame+1)%len(track)] if animation.loop or frame+1<len(track) else points
-        phase=animation.elapsed*animation.fps%1
+        phase=animation.pose_time%1
         if following is None:following=points
         hand, tip = ((tuple(((point[i]*(1-phase)+nxt[i]*phase) - pivot[axis]) * scale
                       for i, axis in enumerate(('x', 'y'))))
@@ -70,13 +71,18 @@ class CombatEffects:
         lifetime = self.settings['waveMotion']['lifetime']
         self.waves = [wave for wave in self.waves if wave['age'] < lifetime]
         animation = player.animation
+        if self.trail:
+            self.trail['age']+=dt
+            if self.trail['age']>.18:self.trail=None
+        g=self.strike_geometry(player)
+        if g:self.trail=dict(geometry=g,anchor=(player.x,player.y),facing=player.facing,age=0)
         if animation.serial != self.serial:
             self.serial, self.fired = animation.serial, False
         motion = self.ATTACKS.get(animation.name)
         if not motion or motion == 'dash' or self.fired or self.buff_remaining <= 0:
             return
         timing = self.settings['strikeTiming'][motion]
-        time = animation.elapsed * animation.fps * 8 / animation.clip['frameCount']
+        time = animation.pose_time * 8 / animation.clip['frameCount']
         if time >= timing['fire']:
             pose = self.blade(animation)
             if pose:
@@ -135,7 +141,7 @@ class CombatEffects:
         if not motion or not pose:
             return
         timing = self.settings['strikeTiming'][motion]
-        time = animation.elapsed * animation.fps * 8 / animation.clip['frameCount']
+        time = animation.pose_time * 8 / animation.clip['frameCount']
         if not timing['start'] < time < timing['end']:
             return
         name = f'{motion}_lv{self.level}'
@@ -225,7 +231,12 @@ class CombatEffects:
         pose = self.blade(player.animation)
         if pose and player.mode != 'dead':
             self._concentrate(player, camera, pose)
-            self._draw_geometry(self.strike_geometry(player), (player.x, player.y), camera, player.facing)
+            current=self.strike_geometry(player)
+            if current:self._draw_geometry(current,(player.x,player.y),camera,player.facing)
+            elif self.trail:
+                trail=self.trail;g=dict(trail['geometry'])
+                g['alpha']*=1-smooth(trail['age']/.18)
+                self._draw_geometry(g,trail['anchor'],camera,trail['facing'])
         for wave in self.waves:
             self._draw_geometry(self.wave_geometry(wave), (wave['x'], wave['y']), camera, wave['facing'])
         SDL_RenderSetClipRect(engine.renderer, None)

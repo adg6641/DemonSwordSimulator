@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "clips": [
     {
       "id": "crystal",
@@ -92,7 +92,8 @@
       "fps": 12,
       "playback": "loop",
       "recommendedScale": 1,
-      "facing": "right"
+      "facing": "right",
+      "sha256": "22f83a87e7fcae2d4ed187e9d2edfee423cc65b0ee36986958f82e287fea0514"
     },
     {
       "id": "spring",
@@ -185,7 +186,8 @@
       "fps": 12,
       "playback": "loop",
       "recommendedScale": 1,
-      "facing": "right"
+      "facing": "right",
+      "sha256": "70b426b65c6103a1fff7125a0f30dcc5a511f1b066a7ecf9eeded3eb3f1bce4a"
     },
     {
       "id": "rescue_discovery",
@@ -211,7 +213,8 @@
       "pivot": {
         "x": 836.0,
         "y": 470.5
-      }
+      },
+      "sha256": "b09e3298d7a5912c0a61dbddf6447dfcf50baeda3a0abdcf1471856dc65f0e05"
     },
     {
       "id": "rescue_reflection",
@@ -237,7 +240,8 @@
       "pivot": {
         "x": 836.0,
         "y": 470.5
-      }
+      },
+      "sha256": "2f63f60d0bdc6235ed753820beeb219746bcfe7479be1508e1e41ebc0f1500bc"
     },
     {
       "id": "rescue_pull",
@@ -263,7 +267,8 @@
       "pivot": {
         "x": 836.0,
         "y": 470.5
-      }
+      },
+      "sha256": "5fccad3a19523cfb002ee5605c646cf84d738f24ae5a4883fbba27d8af80f5ea"
     },
     {
       "id": "rescue_glow",
@@ -428,7 +433,8 @@
       "fps": 24,
       "playback": "loop",
       "recommendedScale": 1,
-      "facing": "right"
+      "facing": "right",
+      "sha256": "ed2f54dd66d07279cd167e45c1216c185f87828e58831a8466df2d227e4b40eb"
     },
     {
       "id": "rescue_break",
@@ -593,7 +599,8 @@
       "fps": 24,
       "playback": "loop",
       "recommendedScale": 1,
-      "facing": "right"
+      "facing": "right",
+      "sha256": "c78a4c2f0d705c6132436b0c95293a3a66022d7e1b66ea394f1145baea57ae85"
     },
     {
       "id": "hero_pickup__hero_reach",
@@ -606,12 +613,12 @@
       "columns": 4,
       "rows": 4,
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "fps": 16,
       "playback": "once",
@@ -622,150 +629,150 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16쪽",
-      "sha256": "3cfd6bc79d4fbd359f9f6b5201409a3b554badb9550e2a595498e73faf348209",
+      "sha256": "e844322d43c38fa436525745e7cc9cb162fc367cf309a4d6275934b4d8911d98",
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -788,12 +795,12 @@
       "columns": 4,
       "rows": 4,
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "fps": 16,
       "playback": "once",
@@ -804,150 +811,150 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16쪽",
-      "sha256": "ab085a69a8d61beab4600201236ba86010ae62cea5120d3a5cf9afe727961d65",
+      "sha256": "e844322d43c38fa436525745e7cc9cb162fc367cf309a4d6275934b4d8911d98",
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -970,12 +977,12 @@
       "columns": 4,
       "rows": 4,
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "fps": 16,
       "playback": "once",
@@ -986,150 +993,150 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16,29쪽",
-      "sha256": "2769b4094305e7829aacb31a709557efa50d95ae192623ce4cef2125916e15fc",
+      "sha256": "6183cd73adb342d5e6159c75e6c0bf7f5126775c575a0dba44e1b301df974a7c",
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -1152,12 +1159,12 @@
       "columns": 4,
       "rows": 4,
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "fps": 16,
       "playback": "once",
@@ -1168,150 +1175,150 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16,29쪽",
-      "sha256": "6a2ce42f093e26f498470ac5db84ffb8a60e95c32a757c39f865a934fab795ec",
+      "sha256": "6183cd73adb342d5e6159c75e6c0bf7f5126775c575a0dba44e1b301df974a7c",
       "frames": [
         {
           "index": 0,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -1330,18 +1337,18 @@
       "group": "03_주인공과_루네아_추가모션",
       "kind": "character",
       "file": "../hero/HD/camp.png",
-      "frameCount": 4,
+      "frameCount": 6,
       "columns": 4,
       "rows": 4,
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
-      "fps": 6,
+      "fps": 8,
       "playback": "loop",
       "actor": "hero",
       "facing": "right",
@@ -1350,42 +1357,60 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 19,29쪽",
-      "sha256": "7b8d101ed1ebef1ccc45e8d13d6581c2d500fab2c2e6ec3ddbba9e205bf2b741",
+      "sha256": "6183cd73adb342d5e6159c75e6c0bf7f5126775c575a0dba44e1b301df974a7c",
       "frames": [
         {
-          "index": 12,
+          "index": 0,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
-          "index": 13,
+          "index": 1,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
-          "index": 14,
+          "index": 2,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
-          "index": 15,
+          "index": 3,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
+          "renderScale": 0.6
+        },
+        {
+          "index": 4,
+          "x": 1280,
+          "yTop": 1920,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 640,
+          "renderScale": 0.6
+        },
+        {
+          "index": 5,
+          "x": 640,
+          "yTop": 1920,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -1408,12 +1433,12 @@
       "columns": 4,
       "rows": 4,
       "width": 2560,
-      "height": 2048,
+      "height": 2560,
       "frameWidth": 640,
-      "frameHeight": 512,
+      "frameHeight": 640,
       "pivot": {
         "x": 256,
-        "y": 448
+        "y": 568
       },
       "fps": 16,
       "playback": "once",
@@ -1424,150 +1449,150 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 19,29쪽",
-      "sha256": "43ba3d829fb2aee269cf224e0147ad23b41f9ea64691aaf4c6bd55c98a163c2f",
+      "sha256": "e844322d43c38fa436525745e7cc9cb162fc367cf309a4d6275934b4d8911d98",
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 1,
           "x": 640,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 2,
           "x": 1280,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 3,
           "x": 1920,
           "yTop": 0,
-          "pico2dY": 1536,
+          "pico2dY": 1920,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 4,
           "x": 0,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 5,
           "x": 640,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 6,
           "x": 1280,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 7,
           "x": 1920,
-          "yTop": 512,
-          "pico2dY": 1024,
+          "yTop": 640,
+          "pico2dY": 1280,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 8,
           "x": 0,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 9,
           "x": 640,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 10,
           "x": 1280,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 11,
           "x": 1920,
-          "yTop": 1024,
-          "pico2dY": 512,
+          "yTop": 1280,
+          "pico2dY": 640,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 12,
           "x": 0,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 13,
           "x": 640,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 14,
           "x": 1280,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         },
         {
           "index": 15,
           "x": 1920,
-          "yTop": 1536,
+          "yTop": 1920,
           "pico2dY": 0,
           "width": 640,
-          "height": 512,
+          "height": 640,
           "renderScale": 0.6
         }
       ],
@@ -1603,7 +1628,8 @@
       "pivot": {
         "x": 836.0,
         "y": 470.5
-      }
+      },
+      "sha256": "f9baef544467962b6991f27fa4ce8288abd1aaac8ccfb5f14df5bb255d3d6a0f"
     },
     {
       "id": "support_wood",
@@ -1630,7 +1656,8 @@
       "pivot": {
         "x": 512.0,
         "y": 1505.28
-      }
+      },
+      "sha256": "5ce3bd9df83ff6b228d0759c86f37c35f01ce44b5a893caae4012b9cb8c99da5"
     },
     {
       "id": "support_stone",
@@ -1657,7 +1684,8 @@
       "pivot": {
         "x": 512.0,
         "y": 1505.28
-      }
+      },
+      "sha256": "3033a633f8eb7cefba0e6fcf7e3379b63c48ab1b889362994603be189e9435ed"
     },
     {
       "id": "hero_portrait_neutral",
@@ -1683,7 +1711,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_smile",
@@ -1709,7 +1738,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_worry",
@@ -1735,7 +1765,8 @@
       "pivot": {
         "x": 149.5,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_resolve",
@@ -1761,7 +1792,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_surprise",
@@ -1787,7 +1819,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_sad",
@@ -1813,7 +1846,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_think",
@@ -1839,7 +1873,8 @@
       "pivot": {
         "x": 149.5,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_relief",
@@ -1865,7 +1900,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_tired",
@@ -1891,7 +1927,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_fear",
@@ -1917,7 +1954,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_doubt",
@@ -1943,7 +1981,8 @@
       "pivot": {
         "x": 149.5,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_grateful",
@@ -1969,7 +2008,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_hope",
@@ -1995,7 +2035,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_secret",
@@ -2021,7 +2062,8 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_farewell",
@@ -2047,7 +2089,8 @@
       "pivot": {
         "x": 149.5,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
     },
     {
       "id": "hero_portrait_focus",
@@ -2073,7 +2116,43 @@
       "pivot": {
         "x": 150.0,
         "y": 164.0
-      }
+      },
+      "sha256": "4913e176e56a83caa73fc4b935cf69ff93db3d5cf681a514e716c1933436dee4"
+    },
+    {
+      "id": "vine_tunnel",
+      "file": "vine_tunnel.png",
+      "frameCount": 1,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1608,
+          "height": 694
+        }
+      ],
+      "frameWidth": 1608,
+      "frameHeight": 694,
+      "width": 1608,
+      "height": 694,
+      "pivot": {
+        "x": 804.0,
+        "y": 694
+      },
+      "fps": 0,
+      "recommendedScale": 0.2737752161383285,
+      "label": "덩굴 통로 · 아래로 기어가거나 위로 오르기",
+      "group": "01_지형과_상호작용",
+      "collection": "root_tunnel",
+      "kind": "image",
+      "anchorType": "ground",
+      "flippable": false,
+      "collisionTop": 172,
+      "ceiling": 134,
+      "collisionWidth": 440,
+      "sha256": "02c0c4a39c0f589396a48cb45707569d30261c7e1484523b3ab03b273b3f9132"
     }
   ],
   "overrides": {
@@ -2098,6 +2177,7 @@
     "adv/portrait_hero__hero_hope": "hero_portrait_hope",
     "adv/portrait_hero__hero_secret": "hero_portrait_secret",
     "adv/portrait_hero__hero_farewell": "hero_portrait_farewell",
-    "adv/portrait_hero__hero_focus": "hero_portrait_focus"
+    "adv/portrait_hero__hero_focus": "hero_portrait_focus",
+    "adv/story_props__root_tunnel": "vine_tunnel"
   }
 }

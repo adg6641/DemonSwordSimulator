@@ -350,11 +350,11 @@ class CampaignView:
                    '함께 나눈 약속: '+str(len(r.pacts))+'/3',
                    ' · '.join({'secret':'비밀','memory':'기억','plan':'계획'}[k] for k in r.pacts) or '쉼터에서 이야기를 나눠 보자']
             for x,rows in [(105,left),(690,right)]:
-                for i,line in enumerate(rows): self.wrap(line,x,509-i*41,490,19,MUTED,1.3,1)
-            self.text('경계를 완전히 되돌리려면',105,260,20,GOLD)
-            self.wrap('준비 완료. 왕좌에서 경계 복원을 선택할 수 있다.' if not r.missing_restore() else '아직 필요한 것: '+', '.join(r.missing_restore()),105,224,1060,18,MUTED,1.35,2)
-            self.text('최근의 선택',105,171,18,GOLD)
-            self.wrap('  →  '.join(choice_label(e,v) for e,v in r.choices[-2:]) or '이제 첫 이야기를 써 내려갈 차례다.',105,139,1050,16,MUTED,1.2,1)
+                for i,line in enumerate(rows): self.wrap(line,x,509-i*37,490,19,MUTED,1.3,1)
+            self.text('경계를 완전히 되돌리려면',105,286,20,GOLD)
+            self.wrap('준비 완료. 왕좌에서 경계 복원을 선택할 수 있다.' if not r.missing_restore() else '아직 필요한 것: '+', '.join(r.missing_restore()),105,250,1060,18,MUTED,1.35,2)
+            self.text('최근의 선택',105,197,18,GOLD)
+            self.wrap('  →  '.join(choice_label(e,v) for e,v in r.choices[-2:]) or '이제 첫 이야기를 써 내려갈 차례다.',105,167,1050,16,MUTED,1.2,1)
         elif s.journal_page == 1:
             histories = [h for h in s.store.history if h.get('seed') != r.seed]
             past = Run.from_dict(histories[s.history_index%len(histories)]) if histories else None

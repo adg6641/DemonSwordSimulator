@@ -114,9 +114,9 @@ class Player:
                 'land_soft', 'land_hard', 'air_attack_land',
             }
             if self.dash_unlocked and self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
-                entry=4 if self.mode=='dash' else 0
+                entry=self.animation.clips['dash_slash'].get('dashEntryFrame',0) if self.mode=='dash' else 0
                 self.dash_attack_remaining = 0.0
-                self._action('dash_slash')
+                self._action('dash_slash','dash_attack_recovery')
                 if entry:self.animation.play('dash_slash',start_frame=entry)
             elif self.mode == 'combo':
                 self.combo_queued = self.combo_step < 3
@@ -188,7 +188,7 @@ class Player:
         elif self.combo_step==3:
             self._action('slash_3_recovery')
         else:
-            self.mode,self.gait='free',None
+            self._action('attack_recovery' if self.combo_step==1 else 'slash_2_recovery')
 
     def _update_action(self, keys):
         anim = self.animation
@@ -204,7 +204,7 @@ class Player:
         elif self.mode == 'action' and anim.finished:
             if self.attack_pending:
                 self.attack_pending=False;self.mode='combo';self.combo_step=1
-                anim.play('slash_1',start_frame=4)
+                anim.play('slash_1',start_frame=anim.clips['slash_1'].get('movementEntryFrame',0))
             elif self.followups:
                 anim.play(self.followups.popleft())
             else:
@@ -224,9 +224,12 @@ class Player:
             if anim.finished:
                 # 집중을 마치면 5초 동안 기본 베기마다 마검파를 발사한다.
                 self.effects.activate()
-                self._action('magic_release')
+                self._action('magic_release','magic_recovery')
         elif self.mode == 'hurt' and anim.finished:
-            self.mode = 'free'
+            if self.forced_crouch:
+                self.mode = 'free'
+            else:
+                self._action('hurt_recovery')
         elif self.mode == 'guard':
             if SDLK_x not in keys and anim.name != 'guard_lower':
                 anim.play('guard_lower')
@@ -269,20 +272,23 @@ class Player:
 
     def _combo_advance(self, keys):
         """한 번 베는 동안 정해진 거리만 전진한다. 준비·회수 때는 밀리지 않는다."""
-        a=self.animation
-        if self.mode!='combo' or a.name not in {'slash_1','slash_2','slash_3'}:
+        animation = self.animation
+        if self.mode != 'combo' or animation.name not in {'slash_1', 'slash_2', 'slash_3'}:
             return 0.0
-        if a.serial!=self.step_serial:
-            self.step_serial,self.step_progress=a.serial,0.0
-        timing=self.effects.timing(a,self.effects.ATTACKS[a.name])
-        time=a.pose_time*8/a.clip['frameCount']
-        u=max(0,min(1,(time-timing['start'])/(timing['end']-timing['start'])))
-        previous=self.step_progress;self.step_progress=u
-        direction=int(SDLK_RIGHT in keys)-int(SDLK_LEFT in keys)
-        if direction and previous==0:self.facing=direction
-        if not self.grounded or SDLK_DOWN in keys:return 0.0
-        ease=lambda x:x*x*(3-2*x)
-        return self.facing*self.COMBO_STEP[self.combo_step-1]*max(0,ease(u)-ease(previous))
+        if animation.serial != self.step_serial:
+            self.step_serial, self.step_progress = animation.serial, 0.0
+        timing = self.effects.timing(animation, self.effects.ATTACKS[animation.name])
+        time = animation.pose_time * 8 / animation.clip['frameCount']
+        phase = max(0, min(1, (time-timing['start']) / (timing['end']-timing['start'])))
+        previous, self.step_progress = self.step_progress, phase
+        direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
+        if direction and previous == 0:
+            self.facing = direction
+        if not self.grounded or SDLK_DOWN in keys:
+            return 0.0
+        # 출발과 도착은 천천히, 베는 중간 구간은 빠르게 전진한다.
+        moved = phase*phase*(3-2*phase) - previous*previous*(3-2*previous)
+        return self.facing * self.COMBO_STEP[self.combo_step-1] * max(0, moved)
 
     def update(self, dt, keys):
         keys=keys|{SDLK_DOWN} if self.forced_crouch else keys

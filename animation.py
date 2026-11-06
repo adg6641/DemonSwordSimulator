@@ -88,7 +88,7 @@ class Animation:
         if not self.weapon:
             return None
         frames=self.clip['frames'];cell=frames[self.frame];point=cell.get('weapon')
-        if not point:
+        if not point or point.get('hidden'):
             return None
         following=frames[(self.frame+1)%len(frames)] if self.loop or self.frame+1<len(frames) else cell
         angle=point['angle'];next_angle=following.get('weapon',point)['angle']

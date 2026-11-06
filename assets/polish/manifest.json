@@ -1,0 +1,848 @@
+{
+  "clips": [
+    {
+      "id": "title_chapter_1",
+      "file": "titles/chapter_1.png",
+      "label": "마을의 아침",
+      "group": "화면 연출",
+      "width": 301,
+      "height": 81,
+      "frameWidth": 301,
+      "frameHeight": 81,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 150.5,
+        "y": 40.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 301,
+          "height": 81
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_2",
+      "file": "titles/chapter_2.png",
+      "label": "거울 숲",
+      "group": "화면 연출",
+      "width": 279,
+      "height": 84,
+      "frameWidth": 279,
+      "frameHeight": 84,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 139.5,
+        "y": 42.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 279,
+          "height": 84
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_3",
+      "file": "titles/chapter_3.png",
+      "label": "깊은 숲",
+      "group": "화면 연출",
+      "width": 281,
+      "height": 75,
+      "frameWidth": 281,
+      "frameHeight": 75,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 140.5,
+        "y": 37.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 281,
+          "height": 75
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_4",
+      "file": "titles/chapter_4.png",
+      "label": "잊힌 폐허",
+      "group": "화면 연출",
+      "width": 299,
+      "height": 76,
+      "frameWidth": 299,
+      "frameHeight": 76,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 149.5,
+        "y": 38.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 299,
+          "height": 76
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_5",
+      "file": "titles/chapter_5.png",
+      "label": "달의 제단",
+      "group": "화면 연출",
+      "width": 294,
+      "height": 78,
+      "frameWidth": 294,
+      "frameHeight": 78,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 147.0,
+        "y": 39.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 294,
+          "height": 78
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_6",
+      "file": "titles/chapter_6.png",
+      "label": "검은 성문",
+      "group": "화면 연출",
+      "width": 291,
+      "height": 76,
+      "frameWidth": 291,
+      "frameHeight": 76,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 145.5,
+        "y": 38.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 291,
+          "height": 76
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_7",
+      "file": "titles/chapter_7.png",
+      "label": "마지막 회랑",
+      "group": "화면 연출",
+      "width": 300,
+      "height": 78,
+      "frameWidth": 300,
+      "frameHeight": 78,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 150.0,
+        "y": 39.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 300,
+          "height": 78
+        }
+      ]
+    },
+    {
+      "id": "title_chapter_8",
+      "file": "titles/chapter_8.png",
+      "label": "밤의 왕좌",
+      "group": "화면 연출",
+      "width": 295,
+      "height": 78,
+      "frameWidth": 295,
+      "frameHeight": 78,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 147.5,
+        "y": 39.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 295,
+          "height": 78
+        }
+      ]
+    },
+    {
+      "id": "title_companion",
+      "file": "titles/companion.png",
+      "label": "새로운 동료",
+      "group": "화면 연출",
+      "width": 303,
+      "height": 74,
+      "frameWidth": 303,
+      "frameHeight": 74,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 151.5,
+        "y": 37.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 303,
+          "height": 74
+        }
+      ]
+    },
+    {
+      "id": "title_choice",
+      "file": "titles/choice.png",
+      "label": "운명의 선택",
+      "group": "화면 연출",
+      "width": 302,
+      "height": 78,
+      "frameWidth": 302,
+      "frameHeight": 78,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 151.0,
+        "y": 39.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 302,
+          "height": 78
+        }
+      ]
+    },
+    {
+      "id": "title_growth",
+      "file": "titles/growth.png",
+      "label": "새로운 힘",
+      "group": "화면 연출",
+      "width": 295,
+      "height": 73,
+      "frameWidth": 295,
+      "frameHeight": 73,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 147.5,
+        "y": 36.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 295,
+          "height": 73
+        }
+      ]
+    },
+    {
+      "id": "title_record",
+      "file": "titles/record.png",
+      "label": "기억의 조각",
+      "group": "화면 연출",
+      "width": 300,
+      "height": 75,
+      "frameWidth": 300,
+      "frameHeight": 75,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 150.0,
+        "y": 37.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 300,
+          "height": 75
+        }
+      ]
+    },
+    {
+      "id": "title_boss",
+      "file": "titles/boss.png",
+      "label": "강적의 등장",
+      "group": "화면 연출",
+      "width": 298,
+      "height": 71,
+      "frameWidth": 298,
+      "frameHeight": 71,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 149.0,
+        "y": 35.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 298,
+          "height": 71
+        }
+      ]
+    },
+    {
+      "id": "title_victory",
+      "file": "titles/victory.png",
+      "label": "밤을 넘어",
+      "group": "화면 연출",
+      "width": 286,
+      "height": 77,
+      "frameWidth": 286,
+      "frameHeight": 77,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 143.0,
+        "y": 38.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 286,
+          "height": 77
+        }
+      ]
+    },
+    {
+      "id": "title_final",
+      "file": "titles/final.png",
+      "label": "마지막 선택",
+      "group": "화면 연출",
+      "width": 298,
+      "height": 77,
+      "frameWidth": 298,
+      "frameHeight": 77,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 149.0,
+        "y": 38.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 298,
+          "height": 77
+        }
+      ]
+    },
+    {
+      "id": "title_checkpoint",
+      "file": "titles/checkpoint.png",
+      "label": "다시 피는 불빛",
+      "group": "화면 연출",
+      "width": 306,
+      "height": 66,
+      "frameWidth": 306,
+      "frameHeight": 66,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 153.0,
+        "y": 33.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 306,
+          "height": 66
+        }
+      ]
+    },
+    {
+      "id": "platform_1",
+      "file": "terrain/stage_1.png",
+      "label": "platform_1",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 37,
+      "frameWidth": 240,
+      "frameHeight": 37,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 37
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_2",
+      "file": "terrain/stage_2.png",
+      "label": "platform_2",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 35,
+      "frameWidth": 240,
+      "frameHeight": 35,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 35
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_3",
+      "file": "terrain/stage_3.png",
+      "label": "platform_3",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 49,
+      "frameWidth": 240,
+      "frameHeight": 49,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 49
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_4",
+      "file": "terrain/stage_4.png",
+      "label": "platform_4",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 39,
+      "frameWidth": 240,
+      "frameHeight": 39,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 39
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_5",
+      "file": "terrain/stage_5.png",
+      "label": "platform_5",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 41,
+      "frameWidth": 240,
+      "frameHeight": 41,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 41
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_6",
+      "file": "terrain/stage_6.png",
+      "label": "platform_6",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 44,
+      "frameWidth": 240,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7",
+      "file": "terrain/stage_7.png",
+      "label": "platform_7",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 44,
+      "frameWidth": 240,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8",
+      "file": "terrain/stage_8.png",
+      "label": "platform_8",
+      "group": "화면 연출",
+      "width": 240,
+      "height": 44,
+      "frameWidth": 240,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 120,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 240,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 232,
+        "y": 0
+      }
+    },
+    {
+      "id": "speech",
+      "file": "speech.png",
+      "label": "speech",
+      "group": "화면 연출",
+      "width": 2162,
+      "height": 588,
+      "frameWidth": 2162,
+      "frameHeight": 588,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 1081.0,
+        "y": 294.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 2162,
+          "height": 588
+        }
+      ]
+    }
+  ],
+  "bodies": {
+    "enemy_01": [
+      136,
+      211,
+      252,
+      321
+    ],
+    "enemy_02": [
+      86,
+      175,
+      289,
+      321
+    ],
+    "enemy_03": [
+      109,
+      144,
+      282,
+      321
+    ],
+    "enemy_04": [
+      123,
+      128,
+      265,
+      264
+    ],
+    "enemy_05": [
+      86,
+      180,
+      322,
+      321
+    ],
+    "enemy_06": [
+      75,
+      91,
+      274,
+      321
+    ],
+    "enemy_07": [
+      84,
+      198,
+      241,
+      320
+    ],
+    "enemy_08": [
+      128,
+      82,
+      287,
+      320
+    ],
+    "enemy_09": [
+      73,
+      114,
+      295,
+      319
+    ],
+    "enemy_10": [
+      98,
+      85,
+      259,
+      320
+    ],
+    "enemy_11": [
+      66,
+      123,
+      273,
+      320
+    ],
+    "enemy_12": [
+      111,
+      170,
+      274,
+      321
+    ],
+    "enemy_13": [
+      55,
+      87,
+      290,
+      321
+    ],
+    "enemy_14": [
+      59,
+      69,
+      300,
+      320
+    ],
+    "enemy_15": [
+      95,
+      88,
+      268,
+      320
+    ],
+    "enemy_16": [
+      155,
+      154,
+      378,
+      449
+    ],
+    "enemy_17": [
+      81,
+      156,
+      382,
+      449
+    ],
+    "enemy_18": [
+      94,
+      174,
+      367,
+      448
+    ],
+    "enemy_19": [
+      167,
+      227,
+      487,
+      450
+    ],
+    "enemy_20": [
+      120,
+      167,
+      333,
+      448
+    ]
+  },
+  "generation": "built-in image_gen",
+  "prompts": [
+    "루네아의 같은 외형을 유지한 16프레임 팔다리 교차 달리기",
+    "정확한 한글 강조 제목 16종, 투명 배경",
+    "수평 발판 8종, 지역별 재질",
+    "남색과 금색 테두리의 빈 말풍선"
+  ]
+}

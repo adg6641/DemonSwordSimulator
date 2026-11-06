@@ -433,6 +433,168 @@
       ]
     },
     {
+      "id": "title_ending_1",
+      "file": "titles/ending_1.png",
+      "label": "title_ending_1",
+      "group": "화면 연출",
+      "width": 627,
+      "height": 115,
+      "frameWidth": 627,
+      "frameHeight": 115,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 313.5,
+        "y": 57.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 627,
+          "height": 115
+        }
+      ]
+    },
+    {
+      "id": "title_ending_2",
+      "file": "titles/ending_2.png",
+      "label": "title_ending_2",
+      "group": "화면 연출",
+      "width": 719,
+      "height": 102,
+      "frameWidth": 719,
+      "frameHeight": 102,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 359.5,
+        "y": 51.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 719,
+          "height": 102
+        }
+      ]
+    },
+    {
+      "id": "title_ending_3",
+      "file": "titles/ending_3.png",
+      "label": "title_ending_3",
+      "group": "화면 연출",
+      "width": 623,
+      "height": 111,
+      "frameWidth": 623,
+      "frameHeight": 111,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 311.5,
+        "y": 55.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 623,
+          "height": 111
+        }
+      ]
+    },
+    {
+      "id": "title_ending_4",
+      "file": "titles/ending_4.png",
+      "label": "title_ending_4",
+      "group": "화면 연출",
+      "width": 646,
+      "height": 110,
+      "frameWidth": 646,
+      "frameHeight": 110,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 323.0,
+        "y": 55.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 646,
+          "height": 110
+        }
+      ]
+    },
+    {
+      "id": "title_ending_5",
+      "file": "titles/ending_5.png",
+      "label": "title_ending_5",
+      "group": "화면 연출",
+      "width": 716,
+      "height": 101,
+      "frameWidth": 716,
+      "frameHeight": 101,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 358.0,
+        "y": 50.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 716,
+          "height": 101
+        }
+      ]
+    },
+    {
+      "id": "title_failure",
+      "file": "titles/failure.png",
+      "label": "title_failure",
+      "group": "화면 연출",
+      "width": 631,
+      "height": 114,
+      "frameWidth": 631,
+      "frameHeight": 114,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 315.5,
+        "y": 57.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 631,
+          "height": 114
+        }
+      ]
+    },
+    {
       "id": "platform_1",
       "file": "terrain/stage_1.png",
       "label": "platform_1",
@@ -714,6 +876,33 @@
           "height": 588
         }
       ]
+    },
+    {
+      "id": "speech_body",
+      "file": "speech_body.png",
+      "label": "speech_body",
+      "group": "화면 연출",
+      "width": 2168,
+      "height": 512,
+      "frameWidth": 2168,
+      "frameHeight": 512,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 1084.0,
+        "y": 256.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 2168,
+          "height": 512
+        }
+      ]
     }
   ],
   "bodies": {
@@ -843,6 +1032,7 @@
     "루네아의 같은 외형을 유지한 16프레임 팔다리 교차 달리기",
     "정확한 한글 강조 제목 16종, 투명 배경",
     "수평 발판 8종, 지역별 재질",
-    "남색과 금색 테두리의 빈 말풍선"
+    "남색과 금색 테두리의 빈 말풍선과 보스용 말풍선",
+    "정확한 한글 엔딩 제목 5종과 재도전 제목 1종"
   ]
 }

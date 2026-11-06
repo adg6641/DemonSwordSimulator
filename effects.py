@@ -31,6 +31,7 @@ class CombatEffects:
         self.level = 1
         self.time = self.buff_remaining = 0.0
         self.buff_duration = 5.0
+        self.reach_scale = 1.0
         self.waves = []
         self.serial, self.fired = -1, False
         for name, frames in self.settings['effectGeometry'].items():
@@ -118,10 +119,12 @@ class CombatEffects:
                 x, y, scale, facing=player.facing, opacity=style['opacity'],
                 origin=(clip['emitter']['x'], clip['emitter']['y']))
 
-    def _strike(self, player, camera, pose):
+    def strike_geometry(self, player):
+        """그리기와 타격 판정이 함께 쓰는 현재 검기의 실제 위치·회전·크기."""
         animation = player.animation
         motion = self.ATTACKS.get(animation.name)
-        if not motion:
+        pose = self.blade(animation)
+        if not motion or not pose:
             return
         timing = self.settings['strikeTiming'][motion]
         time = animation.elapsed * animation.fps * 8 / animation.clip['frameCount']
@@ -136,7 +139,7 @@ class CombatEffects:
         lead = geometry['ccw' if timing['direction'] == 'ccw' else 'cw']
         style = self.settings['effectStyle']
         radius = (pose['length'] + 4) * (1 + (self.level - 1) * (.2 if motion == 'dash' else .16))
-        scale = radius * style['scale'] / self.radii[name]
+        scale = radius * style['scale'] / self.radii[name] * self.reach_scale
         reach = (pose['length'] + 4) * (1 + (self.level - 1) * .065)
         shift = reach - hypot(lead[0] - origin[0], lead[1] - origin[1]) * scale
         x = pose['hand'][0] + cos(pose['angle']) * shift
@@ -146,8 +149,41 @@ class CombatEffects:
         angle = pose['angle'] - atan2(lead[1] - origin[1], lead[0] - origin[0])
         alpha = smooth((time - timing['start']) / .6) * smooth((timing['end'] - time) / 1.4)
         alpha *= (.64 + (self.level - 1) * .05) * style['opacity']
-        self._paint(name, frame, (player.x, player.y), camera, x, y, scale, angle,
-                    player.facing, alpha, origin)
+        return dict(name=name, frame=frame, x=x, y=y, scale=scale, angle=angle,
+                    alpha=alpha, origin=origin, bounds=geometry['bounds'])
+
+    @staticmethod
+    def world_bounds(g, x, y, facing):
+        points = []
+        for px in (g['bounds'][0], g['bounds'][2]):
+            for py in (g['bounds'][1], g['bounds'][3]):
+                dx, dy = (px-g['origin'][0])*g['scale'], (py-g['origin'][1])*g['scale']
+                rx = g['x']+dx*cos(g['angle'])-dy*sin(g['angle'])
+                ry = g['y']+dx*sin(g['angle'])+dy*cos(g['angle'])
+                points.append((x+facing*rx, y-ry))
+        return min(p[0] for p in points), min(p[1] for p in points), max(p[0] for p in points), max(p[1] for p in points)
+
+    def strike_bounds(self, player):
+        g = self.strike_geometry(player)
+        return self.world_bounds(g, player.x, player.y, player.facing) if g else None
+
+    def wave_geometry(self, wave):
+        style = self.settings['waveMotion']
+        age, level = wave['age'], wave['level']
+        frame = int(age*style['fps'])%8
+        name = f'wave_lv{level}'
+        bounds = self.settings['effectGeometry'][name][frame]['bounds']
+        origin = (bounds[0]+(bounds[2]-bounds[0])*.12, (bounds[1]+bounds[3])/2)
+        scale = (.32+.68*smooth(age/style['growDuration']))*self.settings['effectStyle']['scale']*wave.get('size', 1)
+        return dict(name=name, frame=frame, bounds=bounds, origin=origin, scale=scale,
+                    x=age*(240+level*20)*style['speedMultiplier'], y=0,
+                    angle=wave['angle']*(1-smooth(age/style['straightenDuration'])),
+                    alpha=clamp((style['lifetime']-age)/style['fadeDuration'])*self.settings['effectStyle']['opacity'])
+
+    def _draw_geometry(self, g, anchor, camera, facing):
+        if g:
+            self._paint(g['name'], g['frame'], anchor, camera, g['x'], g['y'], g['scale'],
+                        g['angle'], facing, g['alpha'], g['origin'])
 
     def _concentrate(self, player, camera, pose):
         animation = player.animation
@@ -176,18 +212,7 @@ class CombatEffects:
         pose = self.blade(player.animation)
         if pose and player.mode != 'dead':
             self._concentrate(player, camera, pose)
-            self._strike(player, camera, pose)
-        style = self.settings['waveMotion']
+            self._draw_geometry(self.strike_geometry(player), (player.x, player.y), camera, player.facing)
         for wave in self.waves:
-            age, level = wave['age'], wave['level']
-            frame = int(age * style['fps']) % 8
-            name = f'wave_lv{level}'
-            bounds = self.settings['effectGeometry'][name][frame]['bounds']
-            origin = (bounds[0] + (bounds[2] - bounds[0]) * .12, (bounds[1] + bounds[3]) / 2)
-            scale = (.32 + .68 * smooth(age / style['growDuration'])) * self.settings['effectStyle']['scale']
-            x = age * (240 + level * 20) * style['speedMultiplier']
-            angle = wave['angle'] * (1 - smooth(age / style['straightenDuration']))
-            alpha = clamp((style['lifetime'] - age) / style['fadeDuration']) * self.settings['effectStyle']['opacity']
-            self._paint(name, frame, (wave['x'], wave['y']), camera, x, 0, scale, angle,
-                        wave['facing'], alpha, origin)
+            self._draw_geometry(self.wave_geometry(wave), (wave['x'], wave['y']), camera, wave['facing'])
         SDL_RenderSetClipRect(engine.renderer, None)

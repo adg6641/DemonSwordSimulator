@@ -61,6 +61,16 @@ class Enemy:
     def alive(self):
         return self.hp > 0
 
+    def hurtbox(self):
+        clip = self.assets.clips[self.key('idle')]
+        box = self.assets.bodies.get(f'enemy_{self.number:02d}', (90, 50, 294, 320))
+        pivot, s = clip['pivot'], self.scale
+        x0, y0, x1, y1 = box
+        if self.facing != (-1 if clip.get('facing')=='left' else 1):
+            x0, x1 = 2*pivot['x']-x1, 2*pivot['x']-x0
+        return (self.x+(x0-pivot['x'])*s, self.y+(pivot['y']-y1)*s,
+                self.x+(x1-pivot['x'])*s, self.y+(pivot['y']-y0)*s)
+
     def change(self, state, clip=None):
         self.state, self.age = state, 0.0
         if clip:
@@ -201,51 +211,72 @@ class Companion:
     def __init__(self, assets, x):
         self.assets = assets
         self.x, self.y, self.vy = x, 0.0, 0.0
+        self.floor_y = 0.0
         self.facing = 1
         self.motion = Motion(assets, 'lunea/idle_breathe')
         self.cooldown = 2.0
         self.skill = 0.0
         self.crouched = False
+        self.stride = 0.0
 
-    def update(self, dt, scene):
+    @property
+    def grounded(self):
+        return self.y <= self.floor_y+.5 and self.vy <= 0
+
+    def update(self, dt, scene, cinematic=False):
         self.motion.update(dt)
         self.cooldown = max(0, self.cooldown-dt)
         p = scene.player
-        target = p.x-p.facing*115
+        target = p.x-p.facing*105
+        # 주인공이 밟은 발판 안으로 목표점을 잡아 가장자리 밖에서 허공을 밟지 않는다.
+        for o in scene.objects:
+            if o['kind'] == 'platform' and abs(p.y-o['y']) < 2:
+                left, right = scene.platform_span(o)
+                if left <= p.x <= right:
+                    target = max(left+18, min(right-18, target))
+        target = max(80, min(scene.world.width-80, target))
         if abs(self.x-p.x) > 1050:
-            self.x, self.y, self.vy = target, p.y, 0
+            self.x, self.y, self.vy = target, p.floor_y, 0
+        self.floor_y = scene.floor_beneath(self)
+        dx = target-self.x
+        if abs(dx) > 24:
+            self.facing = 1 if dx > 0 else -1
+        from pico2d import SDLK_DOWN
+        crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x)
+        moving = abs(dx) > 10
+        speed = min(410, max(90, abs(dx)*3.1)) if not crouch else 80
+        if p.floor_y>self.floor_y+18 and not crouch:
+            speed = max(330, speed)
+        old_x, old_y = self.x, self.y
+        # 발판과 낮은 엄폐물에 앞서 점프. 주인공과 같은 중력·착지 판정을 쓴다.
+        obstacle = any(o['kind'] == 'cover' and abs(o['x']-self.x)<140 and (o['x']-self.x)*self.facing>0 for o in scene.objects)
+        if self.grounded and not crouch and abs(dx)<300 and (p.floor_y>self.y+18 or p.y>self.y+75 or obstacle):
+            self.vy = 900
+            self.motion.play('lunea/jump_takeoff')
+        if moving and self.skill <= 0:
+            self.x += (1 if dx > 0 else -1)*min(abs(dx), speed*dt)
+        if self.vy or self.y>self.floor_y:
+            self.y += self.vy*dt-2200*dt*dt/2
+            self.vy -= 2200*dt
+        scene.platforms(old_y, self)
+        scene.blockers(old_x, self, crouch)
+        if self.y <= self.floor_y:
+            landed = old_y > self.floor_y+2 or self.vy < -30
+            self.y, self.vy = self.floor_y, 0
+            if landed:
+                self.motion.play('lunea/land_soft')
+        self.stride += abs(self.x-old_x)
+        if not self.grounded:
+            # 이륙 첫 자세를 짧게 보여 준 뒤 공중 모션으로 잇는다.
+            if self.motion.key != 'lunea/jump_takeoff' or self.motion.age > .1:
+                self.motion.play('lunea/jump_air')
+            return
         if self.skill > 0:
-            self.skill -= dt
+            self.skill = max(0, self.skill-dt)
             name = 'skill_charge' if self.skill > .65 else 'skill_release' if self.skill > .2 else 'skill_recover'
             self.motion.play('lunea/'+name)
             return
-        if self.motion.key.startswith('adv/lunea_turn') and not self.motion.finished:
-            return
         if self.motion.key in {'adv/lunea_camp__lunea_stand_up', 'adv/lunea_rescue__lunea_freed'} and not self.motion.finished:
-            return
-        dx = target-self.x
-        old_facing = self.facing
-        if abs(dx) > 24:
-            self.facing = 1 if dx > 0 else -1
-        if old_facing != self.facing and abs(dx) > 100 and self.y == 0:
-            self.motion.play('adv/lunea_turn__lunea_turn_'+('right' if self.facing > 0 else 'left'))
-            return
-        from pico2d import SDLK_DOWN
-        crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x)
-        moving = abs(dx) > 24
-        speed = min(400, max(90, abs(dx)*2.5)) if not crouch else 80
-        if moving:
-            self.x += (1 if dx > 0 else -1)*min(abs(dx), speed*dt)
-        if p.y > 50 and self.y <= 0 and abs(p.x-self.x) < 250:
-            self.vy = 780
-            self.motion.play('lunea/jump_takeoff')
-        if self.vy or self.y > 0:
-            self.y += self.vy*dt
-            self.vy -= 2050*dt
-            self.motion.play('lunea/jump_air')
-            if self.y <= 0:
-                self.y, self.vy = 0, 0
-                self.motion.play('lunea/land_soft')
             return
         if self.motion.key in {'lunea/land_soft', 'lunea/move_stop', 'lunea/crouch_down', 'lunea/crouch_up'} and not self.motion.finished:
             return
@@ -255,15 +286,16 @@ class Companion:
         elif crouch:
             self.motion.play('adv/lunea_crouch_walk__lunea_crouch_walk' if moving else 'lunea/crouch_idle')
         elif moving:
-            self.motion.play('lunea/run' if speed > 240 else 'lunea/walk')
+            key = 'lunea/run' if speed > 240 else 'lunea/walk'
+            self.motion.play(key)
+            # 이동한 거리로 프레임을 고른다. 느려질 때 발만 빨리 도는 현상을 막는다.
+            self.motion.age = self.stride/(340 if key.endswith('/run') else 190)*self.assets.duration(key)
         elif self.motion.key in {'lunea/run', 'lunea/walk'}:
             self.motion.play('lunea/move_stop')
-        elif int(scene.time/7)%3 == 1:
-            self.motion.play('adv/lunea_look__lunea_look_back')
         else:
             self.motion.play('lunea/idle_breathe')
         enemy = next((e for e in scene.enemies if e.alive and abs(e.x-p.x)<500 and e.state=='windup'), None)
-        if enemy and self.cooldown <= 0:
+        if enemy and self.cooldown <= 0 and not cinematic:
             self.support(scene, enemy)
 
     def support(self, scene, enemy=None):

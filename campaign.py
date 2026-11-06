@@ -1,7 +1,6 @@
 """한 판의 진행: 실제 전투, 사건, 성장, 체크포인트, 아홉 결말을 연결한다."""
 import copy
 import random
-from math import sin
 from pico2d import (
     SDL_KEYDOWN, SDL_KEYUP, SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN, SDL_BUTTON_LEFT,
     SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN, SDLK_RETURN, SDLK_SPACE, SDLK_ESCAPE,
@@ -14,7 +13,8 @@ from game_assets import Assets
 from progress import Run, ENDINGS
 from combat import Enemy, Companion, Shot
 from sound import Sounds
-from campaign_data import STAGE_LENGTH, SPAWNS, BOSSES, OBJECTIVES, EVENT_TEXT, PERKS, objects
+from campaign_data import STAGE_LENGTH, SPAWNS, BOSSES, EVENT_TEXT, PERKS, objects
+from story import CHAPTERS, INTRO, EVENT_LINES, SPEAKERS, RECORDS
 
 
 class Campaign:
@@ -44,6 +44,8 @@ class Campaign:
         self.actor_actions = {}
         self.interaction_age = 0.0
         self.hitboxes = []
+        self.banner, self.banner_queue = None, []
+        self.story_context = None
         self.companion = None
         self.last_max_hp = self.run.max_hp
         point = store.restore() if resume else None
@@ -53,7 +55,7 @@ class Campaign:
         else:
             self.enter_stage(0)
             self.open('검을 주운 다음 날',
-                      '밤의 짐승들이 검의 냄새를 따라온다. 먼저 마을의 어른을 만나자.\n← → 이동 · ↑ 점프 · ↓ 웅크리기 · C 공격 · Shift 대시 · E 상호작용\n대시 베기와 마검파는 첫 레벨업에서 성장 방향을 고른 뒤 해금된다.',
+                      '어젯밤, 길에서 검 하나를 주웠다. 그 뒤로 마을에 낯선 짐승들이 나타났다.\n촌장님이라면 이 검을 아실까? 먼저 찾아가 보자.',
                       [('모험을 시작한다', self.close_modal)], 'portrait_hero__hero_resolve')
         self.sync_stats()
         from game_view import CampaignView
@@ -62,17 +64,54 @@ class Campaign:
     def notify(self, text, seconds=3.0):
         self.toast, self.toast_time = text, seconds
 
-    def open(self, title, text, options, portrait=None, kind='dialogue', visual=None):
+    def highlight(self, image, subtitle='', duration=2.8):
+        item = dict(image=image, subtitle=subtitle, age=0, duration=duration)
+        if self.banner:
+            self.banner_queue.append(item)
+            self.banner_queue = self.banner_queue[-3:]
+        else:
+            self.banner = item
+
+    def open(self, title, text, options, portrait=None, kind='dialogue', visual=None, speaker=None, focus=None, emphasis=None):
         self.toast_time = 0
         self.modal = dict(title=title, text=text, options=options, portrait=portrait, kind=kind, visual=visual)
+        if kind in {'dialogue', 'boss', 'final'}:
+            context = self.story_context
+            obj = next((o for o in self.objects if o.get('event')==context), None)
+            name = speaker or SPEAKERS.get(context, '루네아' if portrait and 'lunea' in portrait else '소년')
+            sx = focus if focus is not None else obj['x'] if obj else self.player.x
+            if focus is None:
+                if name=='루네아' and self.companion: sx=self.companion.x
+                elif name=='루네아' and context=='rescue' and obj: sx=obj['x']+35
+                elif name=='상인' and obj: sx=obj['x']+190
+                elif name in {'소년','이야기'}: sx=self.player.x
+            sx = max(self.player.x-620, min(self.player.x+620, sx))
+            self.modal.update(speaker=name, speaker_x=sx, speaker_y=165,
+                              focus_x=(self.player.x+sx)/2, focus_y=max(0,self.player.y)+10,
+                              emphasis=emphasis, revealed=False)
+            if obj and obj.get('npc') and abs(sx-self.player.x)<96 and self.player.grounded:
+                side = -1 if self.player.x<=sx else 1
+                self.modal['step_to'] = sx+side*104
+            if self.player.grounded and self.player.mode=='free':
+                self.player.animation.play('idle_breathe')
+                self.player.gait, self.player.previous_direction = 'idle_breathe', 0
+                if abs(sx-self.player.x)>30: self.player.facing = 1 if sx>self.player.x else -1
+            if self.companion and visual not in {'camp','rescue'}:
+                self.companion.motion.play('lunea/idle_breathe')
+            if name=='루네아' and self.companion:
+                self.modal['anchor']='companion'
         self.selected = 0
         self.interaction_age = 0
         self.keys.clear()
 
     def close_modal(self):
         visual = self.modal.get('visual') if self.modal else None
+        story = self.modal and self.modal['kind'] in {'dialogue','boss','final'}
         self.modal = None
+        self.story_context = None
         self.keys.clear()
+        if story:
+            self.player.gait = None
         if visual == 'camp':
             self.player._action('adv/hero_camp__hero_stand_up')
             if self.companion:
@@ -108,7 +147,8 @@ class Campaign:
         self.shots, self.hazards, self.bursts, self.numbers = [], [], [], []
         self.companion = Companion(self.assets, x-90) if self.run.companion else None
         self.camera.follow(self.player, self.world.width, snap=True)
-        self.notify(self.world.stage['title']+' · '+OBJECTIVES[index], 5)
+        self.banner, self.banner_queue = None, []
+        self.highlight('chapter_'+str(index+1), INTRO[index])
         if checkpoint:
             self.save_checkpoint()
 
@@ -138,6 +178,7 @@ class Campaign:
         self.sync_stats()
         self.camera.follow(self.player, self.world.width, snap=True)
         self.burst('adv/failure_respawn__checkpoint_return', self.player.x, 0, .8)
+        self.highlight('checkpoint', '저장했던 불빛 곁에서 다시 시작합니다')
 
     def sync_stats(self):
         p, r = self.player, self.run
@@ -151,6 +192,7 @@ class Campaign:
         if not self.developer:
             p.effects.level = r.tier
         p.effects.buff_duration = 5 + r.skills.get('duration', 0)*.8
+        p.effects.reach_scale = 1+.07*r.skills.get('wide_slash', 0)
         p.DASH_SPEED = 850*(1 + .055*r.skills.get('dash_distance', 0))
 
     def grow(self):
@@ -160,13 +202,13 @@ class Campaign:
             return
         if not self.run.path:
             self.open('첫 성장 · 힘의 방향',
-                      '기본 베기로 얻은 경험이 새로운 힘이 된다. 방향을 골라도 나중에 다른 계열을 배울 수 있다.\n물리: 대시 베기 · 마법: 마검파 · 균형: 두 기술을 함께 사용',
+                      '처음 배울 기술을 고르자. 다른 기술도 나중에 배울 수 있다.\n강한 근접 공격, 멀리 날리는 검기, 두 기술의 조합 중 무엇으로 싸울까?',
                       [(label, lambda path=path: self.pick_path(path)) for path, label in [('physical', '물리 특화'), ('magic', '마법 특화'), ('balance', '균형 성장')]], kind='path')
         elif self.run.unspent:
             labels = [('attack', '공격력 +5', '대시와 근접 베기 피해 증가'), ('magic', '마력 +6', '마검파의 피해 증가'),
                       ('vitality', '최대 HP +20', '생존력 증가'), ('focus', '최대 MP +15', '마력 집중을 더 오래 활용')]
             self.open(f'능력치 배분 · 남은 {self.run.unspent}점',
-                      f'레벨 {self.run.level} · 공격력 {self.run.attack} · 마력 {self.run.magic}\n한 번 누를 때 1점씩 분배한다. 스킬 강화는 이 포인트와 따로 진행된다.',
+                      f'공격력 {self.run.attack} · 마력 {self.run.magic}\n버튼을 누를 때마다 능력치 1점을 쓴다. 배분한 뒤에는 기술도 강화할 수 있다.',
                       [(name+' · '+tip, lambda key=key: self.allocate(key)) for key, name, tip in labels]+[('나중에 배분한다 · L로 다시 열기', self.close_modal)], kind='stats')
         elif self.run.skill_points:
             self.grow_skill()
@@ -322,7 +364,10 @@ class Campaign:
                 if event.key in {SDLK_UP, SDLK_LEFT, SDLK_DOWN, SDLK_RIGHT}:
                     self.selected = (self.selected+(1 if event.key in {SDLK_DOWN, SDLK_RIGHT} else -1))%len(self.modal['options'])
                 elif event.key in {SDLK_RETURN, SDLK_SPACE}:
-                    self.choose(self.selected)
+                    if self.modal['kind'] in {'dialogue','boss','final'} and not self.modal.get('revealed') and self.interaction_age*38 < len(self.modal['text']):
+                        self.modal['revealed'] = True
+                    else:
+                        self.choose(self.selected)
                 elif SDLK_1 <= event.key <= SDLK_1+3:
                     page = self.selected//4*4
                     self.choose(page+event.key-SDLK_1)
@@ -386,6 +431,9 @@ class Campaign:
         return min(interactable, key=lambda o: abs(o['x']-self.player.x), default=None)
 
     def interact(self):
+        if not self.player.grounded:
+            self.notify('착지한 뒤 E를 눌러 살펴보세요.', 1.5)
+            return
         obj = self.nearest()
         if not obj:
             self.notify('상호작용할 물건 가까이에서 E를 누르세요.')
@@ -398,7 +446,10 @@ class Campaign:
                 self.gain_xp(30)
                 self.player._action('adv/hero_pickup__hero_reach', 'adv/hero_pickup__hero_reach_up')
                 self.burst('pickup_fx__pickup', obj['x'], 85, .5)
-                self.notify({'night': '밤은 쉼과 잊힘이다. 밤의 기록을 얻었다.', 'moon': '달은 이름과 귀환이다. 달의 기록을 얻었다.', 'return': '힘을 사람 대신 문양에 돌려준다. 귀환의 기록을 얻었다.'}[obj['record']], 5)
+                self.highlight('record', RECORDS[obj['record']][0])
+                self.story_context = None
+                self.open(RECORDS[obj['record']][0], RECORDS[obj['record']][1], [('기억하고 길을 나선다', self.close_modal)],
+                          'portrait_hero__hero_think', speaker='기록의 목소리', focus=obj['x'])
             else:
                 self.notify('이미 기록책에 적어 둔 문양입니다.')
         elif kind == 'chest':
@@ -425,6 +476,7 @@ class Campaign:
             self.event(obj['event'])
 
     def event(self, key):
+        self.story_context = key
         if key == 'final':
             if not self.run.has('boss_won'):
                 self.notify('먼저 바르켄을 쓰러뜨려야 합니다.')
@@ -438,23 +490,25 @@ class Campaign:
             self.open(*EVENT_TEXT[key][:1], EVENT_TEXT[key][2], [('동료의 달빛으로 연다' if self.companion else '사슬의 빈틈을 살핀다', lambda: self.event_result(key, 'open'))], EVENT_TEXT[key][1])
             return
         title, portrait, text = EVENT_TEXT[key]
+        text = EVENT_LINES.get(key, text)
         if self.run.has(key+'_done') and key not in {'healer', 'memory', 'rescue'}:
-            self.open(title, '이곳에 남긴 선택은 기록책에 적혀 있다. 같은 보상을 다시 받을 수는 없다.', [('계속 간다', self.close_modal)], portrait)
+            self.open(title, '이곳에서 해야 할 일은 마쳤다. 이제 다음 길로 나아가자.\n지금까지의 선택은 Tab 기록책에서 다시 볼 수 있다.', [('계속 간다', self.close_modal)], portrait, speaker='이야기')
             return
         options = {
             'elder': [('충고를 듣고 출발한다', 'listen')],
             'healer': [('몸과 마력을 회복한다', 'heal'), ('다시 길을 나선다', 'leave')],
-            'rescue': [('신호를 보고 함께 매듭을 푼다', 'careful'), ('마검으로 연결을 끊어 바로 구한다', 'force'), ('도움 표식만 남기고 우회한다', 'mark')],
-            'merchant': [('상인을 돕고 붕대를 나눈다 · 신뢰 +1', 'help'), ('봉인석의 힘을 가져간다 · 침식 +1', 'take'), ('아무것도 건드리지 않고 떠난다', 'leave')],
+            'rescue': [('빛의 순서대로 함께 매듭을 푼다', 'careful'), ('마검으로 봉인을 잘라 구한다 · 부적에 금이 감', 'force'), ('구조 표식을 남기고 혼자 간다', 'mark')],
+            'merchant': [('붕대를 나눠 상인을 돕는다', 'help'), ('봉인석의 힘을 가져간다', 'take'), ('아무것도 건드리지 않고 떠난다', 'leave')],
             'mirror': [('반사의 버릇을 기억한다', 'remember')],
             'altar': [('문양을 정화한다 · 침식 -1', 'purify'), ('힘을 흡수한다 · 침식 +1 / 경험치 +70', 'absorb')],
             'memory': [('이름을 함께 기억하고 부적을 복구한다', 'repair'), ('나중에 다시 살핀다', 'leave')],
             'envoy': [('마을에 경고를 보낸다 · 신뢰 +1', 'warn'), ('계약을 받는다 · 성문 추격 감소 / 침식 +1', 'contract'), ('계약을 거절하고 길을 연다', 'refuse')],
         }[key]
         if key == 'rescue' and self.run.companion:
-            self.open('풀려난 거울 웅덩이', '루네아는 잠시 물결을 바라보다가 당신을 따라 돌아선다.', [('함께 간다', self.close_modal)], 'portrait_lunea__lunea_relief')
+            self.open('풀려난 거울 웅덩이', '아직도 물결이 조금 무섭네. 그래도 이제 혼자가 아니니까.\n가자. 네가 돌아갈 길도 함께 찾고 싶어.', [('함께 간다', self.close_modal)], 'portrait_lunea__lunea_relief')
             return
-        self.open(title, text, [(label, lambda key=key, value=value: self.event_result(key, value)) for label, value in options], portrait, visual='rescue' if key == 'rescue' else 'memory' if key == 'memory' else None)
+        self.open(title, text, [(label, lambda key=key, value=value: self.event_result(key, value)) for label, value in options], portrait, visual='rescue' if key == 'rescue' else 'memory' if key == 'memory' else None,
+                  emphasis='choice' if key in {'rescue','merchant','altar','envoy'} else None)
 
     def event_result(self, key, value):
         r = self.run
@@ -470,6 +524,7 @@ class Campaign:
                 text = '“루네아.” 소녀는 자신의 이름을 되찾았다. 이제부터 길을 함께 걷는다.' + ('\n급히 끊은 봉인 때문에 부적에 균열이 남았다. 제단이나 마지막 쉼터에서 복구할 수 있다.' if r.fracture else '\n봉인을 함께 풀어 부적도 온전하게 남았다.')
                 portrait = 'portrait_lunea__lunea_grateful'
                 self.gain_xp(35)
+                self.highlight('companion', '루네아가 함께 모험합니다 · Q 달빛 지원')
             else:
                 r.mark('aid_marker')
                 text = '표식은 남겼지만 동료가 합류한 것은 아니다. 되돌아와 소녀를 구하면 이후에는 동반 세계선이 된다.'
@@ -533,7 +588,28 @@ class Campaign:
         if key not in {'healer'} and not (key == 'rescue' and value == 'mark') and not (key == 'memory' and value == 'leave'):
             r.mark(key+'_done')
         self.sync_stats()
-        self.open('길에 남은 선택', text, [('이어서 간다', self.close_modal)], portrait)
+        result_lines = {
+            ('elder','listen'): '먼저 숲길의 짐승을 물리쳐 보거라. 경험을 쌓으면 새로운 기술을 배울 수 있을 게다.\n마검의 힘을 어떻게 쓸지는 네가 정하는 거란다.',
+            ('rescue','careful'): '나는 루네아야. 구해 줘서 고마워.\n네 검을 알아볼 수 있을 것 같아. 나도 함께 가게 해 줘.',
+            ('rescue','force'): '고마워. 나는 루네아야. 함께 가고 싶어.\n부적에 금이 갔지만 괜찮아. 달의 제단에서 함께 고칠 수 있을 거야.',
+            ('rescue','mark'): '도움을 요청하는 표식을 남겼다. 지금은 혼자 길을 나선다.\n마음이 바뀌면 이곳으로 돌아와 소녀를 구할 수 있다.',
+            ('merchant','help'): '정말 고맙구나. 마을에 네 이야기를 전하마.\n이 회복 파편 두 개를 가져가렴.',
+            ('merchant','take'): '검에 힘이 흘러들었다. 수레의 봉인석은 빛을 잃었다.\n힘을 얻었지만, 마을을 지키던 불빛은 하나 줄었다.',
+            ('altar','purify'): '문양에 달빛이 돌아왔다. 검의 검은 기운도 잦아들었다.\n힘을 빼앗지 않고 밤을 되돌릴 방법이 있을지 모른다.',
+            ('altar','absorb'): '검이 오래된 마력을 삼켰다. 더 강해졌지만 내 그림자가 낯설다.\n회랑의 쉼터에서는 이 힘을 가라앉힐 수 있다.',
+            ('memory','repair'): '기억해 줘서 고마워. 부적도 다시 온전해졌어.\n마지막까지 함께 이름을 지키자.',
+            ('envoy','warn'): '마을에 경고를 보냈다. 이제 주민들은 대피를 준비할 수 있다.\n남은 성채의 길은 직접 열어야 한다.',
+            ('envoy','contract'): '계약으로 추격자들이 물러났다. 하지만 검의 어둠은 짙어졌다.\n왕좌에서 어떤 결정을 내릴지는 아직 나에게 달려 있다.',
+            ('envoy','refuse'): '계약을 거절했다. 길은 더 험하겠지만 왕의 뜻대로 움직이지는 않겠다.\n성문의 사슬 스위치를 찾아 앞으로 가자.',
+            ('mirror','remember'): '왕관 속 얼굴과 손등의 상처를 기억해 두자.\n왜 나와 똑같았는지, 폐허에 남은 기록에 답이 있을지도 몰라.',
+            ('merchant','leave'): '수레는 그대로 두었다. 상인은 작은 등불을 켜고 도움을 기다린다.\n나는 숲의 문지기가 있는 길로 향한다.',
+        }
+        if value=='leave' and key in {'healer','memory'}:
+            self.close_modal()
+            return
+        text = result_lines.get((key,value), text)
+        self.open('길에 남은 선택', text, [('이어서 간다', self.close_modal)], portrait,
+                  speaker='루네아' if key in {'rescue','memory'} and r.companion else '상인' if key=='merchant' and value=='help' else {'elder':'촌장','healer':'치유사','mirror':'소년'}.get(key,'이야기'))
 
     def camp(self):
         if any(e.alive and abs(e.x-self.player.x) < 650 for e in self.enemies) or self.shots or self.hazards:
@@ -551,7 +627,7 @@ class Campaign:
                 options.insert(0, ('마지막 선택을 함께 계획한다', lambda: self.camp_pact('plan')))
         if r.stage >= 6 and r.erosion:
             options.insert(0, ('검의 힘을 가라앉힌다 · 침식 -1', self.calm))
-        self.open('기억을 놓아두는 쉼터', 'HP·MP가 모두 회복되고 현재 세계가 저장됐다.\n함께 나눈 비밀·기억·계획은 엔딩까지 남는다. Tab 기록책에서 복원 조건을 확인할 수 있다.', options, 'portrait_lunea__lunea_smile' if r.companion else 'portrait_hero__hero_relief', visual='camp')
+        self.open('기억을 놓아두는 쉼터', '불빛 곁에서 몸과 마력이 회복됐다. 여기까지의 모험을 저장했다.\n잠시 쉬며 이야기를 나누자.' if r.companion else '불빛 곁에서 몸과 마력이 회복됐다. 여기까지의 모험을 저장했다.', options, 'portrait_lunea__lunea_smile' if r.companion else 'portrait_hero__hero_relief', visual='camp', speaker='루네아' if r.companion else '소년')
 
     def camp_pact(self, key):
         if key not in self.run.pacts:
@@ -576,12 +652,12 @@ class Campaign:
             return
         missing = self.run.missing_restore()
         self.open('왕좌 뒤의 세 갈래 빛',
-                  '왕을 쓰러뜨렸다. 힘을 어느 곳으로 돌려보낼지 마지막으로 결정해야 한다.\n완전 복원: '+('준비 완료' if not missing else ' / '.join(missing)+' 필요'),
+                  '왕은 쓰러졌다. 이제 마검의 힘을 어디로 돌려보낼까?\n'+('밤을 온전히 되돌릴 준비가 끝났다.' if not missing else '완전한 복원에는 아직 준비가 필요하다. 기록책을 확인하거나 회랑으로 돌아갈 수 있다.'),
                   [('경계를 완전히 복원한다', lambda: self.end_choice('restore'), '부족한 준비: '+', '.join(missing) if missing else ''),
                    ('잠정 봉인 후 여행을 이어 간다', lambda: self.end_choice('journey')),
                    ('옛 달의 의식을 선택한다', lambda: self.end_choice('moon')),
                    ('밤의 왕관을 받는다 · 되돌릴 수 없는 선택', self.confirm_crown),
-                   ('마지막 회랑으로 돌아가 준비를 보완한다', self.return_hall)], 'portrait_hero__hero_focus')
+                   ('마지막 회랑으로 돌아가 준비를 보완한다', self.return_hall)], 'portrait_hero__hero_focus', kind='final', emphasis='final', speaker='소년')
 
     def confirm_crown(self):
         self.open('왕관의 무게', '힘을 모두 받아들이면 세상은 끝없는 밤에 잠긴다. 이것은 최종 엔딩으로 기록된다.',
@@ -618,7 +694,7 @@ class Campaign:
             self.sync_stats()
             self.player.hp = min(self.run.max_hp, self.player.hp+25) if self.player.hp > 0 else 0
             self.burst('levelup_fx__levelup', self.player.x, self.player.y, .8)
-            self.notify(f'레벨 {self.run.level} · 능력치 {self.run.unspent}점 / 기술 {self.run.skill_points}점 · L로 성장', 5)
+            self.highlight('growth', f'레벨 {self.run.level} · L을 눌러 새 힘을 선택하세요')
 
     def attack_player(self):
         p, r = self.player, self.run
@@ -639,22 +715,30 @@ class Campaign:
         progress = a.elapsed*a.fps*8/a.clip['frameCount']
         if not timing['start'] <= progress <= timing['end']:
             return
-        reach = 110 + 7*r.tier + r.skills.get('wide_slash', 0)*12
+        bounds = p.effects.strike_bounds(p)
+        blade = p.effects.blade(a)
+        if blade:
+            points = [(p.x+p.facing*blade[k][0], p.y-blade[k][1]) for k in ('hand','tip')]
+            sword_box = (min(x for x,y in points)-16, min(y for x,y in points)-16,
+                         max(x for x,y in points)+16, max(y for x,y in points)+16)
+        else:
+            sword_box = None
         coefficient = {'slash_1': 1, 'slash_2': 1.2, 'slash_3': 1.65, 'air_slash': 1.15, 'crouch_slash': .95}.get(a.name, 1)
         damage = r.attack * coefficient * (1 + .09*r.skills.get('single', 0))
         if a.name == 'dash_slash':
             damage = (8 + r.attack*(1.8+.2*r.skills['dash']))*(1+.08*r.skills.get('single', 0))
-            reach += 55 + 10*r.skills.get('dash_distance', 0)
         for enemy in self.enemies:
-            dx = (enemy.x-p.x)*p.facing
-            if enemy.uid not in self.hit_ids and enemy.alive and -35 < dx < reach and abs(enemy.y+65-(p.y+70)) < (70 if a.name == 'crouch_slash' else 155):
+            target = enemy.hurtbox()
+            touching = self.overlap(bounds, target) or self.overlap(sword_box, target)
+            if enemy.uid not in self.hit_ids and enemy.alive and touching:
                 enemy.hurt(damage, p.facing, self)
                 self.hit_ids.add(enemy.uid)
         for obj in self.objects:
             uid = self.obj_uid(obj)
             if obj['kind'] not in {'crate', 'barrier', 'pillar'} or uid in r.broken or uid in self.hit_ids:
                 continue
-            if -30 < (obj['x']-p.x)*p.facing < reach and abs(obj['y']-p.y) < 140:
+            target = (obj['x']-35,obj['y'],obj['x']+35,obj['y']+130)
+            if self.overlap(bounds, target) or self.overlap(sword_box, target):
                 obj['hp'] -= damage
                 self.hit_ids.add(uid)
                 self.burst('hit_impacts__hit_metal', obj['x'], obj['y']+45, .4)
@@ -670,36 +754,58 @@ class Campaign:
                                 enemy.slow = 4
                         self.notify('봉인 기둥이 무너졌다. 왕의 움직임이 잠시 멎는다.')
 
+    @staticmethod
+    def overlap(a, b):
+        return bool(a and b and a[0]<=b[2] and b[0]<=a[2] and a[1]<=b[3] and b[1]<=a[3])
+
     def update_waves(self):
         p, r = self.player, self.run
         settings = p.effects.settings['waveMotion']
         for wave in p.effects.waves:
             wave.setdefault('hit', set())
             wave.setdefault('damage', (6+r.magic*(1.45+.18*r.skills.get('wave', 0))) * (1.35 if self.hybrid_time > 0 and r.skills.get('hybrid', 0) else 1))
-            x = wave['x']+wave['facing']*wave['age']*(240+wave['level']*20)*settings['speedMultiplier']
-            radius = 50+6*r.tier+15*r.skills.get('wide', 0)
+            wave.setdefault('size', 1+.14*r.skills.get('wide', 0))
+            geometry = p.effects.wave_geometry(wave)
+            bounds = p.effects.world_bounds(geometry, wave['x'], wave['y'], wave['facing'])
+            # 빠른 파동도 프레임 사이를 건너뛰지 않도록 직전 위치부터 이어 검사한다.
+            previous = wave.get('bounds', bounds)
+            swept = (min(previous[0],bounds[0]),min(previous[1],bounds[1]),max(previous[2],bounds[2]),max(previous[3],bounds[3]))
+            wave['bounds'] = bounds
             for enemy in self.enemies:
-                if enemy.alive and enemy.uid not in wave['hit'] and abs(enemy.x-x) < 70 and abs(enemy.y+80-wave['y']) < radius:
+                if enemy.alive and enemy.uid not in wave['hit'] and self.overlap(swept, enemy.hurtbox()):
                     enemy.hurt(wave['damage'], wave['facing'], self)
                     wave['hit'].add(enemy.uid)
                     if len(wave['hit']) >= 1+r.skills.get('pierce', 0):
                         wave['age'] = settings['lifetime']
                         break
 
-    def platforms(self, old_y):
-        p = self.player
-        tops = [o for o in self.objects if o['kind'] == 'platform' and abs(p.x-o['x']) < o['w']/2]
+    def platform_span(self, o):
+        c = self.assets.clips.get(o.get('visual', ''), {})
+        surface = c.get('surface', {})
+        return (o['x']-o['w']/2+surface.get('left', 6),
+                o['x']-o['w']/2+surface.get('right', o['w']-6))
+
+    def floor_beneath(self, actor):
+        return max((o['y'] for o in self.objects if o['kind']=='platform'
+                    and self.platform_span(o)[0] <= actor.x <= self.platform_span(o)[1]
+                    and abs(actor.y-o['y'])<2 and actor.vy<=0), default=0)
+
+    def platforms(self, old_y, actor=None):
+        p = self.player if actor is None else actor
+        tops = [o for o in self.objects if o['kind'] == 'platform' and self.platform_span(o)[0] <= p.x <= self.platform_span(o)[1]]
         if p.vy <= 0:
             landed = [o for o in tops if old_y >= o['y']-1 and p.y <= o['y']]
             if landed:
                 top = max(o['y'] for o in landed)
                 was_air = old_y > top+2
                 p.y, p.vy, p.floor_y, p.air_dash_ready = top, 0, top, True
-                if was_air and p.mode not in {'hurt', 'dead'}:
+                if was_air and p is self.player and p.mode not in {'hurt', 'dead'}:
                     p._action('air_attack_land' if p.animation.name == 'air_slash' else 'land_soft')
+                elif was_air and p is not self.player:
+                    p.motion.play('lunea/land_soft')
 
-    def blockers(self, old_x):
-        p = self.player
+    def blockers(self, old_x, actor=None, crouched=False):
+        p = self.player if actor is None else actor
         for obj in self.objects:
             if self.obj_uid(obj) in self.run.broken:
                 continue
@@ -709,10 +815,12 @@ class Campaign:
                 continue
             block = height and p.y < height-8
             if kind == 'crawl':
-                block = p.y < 125 and not (SDLK_DOWN in self.keys and p.mode == 'free')
-            if block and abs(p.x-obj['x']) < obj.get('w', 80)/2+20:
-                p.x = obj['x'] + (-1 if old_x < obj['x'] else 1)*(obj.get('w', 80)/2+20)
-                if kind == 'crawl':
+                low = crouched if p is not self.player else SDLK_DOWN in self.keys and p.mode == 'free'
+                block = p.y < 125 and not low
+            radius = obj.get('w', 80)/2+20
+            if block and abs(p.x-obj['x']) < radius:
+                p.x = obj['x'] + (-1 if old_x < obj['x'] else 1)*radius
+                if kind == 'crawl' and p is self.player:
                     self.notify('↓를 누른 채 이동하면 낮은 뿌리 아래를 지날 수 있습니다.', 1)
 
     def exit_ready(self):
@@ -738,7 +846,34 @@ class Campaign:
             return
         if self.modal:
             self.interaction_age += dt
+            if self.modal['kind'] in {'dialogue','boss','final'}:
+                if 'step_to' in self.modal:
+                    p=self.player
+                    dx=self.modal['step_to']-p.x
+                    if abs(dx)>1:
+                        p.x += max(-130*dt,min(130*dt,dx))
+                        p.facing = 1 if dx>0 else -1
+                        if p.animation.name!='walk': p.animation.play('walk')
+                    else:
+                        del self.modal['step_to']
+                        p.facing=1 if self.modal['speaker_x']>p.x else -1
+                        p.animation.play('idle_breathe')
+                        p.gait='idle_breathe'
+                self.player.animation.update(dt)
+                if self.companion:
+                    self.companion.update(dt, self, cinematic=True)
+                    if self.modal.get('anchor')=='companion':
+                        self.modal['speaker_x']=self.companion.x
+                        self.modal['speaker_y']=self.companion.y+175
+                        self.modal['focus_x']=(self.player.x+self.companion.x)/2
+                self.camera.focus(self.modal['focus_x'], self.modal['focus_y'], self.world.width, dt)
+            else:
+                self.camera.follow(self.player, self.world.width, dt)
             return
+        if self.banner:
+            self.banner['age'] += dt
+            if self.banner['age'] >= self.banner['duration']:
+                self.banner = self.banner_queue.pop(0) if self.banner_queue else None
         p, r = self.player, self.run
         if p.hp <= 0:
             if self.death_age == 0:
@@ -759,12 +894,25 @@ class Campaign:
         self.hybrid_time = max(0, self.hybrid_time-dt)
         self.mp = min(r.max_mp, self.mp+dt*(7 if p.mode == 'free' else 2.5))
         old_x, old_y = p.x, p.y
-        support = [o['y'] for o in self.objects if o['kind'] == 'platform' and abs(p.x-o['x']) < o['w']/2 and abs(p.y-o['y']) < 2 and p.vy <= 0]
-        p.floor_y = max(support, default=0)
+        p.floor_y = self.floor_beneath(p)
         p.update(dt, self.keys)
         self.platforms(old_y)
         self.blockers(old_x)
         p.x = max(75, min(self.world.width-75, p.x))
+        boss = next((e for e in self.enemies if e.boss and e.alive and abs(e.x-p.x)<620), None)
+        if boss and p.grounded and p.mode=='free' and not r.has('met_boss_'+str(boss.number)):
+            r.mark('met_boss_'+str(boss.number))
+            lines = {16:'뿌리가 길을 막아섰다. 숲의 문지기를 넘어야 성채로 갈 수 있다.',
+                     17:'이름을 지우는 파수자다. 공격 전 바닥에 생기는 문양을 보자.',
+                     18:'성문의 기사가 검을 들었다. 돌진이 끝난 뒤의 빈틈을 노리자.',
+                     19:'마지막 문지기다. 이 길을 넘으면 더는 왕좌를 피할 수 없다.',
+                     20:'마침내 왔구나. 그 검과 함께 쌓아 온 힘… 모두 내게 보여라.'}
+            self.open(boss.actor['name'], lines[boss.number], [('맞선다', self.close_modal)],
+                      'portrait_hero__hero_focus', kind='boss', focus=boss.x,
+                      speaker='바르켄' if boss.number==20 else '소년', emphasis='boss')
+            if boss.number != 20:
+                self.modal['speaker_x'] = p.x
+            return
         self.attack_player()
         self.update_waves()
         for enemy in self.enemies:
@@ -776,6 +924,8 @@ class Campaign:
                     r.kills += 1
                     r.shards += 1 if enemy.boss else 0
                     self.gain_xp(140+30*r.stage if enemy.boss else 24+8*r.stage)
+                    if enemy.boss:
+                        self.highlight('victory', enemy.actor['name']+'을 넘어섰다')
         for shot in self.shots:
             shot.update(dt)
             for obj in self.objects:

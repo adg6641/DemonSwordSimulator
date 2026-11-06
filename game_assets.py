@@ -9,6 +9,7 @@ class Assets:
         self.root = root
         self.clips = {}
         self.actors = {}
+        self.bodies = {}
         self.images = OrderedDict()
         for prefix, folder, manifest, key in [
             ('adv/', 'adventure', 'manifest.json', 'assets'),
@@ -22,6 +23,12 @@ class Assets:
                 self.actors = {a['id']: a for a in data['actors']}
             if prefix == 'adv/':
                 self.endings = {e['id']: e for e in data['endingCards']}
+        polish = root / 'polish/manifest.json'
+        if polish.exists():
+            data = json.loads(polish.read_text(encoding='utf8'))
+            self.bodies = data['bodies']
+            for c in data['clips']:
+                self.clips['polish/'+c['id']] = dict(c, path=polish.parent/c['file'])
         self.by_group = {}
         for key, clip in self.clips.items():
             self.by_group.setdefault(clip.get('group', '기존 동작'), []).append(key)
@@ -29,7 +36,8 @@ class Assets:
     def image(self, path):
         key = str(path)
         if key not in self.images:
-            self.images[key] = load_pixel_image(path)
+            # 고해상도 채색화는 축소 시 부드럽게 표본화한다. 픽셀 지면은 별도 1:1 렌더링.
+            self.images[key] = load_pixel_image(path, smooth=True)
         self.images.move_to_end(key)
         while len(self.images) > 36:
             self.images.popitem(last=False)

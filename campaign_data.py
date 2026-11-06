@@ -13,14 +13,14 @@ SPAWNS = [
 ]
 BOSSES = {2: 16, 4: 17, 5: 18, 6: 19, 7: 20}
 OBJECTIVES = [
-    '촌장과 이야기하고 검을 다뤄 보자. C로 적을 물리치고 첫 성장을 선택하자.',
-    '거울 웅덩이를 살피자. 위험한 소녀를 도울지는 나의 선택이다.',
-    '수레 곁의 상인을 만나고, 숲의 문지기를 넘어가자.',
-    '검은 거울과 밤의 기록을 찾아 폐허의 진실을 읽자.',
-    '제단을 조사하고 달의 기록을 얻자. 파수자의 예고를 보고 피하자.',
-    '전령의 제안을 듣고 성문을 열자. 마을에 보낼 경고도 결정하자.',
-    '귀환의 기록과 마지막 쉼터를 살피자. 세계선의 결말을 준비하자.',
-    '바르켄의 돌진·내려치기·마력파를 넘고, 왕좌 뒤의 선택과 마주하자.',
+    '촌장에게 검에 관해 물어보자',
+    '거울 웅덩이의 소녀를 찾아가자',
+    '부서진 수레 곁의 상인을 만나자',
+    '폐허에 남은 밤의 기록을 찾자',
+    '제단을 조사하고 달의 기록을 찾자',
+    '전령의 말을 듣고 성문을 열자',
+    '귀환의 기록을 얻고 마지막 쉼터로 가자',
+    '밤의 왕 바르켄을 쓰러뜨리자',
 ]
 
 # 같은 지역의 색·재질을 가진 두 발판. 오른쪽 길은 항상 지상으로도 지나갈 수 있다.
@@ -35,8 +35,8 @@ TERRAIN = [
 def objects(stage):
     """지형은 통과 가능한 발판과 실제로 부술 수 있는 엄폐물을 구분한다."""
     result = [
-        dict(id='platform_a', kind='platform', x=1330, y=125, w=240, asset='terrain__'+TERRAIN[stage][0]),
-        dict(id='platform_b', kind='platform', x=2330, y=145, w=230, asset='terrain__'+TERRAIN[stage][1]),
+        dict(id='platform_a', kind='platform', x=1330, y=125, w=240, asset='terrain__'+TERRAIN[stage][0], visual='polish/platform_'+str(stage+1)),
+        dict(id='platform_b', kind='platform', x=2330, y=145, w=240, asset='terrain__'+TERRAIN[stage][1], visual='polish/platform_'+str(stage+1)),
         dict(id='chest', kind='chest', x=2330, y=145, asset='reward_chest__reward_chest'),
         dict(id='crate', kind='crate', x=1120, y=0, hp=24 + stage*6, asset='crate_break__crate_break'),
         dict(id='camp', kind='camp', x=2500 if stage in {2, 4, 5, 6} else 2850, y=0, asset='campfire__campfire'),

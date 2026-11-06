@@ -2,13 +2,13 @@
 
 import json
 
-from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest
+from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest, SDL_ScaleModeLinear
 
 
-def load_pixel_image(path):
+def load_pixel_image(path, *, smooth=False):
     image = load_image(str(path))
     # 확대할 때 이웃 픽셀의 색을 섞지 않아 지면과 스프라이트가 흐려지지 않는다.
-    SDL_SetTextureScaleMode(image.texture, SDL_ScaleModeNearest)
+    SDL_SetTextureScaleMode(image.texture, SDL_ScaleModeLinear if smooth else SDL_ScaleModeNearest)
     return image
 
 

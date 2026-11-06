@@ -7,6 +7,7 @@ from pathlib import Path
 import pico2d.pico2d as engine
 from pico2d import (load_font, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderFillRect,
                     SDL_RenderDrawRect, SDL_SetRenderDrawBlendMode, SDL_BLENDMODE_BLEND, TTF_SizeUTF8, SDL_SetTextureColorMod)
+from pico2d import SDL_Vertex, SDL_Color, SDL_RenderGeometry, SDL_RenderDrawLine
 
 from animation import load_pixel_image
 from scene_layout import sword_layout, socket_layout
@@ -17,6 +18,18 @@ def fill(x, y, width, height, color):
     SDL_SetRenderDrawBlendMode(engine.renderer, SDL_BLENDMODE_BLEND)
     SDL_SetRenderDrawColor(engine.renderer, *color)
     SDL_RenderFillRect(engine.renderer, SDL_Rect(round(x), round(720 - y - height), round(width), round(height)))
+
+
+def speech_tail(a,b,tip):
+    """큰 인물의 얼굴을 가리지 않도록 말풍선의 꼬리만 화자 쪽으로 잇는다."""
+    vertices=(SDL_Vertex*3)()
+    for v,(x,y) in zip(vertices,(a,b,tip)):
+        v.position.x,v.position.y=x,720-y
+        v.color=SDL_Color(8,17,39,255)
+    SDL_RenderGeometry(engine.renderer,None,vertices,3,None,0)
+    SDL_SetRenderDrawColor(engine.renderer,204,175,105,240)
+    for point in (a,b):
+        SDL_RenderDrawLine(engine.renderer,round(point[0]),round(720-point[1]),round(tip[0]),round(720-tip[1]))
 
 
 class Interface:
@@ -53,6 +66,13 @@ class Interface:
 
     def update(self, dt):
         self.time += dt
+
+    def measure(self, value, size):
+        if size not in self.fonts:
+            self.fonts[size] = load_font('C:/Windows/Fonts/malgun.ttf', size)
+        width, height = c_int(), c_int()
+        TTF_SizeUTF8(self.fonts[size].font, value.encode('utf8'), byref(width), byref(height))
+        return width.value
 
     @classmethod
     def hit(cls, x, y):

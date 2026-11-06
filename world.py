@@ -10,6 +10,19 @@ class Camera:
     def __init__(self, width, height):
         self.width, self.height = width, height
         self.x, self.y = 0.0, -160.0
+        self.zoom = 1.0
+
+    def project(self, x, y):
+        return (x-self.x)*self.zoom, 720-(720-y+self.y)*self.zoom
+
+    def focus(self, x, y, world_width, dt):
+        """월드의 두 인물을 향해 이동한다. UI와 말풍선은 확대하지 않는다."""
+        weight = 1-exp(-4.0*dt)
+        self.zoom += (1.18-self.zoom)*weight
+        target_x = max(0, min(world_width-self.width/self.zoom, x-self.width/(2*self.zoom)))
+        target_y = y-720+(720-315)/self.zoom
+        self.x += (target_x-self.x)*weight
+        self.y += (target_y-self.y)*weight
 
     def follow(self, player, world_width, dt=0.0, *, snap=False):
         # 이동 방향을 조금 더 보여 주고, 낮은 점프에는 화면이 덜 흔들리게 한다.
@@ -17,12 +30,13 @@ class Camera:
         target_x = max(0.0, min(world_width - self.width, target_x))
         target_y = -160.0 + max(0.0, player.y - 80.0) * 0.65
         weight = 1.0 if snap else 1.0 - exp(-8.0 * dt)
+        self.zoom += (1.0-self.zoom)*weight
         self.x += (target_x - self.x) * weight
         self.y += (target_y - self.y) * weight
 
 
 class World:
-    BACKGROUND_SCALE = 1.5
+    BACKGROUND_SCALE = 1.0
     STAGE_WIDTH_SCALE = 2.0
 
     def __init__(self, folder, screen_width):
@@ -61,9 +75,10 @@ class World:
         # 원경은 지면보다 천천히 이동한다. 양 끝에서도 빈 화면이 생기지 않는다.
         progress = camera.x / max(1.0, self.width - self.screen_width)
         bg_scroll = progress * (bg_width - self.screen_width)
-        bg_bottom = -bg_height * (1.0 - 560.0 / 720.0)
         # 그리기 좌표만 픽셀에 맞춘다. 실제 이동과 카메라 계산은 실수로 유지한다.
-        left, bottom = round(-bg_scroll), round(bg_bottom - camera.y)
+        # 원본 배경을 1:1로 사용한다. 점프의 세로 시차는 여분 높이 안에서만 움직인다.
+        bottom = round(max(720-bg_height, min(0, (720-bg_height)/2-(camera.y+160)*.04)))
+        left = round(-bg_scroll)
         self.background.draw(left + bg_width / 2, bottom + bg_height / 2, bg_width, bg_height)
         bottom = round(self.ground_top - self.ground_height - camera.y)
         first = max(0, int(camera.x) // self.ground.w)

@@ -40,7 +40,8 @@ class Player:
     AIR_SPEED = 285.0
     DASH_SPEED = 850.0
     DASH_ATTACK_GRACE = 0.4
-    COMBO_MOVE_SPEED = 55.0
+    # C의 1·2·3번째 베기에서 각각 앞으로 나아갈 거리.
+    COMBO_STEP = (26.0, 28.0, 32.0)
     JUMP_SPEED = 850.0
     GRAVITY = 2200.0
 
@@ -68,6 +69,7 @@ class Player:
         self.jump_launched = False
         self.horizontal_speed = self.brake_speed = 0.0
         self.attack_pending = False
+        self.step_serial, self.step_progress = -1, 0.0
 
     @property
     def grounded(self):
@@ -265,6 +267,23 @@ class Player:
         elif self.animation.name != target and self.animation.finished:
             self.animation.play(target)
 
+    def _combo_advance(self, keys):
+        """한 번 베는 동안 정해진 거리만 전진한다. 준비·회수 때는 밀리지 않는다."""
+        a=self.animation
+        if self.mode!='combo' or a.name not in {'slash_1','slash_2','slash_3'}:
+            return 0.0
+        if a.serial!=self.step_serial:
+            self.step_serial,self.step_progress=a.serial,0.0
+        timing=self.effects.timing(a,self.effects.ATTACKS[a.name])
+        time=a.pose_time*8/a.clip['frameCount']
+        u=max(0,min(1,(time-timing['start'])/(timing['end']-timing['start'])))
+        previous=self.step_progress;self.step_progress=u
+        direction=int(SDLK_RIGHT in keys)-int(SDLK_LEFT in keys)
+        if direction and previous==0:self.facing=direction
+        if not self.grounded or SDLK_DOWN in keys:return 0.0
+        ease=lambda x:x*x*(3-2*x)
+        return self.facing*self.COMBO_STEP[self.combo_step-1]*max(0,ease(u)-ease(previous))
+
     def update(self, dt, keys):
         keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
         self.crouching=(SDLK_DOWN in keys and self.grounded and self.mode=='free') or self.animation.name in {
@@ -275,6 +294,7 @@ class Player:
             self.dash_attack_remaining = max(0.0, self.dash_attack_remaining - dt)
         self.invulnerable = max(0.0, self.invulnerable - dt)
         self.animation.update(dt)
+        combo_advance=self._combo_advance(keys)
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if direction and direction == self.previous_direction:
             self.move_time += dt
@@ -297,10 +317,6 @@ class Player:
                 self._locomotion(direction, keys)
                 if not direction and self.grounded and self.animation.name in {'run_stop','walk_to_idle'}:
                     speed=self.brake_speed*(1-self.animation.progress)**2
-        elif self.mode == 'combo':
-            if direction and SDLK_DOWN not in keys:
-                self.facing = direction
-                speed = direction * self.COMBO_MOVE_SPEED
         elif self.mode == 'dash':
             name = self.animation.name
             dash_speed = self.DASH_SPEED if name in {'dash_ground', 'dash_air'} else 120.0
@@ -313,7 +329,7 @@ class Player:
                 speed = self.facing * 850.0 * sin(pi*(phase-.18)/.42)**.7 if .18<phase<.60 else 0
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
-        self.x += speed * dt
+        self.x += speed * dt + combo_advance
         self.horizontal_speed=speed
         if self.mode=='free' and self.animation.name in {'walk','run','crouch_walk'} and speed:
             stride={'walk':160,'run':255,'crouch_walk':110}[self.animation.name]

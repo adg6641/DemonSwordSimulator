@@ -1,8 +1,9 @@
 """플레이 화면·선택창·성장창·기록책. 그림은 생성한 PNG, 글자는 선명한 글꼴로 표시한다."""
 from math import sin
 import pico2d.pico2d as engine
-from pico2d import SDL_RenderSetScale
+from pico2d import SDL_RenderSetScale, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderDrawRect
 from interface import fill, speech_tail
+from animation import load_pixel_image
 from progress import Run, ENDINGS
 from story import CHAPTERS, objective, choice_label
 from combat import Companion
@@ -11,6 +12,21 @@ CREAM = (237, 228, 209)
 MUTED = (170, 191, 187)
 GOLD = (231, 194, 125)
 TEAL = (151, 216, 198)
+PANEL = (13, 22, 32, 246)
+EDGE = (91, 111, 120, 215)
+ACCENT = (208, 174, 107, 255)
+BRIGHT = (246, 239, 222)
+
+INTERACTIONS = {
+    'event': ('살펴보기', 149), 'record': ('기록 읽기', 91), 'chest': ('상자 열기', 103),
+    'camp': ('쉬기 · 저장', 100), 'lever': ('성문 열기', 121),
+}
+
+
+def panel(x, y, w, h, *, edge=EDGE, background=PANEL):
+    fill(x, y, w, h, background)
+    SDL_SetRenderDrawColor(engine.renderer, *edge)
+    SDL_RenderDrawRect(engine.renderer, SDL_Rect(round(x),round(720-y-h),round(w),round(h)))
 
 
 class CampaignView:
@@ -18,6 +34,15 @@ class CampaignView:
         self.s = scene
         self.a, self.ui = scene.assets, scene.ui
         self.wrap_cache = {}
+        self.hud_icons = load_pixel_image(scene.root/'assets/ui/hud_icons.png', smooth=True)
+
+    def icon(self, index, x, y, size=20):
+        self.hud_icons.clip_draw(index*64, 0, 64, 64, round(x), round(y), size, size)
+
+    def key(self, label, x, y, width=30, strong=False):
+        panel(x, y, width, 26, edge=ACCENT if strong else EDGE,
+              background=(70, 53, 29, 255) if strong else (25, 39, 50, 255))
+        self.text(label, x+width/2, y+14, 15, GOLD if strong else BRIGHT, True)
 
     def text(self, value, x, y, size=20, color=CREAM, center=False):
         self.ui.text(str(value), x, y, size, color, center)
@@ -150,7 +175,7 @@ class CampaignView:
         s = self.s
         s.world.draw(s.camera)
         # 발판 뒤의 받침 구조는 원경과 인물 사이 깊이에 놓는다.
-        for x in (1700,2710):
+        for x in ((1700,2710) if s.run.stage<7 else ()):
             if abs(x-s.camera.x-640)<1100:
                 s.assets.draw('v3/support_wood' if s.run.stage<3 else 'v3/support_stone',x,0,s.camera,alpha=.78)
         for o in s.objects:
@@ -170,12 +195,14 @@ class CampaignView:
                     fill(x-40, y, 80*e.hp/e.max_hp, 5, (170, 97, 102, 255))
         visual = s.modal.get('visual') if s.modal else None
         if visual == 'camp':
-            age = s.interaction_age
-            clip = 'adv/hero_camp__hero_sit_down' if age < .67 else 'adv/hero_story__hero_read_map'
-            s.assets.draw(clip, s.player.x, s.player.y, s.camera, 1, age)
+            age=s.camp_age
+            hx,lx,y,facing=s.modal['camp_seats']
+            t=min(1,age/.36)
+            t=t*t*(3-2*t)
+            s.player.animation.draw(s.player.x+(hx-s.player.x)*t,y,facing,s.camera)
             if s.companion:
-                clip = 'adv/lunea_camp__lunea_sit_down' if age < .67 else 'adv/lunea_story__lunea_map'
-                s.assets.draw(clip, s.player.x-85, s.player.y, s.camera, Companion.SCALE, age)
+                key='adv/lunea_camp__lunea_sit_down'
+                s.assets.draw(key, lx, y, s.camera, Companion.SCALE, age, -facing)
         else:
             if s.companion:
                 if visual == 'memory':
@@ -206,91 +233,154 @@ class CampaignView:
             # 작은 제목을 무리하게 늘리지 않는다.
             self.a.fit(key, x, y, min(width, c['width']*1.2), 90, alpha=alpha)
 
-    def hud(self):
-        s, r, p = self.s, self.s.run, self.s.player
-        fill(20, 602, 342, 98, (8, 17, 24, 226))
-        self.a.fit('adv/portrait_hero__hero_focus', 64, 655, 68, 76)
-        self.text(f'Lv.{r.level}', 110, 679, 20, GOLD)
-        self.text({'physical':'물리', 'magic':'마법', 'balance':'균형'}.get(r.path,'소년'), 174, 679, 17, MUTED)
-        for y, v, top, label, color in [(651,p.hp,r.max_hp,'HP',(180,77,89,255)), (627,s.mp,r.max_mp,'MP',(74,133,174,255))]:
-            fill(110,y-6,228,12,(28,33,39,255))
-            fill(110,y-6,228*max(0,v)/top,12,color)
-            self.text(f'{label}  {max(0,int(v))}/{top}', 222,y,14,CREAM,True)
-        fill(110,609,228,3,(45,43,36,255))
-        fill(110,609,228*r.xp/r.xp_needed,3,(208,171,100,255))
-        goal, gx = objective(s)
-        fill(754,617,506,83,(8,17,24,218))
-        self.text(f'{r.stage+1:02d}  {CHAPTERS[r.stage]}', 775,678,18,GOLD)
-        arrow = '→' if gx>p.x+80 else '←' if gx<p.x-80 else 'E'
-        self.wrap(arrow+'  '+goal,775,648,460,18,CREAM,1.35,2)
+    def meter(self, x, y, w, label, value, maximum, color, icon):
+        self.icon(icon,x+9,y+9,17)
+        self.text(label,x+23,y+10,14,MUTED)
+        bx=x+51
+        fill(bx,y,w-51,18,(28,39,49,255))
+        width=(w-51)*max(0,min(1,value/max(1,maximum)))
+        fill(bx,y,width,18,color)
+        if width>1:
+            fill(bx,y+16,width,2,tuple(min(255,c+36) for c in color[:3])+(255,))
+        self.text(f'{max(0,int(value))} / {maximum}',bx+(w-51)/2,y+9,14,BRIGHT,True)
 
-        fill(20,20,365,67,(8,17,24,218))
-        for i,(label,key) in enumerate([('C 베기',None),('대시 베기','dash'),('Z 마검파','wave')]):
-            x=40+i*115
-            unlocked = key is None or r.skills.get(key,0)>0
-            self.text(label,x,66,17,CREAM if unlocked else (108,121,125))
-            self.text('연속 입력' if key is None else 'Shift 뒤 C' if key=='dash' else 'Z 뒤 C' if unlocked else '성장 후 해금',x,40,13,MUTED)
-        self.text(f'H 회복  {r.shards}', 405,43,16,CREAM)
+    def hud(self):
+        s,r,p=self.s,self.s.run,self.s.player
+        panel(24,578,310,118)
+        fill(25,693,308,2,ACCENT)
+        panel(37,613,58,62, background=(22,35,47,255))
+        self.a.fit('adv/portrait_hero__hero_focus',66,645,51,56)
+        self.text(f'레벨 {r.level}',108,675,22,BRIGHT)
+        path={'physical':'물리 특화','magic':'마력 특화','balance':'균형 성장'}.get(r.path,'마검사')
+        self.text(path,216,675,15,GOLD)
+        self.meter(108,639,210,'HP',p.hp,r.max_hp,(154,62,77,255),0)
+        self.meter(108,614,210,'MP',s.mp,r.max_mp,(47,106,148,255),1)
+        self.icon(2,47,597,16)
+        self.text('경험치',61,597,13,MUTED)
+        fill(108,593,210,7,(32,43,50,255))
+        fill(108,593,210*min(1,r.xp/max(1,r.xp_needed)),7,(200,158,83,255))
+
+        goal,gx=objective(s)
+        panel(824,603,432,93)
+        fill(825,693,430,2,ACCENT)
+        self.icon(3,847,673,25)
+        self.text(f'{r.stage+1:02d}장  {CHAPTERS[r.stage]}',871,672,18,GOLD)
+        direction='→' if gx>p.x+80 else '←' if gx<p.x-80 else '◆'
+        self.text(direction,849,639,22,GOLD,True)
+        self.wrap(goal,871,640,365,20,BRIGHT,1.2,2)
+
+        panel(24,22,420,62)
+        actions=[('C','연속 베기',True),('Shift','대시 베기',r.skills.get('dash',0)>0),('Z','마검파',r.skills.get('wave',0)>0)]
+        for i,(key,name,ready) in enumerate(actions):
+            x=36+136*i
+            if i:
+                fill(x-8,34,1,37,(73,93,105,210))
+            self.key(key,x,48,47 if i==1 else 30,strong=bool(ready))
+            self.text(name,x+10,35,15,BRIGHT if ready else MUTED)
+            if i:
+                self.text(('끝에 C' if i==1 else '이후 C') if ready else '잠김',x+53,61,13,MUTED)
+        panel(454,22,281 if s.companion else 129,62)
+        self.key('H',464,39)
+        self.text(f'회복 {r.shards}',499,52,16,BRIGHT)
         if s.companion:
-            self.text('Q 달빛  '+(f'{s.companion.cooldown:.0f}초' if s.companion.cooldown>0 else '준비'), 525,43,16,TEAL)
-        # 오른쪽 정렬 대신 고정 폭의 한 줄로 조작을 분리한다.
-        self.text('L 성장   Tab 기록   Esc 메뉴', 998,30,15,MUTED)
-        if r.unspent or r.skill_points:
-            fill(20,100,240,35,(28,28,25,226))
-            self.text(f'L  새 성장 포인트 {r.unspent+r.skill_points}',36,119,17,GOLD)
+            self.icon(5,604,52,20)
+            cooldown=s.companion.cooldown
+            self.text(f'Q  달빛 · {cooldown:.0f}초' if cooldown>0 else 'Q  달빛 준비',621,52,16,TEAL)
         if p.effects.buff_remaining>0:
-            self.text(f'마검파 {p.effects.buff_remaining:.1f}초', 680,43,16,TEAL)
-        if p.floor_y>0:
-            self.text('↓ + ↑  발판 아래로',640,78,16,MUTED,True)
-        elif any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects):
-            self.text('도약 문양 위에서 ↑  높이 점프',640,78,16,TEAL,True)
-        elif any(o['kind']=='crawl' and abs(o['x']-p.x)<210 and p.y<o.get('roof',154) for o in s.objects):
-            self.text('↓  웅크려 지나가기',640,78,16,MUTED,True)
+            panel(562,84,156,30,edge=ACCENT)
+            self.text(f'마검파 {p.effects.buff_remaining:.1f}초',640,99,15,TEAL,True)
+        panel(1003,22,253,62)
+        self.icon(4,1028,60,20)
+        self.text('Tab 기록  ·  Esc 메뉴',1047,60,15,BRIGHT)
+        if r.unspent or r.skill_points:
+            panel(24,535,255,33,edge=ACCENT)
+            self.text(f'L  성장 포인트 {r.unspent+r.skill_points}',37,552,16,GOLD)
+        else:
+            self.text('L 성장',1020,37,14,MUTED)
+        hint = ('↓ + ↑   발판 아래로' if p.floor_y>0 else
+                '↑   도약 문양 위에서 높이 점프' if any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects) else
+                '↓   웅크려 지나가기' if any(o['kind']=='crawl' and abs(o['x']-p.x)<210 and p.y<o.get('roof',154) for o in s.objects)
+                else '')
+        if hint:
+            panel(508,76,264,34)
+            self.text(hint,640,93,16,BRIGHT,True)
         boss=next((e for e in s.enemies if e.boss and e.alive and abs(e.x-p.x)<900),None)
         if boss:
-            fill(420,100,540,9,(37,23,30,240))
-            fill(420,100,540*boss.hp/boss.max_hp,9,(178,79,98,255))
-            self.text(boss.actor['name'],690,132,19,GOLD,True)
-            if boss.state=='windup': self.text('공격 준비 · 피하거나 막으세요',690,158,16,(243,173,147),True)
+            panel(383,619,414,65,edge=(167,102,105,235))
+            self.text(boss.actor['name'],590,665,20,GOLD,True)
+            fill(401,638,378,11,(47,32,41,255))
+            fill(401,638,378*max(0,boss.hp)/boss.max_hp,11,(180,73,91,255))
+            if boss.state=='windup':
+                self.text('공격 준비  ·  피하거나 막으세요',590,606,16,(255,187,156),True)
+        self.interaction_markers(gx)
+        if s.developer:
+            self.text('연습 모드 · F9',1123,582,14,GOLD)
+
+    def interaction_markers(self, goal_x):
+        s,p,r=self.s,self.s.player,self.s.run
         near=s.nearest()
-        if near:
-            x,y=s.camera.project(near['x'],near['y']+195)
-            x=max(135,min(1145,x))
-            label={'event':'이야기하기','record':'기록 읽기','chest':'상자 열기','camp':'쉬기 · 저장','lever':'성문 열기'}[near['kind']]
-            fill(x-116,y-17,232,35,(8,17,24,235))
-            self.text('E  '+label,x,y,18,GOLD,True)
-        if s.developer: self.text('연습 모드 · F9 끄기',1010,590,15,GOLD)
+        for obj in s.objects:
+            kind=obj['kind']
+            if kind not in INTERACTIONS:
+                continue
+            if kind=='record' and obj['record'] in r.records or kind=='chest' and s.obj_uid(obj) in r.taken:
+                continue
+            if kind=='lever' and r.has('gate_open'):
+                continue
+            if kind=='event' and obj.get('event')=='rescue' and r.has('rescue_done'):
+                continue
+            label,height=INTERACTIONS[kind]
+            if kind=='event' and obj.get('npc'):
+                label='이야기하기'
+            x,y=s.camera.project(obj['x'],obj['y']+height)
+            if not 22<x<1258 or not 123<y<540:
+                continue
+            active=obj is near and p.grounded
+            quest=abs(goal_x-obj['x'])<42
+            hue=ACCENT if active or quest else (138,198,203,240)
+            if active:
+                card_x=max(22,min(1080,x-89))
+                panel(card_x,y+19,176,40,edge=hue)
+                self.key('E',card_x+8,y+26,30,strong=True)
+                self.text(label,card_x+49,y+39,16,BRIGHT)
+                fill(x-1,y+6,2,13,hue)
+                # Target brackets pick the object out from the scenery at close range.
+                left,right=x-29,x+29
+                for px in (left,right):
+                    fill(px,y-11,2,15,hue)
+                fill(left,y+3,10,2,hue)
+                fill(right-8,y+3,10,2,hue)
+            else:
+                bob=2*sin(s.time*2.6+obj['x']*.004)
+                panel(x-13,y+bob-13,26,26,edge=hue)
+                self.icon(3 if quest else 4 if kind=='record' else 2,x,y+bob,20)
 
     def story_dialogue(self):
         s,m=self.s,self.s.modal
-        # 월드 확대 뒤에도 말풍선 글자와 선택 버튼은 화면 픽셀 크기를 유지한다.
         sx,sy=s.camera.project(m['speaker_x'],m['speaker_y'])
-        cx=max(390,min(890,sx))
-        bottom=max(459,min(487,sy+18))
         show=min(1,s.interaction_age/.18)
-        visible=m['text'] if m.get('revealed') else m['text'][:int(s.interaction_age*38)]
-        if m.get('cine'):
-            image=self.a.image(self.a.clips['polish/speech_body']['path'])
-            image.opacify(show);image.draw(640,310,1104,184);image.opacify(1)
-            self.text(m['speaker'],150,365,22,GOLD)
-            self.wrap(visible,150,328,980,20,CREAM,1.35,3)
-        elif m['kind']=='boss' and m['speaker']=='바르켄':
-            # 거인의 얼굴 앞에 큰 말풍선을 덮지 않고 빈 왼쪽 공간을 쓴다.
-            cx,bottom=360,492
-            self.a.fit('polish/speech_body',cx,bottom+87,680,174,alpha=show)
-            speech_tail((696,bottom+104),(696,bottom+126),(max(755,min(990,sx-55)),bottom+125))
-            self.text(m['speaker'],cx-250,bottom+139,21,GOLD)
-            self.wrap(visible,cx-250,bottom+109,535,20,CREAM,1.3,3)
-        else:
-            self.a.fit('polish/speech',cx,bottom+100,740,200,alpha=show)
-            self.text(m['speaker'],cx-270,bottom+163,21,GOLD)
-            self.wrap(visible,cx-270,bottom+132,605,20,CREAM,1.3,4)
-        fill(0,0,1280,205,(6,14,22,244))
-        fill(32,204,1216,1,(171,147,99,175))
-        self.text(m['title'],48,180,22,GOLD)
-        if m.get('emphasis'): self.title_image(m['emphasis'],1100,178,245)
-        self.options(m, compact=True)
-        self.text('↑ ↓ 선택  ·  Enter 확인 / 글 한 번에 보기  ·  클릭 가능',640,15,14,MUTED,True)
+        visible=m['text'] if m.get('revealed') else m['text'][:int(s.interaction_age*43)]
+        camp=m.get('visual')=='camp'
+        top=646 if m.get('cine') or camp else 663
+        width=658 if camp else 730
+        left=round(max(24,min(1256-width,sx-width/2))) if not m.get('cine') else (1280-width)//2
+        if m['kind']=='boss' and m['speaker']=='바르켄':
+            left=24
+        panel(left,top-133,width,133,background=(13,22,32,round(248*show)))
+        fill(left+1,top-3,width-2,2,ACCENT)
+        self.text(m['speaker'],left+23,top-29,22,GOLD)
+        self.wrap(visible,left+23,top-59,width-46,20,BRIGHT,1.27,3)
+        if not m.get('cine') and not camp:
+            tip=max(left+18,min(left+width-18,sx))
+            if sy<top-149:
+                speech_tail((tip-9,top-133),(tip+9,top-133),(tip,top-146))
+        panel(24,16,1232,198,edge=EDGE,background=(12,21,31,248))
+        self.icon(3,52,187,21)
+        self.text(m['title'],72,187,22,BRIGHT)
+        if m.get('emphasis'):
+            self.title_image(m['emphasis'],1090,182,224)
+        self.options(m,compact=True)
+        self.text('↑ ↓ 선택   ·   Enter 확인   ·   마우스 클릭',640,29,14,MUTED,True)
 
     def options(self,m,compact=False):
         s=self.s
@@ -299,17 +389,17 @@ class CampaignView:
             option=m['options'][i]
             disabled=len(option)>2 and bool(option[2])
             if compact:
-                left,bottom,w,h=48+(row%2)*604,99-(row//2)*61,580,53
+                left,bottom,w,h=44+(row%2)*604,102-(row//2)*55,588,45
             else:
                 left,bottom,w,h=105,312-row*62,1070,53
             selected=i==s.selected
-            fill(left,bottom,w,h,(38,48,53,255) if selected else (16,29,38,250))
-            fill(left,bottom,3,h,(225,189,116,255) if selected else (78,95,100,200))
+            panel(left,bottom,w,h,edge=ACCENT if selected else EDGE,
+                  background=(36,45,50,255) if selected else (17,30,42,255))
             color=(120,133,136) if disabled else GOLD if selected else CREAM
             icon=option[3] if len(option)>3 else None
             if icon and not compact:
                 self.a.fit('adv/'+icon,left+30,bottom+27,30,30)
-            self.wrap(f'{row+1}. '+option[0],left+(58 if icon and not compact else 20),bottom+32,w-56,18,color,1.2,2)
+            self.wrap(f'{row+1:02d}   '+option[0],left+(58 if icon and not compact else 17),bottom+(31 if compact else 33),w-50,17 if compact else 18,color,1.05,2)
             s.hitboxes.append((left,bottom,w,h,i))
         if len(m['options'])>4:
             self.text(f'{start//4+1}/{(len(m["options"])+3)//4}  ↓ 다음 선택지',1050,180 if compact else 87,14,MUTED)
@@ -319,10 +409,11 @@ class CampaignView:
         if not b: return
         age,left=b['age'],b['duration']-b['age']
         alpha=min(1,age/.3,left/.45)
-        y=533+12*(1-min(1,age/.4))
-        fill(410,y-46,460,110,(5,13,22,round(alpha*180)))
-        self.title_image(b['image'],640,y+12,430,alpha)
-        self.text(b['subtitle'],640,y-32,17,MUTED,True)
+        y=530+10*(1-min(1,age/.4))
+        panel(395,y-45,490,102,edge=(208,174,107,round(225*alpha)),
+              background=(13,22,32,round(235*alpha)))
+        self.title_image(b['image'],640,y+13,366,alpha)
+        self.text(b['subtitle'],640,y-30,17,BRIGHT,True)
 
     def cinematic(self):
         s=self.s
@@ -355,7 +446,8 @@ class CampaignView:
             self.journal()
             return
         fill(0, 0, 1280, 720, (4, 10, 16, 185))
-        self.a.panel('adv/ui_panels__dialogue_panel', 48, 58, 1184, 618)
+        panel(48,58,1184,618,edge=ACCENT)
+        fill(72,610,1136,1,EDGE)
         if m['kind']=='path': self.title_image('growth',640,638,320)
         else: self.text(m['title'], 640, 638, 30, GOLD, True)
         if m['kind'] == 'path':
@@ -381,7 +473,7 @@ class CampaignView:
     def journal(self):
         s, r = self.s, self.s.run
         fill(0, 0, 1280, 720, (5, 12, 18, 235))
-        self.a.panel('adv/ui_panels__dialogue_panel', 30, 65, 1220, 625)
+        panel(30,65,1220,625,edge=ACCENT)
         labels = ['현재 모험', '세계선 비교', '아홉 결말', '이미지 도감']
         for i, label in enumerate(labels):
             self.a.panel('adv/ui_controls__tab_active' if i==s.journal_page else 'adv/ui_controls__tab_normal', 80+i*286, 620, 260, 48)
@@ -487,5 +579,5 @@ class CampaignView:
             self.modal()
         if s.toast_time > 0:
             bottom = 214 if s.modal and s.modal['kind'] in {'dialogue','boss','final'} else 366 if s.modal else 200
-            fill(300, bottom, 680, 51, (10, 21, 29, 240))
+            panel(300,bottom,680,51,edge=ACCENT)
             self.wrap(s.toast, 320, bottom+33, 640, 16, GOLD, 1.2, 2)

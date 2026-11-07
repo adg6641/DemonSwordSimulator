@@ -87,7 +87,7 @@ class World:
             return
         self.index = index
         self.stage = self.stages[index]
-        self.background = load_pixel_image(self.folder / self.stage['bg']['file'])
+        self.background = load_pixel_image(self.folder / self.stage['bg']['file'], smooth=True)
         self.ground = load_pixel_image(self.folder / self.stage['ground']['file'])
         self.width = round(self.background.w * self.STAGE_WIDTH_SCALE)
         # 지면은 확대하지 않는다. 그림의 발판 높이만 충돌 바닥 y=0에 맞춘다.

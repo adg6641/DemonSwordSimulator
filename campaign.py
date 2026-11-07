@@ -85,6 +85,7 @@ class Campaign:
     def open(self, title, text, options, portrait=None, kind='dialogue', visual=None, speaker=None, focus=None, emphasis=None):
         self.ui_serial+=1
         self.toast_time = 0
+        previous = self.modal
         self.modal = dict(title=title, text=text, options=options, portrait=portrait, kind=kind, visual=visual)
         if kind in {'dialogue', 'boss', 'final'}:
             if self.player.attack_pending:
@@ -106,7 +107,8 @@ class Campaign:
             if obj and obj.get('npc') and abs(sx-self.player.x)<96 and self.player.grounded:
                 side = -1 if self.player.x<=sx else 1
                 self.modal['step_to'] = sx+side*104
-            if self.player.grounded and self.player.mode=='free':
+            continuing_camp = visual=='camp' and previous and previous.get('visual')=='camp'
+            if self.player.grounded and self.player.mode=='free' and not continuing_camp:
                 self.player.animation.play('idle_breathe')
                 self.player.gait, self.player.previous_direction = 'idle_breathe', 0
                 if abs(sx-self.player.x)>30: self.player.facing = 1 if sx>self.player.x else -1
@@ -114,9 +116,29 @@ class Campaign:
                 self.companion.motion.play('lunea/idle_breathe')
             if name=='루네아' and self.companion:
                 self.modal['anchor']='companion'
+        if visual == 'camp':
+            self.setup_camp_pose(previous)
         self.selected = 0
         self.interaction_age = 0
         self.keys.clear()
+
+    def setup_camp_pose(self, previous):
+        player = self.player
+        if previous and previous.get('visual')=='camp':
+            seats = previous['camp_seats']
+        else:
+            fire = min((obj for obj in self.objects if obj['kind']=='camp'),
+                       key=lambda obj: abs(obj['x']-player.x)+abs(obj['y']-player.y)*2,
+                       default=None)
+            x,y = (fire['x'],fire['y']) if fire else (player.x+108,player.y)
+            facing = 1 if player.x<=x else -1
+            seats = (x-facing*112, x+facing*111, y, facing)
+            self.camp_age = 0.0
+            player.animation.play('adv/hero_camp__hero_sit_down')
+        hx,lx,y,facing=seats
+        speaker_x = lx if self.modal['speaker']=='루네아' and self.companion else hx
+        self.modal.update(camp_seats=seats, speaker_x=speaker_x, speaker_y=y+122,
+                          focus_x=(hx+lx)/2,focus_y=y+15)
 
     def close_modal(self):
         self.ui_serial+=1
@@ -127,15 +149,25 @@ class Campaign:
             self.cine_out.update(zoom=(z,z),pan=(1-t)*10)
         visual = self.modal.get('visual') if self.modal else None
         story = self.modal and self.modal['kind'] in {'dialogue','boss','final'}
+        seats = self.modal.get('camp_seats') if visual == 'camp' else None
         self.modal = None
         self.story_context = None
         self.keys.clear()
         if story:
             self.player.gait = None
-        if visual == 'camp':
-            self.player._action('adv/hero_camp__hero_stand_up')
+        if seats:
+            hx,lx,y,facing=seats
+            player=self.player
+            frame=player.animation.frame
+            t=min(1,self.camp_age/.36)
+            t=t*t*(3-2*t)
+            player.x,player.y,player.floor_y,player.facing=player.x+(hx-player.x)*t,y,y,facing
+            player._action('adv/hero_camp__hero_stand_up', start_frame=player.animation.clip['frameCount']-1-frame)
             if self.companion:
-                self.companion.motion.play('adv/lunea_camp__lunea_stand_up')
+                companion=self.companion
+                companion.x,companion.y,companion.floor_y,companion.facing=lx,y,y,-facing
+                companion.ground_speed=0
+                companion.motion.play('adv/lunea_camp__lunea_stand_up')
 
     def choose(self, index):
         if not self.modal or not 0 <= index < len(self.modal['options']):
@@ -933,6 +965,11 @@ class Campaign:
             return
         if self.modal:
             self.interaction_age += dt
+            if self.modal.get('visual')=='camp':
+                self.camp_age += dt
+                self.player.animation.update(dt)
+                self.camera.focus(self.modal['focus_x'],self.modal['focus_y'],self.world.width,dt,1.08)
+                return
             if self.modal['kind'] in {'dialogue','boss','final'}:
                 if 'step_to' in self.modal:
                     p=self.player

@@ -84,14 +84,14 @@ class Player:
             return self.animation.clip['frames'][self.animation.frame].get('bodyHeight',126)
         return self.BODY_HEIGHT
 
-    def _action(self, clip, *followups):
+    def _action(self, clip, *followups, start_frame=None):
         self.attack_pending=False
         self.brake_speed=0.0
         self.mode = 'action'
         self.gait = None
         self.combo_queued = False
         self.followups = deque(followups)
-        self.animation.play(clip)
+        self.animation.play(clip,start_frame=start_frame)
 
     def take_damage(self, amount):
         if self.mode == 'dead' or self.invulnerable > 0:
@@ -332,8 +332,16 @@ class Player:
                 speed = direction * (self.RUN_SPEED if self.move_time >= 0.55 else self.WALK_SPEED)
             if self.mode == 'free':
                 self._locomotion(direction, keys)
-                if not direction and self.grounded and self.animation.name in {'run_stop','walk_to_idle'}:
-                    speed=self.brake_speed*(1-self.animation.progress)**2
+                if self.grounded:
+                    name = self.animation.name
+                    phase = self.animation.progress
+                    easing = phase*phase*(3-2*phase)
+                    if not direction and name in {'run_stop','walk_to_idle'}:
+                        speed=self.brake_speed*(1-phase)**2
+                    elif name == 'idle_to_walk':
+                        speed *= .62+.38*easing
+                    elif name in {'walk_to_run','run_start'}:
+                        speed=direction*(self.WALK_SPEED+(self.RUN_SPEED-self.WALK_SPEED)*easing)
         elif self.mode == 'dash':
             name = self.animation.name
             dash_speed = self.DASH_SPEED if name in {'dash_ground', 'dash_air'} else 120.0

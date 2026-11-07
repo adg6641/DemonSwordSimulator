@@ -13,6 +13,7 @@ from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
+GAIT_STRIDE = {'walk': 160, 'run': 255, 'crouch_walk': 110}
 MOVE_TRANSITIONS = {
     ('idle_breathe', 'walk'): 'idle_to_walk',
     ('idle_breathe', 'run'): 'run_start',
@@ -254,7 +255,7 @@ class Player:
 
     def _locomotion(self, direction, keys):
         if not self.grounded:
-            target = 'jump_rise' if self.vy > 100 else 'jump_apex' if self.vy > -100 else 'fall'
+            target = 'jump_rise' if self.vy > 160 else 'jump_apex' if self.vy > -160 else 'fall'
         elif SDLK_DOWN in keys:
             target = 'crouch_walk' if direction else 'crouch_idle'
         elif direction:
@@ -307,7 +308,9 @@ class Player:
         if not keys & SHIFT:
             self.dash_attack_remaining = max(0.0, self.dash_attack_remaining - dt)
         self.invulnerable = max(0.0, self.invulnerable - dt)
-        self.animation.update(dt)
+        # 지상 보행은 시간 대신 실제 이동 거리로 한 번만 진행한다.
+        if self.mode != 'free' or self.animation.name not in GAIT_STRIDE:
+            self.animation.update(dt)
         combo_advance=self._combo_advance(keys)
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if direction and direction == self.previous_direction:
@@ -345,9 +348,9 @@ class Player:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt + combo_advance
         self.horizontal_speed=speed
-        if self.mode=='free' and self.animation.name in {'walk','run','crouch_walk'} and speed:
-            stride={'walk':160,'run':255,'crouch_walk':110}[self.animation.name]
-            self.animation.elapsed+=abs(speed*dt)/stride*self.animation.duration-dt
+        stride = GAIT_STRIDE.get(self.animation.name)
+        if self.mode == 'free' and stride:
+            self.animation.update(abs(speed*dt)/stride*self.animation.duration)
 
         airborne = not self.grounded
         floating_dash = self.mode == 'dash' and self.animation.name == 'dash_air'

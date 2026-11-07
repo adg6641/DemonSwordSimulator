@@ -1,6 +1,6 @@
 {
   "title": "마검사 주인공 애니메이션",
-  "version": 7,
+  "version": 8,
   "conventions": {
     "frameWidth": 768,
     "frameHeight": 640,
@@ -457,7 +457,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -483,7 +487,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.88
+          "bodyHeight": 173.88,
+          "registration": [
+            1.26,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -509,7 +517,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 180.09
+          "bodyHeight": 180.09,
+          "registration": [
+            -1.26,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -535,7 +547,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.26
+          "bodyHeight": 175.26,
+          "registration": [
+            0.63,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -561,7 +577,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 178.71
+          "bodyHeight": 178.71,
+          "registration": [
+            -0.84,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -587,7 +607,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            1.05,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -613,7 +637,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.05
+          "bodyHeight": 169.05,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -639,11 +667,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            0.42,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/idle_breathe.png",
-      "handFile": "hands/idle_breathe.png",
       "sha256": "e721172a5ddbdc0a7426cc8c7eb226ae6eaf07396f200aacb2caf50be455face"
     },
     {
@@ -692,7 +722,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -718,7 +752,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 165.6
+          "bodyHeight": 165.6,
+          "registration": [
+            1.05,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -744,7 +782,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -770,7 +812,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -796,7 +842,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            1.05,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -822,7 +872,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 161.46
+          "bodyHeight": 161.46,
+          "registration": [
+            -0.63,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -848,7 +902,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            0.63,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -874,7 +932,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 166.98
+          "bodyHeight": 166.98,
+          "registration": [
+            -0.73,
+            0.0
+          ]
         },
         {
           "index": 8,
@@ -900,7 +962,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 167.67
+          "bodyHeight": 167.67,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 9,
@@ -926,7 +992,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            0.73,
+            1.0
+          ]
         },
         {
           "index": 10,
@@ -952,7 +1022,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            -0.84,
+            1.0
+          ]
         },
         {
           "index": 11,
@@ -978,11 +1052,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            0.0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/walk.png",
-      "handFile": "hands/walk.png",
       "sha256": "dca32c1aa102eb3b080e1d1b6f28ead01273c5bb77249172f34298d5664e06d2"
     },
     {
@@ -1031,7 +1107,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            0.42,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -1057,7 +1137,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -1083,7 +1167,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            0.84,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -1109,7 +1197,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 145.59
+          "bodyHeight": 145.59,
+          "registration": [
+            -1.26,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -1135,7 +1227,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            0.73,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -1161,7 +1257,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -1187,7 +1287,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            -0.32,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -1213,7 +1317,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 138.69
+          "bodyHeight": 138.69,
+          "registration": [
+            -0.21,
+            2.0
+          ]
         },
         {
           "index": 8,
@@ -1239,7 +1347,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            0.0,
+            2.0
+          ]
         },
         {
           "index": 9,
@@ -1265,7 +1377,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.04
+          "bodyHeight": 149.04,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 10,
@@ -1291,7 +1407,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            0.21,
+            0.63
+          ]
         },
         {
           "index": 11,
@@ -1317,11 +1437,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.25
+          "bodyHeight": 155.25,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/run.png",
-      "handFile": "hands/run.png",
       "sha256": "1105e042a4ef4ece2a0f166dcb7be5b38567740f4c01d05b1df1610db7f4fc82"
     },
     {
@@ -1370,7 +1492,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            -1.26,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -1396,7 +1522,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 122.82
+          "bodyHeight": 122.82,
+          "registration": [
+            1.05,
+            0.94
+          ]
         },
         {
           "index": 2,
@@ -1422,7 +1552,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 116.61
+          "bodyHeight": 116.61,
+          "registration": [
+            1.26,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -1448,7 +1582,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 105.57
+          "bodyHeight": 105.57,
+          "registration": [
+            -0.63,
+            -1.0
+          ]
         },
         {
           "index": 4,
@@ -1474,7 +1612,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 112.47
+          "bodyHeight": 112.47,
+          "registration": [
+            0.42,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -1500,7 +1642,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 114.54
+          "bodyHeight": 114.54,
+          "registration": [
+            -1.47,
+            0.11
+          ]
         },
         {
           "index": 6,
@@ -1526,7 +1672,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 113.16
+          "bodyHeight": 113.16,
+          "registration": [
+            0.42,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -1552,11 +1702,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 116.61
+          "bodyHeight": 116.61,
+          "registration": [
+            0.21,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/crouch_idle.png",
-      "handFile": "hands/crouch_idle.png",
       "sha256": "0dae3003417bc72f56899a1d8b9d1f64b0894bda279d38e004b626ebafba7f80"
     },
     {
@@ -1605,7 +1757,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 113.85
+          "bodyHeight": 113.85,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -1631,7 +1787,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 114.54
+          "bodyHeight": 114.54,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -1657,7 +1817,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 115.92
+          "bodyHeight": 115.92,
+          "registration": [
+            0.42,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -1683,7 +1847,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 115.23
+          "bodyHeight": 115.23,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -1709,7 +1877,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 115.92
+          "bodyHeight": 115.92,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -1735,7 +1907,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 113.85
+          "bodyHeight": 113.85,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -1761,7 +1937,11 @@
               "height": 96
             }
           },
-          "bodyHeight": 115.92
+          "bodyHeight": 115.92,
+          "registration": [
+            -0.42,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -1787,11 +1967,13 @@
               "height": 96
             }
           },
-          "bodyHeight": 115.92
+          "bodyHeight": 115.92,
+          "registration": [
+            0.21,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/crouch_walk.png",
-      "handFile": "hands/crouch_walk.png",
       "sha256": "a40752ffdd7ebbd2786ecf9546d23a311ddaf01351b1ee6f98f89e560d5c9e74"
     },
     {
@@ -1840,7 +2022,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            2.73,
+            17.0
+          ]
         },
         {
           "index": 1,
@@ -1866,7 +2052,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 174.57
+          "bodyHeight": 174.57,
+          "registration": [
+            -3.99,
+            17.0
+          ]
         },
         {
           "index": 2,
@@ -1892,7 +2082,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.25
+          "bodyHeight": 155.25,
+          "registration": [
+            2.1,
+            3.32
+          ]
         },
         {
           "index": 3,
@@ -1918,7 +2112,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.8
+          "bodyHeight": 151.8,
+          "registration": [
+            -3.36,
+            -1.66
+          ]
         },
         {
           "index": 4,
@@ -1944,7 +2142,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            5.67,
+            -5.81
+          ]
         },
         {
           "index": 5,
@@ -1970,7 +2172,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 133.17
+          "bodyHeight": 133.17,
+          "registration": [
+            -3.36,
+            -22.82
+          ]
         },
         {
           "index": 6,
@@ -1996,7 +2202,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 133.86
+          "bodyHeight": 133.86,
+          "registration": [
+            -3.57,
+            -24.07
+          ]
         },
         {
           "index": 7,
@@ -2022,18 +2232,20 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.96
+          "bodyHeight": 126.96,
+          "registration": [
+            3.78,
+            -32.37
+          ]
         }
       ],
-      "bodyFile": "body/jump_rise.png",
-      "handFile": "hands/jump_rise.png",
       "sha256": "0182bc0403b8b69cbe1552486c6376d752311cabbb9f4e6312a49e4691ec8afe"
     },
     {
       "id": "jump_apex",
       "label": "점프 최고점",
       "folder": "HD",
-      "fps": 36.36363636363637,
+      "fps": 55.0,
       "playback": "hold",
       "motion": "airborne jump apex, knees tucked, torso slightly untucks, scarf briefly floats upward, eight distinct small easing poses ending with feet beginning to extend for fall; root remains fixed",
       "index": 7,
@@ -2075,7 +2287,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 129.72
+          "bodyHeight": 129.72,
+          "registration": [
+            2.52,
+            -29.88
+          ]
         },
         {
           "index": 1,
@@ -2101,7 +2317,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 120.75
+          "bodyHeight": 120.75,
+          "registration": [
+            -2.31,
+            -39.01
+          ]
         },
         {
           "index": 2,
@@ -2127,7 +2347,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            -0.21,
+            -40.67
+          ]
         },
         {
           "index": 3,
@@ -2153,7 +2377,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.9
+          "bodyHeight": 144.9,
+          "registration": [
+            0.21,
+            -10.79
+          ]
         },
         {
           "index": 4,
@@ -2179,7 +2407,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.97
+          "bodyHeight": 146.97,
+          "registration": [
+            0.21,
+            -9.13
+          ]
         },
         {
           "index": 5,
@@ -2205,7 +2437,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.97
+          "bodyHeight": 146.97,
+          "registration": [
+            -2.52,
+            -9.96
+          ]
         },
         {
           "index": 6,
@@ -2231,7 +2467,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            1.68,
+            -4.98
+          ]
         },
         {
           "index": 7,
@@ -2257,11 +2497,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.05
+          "bodyHeight": 169.05,
+          "registration": [
+            0.42,
+            3.32
+          ]
         }
       ],
-      "bodyFile": "body/jump_apex.png",
-      "handFile": "hands/jump_apex.png",
       "sha256": "a37ed4507ccabec91961f4716424146cf653fc5983d94fbd9f3eaebdc51107fa"
     },
     {
@@ -2310,7 +2552,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 181.47
+          "bodyHeight": 181.47,
+          "registration": [
+            2.52,
+            9.54
+          ]
         },
         {
           "index": 1,
@@ -2336,7 +2582,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.19
+          "bodyHeight": 173.19,
+          "registration": [
+            -2.31,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -2362,7 +2612,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            3.15,
+            -13.28
+          ]
         },
         {
           "index": 3,
@@ -2388,7 +2642,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 156.63
+          "bodyHeight": 156.63,
+          "registration": [
+            -10.71,
+            -24.07
+          ]
         },
         {
           "index": 4,
@@ -2414,7 +2672,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 167.67
+          "bodyHeight": 167.67,
+          "registration": [
+            9.87,
+            -6.64
+          ]
         },
         {
           "index": 5,
@@ -2440,7 +2702,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 176.64
+          "bodyHeight": 176.64,
+          "registration": [
+            -2.1,
+            4.56
+          ]
         },
         {
           "index": 6,
@@ -2466,7 +2732,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 177.33
+          "bodyHeight": 177.33,
+          "registration": [
+            -3.78,
+            4.98
+          ]
         },
         {
           "index": 7,
@@ -2492,11 +2762,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 177.33
+          "bodyHeight": 177.33,
+          "registration": [
+            3.36,
+            3.32
+          ]
         }
       ],
-      "bodyFile": "body/fall.png",
-      "handFile": "hands/fall.png",
       "sha256": "c1276e0b4d4c10978bf17785013cd879ae49dbea0cdc09a7d2ef0d0ee5c9945c"
     },
     {
@@ -2545,7 +2817,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 109.71
+          "bodyHeight": 109.71,
+          "registration": [
+            0.63,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -2571,7 +2847,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 113.85
+          "bodyHeight": 113.85,
+          "registration": [
+            -1.05,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -2597,7 +2877,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            0.63,
+            -1.0
+          ]
         },
         {
           "index": 3,
@@ -2623,7 +2907,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.99
+          "bodyHeight": 117.99,
+          "registration": [
+            0.63,
+            -1.0
+          ]
         },
         {
           "index": 4,
@@ -2649,7 +2937,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.99
+          "bodyHeight": 117.99,
+          "registration": [
+            -0.63,
+            2.0
+          ]
         },
         {
           "index": 5,
@@ -2675,7 +2967,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 109.71
+          "bodyHeight": 109.71,
+          "registration": [
+            -0.21,
+            2.0
+          ]
         },
         {
           "index": 6,
@@ -2701,7 +2997,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 115.92
+          "bodyHeight": 115.92,
+          "registration": [
+            0.0,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -2727,7 +3027,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 114.54
+          "bodyHeight": 114.54,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 8,
@@ -2753,7 +3057,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 120.06
+          "bodyHeight": 120.06,
+          "registration": [
+            0.63,
+            0.0
+          ]
         },
         {
           "index": 9,
@@ -2779,7 +3087,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 120.06
+          "bodyHeight": 120.06,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 10,
@@ -2805,7 +3117,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 109.02
+          "bodyHeight": 109.02,
+          "registration": [
+            -0.42,
+            2.0
+          ]
         },
         {
           "index": 11,
@@ -2831,11 +3147,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 112.47
+          "bodyHeight": 112.47,
+          "registration": [
+            0.0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/dash_ground.png",
-      "handFile": "hands/dash_ground.png",
       "sha256": "4dc1a75e49feb6889ec9501d9172fb261f02e5a7ff5e62e74574be6ec89fb3dc"
     },
     {
@@ -2884,7 +3202,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 104.19
+          "bodyHeight": 104.19,
+          "registration": [
+            0.63,
+            -45.0
+          ]
         },
         {
           "index": 1,
@@ -2910,7 +3232,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 97.98
+          "bodyHeight": 97.98,
+          "registration": [
+            -0.84,
+            -45.0
+          ]
         },
         {
           "index": 2,
@@ -2936,7 +3262,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 88.32
+          "bodyHeight": 88.32,
+          "registration": [
+            0.63,
+            -45.0
+          ]
         },
         {
           "index": 3,
@@ -2962,7 +3292,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 81.42
+          "bodyHeight": 81.42,
+          "registration": [
+            -0.94,
+            -45.0
+          ]
         },
         {
           "index": 4,
@@ -2988,7 +3322,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 81.42
+          "bodyHeight": 81.42,
+          "registration": [
+            0.84,
+            -45.0
+          ]
         },
         {
           "index": 5,
@@ -3014,7 +3352,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 86.25
+          "bodyHeight": 86.25,
+          "registration": [
+            -0.73,
+            -45.0
+          ]
         },
         {
           "index": 6,
@@ -3040,7 +3382,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 87.63
+          "bodyHeight": 87.63,
+          "registration": [
+            0.21,
+            -45.0
+          ]
         },
         {
           "index": 7,
@@ -3066,7 +3412,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 87.63
+          "bodyHeight": 87.63,
+          "registration": [
+            0.42,
+            -45.0
+          ]
         },
         {
           "index": 8,
@@ -3092,7 +3442,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 103.5
+          "bodyHeight": 103.5,
+          "registration": [
+            0.0,
+            -45.0
+          ]
         },
         {
           "index": 9,
@@ -3118,7 +3472,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 99.36
+          "bodyHeight": 99.36,
+          "registration": [
+            -0.42,
+            -45.0
+          ]
         },
         {
           "index": 10,
@@ -3144,7 +3502,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 96.6
+          "bodyHeight": 96.6,
+          "registration": [
+            0.0,
+            -45.0
+          ]
         },
         {
           "index": 11,
@@ -3170,11 +3532,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 97.98
+          "bodyHeight": 97.98,
+          "registration": [
+            0.21,
+            -45.0
+          ]
         }
       ],
-      "bodyFile": "body/dash_air.png",
-      "handFile": "hands/dash_air.png",
       "sha256": "4c5ac54b4e953a0d9c120c477d6f5687e73eb42d256c443ddfa7aba2312868e4"
     },
     {
@@ -3223,7 +3587,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -3249,7 +3617,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            -6.72,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -3275,7 +3647,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.7
+          "bodyHeight": 158.7,
+          "registration": [
+            3.36,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -3301,7 +3677,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            -1.68,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -3327,7 +3707,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 152.49
+          "bodyHeight": 152.49,
+          "registration": [
+            -0.63,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -3353,7 +3737,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            -1.05,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -3379,7 +3767,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            9.45,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -3405,11 +3797,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            -6.93,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/slash_1.png",
-      "handFile": "hands/slash_1.png",
       "frameDurations": [
         0.084375,
         0.084375,
@@ -3469,7 +3863,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.1
+          "bodyHeight": 131.1,
+          "registration": [
+            6.93,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -3495,7 +3893,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.21
+          "bodyHeight": 144.21,
+          "registration": [
+            -7.56,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -3521,7 +3923,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.21
+          "bodyHeight": 144.21,
+          "registration": [
+            -2.1,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -3547,7 +3953,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 152.49
+          "bodyHeight": 152.49,
+          "registration": [
+            2.94,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -3573,7 +3983,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 138.69
+          "bodyHeight": 138.69,
+          "registration": [
+            3.36,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -3599,7 +4013,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 133.86
+          "bodyHeight": 133.86,
+          "registration": [
+            1.47,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -3625,7 +4043,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.9
+          "bodyHeight": 144.9,
+          "registration": [
+            -10.29,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -3651,11 +4073,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.28
+          "bodyHeight": 146.28,
+          "registration": [
+            5.25,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/slash_2.png",
-      "handFile": "hands/slash_2.png",
       "frameDurations": [
         0.0875,
         0.0875,
@@ -3715,7 +4139,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.19
+          "bodyHeight": 173.19,
+          "registration": [
+            5.04,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -3741,7 +4169,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 167.67
+          "bodyHeight": 167.67,
+          "registration": [
+            -9.45,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -3767,7 +4199,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.8
+          "bodyHeight": 151.8,
+          "registration": [
+            5.04,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -3793,7 +4229,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.83
+          "bodyHeight": 142.83,
+          "registration": [
+            4.41,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -3819,7 +4259,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.79
+          "bodyHeight": 131.79,
+          "registration": [
+            -8.82,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -3845,7 +4289,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.99
+          "bodyHeight": 117.99,
+          "registration": [
+            3.99,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -3871,7 +4319,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 122.82
+          "bodyHeight": 122.82,
+          "registration": [
+            8.61,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -3897,11 +4349,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.99
+          "bodyHeight": 117.99,
+          "registration": [
+            -8.82,
+            2.0
+          ]
         }
       ],
-      "bodyFile": "body/slash_3.png",
-      "handFile": "hands/slash_3.png",
       "frameDurations": [
         0.096875,
         0.096875,
@@ -3960,7 +4414,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -3986,7 +4444,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            12,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -4012,7 +4474,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            -12,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -4038,7 +4504,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            6.93,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -4064,7 +4534,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.04
+          "bodyHeight": 149.04,
+          "registration": [
+            -7.77,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -4090,7 +4564,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            9.45,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -4116,7 +4594,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            -9.03,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -4142,11 +4624,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 145.59
+          "bodyHeight": 145.59,
+          "registration": [
+            4.83,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/heavy_charge.png",
-      "handFile": "hands/heavy_charge.png",
       "sha256": "306864b7cf5465ee26aff248a4e241ed189b06e7a551addc51214af2b422e305"
     },
     {
@@ -4195,7 +4679,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.19
+          "bodyHeight": 173.19,
+          "registration": [
+            0.84,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -4221,7 +4709,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 186.99
+          "bodyHeight": 186.99,
+          "registration": [
+            1.05,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -4247,7 +4739,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -7.77,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -4273,7 +4769,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 143.52
+          "bodyHeight": 143.52,
+          "registration": [
+            9.45,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -4299,7 +4799,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 125.58
+          "bodyHeight": 125.58,
+          "registration": [
+            -2.52,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -4325,7 +4829,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 113.16
+          "bodyHeight": 113.16,
+          "registration": [
+            -4.41,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -4351,7 +4859,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 120.75
+          "bodyHeight": 120.75,
+          "registration": [
+            1.47,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -4377,11 +4889,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 124.2
+          "bodyHeight": 124.2,
+          "registration": [
+            1.89,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/heavy_slash.png",
-      "handFile": "hands/heavy_slash.png",
       "frameDurations": [
         0.078125,
         0.078125,
@@ -4440,7 +4954,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -4466,7 +4984,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 179.4
+          "bodyHeight": 179.4,
+          "registration": [
+            6.3,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -4492,7 +5014,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            6.3,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -4518,7 +5044,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            -5.46,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -4544,7 +5074,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            -5.88,
+            -1.0
+          ]
         },
         {
           "index": 5,
@@ -4570,7 +5104,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            -2.1,
+            -1.0
+          ]
         },
         {
           "index": 6,
@@ -4596,7 +5134,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 165.6
+          "bodyHeight": 165.6,
+          "registration": [
+            1.68,
+            -1.0
+          ]
         },
         {
           "index": 7,
@@ -4622,11 +5164,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.91
+          "bodyHeight": 164.91,
+          "registration": [
+            4.41,
+            -1.0
+          ]
         }
       ],
-      "bodyFile": "body/thrust.png",
-      "handFile": "hands/thrust.png",
       "frameDurations": [
         0.084375,
         0.084375,
@@ -4685,7 +5229,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 133.86
+          "bodyHeight": 133.86,
+          "registration": [
+            -2.1,
+            -24.07
+          ]
         },
         {
           "index": 1,
@@ -4711,7 +5259,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -4737,7 +5289,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 150.42
+          "bodyHeight": 150.42,
+          "registration": [
+            -1.89,
+            5.81
+          ]
         },
         {
           "index": 3,
@@ -4763,7 +5319,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.8
+          "bodyHeight": 151.8,
+          "registration": [
+            9.87,
+            -3.32
+          ]
         },
         {
           "index": 4,
@@ -4789,7 +5349,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.94
+          "bodyHeight": 155.94,
+          "registration": [
+            -8.19,
+            1.66
+          ]
         },
         {
           "index": 5,
@@ -4815,7 +5379,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            2.52,
+            9.96
+          ]
         },
         {
           "index": 6,
@@ -4841,7 +5409,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            4.41,
+            3.73
+          ]
         },
         {
           "index": 7,
@@ -4867,11 +5439,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 132.48
+          "bodyHeight": 132.48,
+          "registration": [
+            -3.99,
+            -25.73
+          ]
         }
       ],
-      "bodyFile": "body/air_slash.png",
-      "handFile": "hands/air_slash.png",
       "frameDurations": [
         0.084375,
         0.084375,
@@ -4930,7 +5504,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 125.58
+          "bodyHeight": 125.58,
+          "registration": [
+            -12,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -4956,7 +5534,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            0.84,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -4982,7 +5564,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 139.38
+          "bodyHeight": 139.38,
+          "registration": [
+            12,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -5008,7 +5594,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 143.52
+          "bodyHeight": 143.52,
+          "registration": [
+            12,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -5034,7 +5624,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 128.34
+          "bodyHeight": 128.34,
+          "registration": [
+            -11.34,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -5060,7 +5654,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 119.37
+          "bodyHeight": 119.37,
+          "registration": [
+            -11.45,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -5086,7 +5684,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 128.34
+          "bodyHeight": 128.34,
+          "registration": [
+            8.4,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -5112,11 +5714,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 124.89
+          "bodyHeight": 124.89,
+          "registration": [
+            0.21,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/dash_slash.png",
-      "handFile": "hands/dash_slash.png",
       "frameDurations": [
         0.075,
         0.075,
@@ -5176,7 +5780,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            -1.26,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -5202,7 +5810,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 134.55
+          "bodyHeight": 134.55,
+          "registration": [
+            -8.19,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -5228,7 +5840,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 135.24
+          "bodyHeight": 135.24,
+          "registration": [
+            2.31,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -5254,7 +5870,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            -1.05,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -5280,7 +5900,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.1
+          "bodyHeight": 131.1,
+          "registration": [
+            2.31,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -5306,7 +5930,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -5332,7 +5960,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 127.65
+          "bodyHeight": 127.65,
+          "registration": [
+            -3.57,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -5358,11 +5990,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            2.94,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/crouch_slash.png",
-      "handFile": "hands/crouch_slash.png",
       "frameDurations": [
         0.08125,
         0.08125,
@@ -5421,7 +6055,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -5447,7 +6085,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            2.1,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -5473,7 +6115,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 159.39
+          "bodyHeight": 159.39,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -5499,7 +6145,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            -0.63,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -5525,7 +6175,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.08
+          "bodyHeight": 160.08,
+          "registration": [
+            -1.68,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -5551,7 +6205,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.15
+          "bodyHeight": 162.15,
+          "registration": [
+            1.26,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -5577,7 +6235,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            0.63,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -5603,11 +6265,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 161.46
+          "bodyHeight": 161.46,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/magic_charge.png",
-      "handFile": "hands/magic_charge.png",
       "sha256": "cfd27edc24c605b8779c35d93039816375c5ffc8abd5c48cdabdeef10fc698c4"
     },
     {
@@ -5656,7 +6320,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -5682,7 +6350,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.15
+          "bodyHeight": 162.15,
+          "registration": [
+            -2.73,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -5708,7 +6380,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 161.46
+          "bodyHeight": 161.46,
+          "registration": [
+            2.94,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -5734,7 +6410,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 161.46
+          "bodyHeight": 161.46,
+          "registration": [
+            0.42,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -5760,7 +6440,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 166.29
+          "bodyHeight": 166.29,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -5786,7 +6470,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -5812,7 +6500,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 166.29
+          "bodyHeight": 166.29,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -5838,11 +6530,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            0.21,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/magic_release.png",
-      "handFile": "hands/magic_release.png",
       "sha256": "ca9a0dd409b1964a47e2de514de1105e780231812d5f5dfc1b957f0f8289a62b"
     },
     {
@@ -5891,7 +6585,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            0.0,
+            -1.0
+          ]
         },
         {
           "index": 1,
@@ -5917,7 +6615,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            -1.26,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -5943,7 +6645,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            6.3,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -5969,7 +6675,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.9
+          "bodyHeight": 144.9,
+          "registration": [
+            -11.55,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -5995,7 +6705,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.97
+          "bodyHeight": 146.97,
+          "registration": [
+            10.5,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -6021,7 +6735,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.9
+          "bodyHeight": 144.9,
+          "registration": [
+            -3.99,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -6047,7 +6765,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 152.49
+          "bodyHeight": 152.49,
+          "registration": [
+            0.42,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -6073,11 +6795,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            -0.42,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/guard_idle.png",
-      "handFile": "hands/guard_idle.png",
       "sha256": "6232b6d98f441ad257d9c7d295707a5d2764d083785f4ce3ade28d1b55808217"
     },
     {
@@ -6126,7 +6850,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -6152,7 +6880,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -6178,7 +6910,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            5.25,
+            -1.0
+          ]
         },
         {
           "index": 3,
@@ -6204,7 +6940,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.87
+          "bodyHeight": 153.87,
+          "registration": [
+            1.47,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -6230,7 +6970,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 150.42
+          "bodyHeight": 150.42,
+          "registration": [
+            0.63,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -6256,7 +7000,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.28
+          "bodyHeight": 146.28,
+          "registration": [
+            -3.36,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -6282,7 +7030,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -6308,11 +7060,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            12,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/hurt.png",
-      "handFile": "hands/hurt.png",
       "sha256": "ddc127be359afefca012b053ed5bc8ac38d52748d32ad8d36d4216f098bdb615"
     },
     {
@@ -6361,7 +7115,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 150.42
+          "bodyHeight": 150.42,
+          "registration": [
+            -3.99,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -6387,7 +7145,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            1.68,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -6413,7 +7175,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 128.34
+          "bodyHeight": 128.34,
+          "registration": [
+            12,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -6439,7 +7205,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 121.44
+          "bodyHeight": 121.44,
+          "registration": [
+            -1.05,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -6465,7 +7235,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 97.98
+          "bodyHeight": 97.98,
+          "registration": [
+            -12,
+            2.0
+          ]
         },
         {
           "index": 5,
@@ -6491,7 +7265,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 78.66
+          "bodyHeight": 78.66,
+          "registration": [
+            -5.04,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -6517,7 +7295,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 62.1
+          "bodyHeight": 62.1,
+          "registration": [
+            0.42,
+            2.0
+          ]
         },
         {
           "index": 7,
@@ -6543,11 +7325,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 61.41
+          "bodyHeight": 61.41,
+          "registration": [
+            5.25,
+            3.0
+          ]
         }
       ],
-      "bodyFile": "body/knockdown.png",
-      "handFile": "hands/knockdown.png",
       "sha256": "4195dd25ba1e983a872bedc6aa192f98f1c659c8dcadc1800b3fba53d82e4869"
     },
     {
@@ -6596,7 +7380,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.05
+          "bodyHeight": 169.05,
+          "registration": [
+            7.56,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -6622,7 +7410,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            -5.04,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -6648,7 +7440,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.94
+          "bodyHeight": 155.94,
+          "registration": [
+            -2.73,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -6674,7 +7470,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 134.55
+          "bodyHeight": 134.55,
+          "registration": [
+            -4.62,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -6700,7 +7500,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 111.09
+          "bodyHeight": 111.09,
+          "registration": [
+            12,
+            2.0
+          ]
         },
         {
           "index": 5,
@@ -6726,7 +7530,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 88.32
+          "bodyHeight": 88.32,
+          "registration": [
+            -10.39,
+            2.0
+          ]
         },
         {
           "index": 6,
@@ -6752,7 +7560,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 60.03
+          "bodyHeight": 60.03,
+          "registration": [
+            7.88,
+            2.0
+          ]
         },
         {
           "index": 7,
@@ -6778,11 +7590,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 50.37
+          "bodyHeight": 50.37,
+          "registration": [
+            -5.98,
+            3.0
+          ]
         }
       ],
-      "bodyFile": "body/death.png",
-      "handFile": "hands/death.png",
       "sha256": "379592a83c44c5a23c9c296a9f7564103733eab0bbdda7db07855de20f967355"
     },
     {
@@ -6831,7 +7645,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -6857,7 +7675,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            9.45,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -6883,7 +7705,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 174.57
+          "bodyHeight": 174.57,
+          "registration": [
+            -0.42,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -6909,7 +7735,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.95
+          "bodyHeight": 175.95,
+          "registration": [
+            -4.62,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -6935,7 +7765,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.26
+          "bodyHeight": 175.26,
+          "registration": [
+            5.25,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -6961,7 +7795,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.88
+          "bodyHeight": 173.88,
+          "registration": [
+            -3.36,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -6987,7 +7825,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 178.02
+          "bodyHeight": 178.02,
+          "registration": [
+            -2.52,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -7013,11 +7855,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/idle_to_walk.png",
-      "handFile": "hands/idle_to_walk.png",
       "sha256": "97779f318cc5c3e72438df578607b1be4ddcb83d5f389a523e8d0be33647a428",
       "entryFrames": {
         "idle_breathe": [
@@ -7204,7 +8048,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -7230,7 +8078,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 167.67
+          "bodyHeight": 167.67,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -7256,7 +8108,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.22
+          "bodyHeight": 164.22,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -7282,7 +8138,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.22
+          "bodyHeight": 164.22,
+          "registration": [
+            12,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -7308,7 +8168,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 167.67
+          "bodyHeight": 167.67,
+          "registration": [
+            -9.24,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -7334,7 +8198,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.22
+          "bodyHeight": 164.22,
+          "registration": [
+            -1.26,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -7360,7 +8228,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.05
+          "bodyHeight": 169.05,
+          "registration": [
+            8.4,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -7386,11 +8258,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/walk_to_idle.png",
-      "handFile": "hands/walk_to_idle.png",
       "sha256": "b17d8eb7a6b60aadf0908596b36029883091b9a3cf0ec6b1bd7c49e8523e1230",
       "entryFrames": {
         "idle_breathe": [
@@ -7577,7 +8451,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -7603,7 +8481,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            7.14,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -7629,7 +8511,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            2.94,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -7655,7 +8541,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            -3.57,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -7681,7 +8571,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.94
+          "bodyHeight": 155.94,
+          "registration": [
+            0.42,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -7707,7 +8601,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.83
+          "bodyHeight": 142.83,
+          "registration": [
+            -2.1,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -7733,7 +8631,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            -1.26,
+            -0.49
+          ]
         },
         {
           "index": 7,
@@ -7759,11 +8661,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            0.42,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/walk_to_run.png",
-      "handFile": "hands/walk_to_run.png",
       "sha256": "bda0b12b29405ea871c36452100fb1f9438b30732b2eff899328656ec0ba27b3",
       "entryFrames": {
         "idle_breathe": [
@@ -7950,7 +8854,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.25
+          "bodyHeight": 155.25,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -7976,7 +8884,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            -12,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -8002,7 +8914,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.88
+          "bodyHeight": 173.88,
+          "registration": [
+            4.2,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -8028,7 +8944,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 177.33
+          "bodyHeight": 177.33,
+          "registration": [
+            2.83,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -8054,7 +8974,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 181.47
+          "bodyHeight": 181.47,
+          "registration": [
+            -4.41,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -8080,7 +9004,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            -0.21,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -8106,7 +9034,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 182.16
+          "bodyHeight": 182.16,
+          "registration": [
+            6.3,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -8132,11 +9064,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/run_to_walk.png",
-      "handFile": "hands/run_to_walk.png",
       "sha256": "898cef23c12a6552f31b07e11097a6f55e42af1f6caf4ecd8dbea3ab4644ab6a",
       "entryFrames": {
         "idle_breathe": [
@@ -8323,7 +9257,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.25
+          "bodyHeight": 155.25,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -8349,7 +9287,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.94
+          "bodyHeight": 155.94,
+          "registration": [
+            -12,
+            -0.32
+          ]
         },
         {
           "index": 2,
@@ -8375,7 +9317,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            7.77,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -8401,7 +9347,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            9.66,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -8427,7 +9377,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.83
+          "bodyHeight": 142.83,
+          "registration": [
+            -9.24,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -8453,7 +9407,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 150.42
+          "bodyHeight": 150.42,
+          "registration": [
+            -3.36,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -8479,7 +9437,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            10.92,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -8505,11 +9467,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/run_stop.png",
-      "handFile": "hands/run_stop.png",
       "sha256": "4c2cd30154d7d5b20311e2f67690a740f4899de6f2062d9ebc79c6c03af38461",
       "entryFrames": {
         "idle_breathe": [
@@ -8696,7 +9660,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -8722,7 +9690,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.95
+          "bodyHeight": 175.95,
+          "registration": [
+            -0.21,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -8748,7 +9720,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            3.99,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -8774,7 +9750,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -8800,7 +9780,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 137.31
+          "bodyHeight": 137.31,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -8826,7 +9810,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.79
+          "bodyHeight": 131.79,
+          "registration": [
+            -5.46,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -8852,7 +9840,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            4.41,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -8878,11 +9870,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            -1.26,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/crouch_down.png",
-      "handFile": "hands/crouch_down.png",
       "sha256": "79fec80220cf5257dcbed3a91ba6db3a8512d4bcfd5fc22e07d1f6dc2ef7b267",
       "entryFrames": {
         "idle_breathe": [
@@ -9069,7 +10063,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 116.61
+          "bodyHeight": 116.61,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -9095,7 +10093,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            -2.52,
+            0.02
+          ]
         },
         {
           "index": 2,
@@ -9121,7 +10123,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.04
+          "bodyHeight": 149.04,
+          "registration": [
+            -0.84,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -9147,7 +10153,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.8
+          "bodyHeight": 151.8,
+          "registration": [
+            5.46,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -9173,7 +10183,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.94
+          "bodyHeight": 155.94,
+          "registration": [
+            -5.25,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -9199,7 +10213,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 170.43
+          "bodyHeight": 170.43,
+          "registration": [
+            -1.05,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -9225,7 +10243,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            6.93,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -9251,11 +10273,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/crouch_up.png",
-      "handFile": "hands/crouch_up.png",
       "sha256": "9c36ed716b04364a90280eb831bdf7878bb1e27f7f0b17f6124ba569bdf580b2",
       "entryFrames": {
         "idle_breathe": [
@@ -9442,7 +10466,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -9468,7 +10496,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            6.3,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -9494,7 +10526,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.21
+          "bodyHeight": 144.21,
+          "registration": [
+            5.25,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -9520,7 +10556,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.79
+          "bodyHeight": 131.79,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -9546,7 +10586,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 161.46
+          "bodyHeight": 161.46,
+          "registration": [
+            3.99,
+            2.46
+          ]
         },
         {
           "index": 5,
@@ -9572,7 +10616,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            -1.68,
+            9.0
+          ]
         },
         {
           "index": 6,
@@ -9598,7 +10646,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            0.21,
+            13.0
+          ]
         },
         {
           "index": 7,
@@ -9624,11 +10676,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            2.73,
+            17.0
+          ]
         }
       ],
-      "bodyFile": "body/jump_takeoff.png",
-      "handFile": "hands/jump_takeoff.png",
       "sha256": "9b45dfb419888899d3240ebe052a3ccaf7014a98d8823b0aaf57051bbf4007bb",
       "entryFrames": {
         "idle_breathe": [
@@ -9815,7 +10869,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 177.33
+          "bodyHeight": 177.33,
+          "registration": [
+            3.36,
+            3.32
+          ]
         },
         {
           "index": 1,
@@ -9841,7 +10899,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 174.57
+          "bodyHeight": 174.57,
+          "registration": [
+            -0.84,
+            9.0
+          ]
         },
         {
           "index": 2,
@@ -9867,7 +10929,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 166.98
+          "bodyHeight": 166.98,
+          "registration": [
+            0.63,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -9893,7 +10959,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 135.93
+          "bodyHeight": 135.93,
+          "registration": [
+            1.26,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -9919,7 +10989,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 132.48
+          "bodyHeight": 132.48,
+          "registration": [
+            -2.94,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -9945,7 +11019,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            -4.83,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -9971,7 +11049,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            12,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -9997,11 +11079,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/land_soft.png",
-      "handFile": "hands/land_soft.png",
       "sha256": "2e50753000a364f138cc6c4a8385e7b64423a19d80ab0d5ac057c1f601e22cb0",
       "entryFrames": {
         "idle_breathe": [
@@ -10178,7 +11262,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 177.33
+          "bodyHeight": 177.33,
+          "registration": [
+            3.36,
+            3.32
+          ]
         },
         {
           "index": 1,
@@ -10204,7 +11292,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.14
+          "bodyHeight": 142.14,
+          "registration": [
+            -12,
+            -7.8
+          ]
         },
         {
           "index": 2,
@@ -10230,7 +11322,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 119.37
+          "bodyHeight": 119.37,
+          "registration": [
+            10.08,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -10256,7 +11352,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 106.26
+          "bodyHeight": 106.26,
+          "registration": [
+            -0.21,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -10282,7 +11382,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            -3.15,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -10308,7 +11412,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.7
+          "bodyHeight": 158.7,
+          "registration": [
+            -3.15,
+            -1.0
+          ]
         },
         {
           "index": 6,
@@ -10334,7 +11442,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            9.66,
+            0.55
+          ]
         },
         {
           "index": 7,
@@ -10360,11 +11472,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/land_hard.png",
-      "handFile": "hands/land_hard.png",
       "sha256": "4ce0306b73cbafccc97f105c6aab43077ee1955b5df2c6544eeb5d3da07424e1",
       "entryFrames": {
         "idle_breathe": [
@@ -10541,7 +11655,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -10567,7 +11685,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 144.9
+          "bodyHeight": 144.9,
+          "registration": [
+            11.45,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -10593,7 +11715,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 126.27
+          "bodyHeight": 126.27,
+          "registration": [
+            4.2,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -10619,7 +11745,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 129.03
+          "bodyHeight": 129.03,
+          "registration": [
+            -5.98,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -10645,7 +11775,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 120.06
+          "bodyHeight": 120.06,
+          "registration": [
+            -0.84,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -10671,7 +11805,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 132.48
+          "bodyHeight": 132.48,
+          "registration": [
+            -1.47,
+            -1.0
+          ]
         },
         {
           "index": 6,
@@ -10697,7 +11835,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 127.65
+          "bodyHeight": 127.65,
+          "registration": [
+            -5.25,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -10723,11 +11865,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 109.71
+          "bodyHeight": 109.71,
+          "registration": [
+            0.63,
+            1.0
+          ]
         }
       ],
-      "bodyFile": "body/dash_start.png",
-      "handFile": "hands/dash_start.png",
       "sha256": "277b7397a67f8a0e605ca103d90b9e6074ab4daf483e58aec95ab2c32968acab",
       "entryFrames": {
         "idle_breathe": [
@@ -10914,7 +12058,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 112.47
+          "bodyHeight": 112.47,
+          "registration": [
+            0.0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -10940,7 +12088,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 124.2
+          "bodyHeight": 124.2,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -10966,7 +12118,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.1
+          "bodyHeight": 131.1,
+          "registration": [
+            2.94,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -10992,7 +12148,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 138.69
+          "bodyHeight": 138.69,
+          "registration": [
+            7.77,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -11018,7 +12178,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            -9.24,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -11044,7 +12208,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            3.57,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -11070,7 +12238,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.95
+          "bodyHeight": 175.95,
+          "registration": [
+            8.82,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -11096,11 +12268,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/dash_end.png",
-      "handFile": "hands/dash_end.png",
       "sha256": "4bf6bb3776d83fd42a21fa892443f1f00771b37d92d6581dd652d151adaf17ac",
       "entryFrames": {
         "idle_breathe": [
@@ -11287,7 +12461,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            -6.93,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -11313,7 +12491,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.15
+          "bodyHeight": 162.15,
+          "registration": [
+            5.67,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -11339,7 +12521,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.22
+          "bodyHeight": 164.22,
+          "registration": [
+            -4.41,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -11365,7 +12551,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.91
+          "bodyHeight": 164.91,
+          "registration": [
+            2.94,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -11391,7 +12581,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.91
+          "bodyHeight": 164.91,
+          "registration": [
+            0.84,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -11417,7 +12611,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 161.46
+          "bodyHeight": 161.46,
+          "registration": [
+            -2.52,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -11443,7 +12641,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            5.04,
+            2.0
+          ]
         },
         {
           "index": 7,
@@ -11469,11 +12671,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/attack_recovery.png",
-      "handFile": "hands/attack_recovery.png",
       "sha256": "0710b9fa3d35b63d39c870ef9cf9783127fb7da441a90217f0ec3165ed7d5720"
     },
     {
@@ -11522,7 +12726,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -11548,7 +12756,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.88
+          "bodyHeight": 173.88,
+          "registration": [
+            -3.78,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -11574,7 +12786,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            1.68,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -11600,7 +12816,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -11626,7 +12846,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.88
+          "bodyHeight": 173.88,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -11652,7 +12876,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            0.32,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -11678,7 +12906,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 177.33
+          "bodyHeight": 177.33,
+          "registration": [
+            1.68,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -11704,11 +12936,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/magic_recovery.png",
-      "handFile": "hands/magic_recovery.png",
       "sha256": "838dcc691f5deabe89cde3b17a68a1dc2c1d12562df136a66c3d2ad8bcb29d59"
     },
     {
@@ -11757,7 +12991,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -11783,7 +13021,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.26
+          "bodyHeight": 175.26,
+          "registration": [
+            9.03,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -11809,7 +13051,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.95
+          "bodyHeight": 175.95,
+          "registration": [
+            -0.42,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -11835,7 +13081,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            -1.68,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -11861,7 +13111,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 178.71
+          "bodyHeight": 178.71,
+          "registration": [
+            -0.21,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -11887,7 +13141,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.05
+          "bodyHeight": 169.05,
+          "registration": [
+            0.0,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -11913,7 +13171,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            -1.26,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -11939,11 +13201,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            0.0,
+            -1.0
+          ]
         }
       ],
-      "bodyFile": "body/guard_raise.png",
-      "handFile": "hands/guard_raise.png",
       "sha256": "bd70f4fab33e16ee17cba1a4879fc4e4d7151161c4ccb578e6442c0e2daf4628",
       "entryFrames": {
         "idle_breathe": [
@@ -12130,7 +13394,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            -0.42,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -12156,7 +13424,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.7
+          "bodyHeight": 158.7,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -12182,7 +13454,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.7
+          "bodyHeight": 158.7,
+          "registration": [
+            0.63,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -12208,7 +13484,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -12234,7 +13514,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -12260,7 +13544,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            0.42,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -12286,7 +13574,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 159.39
+          "bodyHeight": 159.39,
+          "registration": [
+            2.31,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -12312,11 +13604,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/guard_lower.png",
-      "handFile": "hands/guard_lower.png",
       "sha256": "e27c3f8b5e7f8ee9dde1d53b56965496e9d2fec353fef792037c03bbae389669",
       "entryFrames": {
         "idle_breathe": [
@@ -12503,7 +13797,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            0.0,
+            -1.0
+          ]
         },
         {
           "index": 1,
@@ -12529,7 +13827,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.28
+          "bodyHeight": 146.28,
+          "registration": [
+            -3.15,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -12555,7 +13857,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 141.45
+          "bodyHeight": 141.45,
+          "registration": [
+            12,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -12581,7 +13887,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 145.59
+          "bodyHeight": 145.59,
+          "registration": [
+            -3.15,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -12607,7 +13917,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 135.93
+          "bodyHeight": 135.93,
+          "registration": [
+            -8.61,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -12633,7 +13947,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 143.52
+          "bodyHeight": 143.52,
+          "registration": [
+            2.94,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -12659,7 +13977,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 139.38
+          "bodyHeight": 139.38,
+          "registration": [
+            1.47,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -12685,11 +14007,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            0.0,
+            -1.0
+          ]
         }
       ],
-      "bodyFile": "body/guard_impact.png",
-      "handFile": "hands/guard_impact.png",
       "sha256": "a45172a47372db7b872250338d2e1211dabf69a418a890c710158cac7790045a"
     },
     {
@@ -12738,7 +14062,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            0.0,
+            -1.0
+          ]
         },
         {
           "index": 1,
@@ -12764,7 +14092,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.25
+          "bodyHeight": 155.25,
+          "registration": [
+            -9.66,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -12790,7 +14122,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 152.49
+          "bodyHeight": 152.49,
+          "registration": [
+            -6.3,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -12816,7 +14152,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            3.78,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -12842,7 +14182,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.14
+          "bodyHeight": 142.14,
+          "registration": [
+            1.47,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -12868,7 +14212,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            -1.05,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -12894,7 +14242,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 140.76
+          "bodyHeight": 140.76,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -12920,11 +14272,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            12,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/guard_break.png",
-      "handFile": "hands/guard_break.png",
       "sha256": "34181bf66eb3da68eec1798f3d7599df72153a0cb4f3d95007fb84e6367bc971"
     },
     {
@@ -12973,7 +14327,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            12,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -12999,7 +14357,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            -12,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -13025,7 +14387,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            -1.16,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -13051,7 +14417,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.19
+          "bodyHeight": 173.19,
+          "registration": [
+            -3.15,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -13077,7 +14447,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 178.71
+          "bodyHeight": 178.71,
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -13103,7 +14477,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 182.85
+          "bodyHeight": 182.85,
+          "registration": [
+            3.15,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -13129,7 +14507,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 185.61
+          "bodyHeight": 185.61,
+          "registration": [
+            3.99,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -13155,11 +14537,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/hurt_recovery.png",
-      "handFile": "hands/hurt_recovery.png",
       "sha256": "d22566e4bd71ddb5214e222194da9fd3d9aaf5780050b157017f34914339a5f5",
       "entryFrames": {
         "idle_breathe": [
@@ -13346,7 +14730,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 61.41
+          "bodyHeight": 61.41,
+          "registration": [
+            5.25,
+            3.0
+          ]
         },
         {
           "index": 1,
@@ -13372,7 +14760,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 104.88
+          "bodyHeight": 104.88,
+          "registration": [
+            -12,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -13398,7 +14790,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 127.65
+          "bodyHeight": 127.65,
+          "registration": [
+            6.51,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -13424,7 +14820,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 133.17
+          "bodyHeight": 133.17,
+          "registration": [
+            12,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -13450,7 +14850,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 136.62
+          "bodyHeight": 136.62,
+          "registration": [
+            -9.66,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -13476,7 +14880,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.01
+          "bodyHeight": 158.01,
+          "registration": [
+            -9.45,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -13502,7 +14910,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 180.78
+          "bodyHeight": 180.78,
+          "registration": [
+            12,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -13528,11 +14940,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/get_up.png",
-      "handFile": "hands/get_up.png",
       "sha256": "9d570fe1b821eb969087fbb83854640772e194801666cb4f0c1c041c6a9d6309"
     },
     {
@@ -13581,7 +14995,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            -6.93,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -13607,7 +15025,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            4.83,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -13633,7 +15055,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            3.57,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -13659,7 +15085,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.8
+          "bodyHeight": 151.8,
+          "registration": [
+            -2.31,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -13685,7 +15115,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 157.32
+          "bodyHeight": 157.32,
+          "registration": [
+            2.21,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -13711,7 +15145,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 156.63
+          "bodyHeight": 156.63,
+          "registration": [
+            -6.3,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -13737,7 +15175,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.87
+          "bodyHeight": 153.87,
+          "registration": [
+            -0.53,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -13763,11 +15205,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 131.1
+          "bodyHeight": 131.1,
+          "registration": [
+            6.93,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/combo_1_to_2.png",
-      "handFile": "hands/combo_1_to_2.png",
       "sha256": "057cb5ef8fa73495a51caa94021d481f0801a9b42dd2f1f88b61bcbafc7fb131"
     },
     {
@@ -13816,7 +15260,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.28
+          "bodyHeight": 146.28,
+          "registration": [
+            5.25,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -13842,7 +15290,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            7.14,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -13868,7 +15320,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.87
+          "bodyHeight": 153.87,
+          "registration": [
+            -3.99,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -13894,7 +15350,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 158.7
+          "bodyHeight": 158.7,
+          "registration": [
+            3.78,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -13920,7 +15380,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 180.78
+          "bodyHeight": 180.78,
+          "registration": [
+            -7.35,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -13946,7 +15410,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            -1.47,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -13972,7 +15440,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 182.16
+          "bodyHeight": 182.16,
+          "registration": [
+            2.73,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -13998,11 +15470,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 173.19
+          "bodyHeight": 173.19,
+          "registration": [
+            5.04,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/combo_2_to_3.png",
-      "handFile": "hands/combo_2_to_3.png",
       "sha256": "2b72fb3f7ed8a60e4b99203fffa665659cae0937e4ddee0a3f897b38365e8555"
     },
     {
@@ -14051,7 +15525,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 132.48
+          "bodyHeight": 132.48,
+          "registration": [
+            -3.99,
+            -25.73
+          ]
         },
         {
           "index": 1,
@@ -14077,7 +15555,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.87
+          "bodyHeight": 153.87,
+          "registration": [
+            1.68,
+            -1.57
+          ]
         },
         {
           "index": 2,
@@ -14103,7 +15585,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.83
+          "bodyHeight": 142.83,
+          "registration": [
+            -5.04,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -14129,7 +15615,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 106.26
+          "bodyHeight": 106.26,
+          "registration": [
+            4.83,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -14155,7 +15645,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 138.0
+          "bodyHeight": 138.0,
+          "registration": [
+            -5.46,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -14181,7 +15675,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 149.73
+          "bodyHeight": 149.73,
+          "registration": [
+            2.73,
+            0.75
+          ]
         },
         {
           "index": 6,
@@ -14207,7 +15705,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            5.46,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -14233,11 +15735,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/air_attack_land.png",
-      "handFile": "hands/air_attack_land.png",
       "sha256": "9a360dd51e0c0743a5ad4a51c33e751898528bb9151df5dfe6a32b335430378d",
       "entryFrames": {
         "idle_breathe": [
@@ -14424,7 +15928,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            2.94,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -14450,7 +15958,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 136.62
+          "bodyHeight": 136.62,
+          "registration": [
+            -3.15,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -14476,7 +15988,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 145.59
+          "bodyHeight": 145.59,
+          "registration": [
+            2.52,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -14502,7 +16018,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 147.66
+          "bodyHeight": 147.66,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -14528,7 +16048,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.14
+          "bodyHeight": 142.14,
+          "registration": [
+            -1.47,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -14554,7 +16078,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 137.31
+          "bodyHeight": 137.31,
+          "registration": [
+            -0.21,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -14580,7 +16108,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 138.69
+          "bodyHeight": 138.69,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -14606,11 +16138,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.3
+          "bodyHeight": 117.3,
+          "registration": [
+            -1.26,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/crouch_attack_recovery.png",
-      "handFile": "hands/crouch_attack_recovery.png",
       "sha256": "66bf95a66c16f2a75fd74dc11eda54901ee89ffdb3291582ccc1d385643ae202"
     },
     {
@@ -14659,7 +16193,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 97.98
+          "bodyHeight": 97.98,
+          "registration": [
+            0.21,
+            -45.0
+          ]
         },
         {
           "index": 1,
@@ -14685,7 +16223,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 114.54
+          "bodyHeight": 114.54,
+          "registration": [
+            -12,
+            -45.0
+          ]
         },
         {
           "index": 2,
@@ -14711,7 +16253,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 152.49
+          "bodyHeight": 152.49,
+          "registration": [
+            3.78,
+            -1.66
+          ]
         },
         {
           "index": 3,
@@ -14737,7 +16283,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            2.52,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -14763,7 +16313,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            0.0,
+            10.79
+          ]
         },
         {
           "index": 5,
@@ -14789,7 +16343,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            -0.63,
+            2.49
+          ]
         },
         {
           "index": 6,
@@ -14815,7 +16373,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 153.18
+          "bodyHeight": 153.18,
+          "registration": [
+            -1.47,
+            0.83
+          ]
         },
         {
           "index": 7,
@@ -14841,11 +16403,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 181.47
+          "bodyHeight": 181.47,
+          "registration": [
+            2.52,
+            9.54
+          ]
         }
       ],
-      "bodyFile": "body/air_dash_recovery.png",
-      "handFile": "hands/air_dash_recovery.png",
       "sha256": "076aa54c3b5fcd1ef04b6c092df79e3b77ff9537ab6c113f63eb9a3ceb025a80",
       "entryFrames": {
         "idle_breathe": [
@@ -15032,7 +16596,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 146.28
+          "bodyHeight": 146.28,
+          "registration": [
+            5.25,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -15058,7 +16626,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.15
+          "bodyHeight": 162.15,
+          "registration": [
+            -5.67,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -15084,7 +16656,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            1.68,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -15110,7 +16686,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 160.77
+          "bodyHeight": 160.77,
+          "registration": [
+            -0.63,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -15136,7 +16716,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            1.26,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -15162,7 +16746,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            0.21,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -15188,7 +16776,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.05
+          "bodyHeight": 169.05,
+          "registration": [
+            1.68,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -15214,11 +16806,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/slash_2_recovery.png",
-      "handFile": "hands/slash_2_recovery.png",
       "sha256": "c8a391cfbaad82d26910a39d2c9cf33727fa2b205bef67b0db6089b374db842e"
     },
     {
@@ -15267,7 +16861,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 117.99
+          "bodyHeight": 117.99,
+          "registration": [
+            -8.82,
+            2.0
+          ]
         },
         {
           "index": 1,
@@ -15293,7 +16891,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 123.51
+          "bodyHeight": 123.51,
+          "registration": [
+            -1.89,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -15319,7 +16921,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            2.52,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -15345,7 +16951,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 156.63
+          "bodyHeight": 156.63,
+          "registration": [
+            8.82,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -15371,7 +16981,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.22
+          "bodyHeight": 164.22,
+          "registration": [
+            -4.83,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -15397,7 +17011,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 163.53
+          "bodyHeight": 163.53,
+          "registration": [
+            -1.05,
+            -1.0
+          ]
         },
         {
           "index": 6,
@@ -15423,7 +17041,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.15
+          "bodyHeight": 162.15,
+          "registration": [
+            3.99,
+            -1.0
+          ]
         },
         {
           "index": 7,
@@ -15449,11 +17071,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/slash_3_recovery.png",
-      "handFile": "hands/slash_3_recovery.png",
       "sha256": "ccc8fd738f05d177b5f195aeda0cfbed4f82846d2dcb73ed810c6b78a180f01a"
     },
     {
@@ -15502,7 +17126,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 124.2
+          "bodyHeight": 124.2,
+          "registration": [
+            1.89,
+            1.0
+          ]
         },
         {
           "index": 1,
@@ -15528,7 +17156,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 135.24
+          "bodyHeight": 135.24,
+          "registration": [
+            -12,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -15554,7 +17186,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 148.35
+          "bodyHeight": 148.35,
+          "registration": [
+            3.99,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -15580,7 +17216,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.15
+          "bodyHeight": 162.15,
+          "registration": [
+            2.1,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -15606,7 +17246,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 165.6
+          "bodyHeight": 165.6,
+          "registration": [
+            -1.68,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -15632,7 +17276,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.81
+          "bodyHeight": 171.81,
+          "registration": [
+            -2.73,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -15658,7 +17306,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 174.57
+          "bodyHeight": 174.57,
+          "registration": [
+            6.72,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -15684,11 +17336,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/heavy_recovery.png",
-      "handFile": "hands/heavy_recovery.png",
       "sha256": "821946c451659c0bc3e928c4502ad2198ff37a9c731daed78558dc2e4ef59331"
     },
     {
@@ -15737,7 +17391,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 164.91
+          "bodyHeight": 164.91,
+          "registration": [
+            4.41,
+            -1.0
+          ]
         },
         {
           "index": 1,
@@ -15763,7 +17421,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            -8.82,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -15789,7 +17451,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 172.5
+          "bodyHeight": 172.5,
+          "registration": [
+            1.68,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -15815,7 +17481,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 168.36
+          "bodyHeight": 168.36,
+          "registration": [
+            1.05,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -15841,7 +17511,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 170.43
+          "bodyHeight": 170.43,
+          "registration": [
+            -2.52,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -15867,7 +17541,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 166.98
+          "bodyHeight": 166.98,
+          "registration": [
+            -2.52,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -15893,7 +17571,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 171.12
+          "bodyHeight": 171.12,
+          "registration": [
+            6.51,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -15919,11 +17601,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/thrust_recovery.png",
-      "handFile": "hands/thrust_recovery.png",
       "sha256": "5f4d676a014b3966bea27f1ddc3f38d07a9e6e17ce5cb12504a060b59de81c43"
     },
     {
@@ -15972,7 +17656,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 124.89
+          "bodyHeight": 124.89,
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -15998,7 +17686,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 135.93
+          "bodyHeight": 135.93,
+          "registration": [
+            -11.55,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -16024,7 +17716,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 139.38
+          "bodyHeight": 139.38,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -16050,7 +17746,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 152.49
+          "bodyHeight": 152.49,
+          "registration": [
+            3.99,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -16076,7 +17776,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 163.53
+          "bodyHeight": 163.53,
+          "registration": [
+            3.57,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -16102,7 +17806,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 175.26
+          "bodyHeight": 175.26,
+          "registration": [
+            -7.35,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -16128,7 +17836,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 179.4
+          "bodyHeight": 179.4,
+          "registration": [
+            7.98,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -16154,11 +17866,13 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
-      "bodyFile": "body/dash_attack_recovery.png",
-      "handFile": "hands/dash_attack_recovery.png",
       "sha256": "afc66ef9ae39640a6ace36cc6ce58ebf4801deebc77eb810a9226ff92c74f7e6"
     },
     {
@@ -16167,8 +17881,6 @@
       "playback": "once",
       "facing": "right",
       "file": "HD/run_stop.png",
-      "bodyFile": "body/run_stop.png",
-      "handFile": "hands/run_stop.png",
       "frames": [
         {
           "index": 0,
@@ -16194,7 +17906,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 169.74
+          "bodyHeight": 169.74,
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -16220,7 +17936,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 162.84
+          "bodyHeight": 162.84,
+          "registration": [
+            10.92,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -16246,7 +17966,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 150.42
+          "bodyHeight": 150.42,
+          "registration": [
+            -3.36,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -16272,7 +17996,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 142.83
+          "bodyHeight": 142.83,
+          "registration": [
+            -9.24,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -16298,7 +18026,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 151.11
+          "bodyHeight": 151.11,
+          "registration": [
+            9.66,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -16324,7 +18056,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 154.56
+          "bodyHeight": 154.56,
+          "registration": [
+            7.77,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -16350,7 +18086,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.94
+          "bodyHeight": 155.94,
+          "registration": [
+            -12,
+            -0.32
+          ]
         },
         {
           "index": 7,
@@ -16376,7 +18116,11 @@
             },
             "hidden": false
           },
-          "bodyHeight": 155.25
+          "bodyHeight": 155.25,
+          "registration": [
+            -0.42,
+            1.0
+          ]
         }
       ],
       "frameCount": 8,
@@ -16547,5 +18291,5 @@
     "handToTip": 113.85,
     "mode": "rigid translation/rotation only"
   },
-  "quality": "같은 머리 크기·같은 발 기준으로 모든 동작 정렬, 전체 크기15% 확대, 고정 검 길이 유지"
+  "quality": "발·몸통·검 기준 좌표 정렬, 공중 몸통 보정, 인게임 스프라이트 아틀라스"
 }

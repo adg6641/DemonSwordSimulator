@@ -1,5 +1,6 @@
 """움직이는 시작 화면과 펼친 책 형태의 조작 설명."""
 
+from collections import OrderedDict
 from ctypes import byref, c_int
 import json
 from pathlib import Path
@@ -7,7 +8,8 @@ from pathlib import Path
 import pico2d.pico2d as engine
 from pico2d import (load_font, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderFillRect,
                     SDL_RenderDrawRect, SDL_SetRenderDrawBlendMode, SDL_BLENDMODE_BLEND, TTF_SizeUTF8, SDL_SetTextureColorMod)
-from pico2d import SDL_Vertex, SDL_Color, SDL_RenderGeometry, SDL_RenderDrawLine
+from pico2d import (SDL_Vertex, SDL_Color, SDL_RenderGeometry, SDL_RenderDrawLine,
+                    TTF_RenderUTF8_Blended, SDL_CreateTextureFromSurface, SDL_FreeSurface)
 
 from animation import load_pixel_image
 from scene_layout import sword_layout, socket_layout
@@ -53,16 +55,30 @@ class Interface:
         SDL_SetTextureColorMod(self.sword_image.texture, *self.layout['swordTint'])
         SDL_SetTextureColorMod(self.socket_image.texture, *self.layout['socketTint'])
         self.time = 0.0
+        self.labels = OrderedDict()
 
     def text(self, value, x, y, size=22, color=(233, 229, 239), center=False):
         if size not in self.fonts:
             self.fonts[size] = load_font('C:/Windows/Fonts/malgun.ttf', size)
-        font = self.fonts[size]
-        if center:
-            width, height = c_int(), c_int()
-            TTF_SizeUTF8(font.font, value.encode('utf8'), byref(width), byref(height))
-            x -= width.value / 2
-        font.draw(round(x), round(y), value, color)
+        if not value:
+            return
+        key = value, size, tuple(color)
+        if key not in self.labels:
+            surface = TTF_RenderUTF8_Blended(self.fonts[size].font, value.encode('utf8'), SDL_Color(*color))
+            if not surface:
+                return
+            try:
+                texture = SDL_CreateTextureFromSurface(engine.renderer, surface)
+            finally:
+                SDL_FreeSurface(surface)
+            if not texture:
+                return
+            self.labels[key] = engine.Image(texture)
+        image = self.labels[key]
+        self.labels.move_to_end(key)
+        if len(self.labels) > 256:
+            self.labels.popitem(last=False)
+        image.draw(round(x) if center else round(x)+image.w/2, round(y))
 
     def update(self, dt):
         self.time += dt

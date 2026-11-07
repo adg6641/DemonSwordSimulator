@@ -110,6 +110,12 @@ class CombatEffects:
             self.images[path] = load_pixel_image(self.folder / path,smooth=True)
         return self.images[path]
 
+    def preload(self):
+        # 레벨별 그림은 같은 파일을 공유한다. 첫 공격에서 PNG를 읽지 않는다.
+        files = {clip['file']: name for name, clip in self.clips.items()}
+        for name in files.values():
+            self._image(name)
+
     def _paint(self, name, frame, anchor, camera, x=0, y=0, scale=1, angle=0,
                facing=1, opacity=1, origin=None):
         clip = self.clips[name]
@@ -150,12 +156,14 @@ class CombatEffects:
         """그리기와 타격 판정이 함께 쓰는 현재 검기의 실제 위치·회전·크기."""
         animation = player.animation
         motion = self.ATTACKS.get(animation.name)
-        pose = self.blade(animation)
-        if not motion or not pose:
+        if not motion:
             return
         timing = self.timing(animation,motion)
         time = animation.pose_time * 8 / animation.clip['frameCount']
         if not timing['start'] < time < timing['end']:
+            return
+        pose = self.blade(animation)
+        if not pose:
             return
         name = f'{motion}_lv{self.level}'
         count=self.clips[name]['frameCount'];middle=(count-1)*.46
@@ -246,13 +254,17 @@ class CombatEffects:
                     angle=wave['angle']*(1-smooth(age/style['straightenDuration'])),
                     alpha=clamp((style['lifetime']-age)/style['fadeDuration'])*self.settings['effectStyle']['opacity'])
 
-    def wave_hits(self, wave, target, start_age):
-        speed=(240+wave['level']*20)*self.settings['waveMotion']['speedMultiplier']
-        for age in sweep_ages(start_age,wave['age'],speed):
-            geometry=self.wave_geometry(dict(wave,age=age))
-            if effect_hits(geometry,(wave['x'],wave['y']),wave['facing'],target,self.hit_masks):
-                return True
-        return False
+    def wave_samples(self, wave, start_age):
+        speed = (240+wave['level']*20)*self.settings['waveMotion']['speedMultiplier']
+        return [self.wave_geometry(dict(wave, age=age))
+                for age in sweep_ages(start_age, wave['age'], speed)]
+
+    def wave_hits(self, wave, target, start_age=0, *, samples=None):
+        if samples is None:
+            samples = self.wave_samples(wave, start_age)
+        anchor = wave['x'], wave['y']
+        return any(effect_hits(geometry, anchor, wave['facing'], target, self.hit_masks)
+                   for geometry in samples)
 
     def _draw_geometry(self, g, anchor, camera, facing):
         if g:

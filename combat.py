@@ -220,7 +220,9 @@ class Companion:
         self.cooldown = 2.0
         self.skill = 0.0
         self.crouched = False
-        self.stride = 0.0
+        self.gait_phase = 0.0
+        self.ground_speed = 0.0
+        self.running = False
         self.nav_target = None
 
     @property
@@ -249,24 +251,28 @@ class Companion:
             self.nav_target=None
         if abs(self.x-p.x) > 1050:
             self.x, self.y, self.vy = target, p.floor_y, 0
+            self.ground_speed = 0.0
         self.floor_y = scene.floor_beneath(self)
         dx = target-self.x
-        if abs(dx) > 24:
-            self.facing = 1 if dx > 0 else -1
         from pico2d import SDLK_DOWN
         crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x,self.y)
-        moving = abs(dx) > 10
-        speed = min(410, max(90, abs(dx)*3.1)) if not crouch else 80
+        speed = min(410, max(0, (abs(dx)-10)*3.1)) if not crouch else min(80, max(0, (abs(dx)-10)*3.1))
         if target_y>self.floor_y+18 and not crouch:
             speed = max(330, speed)
         old_x, old_y = self.x, self.y
         # 발판과 낮은 엄폐물에 앞서 점프. 주인공과 같은 중력·착지 판정을 쓴다.
-        obstacle = any(o['kind'] == 'cover' and abs(o['x']-self.x)<140 and (o['x']-self.x)*self.facing>0 for o in scene.objects)
+        direction = 1 if dx > 0 else -1
+        obstacle = any(o['kind'] == 'cover' and abs(o['x']-self.x)<140 and (o['x']-self.x)*direction>0 for o in scene.objects)
         if self.grounded and not crouch and abs(dx)<300 and (target_y>self.y+18 or p.y>self.y+75 and p.floor_y<=self.floor_y+165 or obstacle):
             self.vy = 900
             self.motion.play('lunea/jump_takeoff')
-        if moving and self.skill <= 0:
-            self.x += (1 if dx > 0 else -1)*min(abs(dx), speed*dt)
+        if self.skill > 0:
+            self.ground_speed = 0.0
+        else:
+            desired = direction*speed
+            change = max(-1900*dt, min(1900*dt, desired-self.ground_speed))
+            self.ground_speed += change
+            self.x += max(-abs(dx), min(abs(dx), self.ground_speed*dt))
         if self.vy or self.y>self.floor_y:
             self.y += self.vy*dt-2200*dt*dt/2
             self.vy -= 2200*dt
@@ -277,7 +283,10 @@ class Companion:
             self.y, self.vy = self.floor_y, 0
             if landed:
                 self.motion.play('lunea/land_soft')
-        self.stride += abs(self.x-old_x)
+        moved = abs(self.x-old_x)
+        moving = moved > 23*dt
+        if moving:
+            self.facing = 1 if self.x > old_x else -1
         if not self.grounded:
             # 이륙 첫 자세를 짧게 보여 준 뒤 공중 모션으로 잇는다.
             if self.motion.key != 'lunea/jump_takeoff' or self.motion.age > .1:
@@ -290,25 +299,43 @@ class Companion:
             return
         if self.motion.key in {'adv/lunea_camp__lunea_stand_up', 'adv/lunea_rescue__lunea_freed'} and not self.motion.finished:
             return
-        if self.motion.key in {'lunea/land_soft', 'lunea/move_stop', 'lunea/crouch_down', 'lunea/crouch_up'} and not self.motion.finished:
+        if self.motion.key in {'lunea/land_soft', 'lunea/move_start', 'lunea/crouch_down', 'lunea/crouch_up'} and not self.motion.finished:
+            return
+        if self.motion.key == 'lunea/move_stop' and not moving and not self.motion.finished:
             return
         if crouch != self.crouched:
             self.crouched = crouch
+            self.gait_phase = 0.0
             self.motion.play('lunea/crouch_down' if crouch else 'lunea/crouch_up')
         elif crouch:
-            self.motion.play('adv/lunea_crouch_walk__lunea_crouch_walk' if moving else 'lunea/crouch_idle')
+            if moving:
+                self.walk_cycle('adv/lunea_crouch_walk__lunea_crouch_walk', moved, 118)
+            else:
+                self.motion.play('lunea/crouch_idle')
         elif moving:
-            key = 'lunea/run' if speed > 240 else 'lunea/walk'
-            self.motion.play(key)
-            # 이동한 거리로 프레임을 고른다. 느려질 때 발만 빨리 도는 현상을 막는다.
-            self.motion.age = self.stride/(270 if key.endswith('/run') else 150)*self.assets.duration(key)
+            if self.motion.key == 'lunea/idle_breathe':
+                self.gait_phase = 0.0
+                self.motion.play('lunea/move_start')
+            else:
+                self.running = moved/dt > (208 if self.running else 245)
+                self.walk_cycle('lunea/run' if self.running else 'lunea/walk', moved,
+                                245 if self.running else 145)
         elif self.motion.key in {'lunea/run', 'lunea/walk'}:
-            self.motion.play('lunea/move_stop')
+            stop = self.assets.clips['lunea/move_stop']
+            previous = self.assets.frame(self.motion.key, self.motion.age)
+            start = stop['entryFrames'][self.motion.key][previous]
+            self.motion.play('lunea/move_stop', phase=start/stop['frameCount'])
         else:
             self.motion.play('lunea/idle_breathe')
         enemy = next((e for e in scene.enemies if e.alive and abs(e.x-p.x)<500 and e.state=='windup'), None)
         if enemy and self.cooldown <= 0 and not cinematic:
             self.support(scene, enemy)
+
+    def walk_cycle(self, key, distance, stride):
+        # 걷기↔달리기에서 이전에 디딘 발의 순서를 이어 받는다.
+        self.gait_phase = (self.gait_phase + distance/stride) % 1
+        self.motion.play(key)
+        self.motion.age = self.gait_phase*self.assets.duration(key)
 
     def support(self, scene, enemy=None):
         if self.cooldown > 0:

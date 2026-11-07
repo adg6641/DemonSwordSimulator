@@ -1,7 +1,7 @@
 """기존 시트와 모험 자산을 공통 좌표로 그린다. 텍스처는 필요한 것만 불러온다."""
 from collections import OrderedDict
 import json
-from animation import load_pixel_image
+from animation import SpriteAtlas, load_pixel_image
 
 
 class Assets:
@@ -11,6 +11,7 @@ class Assets:
         self.actors = {}
         self.bodies = {}
         self.images = OrderedDict()
+        self.lunea_atlas = SpriteAtlas(root / 'companions/lunea/runtime.json')
         for prefix, folder, manifest, key in [
             ('adv/', 'adventure', 'manifest.json', 'assets'),
             ('enemy/', 'enemies/animations', 'animations.json', 'clips'),
@@ -41,7 +42,7 @@ class Assets:
             self.by_group.setdefault(clip.get('group', '기존 동작'), []).append(key)
 
     def image(self, path):
-        key = str(path.resolve())
+        key = str(path)
         if key not in self.images:
             # 고해상도 채색화는 축소 시 부드럽게 표본화한다. 픽셀 지면은 별도 1:1 렌더링.
             self.images[key] = load_pixel_image(path, smooth=True)
@@ -62,18 +63,26 @@ class Assets:
 
     def draw(self, key, x, y, camera=None, scale=None, age=0, facing=None, alpha=1, frame=None):
         c = self.clips[key]
-        f = c['frames'][self.frame(key, age) if frame is None else min(c['frameCount'] - 1, frame)]
+        index = self.frame(key, age) if frame is None else min(c['frameCount'] - 1, frame)
+        f = c['frames'][index]
+        s = (c.get('recommendedScale', 1) if scale is None else scale) * f.get('renderScale', 1)
+        flipped = facing is not None and facing != (-1 if c.get('facing') == 'left' else 1) and c.get('flippable', True)
+        if key in self.lunea_atlas.clips:
+            self.lunea_atlas.draw(self.lunea_atlas.clips[key][index], x-(camera.x if camera else 0),
+                                  y-(camera.y if camera else 0), s, -1 if flipped else 1,
+                                  max(0, min(1, alpha)))
+            return
         image = self.image(c['path'])
         w, h = f['width'], f['height']
-        s = (c.get('recommendedScale', 1) if scale is None else scale) * f.get('renderScale', 1)
         pivot = c.get('pivot', {'x': w / 2, 'y': h / 2})
-        flipped = facing is not None and facing != (-1 if c.get('facing') == 'left' else 1) and c.get('flippable', True)
         px = w - pivot['x'] if flipped else pivot['x']
         cx = round(x - (camera.x if camera else 0) + (w / 2 - px) * s)
         cy = round(y - (camera.y if camera else 0) + (pivot['y'] - h / 2) * s)
-        image.opacify(max(0, min(1, alpha)))
+        if alpha != 1:
+            image.opacify(max(0, min(1, alpha)))
         image.clip_composite_draw(f['x'], f['pico2dY'], w, h, 0, 'h' if flipped else '', cx, cy, max(1, round(w*s)), max(1, round(h*s)))
-        image.opacify(1)
+        if alpha != 1:
+            image.opacify(1)
 
     def fit(self, key, x, y, width, height, frame=0, alpha=1):
         c = self.clips[key]
@@ -115,9 +124,9 @@ class Motion:
         self.assets = assets
         self.key, self.age, self.serial = key, 0.0, 0
 
-    def play(self, key, restart=False):
+    def play(self, key, restart=False, *, phase=0):
         if restart or key != self.key:
-            self.key, self.age = key, 0
+            self.key, self.age = key, phase*self.assets.duration(key) if phase else 0
             self.serial += 1
 
     @property

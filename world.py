@@ -83,6 +83,8 @@ class World:
         self.set_stage(0)
 
     def set_stage(self, index):
+        if index == getattr(self, 'index', None):
+            return
         self.index = index
         self.stage = self.stages[index]
         self.background = load_pixel_image(self.folder / self.stage['bg']['file'])

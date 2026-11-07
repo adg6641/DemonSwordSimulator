@@ -26,6 +26,9 @@ class Campaign:
         self.camera = Camera(1280, 720)
         self.player = Player(root / 'assets/hero')
         self.player.animation.add_story_clips(self.assets)
+        self.player.animation.preload()
+        self.player.effects.preload()
+        self.assets.lunea_atlas.preload()
         self.run = Run()
         self.sounds = Sounds()
         self.mp = 80.0
@@ -767,9 +770,7 @@ class Campaign:
         if state['name'] == 'dash_slash':
             damage = (8 + r.attack*(1.8+.2*r.skills['dash']))*(1+.08*r.skills.get('single', 0))
         for enemy in self.enemies:
-            target = enemy.hurtbox()
-            touching = p.effects.melee_hits(state,target)
-            if enemy.uid not in self.hit_ids and enemy.alive and touching:
+            if enemy.uid not in self.hit_ids and enemy.alive and p.effects.melee_hits(state, enemy.hurtbox()):
                 enemy.hurt(damage, state['facing'], self)
                 self.hit_ids.add(enemy.uid)
         for obj in self.objects:
@@ -806,9 +807,10 @@ class Campaign:
             wave.setdefault('damage', (6+r.magic*(1.45+.18*r.skills.get('wave', 0))) * (1.35 if self.hybrid_time > 0 and r.skills.get('hybrid', 0) else 1))
             wave.setdefault('size', 1+.14*r.skills.get('wide', 0))
             # 실제 픽셀 모양을 지나온 위치마다 확인해 빠른 파동도 적을 건너뛰지 않는다.
-            start_age=wave.get('hit_age',0)
-            for enemy in self.enemies:
-                if enemy.alive and enemy.uid not in wave['hit'] and p.effects.wave_hits(wave,enemy.hurtbox(),start_age):
+            targets = [enemy for enemy in self.enemies if enemy.alive and enemy.uid not in wave['hit']]
+            samples = p.effects.wave_samples(wave, wave.get('hit_age', 0)) if targets else ()
+            for enemy in targets:
+                if p.effects.wave_hits(wave, enemy.hurtbox(), samples=samples):
                     enemy.hurt(wave['damage'], wave['facing'], self)
                     wave['hit'].add(enemy.uid)
                     if len(wave['hit']) >= 1+r.skills.get('pierce', 0):

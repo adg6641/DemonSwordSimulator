@@ -7,7 +7,9 @@ import gc
 
 import pico2d.pico2d as engine
 from pico2d import (open_canvas, close_canvas, hide_lattice, clear_canvas, update_canvas,
-                    get_events, SDL_GetKeyboardFocus, SDL_SetWindowTitle)
+                    Event, SDL_Event, SDL_PollEvent, SDL_QUIT, SDL_KEYDOWN, SDL_KEYUP,
+                    SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP, SDL_MOUSEWHEEL,
+                    SDL_GetKeyboardFocus, SDL_SetWindowTitle)
 
 from application import GameApplication
 
@@ -17,12 +19,33 @@ STEP = 1.0 / 120.0
 ROOT = Path(__file__).resolve().parent
 
 
+def events():
+    # 입력을 읽을 때마다 창 제목을 바꾸거나 렌더 루프를 멈추지 않는다.
+    raw = SDL_Event()
+    while SDL_PollEvent(raw):
+        event = Event(raw.type)
+        if raw.type in (SDL_KEYDOWN, SDL_KEYUP):
+            if raw.key.repeat:
+                continue
+            event.key = raw.key.keysym.sym
+        elif raw.type == SDL_MOUSEMOTION:
+            event.x, event.y = raw.motion.x, raw.motion.y
+        elif raw.type in (SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP):
+            event.button, event.x, event.y = raw.button.button, raw.button.x, raw.button.y
+        elif raw.type == SDL_MOUSEWHEEL:
+            event.x, event.y = raw.wheel.x, raw.wheel.y
+        elif raw.type != SDL_QUIT:
+            continue
+        yield event
+
+
 def main():
     parser = argparse.ArgumentParser(description='마검사 시뮬레이터')
     parser.add_argument('--skip-intro', action='store_true', help='인트로를 건너뛰고 시작 화면 표시')
     options = parser.parse_args()
     open_canvas(WIDTH, HEIGHT, sync=True)
     hide_lattice()
+    SDL_SetWindowTitle(engine.window, '마검사 시뮬레이터'.encode('utf8'))
     engine.SDL_SetRenderDrawColor(engine.renderer, 0, 0, 0, 255)
     engine.SDL_RenderClear(engine.renderer)
     update_canvas()
@@ -34,7 +57,7 @@ def main():
             now = perf_counter()
             accumulated += min(now - previous, .1)
             previous = now
-            for event in get_events():
+            for event in events():
                 app.handle(event)
             if not app.running:
                 break
@@ -46,7 +69,6 @@ def main():
             clear_canvas()
             app.draw()
             update_canvas()
-            SDL_SetWindowTitle(engine.window, '마검사 시뮬레이터'.encode('utf8'))
     finally:
         if app:
             app.close()

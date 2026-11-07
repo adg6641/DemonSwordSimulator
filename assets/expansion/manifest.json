@@ -654,7 +654,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -679,7 +683,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            2.73,
+            1.0
+          ]
         },
         {
           "index": 2,
@@ -704,7 +712,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -0.63,
+            1.0
+          ]
         },
         {
           "index": 3,
@@ -729,7 +741,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            1.89,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -754,7 +770,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -1.05,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -779,7 +799,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -804,7 +828,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0.21,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -829,7 +857,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -0.84,
+            1.0
+          ]
         }
       ],
       "anchorType": "ground",
@@ -839,8 +871,6 @@
         "width": 128,
         "height": 128
       },
-      "bodyFile": "body/hero_reach.png",
-      "handFile": "hands/hero_reach.png",
       "folder": "HD"
     },
     {
@@ -895,7 +925,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -2.52,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -920,7 +954,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -0.42,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -945,7 +983,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            2.1,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -970,7 +1012,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            2.1,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -995,7 +1041,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -2.73,
+            1.0
+          ]
         },
         {
           "index": 5,
@@ -1020,7 +1070,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0.84,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -1045,7 +1099,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            2.1,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -1070,7 +1128,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
       "anchorType": "ground",
@@ -1080,8 +1142,6 @@
         "width": 128,
         "height": 128
       },
-      "bodyFile": "body/hero_reach_up.png",
-      "handFile": "hands/hero_reach_up.png",
       "folder": "HD"
     },
     {
@@ -1136,7 +1196,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -1161,7 +1225,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            1.68,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -1186,7 +1254,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -3.36,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -1211,7 +1283,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            4.83,
+            2.0
+          ]
         },
         {
           "index": 4,
@@ -1236,7 +1312,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -5.88,
+            2.0
+          ]
         },
         {
           "index": 5,
@@ -1261,7 +1341,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0.0,
+            2.0
+          ]
         },
         {
           "index": 6,
@@ -1286,7 +1370,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            3.99,
+            0.24
+          ]
         },
         {
           "index": 7,
@@ -1311,7 +1399,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0.0,
+            0.0
+          ]
         }
       ],
       "anchorType": "ground",
@@ -1321,8 +1413,6 @@
         "width": 128,
         "height": 128
       },
-      "bodyFile": "body/hero_sit_down.png",
-      "handFile": "hands/hero_sit_down.png",
       "folder": "HD"
     },
     {
@@ -1377,7 +1467,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            7.77,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -1402,7 +1496,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -7.35,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -1427,7 +1525,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -1.89,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -1452,7 +1554,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            3.15,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -1477,7 +1583,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -3.78,
+            0.0
+          ]
         },
         {
           "index": 5,
@@ -1502,7 +1612,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -0.21,
+            0.0
+          ]
         },
         {
           "index": 6,
@@ -1527,7 +1641,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            8.4,
+            0.0
+          ]
         },
         {
           "index": 7,
@@ -1552,7 +1670,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
       "anchorType": "ground",
@@ -1562,8 +1684,6 @@
         "width": 128,
         "height": 128
       },
-      "bodyFile": "body/hero_stand_up.png",
-      "handFile": "hands/hero_stand_up.png",
       "folder": "HD"
     },
     {
@@ -1618,7 +1738,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            -1.47,
+            2.0
+          ]
         },
         {
           "index": 1,
@@ -1643,7 +1767,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            0.21,
+            2.0
+          ]
         },
         {
           "index": 2,
@@ -1668,7 +1796,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            -1.47,
+            2.0
+          ]
         },
         {
           "index": 3,
@@ -1693,7 +1825,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            3.78,
+            1.0
+          ]
         },
         {
           "index": 4,
@@ -1718,7 +1854,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            -1.89,
+            2.0
+          ]
         },
         {
           "index": 5,
@@ -1743,7 +1883,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            0.63,
+            2.0
+          ]
         },
         {
           "index": 6,
@@ -1768,7 +1912,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            -1.05,
+            1.56
+          ]
         },
         {
           "index": 7,
@@ -1793,7 +1941,11 @@
               "height": 96
             },
             "hidden": true
-          }
+          },
+          "registration": [
+            1.26,
+            2.0
+          ]
         }
       ],
       "anchorType": "ground",
@@ -1803,8 +1955,6 @@
         "width": 128,
         "height": 128
       },
-      "bodyFile": "body/hero_read_map.png",
-      "handFile": "hands/hero_read_map.png",
       "folder": "HD"
     },
     {
@@ -1859,7 +2009,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0,
+            0.0
+          ]
         },
         {
           "index": 1,
@@ -1884,7 +2038,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            1.26,
+            0.0
+          ]
         },
         {
           "index": 2,
@@ -1909,7 +2067,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -0.63,
+            0.0
+          ]
         },
         {
           "index": 3,
@@ -1934,7 +2096,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            1.89,
+            0.0
+          ]
         },
         {
           "index": 4,
@@ -1959,7 +2125,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            -2.1,
+            0.25
+          ]
         },
         {
           "index": 5,
@@ -1984,7 +2154,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0.0,
+            1.0
+          ]
         },
         {
           "index": 6,
@@ -2009,7 +2183,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            3.15,
+            1.0
+          ]
         },
         {
           "index": 7,
@@ -2034,7 +2212,11 @@
               "height": 96
             },
             "hidden": false
-          }
+          },
+          "registration": [
+            0,
+            0.0
+          ]
         }
       ],
       "anchorType": "ground",
@@ -2044,8 +2226,6 @@
         "width": 128,
         "height": 128
       },
-      "bodyFile": "body/hero_greet.png",
-      "handFile": "hands/hero_greet.png",
       "folder": "HD"
     },
     {

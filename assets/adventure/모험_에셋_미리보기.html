@@ -11,7 +11,7 @@
 <script src="preview-data.js"></script><script>
 'use strict';const M=window.ADVENTURE_ASSETS,$=id=>document.getElementById(id),canvas=$('stage'),ctx=canvas.getContext('2d'),byId=Object.fromEntries(M.assets.map(a=>[a.id,a]));
 const cache=new Map(),back=new Map(),refs=new Map();const S={tab:'assets',asset:null,frame:0,time:0,playing:true,scene:'merchant',last:0,token:0};
-function imageFile(file){if(cache.has(file))return Promise.resolve(cache.get(file));return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{cache.set(file,im);resolve(im);};im.onerror=()=>reject(Error(file));im.src=encodeURI(file)+'?v=20261107-original-hd-v6';});}
+function imageFile(file){if(cache.has(file))return Promise.resolve(cache.get(file));return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{cache.set(file,im);resolve(im);};im.onerror=()=>reject(Error(file));im.src=encodeURI(file)+'?v=20261107-consistency-v7';});}
 for(const key of ['forest','ruins','castle','altar'])imageFile('_preview/'+key+'.jpg').then(im=>back.set(key,im)).catch(()=>{});for(const key of ['hero','lunea','king'])imageFile('_preview/'+key+'.png').then(im=>refs.set(key,im)).catch(()=>{});
 function allowed(a){return !a.spoiler||$('spoilers').checked;}
 function list(){

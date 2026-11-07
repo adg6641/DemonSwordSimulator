@@ -32,7 +32,8 @@ class Animation:
             if key.startswith('adv/hero_'):
                 self.clips[key] = dict(clip, file=clip['path'])
 
-    def play(self, name, *, fps=None, once=False, start_frame=0):
+    def play(self, name, *, fps=None, once=False, start_frame=None):
+        previous_name, previous_frame = self.name, self.frame if self.name else 0
         self.name = name
         self.serial += 1
         self.clip = self.clips[name]
@@ -40,6 +41,9 @@ class Animation:
         durations=self.clip.get('frameDurations') if fps is None else None
         self.frame_ends=list(accumulate(durations)) if durations else None
         self.loop = self.clip['playback'] == 'loop' and not once
+        if start_frame is None:
+            entries=self.clip.get('entryFrames',{}).get(previous_name,[])
+            start_frame=entries[min(previous_frame,len(entries)-1)] if entries else 0
         start_frame=max(0,min(self.clip['frameCount']-1,start_frame))
         self.elapsed=(self.frame_ends[start_frame-1]*self.clip['fps']/self.fps if start_frame and self.frame_ends else start_frame/self.fps)
         self.started_at=self.elapsed

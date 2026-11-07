@@ -1,12 +1,13 @@
 """검날을 따라가는 검기, 검은 재 오라와 독립적으로 날아가는 마검파."""
 
 import json
-from math import atan2, ceil, cos, hypot, sin
+from math import atan2, ceil, cos, hypot, sin, pi
 
 import pico2d.pico2d as engine
 from pico2d import SDL_Rect, SDL_RenderSetClipRect, SDL_SetTextureColorMod
 
 from animation import load_pixel_image
+from hit_geometry import effect_hits, blade_hits, sweep_ages
 
 
 def clamp(value):
@@ -27,6 +28,7 @@ class CombatEffects:
         data = json.loads((folder / 'effects.json').read_text(encoding='utf8'))
         self.clips = {c['id']: c for c in data['clips']}
         self.settings = data['preview']
+        self.hit_masks = {name:self.settings['hitMasks'][source] for name,source in self.settings['hitMaskSources'].items()}
         self.images, self.radii = {}, {}
         self.level = 1
         self.time = self.buff_remaining = 0.0
@@ -35,10 +37,13 @@ class CombatEffects:
         self.waves = []
         self.serial, self.fired = -1, False
         self.trail=None
+        self.last_hit_state = None
         for name, frames in self.settings['effectGeometry'].items():
             self.radii[name] = max(4.0, *(hypot(x - f['origin'][0], y - f['origin'][1])
                 for f in frames for x in (f['bounds'][0], f['bounds'][2])
                 for y in (f['bounds'][1], f['bounds'][3])))
+        self.wave_heights = {name: max(f['bounds'][3]-f['bounds'][1] for f in frames[2:-2])
+                             for name, frames in self.settings['effectGeometry'].items() if name.startswith('wave_')}
 
     def activate(self):
         self.buff_remaining = self.buff_duration
@@ -81,7 +86,9 @@ class CombatEffects:
             self.trail['age']+=dt
             if self.trail['age']>.18:self.trail=None
         g=self.strike_geometry(player)
-        if g:self.trail=dict(geometry=g,anchor=(player.x,player.y),facing=player.facing,age=0)
+        if g:
+            self.trail=dict(geometry=g,anchor=(player.x,player.y),facing=player.facing,age=0,
+                            serial=animation.serial,name=animation.name)
         if animation.serial != self.serial:
             self.serial, self.fired = animation.serial, False
         motion = self.ATTACKS.get(animation.name)
@@ -161,7 +168,7 @@ class CombatEffects:
         style = self.settings['effectStyle']
         radius = (pose['length'] + 4) * (1 + (self.level - 1) * (.2 if motion == 'dash' else .16))
         scale = radius * style['scale'] / self.radii[name] * self.reach_scale
-        reach = (pose['length'] + 4) * (1 + (self.level - 1) * .065)
+        reach = (pose['length'] + 4) * (1 + (self.level - 1) * .13) * self.reach_scale
         shift = reach - hypot(lead[0] - origin[0], lead[1] - origin[1]) * scale
         x = pose['hand'][0] + cos(pose['angle']) * shift
         y = pose['hand'][1] + sin(pose['angle']) * shift
@@ -188,6 +195,41 @@ class CombatEffects:
         g = self.strike_geometry(player)
         return self.world_bounds(g, player.x, player.y, player.facing) if g else None
 
+    def strike_state(self, player):
+        """현재 보이는 검기와 잔상을 타격 판정에도 같은 위치로 전달한다."""
+        current = self.strike_geometry(player)
+        if current:
+            state=dict(geometry=current,anchor=(player.x,player.y),facing=player.facing,
+                       serial=player.animation.serial,name=player.animation.name,blade=self.blade(player.animation))
+            self.trail=dict(state,age=0)
+            return state
+        if self.trail and player.mode not in {'hurt','dead'}:
+            state=dict(self.trail);geometry=dict(state['geometry'])
+            geometry['alpha'] *= 1-smooth(state['age']/.18)
+            state.update(geometry=geometry,blade=None)
+            return state if geometry['alpha'] >= .025 else None
+
+    def melee_hits(self, state, target):
+        if effect_hits(state['geometry'],state['anchor'],state['facing'],target,self.hit_masks):
+            return True
+        pose=state.get('blade')
+        if not pose:
+            return False
+        previous=self.last_hit_state
+        if not previous or previous['serial']!=state['serial'] or not previous.get('blade'):
+            previous=state
+        old=previous['blade'];facing=state['facing']
+        turn=(pose['angle']-old['angle']+pi)%(2*pi)-pi
+        distance=hypot(state['anchor'][0]-previous['anchor'][0],state['anchor'][1]-previous['anchor'][1])+abs(turn)*pose['length']
+        for t in sweep_ages(0,1,distance):
+            angle=old['angle']+turn*t
+            anchor=tuple(a+(b-a)*t for a,b in zip(previous['anchor'],state['anchor']))
+            hand=tuple(a+(b-a)*t for a,b in zip(old['hand'],pose['hand']))
+            start=(anchor[0]+facing*hand[0],anchor[1]-hand[1])
+            tip=(start[0]+facing*cos(angle)*pose['length'],start[1]-sin(angle)*pose['length'])
+            if blade_hits(start,tip,target):return True
+        return False
+
     def wave_geometry(self, wave):
         style = self.settings['waveMotion']
         age, level = wave['age'], wave['level']
@@ -197,11 +239,20 @@ class CombatEffects:
         frame = 2+int(age*style['fps'])%max(1,count-4)
         bounds = self.settings['effectGeometry'][name][frame]['bounds']
         origin = (bounds[0]+(bounds[2]-bounds[0])*.12, (bounds[1]+bounds[3])/2)
-        scale = (.32+.68*smooth(age/style['growDuration']))*self.settings['effectStyle']['scale']*wave.get('size', 1)
+        height = style['heightByLevel'][level-1]
+        scale = height/self.wave_heights[name]*(.55+.45*smooth(age/style['growDuration']))*wave.get('size',1)
         return dict(name=name, frame=frame, bounds=bounds, origin=origin, scale=scale,
                     x=age*(240+level*20)*style['speedMultiplier'], y=0,
                     angle=wave['angle']*(1-smooth(age/style['straightenDuration'])),
                     alpha=clamp((style['lifetime']-age)/style['fadeDuration'])*self.settings['effectStyle']['opacity'])
+
+    def wave_hits(self, wave, target, start_age):
+        speed=(240+wave['level']*20)*self.settings['waveMotion']['speedMultiplier']
+        for age in sweep_ages(start_age,wave['age'],speed):
+            geometry=self.wave_geometry(dict(wave,age=age))
+            if effect_hits(geometry,(wave['x'],wave['y']),wave['facing'],target,self.hit_masks):
+                return True
+        return False
 
     def _draw_geometry(self, g, anchor, camera, facing):
         if g:
@@ -237,12 +288,8 @@ class CombatEffects:
         pose = self.blade(player.animation)
         if pose and player.mode != 'dead':
             self._concentrate(player, camera, pose)
-            current=self.strike_geometry(player)
-            if current:self._draw_geometry(current,(player.x,player.y),camera,player.facing)
-            elif self.trail:
-                trail=self.trail;g=dict(trail['geometry'])
-                g['alpha']*=1-smooth(trail['age']/.18)
-                self._draw_geometry(g,trail['anchor'],camera,trail['facing'])
+            state=self.strike_state(player)
+            if state:self._draw_geometry(state['geometry'],state['anchor'],camera,state['facing'])
         for wave in self.waves:
             self._draw_geometry(self.wave_geometry(wave), (wave['x'], wave['y']), camera, wave['facing'])
         SDL_RenderSetClipRect(engine.renderer, None)

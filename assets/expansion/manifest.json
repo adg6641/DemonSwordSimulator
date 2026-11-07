@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "clips": [
     {
       "id": "crystal",
@@ -629,7 +629,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16쪽",
-      "sha256": "36a10561cb3c6983cea9c911b21ce262c46d714dc9444625d10086498a0d8838",
+      "sha256": "741dbcf370835cbf24c641d31ba6f25d1b63b2ebb074ee27dcb9125c05d36644",
       "frames": [
         {
           "index": 0,
@@ -638,16 +638,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              311.15,
-              467.54
+              311.2387531726842,
+              468.54747386755423
             ],
             "angle": 0.366688,
             "patch": {
               "left": 263,
-              "top": 420,
+              "top": 421,
               "x": 0,
               "pico2dY": 96,
               "width": 96,
@@ -663,16 +663,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              296.66,
-              487.43
+              297.3736846473231,
+              489.8936491874387
             ],
             "angle": 0.44266,
             "patch": {
               "left": 249,
-              "top": 439,
+              "top": 442,
               "x": 96,
               "pico2dY": 96,
               "width": 96,
@@ -688,16 +688,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              287.76,
-              493.73
+              287.2634158749431,
+              492.5860389898272
             ],
             "angle": 0.551117,
             "patch": {
-              "left": 240,
-              "top": 446,
+              "left": 239,
+              "top": 445,
               "x": 192,
               "pico2dY": 96,
               "width": 96,
@@ -713,11 +713,11 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              277.76,
-              502.83
+              278.15859302030117,
+              503.44496939235387
             ],
             "angle": 0.551117,
             "patch": {
@@ -738,16 +738,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              282.96,
-              509.93
+              283.5072530730528,
+              510.78796398359015
             ],
             "angle": 0.4159,
             "patch": {
-              "left": 235,
-              "top": 462,
+              "left": 236,
+              "top": 463,
               "x": 0,
               "pico2dY": 0,
               "width": 96,
@@ -763,16 +763,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              270.06,
-              514.63
+              272.4351659384612,
+              517.16829808041
             ],
             "angle": 0.4159,
             "patch": {
-              "left": 222,
-              "top": 467,
+              "left": 224,
+              "top": 469,
               "x": 96,
               "pico2dY": 0,
               "width": 96,
@@ -788,16 +788,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              259.16,
-              515.43
+              262.1449036860374,
+              518.0091648056375
             ],
             "angle": 0.4159,
             "patch": {
-              "left": 211,
-              "top": 467,
+              "left": 214,
+              "top": 470,
               "x": 192,
               "pico2dY": 0,
               "width": 96,
@@ -813,16 +813,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              259.96,
-              514.43
+              261.391571376026,
+              515.7073031081563
             ],
             "angle": 0.4159,
             "patch": {
-              "left": 212,
-              "top": 466,
+              "left": 213,
+              "top": 468,
               "x": 288,
               "pico2dY": 0,
               "width": 96,
@@ -870,7 +870,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16쪽",
-      "sha256": "0de45f4ecdb5b8dab1f3436be8fe4960d764f01ce8f07e438a47edb58ce3ccbe",
+      "sha256": "e93f531c93f4ac119066556a02ca5f67122d0173ba2cec81b3ea180291d0f860",
       "frames": [
         {
           "index": 0,
@@ -879,16 +879,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              284.98,
-              530.07
+              286.998251205605,
+              532.2559585445059
             ],
             "angle": 0.356538,
             "patch": {
-              "left": 237,
-              "top": 482,
+              "left": 239,
+              "top": 484,
               "x": 0,
               "pico2dY": 96,
               "width": 96,
@@ -904,16 +904,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              291.19,
-              520.87
+              291.8217853727039,
+              521.90353157291
             ],
             "angle": 0.356538,
             "patch": {
-              "left": 243,
-              "top": 473,
+              "left": 244,
+              "top": 474,
               "x": 96,
               "pico2dY": 96,
               "width": 96,
@@ -929,16 +929,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              290.84,
-              512.58
+              291.45731346177706,
+              513.7532342953253
             ],
             "angle": 0.458651,
             "patch": {
               "left": 243,
-              "top": 465,
+              "top": 466,
               "x": 192,
               "pico2dY": 96,
               "width": 96,
@@ -954,16 +954,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              291.48,
-              508.94
+              292.56943694635356,
+              511.1960359765652
             ],
             "angle": 0.191744,
             "patch": {
-              "left": 243,
-              "top": 461,
+              "left": 245,
+              "top": 463,
               "x": 288,
               "pico2dY": 96,
               "width": 96,
@@ -979,16 +979,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              297.39,
-              487.65
+              297.2352873206301,
+              487.10019178295573
             ],
             "angle": 0.191744,
             "patch": {
               "left": 249,
-              "top": 440,
+              "top": 439,
               "x": 0,
               "pico2dY": 0,
               "width": 96,
@@ -1004,16 +1004,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              296.13,
-              479.37
+              295.7276693116888,
+              477.8761345242975
             ],
             "angle": 0.191744,
             "patch": {
               "left": 248,
-              "top": 431,
+              "top": 430,
               "x": 96,
               "pico2dY": 0,
               "width": 96,
@@ -1029,16 +1029,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              297.95,
-              477.54
+              296.85515415316985,
+              473.0484011199885
             ],
             "angle": 0.191744,
             "patch": {
-              "left": 250,
-              "top": 430,
+              "left": 249,
+              "top": 425,
               "x": 192,
               "pico2dY": 0,
               "width": 96,
@@ -1054,16 +1054,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              311.15,
-              467.54
+              311.2387531726842,
+              468.54747386755423
             ],
             "angle": 0.366688,
             "patch": {
               "left": 263,
-              "top": 420,
+              "top": 421,
               "x": 288,
               "pico2dY": 0,
               "width": 96,
@@ -1111,7 +1111,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16,29쪽",
-      "sha256": "545bdbccc3a9e8a6cbd9d5afffd2d373be288ddfa016d4b39740bb8a5521a566",
+      "sha256": "9d2a17ba7b7b546f2323b654d34f4bc124b8545789717acd4a8d27bab3459413",
       "frames": [
         {
           "index": 0,
@@ -1120,16 +1120,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              311.15,
-              467.54
+              311.2387531726842,
+              468.54747386755423
             ],
             "angle": 0.366688,
             "patch": {
               "left": 263,
-              "top": 420,
+              "top": 421,
               "x": 0,
               "pico2dY": 96,
               "width": 96,
@@ -1145,16 +1145,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              295.53,
-              499.22
+              294.36059516158673,
+              495.9330500700423
             ],
             "angle": 0.4216,
             "patch": {
-              "left": 248,
-              "top": 451,
+              "left": 246,
+              "top": 448,
               "x": 96,
               "pico2dY": 96,
               "width": 96,
@@ -1170,11 +1170,11 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              294.09,
-              529.29
+              293.6916239200677,
+              528.6948190639066
             ],
             "angle": 0.220612,
             "patch": {
@@ -1195,11 +1195,11 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              268.35,
-              549.19
+              268.21492491338813,
+              549.1408080855921
             ],
             "angle": 0.062665,
             "patch": {
@@ -1220,15 +1220,15 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              275.49,
-              551.04
+              276.5355105050422,
+              551.438379199405
             ],
             "angle": 0.017414,
             "patch": {
-              "left": 227,
+              "left": 229,
               "top": 503,
               "x": 0,
               "pico2dY": 0,
@@ -1245,16 +1245,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              276.92,
-              552.47
+              278.1231930718255,
+              552.9037416064403
             ],
             "angle": 0.008084,
             "patch": {
-              "left": 229,
-              "top": 504,
+              "left": 230,
+              "top": 505,
               "x": 96,
               "pico2dY": 0,
               "width": 96,
@@ -1270,15 +1270,15 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              266.8,
-              555.48
+              265.3687235310812,
+              555.1431657633296
             ],
             "angle": -0.000432,
             "patch": {
-              "left": 219,
+              "left": 217,
               "top": 507,
               "x": 192,
               "pico2dY": 0,
@@ -1295,11 +1295,11 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              272.37,
-              555.48
+              271.664547186165,
+              555.2945649962373
             ],
             "angle": 0.007965,
             "patch": {
@@ -1352,7 +1352,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16,29쪽",
-      "sha256": "94578cf558211df06700ee2029ecf5d9dbcdd2c4180e89dc0a0a1890ff371014",
+      "sha256": "abe25ce1adda6ebb90defd21b8634f66d0ec07e53dda205c2a82dfc7dc417729",
       "frames": [
         {
           "index": 0,
@@ -1361,11 +1361,11 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              296.31,
-              560.83
+              296.3511432396867,
+              560.8424523861779
             ],
             "angle": 0.007965,
             "patch": {
@@ -1386,16 +1386,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              287.34,
-              548.24
+              289.2928190051235,
+              549.421497352763
             ],
             "angle": 0.09472,
             "patch": {
-              "left": 239,
-              "top": 500,
+              "left": 241,
+              "top": 501,
               "x": 96,
               "pico2dY": 96,
               "width": 96,
@@ -1411,15 +1411,15 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              288.33,
-              523.66
+              288.54406902483413,
+              523.9597101534937
             ],
             "angle": 0.257901,
             "patch": {
-              "left": 240,
+              "left": 241,
               "top": 476,
               "x": 192,
               "pico2dY": 96,
@@ -1436,16 +1436,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              279.55,
-              498.77
+              279.11846833121706,
+              498.03143541582585
             ],
             "angle": 0.325503,
             "patch": {
-              "left": 232,
-              "top": 451,
+              "left": 231,
+              "top": 450,
               "x": 288,
               "pico2dY": 96,
               "width": 96,
@@ -1461,16 +1461,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              284.49,
-              482.55
+              283.8353899998554,
+              480.9747697968923
             ],
             "angle": 0.385342,
             "patch": {
               "left": 236,
-              "top": 435,
+              "top": 433,
               "x": 0,
               "pico2dY": 0,
               "width": 96,
@@ -1486,11 +1486,11 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              277.94,
-              472.1
+              277.725641869304,
+              471.6112471532633
             ],
             "angle": 0.213181,
             "patch": {
@@ -1511,11 +1511,11 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              277.08,
-              475.79
+              277.3556115953195,
+              476.38212826664517
             ],
             "angle": 0.332278,
             "patch": {
@@ -1536,16 +1536,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              311.15,
-              467.54
+              311.2387531726842,
+              468.54747386755423
             ],
             "angle": 0.366688,
             "patch": {
               "left": 263,
-              "top": 420,
+              "top": 421,
               "x": 288,
               "pico2dY": 0,
               "width": 96,
@@ -1593,7 +1593,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 19,29쪽",
-      "sha256": "80d54f244908dca427b6c0382370d9b947b9323d215df4eaf16144cf4662e834",
+      "sha256": "e6f166718ad18220b5b3ffd5ca29d3b9a23f707f346d9fb1157c9c989c234eb7",
       "frames": [
         {
           "index": 0,
@@ -1602,16 +1602,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              66.0,
-              161.0
+              52.75211046617056,
+              139.7720825186276
             ],
             "angle": 0.0,
             "patch": {
-              "left": 18,
-              "top": 113,
+              "left": 5,
+              "top": 92,
               "x": 0,
               "pico2dY": 96,
               "width": 96,
@@ -1627,16 +1627,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              63.0,
-              161.0
+              71.24807569581293,
+              174.06212765834965
             ],
             "angle": 0.0,
             "patch": {
-              "left": 15,
-              "top": 113,
+              "left": 23,
+              "top": 126,
               "x": 96,
               "pico2dY": 96,
               "width": 96,
@@ -1652,16 +1652,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              63.0,
-              161.0
+              77.57526577065252,
+              184.08223022823182
             ],
             "angle": 0.0,
             "patch": {
-              "left": 15,
-              "top": 113,
+              "left": 30,
+              "top": 136,
               "x": 192,
               "pico2dY": 96,
               "width": 96,
@@ -1677,16 +1677,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              53.0,
-              162.0
+              45.599894070140124,
+              150.74740446620558
             ],
             "angle": 0.0,
             "patch": {
-              "left": 5,
-              "top": 114,
+              "left": -2,
+              "top": 103,
               "x": 288,
               "pico2dY": 96,
               "width": 96,
@@ -1702,16 +1702,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              62.0,
-              162.0
+              52.47815407173039,
+              147.0160098958238
             ],
             "angle": 0.0,
             "patch": {
-              "left": 14,
-              "top": 114,
+              "left": 4,
+              "top": 99,
               "x": 0,
               "pico2dY": 0,
               "width": 96,
@@ -1727,16 +1727,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              62.0,
-              162.0
+              68.49667645254834,
+              172.22345209199472
             ],
             "angle": 0.0,
             "patch": {
-              "left": 14,
-              "top": 114,
+              "left": 20,
+              "top": 124,
               "x": 96,
               "pico2dY": 0,
               "width": 96,
@@ -1752,16 +1752,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              64.0,
-              162.0
+              75.16747475639471,
+              179.71091699646973
             ],
             "angle": 0.0,
             "patch": {
-              "left": 16,
-              "top": 114,
+              "left": 27,
+              "top": 132,
               "x": 192,
               "pico2dY": 0,
               "width": 96,
@@ -1777,16 +1777,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              62.0,
-              162.0
+              55.092376338991016,
+              151.12986354120295
             ],
             "angle": 0.0,
             "patch": {
-              "left": 14,
-              "top": 114,
+              "left": 7,
+              "top": 103,
               "x": 288,
               "pico2dY": 0,
               "width": 96,
@@ -1834,7 +1834,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 19,29쪽",
-      "sha256": "d21a8f5041d45e0e7226af6992923ded0d832f38d259226defd071a9ae6c3fb5",
+      "sha256": "17623b888dff7cf61a09ab38367c5614a79f0b8906099810fb593efb053ad3dd",
       "frames": [
         {
           "index": 0,
@@ -1843,16 +1843,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              311.15,
-              467.54
+              311.2387531726842,
+              468.54747386755423
             ],
             "angle": 0.366688,
             "patch": {
               "left": 263,
-              "top": 420,
+              "top": 421,
               "x": 0,
               "pico2dY": 96,
               "width": 96,
@@ -1868,16 +1868,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              308.54,
-              460.63
+              309.07804160761157,
+              465.6709709781195
             ],
             "angle": 0.393811,
             "patch": {
               "left": 261,
-              "top": 413,
+              "top": 418,
               "x": 96,
               "pico2dY": 96,
               "width": 96,
@@ -1893,16 +1893,16 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              307.56,
-              461.66
+              307.7524824254037,
+              463.30538433419844
             ],
             "angle": 0.419137,
             "patch": {
               "left": 260,
-              "top": 414,
+              "top": 415,
               "x": 192,
               "pico2dY": 96,
               "width": 96,
@@ -1918,11 +1918,11 @@
           "pico2dY": 640,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              304.56,
-              460.63
+              304.599825863755,
+              460.9069496756068
             ],
             "angle": 0.423318,
             "patch": {
@@ -1943,15 +1943,15 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              305.45,
-              458.57
+              305.5546321619185,
+              459.35693453462153
             ],
             "angle": 0.433471,
             "patch": {
-              "left": 257,
+              "left": 258,
               "top": 411,
               "x": 0,
               "pico2dY": 0,
@@ -1968,16 +1968,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              310.47,
-              459.59
+              310.65616466629234,
+              461.7077451702781
             ],
             "angle": 0.36907,
             "patch": {
-              "left": 262,
-              "top": 412,
+              "left": 263,
+              "top": 414,
               "x": 96,
               "pico2dY": 0,
               "width": 96,
@@ -1993,16 +1993,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              304.42,
-              458.57
+              304.3823938135115,
+              458.3058636079948
             ],
             "angle": 0.597826,
             "patch": {
               "left": 256,
-              "top": 411,
+              "top": 410,
               "x": 192,
               "pico2dY": 0,
               "width": 96,
@@ -2018,16 +2018,16 @@
           "pico2dY": 0,
           "width": 768,
           "height": 640,
-          "renderScale": 0.6,
+          "renderScale": 0.69,
           "weapon": {
             "hand": [
-              311.15,
-              467.54
+              311.2387531726842,
+              468.54747386755423
             ],
             "angle": 0.366688,
             "patch": {
               "left": 263,
-              "top": 420,
+              "top": 421,
               "x": 288,
               "pico2dY": 0,
               "width": 96,

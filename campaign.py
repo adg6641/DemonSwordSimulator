@@ -35,6 +35,7 @@ class Campaign:
         self.toast, self.toast_time = '', 0
         self.bursts, self.numbers, self.shots, self.hazards = [], [], [], []
         self.hit_ids, self.wave_ids = set(), set()
+        self.attack_hits = {}
         self.last_serial = -1
         self.slash_sound_serial=-1
         self.shield = self.hitstop = self.death_age = 0.0
@@ -162,6 +163,9 @@ class Campaign:
         self.player.forced_crouch=self.player.crouching=False
         self.player.animation.play('idle_breathe')
         self.player.effects.waves.clear()
+        self.player.effects.trail = None
+        self.player.effects.last_hit_state = None
+        self.attack_hits.clear()
         self.player.dash_attack_remaining = 0
         self.shots, self.hazards, self.bursts, self.numbers = [], [], [], []
         self.companion = Companion(self.assets, x-90) if self.run.companion else None
@@ -224,7 +228,7 @@ class Campaign:
             p.effects.level = r.tier
         p.effects.buff_duration = 5 + r.skills.get('duration', 0)*.8
         p.effects.reach_scale = 1+.07*r.skills.get('wide_slash', 0)
-        p.DASH_SPEED = 850*(1 + .055*r.skills.get('dash_distance', 0))
+        p.DASH_SPEED = Player.DASH_SPEED*(1 + .055*r.skills.get('dash_distance', 0))
 
     def grow(self):
         if self.run.earned <= 0:
@@ -744,46 +748,36 @@ class Campaign:
         a = p.animation
         if a.serial != self.last_serial:
             self.last_serial = a.serial
-            self.hit_ids.clear()
             if a.name == 'dash_slash':
                 self.hybrid_time = 4
             if a.name in p.effects.ATTACKS or 'recovery' in a.name:
                 previous=a.fps
                 a.fps = a.clip['fps'] * (1 + .025*r.skills.get('recovery', 0))
                 a.elapsed*=previous/a.fps;a.started_at*=previous/a.fps
-        motion = p.effects.ATTACKS.get(a.name)
-        if not motion or p.hp <= 0:
+        state = p.effects.strike_state(p)
+        if not state or p.hp <= 0:
             return
-        timing = p.effects.timing(a,motion)
-        progress = a.pose_time*8/a.clip['frameCount']
-        if not timing['start'] <= progress <= timing['end']:
-            return
-        if self.slash_sound_serial!=a.serial:
+        if state['serial']==a.serial and self.slash_sound_serial!=a.serial:
             self.sounds.play('slash');self.slash_sound_serial=a.serial
-        bounds = p.effects.strike_bounds(p)
-        blade = p.effects.blade(a)
-        if blade:
-            points = [(p.x+p.facing*blade[k][0], p.y-blade[k][1]) for k in ('hand','tip')]
-            sword_box = (min(x for x,y in points)-16, min(y for x,y in points)-16,
-                         max(x for x,y in points)+16, max(y for x,y in points)+16)
-        else:
-            sword_box = None
-        coefficient = {'slash_1': 1, 'slash_2': 1.2, 'slash_3': 1.65, 'air_slash': 1.15, 'crouch_slash': .95}.get(a.name, 1)
+        # 같은 베기의 검기·칼날·사라지는 잔상에 여러 번 닿아도 피해는 한 번이다.
+        self.hit_ids = self.attack_hits.setdefault(state['serial'],set())
+        self.attack_hits = {key:value for key,value in self.attack_hits.items() if key>=a.serial-8}
+        coefficient = {'slash_1': 1, 'slash_2': 1.2, 'slash_3': 1.65, 'air_slash': 1.15, 'crouch_slash': .95}.get(state['name'], 1)
         damage = r.attack * coefficient * (1 + .09*r.skills.get('single', 0))
-        if a.name == 'dash_slash':
+        if state['name'] == 'dash_slash':
             damage = (8 + r.attack*(1.8+.2*r.skills['dash']))*(1+.08*r.skills.get('single', 0))
         for enemy in self.enemies:
             target = enemy.hurtbox()
-            touching = self.overlap(bounds, target) or self.overlap(sword_box, target)
+            touching = p.effects.melee_hits(state,target)
             if enemy.uid not in self.hit_ids and enemy.alive and touching:
-                enemy.hurt(damage, p.facing, self)
+                enemy.hurt(damage, state['facing'], self)
                 self.hit_ids.add(enemy.uid)
         for obj in self.objects:
             uid = self.obj_uid(obj)
             if obj['kind'] not in {'crate', 'barrier', 'pillar'} or uid in r.broken or uid in self.hit_ids:
                 continue
             target = (obj['x']-35,obj['y'],obj['x']+35,obj['y']+130)
-            if self.overlap(bounds, target) or self.overlap(sword_box, target):
+            if p.effects.melee_hits(state,target):
                 obj['hp'] -= damage
                 self.hit_ids.add(uid)
                 self.burst('hit_impacts__hit_metal', obj['x'], obj['y']+45, .4)
@@ -798,6 +792,7 @@ class Campaign:
                                 enemy.change('hurt', enemy.key('hurt'))
                                 enemy.slow = 4
                         self.notify('봉인 기둥이 무너졌다. 왕의 움직임이 잠시 멎는다.')
+        p.effects.last_hit_state = state
 
     @staticmethod
     def overlap(a, b):
@@ -810,19 +805,16 @@ class Campaign:
             wave.setdefault('hit', set())
             wave.setdefault('damage', (6+r.magic*(1.45+.18*r.skills.get('wave', 0))) * (1.35 if self.hybrid_time > 0 and r.skills.get('hybrid', 0) else 1))
             wave.setdefault('size', 1+.14*r.skills.get('wide', 0))
-            geometry = p.effects.wave_geometry(wave)
-            bounds = p.effects.world_bounds(geometry, wave['x'], wave['y'], wave['facing'])
-            # 빠른 파동도 프레임 사이를 건너뛰지 않도록 직전 위치부터 이어 검사한다.
-            previous = wave.get('bounds', bounds)
-            swept = (min(previous[0],bounds[0]),min(previous[1],bounds[1]),max(previous[2],bounds[2]),max(previous[3],bounds[3]))
-            wave['bounds'] = bounds
+            # 실제 픽셀 모양을 지나온 위치마다 확인해 빠른 파동도 적을 건너뛰지 않는다.
+            start_age=wave.get('hit_age',0)
             for enemy in self.enemies:
-                if enemy.alive and enemy.uid not in wave['hit'] and self.overlap(swept, enemy.hurtbox()):
+                if enemy.alive and enemy.uid not in wave['hit'] and p.effects.wave_hits(wave,enemy.hurtbox(),start_age):
                     enemy.hurt(wave['damage'], wave['facing'], self)
                     wave['hit'].add(enemy.uid)
                     if len(wave['hit']) >= 1+r.skills.get('pierce', 0):
                         wave['age'] = settings['lifetime']
                         break
+            wave['hit_age']=wave['age']
 
     def platform_span(self, o):
         c = self.assets.clips.get(o.get('visual', ''), {})
@@ -868,7 +860,7 @@ class Campaign:
     def platforms(self, old_y, actor=None):
         p = self.player if actor is None else actor
         if getattr(p,'drop_timer',0)>0: return
-        height=126 if getattr(p,'crouching',getattr(p,'crouched',False)) else 150
+        height=getattr(p,'collision_height',126 if getattr(p,'crouching',getattr(p,'crouched',False)) else getattr(p,'BODY_HEIGHT',150))
         for o in self.objects:
             if o['kind']=='crawl' and abs(p.x-o['x'])<o['w']/2:
                 ceiling=o['y']+o.get('ceiling',112)
@@ -898,7 +890,7 @@ class Campaign:
             block = height and p.y < height-8
             radius = obj.get('w', 80)/2+20
             if kind=='crawl':
-                height=126 if (crouched or getattr(p,'crouching',False) or getattr(p,'forced_crouch',False)) else 150
+                height=getattr(p,'collision_height',126 if (crouched or getattr(p,'crouching',False) or getattr(p,'forced_crouch',False)) else getattr(p,'BODY_HEIGHT',150))
                 block=p.y<obj['y']+obj.get('roof',154)-1 and p.y+height>obj['y']+obj.get('ceiling',112)
             left,right=obj['x']-radius,obj['x']+radius
             if block and (min(old_x,p.x)<right and max(old_x,p.x)>left):
@@ -1037,7 +1029,7 @@ class Campaign:
                 if obj['kind'] == 'cover' and abs(shot.x-obj['x']) < obj.get('w', 100)/2 and 0 < shot.y < obj.get('h', 72):
                     shot.age = shot.life
                     self.burst('hit_impacts__hit_metal', shot.x, shot.y, .3)
-            if not shot.dead and abs(shot.x-p.x) < shot.radius+20 and p.y+15 < shot.y+shot.radius and shot.y-shot.radius < p.y+(88 if p.crouching else 150):
+            if not shot.dead and abs(shot.x-p.x) < shot.radius+20 and p.y+15 < shot.y+shot.radius and shot.y-shot.radius < p.y+p.collision_height:
                 self.damage_player(shot.damage, shot.x)
                 shot.age = shot.life
                 kind = 'spore_burst' if 'spore' in shot.key else 'paper_break' if 'paper' in shot.key else 'thread_snap' if 'needle' in shot.key else 'night_impact'

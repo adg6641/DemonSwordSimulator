@@ -38,10 +38,12 @@ class Player:
     RUN_SPEED = 330.0
     CROUCH_SPEED = 85.0
     AIR_SPEED = 285.0
-    DASH_SPEED = 850.0
+    DASH_SPEED = 730.0
+    DASH_ATTACK_SPEED = 760.0
+    BODY_HEIGHT = 180
     DASH_ATTACK_GRACE = 0.4
     # C의 1·2·3번째 베기에서 각각 앞으로 나아갈 거리.
-    COMBO_STEP = (26.0, 28.0, 32.0)
+    COMBO_STEP = (46.0, 54.0, 64.0)
     JUMP_SPEED = 850.0
     GRAVITY = 2200.0
 
@@ -74,6 +76,12 @@ class Player:
     @property
     def grounded(self):
         return self.y <= self.floor_y + .01 and self.vy <= 0.0
+
+    @property
+    def collision_height(self):
+        if self.animation.name in {'crouch_down','crouch_up','crouch_idle','crouch_walk','crouch_slash','crouch_attack_recovery'}:
+            return self.animation.clip['frames'][self.animation.frame].get('bodyHeight',126)
+        return self.BODY_HEIGHT
 
     def _action(self, clip, *followups):
         self.attack_pending=False
@@ -261,7 +269,7 @@ class Player:
             transition = MOVE_TRANSITIONS.get((prior, target))
             self.gait = target
             name=transition or target
-            entry=0
+            entry=None
             if name in {'run_stop','walk_to_idle'}:
                 entries=self.animation.clips[name].get('entryFrames',{}).get(self.animation.name,[])
                 if entries:entry=entries[min(self.animation.frame,len(entries)-1)]
@@ -332,7 +340,7 @@ class Player:
                 speed=self.brake_speed*(1-self.animation.progress)**2
             elif self.animation.name == 'dash_slash':
                 phase=self.animation.pose_time/self.animation.clip['frameCount']
-                speed = self.facing * 850.0 * sin(pi*(phase-.18)/.42)**.7 if .18<phase<.60 else 0
+                speed = self.facing * self.DASH_ATTACK_SPEED * sin(pi*(phase-.18)/.42)**.7 if .18<phase<.60 else 0
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt + combo_advance

@@ -209,7 +209,7 @@ class Enemy:
 
 
 class Companion:
-    SCALE = .58
+    SCALE = .56
     BODY_HEIGHT = 165
     def __init__(self, assets, x):
         self.assets = assets

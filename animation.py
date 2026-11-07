@@ -19,10 +19,10 @@ def load_pixel_image(path, *, smooth=False):
     return image
 
 
-def draw_region(image, rect, x, y, scale, facing, angle=0, stretch_y=1):
+def draw_region(image, rect, x, y, scale, facing, angle=0):
     """몸과 검이 같은 실수 좌표를 쓴다. 부위별 반올림으로 벌어지지 않는다."""
     left, top, width, height = rect
-    width_on_screen, height_on_screen = width * scale, height * scale * stretch_y
+    width_on_screen, height_on_screen = width * scale, height * scale
     source = SDL_Rect(left, top, width, height)
     dest = SDL_FRect(x-width_on_screen/2, engine.canvas_height-y-height_on_screen/2,
                      width_on_screen, height_on_screen)
@@ -47,7 +47,7 @@ class SpriteAtlas:
             self.images[index] = load_pixel_image(self.paths[index], smooth=True)
         return self.images[index]
 
-    def draw(self, region, x, y, scale, facing, alpha=1, stretch_y=1):
+    def draw(self, region, x, y, scale, facing, alpha=1):
         if region:
             page, left, top, width, height, dx, dy = region
             image = self.image(page)
@@ -55,8 +55,7 @@ class SpriteAtlas:
             if alpha != 1:
                 image.opacify(alpha)
             draw_region(image, (left, top, width, height),
-                        x+facing*dx*scale, y-dy*scale*stretch_y, scale, facing,
-                        stretch_y=stretch_y)
+                        x+facing*dx*scale, y-dy*scale, scale, facing)
             if alpha != 1:
                 image.opacify(1)
 
@@ -151,7 +150,7 @@ class Animation:
 
     @property
     def breath(self):
-        # 한 원화에서 바닥을 축으로 아주 얕게 숨을 쉰다. 발과 얼굴의 윤곽은 교체되지 않는다.
+        # 호흡에 맞춰 검만 아주 조금 기울인다. 몸의 비율은 시트에 고정돼 있다.
         return (1-cos(self.elapsed*pi))*.5 if self.name == 'idle_breathe' else 0.0
 
     @property
@@ -160,11 +159,11 @@ class Animation:
         if not self.weapon:
             return None
         frames=self.clip['frames']
-        neutral = self.name == 'idle_breathe'
-        cell=frames[0 if neutral else self.frame];point=cell.get('weapon')
+        index = self.frame
+        cell=frames[index];point=cell.get('weapon')
         if not point or point.get('hidden'):
             return None
-        following=frames[(self.frame+1)%len(frames)] if not neutral and (self.loop or self.frame+1<len(frames)) else cell
+        following=frames[(index+1)%len(frames)] if self.loop or index+1<len(frames) else cell
         angle=point['angle'];next_angle=following.get('weapon',point)['angle']
         turn=(next_angle-angle+pi)%(2*pi)-pi
         angle+=turn*(self.pose_time%1)
@@ -172,18 +171,17 @@ class Animation:
         factor=cell.get('renderScale',1);pivot=self.clip['pivot']
         dx, dy = cell.get('registration', (0, 0))
         hand = ((point['hand'][0]+dx-pivot['x'])*factor,
-                (point['hand'][1]+dy-pivot['y'])*factor*(1+.007*self.breath))
+                (point['hand'][1]+dy-pivot['y'])*factor)
         length=self.weapon['handToTip']
         tip=(hand[0]+cos(angle)*length,hand[1]+sin(angle)*length)
         return dict(hand=hand,tip=tip,angle=angle,length=length)
 
     def draw(self, x, y, facing, camera, scale=1.0):
-        frame = 0 if self.name == 'idle_breathe' else self.frame
+        frame = self.frame
         cell = self.clip['frames'][frame]
         body, hand = self.atlas.clips[self.name][frame]
         x, y = x-camera.x, y-camera.y
-        stretch = 1+.007*self.breath
-        self.atlas.draw(body, x, y, cell.get('renderScale', 1)*scale, facing, stretch_y=stretch)
+        self.atlas.draw(body, x, y, cell.get('renderScale', 1)*scale, facing)
         pose = self.weapon_pose
         if pose:
             image = self._sword_image()
@@ -195,4 +193,4 @@ class Animation:
             cy = pose['hand'][1]*scale + dx*sin(angle) + dy*cos(angle)
             draw_region(image, (0, 0, image.w, image.h), x+facing*cx, y-cy,
                         blade_scale, facing, angle*facing)
-            self.atlas.draw(hand, x, y, cell.get('renderScale', 1)*scale, facing, stretch_y=stretch)
+            self.atlas.draw(hand, x, y, cell.get('renderScale', 1)*scale, facing)

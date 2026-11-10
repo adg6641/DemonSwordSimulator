@@ -6,7 +6,7 @@ from math import atan2, ceil, cos, hypot, sin, pi
 import pico2d.pico2d as engine
 from pico2d import SDL_Rect, SDL_RenderSetClipRect, SDL_SetTextureColorMod
 
-from animation import load_pixel_image
+from animation import draw_region, load_pixel_image
 from hit_geometry import effect_hits, blade_hits, sweep_ages
 
 
@@ -90,6 +90,8 @@ class CombatEffects:
         lifetime = self.settings['waveMotion']['lifetime']
         self.waves = [wave for wave in self.waves if wave['age'] < lifetime]
         animation = player.animation
+        if self.serial != animation.serial and animation.name == 'dash_ground':
+            self.burst('dash_wake', player.x - player.facing * 8, player.y, player.facing)
         if self.serial != animation.serial and animation.name == 'magic_release':
             pose = self.blade(animation)
             if pose:
@@ -141,11 +143,9 @@ class CombatEffects:
         center_y = y + dx * sin(angle) + dy * cos(angle)
         image.opacify(clamp(opacity))
         SDL_SetTextureColorMod(image.texture,*clip.get('tint',[255,255,255]))
-        image.clip_composite_draw(frame % clip['columns'] * w,
-            image.h - (frame // clip['columns'] + 1) * h, w, h,
-            -angle * facing, 'h' if facing < 0 else '',
-            round(anchor[0] - camera.x + facing * center_x),
-            round(anchor[1] - camera.y - center_y), round(w * scale), round(h * scale))
+        rect = (frame % clip['columns'] * w, frame // clip['columns'] * h, w, h)
+        draw_region(image, rect, anchor[0] - camera.x + facing * center_x,
+                    anchor[1] - camera.y - center_y, scale, facing, angle * facing)
         image.opacify(1.0)
         SDL_SetTextureColorMod(image.texture,255,255,255)
 
@@ -237,11 +237,12 @@ class CombatEffects:
         if not pose:
             return False
         previous=self.last_hit_state
-        if not previous or previous['serial']!=state['serial'] or not previous.get('blade'):
-            previous=state
+        if (not previous or previous['serial'] != state['serial']
+                or previous['facing'] != state['facing'] or not previous.get('blade')):
+            previous = state
         old=previous['blade'];facing=state['facing']
         turn=(pose['angle']-old['angle']+pi)%(2*pi)-pi
-        distance=hypot(state['anchor'][0]-previous['anchor'][0],state['anchor'][1]-previous['anchor'][1])+abs(turn)*pose['length']
+        distance=hypot(state['anchor'][0]-previous['anchor'][0],state['anchor'][1]-previous['anchor'][1])+abs(turn)*pose['length']+hypot(pose['hand'][0]-old['hand'][0],pose['hand'][1]-old['hand'][1])
         for t in sweep_ages(0,1,distance):
             angle=old['angle']+turn*t
             anchor=tuple(a+(b-a)*t for a,b in zip(previous['anchor'],state['anchor']))

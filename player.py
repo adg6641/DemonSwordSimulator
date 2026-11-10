@@ -1,7 +1,7 @@
 """키 입력, 주인공의 상태 전환과 지면 위 이동."""
 
 from collections import deque
-from math import sin, pi
+from math import pi, sin
 
 from pico2d import (
     SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN,
@@ -13,7 +13,7 @@ from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
-GAIT_STRIDE = {'walk': 160, 'run': 255, 'crouch_walk': 110}
+GAIT_STRIDE = {'walk': 116, 'run': 188, 'crouch_walk': 89}
 MOVE_TRANSITIONS = {
     ('idle_breathe', 'walk'): 'idle_to_walk',
     ('idle_breathe', 'run'): 'run_start',
@@ -286,9 +286,11 @@ class Player:
             return 0.0
         if animation.serial != self.step_serial:
             self.step_serial, self.step_progress = animation.serial, 0.0
-        timing = self.effects.timing(animation, self.effects.ATTACKS[animation.name])
         time = animation.pose_time * 8 / animation.clip['frameCount']
-        phase = max(0, min(1, (time-timing['start']) / (timing['end']-timing['start'])))
+        start, end = ((1.55, 5.45), (1.35, 5.35), (1.80, 6.05))[self.combo_step-1]
+        chain = animation.clip.get('chainFrame', animation.clip['frameCount'])
+        end = min(end, chain * 8 / animation.clip['frameCount'])
+        phase = max(0, min(1, (time-start) / (end-start)))
         previous, self.step_progress = self.step_progress, phase
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
         if direction and previous == 0:
@@ -344,22 +346,26 @@ class Player:
                         speed=direction*(self.WALK_SPEED+(self.RUN_SPEED-self.WALK_SPEED)*easing)
         elif self.mode == 'dash':
             name = self.animation.name
-            dash_speed = self.DASH_SPEED if name in {'dash_ground', 'dash_air'} else 120.0
-            speed = self.facing * dash_speed
+            phase = self.animation.progress
+            if name == 'dash_start':
+                factor = .10 + .72 * (phase * phase * (3 - 2 * phase))
+            elif name == 'dash_ground':
+                factor = .82 + .23 * sin(pi * phase) - .22 * phase
+            elif name == 'dash_end':
+                factor = .60 * (1 - phase * phase * (3 - 2 * phase))
+            else:
+                factor = 1.0
+            speed = self.facing * self.DASH_SPEED * factor
         elif self.mode == 'action':
             if self.attack_pending:
                 speed=self.brake_speed*(1-self.animation.progress)**2
             elif self.animation.name == 'dash_slash':
                 phase=self.animation.pose_time/self.animation.clip['frameCount']
-                speed = self.facing * self.DASH_ATTACK_SPEED * sin(pi*(phase-.18)/.42)**.7 if .18<phase<.60 else 0
+                speed = self.facing * self.DASH_ATTACK_SPEED * sin(pi*(phase-.16)/.52)**.86 if .16<phase<.68 else 0
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt + combo_advance
         self.horizontal_speed=speed
-        stride = GAIT_STRIDE.get(self.animation.name)
-        if self.mode == 'free' and stride:
-            self.animation.update(abs(speed*dt)/stride*self.animation.duration)
-
         airborne = not self.grounded
         floating_dash = self.mode == 'dash' and self.animation.name == 'dash_air'
         if airborne and not floating_dash:
@@ -376,6 +382,11 @@ class Player:
                 self._action(landing)
 
         self.effects.update(dt, self)
+
+    def advance_gait(self, distance):
+        stride = GAIT_STRIDE.get(self.animation.name)
+        if stride and self.mode == 'free':
+            self.animation.update(abs(distance) / stride * self.animation.duration)
 
     def draw(self, camera):
         self.animation.draw(self.x, self.y, self.facing, camera)

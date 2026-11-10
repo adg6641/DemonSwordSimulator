@@ -197,7 +197,6 @@ class Campaign:
         self.player.combo_queued=False;self.player.followups.clear()
         self.player.forced_crouch=self.player.crouching=False
         self.player.animation.play('idle_breathe')
-        self.player.animation.rig.reset()
         self.player.effects.waves.clear()
         self.player.effects.bursts.clear()
         self.player.effects.trail = None
@@ -333,7 +332,9 @@ class Campaign:
         self.sounds.play('hit')
         self.player.effects.burst('impact',x,y,self.player.facing)
         self.numbers.append(dict(x=x, y=y, text=str(number), age=0, hurt=False))
-        self.hitstop = .025
+        self.hitstop = max(self.hitstop, {
+            'slash_1': .032, 'slash_2': .040, 'slash_3': .052, 'dash_slash': .052,
+        }.get(self.player.animation.name, .025))
 
     def damage_player(self, amount, source):
         p = self.player
@@ -986,8 +987,10 @@ class Campaign:
                         p.facing=1 if self.modal['speaker_x']>p.x else -1
                         p.animation.play('idle_breathe')
                         p.gait='idle_breathe'
-                p.animation.update(dt)
-                p.animation.update_rig(dt,p.x-old_x,p.facing,p.grounded,p.vy)
+                if p.animation.name == 'walk':
+                    p.advance_gait(p.x - old_x)
+                else:
+                    p.animation.update(dt)
                 if self.companion:
                     self.companion.update(dt, self, cinematic=True)
                     if self.modal.get('anchor')=='companion':
@@ -1041,7 +1044,7 @@ class Campaign:
                 self.gain_xp(28);self.sounds.play('pickup')
                 self.burst('adv/pickup_fx__pickup',o['x'],o['y'],.3)
         p.x = max(75, min(self.world.width-75, p.x))
-        p.animation.update_rig(dt,p.x-old_x,p.facing,p.grounded,p.vy)
+        p.advance_gait(p.x - old_x)
         boss = next((e for e in self.enemies if e.boss and e.alive and abs(e.x-p.x)<620), None)
         if boss and p.grounded and p.mode=='free' and not r.has('met_boss_'+str(boss.number)):
             r.mark('met_boss_'+str(boss.number))

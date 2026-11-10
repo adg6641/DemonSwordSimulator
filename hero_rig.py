@@ -11,7 +11,8 @@ GROUND = {
     'crouch_down', 'crouch_up', 'crouch_idle', 'crouch_walk',
 }
 AIR = {'jump_takeoff', 'jump_rise', 'jump_apex', 'fall', 'land_soft', 'land_hard'}
-RIG_CLIPS = GROUND | AIR
+# Idle and walking use whole-body sprites. Keep their names in GROUND for stride tracking.
+RIG_CLIPS = (GROUND | AIR) - {'idle_breathe', 'idle_to_walk', 'walk', 'walk_to_idle'}
 
 THIGH = 40.3
 SHIN = 36.5

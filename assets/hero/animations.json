@@ -1,6 +1,6 @@
 {
   "title": "마검사 주인공 애니메이션",
-  "version": 10,
+  "version": 11,
   "conventions": {
     "frameWidth": 768,
     "frameHeight": 640,
@@ -3336,17 +3336,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              364.2871,
-              415.849
-            ],
             "angle": -2.966469,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              364.42545454545456,
+              421.10545454545456
+            ]
           },
-          "bodyHeight": 162.34,
+          "bodyHeight": 185.12,
           "registration": [
-            -1.68,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -3358,17 +3358,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              374.1998,
-              419.7211
-            ],
             "angle": -0.021847,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              370.84697508896795,
+              408.61921708185054
+            ]
           },
-          "bodyHeight": 161.62,
+          "bodyHeight": 182.98,
           "registration": [
-            -0.63,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -3380,17 +3380,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              368.8977,
-              425.5187
-            ],
             "angle": -0.022464,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              360.7509578544061,
+              407.1226053639847
+            ]
           },
-          "bodyHeight": 159.49,
+          "bodyHeight": 182.98,
           "registration": [
-            -1.05,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -3402,17 +3402,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              327.4648,
-              479.3021
-            ],
             "angle": 0.349856,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              361.07773851590105,
+              456.18374558303884
+            ]
           },
-          "bodyHeight": 162.34,
+          "bodyHeight": 175.15,
           "registration": [
-            9.45,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -3449,7 +3449,7 @@
         0.07425
       ],
       "chainFrame": 7,
-      "sha256": "5de79ffc8ceae9f50c22af143d3e68bf3b9c7346e68fdb1ce55954878eda9003"
+      "sha256": "4d050d0b153fe6fcf0c3765463d361161a4d1f7ef4059d699343d02f159b526f"
     },
     {
       "id": "slash_2",
@@ -3614,17 +3614,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              387.4669,
-              471.0337
-            ],
             "angle": 2.851679,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              359.1945945945946,
+              464.84324324324325
+            ]
           },
-          "bodyHeight": 158.78,
+          "bodyHeight": 183.7,
           "registration": [
-            -10.29,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -3661,7 +3661,7 @@
         0.077
       ],
       "chainFrame": 7,
-      "sha256": "068aedb6c22dfed515b47fde5d463fc6b7de65665968ff4aa9b74dd11820901a"
+      "sha256": "c6df27d7f16ced54f80b6468cbdbabe2f5eaab417658e395fbe2f9adb592655b"
     },
     {
       "id": "slash_3",
@@ -3694,17 +3694,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              307.5254,
-              314.7606
-            ],
             "angle": -2.599457,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              312.6271186440678,
+              316.96610169491527
+            ]
           },
-          "bodyHeight": 192.95,
+          "bodyHeight": 197.94,
           "registration": [
-            5.04,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -3716,17 +3716,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              311.0582,
-              331.3654
-            ],
             "angle": -2.419825,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              328.34037558685446,
+              345.9154929577465
+            ]
           },
-          "bodyHeight": 173.73,
+          "bodyHeight": 201.5,
           "registration": [
-            -9.45,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -3872,7 +3872,7 @@
         0.08525,
         0.08525
       ],
-      "sha256": "8bf1cdc6013ba1d2fa1238e78a43fc4b261b7528fccb72d145f8923eb0a1efe6"
+      "sha256": "a0b49b1f78586d232186ed34c1de0d9631fe93458d3ccbe5289d23b9a533855f"
     },
     {
       "id": "heavy_charge",
@@ -4616,17 +4616,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              352.9891,
-              441.3192
-            ],
             "angle": 0.309795,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              331.03880597014927,
+              466.63880597014924
+            ]
           },
-          "bodyHeight": 161.15,
+          "bodyHeight": 172.3,
           "registration": [
-            -8.19,
-            1.66
+            0,
+            0
           ]
         },
         {
@@ -4706,7 +4706,7 @@
         0.07425,
         0.07425
       ],
-      "sha256": "1aba7e256f979bb095df8371a424b82cda13bffce7c769f1e26cc7c1a1e1a6cc"
+      "sha256": "0806869cb400c289e00aef58a5b6ceb1b6287e4e896316e8d86a2c5d59dca8e7"
     },
     {
       "id": "dash_slash",
@@ -4783,17 +4783,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              256.9584,
-              453.1681
-            ],
             "angle": 0.173181,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              268.5128205128205,
+              435.84615384615387
+            ]
           },
-          "bodyHeight": 143.82,
+          "bodyHeight": 169.46,
           "registration": [
-            12,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -4918,7 +4918,7 @@
         0.066
       ],
       "dashEntryFrame": 1,
-      "sha256": "377f24e6dceae0e73d5353e6721eb772c11c411bc37cf056fb9e5a2fb4368207"
+      "sha256": "2765c62272db6251c09d6777851ab8c25d9f28ae61dca252dfee8dbb7ef4f390"
     },
     {
       "id": "crouch_slash",
@@ -4995,17 +4995,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              256.9148,
-              435.6179
-            ],
             "angle": 2.729598,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              249.55405405405406,
+              438.6216216216216
+            ]
           },
-          "bodyHeight": 143.11,
+          "bodyHeight": 150.94,
           "registration": [
-            2.31,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -5039,17 +5039,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              374.4059,
-              464.4018
-            ],
             "angle": 0.059221,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              361.6051660516605,
+              481.97047970479707
+            ]
           },
-          "bodyHeight": 140.26,
+          "bodyHeight": 150.23,
           "registration": [
-            2.31,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -5083,17 +5083,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              356.7822,
-              502.1545
-            ],
             "angle": 0.270092,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              346.4308510638298,
+              481.50531914893617
+            ]
           },
-          "bodyHeight": 131.01,
+          "bodyHeight": 150.94,
           "registration": [
-            -3.57,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -5129,7 +5129,7 @@
         0.0715,
         0.0715
       ],
-      "sha256": "c9b0557aacc78888f5b3406b0406fd17ae335f4fea06466fc48aba68bfd886c5"
+      "sha256": "2ccd854aecee25efb2d78546a5fbffcff6518afe24feeac446b44da0dac574a3"
     },
     {
       "id": "magic_charge",
@@ -5184,17 +5184,21 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              294.6685,
-              471.4323
-            ],
             "angle": 0.38145,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              287.96830985915494,
+              466.60915492957747
+            ]
           },
-          "bodyHeight": 169.46,
+          "bodyHeight": 180.14,
           "registration": [
-            2.1,
-            1.0
+            0,
+            0
+          ],
+          "chargePalm": [
+            356.6137566137566,
+            463.7724867724868
           ]
         },
         {
@@ -5206,17 +5210,21 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              289.7757,
-              471.6686
-            ],
             "angle": 0.371742,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              281.70567375886526,
+              466.1914893617021
+            ]
           },
-          "bodyHeight": 163.76,
+          "bodyHeight": 180.14,
           "registration": [
-            0.21,
-            1.0
+            0,
+            0
+          ],
+          "chargePalm": [
+            352.77914110429447,
+            453.28834355828224
           ]
         },
         {
@@ -5228,17 +5236,21 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              291.6408,
-              471.9403
-            ],
             "angle": 0.372364,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              282.1438848920863,
+              467.01079136690646
+            ]
           },
-          "bodyHeight": 170.88,
+          "bodyHeight": 179.42,
           "registration": [
-            -0.63,
-            1.0
+            0,
+            0
+          ],
+          "chargePalm": [
+            365.875,
+            420.60897435897436
           ]
         },
         {
@@ -5250,17 +5262,21 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              296.6948,
-              471.9007
-            ],
             "angle": 0.371678,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              281.5656565656566,
+              472.2760942760943
+            ]
           },
-          "bodyHeight": 168.74,
+          "bodyHeight": 187.26,
           "registration": [
-            -1.68,
-            1.0
+            0,
+            0
+          ],
+          "chargePalm": [
+            366.36170212765956,
+            397.8014184397163
           ]
         },
         {
@@ -5272,17 +5288,21 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              295.5051,
-              470.8704
-            ],
             "angle": 0.378741,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              288.6043165467626,
+              465.27338129496405
+            ]
           },
-          "bodyHeight": 170.88,
+          "bodyHeight": 180.14,
           "registration": [
-            1.26,
-            1.0
+            0,
+            0
+          ],
+          "chargePalm": [
+            349.5979381443299,
+            425.0
           ]
         },
         {
@@ -5294,17 +5314,21 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              294.5986,
-              471.453
-            ],
             "angle": 0.375746,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              287.2338129496403,
+              465.3561151079137
+            ]
           },
-          "bodyHeight": 170.17,
+          "bodyHeight": 180.14,
           "registration": [
-            0.63,
-            1.0
+            0,
+            0
+          ],
+          "chargePalm": [
+            342.06060606060606,
+            435.010101010101
           ]
         },
         {
@@ -5330,7 +5354,7 @@
           ]
         }
       ],
-      "sha256": "efb66a13e3d0697ab71f65b93bfc92fe649f00d8d5bc139164d1e4bfdba83429"
+      "sha256": "f77832ae59c92d15f6c623ab417061157b9ba65dbcf935bfe74fc9fb899a1e21"
     },
     {
       "id": "magic_release",
@@ -5809,17 +5833,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              352.9613,
-              484.7978
-            ],
             "angle": 0.395455,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              345.9453125,
+              451.86328125
+            ]
           },
-          "bodyHeight": 165.18,
+          "bodyHeight": 185.12,
           "registration": [
-            5.25,
-            -1.0
+            0,
+            0
           ]
         },
         {
@@ -5853,17 +5877,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              356.6038,
-              472.2753
-            ],
             "angle": 0.384496,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              340.9453125,
+              452.86328125
+            ]
           },
-          "bodyHeight": 165.9,
+          "bodyHeight": 184.41,
           "registration": [
-            0.63,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -5897,17 +5921,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              347.9716,
-              485.2296
-            ],
             "angle": 0.362888,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              362.0,
+              465.6092715231788
+            ]
           },
-          "bodyHeight": 163.76,
+          "bodyHeight": 180.85,
           "registration": [
-            -12,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -5933,7 +5957,7 @@
           ]
         }
       ],
-      "sha256": "956e83a76528ee1e12ec9b15f8f7e30a5b9c3e0ed693df4174587d5da39b762e"
+      "sha256": "323acd37d87df217e4f50941ddd71b7f09417e6877c3497674350cf0bc00540a"
     },
     {
       "id": "knockdown",
@@ -6233,17 +6257,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              276.652,
-              510.8603
-            ],
             "angle": 0.254813,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              257.8929503916449,
+              518.8825065274151
+            ]
           },
-          "bodyHeight": 137.42,
+          "bodyHeight": 152.37,
           "registration": [
-            -4.62,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -6335,7 +6359,7 @@
           ]
         }
       ],
-      "sha256": "667821bbdb9a67a8a6d310349cfc9047eaebf164f14852b8530e74d6770814b7"
+      "sha256": "f4a9c2887444d0137e4a6d69322f79da52ca51cdfbaa525f132385b940664984"
     },
     {
       "id": "idle_to_walk",
@@ -11348,17 +11372,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              338.7593,
-              398.9979
-            ],
             "angle": -1.257964,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              325.1937984496124,
+              434.5503875968992
+            ]
           },
-          "bodyHeight": 187.97,
+          "bodyHeight": 187.26,
           "registration": [
-            -0.42,
-            0.0
+            0,
+            0
           ]
         },
         {
@@ -11392,17 +11416,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              348.1075,
-              399.4934
-            ],
             "angle": -1.591361,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              335.4830508474576,
+              385.2118644067797
+            ]
           },
-          "bodyHeight": 189.39,
+          "bodyHeight": 185.12,
           "registration": [
-            -0.21,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -11436,17 +11460,17 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hand": [
-              353.5303,
-              421.1266
-            ],
             "angle": -1.591306,
-            "hidden": false
+            "hidden": false,
+            "hand": [
+              343.5851851851852,
+              427.0148148148148
+            ]
           },
-          "bodyHeight": 180.85,
+          "bodyHeight": 185.12,
           "registration": [
-            -1.26,
-            1.0
+            0,
+            0
           ]
         },
         {
@@ -11472,7 +11496,7 @@
           ]
         }
       ],
-      "sha256": "4acd92f59753931ce68daf27eec4cca500b7fcc6146c9038f0816102850031a6",
+      "sha256": "ec4787d4426d3abcf1d60b27c1437235a40a3fdbd220d83776341b3978a65f00",
       "entryFrames": {
         "idle_breathe": [
           0,

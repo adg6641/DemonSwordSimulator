@@ -197,7 +197,9 @@ class Campaign:
         self.player.combo_queued=False;self.player.followups.clear()
         self.player.forced_crouch=self.player.crouching=False
         self.player.animation.play('idle_breathe')
+        self.player.animation.rig.reset()
         self.player.effects.waves.clear()
+        self.player.effects.bursts.clear()
         self.player.effects.trail = None
         self.player.effects.last_hit_state = None
         self.attack_hits.clear()
@@ -329,7 +331,7 @@ class Campaign:
 
     def feedback(self, x, y, number, key):
         self.sounds.play('hit')
-        self.burst(key, x, y, .4)
+        self.player.effects.burst('impact',x,y,self.player.facing)
         self.numbers.append(dict(x=x, y=y, text=str(number), age=0, hurt=False))
         self.hitstop = .025
 
@@ -347,7 +349,7 @@ class Campaign:
         if p.mode == 'guard' and front and p.animation.name == 'guard_raise' and p.animation.elapsed <= .24:
             self.sounds.play('guard')
             p.invulnerable = .28
-            self.burst('guard_fx__perfect_guard', p.x+p.facing*45, p.y+85, .55)
+            p.effects.burst('guard',p.x+p.facing*45,p.y+85,p.facing)
             self.mp = min(self.run.max_mp, self.mp+8)
             self.notify('정확한 방어 · 피해 0 / MP +8', 1.2)
             return 0
@@ -357,7 +359,7 @@ class Campaign:
         damage = p.take_damage(amount)
         self.sounds.play('hit')
         self.run.hits += 1
-        self.burst('guard_fx__guard_hit' if guard else 'hit_impacts__hit_soft', p.x, p.y+80, .4)
+        p.effects.burst('guard' if guard else 'damage',p.x,p.y+80,p.facing)
         self.numbers.append(dict(x=p.x, y=p.y+140, text='-'+str(damage), age=0, hurt=True))
         return damage
 
@@ -813,7 +815,7 @@ class Campaign:
             if p.effects.melee_hits(state,target):
                 obj['hp'] -= damage
                 self.hit_ids.add(uid)
-                self.burst('hit_impacts__hit_metal', obj['x'], obj['y']+45, .4)
+                p.effects.burst('impact',obj['x'],obj['y']+45,p.facing)
                 if obj['hp'] <= 0:
                     r.broken.append(uid)
                     obj['broken_time'] = self.time
@@ -971,8 +973,9 @@ class Campaign:
                 self.camera.focus(self.modal['focus_x'],self.modal['focus_y'],self.world.width,dt,1.08)
                 return
             if self.modal['kind'] in {'dialogue','boss','final'}:
+                p=self.player
+                old_x=p.x
                 if 'step_to' in self.modal:
-                    p=self.player
                     dx=self.modal['step_to']-p.x
                     if abs(dx)>1:
                         p.x += max(-130*dt,min(130*dt,dx))
@@ -983,7 +986,8 @@ class Campaign:
                         p.facing=1 if self.modal['speaker_x']>p.x else -1
                         p.animation.play('idle_breathe')
                         p.gait='idle_breathe'
-                self.player.animation.update(dt)
+                p.animation.update(dt)
+                p.animation.update_rig(dt,p.x-old_x,p.facing,p.grounded,p.vy)
                 if self.companion:
                     self.companion.update(dt, self, cinematic=True)
                     if self.modal.get('anchor')=='companion':
@@ -1018,12 +1022,14 @@ class Campaign:
         self.hybrid_time = max(0, self.hybrid_time-dt)
         self.mp = min(r.max_mp, self.mp+dt*(7 if p.mode == 'free' else 2.5))
         self.update_terrain(dt)
-        old_x,old_y=p.x,p.y
+        old_x,old_y,old_vy=p.x,p.y,p.vy
         p.floor_y = self.floor_beneath(p)
         self.update_posture(p)
         p.update(dt, self.keys)
         self.platforms(old_y)
         self.blockers(old_x)
+        if p.grounded and old_y>p.y+1 and old_vy < -245:
+            p.effects.burst('land',p.x,p.y,p.facing)
         for o in self.objects:
             if o['kind']=='spring' and abs(p.x-o['x'])<52 and p.mode=='jump' and p.jump_launched and p.y<55 and p.vy>300 and self.time>=o.get('next_bounce',0):
                 p.vy=1160;p.floor_y=0;p.mode='free';p.gait=None;p.air_dash_ready=True
@@ -1035,6 +1041,7 @@ class Campaign:
                 self.gain_xp(28);self.sounds.play('pickup')
                 self.burst('adv/pickup_fx__pickup',o['x'],o['y'],.3)
         p.x = max(75, min(self.world.width-75, p.x))
+        p.animation.update_rig(dt,p.x-old_x,p.facing,p.grounded,p.vy)
         boss = next((e for e in self.enemies if e.boss and e.alive and abs(e.x-p.x)<620), None)
         if boss and p.grounded and p.mode=='free' and not r.has('met_boss_'+str(boss.number)):
             r.mark('met_boss_'+str(boss.number))

@@ -35,6 +35,7 @@ class CombatEffects:
         self.buff_duration = 5.0
         self.reach_scale = 1.0
         self.waves = []
+        self.bursts = []
         self.serial, self.fired = -1, False
         self.trail=None
         self.last_hit_state = None
@@ -47,6 +48,11 @@ class CombatEffects:
 
     def activate(self):
         self.buff_remaining = self.buff_duration
+
+    def burst(self, name, x, y, facing=1):
+        clip = self.clips['hero_'+name]
+        self.bursts.append((clip['id'], x, y, facing, 0.0))
+        self.bursts = self.bursts[-16:]
 
     def timing(self, animation, motion):
         return self.settings.get('clipTiming',{}).get(animation.name,self.settings['strikeTiming'][motion])
@@ -79,9 +85,16 @@ class CombatEffects:
         self.buff_remaining = max(0.0, self.buff_remaining - dt)
         for wave in self.waves:
             wave['age'] += dt
+        self.bursts = [(name,x,y,facing,age+dt) for name,x,y,facing,age in self.bursts
+                       if age+dt < self.clips[name]['frameCount']/self.clips[name]['fps']]
         lifetime = self.settings['waveMotion']['lifetime']
         self.waves = [wave for wave in self.waves if wave['age'] < lifetime]
         animation = player.animation
+        if self.serial != animation.serial and animation.name == 'magic_release':
+            pose = self.blade(animation)
+            if pose:
+                self.burst('release',player.x+player.facing*pose['hand'][0],
+                           player.y-pose['hand'][1],player.facing)
         if self.trail:
             self.trail['age']+=dt
             if self.trail['age']>.18:self.trail=None
@@ -242,9 +255,9 @@ class CombatEffects:
         style = self.settings['waveMotion']
         age, level = wave['age'], wave['level']
         name = f'wave_lv{level}'
-        # 가운데의 안정된 12프레임을 반복하고 수명 끝에는 알파만 천천히 줄인다.
+        # 마검파의 순환 시트를 반복하고 수명 끝에는 알파만 천천히 줄인다.
         count=self.clips[name]['frameCount']
-        frame = 2+int(age*style['fps'])%max(1,count-4)
+        frame = int(age*style['fps'])%count
         bounds = self.settings['effectGeometry'][name][frame]['bounds']
         origin = (bounds[0]+(bounds[2]-bounds[0])*.12, (bounds[1]+bounds[3])/2)
         height = style['heightByLevel'][level-1]
@@ -277,9 +290,10 @@ class CombatEffects:
         if active and self.buff_remaining <= 0:
             return
         if not active:
-            point = self.settings['chargePalm'][min(len(self.settings['chargePalm'])-1, animation.frame)]
+            cell = animation.clip['frames'][animation.frame]
+            point = cell.get('chargePalm', self.settings['chargePalm'][animation.frame])
             pivot = animation.clip['pivot']
-            factor = animation.clip['frames'][animation.frame].get('renderScale', 1.0)
+            factor = cell.get('renderScale', 1.0)
             x, y = (point[0] - pivot['x']) * factor, (point[1] - pivot['y']) * factor
         else:
             x, y = (pose['hand'][i] + (pose['tip'][i] - pose['hand'][i]) * .3 for i in (0, 1))
@@ -288,9 +302,11 @@ class CombatEffects:
         count=self.clips[name]['frameCount']
         frame = 5 + int(self.time * 12) % max(1,count-9) if active else min(count-1,int(animation.frame/animation.clip['frameCount']*count))
         style = self.settings['effectStyle']
+        clip=self.clips[name]
+        emitter=clip['emitter']
         self._paint(name, frame, (player.x, player.y), camera, x, y,
-            diameter / self.clips[name]['peakSize'] * style['scale'], facing=player.facing,
-            opacity=(.18 if active else .85) * style['opacity'])
+            diameter / clip['peakSize'] * style['scale'], facing=player.facing,
+            opacity=(.18 if active else .85) * style['opacity'],origin=(emitter['x'],emitter['y']))
 
     def draw(self, player, camera):
         # 검기가 지면 속으로 파고들지 않도록 실제 바닥 아래만 가린다.
@@ -304,4 +320,11 @@ class CombatEffects:
             if state:self._draw_geometry(state['geometry'],state['anchor'],camera,state['facing'])
         for wave in self.waves:
             self._draw_geometry(self.wave_geometry(wave), (wave['x'], wave['y']), camera, wave['facing'])
+        for name,x,y,facing,age in self.bursts:
+            clip=self.clips[name]
+            frame=min(clip['frameCount']-1,int(age*clip['fps']))
+            origin=clip['emitter']
+            fade=min(1,(clip['frameCount']-frame)/5)
+            self._paint(name,frame,(x,y),camera,scale=clip['displayScale'],facing=facing,
+                        opacity=.87*fade,origin=(origin['x'],origin['y']))
         SDL_RenderSetClipRect(engine.renderer, None)

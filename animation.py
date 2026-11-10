@@ -10,6 +10,7 @@ from pico2d import (SDL_Rect, SDL_FRect, SDL_RenderCopyExF,
                     SDL_FLIP_HORIZONTAL, SDL_FLIP_NONE)
 
 from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest, SDL_ScaleModeLinear
+from hero_rig import HeroRig, RIG_CLIPS
 
 
 def load_pixel_image(path, *, smooth=False):
@@ -67,6 +68,7 @@ class Animation:
         self.clips = {clip['id']: clip for clip in data['clips']}
         self.weapon = data.get('weapon')
         self.atlas = SpriteAtlas(folder / 'runtime.json')
+        self.rig = HeroRig(folder)
         self.sword_image = None
         self.name = ''
         self.serial = 0
@@ -74,7 +76,11 @@ class Animation:
 
     def preload(self):
         self.atlas.preload()
+        self.rig.preload()
         self._sword_image()
+
+    def update_rig(self, dt, distance, facing, grounded, vy):
+        self.rig.update(dt, distance, facing, grounded, vy, self.name)
 
     def _sword_image(self):
         if self.sword_image is None:
@@ -158,6 +164,13 @@ class Animation:
         """손은 현재 그림에 고정하고, 검은 길이를 바꾸지 않은 채 회전한다."""
         if not self.weapon:
             return None
+        if self.name in RIG_CLIPS:
+            x,y=self.rig.hand
+            hand=(x,-y)
+            angle=self.rig.blade_angle
+            length=self.weapon['handToTip']
+            tip=(x+cos(angle)*length,-y+sin(angle)*length)
+            return dict(hand=hand,tip=tip,angle=angle,length=length)
         frames=self.clip['frames']
         index = self.frame
         cell=frames[index];point=cell.get('weapon')
@@ -177,11 +190,15 @@ class Animation:
         return dict(hand=hand,tip=tip,angle=angle,length=length)
 
     def draw(self, x, y, facing, camera, scale=1.0):
-        frame = self.frame
-        cell = self.clip['frames'][frame]
-        body, hand = self.atlas.clips[self.name][frame]
         x, y = x-camera.x, y-camera.y
-        self.atlas.draw(body, x, y, cell.get('renderScale', 1)*scale, facing)
+        rigged=self.name in RIG_CLIPS
+        if rigged:
+            self.rig.draw(x, y, facing, scale)
+        else:
+            frame=self.frame
+            cell=self.clip['frames'][frame]
+            body,hand=self.atlas.clips[self.name][frame]
+            self.atlas.draw(body,x,y,cell.get('renderScale',1)*scale,facing)
         pose = self.weapon_pose
         if pose:
             image = self._sword_image()
@@ -193,4 +210,7 @@ class Animation:
             cy = pose['hand'][1]*scale + dx*sin(angle) + dy*cos(angle)
             draw_region(image, (0, 0, image.w, image.h), x+facing*cx, y-cy,
                         blade_scale, facing, angle*facing)
-            self.atlas.draw(hand, x, y, cell.get('renderScale', 1)*scale, facing)
+            if rigged:
+                self.rig.draw_grip(x,y,facing,scale)
+            else:
+                self.atlas.draw(hand,x,y,cell.get('renderScale',1)*scale,facing)

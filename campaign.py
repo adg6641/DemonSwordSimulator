@@ -261,7 +261,7 @@ class Campaign:
         p.dash_unlocked = r.skills.get('dash', 0) > 0
         p.magic_unlocked = r.skills.get('wave', 0) > 0
         if not self.developer:
-            p.effects.level = r.tier
+            p.effects.set_level(r.tier)
         p.effects.buff_duration = 5 + r.skills.get('duration', 0)*.8
         p.effects.reach_scale = 1+.07*r.skills.get('wide_slash', 0)
         p.DASH_SPEED = Player.DASH_SPEED*(1 + .055*r.skills.get('dash_distance', 0))
@@ -475,7 +475,7 @@ class Campaign:
             else:
                 self.notify('아직 가 보지 않은 지역입니다. 오른쪽 길을 따라 진행하세요.')
         elif self.developer and SDLK_F1 <= event.key <= SDLK_F7:
-            self.player.effects.level = event.key-SDLK_F1+1
+            self.player.effects.set_level(event.key-SDLK_F1+1)
         elif event.key not in self.keys:
             self.keys.add(event.key)
             self.press(event.key)

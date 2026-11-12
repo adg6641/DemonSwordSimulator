@@ -260,12 +260,17 @@ class Companion:
         if target_y>self.floor_y+18 and not crouch:
             speed = max(330, speed)
         old_x, old_y = self.x, self.y
+        was_grounded = self.grounded and self.vy == 0
+        launched = False
         # 발판과 낮은 엄폐물에 앞서 점프. 주인공과 같은 중력·착지 판정을 쓴다.
         direction = 1 if dx > 0 else -1
         obstacle = any(o['kind'] == 'cover' and abs(o['x']-self.x)<140 and (o['x']-self.x)*direction>0 for o in scene.objects)
         if self.grounded and not crouch and abs(dx)<300 and (target_y>self.y+18 or p.y>self.y+75 and p.floor_y<=self.floor_y+165 or obstacle):
             self.vy = 900
+            launched = True
             self.motion.play('lunea/jump_takeoff')
+            if not cinematic:
+                p.effects.burst('lunea_takeoff', self.x, self.y, direction)
         if self.skill > 0:
             self.ground_speed = 0.0
         else:
@@ -278,11 +283,13 @@ class Companion:
             self.vy -= 2200*dt
         scene.platforms(old_y, self)
         scene.blockers(old_x, self, crouch)
-        if self.y <= self.floor_y:
-            landed = old_y > self.floor_y+2 or self.vy < -30
+        if self.y <= self.floor_y and self.vy <= 0:
             self.y, self.vy = self.floor_y, 0
-            if landed:
-                self.motion.play('lunea/land_soft')
+            if not was_grounded and not launched:
+                if self.motion.key != 'lunea/land_soft':
+                    self.motion.play('lunea/land_soft')
+                if not cinematic:
+                    p.effects.burst('lunea_land', self.x, self.y, direction)
         moved = abs(self.x-old_x)
         moving = moved > 23*dt
         if moving:
@@ -318,8 +325,12 @@ class Companion:
                 self.motion.play('lunea/move_start')
             else:
                 self.running = moved/dt > (208 if self.running else 245)
-                self.walk_cycle('lunea/run' if self.running else 'lunea/walk', moved,
-                                245 if self.running else 145)
+                phase = self.gait_phase
+                stride = 245 if self.running else 145
+                self.walk_cycle('lunea/run' if self.running else 'lunea/walk', moved, stride)
+                if not cinematic and self.running and int(phase * 2) != int((phase + moved / stride) * 2):
+                    foot = 9 if self.gait_phase < .5 else -8
+                    p.effects.burst('lunea_step', self.x + self.facing * foot, self.y, self.facing)
         elif self.motion.key in {'lunea/run', 'lunea/walk'}:
             stop = self.assets.clips['lunea/move_stop']
             previous = self.assets.frame(self.motion.key, self.motion.age)

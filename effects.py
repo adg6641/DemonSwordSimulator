@@ -126,8 +126,17 @@ class CombatEffects:
         return self.images[path]
 
     def preload(self):
-        # 레벨별 그림은 같은 파일을 공유한다. 첫 공격에서 PNG를 읽지 않는다.
-        files = {clip['file']: name for name, clip in self.clips.items()}
+        self.set_level(self.level)
+
+    def set_level(self, level):
+        if level == self.level and self.images:
+            return
+        self.level = level
+        # 날아가는 마검파가 남아 있으면 그 단계의 그림도 계속 쓴다.
+        levels = {level, *(wave['level'] for wave in self.waves)}
+        files = {clip['file']: name for name, clip in self.clips.items()
+                 if 'tier' not in clip or clip['tier'] in levels}
+        self.images = {file: image for file, image in self.images.items() if file in files}
         for name in files.values():
             self._image(name)
 
@@ -187,9 +196,10 @@ class CombatEffects:
         origin = geometry['origin']
         lead = geometry['ccw' if timing['direction'] == 'ccw' else 'cw']
         style = self.settings['effectStyle']
-        radius = (pose['length'] + 4) * (1 + (self.level - 1) * (.2 if motion == 'dash' else .16))
+        growth = self.settings['tierGrowth'][self.level - 1]
+        radius = (pose['length'] + 4) * growth['radius']
         scale = radius * style['scale'] / self.radii[name] * self.reach_scale
-        reach = (pose['length'] + 4) * (1 + (self.level - 1) * .13) * self.reach_scale
+        reach = (pose['length'] + 4) * growth['reach'] * self.reach_scale
         shift = reach - hypot(lead[0] - origin[0], lead[1] - origin[1]) * scale
         x = pose['hand'][0] + cos(pose['angle']) * shift
         y = pose['hand'][1] + sin(pose['angle']) * shift
@@ -197,7 +207,7 @@ class CombatEffects:
             x += self.settings['dashForwardOffset']
         angle = pose['angle'] - atan2(lead[1] - origin[1], lead[0] - origin[0])
         alpha = smooth((time - timing['start']) / .6) * smooth((timing['end'] - time) / 1.4)
-        alpha *= (.64 + (self.level - 1) * .05) * style['opacity']
+        alpha *= growth['opacity'] * style['opacity']
         return dict(name=name, frame=frame, x=x, y=y, scale=scale, angle=angle,
                     alpha=alpha, origin=origin, bounds=geometry['bounds'])
 

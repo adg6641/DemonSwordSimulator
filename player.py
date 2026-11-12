@@ -13,24 +13,16 @@ from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
+CROUCH_GAITS = {'crouch_idle', 'crouch_walk'}
+CROUCH_POSES = CROUCH_GAITS | {'crouch_down', 'crouch_slash', 'crouch_attack_recovery'}
 GAIT_STRIDE = {'walk': 116, 'run': 188, 'crouch_walk': 89}
 MOVE_TRANSITIONS = {
     ('idle_breathe', 'walk'): 'idle_to_walk',
     ('idle_breathe', 'run'): 'run_start',
-    ('idle_breathe', 'crouch_walk'): 'crouch_down',
     ('walk', 'idle_breathe'): 'walk_to_idle',
     ('walk', 'run'): 'walk_to_run',
     ('run', 'walk'): 'run_to_walk',
     ('run', 'idle_breathe'): 'run_stop',
-    ('idle_breathe', 'crouch_idle'): 'crouch_down',
-    ('walk', 'crouch_walk'): 'crouch_down',
-    ('run', 'crouch_walk'): 'crouch_down',
-    ('crouch_idle', 'idle_breathe'): 'crouch_up',
-    ('crouch_walk', 'walk'): 'crouch_up',
-    ('crouch_walk', 'run'): 'crouch_up',
-    ('crouch_walk', 'idle_breathe'): 'crouch_up',
-    ('crouch_idle', 'walk'): 'crouch_up',
-    ('crouch_idle', 'run'): 'crouch_up',
 }
 
 
@@ -80,7 +72,7 @@ class Player:
 
     @property
     def collision_height(self):
-        if self.animation.name in {'crouch_down','crouch_up','crouch_idle','crouch_walk','crouch_slash','crouch_attack_recovery'}:
+        if self.animation.name in CROUCH_POSES or self.animation.name == 'crouch_up':
             return self.animation.clip['frames'][self.animation.frame].get('bodyHeight',126)
         return self.BODY_HEIGHT
 
@@ -122,7 +114,8 @@ class Player:
             landing = self.mode == 'action' and self.animation.name in {
                 'land_soft', 'land_hard', 'air_attack_land',
             }
-            if self.dash_unlocked and self.dash_attack_remaining > 0 and (self.mode in {'free', 'dash'} or landing):
+            if (self.dash_unlocked and self.dash_attack_remaining > 0 and SDLK_DOWN not in keys
+                    and (self.mode in {'free', 'dash'} or landing)):
                 entry=self.animation.clips['dash_slash'].get('dashEntryFrame',0) if self.mode=='dash' else 0
                 self.dash_attack_remaining = 0.0
                 self._action('dash_slash','dash_attack_recovery')
@@ -263,10 +256,26 @@ class Player:
         else:
             target = 'idle_breathe'
 
+        anim = self.animation
+        if self.grounded:
+            wants_crouch = target in CROUCH_GAITS
+            if anim.name in {'crouch_down', 'crouch_up'} and not anim.finished:
+                lowering = anim.name == 'crouch_down'
+                if wants_crouch != lowering:
+                    fraction = anim.clip_time / anim.duration
+                    name = 'crouch_down' if wants_crouch else 'crouch_up'
+                    count = anim.clips[name]['frameCount']
+                    anim.play(name, start_frame=round((1 - fraction) * (count - 1)))
+                self.gait = target
+                return
+            was_crouching = anim.name in CROUCH_POSES
+            if wants_crouch != was_crouching:
+                self.gait = target
+                anim.play('crouch_down' if wants_crouch else 'crouch_up')
+                return
+
         if target != self.gait:
-            prior=self.gait
-            if prior is None and self.grounded:
-                prior='crouch_idle' if self.animation.name in {'crouch_idle','crouch_walk','crouch_slash','crouch_attack_recovery'} else 'idle_breathe'
+            prior = self.gait or 'idle_breathe'
             transition = MOVE_TRANSITIONS.get((prior, target))
             self.gait = target
             name=transition or target
@@ -303,8 +312,7 @@ class Player:
 
     def update(self, dt, keys):
         keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
-        self.crouching=(SDLK_DOWN in keys and self.grounded and self.mode=='free') or self.animation.name in {
-            'crouch_idle','crouch_walk','crouch_down','crouch_slash','crouch_attack_recovery'}
+        self.crouching=(SDLK_DOWN in keys and self.grounded and self.mode=='free') or self.animation.name in CROUCH_POSES
         self.drop_timer=max(0,self.drop_timer-dt)
         # Shift를 누르는 동안 대시 후 C 연결을 유지하고, 놓아도 잠깐의 여유를 준다.
         if not keys & SHIFT:

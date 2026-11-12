@@ -629,7 +629,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16쪽",
-      "sha256": "20e751cb4380762eb56cb3d7f5ee700234dbf0258dce4c08eb8d5d9b3c53054b",
+      "sha256": "97cbeaa08414e77ed0dcf71343c4311fe1bff2ddfbbcfa4a331051c08012be9f",
       "frames": [
         {
           "index": 0,
@@ -651,7 +651,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 1,
@@ -673,7 +673,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 2,
@@ -695,7 +695,7 @@
             0,
             0
           ],
-          "bodyHeight": 154.5
+          "bodyHeight": 156.64
         },
         {
           "index": 3,
@@ -717,7 +717,7 @@
             0,
             0
           ],
-          "bodyHeight": 113.21
+          "bodyHeight": 127.45
         },
         {
           "index": 4,
@@ -739,7 +739,7 @@
             0,
             0
           ],
-          "bodyHeight": 113.21
+          "bodyHeight": 127.45
         },
         {
           "index": 5,
@@ -761,7 +761,7 @@
             0,
             0
           ],
-          "bodyHeight": 113.21
+          "bodyHeight": 127.45
         },
         {
           "index": 6,
@@ -783,7 +783,7 @@
             0,
             0
           ],
-          "bodyHeight": 154.5
+          "bodyHeight": 156.64
         },
         {
           "index": 7,
@@ -805,7 +805,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         }
       ],
       "anchorType": "ground",
@@ -844,7 +844,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16쪽",
-      "sha256": "aa415c0963aea29df95b04fcd1526d66df8225ff60936241f6477e3170ba3714",
+      "sha256": "72707244620f4881c63e631642f2ab70c23f995ec7031e62ca39d64afaaafe55",
       "frames": [
         {
           "index": 0,
@@ -866,7 +866,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 1,
@@ -888,7 +888,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 2,
@@ -910,7 +910,7 @@
             0,
             0
           ],
-          "bodyHeight": 154.5
+          "bodyHeight": 156.64
         },
         {
           "index": 3,
@@ -932,7 +932,7 @@
             0,
             0
           ],
-          "bodyHeight": 154.5
+          "bodyHeight": 156.64
         },
         {
           "index": 4,
@@ -1020,7 +1020,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         }
       ],
       "anchorType": "ground",
@@ -1059,7 +1059,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16,29쪽",
-      "sha256": "16fcdbcbab97b3df8fee4a047adfb2de8457f054ba985364ebd19682b8d5149e",
+      "sha256": "0c06ccf6f6e44a2da11a2126d16da219cda28c47db3ee2066ae55e458154bbc6",
       "frames": [
         {
           "index": 0,
@@ -1077,7 +1077,7 @@
             ],
             "angle": 0.39
           },
-          "bodyHeight": 173.73,
+          "bodyHeight": 172.3,
           "registration": [
             0,
             0
@@ -1087,7 +1087,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 173.73,
+          "bodyHeight": 172.3,
           "registration": [
             0,
             0
@@ -1109,7 +1109,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 154.5,
+          "bodyHeight": 156.64,
           "registration": [
             0,
             0
@@ -1131,7 +1131,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 113.21,
+          "bodyHeight": 127.45,
           "registration": [
             0,
             0
@@ -1153,7 +1153,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 126.74,
+          "bodyHeight": 128.87,
           "registration": [
             0,
             0
@@ -1175,7 +1175,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 126.74,
+          "bodyHeight": 128.87,
           "registration": [
             0,
             0
@@ -1197,7 +1197,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 114.63,
+          "bodyHeight": 111.78,
           "registration": [
             0,
             0
@@ -1219,7 +1219,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 118.19,
+          "bodyHeight": 113.92,
           "registration": [
             0,
             0
@@ -1274,13 +1274,13 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 16,29쪽",
-      "sha256": "5735ac9e20071fa0b43aebe296c33e3f63601a3b164480e3cbae365217810c4c",
+      "sha256": "f4fdc9b6120a4d5ce93f350c45bfb1089e7f52faac8bc8fa12969ccd5530119b",
       "frames": [
         {
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 118.19,
+          "bodyHeight": 113.92,
           "registration": [
             0,
             0
@@ -1302,7 +1302,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 118.19,
+          "bodyHeight": 113.92,
           "registration": [
             0,
             0
@@ -1324,7 +1324,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 114.63,
+          "bodyHeight": 111.78,
           "registration": [
             0,
             0
@@ -1346,7 +1346,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 126.74,
+          "bodyHeight": 128.87,
           "registration": [
             0,
             0
@@ -1368,7 +1368,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 113.21,
+          "bodyHeight": 127.45,
           "registration": [
             0,
             0
@@ -1390,7 +1390,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 113.21,
+          "bodyHeight": 127.45,
           "registration": [
             0,
             0
@@ -1412,7 +1412,7 @@
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 154.5,
+          "bodyHeight": 156.64,
           "registration": [
             0,
             0
@@ -1446,7 +1446,7 @@
             ],
             "angle": 0.39
           },
-          "bodyHeight": 173.73,
+          "bodyHeight": 172.3,
           "registration": [
             0,
             0
@@ -1489,7 +1489,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 19,29쪽",
-      "sha256": "40db32acc0085b9dde10b0c0d040e51ba720cba52abf96aa024c51288ea783a7",
+      "sha256": "6b9079e763090e7ea0b30085db7a0e00e490f54ac593e0f075caee9729d2785a",
       "frames": [
         {
           "index": 0,
@@ -1511,7 +1511,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 1,
@@ -1533,7 +1533,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 2,
@@ -1555,7 +1555,7 @@
             0,
             0
           ],
-          "bodyHeight": 172.3
+          "bodyHeight": 173.73
         },
         {
           "index": 3,
@@ -1577,7 +1577,7 @@
             0,
             0
           ],
-          "bodyHeight": 172.3
+          "bodyHeight": 173.73
         },
         {
           "index": 4,
@@ -1599,7 +1599,7 @@
             0,
             0
           ],
-          "bodyHeight": 172.3
+          "bodyHeight": 173.73
         },
         {
           "index": 5,
@@ -1621,7 +1621,7 @@
             0,
             0
           ],
-          "bodyHeight": 172.3
+          "bodyHeight": 173.73
         },
         {
           "index": 6,
@@ -1643,7 +1643,7 @@
             0,
             0
           ],
-          "bodyHeight": 172.3
+          "bodyHeight": 173.73
         },
         {
           "index": 7,
@@ -1665,7 +1665,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         }
       ],
       "anchorType": "ground",
@@ -1704,7 +1704,7 @@
       "spoiler": false,
       "allowEmptyEnd": false,
       "source": "제안서 19,29쪽",
-      "sha256": "e9bc4555ccea7c5e8d0869466a517f2b0118464013183e8a77542fdfd5f6eb32",
+      "sha256": "800dc3d88a6a31a83b9130a583021914d42c31d5dc22ba7bd3d4c330096bb2fa",
       "frames": [
         {
           "index": 0,
@@ -1726,7 +1726,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 1,
@@ -1748,7 +1748,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 2,
@@ -1858,7 +1858,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         },
         {
           "index": 7,
@@ -1880,7 +1880,7 @@
             0,
             0
           ],
-          "bodyHeight": 173.73
+          "bodyHeight": 172.3
         }
       ],
       "anchorType": "ground",

@@ -111,8 +111,7 @@ class CampaignView:
         elif kind == 'cover':
             scale = o['w']/a.clips[key]['frameWidth']
         elif kind == 'crawl':
-            key='v3/vine_tunnel'
-            scale=None
+            key=f'polish/crawl_{s.run.stage+1}'
         elif kind == 'record':
             if o['record'] in s.run.records:
                 a.draw(key, o['x'], y, s.camera, age=age, alpha=.4)
@@ -146,15 +145,17 @@ class CampaignView:
             if event == 'merchant':
                 key = 'adv/merchant_cart__cart_repaired' if s.run.has('merchant_done') and not s.run.has('ward_taken') else key
                 a.draw(key, o['x'], 0, s.camera, .55)
+                actor_x = o['actor_x']
+                facing = 1 if s.player.x > actor_x else -1
                 override = s.actor_actions.get('merchant')
                 if override:
-                    a.draw(override[0], o['x']+190, 0, s.camera, .72, s.time-override[1])
+                    a.draw(override[0], actor_x, y, s.camera, .72, s.time-override[1], facing)
                 elif s.run.has('merchant_done') and not s.run.has('ward_taken'):
-                    a.draw('adv/npc_merchant__idle', o['x']+190, 0, s.camera, .72, age)
+                    a.draw('adv/npc_merchant__idle', actor_x, y, s.camera, .72, age, facing)
                     if s.run.trust:
                         a.draw('adv/merchant_cart__cart_supplies', o['x']-440, 0, s.camera, .35)
                 else:
-                    a.draw('adv/merchant_event__merchant_injured', o['x']+190, 0, s.camera, .72, frame=7)
+                    a.draw('adv/merchant_event__merchant_injured', actor_x, y, s.camera, .72, facing=facing, frame=7)
                 a.draw('adv/story_props__ward_cracked' if s.run.has('ward_taken') else 'adv/story_props__ward_whole', o['x']+30, 90, s.camera, .18)
                 return
             if event == 'altar' and s.run.has('altar_purified'):
@@ -175,17 +176,23 @@ class CampaignView:
         s = self.s
         s.world.draw(s.camera)
         # 발판 뒤의 받침 구조는 원경과 인물 사이 깊이에 놓는다.
-        for x in ((1700,2710) if s.run.stage<7 else ()):
+        support_x = (2250,2810) if s.run.stage==2 else (1700,2710) if s.run.stage<7 else ()
+        for x in support_x:
             if abs(x-s.camera.x-640)<1100:
                 s.assets.draw('v3/support_wood' if s.run.stage<3 else 'v3/support_stone',x,0,s.camera,alpha=.78)
+        # 발판은 인물과 그 위의 보상보다 먼저 그린다.
         for o in s.objects:
-            self.object(o)
+            if o['kind'] in {'platform','crawl','decor'}:
+                self.object(o)
         # 장식의 위치는 화면이 아니라 월드에 고정한다.
         for x in (510, 1770, 2930):
             if abs(x-s.camera.x-640)<820:
                 if s.run.stage<3:
                     s.assets.draw('adv/grass_dust__grass_sway', x, 0, s.camera, .23, s.time+x*.001)
                 s.assets.draw('adv/leaves_fireflies__fireflies', x+170, 200, s.camera, .35, s.time+x*.003, alpha=.3)
+        for o in s.objects:
+            if o['kind'] not in {'platform','crawl','decor'}:
+                self.object(o)
         for e in s.enemies:
             if abs(e.x-s.camera.x-640) < 980:
                 e.draw(s)
@@ -293,17 +300,18 @@ class CampaignView:
         self.icon(4,1028,60,20)
         self.text('Tab 기록  ·  Esc 메뉴',1047,60,15,BRIGHT)
         if r.unspent or r.skill_points:
-            panel(24,535,255,33,edge=ACCENT)
-            self.text(f'L  성장 포인트 {r.unspent+r.skill_points}',37,552,16,GOLD)
+            self.a.fit('polish/growth_prompt',179,533,310,74)
+            self.text(f'스탯 {r.unspent}점  ·  기술 {r.skill_points}점',114,517,17,BRIGHT)
         else:
             self.text('L 성장',1020,37,14,MUTED)
-        hint = ('↓ + ↑   발판 아래로' if p.floor_y>0 else
-                '↑   도약 문양 위에서 높이 점프' if any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects) else
-                '↓   웅크려 지나가기' if any(o['kind']=='crawl' and abs(o['x']-p.x)<210 and p.y<o.get('roof',154) for o in s.objects)
+        hint = ('↓   누른 채 좌우로 이동' if s.near_crawl(p.x,p.y) else
+                '↓ + ↑   발판 아래로' if p.floor_y>0 else
+                '↑   도약 문양 위에서 높이 점프' if any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects)
                 else '')
         if hint:
-            panel(508,76,264,34)
-            self.text(hint,640,93,16,BRIGHT,True)
+            y=122 if p.effects.buff_remaining>0 else 88
+            panel(508,y,264,34)
+            self.text(hint,640,y+17,16,BRIGHT,True)
         boss=next((e for e in s.enemies if e.boss and e.alive and abs(e.x-p.x)<900),None)
         if boss:
             panel(383,619,414,65,edge=(167,102,105,235))
@@ -313,6 +321,7 @@ class CampaignView:
             if boss.state=='windup':
                 self.text('공격 준비  ·  피하거나 막으세요',590,606,16,(255,187,156),True)
         self.interaction_markers(gx)
+        self.crawl_markers()
         if s.developer:
             self.text('연습 모드 · F9',1123,582,14,GOLD)
 
@@ -330,13 +339,15 @@ class CampaignView:
             if kind=='event' and obj.get('event')=='rescue' and r.has('rescue_done'):
                 continue
             label,height=INTERACTIONS[kind]
-            if kind=='event' and obj.get('npc'):
+            if kind=='event' and (obj.get('npc') or obj.get('actor_x') is not None):
                 label='이야기하기'
-            x,y=s.camera.project(obj['x'],obj['y']+height)
+                height=134 if obj.get('event')=='merchant' and (not r.has('merchant_done') or r.has('ward_taken')) else 195
+            target_x=obj.get('actor_x',obj['x'])
+            x,y=s.camera.project(target_x,obj['y']+height)
             if not 22<x<1258 or not 123<y<540:
                 continue
             active=obj is near and p.grounded
-            quest=abs(goal_x-obj['x'])<42
+            quest=abs(goal_x-target_x)<42
             hue=ACCENT if active or quest else (138,198,203,240)
             if active:
                 card_x=max(22,min(1080,x-89))
@@ -354,6 +365,16 @@ class CampaignView:
                 bob=2*sin(s.time*2.6+obj['x']*.004)
                 panel(x-13,y+bob-13,26,26,edge=hue)
                 self.icon(3 if quest else 4 if kind=='record' else 2,x,y+bob,20)
+
+    def crawl_markers(self):
+        s=self.s
+        for o in s.objects:
+            if o['kind']!='crawl':
+                continue
+            for side in (-1,1):
+                x,y=s.camera.project(o['x']+side*(o['w']/2-26),o['y']+93)
+                if 42<x<1238 and 120<y<533:
+                    self.a.fit('polish/crawl_marker',x,y,32,36)
 
     def story_dialogue(self):
         s,m=self.s,self.s.modal

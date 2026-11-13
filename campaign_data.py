@@ -23,22 +23,47 @@ OBJECTIVES = [
     '밤의 왕 바르켄을 쓰러뜨리자',
 ]
 
-# 같은 지역의 색·재질을 가진 두 발판. 오른쪽 길은 항상 지상으로도 지나갈 수 있다.
-TERRAIN = [
-    ('village_wood', 'village_step'), ('forest_log', 'forest_root'),
-    ('forest_bridge', 'forest_earth'), ('ruin_platform', 'ruin_cover'),
-    ('altar_step', 'altar_plinth'), ('gate_grate', 'gate_bastion'),
-    ('hall_pillar', 'hall_threshold'), ('throne_plinth', 'throne_seal'),
-]
+# (가운데 x, 윗면 y, 길이). 두 경로의 끝에는 각각 모닥불과 보상 상자가 있다.
+PLATFORM_ROUTES = (
+    (((1030,100,288),(1280,222,224),(1500,340,168),(1710,462,224),(1850,581,168),(1900,700,344)),
+     ((2040,105,224),(2270,225,288),(2520,350,224),(2700,475,168),(2835,600,224),(2940,720,344))),
+    (((1040,115,168),(1280,235,224),(1505,355,288),(1660,480,168),(1820,600,224),(1900,700,344)),
+     ((2270,118,224),(2470,239,168),(2640,354,288),(2810,475,168),(2900,595,224),(2940,720,344))),
+    (((1300,108,224),(1470,225,168),(1610,348,288),(1430,467,224),(1670,587,168),(1900,700,344)),
+     ((2220,117,168),(2440,238,224),(2680,358,344),(2840,477,168),(2750,603,224),(2940,720,344))),
+    (((985,101,224),(1225,224,288),(1440,342,168),(1650,464,224),(1790,583,288),(1900,700,344)),
+     ((2220,116,288),(2440,237,168),(2660,360,224),(2870,478,288),(3040,596,168),(2940,720,344))),
+    (((1110,114,288),(1365,236,168),(1610,358,224),(1790,475,168),(1650,597,224),(1900,700,344)),
+     ((2270,109,168),(2510,231,288),(2740,353,224),(2910,474,168),(3120,599,224),(2940,720,344))),
+    (((1030,110,168),(1270,234,224),(1515,354,288),(1745,471,168),(1855,588,224),(1900,700,344)),
+     ((2170,118,288),(2420,237,224),(2640,357,168),(2840,479,288),(2670,600,168),(2940,720,344))),
+    (((1140,112,224),(1380,230,288),(1610,354,168),(1745,475,288),(1635,597,168),(1900,700,344)),
+     ((2135,118,168),(2335,236,224),(2570,355,288),(2780,472,168),(3000,596,224),(2940,720,344))),
+    (((1040,125,224),(1260,252,168),(1440,377,224),(1620,490,168),(1800,601,224),(1900,700,344)),
+     ((2470,138,168),(2690,263,288),(2900,384,168),(3100,498,224),(3210,611,168),(2940,720,344))),
+)
+
+SIDE_PLATFORMS = (
+    ((560,158,168),(3210,143,288)), ((590,162,168),(3250,133,224)),
+    ((550,168,168),(3100,153,224)), ((520,157,168),(3230,145,288)),
+    ((625,155,168),(3280,133,224)), ((470,146,168),(3260,144,224)),
+    ((570,155,168),(3250,148,288)), ((760,150,168),(3490,150,168)),
+)
+
+
+def platform(stage, name, x, y, width, **motion):
+    return dict(id=name, kind='platform', x=x, y=y, w=width,
+                visual=f'polish/platform_{stage+1}_{width}', **motion)
 
 
 def objects(stage):
     """지형은 통과 가능한 발판과 실제로 부술 수 있는 엄폐물을 구분한다."""
+    left_route, right_route = PLATFORM_ROUTES[stage]
     result = [
-        dict(id='platform_a', kind='platform', x=1330, y=125, w=240, asset='terrain__'+TERRAIN[stage][0], visual='polish/platform_'+str(stage+1)),
-        dict(id='platform_b', kind='platform', x=2330, y=145, w=240, asset='terrain__'+TERRAIN[stage][1], visual='polish/platform_'+str(stage+1)),
-        dict(id='chest', kind='chest', x=2330, y=145, asset='reward_chest__reward_chest'),
-        dict(id='crate', kind='crate', x=1120, y=0, hp=24 + stage*6, asset='crate_break__crate_break'),
+        platform(stage, 'platform_a', *SIDE_PLATFORMS[stage][0]),
+        platform(stage, 'platform_b', *SIDE_PLATFORMS[stage][1]),
+        dict(id='chest', kind='chest', x=right_route[0][0], y=right_route[0][1], asset='reward_chest__reward_chest'),
+        dict(id='crate', kind='crate', x=1395 if stage==2 else 1120, y=0, hp=24 + stage*6, asset='crate_break__crate_break'),
         dict(id='camp', kind='camp', x=2500 if stage in {2, 4, 5, 6} else 2850, y=0, asset='campfire__campfire'),
         dict(id='sign', kind='decor', x=380, y=0, asset='sign_torch__sign_sway'),
         dict(id='torch', kind='decor', x=3150, y=165, asset='sign_torch__torch_loop'),
@@ -49,12 +74,15 @@ def objects(stage):
     if stage == 1:
         result += [dict(id='pool', kind='event', x=900, y=0, event='rescue', asset='mirror_pool__mirror_pool'),
                    dict(id='root', kind='crawl', x=1850, y=0, w=440,ceiling=134,roof=172, asset='story_props__root_tunnel'),
-                   dict(id='root_step_l',kind='platform',x=1605,y=45,w=100,visual='polish/platform_2'),
-                   dict(id='root_step_r',kind='platform',x=2095,y=45,w=100,visual='polish/platform_2'),
+                   platform(stage,'root_step_l',1560,52,120),
+                   platform(stage,'root_step_r',2140,52,120),
                    dict(id='wood', kind='barrier', x=3070, y=0, hp=42, asset='barrier_break__barrier_break')]
     if stage == 2:
-        result += [dict(id='merchant', kind='event', x=900, y=0, event='merchant', asset='merchant_cart__cart_broken'),
-                   dict(id='log', kind='cover', x=1690, y=0, w=170, h=72, asset='story_props__log_cover')]
+        result += [dict(id='merchant', kind='event', x=900, actor_x=1090, y=0,
+                        event='merchant', asset='merchant_cart__cart_broken'),
+                   dict(id='root', kind='crawl', x=1790, y=0, w=440, ceiling=140, roof=172),
+                   platform(stage,'root_step_l',1515,48,120),
+                   platform(stage,'root_step_r',2070,55,120)]
     if stage == 3:
         result += [dict(id='mirror', kind='event', x=740, y=0, event='mirror', asset='mirror_well__black_mirror'),
                    dict(id='night', kind='record', x=1900, y=0, record='night', asset='story_props__record_night'),
@@ -78,21 +106,22 @@ def objects(stage):
                    dict(id='final', kind='event', x=3150, y=0, event='final', asset='terrain__throne_seal')]
         result[2:2] = [dict(id='last_camp', kind='camp', x=580, y=0, asset='campfire__campfire')]
     # 지상 길은 이어 두고, 점프와 대시로 오르는 두 개의 상층 탐색 길을 만든다.
-    stairs=[(1050,110),(1510,240),(1700,355),(1510,470),(1710,585),(1900,700),
-            (2080,110),(2530,260),(2730,375),(2530,490),(2740,605),(2940,720)]
-    for i,(x,y) in enumerate(stairs):
-        result.append(dict(id='upper_'+str(i),kind='platform',x=x,y=y,w=240,
-                           asset='terrain__'+TERRAIN[stage][0],visual='polish/platform_'+str(stage+1)))
+    for i,entry in enumerate(left_route+right_route):
+        result.append(platform(stage,f'upper_{i}',*entry))
+    lift_x=(835,850,1170,880,1020,940,1020,880)[stage]
+    drift_x=(3150,3110,3220,3200,3280,3250,3260,3430)[stage]
+    gap_x=(2180,2090,2170,2210,2110,2140,2080,2310)[stage]
+    spring_x=(1990,2210,2160,1970,2140,2000,1900,2320)[stage]
     result += [
-        dict(id='lift',kind='platform',x=920,y=95,w=240,visual='polish/platform_'+str(stage+1),motion='lift',base_x=920,base_y=95,travel=245,period=9),
-        dict(id='moving',kind='platform',x=3130,y=250,w=240,visual='polish/platform_'+str(stage+1),motion='moving',base_x=3130,base_y=250,travel=160,period=7),
-        dict(id='crumble',kind='platform',x=2090,y=565,w=240,visual='polish/platform_'+str(stage+1),motion='crumble',stepped=0,disabled_until=0),
-        dict(id='spring',kind='spring',x=1990,y=0,asset='spring'),
+        platform(stage,'lift',lift_x,114,168,motion='lift',base_x=lift_x,base_y=114,travel=225,period=9),
+        platform(stage,'moving',drift_x,310,224,motion='moving',base_x=drift_x,base_y=310,travel=118,period=7),
+        platform(stage,'crumble',gap_x,551,120,motion='crumble',stepped=0,disabled_until=0),
+        dict(id='spring',kind='spring',x=spring_x,y=0,asset='spring'),
         dict(id='upper_chest',kind='chest',x=2940,y=720,asset='reward_chest__reward_chest'),
         dict(id='upper_camp',kind='camp',x=1900,y=700,asset='campfire__campfire'),
     ]
-    for i,(x,y) in enumerate([(1510,290),(1700,405),(1510,520),(1710,635),(1900,755),(2530,310),(2730,425),(2740,655),(2940,775)]):
-        result.append(dict(id='moon_shard_'+str(i),kind='crystal',x=x,y=y,asset='crystal'))
+    for i,(x,y,_) in enumerate(left_route[1:]+right_route[1:3]+right_route[-2:]):
+        result.append(dict(id=f'moon_shard_{i}',kind='crystal',x=x,y=y+55,asset='crystal'))
     return result
 
 

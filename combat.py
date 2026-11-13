@@ -255,7 +255,9 @@ class Companion:
         self.floor_y = scene.floor_beneath(self)
         dx = target-self.x
         from pico2d import SDLK_DOWN
-        crouch = SDLK_DOWN in scene.keys or scene.under_root(self.x,self.y)
+        crouch = (SDLK_DOWN in scene.keys or scene.under_root(self.x,self.y)
+                  or scene.near_crawl(self.x,self.y,padding=44) is not None
+                  and scene.under_root(p.x,p.y))
         speed = min(410, max(0, (abs(dx)-10)*3.1)) if not crouch else min(80, max(0, (abs(dx)-10)*3.1))
         if target_y>self.floor_y+18 and not crouch:
             speed = max(330, speed)

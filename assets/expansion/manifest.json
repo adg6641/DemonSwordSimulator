@@ -93,7 +93,7 @@
       "playback": "loop",
       "recommendedScale": 1,
       "facing": "right",
-      "sha256": "22f83a87e7fcae2d4ed187e9d2edfee423cc65b0ee36986958f82e287fea0514"
+      "sha256": "1f7d4428d58320cb73a41704016d901743feb3f6e5042cb8d63a891f9aa041a1"
     },
     {
       "id": "spring",
@@ -187,7 +187,7 @@
       "playback": "loop",
       "recommendedScale": 1,
       "facing": "right",
-      "sha256": "70b426b65c6103a1fff7125a0f30dcc5a511f1b066a7ecf9eeded3eb3f1bce4a"
+      "sha256": "dd50e41007bcf8a00497342c07170f2a1b1018e2119073018aab9bbcf199e54e"
     },
     {
       "id": "rescue_discovery",

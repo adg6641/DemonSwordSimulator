@@ -98,7 +98,7 @@ class Campaign:
             if focus is None:
                 if name=='루네아' and self.companion: sx=self.companion.x
                 elif name=='루네아' and context=='rescue' and obj: sx=obj['x']+35
-                elif name=='상인' and obj: sx=obj['x']+190
+                elif name=='상인' and obj: sx=obj.get('actor_x',obj['x'])
                 elif name in {'소년','이야기'}: sx=self.player.x
             sx = max(self.player.x-620, min(self.player.x+620, sx))
             self.modal.update(speaker=name, speaker_x=sx, speaker_y=max(0,self.player.y)+165,
@@ -512,8 +512,12 @@ class Campaign:
         return f'{self.run.stage}:{obj["id"]}'
 
     def under_root(self, x, y=0):
-        return any(o['kind']=='crawl' and abs(o['x']-x)<o['w']/2+22
-                   and o['y']<=y<o['y']+o.get('ceiling',112) for o in self.objects)
+        return self.near_crawl(x, y, padding=20) is not None
+
+    def near_crawl(self, x, y, padding=90):
+        return next((o for o in self.objects if o['kind']=='crawl'
+                     and abs(o['x']-x)<o['w']/2+padding
+                     and o['y']<=y<o['y']+o['ceiling']), None)
 
     def update_posture(self,p):
         # 먼저 웅크려 들어가야 한다. 안에서 키를 놓아도 나올 때까지 자세를 유지한다.
@@ -521,8 +525,8 @@ class Campaign:
 
     def nearest(self):
         interactable = [o for o in self.objects if o['kind'] in {'event', 'record', 'camp', 'chest', 'lever'}
-                        and abs(o['x']-self.player.x) < 135 and abs(o['y']-self.player.y) < 110]
-        return min(interactable, key=lambda o: abs(o['x']-self.player.x), default=None)
+                        and abs(o.get('actor_x',o['x'])-self.player.x) < 135 and abs(o['y']-self.player.y) < 110]
+        return min(interactable, key=lambda o: abs(o.get('actor_x',o['x'])-self.player.x), default=None)
 
     def interact(self):
         if not self.player.grounded:
@@ -908,13 +912,13 @@ class Campaign:
 
     def platforms(self, old_y, actor=None):
         p = self.player if actor is None else actor
-        if getattr(p,'drop_timer',0)>0: return
         height=getattr(p,'collision_height',126 if getattr(p,'crouching',getattr(p,'crouched',False)) else getattr(p,'BODY_HEIGHT',150))
         for o in self.objects:
-            if o['kind']=='crawl' and abs(p.x-o['x'])<o['w']/2:
-                ceiling=o['y']+o.get('ceiling',112)
+            if o['kind']=='crawl' and abs(p.x-o['x'])<o['w']/2+20:
+                ceiling=o['y']+o['ceiling']
                 if p.vy>0 and old_y+height<=ceiling and p.y+height>=ceiling:
                     p.y=ceiling-height;p.vy=0
+        if getattr(p,'drop_timer',0)>0: return
         tops = [o for o in self.solid_platforms() if self.platform_span(o)[0] <= p.x <= self.platform_span(o)[1]]
         if p.vy <= 0:
             landed = [o for o in tops if old_y >= o['y']-1 and p.y <= o['y']]

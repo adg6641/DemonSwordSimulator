@@ -903,6 +903,1394 @@
           "height": 512
         }
       ]
+    },
+    {
+      "id": "platform_1_120",
+      "file": "terrain/stage_1_120.png",
+      "label": "platform_1_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 37,
+      "frameWidth": 120,
+      "frameHeight": 37,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 37
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_1_168",
+      "file": "terrain/stage_1_168.png",
+      "label": "platform_1_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 37,
+      "frameWidth": 168,
+      "frameHeight": 37,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 37
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_1_224",
+      "file": "terrain/stage_1_224.png",
+      "label": "platform_1_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 37,
+      "frameWidth": 224,
+      "frameHeight": 37,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 37
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_1_288",
+      "file": "terrain/stage_1_288.png",
+      "label": "platform_1_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 37,
+      "frameWidth": 288,
+      "frameHeight": 37,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 37
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_1_344",
+      "file": "terrain/stage_1_344.png",
+      "label": "platform_1_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 37,
+      "frameWidth": 344,
+      "frameHeight": 37,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 37
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_2_120",
+      "file": "terrain/stage_2_120.png",
+      "label": "platform_2_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 35,
+      "frameWidth": 120,
+      "frameHeight": 35,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 35
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_2_168",
+      "file": "terrain/stage_2_168.png",
+      "label": "platform_2_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 35,
+      "frameWidth": 168,
+      "frameHeight": 35,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 35
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_2_224",
+      "file": "terrain/stage_2_224.png",
+      "label": "platform_2_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 35,
+      "frameWidth": 224,
+      "frameHeight": 35,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 35
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_2_288",
+      "file": "terrain/stage_2_288.png",
+      "label": "platform_2_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 35,
+      "frameWidth": 288,
+      "frameHeight": 35,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 35
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_2_344",
+      "file": "terrain/stage_2_344.png",
+      "label": "platform_2_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 35,
+      "frameWidth": 344,
+      "frameHeight": 35,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 35
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_3_120",
+      "file": "terrain/stage_3_120.png",
+      "label": "platform_3_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 49,
+      "frameWidth": 120,
+      "frameHeight": 49,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 49
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_3_168",
+      "file": "terrain/stage_3_168.png",
+      "label": "platform_3_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 49,
+      "frameWidth": 168,
+      "frameHeight": 49,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 49
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_3_224",
+      "file": "terrain/stage_3_224.png",
+      "label": "platform_3_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 49,
+      "frameWidth": 224,
+      "frameHeight": 49,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 49
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_3_288",
+      "file": "terrain/stage_3_288.png",
+      "label": "platform_3_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 49,
+      "frameWidth": 288,
+      "frameHeight": 49,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 49
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_3_344",
+      "file": "terrain/stage_3_344.png",
+      "label": "platform_3_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 49,
+      "frameWidth": 344,
+      "frameHeight": 49,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 49
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_4_120",
+      "file": "terrain/stage_4_120.png",
+      "label": "platform_4_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 39,
+      "frameWidth": 120,
+      "frameHeight": 39,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 39
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_4_168",
+      "file": "terrain/stage_4_168.png",
+      "label": "platform_4_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 39,
+      "frameWidth": 168,
+      "frameHeight": 39,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 39
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_4_224",
+      "file": "terrain/stage_4_224.png",
+      "label": "platform_4_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 39,
+      "frameWidth": 224,
+      "frameHeight": 39,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 39
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_4_288",
+      "file": "terrain/stage_4_288.png",
+      "label": "platform_4_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 39,
+      "frameWidth": 288,
+      "frameHeight": 39,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 39
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_4_344",
+      "file": "terrain/stage_4_344.png",
+      "label": "platform_4_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 39,
+      "frameWidth": 344,
+      "frameHeight": 39,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 39
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_5_120",
+      "file": "terrain/stage_5_120.png",
+      "label": "platform_5_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 41,
+      "frameWidth": 120,
+      "frameHeight": 41,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 41
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_5_168",
+      "file": "terrain/stage_5_168.png",
+      "label": "platform_5_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 41,
+      "frameWidth": 168,
+      "frameHeight": 41,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 41
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_5_224",
+      "file": "terrain/stage_5_224.png",
+      "label": "platform_5_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 41,
+      "frameWidth": 224,
+      "frameHeight": 41,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 41
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_5_288",
+      "file": "terrain/stage_5_288.png",
+      "label": "platform_5_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 41,
+      "frameWidth": 288,
+      "frameHeight": 41,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 41
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_5_344",
+      "file": "terrain/stage_5_344.png",
+      "label": "platform_5_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 41,
+      "frameWidth": 344,
+      "frameHeight": 41,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 41
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_6_120",
+      "file": "terrain/stage_6_120.png",
+      "label": "platform_6_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 44,
+      "frameWidth": 120,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_6_168",
+      "file": "terrain/stage_6_168.png",
+      "label": "platform_6_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 44,
+      "frameWidth": 168,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_6_224",
+      "file": "terrain/stage_6_224.png",
+      "label": "platform_6_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 44,
+      "frameWidth": 224,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_6_288",
+      "file": "terrain/stage_6_288.png",
+      "label": "platform_6_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 44,
+      "frameWidth": 288,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_6_344",
+      "file": "terrain/stage_6_344.png",
+      "label": "platform_6_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 44,
+      "frameWidth": 344,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7_120",
+      "file": "terrain/stage_7_120.png",
+      "label": "platform_7_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 44,
+      "frameWidth": 120,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7_168",
+      "file": "terrain/stage_7_168.png",
+      "label": "platform_7_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 44,
+      "frameWidth": 168,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7_224",
+      "file": "terrain/stage_7_224.png",
+      "label": "platform_7_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 44,
+      "frameWidth": 224,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7_288",
+      "file": "terrain/stage_7_288.png",
+      "label": "platform_7_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 44,
+      "frameWidth": 288,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7_344",
+      "file": "terrain/stage_7_344.png",
+      "label": "platform_7_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 44,
+      "frameWidth": 344,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8_120",
+      "file": "terrain/stage_8_120.png",
+      "label": "platform_8_120",
+      "group": "지형과 안내",
+      "width": 120,
+      "height": 44,
+      "frameWidth": 120,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 60.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 120,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 112,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8_168",
+      "file": "terrain/stage_8_168.png",
+      "label": "platform_8_168",
+      "group": "지형과 안내",
+      "width": 168,
+      "height": 44,
+      "frameWidth": 168,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 84.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 168,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 160,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8_224",
+      "file": "terrain/stage_8_224.png",
+      "label": "platform_8_224",
+      "group": "지형과 안내",
+      "width": 224,
+      "height": 44,
+      "frameWidth": 224,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 112.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 224,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 216,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8_288",
+      "file": "terrain/stage_8_288.png",
+      "label": "platform_8_288",
+      "group": "지형과 안내",
+      "width": 288,
+      "height": 44,
+      "frameWidth": 288,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 144.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 288,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 280,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8_344",
+      "file": "terrain/stage_8_344.png",
+      "label": "platform_8_344",
+      "group": "지형과 안내",
+      "width": 344,
+      "height": 44,
+      "frameWidth": 344,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 172.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 344,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 336,
+        "y": 0
+      }
+    },
+    {
+      "id": "crawl_2",
+      "file": "terrain/crawl_2.png",
+      "label": "crawl_2",
+      "group": "지형과 안내",
+      "width": 440,
+      "height": 172,
+      "frameWidth": 440,
+      "frameHeight": 172,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 220,
+        "y": 172
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 440,
+          "height": 172
+        }
+      ]
+    },
+    {
+      "id": "crawl_3",
+      "file": "terrain/crawl_3.png",
+      "label": "crawl_3",
+      "group": "지형과 안내",
+      "width": 440,
+      "height": 172,
+      "frameWidth": 440,
+      "frameHeight": 172,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 220,
+        "y": 172
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 440,
+          "height": 172
+        }
+      ]
+    },
+    {
+      "id": "growth_prompt",
+      "file": "growth_prompt.png",
+      "label": "growth_prompt",
+      "group": "지형과 안내",
+      "width": 620,
+      "height": 148,
+      "frameWidth": 620,
+      "frameHeight": 148,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 310.0,
+        "y": 74.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 620,
+          "height": 148
+        }
+      ]
+    },
+    {
+      "id": "crawl_marker",
+      "file": "crawl_marker.png",
+      "label": "crawl_marker",
+      "group": "지형과 안내",
+      "width": 64,
+      "height": 72,
+      "frameWidth": 64,
+      "frameHeight": 72,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 32.0,
+        "y": 36.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 64,
+          "height": 72
+        }
+      ]
     }
   ],
   "bodies": {

@@ -46,7 +46,8 @@ def objective(scene):
     elif r.stage == 1 and not (r.companion or r.has('aid_marker')):
         return '거울에 갇힌 소녀 살펴보기', 900
     elif r.stage == 2 and not r.has('merchant_done'):
-        return '부서진 수레의 상인 만나기', 900
+        merchant = next(o for o in scene.objects if o['id']=='merchant')
+        return '부서진 수레의 상인 만나기', merchant['actor_x']
     elif r.stage == 3:
         if not r.has('mirror_done'): return '검은 거울 살펴보기', 740
         if 'night' not in r.records: return '밤의 기록 읽기', 1900

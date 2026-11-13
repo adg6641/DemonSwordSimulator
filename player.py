@@ -88,7 +88,8 @@ class Player:
     def take_damage(self, amount):
         if self.mode == 'dead' or self.invulnerable > 0:
             return 0
-        damage = max(1, round(amount * .25)) if self.mode == 'guard' else max(0, round(amount))
+        damage_was_guarded = self.mode == 'guard'
+        damage = max(1, round(amount * .25)) if damage_was_guarded else max(0, round(amount))
         self.hp = max(0, self.hp - damage)
         self.invulnerable = .65
         self.effects.buff_remaining = 0.0
@@ -96,7 +97,8 @@ class Player:
         self.followups.clear()
         self.attack_pending=False
         self.mode, self.gait = ('dead' if self.hp == 0 else 'hurt'), None
-        self.animation.play('death' if self.hp == 0 else 'hurt')
+        clip = 'death' if self.hp == 0 else 'guard_impact' if damage_was_guarded else 'hurt'
+        self.animation.play(clip)
         if self.hp>0 and self.forced_crouch:
             self.animation.play('crouch_idle',fps=self.animation.clips['crouch_idle']['frameCount']/.28,once=True)
         return damage
@@ -230,13 +232,20 @@ class Player:
         elif self.mode == 'hurt' and anim.finished:
             if self.forced_crouch:
                 self.mode = 'free'
+            elif anim.name == 'guard_impact':
+                self.mode = 'guard'
+                anim.play('guard_idle' if SDLK_x in keys else 'guard_lower')
             else:
                 self._action('hurt_recovery')
         elif self.mode == 'guard':
             if SDLK_x not in keys and anim.name != 'guard_lower':
-                anim.play('guard_lower')
-            elif anim.finished:
                 if anim.name == 'guard_raise':
+                    release_frame = (7, 7, 6, 4, 4, 2, 1, 0)[anim.frame]
+                else:
+                    release_frame = 0
+                anim.play('guard_lower', start_frame=release_frame)
+            elif anim.finished:
+                if anim.name in {'guard_raise', 'guard_impact'}:
                     anim.play('guard_idle')
                 elif anim.name == 'guard_lower':
                     self.mode = 'free'

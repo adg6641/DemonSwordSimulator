@@ -1,6 +1,6 @@
 {
   "title": "마검사 주인공 애니메이션",
-  "version": 16,
+  "version": 17,
   "conventions": {
     "frameWidth": 768,
     "frameHeight": 640,
@@ -3270,12 +3270,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -3292,12 +3292,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.45,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -3314,12 +3314,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               267.795,
               454.725
             ],
-            "angle": 2.87
+            "angle": 1.23,
+            "hidden": false
           },
           "bodyHeight": 175.86,
           "registration": [
@@ -3336,12 +3336,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               280.394,
               453.046
             ],
-            "angle": 3.451592653589793
+            "angle": 2.32,
+            "hidden": false
           },
           "bodyHeight": 175.86,
           "registration": [
@@ -3358,12 +3358,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               269.765,
               427.145
             ],
-            "angle": -2.25
+            "angle": 2.83,
+            "hidden": false
           },
           "bodyHeight": 170.88,
           "registration": [
@@ -3380,12 +3380,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               269.765,
               427.145
             ],
-            "angle": -2.25
+            "angle": 3.07,
+            "hidden": false
           },
           "bodyHeight": 170.88,
           "registration": [
@@ -3402,12 +3402,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               259.915,
               415.325
             ],
-            "angle": -0.82
+            "angle": -2.1,
+            "hidden": false,
+            "turnWindow": [
+              0.2,
+              0.85
+            ]
           },
           "bodyHeight": 168.03,
           "registration": [
@@ -3424,12 +3428,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              320.966,
-              414.406
+              305.7,
+              418.6
             ],
-            "angle": -0.44999999999999984
+            "angle": -1.38,
+            "hidden": false,
+            "turnWindow": [
+              0.35,
+              0.97
+            ]
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -3446,12 +3454,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               374.175,
               408.43
             ],
-            "angle": -0.08
+            "angle": -0.12,
+            "hidden": false
           },
           "bodyHeight": 165.9,
           "registration": [
@@ -3468,12 +3476,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              373.13,
-              412.47400000000005
+              374.4,
+              412.8
             ],
-            "angle": 0.014999999999999972
+            "angle": 0.04,
+            "hidden": false
           },
           "bodyHeight": 165.9,
           "registration": [
@@ -3490,12 +3498,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              401.755,
-              403.505
+              401.6,
+              402.6
             ],
-            "angle": 0.11
+            "angle": 0.14,
+            "hidden": false
           },
           "bodyHeight": 163.76,
           "registration": [
@@ -3512,12 +3520,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              390.51800000000003,
-              413.44
+              388.9,
+              413.8
             ],
-            "angle": 0.2300000000000001
+            "angle": 0.26,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -3534,12 +3542,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              345.5,
+              415.7
             ],
-            "angle": 0.35
+            "angle": 0.35,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -3556,12 +3564,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               339.32,
               423.1
             ],
-            "angle": 0.39
+            "angle": 0.43,
+            "hidden": false
           },
           "bodyHeight": 165.9,
           "registration": [
@@ -3578,12 +3586,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -3600,12 +3608,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -3615,25 +3623,25 @@
         }
       ],
       "frameDurations": [
-        0.0421875,
-        0.0421875,
-        0.0421875,
-        0.0421875,
-        0.0253125,
-        0.0253125,
-        0.023625,
-        0.023625,
+        0.023,
+        0.024,
+        0.028,
+        0.025,
         0.027,
-        0.027,
-        0.0354375,
-        0.0354375,
-        0.037125,
-        0.037125,
-        0.037125,
-        0.037125
+        0.025,
+        0.018,
+        0.014,
+        0.039,
+        0.031,
+        0.03,
+        0.024,
+        0.025,
+        0.025,
+        0.028,
+        0.022
       ],
       "chainFrame": 14,
-      "sha256": "d81b09fe595394777acb5cad20ba7404a37f9381eaaf6b158eae1359c15081f1"
+      "sha256": "53e309f0962216052657502b8eef71a61d441271289f93bb57af110a7ba8368f"
     },
     {
       "id": "slash_2",
@@ -3666,12 +3674,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -3688,12 +3696,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.54,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -3710,12 +3718,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               261.56,
               464.756
             ],
-            "angle": 0.53
+            "angle": 0.88,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -3732,12 +3740,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               285.152,
               464.424
             ],
-            "angle": 0.43500000000000005
+            "angle": 0.98,
+            "hidden": false
           },
           "bodyHeight": 165.9,
           "registration": [
@@ -3754,12 +3762,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              342.402,
-              445.276
+              333.5,
+              473.2
             ],
-            "angle": 0.34
+            "angle": 0.91,
+            "hidden": false
           },
           "bodyHeight": 162.34,
           "registration": [
@@ -3776,12 +3784,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              337.424,
-              450.872
+              353.9,
+              460.9
             ],
-            "angle": 0.019999999999999962
+            "angle": 0.72,
+            "hidden": false
           },
           "bodyHeight": 159.49,
           "registration": [
@@ -3798,12 +3806,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              345.324,
-              449.172
+              328.1,
+              448.7
             ],
-            "angle": -0.3
+            "angle": 0.51,
+            "hidden": false,
+            "turnWindow": [
+              0.24,
+              0.86
+            ]
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -3820,12 +3832,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               358.72,
               434.416
             ],
-            "angle": -0.455
+            "angle": 0.17,
+            "hidden": false,
+            "turnWindow": [
+              0.28,
+              0.95
+            ]
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -3842,12 +3858,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              371.622,
-              383.914
+              370.5,
+              383.6
             ],
-            "angle": -0.61
+            "angle": -0.56,
+            "hidden": false
           },
           "bodyHeight": 168.03,
           "registration": [
@@ -3864,12 +3880,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               368.4,
               389.88800000000003
             ],
-            "angle": -0.7199999999999999
+            "angle": -0.68,
+            "hidden": false
           },
           "bodyHeight": 168.03,
           "registration": [
@@ -3886,12 +3902,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              370.648,
-              360.538
+              378.9,
+              354.6
             ],
-            "angle": -0.83
+            "angle": -0.87,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -3908,12 +3924,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              373.24,
-              365.688
+              372,
+              366.9
             ],
-            "angle": -0.995
+            "angle": -1.0,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -3930,12 +3946,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              367.8,
+              346.3
             ],
-            "angle": -1.16
+            "angle": -1.14,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -3952,12 +3968,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              367.8,
+              346.3
             ],
-            "angle": -1.16
+            "angle": -1.24,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -3974,12 +3990,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -3996,12 +4012,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -4011,25 +4027,25 @@
         }
       ],
       "frameDurations": [
-        0.04375,
-        0.04375,
-        0.04375,
-        0.04375,
-        0.02625,
-        0.02625,
-        0.0245,
-        0.0245,
+        0.022,
+        0.019,
+        0.027,
+        0.026,
+        0.024,
+        0.022,
+        0.019,
+        0.015,
+        0.041,
         0.028,
+        0.034,
+        0.026,
+        0.025,
+        0.024,
         0.028,
-        0.03675,
-        0.03675,
-        0.0385,
-        0.0385,
-        0.0385,
-        0.0385
+        0.022
       ],
       "chainFrame": 14,
-      "sha256": "a64804da4acf95ee117ed31bb5161bbcf2cf21469345e4d9286faa5299da2f6c"
+      "sha256": "61f7a2e86ab990ed9308a1b36753d2814e4e2d1ee5e183921b194d6ffe0cfa9b"
     },
     {
       "id": "slash_3",
@@ -4062,12 +4078,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -4084,12 +4100,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.44,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -4106,12 +4122,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               305.225,
               340.46500000000003
             ],
-            "angle": -2.13
+            "angle": -1.87,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -4128,12 +4144,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               296.528,
               344.038
             ],
-            "angle": -1.9049999999999998
+            "angle": -2.0,
+            "hidden": false
           },
           "bodyHeight": 170.88,
           "registration": [
@@ -4150,12 +4166,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.285,
               342.435
             ],
-            "angle": -1.68
+            "angle": -1.99,
+            "hidden": false
           },
           "bodyHeight": 170.88,
           "registration": [
@@ -4172,12 +4188,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               288.704,
               361.642
             ],
-            "angle": -1.22
+            "angle": -1.7,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -4194,12 +4210,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               302.27,
               360.16499999999996
             ],
-            "angle": -0.76
+            "angle": -1.34,
+            "hidden": false,
+            "turnWindow": [
+              0.23,
+              0.84
+            ]
           },
           "bodyHeight": 158.06,
           "registration": [
@@ -4216,12 +4236,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               306.308,
               393.916
             ],
-            "angle": -0.19500000000000006
+            "angle": -0.73,
+            "hidden": false,
+            "turnWindow": [
+              0.38,
+              0.96
+            ]
           },
           "bodyHeight": 158.06,
           "registration": [
@@ -4238,12 +4262,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              366.295,
-              444.875
+              345.5,
+              469.6
             ],
-            "angle": 0.37
+            "angle": 0.31,
+            "hidden": false
           },
           "bodyHeight": 153.08,
           "registration": [
@@ -4260,12 +4284,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              354.23,
-              445.75
+              325,
+              466
             ],
-            "angle": 0.47999999999999987
+            "angle": 0.45,
+            "hidden": false
           },
           "bodyHeight": 156.64,
           "registration": [
@@ -4282,12 +4306,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              369.25,
-              455.71000000000004
+              335,
+              471
             ],
-            "angle": 0.59
+            "angle": 0.64,
+            "hidden": false
           },
           "bodyHeight": 153.08,
           "registration": [
@@ -4304,12 +4328,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              349.34,
-              444.772
+              328.6,
+              469.6
             ],
-            "angle": 0.5099999999999999
+            "angle": 0.52,
+            "hidden": false
           },
           "bodyHeight": 158.06,
           "registration": [
@@ -4326,12 +4350,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               320.0,
-              447.83
+              447.6
             ],
-            "angle": 0.43
+            "angle": 0.43,
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -4348,12 +4372,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              319.022,
-              441.838
+              303.7,
+              458.1
             ],
-            "angle": 0.41
+            "angle": 0.4,
+            "hidden": false
           },
           "bodyHeight": 164.47,
           "registration": [
@@ -4370,12 +4394,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               302.27,
               458.665
             ],
-            "angle": 0.39
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -4392,12 +4416,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               302.27,
               458.665
             ],
-            "angle": 0.39
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -4407,24 +4431,24 @@
         }
       ],
       "frameDurations": [
-        0.0484375,
-        0.0484375,
-        0.0484375,
-        0.0484375,
-        0.0290625,
-        0.0290625,
-        0.027125,
-        0.027125,
-        0.031,
-        0.031,
-        0.0406875,
-        0.0406875,
-        0.042625,
-        0.042625,
-        0.042625,
-        0.042625
+        0.025,
+        0.024,
+        0.032,
+        0.032,
+        0.032,
+        0.025,
+        0.021,
+        0.015,
+        0.055,
+        0.033,
+        0.038,
+        0.029,
+        0.03,
+        0.027,
+        0.029,
+        0.026
       ],
-      "sha256": "b99fbc67626c6b086c02898daecb9610195755961b3abe8abf36352e17fd2bf4"
+      "sha256": "d76adb3bc8a6450c9e2ac340fb22c51df99c0ea154ea98488d8d4c9753558e88"
     },
     {
       "id": "heavy_charge",
@@ -5291,12 +5315,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               261.825,
               469.55
             ],
-            "angle": 2.64
+            "angle": 2.64,
+            "hidden": false
           },
           "bodyHeight": 170.88,
           "registration": [
@@ -5313,12 +5337,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               261.825,
               469.55
             ],
-            "angle": 2.64
+            "angle": 2.68,
+            "hidden": false
           },
           "bodyHeight": 170.88,
           "registration": [
@@ -5335,12 +5359,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               281.6,
               457.6
             ],
-            "angle": -2.98
+            "angle": 2.85,
+            "hidden": false
           },
           "bodyHeight": 151.66,
           "registration": [
@@ -5357,12 +5381,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               280.31,
               461.21500000000003
             ],
-            "angle": -2.165
+            "angle": -2.68,
+            "hidden": false
           },
           "bodyHeight": 153.79,
           "registration": [
@@ -5379,12 +5403,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               300.8,
               429.76
             ],
-            "angle": -1.35
+            "angle": -1.94,
+            "hidden": false,
+            "turnWindow": [
+              0.18,
+              0.85
+            ]
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -5401,12 +5429,16 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               300.8,
               429.76
             ],
-            "angle": -1.35
+            "angle": -1.36,
+            "hidden": false,
+            "turnWindow": [
+              0.34,
+              0.96
+            ]
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -5423,12 +5455,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              389.12,
-              415.36
+              388.8,
+              414.9
             ],
-            "angle": -0.07
+            "angle": -0.09,
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -5445,12 +5477,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              399.38,
-              418.69
+              399.5,
+              417.7
             ],
-            "angle": 0.05999999999999989
+            "angle": 0.02,
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -5467,12 +5499,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              416.0,
-              401.92
+              415.4,
+              401.3
             ],
-            "angle": 0.19
+            "angle": 0.14,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -5489,12 +5521,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              417.335,
-              406.405
+              415.7,
+              406.4
             ],
-            "angle": 0.24000000000000005
+            "angle": 0.23,
+            "hidden": false
           },
           "bodyHeight": 168.03,
           "registration": [
@@ -5511,12 +5543,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               396.8,
               434.56
             ],
-            "angle": 0.29
+            "angle": 0.31,
+            "hidden": false
           },
           "bodyHeight": 158.06,
           "registration": [
@@ -5533,12 +5565,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               396.8,
               434.56
             ],
-            "angle": 0.29
+            "angle": 0.31,
+            "hidden": false
           },
           "bodyHeight": 158.06,
           "registration": [
@@ -5555,12 +5587,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               318.08,
               453.76
             ],
-            "angle": 0.39
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 164.47,
           "registration": [
@@ -5577,12 +5609,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               319.055,
               451.765
             ],
-            "angle": 0.4
+            "angle": 0.4,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -5599,12 +5631,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               296.0,
               459.52
             ],
-            "angle": 0.41
+            "angle": 0.41,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -5621,12 +5653,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               296.0,
               459.52
             ],
-            "angle": 0.41
+            "angle": 0.41,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -5636,25 +5668,25 @@
         }
       ],
       "frameDurations": [
-        0.0375,
-        0.0375,
-        0.0375,
-        0.0375,
-        0.0225,
-        0.0225,
-        0.021,
-        0.021,
+        0.02,
+        0.019,
+        0.024,
+        0.022,
+        0.024,
+        0.016,
+        0.042,
+        0.03,
+        0.033,
+        0.026,
+        0.025,
         0.024,
         0.024,
-        0.0315,
-        0.0315,
-        0.033,
-        0.033,
-        0.033,
-        0.033
+        0.024,
+        0.023,
+        0.022
       ],
       "dashEntryFrame": 2,
-      "sha256": "9fe5c4f948eceb520c60004417644692b871ed5088a9c35b4861d2c4cc297764"
+      "sha256": "b5445243852b81b44f1e3e2d59cd55a9d0a300a593f265e26f67a6ba9a821145"
     },
     {
       "id": "crouch_slash",
@@ -6364,12 +6396,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -6386,12 +6418,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -6408,12 +6440,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -6430,12 +6462,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              351.8,
+              438.9
             ],
-            "angle": -1.51
+            "angle": -0.52,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -6452,12 +6484,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              350.6,
+              442.0
             ],
-            "angle": -1.64
+            "angle": -0.6,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -6474,12 +6506,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              350.6,
+              442.0
             ],
-            "angle": -1.64
+            "angle": -0.6,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -6496,12 +6528,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              356.6,
+              441.8
             ],
-            "angle": -1.64
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -6518,12 +6550,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              356.6,
+              441.8
             ],
-            "angle": -1.64
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -6532,7 +6564,7 @@
           ]
         }
       ],
-      "sha256": "b44362a1031e07a897440e67bda1e52b0caad9328c0ccafaae33d2a3b8322d6f"
+      "sha256": "17a187302587751c1fbd37fc7ed74d4b0a1f432819227c0ad2b5dcc34d275cee"
     },
     {
       "id": "hurt",
@@ -11675,7 +11707,7 @@
       "id": "attack_recovery",
       "label": "1타 후 자세 회복",
       "folder": "HD",
-      "fps": 32.0,
+      "fps": 44.44444444444444,
       "playback": "once",
       "motion": "horizontal slash recovery: start sword extended low right, elbow softens, hips untwist, sword lowers, rear foot settles, torso upright, scarf returns, end canonical neutral low sword idle",
       "index": 38,
@@ -11702,12 +11734,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              291.435,
+              455.71000000000004
             ],
-            "angle": 0.35
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -11724,12 +11756,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              291.435,
+              455.71000000000004
             ],
-            "angle": 0.35
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -11746,12 +11778,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -11768,12 +11800,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              291.435,
-              455.71000000000004
+              298.8,
+              466.6
             ],
-            "angle": 0.43
+            "angle": 0.26,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -11790,12 +11822,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              275.196,
-              453.068
+              298.8,
+              466.6
             ],
-            "angle": 0.4
+            "angle": 0.26,
+            "hidden": false
           },
           "bodyHeight": 169.46,
           "registration": [
@@ -11812,12 +11844,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              275.196,
-              453.068
+              301.0,
+              457.0
             ],
-            "angle": 0.4
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 169.46,
           "registration": [
@@ -11834,12 +11866,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -11856,12 +11888,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -11870,7 +11902,7 @@
           ]
         }
       ],
-      "sha256": "c06040257bbe1bb1c9e3b1b3a9fd16e16998386030966d5d9bdba3a132c3e4fd"
+      "sha256": "b686e723d4d4da4188e3681972c8150ee9682a7705494767efef86b9305277d4"
     },
     {
       "id": "magic_recovery",
@@ -12128,12 +12160,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -12150,12 +12182,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -12172,12 +12204,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              301.0,
-              457.0
+              298.8,
+              466.6
             ],
-            "angle": 0.391
+            "angle": 0.26,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -12194,12 +12226,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              321.0,
-              414.0
+              328.5,
+              442.7
             ],
-            "angle": -1.2
+            "angle": -0.23,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -12216,12 +12248,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              321.0,
-              414.0
+              328.5,
+              442.7
             ],
-            "angle": -1.2
+            "angle": -0.23,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -12238,12 +12270,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              321.0,
-              414.0
+              351.8,
+              438.9
             ],
-            "angle": -1.2
+            "angle": -0.52,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -12260,12 +12292,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              351.8,
+              438.9
             ],
-            "angle": -1.51
+            "angle": -0.52,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12282,12 +12314,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12296,7 +12328,7 @@
           ]
         }
       ],
-      "sha256": "8b833123470b01dfbe01edc277ca29c21967c9c6e954d7182e58a14803dd3c52",
+      "sha256": "777cd2cf83a6ec4f5af00421912a1c1e50e00eaed7d71d5a67ac4e7210461ff2",
       "entryFrames": {
         "idle_breathe": [
           0,
@@ -12479,12 +12511,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              356.6,
+              441.8
             ],
-            "angle": -1.64
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -12501,12 +12533,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              356.6,
+              441.8
             ],
-            "angle": -1.64
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -12523,12 +12555,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              351.8,
+              438.9
             ],
-            "angle": -1.64
+            "angle": -0.52,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -12545,12 +12577,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              321.0,
-              414.0
+              328.5,
+              442.7
             ],
-            "angle": -1.2
+            "angle": -0.23,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -12567,12 +12599,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              321.0,
-              414.0
+              328.5,
+              442.7
             ],
-            "angle": -1.2
+            "angle": -0.23,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -12589,12 +12621,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              321.0,
-              414.0
+              321.9,
+              460.2
             ],
-            "angle": -1.2
+            "angle": -0.23,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -12611,12 +12643,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              301.0,
-              457.0
+              290.9,
+              471.6
             ],
-            "angle": 0.391
+            "angle": 0.3,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -12633,12 +12665,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -12647,7 +12679,7 @@
           ]
         }
       ],
-      "sha256": "fc001f2fd206f0e479ec95a1a347d88661b072374e328d0d740fc5a728585416",
+      "sha256": "be6cbb89a01aee8a0b8409d00427b578d295ad115f7f680fcc822c00293e9522",
       "entryFrames": {
         "idle_breathe": [
           1,
@@ -12830,12 +12862,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12852,12 +12884,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              347.2,
+              441.6
             ],
-            "angle": -1.51
+            "angle": -0.73,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12874,12 +12906,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              347.2,
+              441.6
             ],
-            "angle": -1.51
+            "angle": -0.73,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12896,12 +12928,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              347.2,
+              441.6
             ],
-            "angle": -1.64
+            "angle": -0.73,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -12918,12 +12950,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              350.6,
+              442.0
             ],
-            "angle": -1.64
+            "angle": -0.6,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -12940,12 +12972,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              350.6,
+              442.0
             ],
-            "angle": -1.64
+            "angle": -0.6,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -12962,12 +12994,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12984,12 +13016,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              344.0,
-              387.0
+              356.6,
+              441.8
             ],
-            "angle": -1.51
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 171.59,
           "registration": [
@@ -12998,7 +13030,7 @@
           ]
         }
       ],
-      "sha256": "5fe4f044d020148d6c0d103f10a4dcc13ddbdc83aba8035caf7b6793ea5864f9"
+      "sha256": "817461c6e6db3d667cb0fa217bd995c3cf1ad60c97b917b178ece17a25b702d0"
     },
     {
       "id": "guard_break",
@@ -13031,12 +13063,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              356.6,
+              441.8
             ],
-            "angle": -1.64
+            "angle": -0.62,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13053,12 +13085,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              347.2,
+              441.6
             ],
-            "angle": -1.64
+            "angle": -0.73,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13075,12 +13107,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              334.0,
-              398.0
+              347.2,
+              441.6
             ],
-            "angle": -1.64
+            "angle": -0.73,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13097,12 +13129,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               340.0,
               393.0
             ],
-            "angle": 0.43
+            "angle": 0.43,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -13119,12 +13151,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               340.0,
               393.0
             ],
-            "angle": 0.43
+            "angle": 0.43,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -13141,12 +13173,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              340.0,
-              393.0
+              309.0,
+              439.0
             ],
-            "angle": 0.43
+            "angle": 0.4,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -13163,12 +13195,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               309.0,
               439.0
             ],
-            "angle": 0.4
+            "angle": 0.4,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -13185,12 +13217,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               309.0,
               439.0
             ],
-            "angle": 0.4
+            "angle": 0.4,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -13199,7 +13231,7 @@
           ]
         }
       ],
-      "sha256": "fcfe25b00891705c5602e1b33c3a4ef5a7fbbd522d9a548adf8f30ffe926989a"
+      "sha256": "da8fd1a643b837f1c6a2af28bc9f36904edb9fa7ea7551ce6ad8b0804dc6d6ba"
     },
     {
       "id": "hurt_recovery",
@@ -13757,7 +13789,7 @@
       "id": "combo_1_to_2",
       "label": "1타에서 2타 연결",
       "folder": "HD",
-      "fps": 42.10526315789474,
+      "fps": 87.91208791208791,
       "playback": "once",
       "motion": "attack combo bridge: start first horizontal slash end blade low right, elbow retracts, blade circles down along side, weight shifts rear, knees bend, blade chambers low left, torso coils, end exact rising-slash windup blade low left",
       "index": 46,
@@ -13784,12 +13816,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              345.5,
+              415.7
             ],
-            "angle": 0.35
+            "angle": 0.35,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -13806,12 +13838,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              345.5,
+              415.7
             ],
-            "angle": 0.35
+            "angle": 0.35,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -13828,12 +13860,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              339.32,
+              423.1
             ],
-            "angle": 0.35
+            "angle": 0.43,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -13850,12 +13882,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              346.595,
-              416.31
+              339.32,
+              423.1
             ],
-            "angle": 0.35
+            "angle": 0.43,
+            "hidden": false
           },
           "bodyHeight": 165.18,
           "registration": [
@@ -13872,12 +13904,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13894,12 +13926,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13916,12 +13948,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13938,12 +13970,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               291.435,
               455.71000000000004
             ],
-            "angle": 0.43
+            "angle": 0.47,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -13952,13 +13984,13 @@
           ]
         }
       ],
-      "sha256": "d890ab5f4d81fa75aefc6453b4e307fd5c5fca2a89f0be3af78bea2a56f89adf"
+      "sha256": "b47845bc4ae12462ea22096c7c3671b23532e5207ea84953c308e65ec7e1dcd3"
     },
     {
       "id": "combo_2_to_3",
       "label": "2타에서 3타 연결",
       "folder": "HD",
-      "fps": 40.0,
+      "fps": 77.66990291262137,
       "playback": "once",
       "motion": "attack combo bridge: start rising slash ending sword above right shoulder, wrist pivots, left hand joins grip, sword rotates overhead, hips turn, lift on toes, shoulders coil, end exact third slash overhead windup",
       "index": 47,
@@ -13985,12 +14017,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              367.8,
+              346.3
             ],
-            "angle": -1.16
+            "angle": -1.14,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -14007,12 +14039,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              367.8,
+              346.3
             ],
-            "angle": -1.16
+            "angle": -1.14,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -14029,12 +14061,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              367.8,
+              346.3
             ],
-            "angle": -1.16
+            "angle": -1.24,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -14051,12 +14083,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              367.8,
+              346.3
             ],
-            "angle": -1.16
+            "angle": -1.24,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -14073,12 +14105,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -14095,12 +14127,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -14117,12 +14149,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -14139,12 +14171,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -14153,7 +14185,7 @@
           ]
         }
       ],
-      "sha256": "6c494f3a7a9bd1d5c963a4583613966ca21a0a8cae9c7c0c705833a08763db52"
+      "sha256": "9ed3f18c3278149a527349e854fd6f58bf30fa99a052c85bd4e177f5a8ac62a1"
     },
     {
       "id": "air_attack_land",
@@ -15062,7 +15094,7 @@
       "id": "slash_2_recovery",
       "label": "2타 후 자세 회복",
       "folder": "HD",
-      "fps": 32.0,
+      "fps": 36.36363636363637,
       "playback": "once",
       "motion": "rising slash recovery: start blade high above right shoulder, elbow bends, blade rotates down forward, shoulders uncoil, sword lowers at side, hips center, scarf settles, end canonical neutral low sword idle",
       "index": 51,
@@ -15089,12 +15121,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              301.5,
+              325.8
             ],
-            "angle": -1.3
+            "angle": -1.39,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -15111,12 +15143,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              299.546,
-              330.344
+              367.8,
+              346.3
             ],
-            "angle": -1.3
+            "angle": -1.14,
+            "hidden": false
           },
           "bodyHeight": 186.54,
           "registration": [
@@ -15133,12 +15165,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              372,
+              366.9
             ],
-            "angle": -1.16
+            "angle": -1.0,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -15155,12 +15187,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              365.778,
-              348.85
+              370.5,
+              383.6
             ],
-            "angle": -1.16
+            "angle": -0.56,
+            "hidden": false
           },
           "bodyHeight": 175.15,
           "registration": [
@@ -15177,12 +15209,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              345.324,
-              449.172
+              358.72,
+              434.416
             ],
-            "angle": -0.3
+            "angle": 0.17,
+            "hidden": false
           },
           "bodyHeight": 166.61,
           "registration": [
@@ -15199,12 +15231,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              261.56,
-              464.756
+              285.152,
+              464.424
             ],
-            "angle": 0.53
+            "angle": 0.98,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -15221,12 +15253,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              261.56,
-              464.756
+              298.8,
+              466.6
             ],
-            "angle": 0.53
+            "angle": 0.26,
+            "hidden": false
           },
           "bodyHeight": 167.32,
           "registration": [
@@ -15243,12 +15275,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -15257,13 +15289,13 @@
           ]
         }
       ],
-      "sha256": "b55e9c47811d9a6bea582c7335b016ba53c804bbc61a53fa430ce9d6cc794f87"
+      "sha256": "1fb98ce28607e668f9d9adc6c29ff1b9e9bf5883e357bc9cd333cfa8cdc0eda9"
     },
     {
       "id": "slash_3_recovery",
       "label": "3타 후 자세 회복",
       "folder": "HD",
-      "fps": 28.57142857142857,
+      "fps": 43.24324324324324,
       "playback": "once",
       "motion": "downward finisher recovery: start deep forward follow-through blade low right, knees absorb, elbow loosens, blade lifts slightly clear of floor, hips rise, torso straightens, feet center, end canonical neutral low sword idle",
       "index": 52,
@@ -15290,12 +15322,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              320.0,
-              447.83
+              302.27,
+              458.665
             ],
-            "angle": 0.43
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -15312,12 +15344,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              320.0,
-              447.83
+              302.27,
+              458.665
             ],
-            "angle": 0.43
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -15334,12 +15366,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              320.0,
-              447.83
+              302.27,
+              458.665
             ],
-            "angle": 0.43
+            "angle": 0.39,
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -15356,12 +15388,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              302.27,
-              458.665
+              301.0,
+              457.0
             ],
-            "angle": 0.39
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -15378,12 +15410,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              302.27,
-              458.665
+              301.0,
+              457.0
             ],
-            "angle": 0.39
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -15400,12 +15432,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              302.27,
-              458.665
+              301.0,
+              457.0
             ],
-            "angle": 0.39
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 172.3,
           "registration": [
@@ -15422,12 +15454,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -15444,12 +15476,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -15458,7 +15490,7 @@
           ]
         }
       ],
-      "sha256": "348afcd00045a41e87594ee95e3d0caf59afbb0217e129df4cefd466d2487b7d"
+      "sha256": "776996935e36b50ce2941cfc68f085629cd628c5a898200ebf8790ec0a6a0dda"
     },
     {
       "id": "heavy_recovery",
@@ -15866,7 +15898,7 @@
       "id": "dash_attack_recovery",
       "label": "대시 공격 후 회복",
       "folder": "HD",
-      "fps": 32.0,
+      "fps": 44.44444444444444,
       "playback": "once",
       "motion": "dash slash recovery: start low sword-forward lunge, leading foot brakes, rear leg catches up, sword lowers, torso rises, shoulders uncoil, cloak settles, end canonical neutral low sword idle",
       "index": 55,
@@ -15893,12 +15925,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              318.08,
-              453.76
+              296.0,
+              459.52
             ],
-            "angle": 0.39
+            "angle": 0.41,
+            "hidden": false
           },
           "bodyHeight": 164.47,
           "registration": [
@@ -15915,12 +15947,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              318.08,
-              453.76
+              296.0,
+              459.52
             ],
-            "angle": 0.39
+            "angle": 0.41,
+            "hidden": false
           },
           "bodyHeight": 164.47,
           "registration": [
@@ -15937,12 +15969,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              318.08,
-              453.76
+              296.0,
+              459.52
             ],
-            "angle": 0.39
+            "angle": 0.41,
+            "hidden": false
           },
           "bodyHeight": 164.47,
           "registration": [
@@ -15959,12 +15991,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              296.0,
-              459.52
+              301.0,
+              457.0
             ],
-            "angle": 0.41
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -15981,12 +16013,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              296.0,
-              459.52
+              301.0,
+              457.0
             ],
-            "angle": 0.41
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -16003,12 +16035,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
-              296.0,
-              459.52
+              301.0,
+              457.0
             ],
-            "angle": 0.41
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 173.73,
           "registration": [
@@ -16025,12 +16057,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -16047,12 +16079,12 @@
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
-            "hidden": false,
             "hand": [
               301.0,
               457.0
             ],
-            "angle": 0.391
+            "angle": 0.391,
+            "hidden": false
           },
           "bodyHeight": 174.44,
           "registration": [
@@ -16061,7 +16093,7 @@
           ]
         }
       ],
-      "sha256": "5870b21a0ee4e6d6b5210ea604b5448905bf1438156e2ae11f9dbe6c708fffbc"
+      "sha256": "eba2983e6df3d3c1b19976ef056e38d0083aee28f063642b0b85ae39ccddbdab"
     },
     {
       "id": "run_start",

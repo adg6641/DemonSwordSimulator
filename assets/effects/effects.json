@@ -23603,31 +23603,43 @@
     ],
     "strikeTiming": {
       "slash_1": {
-        "start": 2.5,
-        "peak": 4.2,
-        "end": 6.25,
-        "fire": 4.1,
-        "direction": "cw"
+        "start": 3.3,
+        "peak": 4.04,
+        "end": 5.65,
+        "fire": 4.04,
+        "direction": "cw",
+        "fadeIn": 0.22,
+        "fadeOut": 0.92,
+        "trailDuration": 0.09
       },
       "slash_2": {
-        "start": 2.65,
-        "peak": 4.65,
-        "end": 6.65,
-        "fire": 4.55,
-        "direction": "ccw"
+        "start": 3.35,
+        "peak": 4.1,
+        "end": 5.8,
+        "fire": 4.1,
+        "direction": "ccw",
+        "fadeIn": 0.22,
+        "fadeOut": 0.92,
+        "trailDuration": 0.1
       },
       "slash_3": {
-        "start": 2.3,
-        "peak": 4.12,
-        "end": 6.55,
-        "fire": 4.02,
-        "direction": "cw"
+        "start": 3.3,
+        "peak": 4.07,
+        "end": 5.8,
+        "fire": 4.07,
+        "direction": "cw",
+        "fadeIn": 0.22,
+        "fadeOut": 0.92,
+        "trailDuration": 0.11
       },
       "dash": {
-        "start": 1.6,
-        "peak": 3.2,
-        "end": 5.8,
-        "direction": "forward"
+        "start": 2.37,
+        "peak": 3.08,
+        "end": 5.12,
+        "direction": "forward",
+        "fadeIn": 0.22,
+        "fadeOut": 0.92,
+        "trailDuration": 0.1
       }
     },
     "alignmentNotes": "pixelfx에서 뽑은 투명 검기 본체의 알파에서 타격 영역을 계산한다. 명중·착지·방어 입자는 별도.",

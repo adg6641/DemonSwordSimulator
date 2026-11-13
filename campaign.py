@@ -350,7 +350,8 @@ class Campaign:
         if p.mode == 'guard' and front and p.animation.name == 'guard_raise' and p.animation.elapsed <= .24:
             self.sounds.play('guard')
             p.invulnerable = .28
-            p.effects.burst('guard',p.x+p.facing*45,p.y+85,p.facing)
+            p.animation.play('guard_impact')
+            self.guard_sparks()
             self.mp = min(self.run.max_mp, self.mp+8)
             self.notify('정확한 방어 · 피해 0 / MP +8', 1.2)
             return 0
@@ -360,9 +361,20 @@ class Campaign:
         damage = p.take_damage(amount)
         self.sounds.play('hit')
         self.run.hits += 1
-        p.effects.burst('guard' if guard else 'damage',p.x,p.y+80,p.facing)
+        if guard and p.hp > 0:
+            self.guard_sparks()
+        else:
+            p.effects.burst('damage', p.x, p.y + 80, p.facing)
         self.numbers.append(dict(x=p.x, y=p.y+140, text='-'+str(damage), age=0, hurt=True))
         return damage
+
+    def guard_sparks(self):
+        p = self.player
+        blade = p.animation.weapon_pose
+        hand, tip = blade['hand'], blade['tip']
+        x = hand[0] + (tip[0] - hand[0]) * .36
+        y = hand[1] + (tip[1] - hand[1]) * .36
+        p.effects.burst('guard', p.x + p.facing * x, p.y - y, p.facing)
 
     def press(self, key):
         if self.stage_settle>0:return

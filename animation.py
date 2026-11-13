@@ -3,7 +3,7 @@
 import json
 from bisect import bisect_right
 from itertools import accumulate
-from math import cos, sin, pi, degrees
+from math import cos, sin, pi, degrees, floor
 
 import pico2d.pico2d as engine
 from pico2d import (SDL_Rect, SDL_FRect, SDL_RenderCopyExF,
@@ -166,7 +166,11 @@ class Animation:
         following=frames[(index+1)%len(frames)] if self.loop or index+1<len(frames) else cell
         angle=point['angle'];next_angle=following.get('weapon',point)['angle']
         turn=(next_angle-angle+pi)%(2*pi)-pi
-        angle+=turn*(self.pose_time%1)
+        phase = self.pose_time - floor(self.pose_time)
+        if 'turnWindow' in point:
+            start, end = point['turnWindow']
+            phase = max(0, min(1, (phase - start) / (end - start)))
+        angle += turn * phase
         angle-=self.breath*.022
         factor=cell.get('renderScale',1);pivot=self.clip['pivot']
         dx, dy = cell.get('registration', (0, 0))

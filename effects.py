@@ -99,11 +99,12 @@ class CombatEffects:
                            player.y-pose['hand'][1],player.facing)
         if self.trail:
             self.trail['age']+=dt
-            if self.trail['age']>.18:self.trail=None
+            if self.trail['age'] >= self.trail['duration']:
+                self.trail = None
         g=self.strike_geometry(player)
         if g:
             self.trail=dict(geometry=g,anchor=(player.x,player.y),facing=player.facing,age=0,
-                            serial=animation.serial,name=animation.name)
+                            serial=animation.serial,name=animation.name,duration=g['trailDuration'])
         if animation.serial != self.serial:
             self.serial, self.fired = animation.serial, False
         motion = self.ATTACKS.get(animation.name)
@@ -206,10 +207,12 @@ class CombatEffects:
         if motion == 'dash':
             x += self.settings['dashForwardOffset']
         angle = pose['angle'] - atan2(lead[1] - origin[1], lead[0] - origin[0])
-        alpha = smooth((time - timing['start']) / .6) * smooth((timing['end'] - time) / 1.4)
+        alpha = smooth((time - timing['start']) / timing.get('fadeIn', .6))
+        alpha *= smooth((timing['end'] - time) / timing.get('fadeOut', 1.4))
         alpha *= growth['opacity'] * style['opacity']
         return dict(name=name, frame=frame, x=x, y=y, scale=scale, angle=angle,
-                    alpha=alpha, origin=origin, bounds=geometry['bounds'])
+                    alpha=alpha, origin=origin, bounds=geometry['bounds'],
+                    trailDuration=timing.get('trailDuration', .18))
 
     @staticmethod
     def world_bounds(g, x, y, facing):
@@ -232,11 +235,11 @@ class CombatEffects:
         if current:
             state=dict(geometry=current,anchor=(player.x,player.y),facing=player.facing,
                        serial=player.animation.serial,name=player.animation.name,blade=self.blade(player.animation))
-            self.trail=dict(state,age=0)
+            self.trail=dict(state,age=0,duration=current['trailDuration'])
             return state
         if self.trail and player.mode not in {'hurt','dead'}:
             state=dict(self.trail);geometry=dict(state['geometry'])
-            geometry['alpha'] *= 1-smooth(state['age']/.18)
+            geometry['alpha'] *= 1-smooth(state['age']/state['duration'])
             state.update(geometry=geometry,blade=None)
             return state if geometry['alpha'] >= .025 else None
 

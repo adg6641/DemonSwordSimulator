@@ -22,6 +22,9 @@ def smooth(value):
 class CombatEffects:
     ATTACKS = {'slash_1': 'slash_1', 'slash_2': 'slash_2', 'slash_3': 'slash_3',
                'dash_slash': 'dash', 'air_slash': 'slash_2', 'crouch_slash': 'slash_1'}
+    GROUND_COMBO = {'slash_1', 'slash_2', 'slash_3'}
+    COMBO_WAVE_FORWARD = 96
+    COMBO_WAVE_HEIGHT = 94
 
     def __init__(self, folder):
         self.folder = folder
@@ -113,11 +116,19 @@ class CombatEffects:
         timing = self.timing(animation,motion)
         time = animation.pose_time * 8 / animation.clip['frameCount']
         if time >= timing['fire']:
-            pose = self.blade(animation)
-            if pose:
-                self.waves.append({'x': player.x + player.facing * pose['tip'][0],
-                    'y': player.y - pose['tip'][1], 'angle': pose['angle'],
-                    'facing': player.facing, 'level': self.level, 'age': 0.0})
+            wave = dict(facing=player.facing, level=self.level, age=0.0)
+            if animation.name in self.GROUND_COMBO:
+                # 지상 3연타는 검이 어느 방향을 향하든 같은 높이에서 수평으로 발사한다.
+                wave.update(x=player.x + player.facing * self.COMBO_WAVE_FORWARD,
+                            y=player.y + self.COMBO_WAVE_HEIGHT, angle=0.0,
+                            combo_launch_time=self.time)
+                self.waves.append(wave)
+            else:
+                pose = self.blade(animation)
+                if pose:
+                    wave.update(x=player.x + player.facing * pose['tip'][0],
+                                y=player.y - pose['tip'][1], angle=pose['angle'])
+                    self.waves.append(wave)
             self.fired = True
 
     def _image(self, name):
@@ -271,14 +282,22 @@ class CombatEffects:
         name = f'wave_lv{level}'
         # 마검파의 순환 시트를 반복하고 수명 끝에는 알파만 천천히 줄인다.
         count=self.clips[name]['frameCount']
-        frame = int(age*style['fps'])%count
+        launch_time = wave.get('combo_launch_time')
+        # 지상 연타의 마검파는 같은 시계로 움직여 동시에 보이는 탄의 외곽 크기도 같다.
+        frame_time = age if launch_time is None else launch_time + age
+        frame = int(frame_time * style['fps'] + 1e-7) % count
         bounds = self.settings['effectGeometry'][name][frame]['bounds']
         origin = (bounds[0]+(bounds[2]-bounds[0])*.12, (bounds[1]+bounds[3])/2)
         height = style['heightByLevel'][level-1]
-        scale = height/self.wave_heights[name]*(.55+.45*smooth(age/style['growDuration']))*wave.get('size',1)
-        return dict(name=name, frame=frame, bounds=bounds, origin=origin, scale=scale,
+        if launch_time is None:
+            scale = height/self.wave_heights[name]*(.55+.45*smooth(age/style['growDuration']))
+            angle = wave['angle']*(1-smooth(age/style['straightenDuration']))
+        else:
+            scale = height / (bounds[3]-bounds[1])
+            angle = 0.0
+        return dict(name=name, frame=frame, bounds=bounds, origin=origin, scale=scale * wave.get('size',1),
                     x=age*(240+level*20)*style['speedMultiplier'], y=0,
-                    angle=wave['angle']*(1-smooth(age/style['straightenDuration'])),
+                    angle=angle,
                     alpha=clamp((style['lifetime']-age)/style['fadeDuration'])*self.settings['effectStyle']['opacity'])
 
     def wave_samples(self, wave, start_age):

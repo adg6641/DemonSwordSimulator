@@ -2723,6 +2723,318 @@
           "height": 55
         }
       ]
+    },
+    {
+      "id": "label_wave",
+      "file": "fiction/label_wave.png",
+      "label": "label_wave",
+      "group": "메뉴와 지형",
+      "width": 265,
+      "height": 91,
+      "frameWidth": 265,
+      "frameHeight": 91,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 132.5,
+        "y": 45.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 265,
+          "height": 91
+        }
+      ]
+    },
+    {
+      "id": "label_dash",
+      "file": "fiction/label_dash.png",
+      "label": "label_dash",
+      "group": "메뉴와 지형",
+      "width": 347,
+      "height": 91,
+      "frameWidth": 347,
+      "frameHeight": 91,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 173.5,
+        "y": 45.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 347,
+          "height": 91
+        }
+      ]
+    },
+    {
+      "id": "journal_stats",
+      "file": "fiction/journal_stats.png",
+      "label": "journal_stats",
+      "group": "메뉴와 지형",
+      "width": 388,
+      "height": 92,
+      "frameWidth": 388,
+      "frameHeight": 92,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 194.0,
+        "y": 46.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 388,
+          "height": 92
+        }
+      ]
+    },
+    {
+      "id": "journal_compare",
+      "file": "fiction/journal_compare.png",
+      "label": "journal_compare",
+      "group": "메뉴와 지형",
+      "width": 480,
+      "height": 92,
+      "frameWidth": 480,
+      "frameHeight": 92,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 240.0,
+        "y": 46.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 480,
+          "height": 92
+        }
+      ]
+    },
+    {
+      "id": "journal_ending",
+      "file": "fiction/journal_ending.png",
+      "label": "journal_ending",
+      "group": "메뉴와 지형",
+      "width": 388,
+      "height": 91,
+      "frameWidth": 388,
+      "frameHeight": 91,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 194.0,
+        "y": 45.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 388,
+          "height": 91
+        }
+      ]
+    },
+    {
+      "id": "label_pause",
+      "file": "fiction/label_pause.png",
+      "label": "label_pause",
+      "group": "메뉴와 지형",
+      "width": 377,
+      "height": 91,
+      "frameWidth": 377,
+      "frameHeight": 91,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 188.5,
+        "y": 45.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 377,
+          "height": 91
+        }
+      ]
+    },
+    {
+      "id": "label_stat_growth",
+      "file": "fiction/label_stat_growth.png",
+      "label": "label_stat_growth",
+      "group": "메뉴와 지형",
+      "width": 480,
+      "height": 91,
+      "frameWidth": 480,
+      "frameHeight": 91,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 240.0,
+        "y": 45.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 480,
+          "height": 91
+        }
+      ]
+    },
+    {
+      "id": "label_skill_growth",
+      "file": "fiction/label_skill_growth.png",
+      "label": "label_skill_growth",
+      "group": "메뉴와 지형",
+      "width": 389,
+      "height": 91,
+      "frameWidth": 389,
+      "frameHeight": 91,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 194.5,
+        "y": 45.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 389,
+          "height": 91
+        }
+      ]
+    },
+    {
+      "id": "platform_6_1204",
+      "file": "terrain/platform_6_1204.png",
+      "label": "platform_6_1204",
+      "group": "메뉴와 지형",
+      "width": 1204,
+      "height": 44,
+      "frameWidth": 1204,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 602.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1204,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 1196,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_7_1204",
+      "file": "terrain/platform_7_1204.png",
+      "label": "platform_7_1204",
+      "group": "메뉴와 지형",
+      "width": 1204,
+      "height": 44,
+      "frameWidth": 1204,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 602.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1204,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 1196,
+        "y": 0
+      }
+    },
+    {
+      "id": "platform_8_1204",
+      "file": "terrain/platform_8_1204.png",
+      "label": "platform_8_1204",
+      "group": "메뉴와 지형",
+      "width": 1204,
+      "height": 44,
+      "frameWidth": 1204,
+      "frameHeight": 44,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 602.0,
+        "y": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1204,
+          "height": 44
+        }
+      ],
+      "surface": {
+        "left": 8,
+        "right": 1196,
+        "y": 0
+      }
     }
   ],
   "bodies": {

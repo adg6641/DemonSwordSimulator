@@ -26,14 +26,14 @@ def choice_label(event,value):
     return title+' · '+values.get(value,{'physical':'물리 특화','magic':'마법 특화','balance':'균형 성장',
          'restore':'경계 복원','journey':'여행 계속','moon':'달의 의식','crown':'밤의 왕관'}.get(value,value))
 EVENT_LINES = {
-    'elder': '그 검은 마왕의 것이란다. 밤의 짐승들도 검을 쫓고 있어.\n마왕이 오기 전에 숲길에서 힘을 길러라. 다만, 힘 때문에 너 자신을 잃지는 말거라.',
-    'healer': '다쳤을 땐 회복 파편을 써. H를 누르면 돼.\n모닥불에서 쉬면 몸과 마력이 모두 회복되고, 그곳부터 다시 시작할 수 있어.',
+    'elder': '그 검은 마왕의 것이란다. 짐승들이 검을 쫓고 있어. 숲에서 힘을 길러라.',
+    'healer': 'H로 회복 파편을 써. 모닥불에서는 쉬고 저장할 수 있어.',
     'rescue': '도와줘! 거울 속 그림자가 나를 붙잡고 있어.\n초승달, 별, 원. 이 순서로 빛을 따라 매듭을 풀어 줘.',
-    'merchant': '수레가 부서지고 다리를 다쳤어. 붕대가 필요하네. 봉인석의 힘은 마을을 지켜 주고 있어.',
-    'mirror': '거울 속의 저 사람… 나잖아? 왜 왕관을 쓰고 있지?\n손등의 상처까지 똑같아. 그런데 내가 손을 내린 뒤에야 그림자도 따라 움직였어.',
-    'altar': '이 제단에는 오래된 힘이 남아 있다.\n힘을 빼앗으면 검은 강해진다. 문양을 정화하면 밤을 되돌릴 단서를 지킬 수 있다.',
-    'memory': '내 부적에는 잊힌 사람들의 이름이 남아 있어.\n함께 기억해 줘. 부적을 고치면 마검의 힘을 돌려보낼 길도 찾을 수 있을 거야.',
-    'envoy': '왕께서 검을 돌려받길 원하신다. 계약하면 성채의 추격을 멈추겠다.\n마을에 먼저 경고를 보내도 좋다. 그 대신, 이곳의 적은 네가 넘어야 한다.',
+    'merchant': '다리를 다쳤어. 붕대가 필요하네. 이 봉인석은 마을을 지켜 줘.',
+    'mirror': '거울 속 내가 왕관을 썼다. 손등의 상처까지 같다.',
+    'altar': '제단의 마력을 흡수하거나, 문양을 정화할 수 있다.',
+    'memory': '잊힌 이름들이 이 부적에 남아 있어. 함께 기억해 줘.',
+    'envoy': '검을 넘기기로 약속하면 추격을 멈추겠다.',
     'side_seal': '봉인 뒤에 다른 길이 있네. 사슬을 풀면 추적자 한 무리를 피할 수 있겠어.',
 }
 
@@ -53,25 +53,30 @@ def objective(scene):
         return label,obj.get('actor_x',obj['x']),obj['y']
 
     if r.stage == 0:
-        if not r.has('elder_done'): return at('촌장에게 검에 관해 묻기','elder')
-        if r.level < 2: return 'C로 밤의 짐승 물리치기',1250,0
+        if not r.has('elder_done'): return at('촌장 만나기','elder')
+        if r.level < 2:
+            enemy=next((e for e in scene.enemies if e.alive),None)
+            if enemy:
+                return '밤의 짐승 물리치기',enemy.x,enemy.y
     elif r.stage == 1 and not (r.companion or r.has('aid_marker')):
-        return '숲 끝의 거울 웅덩이 찾기',3740,0
+        return at('거울 웅덩이로 가는 포탈','exit_gate')
     elif r.stage == 2 and not r.has('merchant_done'):
-        return '숲 너머의 상인 만나기',3740,0
+        return at('상인에게 가는 포탈','exit_gate')
     elif r.stage == 3:
         if not r.has('mirror_done'): return at('검은 거울 살펴보기','mirror')
-        if 'night' not in r.records: return at('상층의 밤의 기록 읽기','night')
+        if 'night' not in r.records: return at('밤의 기록 읽기','night')
     elif r.stage == 4:
         if not r.has('altar_done'): return at('달의 제단 조사하기','altar')
-        if 'moon' not in r.records: return at('상층의 달의 기록 읽기','moon')
-        if r.companion and 'memory' not in r.pacts: return at('루네아와 부적 고치기','memory')
+        if 'moon' not in r.records: return at('달의 기록 읽기','moon')
+        if r.companion and 'memory' not in r.pacts and not r.has('memory_deferred'):
+            return at('루네아의 부적 살피기','memory')
     elif r.stage == 5:
-        if not r.has('envoy_done'): return at('상층의 전령 만나기','envoy')
+        if not r.has('envoy_done'): return at('전령 만나기','envoy')
         if not r.has('gate_open'): return at('사슬 스위치 당기기','lever')
     elif r.stage == 6:
-        if 'return' not in r.records: return at('상층의 귀환 기록 읽기','return')
-        if r.companion and 'plan' not in r.pacts: return at('모닥불에서 마지막 계획 나누기','camp')
+        if 'return' not in r.records: return at('귀환의 기록 읽기','return')
+        if r.companion and 'plan' not in r.pacts and not r.has('plan_deferred'):
+            return at('모닥불에서 계획 세우기','camp')
     if r.stage in {5,6,7}:
-        return at('상층 통로로 들어가기','upper_gate')
-    return '오른쪽 길로 나아가기',3740,0
+        return at('다음 구역 포탈','upper_gate')
+    return at('다음 구역 포탈','exit_gate')

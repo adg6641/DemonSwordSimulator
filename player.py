@@ -13,6 +13,7 @@ from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
+LANDING = {'land_soft', 'land_hard', 'air_attack_land'}
 CROUCH_GAITS = {'crouch_idle', 'crouch_walk'}
 CROUCH_POSES = CROUCH_GAITS | {'crouch_down', 'crouch_slash', 'crouch_attack_recovery'}
 GAIT_STRIDE = {'walk': 116, 'run': 188, 'crouch_walk': 89}
@@ -31,7 +32,7 @@ class Player:
     RUN_SPEED = 330.0
     CROUCH_SPEED = 85.0
     AIR_SPEED = 285.0
-    DASH_DISTANCE = 122.0
+    DASH_DISTANCE = 152.0
     DASH_CLIP_TIMES = {'dash_start': .125, 'dash_ground': .30, 'dash_end': 8/48, 'dash_air': .30}
     DASH_DISTANCE_SHARES = {'dash_start': .13, 'dash_ground': .72, 'dash_end': .15, 'dash_air': 1.0}
     DASH_ATTACK_SPEED = 760.0
@@ -73,6 +74,10 @@ class Player:
         return self.y <= self.floor_y + .01 and self.vy <= 0.0
 
     @property
+    def landing(self):
+        return self.grounded and self.mode == 'action' and self.animation.name in LANDING
+
+    @property
     def collision_height(self):
         if self.animation.name in CROUCH_POSES or self.animation.name == 'crouch_up':
             return self.animation.clip['frames'][self.animation.frame].get('bodyHeight',126)
@@ -112,14 +117,11 @@ class Player:
         if self.forced_crouch and (key in SHIFT or key in {SDLK_UP,SDLK_z}):
             return
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
-        if self.mode == 'free' and direction:
+        if (self.mode == 'free' or self.landing) and direction:
             self.facing = direction
         if key == SDLK_c:
-            landing = self.mode == 'action' and self.animation.name in {
-                'land_soft', 'land_hard', 'air_attack_land',
-            }
             if (self.dash_unlocked and self.dash_attack_remaining > 0 and SDLK_DOWN not in keys
-                    and (self.mode in {'free', 'dash'} or landing)):
+                    and (self.mode in {'free', 'dash'} or self.landing)):
                 entry=self.animation.clips['dash_slash'].get('dashEntryFrame',0) if self.mode=='dash' else 0
                 self.dash_attack_remaining = 0.0
                 self._action('dash_slash','dash_attack_recovery')
@@ -131,7 +133,7 @@ class Player:
             elif self.mode == 'dash':
                 # 대시 이동 중에는 C를 무시하며 나중에 자동 발동하도록 저장하지 않는다.
                 return
-            elif self.mode == 'free':
+            elif self.mode == 'free' or self.landing:
                 if not self.grounded:
                     self._action('air_slash')
                 elif SDLK_DOWN in keys:
@@ -161,13 +163,12 @@ class Player:
                 self.drop_timer=.28;self.floor_y=0;self.y-=5;self.vy=-90
                 self.mode,self.gait='free',None
                 return
-            landing = self.animation.name in {'land_soft', 'land_hard', 'air_attack_land'}
-            if self.grounded and (self.mode == 'free' or landing):
+            if self.grounded and (self.mode == 'free' or self.landing):
                 self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'jump', None
                 self.jump_launched = False
                 self.animation.play('jump_takeoff', fps=self.animation.clips['jump_takeoff']['frameCount']/.125)
-        elif key in SHIFT and (self.mode == 'free' or self.mode == 'jump' and not self.grounded):
+        elif key in SHIFT and (self.mode == 'free' or self.landing or self.mode == 'jump' and not self.grounded):
             if self.grounded or self.air_dash_ready:
                 self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'dash', None
@@ -178,7 +179,7 @@ class Player:
                     self.vy = 0.0
                     self.play_dash('dash_air')
 
-        elif key == SDLK_z and self.magic_unlocked and self.mode == 'free' and self.grounded:
+        elif key == SDLK_z and self.magic_unlocked and self.grounded and (self.mode == 'free' or self.landing):
             self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'magic', None
             self.animation.play('magic_charge')
@@ -346,7 +347,7 @@ class Player:
         dashing = self.mode == 'dash'
         dash_advance = self.dash_step(dt)
         keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
-        self.crouching=(SDLK_DOWN in keys and self.grounded and self.mode=='free') or self.animation.name in CROUCH_POSES
+        self.crouching=(SDLK_DOWN in keys and self.grounded and (self.mode=='free' or self.landing)) or self.animation.name in CROUCH_POSES
         self.drop_timer=max(0,self.drop_timer-dt)
         # Shift를 누르는 동안 대시 후 C 연결을 유지하고, 놓아도 잠깐의 여유를 준다.
         if not keys & SHIFT:
@@ -362,6 +363,8 @@ class Player:
         else:
             self.move_time = 0.0
         self.previous_direction = direction
+        if self.landing and self.animation.finished and direction and SDLK_DOWN not in keys:
+            self.gait = 'run' if self.move_time >= .55 else 'walk'
         self._update_action(keys)
 
         speed = 0.0
@@ -392,6 +395,11 @@ class Player:
             elif self.animation.name == 'dash_slash':
                 phase=self.animation.pose_time/self.animation.clip['frameCount']
                 speed = self.facing * self.DASH_ATTACK_SPEED * sin(pi*(phase-.16)/.52)**.86 if .16<phase<.68 else 0
+            elif self.landing:
+                if direction:
+                    self.facing = direction
+                speed = direction * (self.CROUCH_SPEED if SDLK_DOWN in keys else
+                                     self.RUN_SPEED if self.move_time >= .55 else self.WALK_SPEED)
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
         self.x += speed * dt + combo_advance + dash_advance

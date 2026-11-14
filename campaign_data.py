@@ -1,6 +1,10 @@
 """지역 배치와 사건 문장. 좌표·적 구성·대사를 이 파일에서 바꿀 수 있다."""
 
 STAGE_LENGTH = 3840
+PORTAL_PLATFORM_WIDTH = 1204
+PORTAL_X = 3260
+GROUND_PORTAL_X = 3640
+PORTAL_CHEST_X = 2870
 SPAWNS = [
     [(1, 1250), (1, 2150)],
     [(1, 1500), (2, 2000), (3, 2630), (2, 3250)],
@@ -42,11 +46,11 @@ PLATFORM_ROUTES = (
     (((1110,114,288),(1365,236,168),(1610,358,224),(1790,475,168),(1650,597,224),(1900,700,344)),
      ((2270,109,168),(2510,231,288),(2740,353,224),(2910,474,168),(3120,599,224),(2940,720,344))),
     (((1030,110,168),(1270,234,224),(1515,354,288),(1745,471,168),(1855,588,224),(1900,700,344)),
-     ((2170,118,288),(2420,237,224),(2640,357,168),(2840,479,288),(2670,600,168),(2940,720,344))),
+     ((2170,118,288),(2420,237,224),(2640,357,168),(2840,479,288),(2670,600,168),(3150,720,PORTAL_PLATFORM_WIDTH))),
     (((1140,112,224),(1380,230,288),(1610,354,168),(1745,475,288),(1635,597,168),(1900,700,344)),
-     ((2135,118,168),(2335,236,224),(2570,355,288),(2780,472,168),(3000,596,224),(2940,720,344))),
+     ((2135,118,168),(2335,236,224),(2570,355,288),(2780,472,168),(3000,596,224),(3150,720,PORTAL_PLATFORM_WIDTH))),
     (((1040,125,224),(1260,252,168),(1440,377,224),(1620,490,168),(1800,601,224),(1900,700,344)),
-     ((2470,138,168),(2690,263,288),(2900,384,168),(3100,498,224),(3210,611,168),(2940,720,344))),
+     ((2470,138,168),(2690,263,288),(2900,384,168),(3100,498,224),(3210,611,168),(3150,720,PORTAL_PLATFORM_WIDTH))),
 )
 
 SIDE_PLATFORMS = (
@@ -123,7 +127,7 @@ def objects(stage):
         platform(stage,'moving',drift_x,310,224,motion='moving',base_x=drift_x,base_y=310,travel=118,period=7),
         platform(stage,'crumble',gap_x,551,120,motion='crumble',stepped=0,disabled_until=0),
         dict(id='spring',kind='spring',x=spring_x,y=0,asset='spring'),
-        dict(id='upper_chest',kind='chest',x=2940,y=720,asset='reward_chest__reward_chest'),
+        dict(id='upper_chest',kind='chest',x=right_route[-1][0],y=right_route[-1][1],asset='reward_chest__reward_chest'),
         dict(id='upper_camp',kind='camp',x=1900,y=700,asset='campfire__campfire'),
     ]
     for i,(x,y,_) in enumerate(left_route[1:]+right_route[1:3]+right_route[-2:]):
@@ -148,20 +152,43 @@ def page_objects(stage, page):
     result = [o for o in objects(stage) if o.get('event') not in {'rescue','merchant','final'} and o['kind']!='gate']
     left,right = PLATFORM_ROUTES[stage]
     raised = {0:('healer', left[1]), 3:('night', left[3]), 4:('moon', right[2]),
-              5:('envoy', left[2]), 6:('return', left[3])}
+              5:('envoy', left[3]), 6:('return', left[3])}
     if stage in raised:
         ident,(x,y,_) = raised[stage]
         next(o for o in result if o['id']==ident).update(x=x,y=y)
     if stage==5:
-        x,y,_=right[3]
+        x,y,_=right[4]
         next(o for o in result if o['id']=='lever').update(x=x,y=y)
+    if stage==6:
+        next(o for o in result if o['id']=='camp').update(x=left[-1][0],y=left[-1][1])
+        result=[o for o in result if o['id']!='upper_camp']
     if stage in {5,6,7}:
-        x,y,_=right[-1]
-        for obj in result:
-            if obj['id']=='upper_chest':
-                obj['x'] -= 108
-        result.append(dict(id='upper_gate',kind='door',x=x+35,y=y,
+        next(o for o in result if o['id']=='upper_chest')['x'] = PORTAL_CHEST_X
+        result.append(dict(id='upper_gate',kind='door',x=PORTAL_X,y=right[-1][1],
                            lock='lever' if stage==5 else None))
+    else:
+        result.append(dict(id='exit_gate',kind='door',x=GROUND_PORTAL_X,y=0))
+    # 비석이나 NPC의 바로 위에 파편이 떠서 실루엣을 가리지 않게 한다.
+    occupied = [o for o in result if o['kind'] in {'event','record','door','chest','camp','lever'}]
+    for o in result:
+        if o['kind']=='crystal':
+            if stage in {5,6,7} and o['y']==right[-1][1]+55:
+                o['x']=3500
+                continue
+            near = next((prop for prop in occupied if abs(o['x']-prop['x'])<92
+                         and 0<o['y']-prop['y']<160),None)
+            if near:
+                if near['id']=='upper_gate':
+                    o['x']=3500
+                elif near['id']=='upper_camp':
+                    o['x']-=117
+                elif near['id']=='upper_chest':
+                    o['x']+=118
+                else:
+                    o['y']+=110
+        elif o['id']=='torch':
+            o['x']=3420
+            o['y']=0
     return result
 
 

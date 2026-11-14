@@ -19,6 +19,7 @@ def waypoint(scene,actor,target_x,target_y):
                 return x-(1 if x>actor.x else -1)*185,0
             return x,first['y']
         x,y=(actor.x,0) if i==-1 else (platforms[i]['x'],platforms[i]['y'])
+        source_left,source_right=(x,x) if i==-1 else scene.platform_span(platforms[i])
         for j,o in enumerate(platforms):
             if j==i:continue
             dy=o['y']-y
@@ -28,7 +29,9 @@ def waypoint(scene,actor,target_x,target_y):
                 allowed=0<o['y']<=165
                 step=gap/230+1
             else:
-                allowed=-500<=dy<=165 and gap<=300
+                left,right=scene.platform_span(o)
+                edge_gap=max(0,left-source_right,source_left-right)
+                allowed=-500<=dy<=165 and (gap<=300 or edge_gap<=100)
                 step=gap/260+max(0,dy)/170+.5
             if not allowed:continue
             new=cost+step

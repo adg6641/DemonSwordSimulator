@@ -135,22 +135,24 @@ class Interface:
         self.text('↑ ↓ 선택   Enter 확인   마우스 클릭', 122, 83, 16, (157, 157, 175))
 
     def draw_controls(self):
-        self.book.draw(640, 360, 1280, 720)
-        ink, faint = (55, 35, 25), (90, 60, 35)
-        self.text('이동과 생존', 365, 587, 34, ink, True)
-        self.text('마검의 힘', 922, 587, 34, ink, True)
-        left = [('←  →', '걷기 · 계속 누르면 달리기'), ('↑', '점프'), ('↓', '웅크리기 · 웅크려 이동'),
-                ('Shift', '지상 대시 · 공중 대시'), ('X', '방어 · 정확히 막으면 피해 0'), ('Esc', '일시 정지 · 저장 · 돌아가기')]
-        right = [('C 연속 입력', '기본 베기 1 → 2 → 3'), ('대시 끝에서 C', '대시 베기 · 대시 중 입력은 무시'),
-                 ('Z → C', '해금 후 집중 → 마검파'), ('E / H / Q', '상호작용 / 회복 / 동료 지원'), ('Tab / L / 1~8', '기록책 / 남은 포인트 / 열린 지역 이동'),
-                 ('↑ ↓ / Enter', '선택창 선택 / 확인')]
-        for x, rows in ((181, left), (738, right)):
-            for i, (key, detail) in enumerate(rows):
-                y = 517 - i * 58
-                self.text(key, x, y, 22, ink)
-                self.text(detail, x, y - 29, 18, faint)
+        self.background.draw(640,360,1280,720)
+        fill(0,0,1280,720,(10,16,27,185))
+        ink, gold = (235,228,214), (242,209,144)
+        self.text('조작 설명',640,621,34,gold,True)
+        left = [('← →','걷기 · 길게 누르면 달리기'),('↑ / ↓','점프 / 웅크리기'),
+                ('Shift','지상 · 공중 대시'),('X','방어'),('E / H / Q','상호작용 / 회복 / 동료 지원')]
+        right = [('C 연타','3연속 베기'),('대시 뒤 C','대시공격'),('Z 뒤 C','마검파'),
+                 ('Tab / L','기록 / 남은 성장 포인트'),('↑ ↓ / Enter','선택 / 확인')]
+        for x,title,rows in ((152,'이동',left),(656,'전투와 메뉴',right)):
+            fill(x,155,472,377,(13,23,36,237))
+            self.text(title,x+24,500,23,gold)
+            for i,(key,detail) in enumerate(rows):
+                y=449-i*57
+                fill(x+22,y-24,428,1,(108,118,136,115))
+                self.text(key,x+24,y,17,gold)
+                self.text(detail,x+174,y,18,ink)
         fill(520, 18, 240, 43, (18, 13, 15, 220))
-        self.text('돌아가기 · Esc', 640, 40, 20, (228, 210, 174), True)
+        self.text('Esc 돌아가기', 640, 40, 20, gold, True)
 
     def draw_hud(self, player):
         fill(22, 653, 306, 45, (9, 12, 22, 185))

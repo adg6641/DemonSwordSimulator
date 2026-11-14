@@ -45,7 +45,7 @@ class Campaign:
         self.hybrid_time = 0.0
         self.finished_age = 0.0
         self.request = ''
-        self.journal_page = self.gallery_index = self.history_index = 0
+        self.journal_page = self.history_index = 0
         self.developer = False
         self.actor_actions = {}
         self.interaction_age = 0.0
@@ -68,7 +68,7 @@ class Campaign:
         else:
             self.enter_stage(0)
             self.open('검을 주운 다음 날',
-                      '어젯밤, 길에서 검 하나를 주웠다. 그 뒤로 마을에 낯선 짐승들이 나타났다.\n촌장님이라면 이 검을 아실까? 먼저 찾아가 보자.',
+                      '검을 주운 뒤 짐승들이 나타났다. 촌장에게 검의 정체를 묻자.',
                       [('모험을 시작한다', self.close_modal)], 'portrait_hero__hero_resolve')
         self.sync_stats()
         from game_view import CampaignView
@@ -314,25 +314,30 @@ class Campaign:
             return
         self.run.growth_offered=self.run.level
         if not self.run.path:
-            self.open('어떤 힘을 먼저 배울까?', '다른 기술도 나중에 배울 수 있다.',
-                      [(label, lambda path=path: self.pick_path(path), '', icon)
-                       for path,label,icon in [('physical','물리 특화 · 대시 베기','path_physical'),
-                                               ('magic','마법 특화 · 마검파','path_magic'),
-                                               ('balance','균형 성장 · 두 기술','path_balance')]], kind='path')
+            self.open('첫 기술 선택', '먼저 배울 기술을 하나 고른다.',
+                      [('마검파', lambda: self.pick_path('magic'), '', 'path_magic'),
+                       ('대시공격', lambda: self.pick_path('physical'), '', 'path_physical')], kind='path')
         elif self.run.unspent:
-            labels = [('attack','공격력 +5'),('magic','마력 +6'),('vitality','최대 HP +20'),('focus','최대 MP +15')]
-            self.open('어떤 능력을 키울까?', f'레벨 {self.run.level}   ·   남은 스탯 {self.run.unspent}점',
-                      [(name, lambda key=key: self.allocate(key)) for key,name in labels]
-                      + [('나중에 배분하기', self.close_modal)], kind='stats')
-        elif self.run.skill_points:
+            self.open('능력치 성장', f'스탯 {self.run.unspent}점',
+                      [('공격 · 마력', lambda: self.stat_choices(True)),
+                       ('체력 · 마나', lambda: self.stat_choices(False)),
+                       ('나중에 배분', self.close_modal)], kind='stats')
+        elif self.run.skill_points and any(self.run.skills.get(k,0)<6 for k in ('wave','dash')):
             self.grow_skill()
         else:
-            self.notify('배분할 포인트가 없습니다. 전투와 탐색으로 경험을 얻으세요.')
+            self.notify('남은 성장 포인트가 없다.')
             self.close_modal()
+
+    def stat_choices(self, offense):
+        stats=(('attack','공격력 +5'),('magic','마력 +6')) if offense else (
+            ('vitality','최대 HP +20'),('focus','최대 MP +15'))
+        self.open('올릴 능력치', f'스탯 {self.run.unspent}점',
+                  [(label, lambda key=key: self.allocate(key)) for key,label in stats]
+                  + [('뒤로', self.grow)], kind='stats')
 
     def pick_path(self, path):
         self.run.set_path(path)
-        self.run.choose('성장 방향', {'physical': '물리 특화', 'magic': '마법 특화', 'balance': '균형 성장'}[path])
+        self.run.choose('첫 기술', {'physical':'대시공격','magic':'마검파'}[path])
         self.sync_stats()
         self.grow()
 
@@ -342,20 +347,19 @@ class Campaign:
         self.sync_stats()
         if self.run.unspent:
             self.grow()
-        elif self.run.skill_points:
+        elif self.run.skill_points and any(self.run.skills.get(k,0)<6 for k in ('wave','dash')):
             self.grow_skill()
         else:
             self.close_modal()
 
-    def grow_skill(self, offset=0):
+    def grow_skill(self):
         options = []
-        preferred = ['dash', 'dash_distance', 'single', 'recovery'] if self.run.path == 'physical' else ['wave', 'pierce', 'wide', 'duration'] if self.run.path == 'magic' else ['dash', 'wave', 'hybrid', 'quick']
-        order = sorted(PERKS, key=lambda p: (p[0] not in preferred, preferred.index(p[0]) if p[0] in preferred else PERKS.index(p)))
-        for key, title, tip, icon in order[offset:offset+4]:
+        for key,title,icon in [('wave','마검파','path_magic'),('dash','대시공격','path_physical')]:
             level = self.run.skills.get(key, 0)
-            options.append((f'{title} · {level+1}단계', lambda key=key: self.pick_skill(key), '최대 단계입니다.' if level >= 6 else '', 'perk_icons__'+icon))
-        options += [('다른 기술 보기', lambda: self.grow_skill((offset+4)%len(order))), ('나중에 강화하기', self.close_modal)]
-        self.open('어떤 기술을 익힐까?', f'남은 기술 {self.run.skill_points}점', options, kind='skills')
+            action='배우기' if level==0 else f'{level+1}단계' if level<6 else '최대 단계'
+            options.append((f'{title} · {action}', lambda key=key: self.pick_skill(key),
+                            '이미 최대 단계다.' if level>=6 else '', icon))
+        self.open('기술 성장', f'기술 {self.run.skill_points}점 · Esc로 닫기', options, kind='skills')
 
     def pick_skill(self, key):
         if self.run.upgrade(key):
@@ -363,7 +367,7 @@ class Campaign:
             if key == 'supply':
                 self.run.shards += 2
             self.sync_stats()
-        if self.run.skill_points:
+        if self.run.skill_points and any(self.run.skills.get(k,0)<6 for k in ('wave','dash')):
             self.grow_skill()
         else:
             self.close_modal()
@@ -447,7 +451,7 @@ class Campaign:
             if self.run.earned:
                 self.grow()
             else:
-                self.notify('첫 전투를 마치면 성장 방향을 선택할 수 있습니다.')
+                self.notify('첫 레벨업 후 기술을 고를 수 있다.')
             return
         if key == SDLK_z:
             cost = max(12, 24-self.run.skills.get('quick', 0)*2)
@@ -481,11 +485,9 @@ class Campaign:
                     if event.key in {SDLK_ESCAPE, SDLK_TAB}:
                         self.close_modal()
                     elif event.key in {SDLK_LEFT, SDLK_RIGHT}:
-                        self.journal_page = (self.journal_page+(1 if event.key == SDLK_RIGHT else -1))%4
-                    elif event.key in {SDLK_UP, SDLK_DOWN, SDLK_e, SDLK_q}:
-                        delta = 1 if event.key in {SDLK_DOWN, SDLK_e} else -1
-                        self.gallery_index += delta
-                        self.history_index += delta
+                        self.journal_page = (self.journal_page+(1 if event.key == SDLK_RIGHT else -1))%3
+                    elif self.journal_page==1 and event.key in {SDLK_UP,SDLK_DOWN}:
+                        self.history_index += 1 if event.key==SDLK_DOWN else -1
                 return
             if event.type in {SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN}:
                 for x, y, w, h, index in self.hitboxes:
@@ -499,10 +501,9 @@ class Campaign:
                     self.selected = (self.selected+(1 if event.key in {SDLK_DOWN, SDLK_RIGHT} else -1))%len(self.modal['options'])
                 elif event.key in {SDLK_RETURN, SDLK_SPACE}:
                     self.choose(self.selected)
-                elif SDLK_1 <= event.key <= SDLK_1+4:
-                    page = self.selected//5*5
-                    self.choose(page+event.key-SDLK_1)
-                elif event.key == SDLK_ESCAPE and self.modal['kind'] in {'pause', 'stats', 'skills'}:
+                elif SDLK_1 <= event.key <= SDLK_1+2:
+                    self.choose(event.key-SDLK_1)
+                elif event.key == SDLK_ESCAPE and self.modal['kind'] in {'pause','pause_menu','stats','skills'}:
                     self.close_modal()
             return
         if event.type != SDL_KEYDOWN:
@@ -535,9 +536,13 @@ class Campaign:
             self.press(event.key)
 
     def pause(self):
-        self.open('잠시 쉬어 가기', '선택하는 동안 전투와 시간이 멈춘다. 저장은 마지막 쉼터 또는 안전한 곳에서 할 수 있다.',
-                  [('계속하기', self.close_modal), ('성장 포인트 확인', self.grow), ('기록책 · 엔딩 · 이미지 도감', self.open_journal),
-                   ('안전한 현재 위치 저장', self.manual_save), ('시작 화면으로 · 마지막 저장 유지', lambda: setattr(self, 'request', 'menu'))], kind='pause')
+        self.open('일시 정지', '',
+                  [('계속하기', self.close_modal), ('모험 기록', self.open_journal),
+                   ('저장과 종료', self.pause_save)], kind='pause')
+
+    def pause_save(self):
+        self.open('저장과 종료', '', [('현재 위치 저장',self.manual_save),
+                  ('시작 화면',lambda: setattr(self,'request','menu')),('뒤로',self.pause)],kind='pause_menu')
 
     def manual_save(self):
         if any(e.alive and abs(e.x-self.player.x) < 650 and abs(e.y-self.player.y)<220 for e in self.enemies) or any(abs(s.y-self.player.y)<180 for s in self.shots) or (self.hazards and self.player.y<180) or not self.player.grounded:
@@ -590,7 +595,7 @@ class Campaign:
                 self.player.animation.play('walk')
                 self.player.facing=1 if obj['x']>=self.player.x else -1
             else:
-                self.notify('먼저 사슬 스위치를 열자.' if obj.get('lock')=='lever' else '문지기를 쓰러뜨리자.')
+                self.notify('사슬 스위치를 먼저 당기자.' if obj.get('lock')=='lever' else '문지기를 먼저 쓰러뜨리자.')
         elif kind == 'record':
             if obj['record'] not in self.run.records:
                 self.sounds.play('pickup')
@@ -639,7 +644,7 @@ class Campaign:
                 self.final_choice()
             return
         if key == 'memory' and not self.run.companion:
-            self.open('남겨진 달의 문양', '누군가의 이름을 지켜 주려는 의식이 남아 있다. 소년은 조용히 문양의 위치를 기록했다.', [('기억하고 돌아선다', self.close_modal)])
+            self.open('남겨진 달의 문양', '잊힌 이름을 지키는 문양이다.', [('기억하고 돌아선다', self.close_modal)])
             return
         if key == 'side_seal':
             self.open(*EVENT_TEXT[key][:1], EVENT_TEXT[key][2], [('동료의 달빛으로 연다' if self.companion else '사슬의 빈틈을 살핀다', lambda: self.event_result(key, 'open'))], EVENT_TEXT[key][1])
@@ -647,7 +652,7 @@ class Campaign:
         title, portrait, text = EVENT_TEXT[key]
         text = EVENT_LINES.get(key, text)
         if self.run.has(key+'_done') and key not in {'healer', 'memory', 'rescue'}:
-            self.open(title, '이곳에서 해야 할 일은 마쳤다. 이제 다음 길로 나아가자.\n지금까지의 선택은 Tab 기록책에서 다시 볼 수 있다.', [('계속 간다', self.close_modal)], portrait, speaker='이야기')
+            self.open(title, '이미 이야기를 마쳤다.', [('계속 간다', self.close_modal)], portrait, speaker='이야기')
             return
         options = {
             'elder': [('촌장의 말을 듣는다', 'listen')],
@@ -750,16 +755,18 @@ class Campaign:
             ('rescue','mark'): '도움을 요청하는 표식을 남겼다. 지금은 혼자 길을 나선다.\n마음이 바뀌면 이곳으로 돌아와 소녀를 구할 수 있다.',
             ('merchant','help'): '고맙구나. 회복 파편 두 개를 가져가렴.',
             ('merchant','take'): '마력은 강해졌지만 마을을 지키던 봉인석의 불이 꺼졌다.',
-            ('altar','purify'): '문양에 달빛이 돌아왔다. 검의 검은 기운도 잦아들었다.\n힘을 빼앗지 않고 밤을 되돌릴 방법이 있을지 모른다.',
-            ('altar','absorb'): '검이 오래된 마력을 삼켰다. 더 강해졌지만 내 그림자가 낯설다.\n회랑의 쉼터에서는 이 힘을 가라앉힐 수 있다.',
+            ('altar','purify'): '문양에 달빛이 돌아왔다. 검의 침식이 잦아들었다.',
+            ('altar','absorb'): '마력을 얻었다. 침식이 깊어졌다.',
             ('memory','repair'): '기억해 줘서 고마워. 부적도 다시 온전해졌어.\n마지막까지 함께 이름을 지키자.',
-            ('envoy','warn'): '마을에 경고를 보냈다. 이제 주민들은 대피를 준비할 수 있다.\n남은 성채의 길은 직접 열어야 한다.',
-            ('envoy','contract'): '계약으로 추격자들이 물러났다. 하지만 검의 어둠은 짙어졌다.\n왕좌에서 어떤 결정을 내릴지는 아직 나에게 달려 있다.',
-            ('envoy','refuse'): '계약을 거절했다. 길은 더 험하겠지만 왕의 뜻대로 움직이지는 않겠다.\n성문의 사슬 스위치를 찾아 앞으로 가자.',
-            ('mirror','remember'): '왕관 속 얼굴과 손등의 상처를 기억해 두자.\n왜 나와 똑같았는지, 폐허에 남은 기록에 답이 있을지도 몰라.',
+            ('envoy','warn'): '마을에 경고가 닿았다. 주민들이 대피한다.',
+            ('envoy','contract'): '추격자들이 물러났다. 침식이 깊어졌다.',
+            ('envoy','refuse'): '계약을 거절했다. 사슬 스위치를 찾아 성문을 열자.',
+            ('mirror','remember'): '왕관을 쓴 내 모습이다. 폐허의 기록을 찾아보자.',
             ('merchant','leave'): '상인은 등불을 켜고 다음 여행자를 기다린다.',
         }
         if value=='leave' and key in {'healer','memory'}:
+            if key=='memory':
+                r.mark('memory_deferred')
             self.close_modal()
             return
         text = result_lines.get((key,value), text)
@@ -776,17 +783,34 @@ class Campaign:
             return
         self.save_checkpoint(heal=True)
         r = self.run
-        options = [('불빛 곁에서 쉬고 출발한다 · 저장 완료', self.close_modal)]
+        actions = []
         if r.companion:
             if 'secret' not in r.pacts:
-                options.insert(0, ('검과 손등 상처의 비밀을 나눈다', lambda: self.camp_pact('secret')))
+                actions.append(('검의 비밀을 나눈다', lambda: self.camp_pact('secret')))
             if r.stage >= 4 and ('memory' not in r.pacts or r.fracture):
-                options.insert(0, ('부적을 복구하고 함께 이름을 기억한다', lambda: self.camp_pact('memory')))
+                actions.append(('부적을 고친다', lambda: self.camp_pact('memory')))
             if r.stage >= 6 and 'plan' not in r.pacts:
-                options.insert(0, ('마지막 선택을 함께 계획한다', lambda: self.camp_pact('plan')))
+                actions.insert(0,('마지막 계획을 세운다', lambda: self.camp_pact('plan')))
         if r.stage >= 6 and r.erosion:
-            options.insert(0, ('검의 힘을 가라앉힌다 · 침식 -1', self.calm))
-        self.open('기억을 놓아두는 쉼터', '불빛 곁에서 몸과 마력이 회복됐다. 여기까지의 모험을 저장했다.\n잠시 쉬며 이야기를 나누자.' if r.companion else '불빛 곁에서 몸과 마력이 회복됐다. 여기까지의 모험을 저장했다.', options, 'portrait_lunea__lunea_smile' if r.companion else 'portrait_hero__hero_relief', visual='camp', speaker='루네아' if r.companion else '소년')
+            actions.append(('검의 힘을 누른다 · 침식 −1', self.calm))
+        self.camp_choices(actions)
+
+    def camp_choices(self, actions):
+        leave=('떠난다',self.leave_camp)
+        if len(actions)>2:
+            options=[actions[0],('다른 이야기',lambda: self.camp_choices(actions[1:])),leave]
+        else:
+            options=actions+[leave]
+        r=self.run
+        self.open('모닥불', '회복하고 저장했다.',options,
+                  'portrait_lunea__lunea_smile' if r.companion else 'portrait_hero__hero_relief',
+                  visual='camp',speaker='루네아' if r.companion else '소년')
+
+    def leave_camp(self):
+        if self.run.stage==6 and 'plan' not in self.run.pacts:
+            self.run.mark('plan_deferred')
+            self.save_checkpoint()
+        self.close_modal()
 
     def camp_pact(self, key):
         if key not in self.run.pacts:
@@ -794,10 +818,10 @@ class Campaign:
         if key == 'memory':
             self.run.fracture = False
         self.save_checkpoint(heal=True)
-        lines = {'secret': '소년은 거울 속 왕관과 손등의 상처를 숨기지 않았다. 루네아는 한 걸음 가까이 앉았다.',
-                 'memory': '이름을 하나씩 되짚자 부적의 금이 은빛 선으로 이어졌다. 루네아는 자신의 길을 스스로 고르겠다고 말했다.',
-                 'plan': '두 사람은 검을 사람에게 묶지 않고 문양에 돌려보내기로 했다. 모르는 선택은 함께 확인하기로 약속했다.'}
-        self.open('불빛 사이의 약속', lines[key], [('잠시 더 이야기한다', self.camp), ('함께 출발한다', self.close_modal)], 'portrait_lunea__lunea_hope', visual='camp')
+        lines = {'secret':'검과 손등의 상처 이야기를 나눴다.',
+                 'memory':'잊힌 이름을 부르자 부적의 금이 메워졌다.',
+                 'plan':'검의 힘을 옛 문양에 돌려주기로 했다.'}
+        self.open('함께한 약속', lines[key], [('더 이야기한다', self.camp), ('출발한다', self.leave_camp)], 'portrait_lunea__lunea_hope', visual='camp')
 
     def calm(self):
         self.run.erosion = max(0, self.run.erosion-1)
@@ -810,16 +834,20 @@ class Campaign:
             self.finish('H1')
             return
         missing = self.run.missing_restore()
-        self.open('왕좌 뒤의 세 갈래 빛',
-                  '왕은 쓰러졌다. 이제 마검의 힘을 어디로 돌려보낼까?\n'+('밤을 온전히 되돌릴 준비가 끝났다.' if not missing else '완전한 복원에는 아직 준비가 필요하다. 기록책을 확인하거나 회랑으로 돌아갈 수 있다.'),
-                  [('경계를 완전히 복원한다', lambda: self.end_choice('restore'), '부족한 준비: '+', '.join(missing) if missing else ''),
-                   ('잠정 봉인 후 여행을 이어 간다', lambda: self.end_choice('journey')),
-                   ('옛 달의 의식을 선택한다', lambda: self.end_choice('moon')),
-                   ('밤의 왕관을 받는다 · 되돌릴 수 없는 선택', self.confirm_crown),
-                   ('마지막 회랑으로 돌아가 준비를 보완한다', self.return_hall)], 'portrait_hero__hero_focus', kind='final', emphasis='final', speaker='소년')
+        restore=('준비하러 돌아간다', self.return_hall) if missing else (
+            '경계를 복원한다', lambda: self.end_choice('restore'))
+        self.open('마검의 운명', '왕이 쓰러졌다. 마검의 힘을 어떻게 할까?',
+                  [restore, ('마검을 봉인한다', lambda: self.end_choice('journey')),
+                   ('다른 길을 택한다', self.other_endings)], 'portrait_hero__hero_focus', kind='final')
+
+    def other_endings(self):
+        self.open('다른 길', '달의 의식과 밤의 왕관이 남아 있다.',
+                  [('달의 의식을 시작한다', lambda: self.end_choice('moon')),
+                   ('밤의 왕관을 받는다', self.confirm_crown), ('뒤로', self.final_choice)],
+                  'portrait_hero__hero_focus',kind='final')
 
     def confirm_crown(self):
-        self.open('왕관의 무게', '힘을 모두 받아들이면 세상은 끝없는 밤에 잠긴다. 이것은 최종 엔딩으로 기록된다.',
+        self.open('왕관의 무게', '왕관을 받으면 밤이 끝나지 않는다.',
                   [('왕관을 받는다', lambda: self.end_choice('crown')), ('다른 방법을 고른다', self.final_choice)], 'portrait_hero__hero_doubt')
 
     def return_hall(self):
@@ -1247,10 +1275,6 @@ class Campaign:
             self.save_checkpoint()
             self.final_choice()
             return
-        if self.region=='explore' and p.x>=self.world.width-110 and p.grounded:
-            if not any(o['kind']=='door' for o in self.objects):
-                self.next_page()
-                return
         if p.x<=85 and r.stage>0 and self.region=='explore':
             self.travel_stage(r.stage-1, 3400)
             return

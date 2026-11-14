@@ -59,30 +59,30 @@ class RescueStory:
         self.mode='force';self.pull()
 
     def pull(self):
-        self.show('검과 달빛이 맞닿는 순간',
-          ('소년이 세 빛의 매듭을 하나로 잇자 검은 실이 느슨해진다. 소녀도 반대편에서 손을 뻗는다.\n소년은 검을 낮추고 그녀의 손을 붙잡았다. 이번에는 반사가 먼저 움직이지 않았다.' if self.mode=='careful' else
-           '소년이 마검을 휘두르자 검은 실이 날 속으로 빨려 들어갔다. 부적에 가느다란 금이 번진다.\n그는 빈손으로 소녀의 손목을 받치고, 물가 밖으로 힘껏 끌어올렸다.'),
-          [('손을 놓지 않고 끝까지 끌어올린다',self.release)],image='pull',zoom=(1.12,.98),fx='break')
+        self.show('잡은 손',
+          '검은 실이 풀렸다. 소녀가 손을 뻗는다.' if self.mode=='careful' else
+          '검은 실이 끊어졌다. 소녀의 부적에 금이 갔다.',
+          [('소녀를 끌어올린다',self.release)],image='pull',zoom=(1.12,.98),fx='break')
 
     def release(self):
         s=self.s
         s.event_result('rescue',self.mode)
-        self.show('물가에 남은 두 사람',
-          ('발밑이 단단해… 정말 밖으로 나온 거구나. 내 이름은 루네아야.\n네가 내 목소리보다 빛을 믿어 줘서, 이름도 부적도 지킬 수 있었어.' if self.mode=='careful' else
-           '구해 줘서 고마워. 나는 루네아야. 부적은… 조금 금이 갔네.\n그래도 다시 고칠 수 있어. 네가 잡아 준 손의 온기는 잊지 않을 거야.'),
-          [('검에 대해 솔직히 이야기한다',self.first_talk),('괜찮은지 묻고 곁에서 기다린다',self.wait)],speaker='루네아',image='after',zoom=(1.07,1.0))
+        self.show('루네아',
+          '고마워. 덕분에 내 이름과 부적을 지켰어.' if self.mode=='careful' else
+          '고마워. 부적에 금이 갔지만 다시 고칠 수 있어.',
+          [('마검 이야기를 한다',self.first_talk),('곁에서 기다린다',self.wait)],speaker='루네아',image='after',zoom=(1.07,1.0))
         s.modal['cine']['previous']='pull'
 
     def first_talk(self):
         self.s.run.choose('첫 만남','마검에 대한 두려움을 나눔')
         self.show('같이 찾을 수 있는 길',
-          '나도 그 검이 왜 반응했는지 알고 싶어. 혼자라면 힘에 휩쓸릴 때 알아채기 어렵잖아.\n네가 돌아갈 곳이 있다면, 나도 그 길을 찾는 걸 돕고 싶어.',
+          '그 검이 왜 반응했는지 나도 알고 싶어. 함께 가자.',
           [('루네아와 함께 길을 나선다',self.finish)],speaker='루네아',image='after',zoom=(1.0,.98))
 
     def wait(self):
         self.s.run.choose('첫 만남','루네아가 일어날 때까지 기다림')
         self.show('처음으로 남긴 온기',
-          '조금만 기다려 줘서 고마워. 서두르지 않아도 되는구나.\n이제 걸을 수 있어. 나도 네 모험에 함께 가도 될까?',
+          '이제 걸을 수 있어. 나도 같이 가도 될까?',
           [('루네아와 함께 길을 나선다',self.finish)],speaker='루네아',image='after',zoom=(1.03,1.0))
 
     def leave(self):

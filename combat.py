@@ -37,6 +37,7 @@ class Enemy:
         self.boss = self.actor['boss']
         self.x, self.home = x, x
         self.y = 75.0 if not self.actor['grounded'] else 0.0
+        self.perch = None
         self.facing = -1
         self.scale = (1.12 if number >= 16 else .78 if number >= 13 else .73)
         self.max_hp = (1000 if number == 20 else 230 + stage*55 if self.boss else 33 + stage*12 + (35 if number >= 13 else 0))
@@ -57,6 +58,11 @@ class Enemy:
 
     def key(self, state):
         return f'enemy/enemy_{self.number:02d}_{state}'
+
+    def keep_on_perch(self):
+        if self.perch:
+            left,right,_=self.perch
+            self.x=max(left,min(right,self.x))
 
     @property
     def alive(self):
@@ -86,6 +92,7 @@ class Enemy:
             self.defeated = True
         elif not self.boss:
             self.x = max(90, min(scene.world.width-90, self.x + direction*9))
+            self.keep_on_perch()
             self.change('hurt', self.key('hurt'))
         scene.feedback(self.x, self.y+85, round(damage), 'hit_impacts__hit_metal' if self.number in {2, 8, 9, 11, 14, 17, 18, 20} else 'hit_impacts__hit_soft')
         return True
@@ -138,7 +145,7 @@ class Enemy:
         p = scene.player
         distance = abs(p.x-self.x)
         if not self.actor['grounded']:
-            self.y = 75 + sin(scene.time*2+self.home)*12
+            self.y = (self.perch[2] if self.perch else 0) + 75 + sin(scene.time*2+self.home)*12
         if self.state == 'windup':
             self.motion.age = 0
             delay = (.75 if self.boss else .5) + (.25 if self.marked > 0 else 0)
@@ -151,6 +158,7 @@ class Enemy:
             if self.pattern == 'charge' and .25 < fraction < .76:
                 self.x += self.facing * (520 if self.boss else 340) * dt * (.6 if self.slow else 1)
                 self.x = max(100, min(scene.world.width-100, self.x))
+                self.keep_on_perch()
                 if abs(p.x-self.x) < (110 if self.boss else 65) and abs(p.y-self.y) < 125:
                     scene.damage_player(self.damage*1.15, self.x)
             if not self.did_hit and fraction >= .45:
@@ -164,7 +172,7 @@ class Enemy:
             if self.age >= (.65 if self.boss else .4):
                 self.change('idle', self.key('idle'))
             return
-        if p.hp <= 0 or distance > (600 if self.boss else 640):
+        if p.hp <= 0 or distance > (600 if self.boss else 640) or abs(p.y-self.y)>170:
             self.motion.play(self.key('idle'))
             return
         if self.number == 20 and scene.run.hidden_entry is None:
@@ -177,6 +185,7 @@ class Enemy:
         elif distance > reach*.78:
             self.motion.play(self.key('move'))
             self.x += self.facing*self.speed*dt*(.55 if self.slow else 1)
+            self.keep_on_perch()
         else:
             self.motion.play(self.key('idle'))
 
@@ -190,10 +199,10 @@ class Enemy:
             for spread in ([-.2, 0, .2] if self.boss and self.hp < self.max_hp*.5 else [0]):
                 scene.shots.append(Shot(self.x+self.facing*55, self.y+85, dx/length*speed, dy/length*speed+spread*180, self.damage, 'adv/projectiles__'+kinds[self.pattern], radius=24 if self.boss else 16))
         elif self.pattern in {'seal', 'root'}:
-            scene.hazards.append(dict(x=self.target_x, y=0, age=0, wait=.75, life=1.6, hit=False, kind=self.pattern, damage=self.damage, radius=95))
+            scene.hazards.append(dict(x=self.target_x, y=p.floor_y, age=0, wait=.75, life=1.6, hit=False, kind=self.pattern, damage=self.damage, radius=95))
         elif self.pattern == 'slam':
-            scene.burst('adv/hit_impacts__hit_metal', self.x+self.facing*105, 30, .75)
-            if abs(p.x-(self.x+self.facing*90)) < (190 if self.boss else 100) and p.y < 90:
+            scene.burst('adv/hit_impacts__hit_metal', self.x+self.facing*105, self.y+30, .75)
+            if abs(p.x-(self.x+self.facing*90)) < (190 if self.boss else 100) and abs(p.y-self.y)<90:
                 scene.damage_player(self.damage*1.3, self.x)
         elif self.pattern == 'melee':
             if abs(p.x-(self.x+self.facing*55)) < (150 if self.boss else 85) and abs(p.y-self.y) < 140:
@@ -205,7 +214,7 @@ class Enemy:
         alpha = max(0, 1-(self.age-.6)/.6) if self.state == 'dead' else 1
         self.motion.draw(self.x, self.y, scene.camera, self.scale, self.facing, alpha)
         if self.state == 'windup':
-            scene.assets.draw('adv/seal_warning__seal_telegraph', self.x, 0, scene.camera, .38 if not self.boss else .65, self.age)
+            scene.assets.draw('adv/seal_warning__seal_telegraph', self.x, self.y, scene.camera, .38 if not self.boss else .65, self.age)
 
 
 class Companion:

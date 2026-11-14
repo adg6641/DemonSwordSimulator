@@ -2291,6 +2291,438 @@
           "height": 72
         }
       ]
+    },
+    {
+      "id": "fiction_header",
+      "file": "fiction/fiction_header.png",
+      "label": "fiction_header",
+      "group": "선택 화면",
+      "width": 1300,
+      "height": 195,
+      "frameWidth": 1300,
+      "frameHeight": 195,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 650.0,
+        "y": 97.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1300,
+          "height": 195
+        }
+      ]
+    },
+    {
+      "id": "fiction_row",
+      "file": "fiction/fiction_row.png",
+      "label": "fiction_row",
+      "group": "선택 화면",
+      "width": 1300,
+      "height": 158,
+      "frameWidth": 1300,
+      "frameHeight": 158,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 650.0,
+        "y": 79.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1300,
+          "height": 158
+        }
+      ]
+    },
+    {
+      "id": "fiction_selected",
+      "file": "fiction/fiction_selected.png",
+      "label": "fiction_selected",
+      "group": "선택 화면",
+      "width": 1300,
+      "height": 158,
+      "frameWidth": 1300,
+      "frameHeight": 158,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 650.0,
+        "y": 79.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1300,
+          "height": 158
+        }
+      ]
+    },
+    {
+      "id": "path_physical",
+      "file": "fiction/path_physical.png",
+      "label": "path_physical",
+      "group": "선택 화면",
+      "width": 128,
+      "height": 128,
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 64.0,
+        "y": 64.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "id": "path_magic",
+      "file": "fiction/path_magic.png",
+      "label": "path_magic",
+      "group": "선택 화면",
+      "width": 128,
+      "height": 126,
+      "frameWidth": 128,
+      "frameHeight": 126,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 64.0,
+        "y": 63.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 128,
+          "height": 126
+        }
+      ]
+    },
+    {
+      "id": "path_balance",
+      "file": "fiction/path_balance.png",
+      "label": "path_balance",
+      "group": "선택 화면",
+      "width": 128,
+      "height": 128,
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 64.0,
+        "y": 64.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    },
+    {
+      "id": "merchant_story",
+      "file": "fiction/merchant_story.png",
+      "label": "merchant_story",
+      "group": "선택 화면",
+      "width": 1599,
+      "height": 900,
+      "frameWidth": 1599,
+      "frameHeight": 900,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 799.5,
+        "y": 450.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 1599,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "door_shadow",
+      "file": "fiction/door_shadow.png",
+      "label": "door_shadow",
+      "group": "선택 화면",
+      "width": 640,
+      "height": 640,
+      "frameWidth": 640,
+      "frameHeight": 640,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 320,
+        "y": 576
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "guide_arrow",
+      "file": "fiction/guide_arrow.png",
+      "label": "guide_arrow",
+      "group": "선택 화면",
+      "width": 76,
+      "height": 66,
+      "frameWidth": 76,
+      "frameHeight": 66,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 38.0,
+        "y": 33.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 76,
+          "height": 66
+        }
+      ]
+    },
+    {
+      "id": "label_level",
+      "file": "fiction/label_level.png",
+      "label": "label_level",
+      "group": "선택 화면",
+      "width": 231,
+      "height": 55,
+      "frameWidth": 231,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 115.5,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 231,
+          "height": 55
+        }
+      ]
+    },
+    {
+      "id": "label_rescue",
+      "file": "fiction/label_rescue.png",
+      "label": "label_rescue",
+      "group": "선택 화면",
+      "width": 284,
+      "height": 55,
+      "frameWidth": 284,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 142.0,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 284,
+          "height": 55
+        }
+      ]
+    },
+    {
+      "id": "label_merchant",
+      "file": "fiction/label_merchant.png",
+      "label": "label_merchant",
+      "group": "선택 화면",
+      "width": 230,
+      "height": 55,
+      "frameWidth": 230,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 115.0,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 230,
+          "height": 55
+        }
+      ]
+    },
+    {
+      "id": "label_attack",
+      "file": "fiction/label_attack.png",
+      "label": "label_attack",
+      "group": "선택 화면",
+      "width": 248,
+      "height": 55,
+      "frameWidth": 248,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 124.0,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 248,
+          "height": 55
+        }
+      ]
+    },
+    {
+      "id": "label_magic",
+      "file": "fiction/label_magic.png",
+      "label": "label_magic",
+      "group": "선택 화면",
+      "width": 194,
+      "height": 55,
+      "frameWidth": 194,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 97.0,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 194,
+          "height": 55
+        }
+      ]
+    },
+    {
+      "id": "label_vitality",
+      "file": "fiction/label_vitality.png",
+      "label": "label_vitality",
+      "group": "선택 화면",
+      "width": 323,
+      "height": 55,
+      "frameWidth": 323,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 161.5,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 323,
+          "height": 55
+        }
+      ]
+    },
+    {
+      "id": "label_focus",
+      "file": "fiction/label_focus.png",
+      "label": "label_focus",
+      "group": "선택 화면",
+      "width": 331,
+      "height": 55,
+      "frameWidth": 331,
+      "frameHeight": 55,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "pivot": {
+        "x": 165.5,
+        "y": 27.5
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 331,
+          "height": 55
+        }
+      ]
     }
   ],
   "bodies": {

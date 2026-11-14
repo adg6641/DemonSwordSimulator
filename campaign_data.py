@@ -9,9 +9,15 @@ SPAWNS = [
     [(9, 1250), (10, 1900), (8, 2480), (17, 3320)],
     [(11, 1160), (12, 1750), (14, 2370), (18, 3320)],
     [(13, 1080), (15, 1650), (11, 2300), (19, 3320)],
-    [(20, 2050)],
+    [(20, 2050), (12, 1280), (15, 2170)],
 ]
 BOSSES = {2: 16, 4: 17, 5: 18, 6: 19, 7: 20}
+PAGES = (
+    ('explore',), ('explore', 'rescue'), ('explore', 'merchant', 'boss'),
+    ('explore',), ('explore', 'boss'), ('explore', 'boss'),
+    ('explore', 'boss'), ('explore', 'boss'),
+)
+PAGE_WIDTH = {'explore': STAGE_LENGTH, 'rescue': 1280, 'merchant': 1280, 'boss': 2000}
 OBJECTIVES = [
     '촌장에게 검에 관해 물어보자',
     '거울 웅덩이의 소녀를 찾아가자',
@@ -122,6 +128,40 @@ def objects(stage):
     ]
     for i,(x,y,_) in enumerate(left_route[1:]+right_route[1:3]+right_route[-2:]):
         result.append(dict(id=f'moon_shard_{i}',kind='crystal',x=x,y=y+55,asset='crystal'))
+    return result
+
+
+def page_objects(stage, page):
+    region = PAGES[stage][page]
+    if region in {'rescue', 'merchant'}:
+        event = 'rescue' if region=='rescue' else 'merchant'
+        obj = next(o for o in objects(stage) if o.get('event')==event)
+        obj['x'] = 720 if event=='rescue' else 580
+        if event=='merchant':
+            obj['actor_x'] = 780
+        return [obj]
+    if region == 'boss':
+        if stage==7:
+            return [dict(id='final',kind='event',x=1660,y=0,event='final',asset='terrain__throne_seal')]
+        return [dict(id='arena_gate',kind='door',x=1690,y=0,lock='boss')]
+
+    result = [o for o in objects(stage) if o.get('event') not in {'rescue','merchant','final'} and o['kind']!='gate']
+    left,right = PLATFORM_ROUTES[stage]
+    raised = {0:('healer', left[1]), 3:('night', left[3]), 4:('moon', right[2]),
+              5:('envoy', left[2]), 6:('return', left[3])}
+    if stage in raised:
+        ident,(x,y,_) = raised[stage]
+        next(o for o in result if o['id']==ident).update(x=x,y=y)
+    if stage==5:
+        x,y,_=right[3]
+        next(o for o in result if o['id']=='lever').update(x=x,y=y)
+    if stage in {5,6,7}:
+        x,y,_=right[-1]
+        for obj in result:
+            if obj['id']=='upper_chest':
+                obj['x'] -= 108
+        result.append(dict(id='upper_gate',kind='door',x=x+35,y=y,
+                           lock='lever' if stage==5 else None))
     return result
 
 

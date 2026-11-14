@@ -125,7 +125,7 @@ class GameApplication:
 
     def draw(self):
         s=self.game
-        key=(self.state,id(s),s.run.stage if s else -1,s.ui_serial if s else 0,
+        key=(self.state,id(s),(s.run.stage,s.run.page) if s else (-1,-1),s.ui_serial if s else 0,
              s.journal_page if s and s.modal and s.modal['kind']=='journal' else -1,s.run.ending if s else '')
         self.blend.draw(self.draw_content,key)
 

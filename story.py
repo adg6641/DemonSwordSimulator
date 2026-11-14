@@ -29,7 +29,7 @@ EVENT_LINES = {
     'elder': '그 검은 마왕의 것이란다. 밤의 짐승들도 검을 쫓고 있어.\n마왕이 오기 전에 숲길에서 힘을 길러라. 다만, 힘 때문에 너 자신을 잃지는 말거라.',
     'healer': '다쳤을 땐 회복 파편을 써. H를 누르면 돼.\n모닥불에서 쉬면 몸과 마력이 모두 회복되고, 그곳부터 다시 시작할 수 있어.',
     'rescue': '도와줘! 거울 속 그림자가 나를 붙잡고 있어.\n초승달, 별, 원. 이 순서로 빛을 따라 매듭을 풀어 줘.',
-    'merchant': '짐승들을 피하다 수레가 부서졌어. 붕대를 나눠 줄 수 있겠니?\n수레의 봉인석은 마을을 지키는 물건이야. 그 힘을 가져가면 마을은 더 위험해져.',
+    'merchant': '수레가 부서지고 다리를 다쳤어. 붕대가 필요하네. 봉인석의 힘은 마을을 지켜 주고 있어.',
     'mirror': '거울 속의 저 사람… 나잖아? 왜 왕관을 쓰고 있지?\n손등의 상처까지 똑같아. 그런데 내가 손을 내린 뒤에야 그림자도 따라 움직였어.',
     'altar': '이 제단에는 오래된 힘이 남아 있다.\n힘을 빼앗으면 검은 강해진다. 문양을 정화하면 밤을 되돌릴 단서를 지킬 수 있다.',
     'memory': '내 부적에는 잊힌 사람들의 이름이 남아 있어.\n함께 기억해 줘. 부적을 고치면 마검의 힘을 돌려보낼 길도 찾을 수 있을 거야.',
@@ -39,30 +39,39 @@ EVENT_LINES = {
 
 def objective(scene):
     r = scene.run
+    if scene.region=='boss':
+        boss = next((e for e in scene.enemies if e.boss and e.alive), None)
+        if boss:
+            return '문지기에게 맞서기' if r.stage<7 else '바르켄에게 맞서기', boss.x,boss.y
+        door=next(o for o in scene.objects if o['id'] in {'arena_gate','final'})
+        return ('열린 문으로 들어가기' if r.stage<7 else '마검의 운명 고르기',door['x'],door['y'])
+    if scene.story_only:
+        return '',scene.player.x,scene.player.y
+
+    def at(label, ident):
+        obj=next(o for o in scene.objects if o['id']==ident)
+        return label,obj.get('actor_x',obj['x']),obj['y']
+
     if r.stage == 0:
-        if not r.has('elder_done'): return '촌장에게 검에 관해 물어보기', 700
-        if r.level < 2: return 'C로 밤의 짐승을 물리치기', 1250
-        if not r.path: return '성장 방향 고르기', scene.player.x
+        if not r.has('elder_done'): return at('촌장에게 검에 관해 묻기','elder')
+        if r.level < 2: return 'C로 밤의 짐승 물리치기',1250,0
     elif r.stage == 1 and not (r.companion or r.has('aid_marker')):
-        return '거울에 갇힌 소녀 살펴보기', 900
+        return '숲 끝의 거울 웅덩이 찾기',3740,0
     elif r.stage == 2 and not r.has('merchant_done'):
-        merchant = next(o for o in scene.objects if o['id']=='merchant')
-        return '부서진 수레의 상인 만나기', merchant['actor_x']
+        return '숲 너머의 상인 만나기',3740,0
     elif r.stage == 3:
-        if not r.has('mirror_done'): return '검은 거울 살펴보기', 740
-        if 'night' not in r.records: return '밤의 기록 읽기', 1900
+        if not r.has('mirror_done'): return at('검은 거울 살펴보기','mirror')
+        if 'night' not in r.records: return at('상층의 밤의 기록 읽기','night')
     elif r.stage == 4:
-        if not r.has('altar_done'): return '달의 제단 조사하기', 880
-        if 'moon' not in r.records: return '달의 기록 읽기', 2040
-        if r.companion and 'memory' not in r.pacts: return '루네아와 부적의 기억 되찾기', 2670
+        if not r.has('altar_done'): return at('달의 제단 조사하기','altar')
+        if 'moon' not in r.records: return at('상층의 달의 기록 읽기','moon')
+        if r.companion and 'memory' not in r.pacts: return at('루네아와 부적 고치기','memory')
     elif r.stage == 5:
-        if not r.has('envoy_done'): return '전령의 제안 듣기', 760
-        if not r.has('gate_open'): return '사슬 스위치로 성문 열기', 2670
+        if not r.has('envoy_done'): return at('상층의 전령 만나기','envoy')
+        if not r.has('gate_open'): return at('사슬 스위치 당기기','lever')
     elif r.stage == 6:
-        if 'return' not in r.records: return '귀환의 기록 읽기', 1990
-        if r.companion and 'plan' not in r.pacts: return '쉼터에서 마지막 계획 나누기', 2500
-    elif r.stage == 7 and r.has('boss_won'):
-        return '마검의 힘을 어디로 돌려줄지 선택하기', 3150
-    boss = next((e for e in scene.enemies if e.boss and e.alive), None)
-    if boss: return boss.actor['name']+' 물리치기', boss.x
-    return '오른쪽 길로 다음 지역에 가기', 3740
+        if 'return' not in r.records: return at('상층의 귀환 기록 읽기','return')
+        if r.companion and 'plan' not in r.pacts: return at('모닥불에서 마지막 계획 나누기','camp')
+    if r.stage in {5,6,7}:
+        return at('상층 통로로 들어가기','upper_gate')
+    return '오른쪽 길로 나아가기',3740,0

@@ -14,7 +14,7 @@ from game_assets import Assets
 from progress import Run, ENDINGS
 from combat import Enemy, Companion, Shot
 from sound import Sounds
-from campaign_data import STAGE_LENGTH, SPAWNS, BOSSES, EVENT_TEXT, PERKS, objects
+from campaign_data import SPAWNS, BOSSES, PAGES, PAGE_WIDTH, PLATFORM_ROUTES, EVENT_TEXT, PERKS, page_objects
 from story import CHAPTERS, INTRO, EVENT_LINES, SPEAKERS, RECORDS
 
 
@@ -55,6 +55,9 @@ class Campaign:
         self.rescue = None
         self.cine_out = None
         self.stage_settle=0.0
+        self.door_entry=None
+        self.pending_event=None
+        self.opened_final=False
         self.ui_serial=0
         self.companion = None
         self.last_max_hp = self.run.max_hp
@@ -122,6 +125,14 @@ class Campaign:
         self.interaction_age = 0
         self.keys.clear()
 
+    @property
+    def region(self):
+        return PAGES[self.run.stage][self.run.page]
+
+    @property
+    def story_only(self):
+        return self.region in {'rescue','merchant'}
+
     def setup_camp_pose(self, previous):
         player = self.player
         if previous and previous.get('visual')=='camp':
@@ -179,23 +190,45 @@ class Campaign:
         self.sounds.play('select')
         option[1]()
 
-    def enter_stage(self, index, x=180, checkpoint=True):
+    def enter_stage(self, index, x=180, checkpoint=True, *, page=0, y=0):
         self.run.stage = index
+        self.run.page = page
         self.run.unlocked = max(self.run.unlocked, index)
         self.world.set_stage(index)
-        self.world.width = STAGE_LENGTH
-        self.objects = objects(index)
+        self.world.width = PAGE_WIDTH[self.region]
+        self.objects = page_objects(index, page)
+        self.door_entry = self.pending_event = None
+        self.opened_final = False
+        self.actor_actions.clear()
+        self.cine_out = None
         rng = random.Random(self.run.seed + index*997)
         self.enemies = []
         for i, (number, position) in enumerate(SPAWNS[index]):
+            if self.story_only or (number==BOSSES.get(index)) != (self.region=='boss'):
+                continue
             uid = f'{index}:enemy:{i}'
             if uid not in self.run.killed:
-                self.enemies.append(Enemy(self.assets, number, position+(rng.uniform(-55, 55) if number < 16 else 0), index, uid, rng))
-        self.player.x, self.player.y, self.player.vy, self.player.floor_y = x, 0.0, 0.0, 0.0
+                self.enemies.append(Enemy(self.assets, number, 1230 if self.region=='boss' else position+rng.uniform(-55,55), index, uid, rng))
+        if self.region=='explore' and index:
+            left,right = PLATFORM_ROUTES[index]
+            regular=[number for number,_ in SPAWNS[index] if number!=BOSSES.get(index)]
+            for n,(number,slot) in enumerate(zip(regular,(left[2],right[3]))):
+                uid=f'{index}:upper:{n}'
+                if uid in self.run.killed:
+                    continue
+                px,py,width=slot
+                enemy=Enemy(self.assets,number,px,index,uid,rng)
+                enemy.perch=(px-width/2+27,px+width/2-27,py)
+                enemy.y+=py
+                self.enemies.append(enemy)
+        self.player.x, self.player.y, self.player.vy, self.player.floor_y = x, y, 0.0, y
+        self.player.air_dash_ready = True
+        self.player.drop_timer = 0.0
         self.player.mode, self.player.gait = 'free', None
         self.player.attack_pending=False;self.player.brake_speed=self.player.horizontal_speed=0
         self.player.combo_queued=False;self.player.followups.clear()
         self.player.forced_crouch=self.player.crouching=False
+        self.player.previous_direction=self.player.move_time=0
         self.player.animation.play('idle_breathe')
         self.player.effects.waves.clear()
         self.player.effects.bursts.clear()
@@ -205,9 +238,12 @@ class Campaign:
         self.player.dash_attack_remaining = 0
         self.shots, self.hazards, self.bursts, self.numbers = [], [], [], []
         self.companion = Companion(self.assets, x-90) if self.run.companion else None
+        if self.companion:
+            self.companion.y=self.companion.floor_y=y
         self.camera.follow(self.player, self.world.width, snap=True)
         self.banner, self.banner_queue = None, []
-        self.highlight('chapter_'+str(index+1), INTRO[index])
+        if page==0:
+            self.highlight('chapter_'+str(index+1), INTRO[index])
         if checkpoint:
             self.save_checkpoint()
 
@@ -223,8 +259,10 @@ class Campaign:
     def restore(self, point):
         self.run = Run.from_dict(point['run'])
         self.last_max_hp = self.run.max_hp
-        self.enter_stage(self.run.stage, point['x'], checkpoint=False)
-        self.player.y = point.get('y', 0)
+        x,y = point['x'],point.get('y',0)
+        if 'page' not in point['run'] and self.run.page:
+            x,y = 1450,0
+        self.enter_stage(self.run.stage, x, checkpoint=False, page=self.run.page,y=y)
         self.player.floor_y=self.floor_beneath(self.player)
         self.player.forced_crouch=self.under_root(self.player.x,self.player.y)
         if self.player.forced_crouch:
@@ -241,11 +279,14 @@ class Campaign:
         for enemy in self.enemies:
             if enemy.uid in by_id:
                 enemy.hp, enemy.x = by_id[enemy.uid]['hp'], by_id[enemy.uid]['x']
+                enemy.keep_on_perch()
         self.player.invulnerable = 1.5
         self.death_age, self.shield, self.hitstop = 0, 0, 0
         self.modal = None
         self.keys.clear()
         self.sync_stats()
+        if self.story_only:
+            self.pending_event=self.region
         self.ui_serial+=1
         self.camera.follow(self.player, self.world.width, snap=True)
         self.burst('adv/failure_respawn__checkpoint_return', self.player.x, 0, .8)
@@ -264,23 +305,25 @@ class Campaign:
             p.effects.set_level(r.tier)
         p.effects.buff_duration = 5 + r.skills.get('duration', 0)*.8
         p.effects.reach_scale = 1+.07*r.skills.get('wide_slash', 0)
-        p.DASH_SPEED = Player.DASH_SPEED*(1 + .055*r.skills.get('dash_distance', 0))
+        p.DASH_DISTANCE = Player.DASH_DISTANCE + 4*r.skills.get('dash_distance', 0)
 
     def grow(self):
         if self.run.earned <= 0:
             self.notify('첫 전투를 마치고 레벨업하면 성장 방향을 고를 수 있습니다.')
             self.close_modal()
             return
+        self.run.growth_offered=self.run.level
         if not self.run.path:
-            self.open('첫 성장 · 힘의 방향',
-                      '처음 배울 기술을 고르자. 다른 기술도 나중에 배울 수 있다.\n강한 근접 공격, 멀리 날리는 검기, 두 기술의 조합 중 무엇으로 싸울까?',
-                      [(label, lambda path=path: self.pick_path(path)) for path, label in [('physical', '물리 특화'), ('magic', '마법 특화'), ('balance', '균형 성장')]], kind='path')
+            self.open('어떤 힘을 먼저 배울까?', '다른 기술도 나중에 배울 수 있다.',
+                      [(label, lambda path=path: self.pick_path(path), '', icon)
+                       for path,label,icon in [('physical','물리 특화 · 대시 베기','path_physical'),
+                                               ('magic','마법 특화 · 마검파','path_magic'),
+                                               ('balance','균형 성장 · 두 기술','path_balance')]], kind='path')
         elif self.run.unspent:
-            labels = [('attack', '공격력 +5', '대시와 근접 베기 피해 증가'), ('magic', '마력 +6', '마검파의 피해 증가'),
-                      ('vitality', '최대 HP +20', '생존력 증가'), ('focus', '최대 MP +15', '마력 집중을 더 오래 활용')]
-            self.open(f'능력치 배분 · 남은 {self.run.unspent}점',
-                      f'공격력 {self.run.attack} · 마력 {self.run.magic}\n버튼을 누를 때마다 능력치 1점을 쓴다. 배분한 뒤에는 기술도 강화할 수 있다.',
-                      [(name+' · '+tip, lambda key=key: self.allocate(key)) for key, name, tip in labels]+[('나중에 배분한다 · L로 다시 열기', self.close_modal)], kind='stats')
+            labels = [('attack','공격력 +5'),('magic','마력 +6'),('vitality','최대 HP +20'),('focus','최대 MP +15')]
+            self.open('어떤 능력을 키울까?', f'레벨 {self.run.level}   ·   남은 스탯 {self.run.unspent}점',
+                      [(name, lambda key=key: self.allocate(key)) for key,name in labels]
+                      + [('나중에 배분하기', self.close_modal)], kind='stats')
         elif self.run.skill_points:
             self.grow_skill()
         else:
@@ -294,7 +337,8 @@ class Campaign:
         self.grow()
 
     def allocate(self, key):
-        self.run.allocate(key)
+        if self.run.allocate(key):
+            self.run.choose('레벨 성장', {'attack':'공격력 +5','magic':'마력 +6','vitality':'최대 HP +20','focus':'최대 MP +15'}[key])
         self.sync_stats()
         if self.run.unspent:
             self.grow()
@@ -309,12 +353,13 @@ class Campaign:
         order = sorted(PERKS, key=lambda p: (p[0] not in preferred, preferred.index(p[0]) if p[0] in preferred else PERKS.index(p)))
         for key, title, tip, icon in order[offset:offset+4]:
             level = self.run.skills.get(key, 0)
-            options.append((f'{title} Lv.{level} → {level+1} · {tip}', lambda key=key: self.pick_skill(key), '최대 단계입니다.' if level >= 6 else '', 'perk_icons__'+icon))
-        options += [('다른 강화 보기', lambda: self.grow_skill((offset+4)%len(order))), ('나중에 강화한다 · L로 열기', self.close_modal)]
-        self.open(f'기술 강화 · 남은 {self.run.skill_points}점', '스탯과 기술은 따로 성장한다. 대시 베기는 공격력, 마검파는 마력의 영향을 크게 받는다.', options, kind='skills')
+            options.append((f'{title} · {level+1}단계', lambda key=key: self.pick_skill(key), '최대 단계입니다.' if level >= 6 else '', 'perk_icons__'+icon))
+        options += [('다른 기술 보기', lambda: self.grow_skill((offset+4)%len(order))), ('나중에 강화하기', self.close_modal)]
+        self.open('어떤 기술을 익힐까?', f'남은 기술 {self.run.skill_points}점', options, kind='skills')
 
     def pick_skill(self, key):
         if self.run.upgrade(key):
+            self.run.choose('기술 성장', next(title for skill,title,*_ in PERKS if skill==key))
             if key == 'supply':
                 self.run.shards += 2
             self.sync_stats()
@@ -377,7 +422,7 @@ class Campaign:
         p.effects.burst('guard', p.x + p.facing * x, p.y - y, p.facing)
 
     def press(self, key):
-        if self.stage_settle>0:return
+        if self.stage_settle>0 or self.door_entry:return
         p = self.player
         self.update_posture(p)
         if key == SDLK_e:
@@ -429,7 +474,7 @@ class Campaign:
             self.keys.discard(event.key)
             return
         if event.type==SDL_KEYDOWN and getattr(event,'repeat',0):return
-        if self.stage_settle>0:return
+        if self.stage_settle>0 or self.door_entry:return
         if self.modal:
             if self.modal['kind'] == 'journal':
                 if event.type == SDL_KEYDOWN:
@@ -453,12 +498,9 @@ class Campaign:
                 if event.key in {SDLK_UP, SDLK_LEFT, SDLK_DOWN, SDLK_RIGHT}:
                     self.selected = (self.selected+(1 if event.key in {SDLK_DOWN, SDLK_RIGHT} else -1))%len(self.modal['options'])
                 elif event.key in {SDLK_RETURN, SDLK_SPACE}:
-                    if self.modal['kind'] in {'dialogue','boss','final'} and not self.modal.get('revealed') and self.interaction_age*38 < len(self.modal['text']):
-                        self.modal['revealed'] = True
-                    else:
-                        self.choose(self.selected)
-                elif SDLK_1 <= event.key <= SDLK_1+3:
-                    page = self.selected//4*4
+                    self.choose(self.selected)
+                elif SDLK_1 <= event.key <= SDLK_1+4:
+                    page = self.selected//5*5
                     self.choose(page+event.key-SDLK_1)
                 elif event.key == SDLK_ESCAPE and self.modal['kind'] in {'pause', 'stats', 'skills'}:
                     self.close_modal()
@@ -524,9 +566,12 @@ class Campaign:
         p.forced_crouch=self.under_root(p.x,p.y) and (p.crouching or p.forced_crouch or p.drop_timer>0)
 
     def nearest(self):
-        interactable = [o for o in self.objects if o['kind'] in {'event', 'record', 'camp', 'chest', 'lever'}
-                        and abs(o.get('actor_x',o['x'])-self.player.x) < 135 and abs(o['y']-self.player.y) < 110]
-        return min(interactable, key=lambda o: abs(o.get('actor_x',o['x'])-self.player.x), default=None)
+        p=self.player
+        interactable = [o for o in self.objects
+                        if o['kind'] in {'event','record','camp','chest','lever','door'}
+                        and abs(o.get('actor_x',o['x'])-p.x)<135
+                        and abs(o['y']-p.y)<(44 if o['kind']=='door' or o['y'] else 72)]
+        return min(interactable, key=lambda o: abs(o.get('actor_x',o['x'])-p.x)+2*abs(o['y']-p.y), default=None)
 
     def interact(self):
         if not self.player.grounded:
@@ -537,13 +582,22 @@ class Campaign:
             self.notify('상호작용할 물건 가까이에서 E를 누르세요.')
             return
         kind, uid = obj['kind'], self.obj_uid(obj)
-        if kind == 'record':
+        if kind=='door':
+            if self.door_ready(obj):
+                self.door_entry=dict(door=obj, age=0.0, start_x=self.player.x)
+                self.bursts.clear()
+                self.keys.clear()
+                self.player.animation.play('walk')
+                self.player.facing=1 if obj['x']>=self.player.x else -1
+            else:
+                self.notify('먼저 사슬 스위치를 열자.' if obj.get('lock')=='lever' else '문지기를 쓰러뜨리자.')
+        elif kind == 'record':
             if obj['record'] not in self.run.records:
                 self.sounds.play('pickup')
                 self.run.records.append(obj['record'])
                 self.gain_xp(30)
                 self.player._action('adv/hero_pickup__hero_reach', 'adv/hero_pickup__hero_reach_up')
-                self.burst('pickup_fx__pickup', obj['x'], 85, .5)
+                self.burst('pickup_fx__pickup', obj['x'], obj['y']+85, .5)
                 self.highlight('record', RECORDS[obj['record']][0])
                 self.story_context = None
                 self.open(RECORDS[obj['record']][0], RECORDS[obj['record']][1], [('기억하고 길을 나선다', self.close_modal)],
@@ -564,9 +618,9 @@ class Campaign:
         elif kind == 'lever':
             self.run.mark('gate_open')
             self.run.mark('gate_time_set')
-            self.notify('성문의 사슬이 올라간다.')
+            self.notify('성문이 열렸다. 문 앞에서 E를 누르자.')
             for gate in self.objects:
-                if gate['kind'] == 'gate':
+                if gate['kind'] == 'door' and gate.get('lock')=='lever':
                     gate['opened'] = self.time
         elif kind == 'camp':
             self.camp()
@@ -596,14 +650,14 @@ class Campaign:
             self.open(title, '이곳에서 해야 할 일은 마쳤다. 이제 다음 길로 나아가자.\n지금까지의 선택은 Tab 기록책에서 다시 볼 수 있다.', [('계속 간다', self.close_modal)], portrait, speaker='이야기')
             return
         options = {
-            'elder': [('충고를 듣고 출발한다', 'listen')],
-            'healer': [('몸과 마력을 회복한다', 'heal'), ('다시 길을 나선다', 'leave')],
+            'elder': [('촌장의 말을 듣는다', 'listen')],
+            'healer': [('HP·MP 회복', 'heal'), ('떠난다', 'leave')],
             'rescue': [('빛의 순서대로 함께 매듭을 푼다', 'careful'), ('마검으로 봉인을 잘라 구한다 · 부적에 금이 감', 'force'), ('구조 표식을 남기고 혼자 간다', 'mark')],
-            'merchant': [('붕대를 나눠 상인을 돕는다', 'help'), ('봉인석의 힘을 가져간다', 'take'), ('아무것도 건드리지 않고 떠난다', 'leave')],
+            'merchant': [('붕대를 나눈다 · 신뢰 +1', 'help'), ('봉인석을 흡수한다 · 침식 +1', 'take'), ('그대로 떠난다', 'leave')],
             'mirror': [('반사의 버릇을 기억한다', 'remember')],
-            'altar': [('문양을 정화한다 · 침식 -1', 'purify'), ('힘을 흡수한다 · 침식 +1 / 경험치 +70', 'absorb')],
+            'altar': [('문양을 정화한다 · 침식 −1', 'purify'), ('힘을 흡수한다 · 침식 +1', 'absorb')],
             'memory': [('이름을 함께 기억하고 부적을 복구한다', 'repair'), ('나중에 다시 살핀다', 'leave')],
-            'envoy': [('마을에 경고를 보낸다 · 신뢰 +1', 'warn'), ('계약을 받는다 · 성문 추격 감소 / 침식 +1', 'contract'), ('계약을 거절하고 길을 연다', 'refuse')],
+            'envoy': [('마을에 경고한다 · 신뢰 +1', 'warn'), ('계약한다 · 추격 감소 / 침식 +1', 'contract'), ('계약을 거절한다', 'refuse')],
         }[key]
         if key == 'rescue' and self.run.companion:
             self.open('풀려난 거울 웅덩이', '아직도 물결이 조금 무섭네. 그래도 이제 혼자가 아니니까.\n가자. 네가 돌아갈 길도 함께 찾고 싶어.', [('함께 간다', self.close_modal)], 'portrait_lunea__lunea_relief')
@@ -694,8 +748,8 @@ class Campaign:
             ('rescue','careful'): '나는 루네아야. 구해 줘서 고마워.\n네 검을 알아볼 수 있을 것 같아. 나도 함께 가게 해 줘.',
             ('rescue','force'): '고마워. 나는 루네아야. 함께 가고 싶어.\n부적에 금이 갔지만 괜찮아. 달의 제단에서 함께 고칠 수 있을 거야.',
             ('rescue','mark'): '도움을 요청하는 표식을 남겼다. 지금은 혼자 길을 나선다.\n마음이 바뀌면 이곳으로 돌아와 소녀를 구할 수 있다.',
-            ('merchant','help'): '정말 고맙구나. 마을에 네 이야기를 전하마.\n이 회복 파편 두 개를 가져가렴.',
-            ('merchant','take'): '검에 힘이 흘러들었다. 수레의 봉인석은 빛을 잃었다.\n힘을 얻었지만, 마을을 지키던 불빛은 하나 줄었다.',
+            ('merchant','help'): '고맙구나. 회복 파편 두 개를 가져가렴.',
+            ('merchant','take'): '마력은 강해졌지만 마을을 지키던 봉인석의 불이 꺼졌다.',
             ('altar','purify'): '문양에 달빛이 돌아왔다. 검의 검은 기운도 잦아들었다.\n힘을 빼앗지 않고 밤을 되돌릴 방법이 있을지 모른다.',
             ('altar','absorb'): '검이 오래된 마력을 삼켰다. 더 강해졌지만 내 그림자가 낯설다.\n회랑의 쉼터에서는 이 힘을 가라앉힐 수 있다.',
             ('memory','repair'): '기억해 줘서 고마워. 부적도 다시 온전해졌어.\n마지막까지 함께 이름을 지키자.',
@@ -703,13 +757,17 @@ class Campaign:
             ('envoy','contract'): '계약으로 추격자들이 물러났다. 하지만 검의 어둠은 짙어졌다.\n왕좌에서 어떤 결정을 내릴지는 아직 나에게 달려 있다.',
             ('envoy','refuse'): '계약을 거절했다. 길은 더 험하겠지만 왕의 뜻대로 움직이지는 않겠다.\n성문의 사슬 스위치를 찾아 앞으로 가자.',
             ('mirror','remember'): '왕관 속 얼굴과 손등의 상처를 기억해 두자.\n왜 나와 똑같았는지, 폐허에 남은 기록에 답이 있을지도 몰라.',
-            ('merchant','leave'): '수레는 그대로 두었다. 상인은 작은 등불을 켜고 도움을 기다린다.\n나는 숲의 문지기가 있는 길로 향한다.',
+            ('merchant','leave'): '상인은 등불을 켜고 다음 여행자를 기다린다.',
         }
         if value=='leave' and key in {'healer','memory'}:
             self.close_modal()
             return
         text = result_lines.get((key,value), text)
-        self.open('길에 남은 선택', text, [('이어서 간다', self.close_modal)], portrait,
+        if self.story_only and key in {'merchant','rescue'}:
+            proceed=self.leave_story
+        else:
+            proceed=self.close_modal
+        self.open('길에 남은 선택', text, [('계속 간다', proceed)], portrait,
                   speaker='루네아' if key in {'rescue','memory'} and r.companion else '상인' if key=='merchant' and value=='help' else {'elder':'촌장','healer':'치유사','mirror':'소년'}.get(key,'이야기'))
 
     def camp(self):
@@ -795,7 +853,7 @@ class Campaign:
             self.sync_stats()
             self.player.hp = min(self.run.max_hp, self.player.hp+25) if self.player.hp > 0 else 0
             self.burst('levelup_fx__levelup', self.player.x, self.player.y, .8)
-            self.highlight('growth', f'레벨 {self.run.level} · L을 눌러 새 힘을 선택하세요')
+            self.highlight('growth', f'레벨 {self.run.level} · 성장 선택')
 
     def attack_player(self):
         p, r = self.player, self.run
@@ -951,18 +1009,80 @@ class Campaign:
                 elif old_x>=right:p.x=max(p.x,right)
                 elif kind!='crawl':p.x=old_x
 
-    def travel_stage(self,index,x=180):
+    def travel_stage(self,index,x=180,*,page=0):
         """지역을 바꾼 직후 잠깐 멈춰 교차 전환을 읽을 시간을 준다."""
-        self.keys.clear();self.enter_stage(index,x);self.stage_settle=.65
+        self.keys.clear()
+        self.enter_stage(index,x,page=page)
+        self.stage_settle=.48
+        if self.story_only:
+            self.pending_event=self.region
 
     def exit_ready(self):
-        boss = BOSSES.get(self.run.stage)
-        return (boss is None or not any(e.alive and e.number == boss for e in self.enemies)) and (self.run.stage != 5 or self.run.has('gate_open'))
+        return self.region!='boss' or not any(e.alive or e.age<.9 for e in self.enemies)
+
+    def door_ready(self, door):
+        lock=door.get('lock')
+        return self.exit_ready() if lock=='boss' else lock!='lever' or self.run.has('gate_open')
+
+    def next_page(self):
+        r=self.run
+        if r.page+1<len(PAGES[r.stage]):
+            page=r.page+1
+            area=PAGES[r.stage][page]
+            start={'rescue':475,'merchant':590,'boss':325}[area]
+            self.travel_stage(r.stage,start,page=page)
+        elif r.stage<7:
+            self.travel_stage(r.stage+1)
+
+    def leave_story(self):
+        self.close_modal()
+        self.rescue=None
+        self.next_page()
+
+    def offer_growth(self):
+        r,p=self.run,self.player
+        if (r.level>r.growth_offered and (r.unspent or r.skill_points or not r.path)
+                and not self.story_only and p.grounded and p.mode=='free'
+                and not (p.crouching or p.forced_crouch)):
+            self.grow()
+            return True
+        return False
+
+    def update_door_entry(self,dt):
+        entry=self.door_entry
+        entry['age']+=dt
+        p=self.player
+        x=entry['door']['x']
+        t=min(1,entry['age']/.62)
+        old=p.x
+        p.x=entry['start_x']+(x-entry['start_x'])*min(1,t*1.4)
+        p.advance_gait(p.x-old)
+        ally=self.companion
+        if ally and ally.floor_y==p.floor_y and abs(ally.x-x)<265:
+            dx=x-ally.x
+            ally.x+=max(-340*dt,min(340*dt,dx))
+            if abs(dx)>1:
+                ally.facing=1 if dx>0 else -1
+                ally.motion.play('lunea/walk')
+                ally.motion.update(dt)
+        self.camera.focus(x,entry['door']['y']+15,self.world.width,dt,1.04)
+        if t>=1:
+            self.next_page()
 
     def update(self, dt):
         self.time += dt
         if self.stage_settle>0:
             self.stage_settle=max(0,self.stage_settle-dt)
+            return
+        if self.door_entry:
+            self.update_door_entry(dt)
+            return
+        if self.pending_event:
+            event,self.pending_event=self.pending_event,None
+            if (event=='rescue' and self.run.companion) or (event=='merchant' and self.run.has('merchant_done')):
+                self.leave_story()
+            else:
+                self.event(event)
             return
         if self.cine_out:
             self.cine_out['age']+=dt
@@ -1104,8 +1224,8 @@ class Campaign:
             hazard['age'] += dt
             if hazard['age'] >= hazard['wait'] and not hazard['hit']:
                 hazard['hit'] = True
-                self.burst('root_spike__root_spike' if hazard['kind'] == 'root' else 'seal_warning__seal_burst', hazard['x'], 0, .65)
-                if abs(p.x-hazard['x']) < hazard['radius'] and p.y < 125:
+                self.burst('root_spike__root_spike' if hazard['kind'] == 'root' else 'seal_warning__seal_burst', hazard['x'], hazard['y'], .65)
+                if abs(p.x-hazard['x']) < hazard['radius'] and -62<p.y-hazard['y']<125:
                     self.damage_player(hazard['damage'], hazard['x'])
         self.hazards = [h for h in self.hazards if h['age'] < h['life']]
         if self.companion:
@@ -1119,22 +1239,21 @@ class Campaign:
         if p.hp <= 0:
             self.keys.clear()
             return
-        if self.run.stage == 7 and not any(e.alive or e.age < .9 for e in self.enemies) and not r.has('boss_won'):
+        if self.offer_growth():
+            return
+        if r.stage==7 and self.region=='boss' and self.exit_ready() and not self.opened_final:
+            self.opened_final=True
             r.mark('boss_won')
             self.save_checkpoint()
             self.final_choice()
             return
-        if not r.path and r.level >= 2:
-            self.grow()
+        if self.region=='explore' and p.x>=self.world.width-110 and p.grounded:
+            if not any(o['kind']=='door' for o in self.objects):
+                self.next_page()
+                return
+        if p.x<=85 and r.stage>0 and self.region=='explore':
+            self.travel_stage(r.stage-1, 3400)
             return
-        if p.x >= self.world.width-110 and r.stage < 7:
-            if self.exit_ready():
-                self.travel_stage(r.stage+1)
-            else:
-                p.x = self.world.width-115
-                self.notify('길이 막혀 있다. 파수자를 쓰러뜨리고, 성문이라면 사슬 스위치를 찾아보자.', 2)
-        elif p.x <= 85 and r.stage > 0:
-            self.travel_stage(r.stage-1, self.world.width-210)
         self.sync_stats()
         proximity=max((max(0,min(1,(900-abs(e.x-p.x))/500)) for e in self.enemies if e.alive and e.boss),default=0)
         self.camera.follow(p, self.world.width, dt,combat_wide=proximity)

@@ -17,19 +17,19 @@ class RescueStory:
 
     def start(self):
         self.show('거울 웅덩이',
-          '바람이 멎었다. 나뭇잎은 밝은데, 웅덩이 안에는 별이 떠 있다.\n물가의 소녀는 움직이지 못한다. 도움을 청하는 목소리는 물속에서만 들린다.',
-          [('반사 속 신호부터 살펴본다',self.listen),('마검으로 그림자를 끊어 구한다',self.force),('구조 표식을 남기고 혼자 길을 나선다',self.leave)],zoom=(1.0,1.025))
+          '웅덩이에 별이 떠 있다. 물속 그림자가 소녀를 붙잡고 있다.',
+          [('빛의 신호를 살핀다',self.listen),('마검으로 그림자를 벤다',self.force),('표식을 남기고 떠난다',self.leave)],zoom=(1.0,1.025))
 
     def listen(self):
         self.mode='careful'
         self.show('밤을 비추는 물',
-          '소년이 손을 내밀자 물속의 손도 따라온다. 그런데 반사 속 손에는 낯선 왕관의 그림자가 걸려 있다.\n검을 쥔 손이 차가워진다. 소녀는 손을 내밀지 말라는 듯 고개를 젓는다.',
-          [('소녀가 보내는 신호를 기다린다',self.voice)],image='reflection',zoom=(1.10,1.20))
+          '반사 속 내 모습이 왕관을 쓰고 있다. 소녀는 손을 내밀지 말라고 고개를 젓는다.',
+          [('소녀의 신호를 기다린다',self.voice)],image='reflection',zoom=(1.10,1.20))
 
     def voice(self):
         self.show('빼앗기기 직전의 이름',
-          '내 목소리를 흉내 내는 거야. 물속에서 들리는 말은 믿지 마.\n내 이름까지 빼앗기면 아무도 나를 기억하지 못해. 부적의 빛을 봐 줘.',
-          [('목소리보다 부적의 빛을 따른다',self.begin_knots)],speaker='루네아',image='reflection',zoom=(1.18,1.08))
+          '그림자가 내 목소리를 흉내 내. 내 이름을 지키려면 부적의 빛을 따라와 줘.',
+          [('부적을 살핀다',self.begin_knots)],speaker='루네아',image='reflection',zoom=(1.18,1.08))
 
     def begin_knots(self):
         self.knot=0;self.knots()
@@ -37,9 +37,8 @@ class RescueStory:
     def knots(self,wrong=False):
         names=['초승달','별','원'];signals=['가늘게 굽은 달빛','작게 깜빡이는 별빛','천천히 닫히는 둥근 빛']
         correct=[0,1,2][self.knot]
-        text=(('그림자가 손목을 잡아당겼다. 소년은 힘을 풀고 한 걸음 물러섰다.\n' if wrong else '')+
-              f'부적에서 {signals[self.knot]}이 떠오른다. 물속의 목소리는 다른 문양을 잡으라 속삭인다.\n눈앞의 빛과 같은 문양을 골라 연결을 풀자.')
-        options=[(name+' 문양의 빛을 잇는다',lambda i=i:self.touch(i)) for i,name in enumerate(names)]
+        text=('다른 문양을 골랐다. 다시 보자.\n' if wrong else '')+f'부적에서 {signals[self.knot]}이 떠오른다.'
+        options=[(name,lambda i=i:self.touch(i)) for i,name in enumerate(names)]
         self.show(f'물결의 매듭 · {self.knot+1} / 3',text,options,image='reflection',zoom=(1.07,1.13),fx='seal')
         self.s.modal['correct_choice']=correct
         if wrong:self.s.modal['cine']['shake']=True
@@ -53,8 +52,8 @@ class RescueStory:
 
     def force(self):
         self.show('그림자와 부적 사이',
-          '검을 가까이 대자 검은 실이 날을 향해 몰려든다. 검은 그림자를 베기보다 삼키려 한다.\n지금 끊으면 소녀는 빠져나오지만, 이름을 지키던 부적도 다칠 수 있다.',
-          [('위험을 감수하고 한 번에 끊는다',self.force_pull),('검을 거두고 빛의 신호를 살핀다',self.listen)],image='pull',zoom=(1.14,1.04))
+          '지금 베면 소녀를 구할 수 있다. 부적에도 금이 갈 수 있다.',
+          [('검은 실을 벤다',self.force_pull),('빛의 신호를 살핀다',self.listen)],image='pull',zoom=(1.14,1.04))
 
     def force_pull(self):
         self.mode='force';self.pull()
@@ -91,4 +90,8 @@ class RescueStory:
         self.s.rescue=None
 
     def finish(self):
-        self.s.rescue=None;self.s.close_modal()
+        if self.s.story_only:
+            self.s.leave_story()
+        else:
+            self.s.rescue=None
+            self.s.close_modal()

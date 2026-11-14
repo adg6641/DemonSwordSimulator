@@ -4,6 +4,7 @@ from pathlib import Path
 import copy
 import json
 import secrets
+from campaign_data import PAGES
 
 ENDINGS = {
     'D1': ('함께 맞는 새벽', '둘은 검의 힘을 문양에 돌려주고, 평범한 사람으로 새 아침을 맞았다.'),
@@ -22,8 +23,10 @@ ENDINGS = {
 class Run:
     seed: int = field(default_factory=lambda: secrets.randbelow(2**31))
     stage: int = 0
+    page: int = 0
     unlocked: int = 0
     level: int = 1
+    growth_offered: int = 1
     xp: int = 0
     earned: int = 0
     unspent: int = 0
@@ -54,6 +57,12 @@ class Run:
         run = cls(**{f.name: data[f.name] for f in fields(cls) if f.name in data})
         if not 0 <= run.stage < 8 or not 1 <= run.level <= 99 or run.unspent < 0:
             raise ValueError('잘못된 저장 수치')
+        if not 0 <= run.page < len(PAGES[run.stage]):
+            raise ValueError('잘못된 구역')
+        if 'page' not in data and run.stage==7 and run.has('boss_won'):
+            run.page=1
+        if 'growth_offered' not in data and not run.unspent and run.path:
+            run.growth_offered=run.level
         if set(run.spent) != {'attack', 'magic', 'vitality', 'focus'} or any(v < 0 for v in run.spent.values()):
             raise ValueError('잘못된 능력치')
         return run

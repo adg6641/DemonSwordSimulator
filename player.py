@@ -31,7 +31,9 @@ class Player:
     RUN_SPEED = 330.0
     CROUCH_SPEED = 85.0
     AIR_SPEED = 285.0
-    DASH_SPEED = 730.0
+    DASH_DISTANCE = 122.0
+    DASH_CLIP_TIMES = {'dash_start': .125, 'dash_ground': .30, 'dash_end': 8/48, 'dash_air': .30}
+    DASH_DISTANCE_SHARES = {'dash_start': .13, 'dash_ground': .72, 'dash_end': .15, 'dash_air': 1.0}
     DASH_ATTACK_SPEED = 760.0
     BODY_HEIGHT = 180
     DASH_ATTACK_GRACE = 0.4
@@ -170,15 +172,36 @@ class Player:
                 self.dash_attack_remaining = 0.0
                 self.mode, self.gait = 'dash', None
                 if self.grounded:
-                    self.animation.play('dash_start', fps=self.animation.clips['dash_start']['frameCount']/.125)
+                    self.play_dash('dash_start')
                 else:
                     self.air_dash_ready = False
                     self.vy = 0.0
-                    self.animation.play('dash_air', fps=self.animation.clips['dash_air']['frameCount']/.3, once=True)
+                    self.play_dash('dash_air')
+
         elif key == SDLK_z and self.magic_unlocked and self.mode == 'free' and self.grounded:
             self.dash_attack_remaining = 0.0
             self.mode, self.gait = 'magic', None
             self.animation.play('magic_charge')
+
+    def play_dash(self, name):
+        self.animation.play(name, fps=self.animation.clips[name]['frameCount']/self.DASH_CLIP_TIMES[name],
+                            once=True,start_frame=0)
+
+    def dash_step(self, dt):
+        """지상과 공중에서 같은 총거리를 쓰고, 회복 동작에서는 제동한다."""
+        if self.mode != 'dash':
+            return 0.0
+        name = self.animation.name
+        if name not in self.DASH_DISTANCE_SHARES:
+            return 0.0
+        duration = self.animation.duration
+        start = min(1, self.animation.elapsed/duration)
+        end = min(1, (self.animation.elapsed+dt)/duration)
+        if name in {'dash_start','dash_air'}:
+            start, end = (t*t*(3-2*t) for t in (start,end))
+        elif name=='dash_end':
+            start, end = (2*t-t*t for t in (start,end))
+        return self.facing * self.DASH_DISTANCE * self.DASH_DISTANCE_SHARES[name] * (end-start)
 
     def _finish_combo(self):
         name = self.animation.name
@@ -215,10 +238,10 @@ class Player:
                 self.mode = 'free'
         elif self.mode == 'dash' and anim.finished:
             if anim.name == 'dash_start':
-                anim.play('dash_ground', fps=anim.clips['dash_ground']['frameCount']/.3, once=True)
+                self.play_dash('dash_ground')
             elif anim.name == 'dash_ground':
                 self.dash_attack_remaining = self.DASH_ATTACK_GRACE
-                anim.play('dash_end', fps=anim.clips['dash_end']['frameCount']/(8/48))
+                self.play_dash('dash_end')
             elif anim.name == 'dash_air':
                 self.dash_attack_remaining = self.DASH_ATTACK_GRACE
                 anim.play('air_dash_recovery')
@@ -320,6 +343,8 @@ class Player:
         return self.facing * self.COMBO_STEP[self.combo_step-1] * max(0, moved)
 
     def update(self, dt, keys):
+        dashing = self.mode == 'dash'
+        dash_advance = self.dash_step(dt)
         keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
         self.crouching=(SDLK_DOWN in keys and self.grounded and self.mode=='free') or self.animation.name in CROUCH_POSES
         self.drop_timer=max(0,self.drop_timer-dt)
@@ -340,7 +365,7 @@ class Player:
         self._update_action(keys)
 
         speed = 0.0
-        if self.mode in {'free', 'jump'}:
+        if self.mode in {'free', 'jump'} and not dashing:
             if direction:
                 self.facing = direction
             if not self.grounded:
@@ -361,18 +386,6 @@ class Player:
                         speed *= .62+.38*easing
                     elif name in {'walk_to_run','run_start'}:
                         speed=direction*(self.WALK_SPEED+(self.RUN_SPEED-self.WALK_SPEED)*easing)
-        elif self.mode == 'dash':
-            name = self.animation.name
-            phase = self.animation.progress
-            if name == 'dash_start':
-                factor = .10 + .72 * (phase * phase * (3 - 2 * phase))
-            elif name == 'dash_ground':
-                factor = .82 + .23 * sin(pi * phase) - .22 * phase
-            elif name == 'dash_end':
-                factor = .60 * (1 - phase * phase * (3 - 2 * phase))
-            else:
-                factor = 1.0
-            speed = self.facing * self.DASH_SPEED * factor
         elif self.mode == 'action':
             if self.attack_pending:
                 speed=self.brake_speed*(1-self.animation.progress)**2
@@ -381,8 +394,8 @@ class Player:
                 speed = self.facing * self.DASH_ATTACK_SPEED * sin(pi*(phase-.16)/.52)**.86 if .16<phase<.68 else 0
             elif not self.grounded:
                 speed = direction * self.AIR_SPEED
-        self.x += speed * dt + combo_advance
-        self.horizontal_speed=speed
+        self.x += speed * dt + combo_advance + dash_advance
+        self.horizontal_speed=dash_advance/dt if dashing and dt else speed
         airborne = not self.grounded
         floating_dash = self.mode == 'dash' and self.animation.name == 'dash_air'
         if airborne and not floating_dash:

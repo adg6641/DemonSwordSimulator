@@ -1,10 +1,14 @@
 """검날을 따라가는 검기, 검은 재 오라와 독립적으로 날아가는 마검파."""
 
+from collections import deque
+from ctypes import c_int
 import json
 from math import atan2, ceil, cos, hypot, sin, pi
 
 import pico2d.pico2d as engine
-from pico2d import SDL_Rect, SDL_RenderSetClipRect, SDL_SetTextureColorMod
+from pico2d import (SDL_Rect, SDL_RenderSetClipRect, SDL_SetTextureColorMod,
+                    SDL_BLENDMODE_BLEND, SDL_Color, SDL_RenderGeometry,
+                    SDL_SetRenderDrawBlendMode, SDL_Vertex)
 
 from animation import draw_region, load_pixel_image
 from hit_geometry import effect_hits, blade_hits, sweep_ages
@@ -25,6 +29,9 @@ class CombatEffects:
     GROUND_COMBO = {'slash_1', 'slash_2', 'slash_3'}
     COMBO_WAVE_FORWARD = 96
     COMBO_WAVE_HEIGHT = 94
+    TRAIL_LIFETIME = .145
+    TRAIL_COLORS = ((239,122,107),(251,161,99),(255,211,118),(146,225,166),
+                    (132,196,242),(146,160,254),(208,156,255))
 
     def __init__(self, folder):
         self.folder = folder
@@ -41,6 +48,9 @@ class CombatEffects:
         self.bursts = []
         self.serial, self.fired = -1, False
         self.trail=None
+        self.blade_samples=deque(maxlen=28)
+        self.blade_glints=deque(maxlen=8)
+        self.glint_serial=-1
         self.last_hit_state = None
         for name, frames in self.settings['effectGeometry'].items():
             self.radii[name] = max(4.0, *(hypot(x - f['origin'][0], y - f['origin'][1])
@@ -51,6 +61,77 @@ class CombatEffects:
 
     def activate(self):
         self.buff_remaining = self.buff_duration
+
+    def clear_blade_trail(self):
+        self.blade_samples.clear()
+        self.blade_glints.clear()
+        self.glint_serial=-1
+
+    def record_blade_trail(self,player,geometry):
+        while self.blade_samples and self.time-self.blade_samples[0][0]>self.TRAIL_LIFETIME+.03:
+            self.blade_samples.popleft()
+        while self.blade_glints and self.time-self.blade_glints[0][0]>.20:
+            self.blade_glints.popleft()
+        if not geometry:
+            return
+        anim=player.animation
+        pose=self.blade(anim)
+        if not pose:
+            return
+        hx,hy=pose['hand']
+        tx,ty=pose['tip']
+        hand=(player.x+player.facing*hx,player.y-hy)
+        tip=(player.x+player.facing*tx,player.y-ty)
+        item=(self.time,anim.serial,player.facing,self.level,hand,tip)
+        self.blade_samples.append(item)
+        timing=self.timing(anim,self.ATTACKS[anim.name])
+        if self.glint_serial!=anim.serial and anim.pose_time*8/anim.clip['frameCount'] >= timing['peak']:
+            self.glint_serial=anim.serial
+            angle=atan2(hand[1]-tip[1],tip[0]-hand[0])
+            self.blade_glints.append((self.time,*tip,angle,self.level))
+
+    def draw_blade_trail(self,camera):
+        vertices=[]
+        indices=[]
+        for old,new in zip(self.blade_samples,list(self.blade_samples)[1:]):
+            if old[1:4]!=new[1:4] or new[0]-old[0]>.045:
+                continue
+            color=self.TRAIL_COLORS[new[3]-1]
+            start=len(vertices)
+            for moment,_,_,level,hand,tip in (old,new):
+                age=clamp((self.time-moment)/self.TRAIL_LIFETIME)
+                fade=(1-age)**1.65
+                for fraction,opacity,tint in ((.30,0,color),(.80,.30,color),
+                                              (.965,.64,(245,234,248)),(1.015,0,color)):
+                    x=hand[0]+(tip[0]-hand[0])*fraction-camera.x
+                    y=hand[1]+(tip[1]-hand[1])*fraction-camera.y
+                    vertices.append((x,camera.height-y,SDL_Color(*tint,round(255*opacity*fade))))
+            for i in range(3):
+                a=start+i
+                indices.extend((a,a+4,a+1,a+1,a+4,a+5))
+        if vertices:
+            batch=(SDL_Vertex*len(vertices))()
+            for vertex,(x,y,color) in zip(batch,vertices):
+                vertex.position.x=x
+                vertex.position.y=y
+                vertex.color=color
+            elements=(c_int*len(indices))(*indices)
+            SDL_SetRenderDrawBlendMode(engine.renderer,SDL_BLENDMODE_BLEND)
+            SDL_RenderGeometry(engine.renderer,None,batch,len(batch),elements,len(indices))
+        for moment,x,y,angle,level in self.blade_glints:
+            age=(self.time-moment)/.20
+            if age>=1:
+                continue
+            for name,scale,alpha in (('trail_glint',.40,.52),('trail_sparks',.43,.39)):
+                im=self.images.get(name)
+                if im is None:
+                    im=load_pixel_image(self.folder/'trail'/f'{name}.png',smooth=True)
+                    self.images[name]=im
+                SDL_SetTextureColorMod(im.texture,*self.TRAIL_COLORS[level-1])
+                im.opacify(alpha*(1-age)**2)
+                draw_region(im,(0,0,im.w,im.h),x-camera.x,y-camera.y,
+                            scale*(1+.26*age),1,angle)
+                im.opacify(1)
 
     def burst(self, name, x, y, facing=1):
         clip = self.clips['hero_'+name]
@@ -105,6 +186,7 @@ class CombatEffects:
             if self.trail['age'] >= self.trail['duration']:
                 self.trail = None
         g=self.strike_geometry(player)
+        self.record_blade_trail(player,g)
         if g:
             self.trail=dict(geometry=g,anchor=(player.x,player.y),facing=player.facing,age=0,
                             serial=animation.serial,name=animation.name,duration=g['trailDuration'])
@@ -346,14 +428,28 @@ class CombatEffects:
         zoom=getattr(camera,'zoom',1)
         bottom = round(camera.height + camera.y)
         SDL_RenderSetClipRect(engine.renderer, SDL_Rect(0, 0, round(camera.width/zoom), max(0, bottom)))
+        self.draw_blade_trail(camera)
         pose = self.blade(player.animation)
         if pose and player.mode != 'dead':
             self._concentrate(player, camera, pose)
             state=self.strike_state(player)
-            if state:self._draw_geometry(state['geometry'],state['anchor'],camera,state['facing'])
+            if state:
+                geometry=dict(state['geometry'])
+                geometry['alpha']*=.29+.07*self.level
+                self._draw_geometry(geometry,state['anchor'],camera,state['facing'])
         for wave in self.waves:
             self._draw_geometry(self.wave_geometry(wave), (wave['x'], wave['y']), camera, wave['facing'])
         for name,x,y,facing,age in self.bursts:
+            if name=='hero_land':
+                im=self.images.get('landing_dust')
+                if im is None:
+                    im=load_pixel_image(self.folder.parent/'polish/terrain/landing_dust.png',smooth=True)
+                    self.images['landing_dust']=im
+                scale=.29+min(.24,age*.9)
+                im.opacify(.64*max(0,1-age/.25))
+                draw_region(im,(0,0,im.w,im.h),x-camera.x,y-camera.y+im.h*scale/2,scale,facing)
+                im.opacify(1)
+                continue
             clip=self.clips[name]
             frame=min(clip['frameCount']-1,int(age*clip['fps']))
             origin=clip['emitter']

@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 from math import sin, hypot
 from game_assets import Motion
 from navigation import waypoint
+from player import Player
 
 
 @dataclass
@@ -220,6 +221,8 @@ class Enemy:
 class Companion:
     SCALE = .56
     BODY_HEIGHT = 165
+    JUMP_SPEED = Player.JUMP_SPEED
+    GRAVITY = Player.GRAVITY
     def __init__(self, assets, x):
         self.assets = assets
         self.x, self.y, self.vy = x, 0.0, 0.0
@@ -276,8 +279,9 @@ class Companion:
         # 발판과 낮은 엄폐물에 앞서 점프. 주인공과 같은 중력·착지 판정을 쓴다.
         direction = 1 if dx > 0 else -1
         obstacle = any(o['kind'] == 'cover' and abs(o['x']-self.x)<140 and (o['x']-self.x)*direction>0 for o in scene.objects)
-        if self.grounded and not crouch and abs(dx)<300 and (target_y>self.y+18 or p.y>self.y+75 and p.floor_y<=self.floor_y+165 or obstacle):
-            self.vy = 900
+        following_jump=self.nav_target is None and p.y>self.y+75 and p.floor_y<=self.floor_y+165
+        if self.grounded and not crouch and abs(dx)<300 and (target_y>self.y+18 or following_jump or obstacle):
+            self.vy = self.JUMP_SPEED
             launched = True
             self.motion.play('lunea/jump_takeoff')
             if not cinematic:
@@ -290,8 +294,8 @@ class Companion:
             self.ground_speed += change
             self.x += max(-abs(dx), min(abs(dx), self.ground_speed*dt))
         if self.vy or self.y>self.floor_y:
-            self.y += self.vy*dt-2200*dt*dt/2
-            self.vy -= 2200*dt
+            self.y += self.vy*dt-self.GRAVITY*dt*dt/2
+            self.vy -= self.GRAVITY*dt
         scene.platforms(old_y, self)
         scene.blockers(old_x, self, crouch)
         if self.y <= self.floor_y and self.vy <= 0:

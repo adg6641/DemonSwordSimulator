@@ -1,5 +1,5 @@
 """플레이 화면·선택창·성장창·기록책. 그림은 생성한 PNG, 글자는 선명한 글꼴로 표시한다."""
-from math import atan2, sin
+from math import atan2, hypot, sin
 import pico2d.pico2d as engine
 from pico2d import SDL_RenderSetScale, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderDrawRect
 from interface import fill
@@ -7,6 +7,7 @@ from animation import draw_region, load_pixel_image
 from progress import Run, ENDINGS
 from story import CHAPTERS, objective, choice_label
 from combat import Companion
+from campaign_data import BACKDROP_SUPPORTS
 
 CREAM = (237, 228, 209)
 MUTED = (170, 191, 187)
@@ -35,7 +36,7 @@ class CampaignView:
         self.a, self.ui = scene.assets, scene.ui
         self.wrap_cache = {}
         self.hud_icons = load_pixel_image(scene.root/'assets/ui/hud_icons.png', smooth=True)
-        self.guide_arrow = self.a.image(self.a.clips['polish/guide_arrow']['path'])
+        self.guide_arrow = self.a.image(self.a.clips['polish/route_pointer']['path'])
 
     def icon(self, index, x, y, size=20):
         self.hud_icons.clip_draw(index*64, 0, 64, 64, round(x), round(y), size, size)
@@ -181,10 +182,11 @@ class CampaignView:
         s = self.s
         s.world.draw(s.camera)
         # 발판 뒤의 받침 구조는 원경과 인물 사이 깊이에 놓는다.
-        support_x = ((2250,2810) if s.run.stage==2 else (1700,2710)) if s.region=='explore' and s.run.stage<7 else ()
-        for x in support_x:
-            if abs(x-s.camera.x-640)<1100:
-                s.assets.draw('v3/support_wood' if s.run.stage<3 else 'v3/support_stone',x,0,s.camera,alpha=.78)
+        if s.region=='explore':
+            key=f'polish/stage_support_{s.run.stage+1}'
+            for x,y,height in BACKDROP_SUPPORTS[s.run.stage]:
+                if abs(x-s.camera.x-640)<1050:
+                    s.assets.draw(key,x,y,s.camera,height/s.assets.clips[key]['height'],alpha=.64)
         # 발판은 인물과 그 위의 보상보다 먼저 그린다.
         for o in s.objects:
             if o['kind'] in {'platform','crawl','decor'}:
@@ -377,19 +379,32 @@ class CampaignView:
     def route_arrow(self,x,y):
         s=self.s
         p=s.player
-        if abs(p.x-x)<120 and abs(p.y-y)<53:
-            return
-        dx,dy=x-p.x,y-p.y
-        if abs(dy)<50:
-            dy=0
-        if abs(dx)<70:
-            dx=0
-        angle=atan2(-dy,dx)
-        player_x,_=s.camera.project(p.x,p.y)
-        # 안내 위치는 HUD 아래의 바깥쪽에 두고, 방향은 실제 목표만 사용한다.
-        ax = 1196 if player_x<640 else 84
+        target=next((o for o in s.objects if o['kind'] in INTERACTIONS
+                     and o.get('actor_x',o['x'])==x and o['y']==y),None)
+        gx,gy=s.camera.project(x,y)
+        if target and 42<gx<1238 and 38<gy<670:
+            kind=target['kind']
+            height=373 if kind=='door' else 214 if target.get('npc') else INTERACTIONS[kind][1]+36
+            ax,ay=s.camera.project(x,y+height)
+            if s.nearest() is target and p.grounded:
+                ay+=34
+            # Mark the prop's top; tuck below the HUD where their screen areas overlap.
+            ceiling=568 if ax<368 or ax>796 else 669
+            ay=max(126,min(ceiling,ay))
+            angle=1.5708
+        else:
+            px,py=s.camera.project(p.x,p.y+117)
+            dx,dy=gx-px,gy-(py-117*s.camera.zoom)
+            distance=max(1,hypot(dx,dy))
+            if distance<89:
+                return
+            ax=max(48,min(1232,px+dx/distance*160))
+            ay=max(138,min(513,py+dy/distance*160))
+            angle=atan2(-dy,dx)
         im=self.guide_arrow
-        draw_region(im,(0,0,im.w,im.h),ax,498,.70,1,angle)
+        im.opacify(.87+.07*sin(s.time*3))
+        draw_region(im,(0,0,im.w,im.h),ax,ay,72/im.w,1,angle)
+        im.opacify(1)
 
     def crawl_markers(self):
         s=self.s

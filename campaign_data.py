@@ -54,10 +54,18 @@ PLATFORM_ROUTES = (
 )
 
 SIDE_PLATFORMS = (
-    ((560,158,168),(3210,143,288)), ((590,162,168),(3250,133,224)),
-    ((550,168,168),(3100,153,224)), ((520,157,168),(3230,145,288)),
+    ((560,144,168),(3210,143,288)), ((590,143,168),(3250,133,224)),
+    ((550,143,168),(3100,145,224)), ((520,145,168),(3230,145,288)),
     ((625,155,168),(3280,133,224)), ((470,146,168),(3260,144,224)),
     ((570,155,168),(3250,148,288)), ((760,150,168),(3490,150,168)),
+)
+
+# 멀리 가는 발판은 가장자리에서 점프로 닿는 위치를 기준으로 왕복한다.
+BACKDROP_SUPPORTS = (
+    ((1060,0,485),(2390,0,555)), ((1265,0,510),(2600,0,550)),
+    ((1490,80,515),(2765,0,590)), ((1460,0,605),(2675,90,530)),
+    ((1550,0,560),(2860,100,560)), ((1650,0,635),(3135,140,565)),
+    ((1720,60,600),(2705,35,655)), ((1480,0,660),(3080,110,675)),
 )
 
 
@@ -119,13 +127,16 @@ def objects(stage):
     for i,entry in enumerate(left_route+right_route):
         result.append(platform(stage,f'upper_{i}',*entry))
     lift_x=(835,850,1170,880,1020,940,1020,880)[stage]
-    drift_x=(3150,3110,3220,3200,3280,3250,3260,3430)[stage]
-    gap_x=(2180,2090,2170,2210,2110,2140,2080,2310)[stage]
+    drift_x,side_y,_=SIDE_PLATFORMS[stage][1]
+    drift_y=side_y+124
+    gap_x,gap_base,gap_width=left_route[3]
+    gap_x+=gap_width//2+104
+    gap_y=gap_base+82
     spring_x=(1990,2210,2160,1970,2140,2000,1900,2320)[stage]
     result += [
         platform(stage,'lift',lift_x,114,168,motion='lift',base_x=lift_x,base_y=114,travel=225,period=9),
-        platform(stage,'moving',drift_x,310,224,motion='moving',base_x=drift_x,base_y=310,travel=118,period=7),
-        platform(stage,'crumble',gap_x,551,120,motion='crumble',stepped=0,disabled_until=0),
+        platform(stage,'moving',drift_x,drift_y,224,motion='moving',base_x=drift_x,base_y=drift_y,travel=87,period=7),
+        platform(stage,'crumble',gap_x,gap_y,120,motion='crumble',stepped=0,disabled_until=0),
         dict(id='spring',kind='spring',x=spring_x,y=0,asset='spring'),
         dict(id='upper_chest',kind='chest',x=right_route[-1][0],y=right_route[-1][1],asset='reward_chest__reward_chest'),
         dict(id='upper_camp',kind='camp',x=1900,y=700,asset='campfire__campfire'),

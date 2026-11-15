@@ -212,6 +212,14 @@ class SaveStore:
     def restore(self):
         return copy.deepcopy(self.checkpoint)
 
+    def discard_checkpoint(self):
+        previous=self.checkpoint
+        self.checkpoint = None
+        self._write()
+        if self.error:
+            self.checkpoint=previous
+        return not self.error
+
     def finish(self, run):
         if not any(r.get('seed') == run.seed for r in self.history):
             self.history.append(run.data())

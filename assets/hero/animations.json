@@ -1,6 +1,6 @@
 {
   "title": "마검사 주인공 애니메이션",
-  "version": 19,
+  "version": 20,
   "conventions": {
     "frameWidth": 768,
     "frameHeight": 640,
@@ -1100,561 +1100,535 @@
       "height": 3840,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 170.17,
+          "weapon": {
+            "hand": [
+              308.4,
+              459.2
+            ],
+            "angle": 2.58,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 3200,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              288.815,
-              463.105
-            ],
-            "angle": 0.4
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 168.74,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 170.17,
           "weapon": {
-            "hidden": false,
             "hand": [
-              288.815,
-              463.105
+              308.4,
+              459.2
             ],
-            "angle": 0.4
+            "angle": 2.58,
+            "hidden": false
           },
           "index": 1,
           "x": 768,
           "yTop": 0,
-          "pico2dY": 3200
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 170.17,
+          "weapon": {
+            "hand": [
+              308.4,
+              459.2
+            ],
+            "angle": 2.58,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 3200,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              288.815,
-              463.105
-            ],
-            "angle": 0.4
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 160.91,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              280.98,
-              468.775
+              299.2,
+              459.6
             ],
-            "angle": 0.26
+            "angle": 2.3,
+            "hidden": false
           },
           "index": 3,
           "x": 2304,
           "yTop": 0,
-          "pico2dY": 3200
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              299.2,
+              459.6
+            ],
+            "angle": 2.3,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 2560,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              280.98,
-              468.775
-            ],
-            "angle": 0.26
-          },
-          "bodyHeight": 160.91,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 160.91,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              280.98,
-              468.775
+              299.2,
+              459.6
             ],
-            "angle": 0.26
+            "angle": 2.3,
+            "hidden": false
           },
           "index": 5,
           "x": 768,
           "yTop": 640,
-          "pico2dY": 2560
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              302.4,
+              456.6
+            ],
+            "angle": 2.43,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 2560,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              271.97,
-              452.71000000000004
-            ],
-            "angle": 0.68
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 168.74,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              271.97,
-              452.71000000000004
+              302.4,
+              456.6
             ],
-            "angle": 0.68
+            "angle": 2.43,
+            "hidden": false
           },
           "index": 7,
           "x": 2304,
           "yTop": 640,
-          "pico2dY": 2560
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              302.4,
+              456.6
+            ],
+            "angle": 2.43,
+            "hidden": false
+          },
           "index": 8,
           "x": 0,
           "yTop": 1280,
           "pico2dY": 1920,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              271.97,
-              452.71000000000004
-            ],
-            "angle": 0.68
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 162.34,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 145.25,
           "weapon": {
-            "hidden": false,
             "hand": [
-              258.575,
-              458.94
+              311.2,
+              463.0
             ],
-            "angle": 0.71
+            "angle": 2.54,
+            "hidden": false
           },
           "index": 9,
           "x": 768,
           "yTop": 1280,
-          "pico2dY": 1920
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              311.2,
+              463.0
+            ],
+            "angle": 2.54,
+            "hidden": false
+          },
           "index": 10,
           "x": 1536,
           "yTop": 1280,
           "pico2dY": 1920,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              258.575,
-              458.94
-            ],
-            "angle": 0.71
-          },
-          "bodyHeight": 162.34,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 162.34,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 145.25,
           "weapon": {
-            "hidden": false,
             "hand": [
-              258.575,
-              458.94
+              311.2,
+              463.0
             ],
-            "angle": 0.71
+            "angle": 2.54,
+            "hidden": false
           },
           "index": 11,
           "x": 2304,
           "yTop": 1280,
-          "pico2dY": 1920
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              308.4,
+              457.2
+            ],
+            "angle": 2.49,
+            "hidden": false
+          },
           "index": 12,
           "x": 0,
           "yTop": 1920,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              296.155,
-              464.995
-            ],
-            "angle": 0.68
-          },
-          "bodyHeight": 166.61,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 166.61,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              296.155,
-              464.995
+              308.4,
+              457.2
             ],
-            "angle": 0.68
+            "angle": 2.49,
+            "hidden": false
           },
           "index": 13,
           "x": 768,
           "yTop": 1920,
-          "pico2dY": 1280
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              308.4,
+              457.2
+            ],
+            "angle": 2.49,
+            "hidden": false
+          },
           "index": 14,
           "x": 1536,
           "yTop": 1920,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              296.155,
-              464.995
-            ],
-            "angle": 0.68
-          },
-          "bodyHeight": 166.61,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 160.2,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              294.705,
-              468.775
+              305.2,
+              453.6
             ],
-            "angle": 0.31
+            "angle": 2.28,
+            "hidden": false
           },
           "index": 15,
           "x": 2304,
           "yTop": 1920,
-          "pico2dY": 1280
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              305.2,
+              453.6
+            ],
+            "angle": 2.28,
+            "hidden": false
+          },
           "index": 16,
           "x": 0,
           "yTop": 2560,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              294.705,
-              468.775
-            ],
-            "angle": 0.31
-          },
-          "bodyHeight": 160.2,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 160.2,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              294.705,
-              468.775
+              305.2,
+              453.6
             ],
-            "angle": 0.31
+            "angle": 2.28,
+            "hidden": false
           },
           "index": 17,
           "x": 768,
           "yTop": 2560,
-          "pico2dY": 640
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              306.2,
+              446.6
+            ],
+            "angle": 2.41,
+            "hidden": false
+          },
           "index": 18,
           "x": 1536,
           "yTop": 2560,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              288.2,
-              453.655
-            ],
-            "angle": 0.24
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 168.74,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 168.03,
           "weapon": {
-            "hidden": false,
             "hand": [
-              288.2,
-              453.655
+              306.2,
+              446.6
             ],
-            "angle": 0.24
+            "angle": 2.41,
+            "hidden": false
           },
           "index": 19,
           "x": 2304,
           "yTop": 2560,
-          "pico2dY": 640
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              306.2,
+              446.6
+            ],
+            "angle": 2.41,
+            "hidden": false
+          },
           "index": 20,
           "x": 0,
           "yTop": 3200,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              288.2,
-              453.655
-            ],
-            "angle": 0.24
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 171.59,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 143.82,
           "weapon": {
-            "hidden": false,
             "hand": [
-              309.605,
-              446.655
+              296.4,
+              476.6
             ],
-            "angle": 0.28
+            "angle": 2.51,
+            "hidden": false
           },
           "index": 21,
           "x": 768,
           "yTop": 3200,
-          "pico2dY": 0
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 143.82,
+          "weapon": {
+            "hand": [
+              296.4,
+              476.6
+            ],
+            "angle": 2.51,
+            "hidden": false
+          },
           "index": 22,
           "x": 1536,
           "yTop": 3200,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              309.605,
-              446.655
-            ],
-            "angle": 0.28
-          },
-          "bodyHeight": 171.59,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 171.59,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 143.82,
           "weapon": {
-            "hidden": false,
             "hand": [
-              309.605,
-              446.655
+              296.4,
+              476.6
             ],
-            "angle": 0.28
+            "angle": 2.51,
+            "hidden": false
           },
           "index": 23,
           "x": 2304,
           "yTop": 3200,
-          "pico2dY": 0
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
         }
       ],
-      "sha256": "389f8922e00f94ed9663a261cbc43261bd58c06c6b29432e7af989e19f795303",
-      "frameDurations": [
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325,
-        0.0325
-      ]
+      "sha256": "f280c10398bf8a44ea1a9cbd431dc01fc4d2385c0b7905219c3e75f3ce1bc193"
     },
     {
       "id": "crouch_idle",
@@ -2081,183 +2055,183 @@
       "height": 1280,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              290.94,
+              484.33
+            ],
+            "angle": 2.13,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              269.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              290.94,
+              484.33
+            ],
+            "angle": 2.25,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              269.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.38,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              269.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.43,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              269.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.48,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              264.0,
-              449.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 164.47,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.52,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              264.0,
-              449.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 164.47,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.57,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              264.0,
-              449.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 164.47,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.59,
+            "hidden": false
+          },
           "index": 7,
           "x": 2304,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              264.0,
-              449.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 164.47,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         }
       ],
-      "sha256": "4e6b576c1ea18e4db85dfb068591a8c2e2eb13e551a0339240775c10b435e619"
+      "sha256": "5e0c664ab5e6915b6dcbf5b9e6117ad64cd025e7da486e3293d745565c1886da"
     },
     {
       "id": "jump_apex",
@@ -2483,183 +2457,183 @@
       "height": 1280,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.59,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              273.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.62,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              273.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 154.5,
+          "weapon": {
+            "hand": [
+              304.74,
+              460.77
+            ],
+            "angle": 2.56,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              273.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 154.5,
+          "weapon": {
+            "hand": [
+              304.74,
+              460.77
+            ],
+            "angle": 2.48,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              273.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 154.5,
+          "weapon": {
+            "hand": [
+              304.74,
+              460.77
+            ],
+            "angle": 2.4,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              277.0,
-              444.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 172.3,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              299.47,
+              457.71
+            ],
+            "angle": 2.59,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              277.0,
-              444.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 172.3,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              301.47,
+              457.71
+            ],
+            "angle": 2.63,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              277.0,
-              444.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 172.3,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              303.47,
+              457.71
+            ],
+            "angle": 2.65,
+            "hidden": false
+          },
           "index": 7,
           "x": 2304,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              277.0,
-              444.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 172.3,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         }
       ],
-      "sha256": "c29cd13bd545892db8259a762b0b54506657c7ff6644fb9637ef5f585c04d005"
+      "sha256": "34ec7a9e5a27dae087f8b4973637150770e501010f968ef38b9fa23e3fd98822"
     },
     {
       "id": "dash_ground",
@@ -2684,271 +2658,271 @@
       "height": 1920,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.61,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              236.765,
-              497.295
-            ],
-            "angle": 2.79
-          },
-          "bodyHeight": 136.7,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.61,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              236.765,
-              497.295
-            ],
-            "angle": 2.79
-          },
-          "bodyHeight": 136.7,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.61,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              236.765,
-              497.295
-            ],
-            "angle": 2.79
-          },
-          "bodyHeight": 136.7,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              288.51,
+              438.25
+            ],
+            "angle": 2.56,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              237.66,
-              459.705
-            ],
-            "angle": 2.83
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              288.51,
+              438.25
+            ],
+            "angle": 2.56,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              237.66,
-              459.705
-            ],
-            "angle": 2.83
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              288.51,
+              438.25
+            ],
+            "angle": 2.56,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              237.66,
-              459.705
-            ],
-            "angle": 2.83
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              296.51,
+              441.17
+            ],
+            "angle": 2.54,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              237.66,
-              459.705
-            ],
-            "angle": 2.83
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              296.51,
+              441.17
+            ],
+            "angle": 2.54,
+            "hidden": false
+          },
           "index": 7,
           "x": 2304,
           "yTop": 640,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              237.66,
-              459.705
-            ],
-            "angle": 2.83
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              304.47,
+              457.71
+            ],
+            "angle": 2.65,
+            "hidden": false
+          },
           "index": 8,
           "x": 0,
           "yTop": 1280,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              237.66,
-              459.705
-            ],
-            "angle": 2.83
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              304.47,
+              457.71
+            ],
+            "angle": 2.65,
+            "hidden": false
+          },
           "index": 9,
           "x": 768,
           "yTop": 1280,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              244.82,
-              470.445
-            ],
-            "angle": 2.77
-          },
-          "bodyHeight": 154.5,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 158.78,
+          "weapon": {
+            "hand": [
+              274.49,
+              467.26
+            ],
+            "angle": 2.72,
+            "hidden": false
+          },
           "index": 10,
           "x": 1536,
           "yTop": 1280,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              244.82,
-              470.445
-            ],
-            "angle": 2.77
-          },
-          "bodyHeight": 154.5,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 158.78,
+          "weapon": {
+            "hand": [
+              274.49,
+              467.26
+            ],
+            "angle": 2.72,
+            "hidden": false
+          },
           "index": 11,
           "x": 2304,
           "yTop": 1280,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              244.82,
-              470.445
-            ],
-            "angle": 2.77
-          },
-          "bodyHeight": 154.5,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         }
       ],
-      "sha256": "fc712571a8c880a3c350693947670e26a5496dc7a47d4371e35e38a79c5f15a0"
+      "sha256": "44f6dfd6e906fcfb784789500871f6848741f4fb2f4c2f5cc49bc655c5897b0b"
     },
     {
       "id": "dash_air",
@@ -3248,9 +3222,9 @@
       "motion": "one complete horizontal sword slash: neutral low sword, draw sword back left, coil torso, sword crosses front right, full rightward horizontal extension, torso follows, decelerate, finish sword extended low right; no magical slash trail",
       "index": 11,
       "file": "HD/slash_1.png",
-      "frameCount": 16,
+      "frameCount": 32,
       "columns": 4,
-      "rows": 4,
+      "rows": 8,
       "frameWidth": 768,
       "frameHeight": 640,
       "pivot": {
@@ -3259,13 +3233,13 @@
       },
       "facing": "right",
       "width": 3072,
-      "height": 2560,
+      "height": 5120,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3287,7 +3261,29 @@
           "index": 1,
           "x": 768,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              301.0,
+              457.0
+            ],
+            "angle": 0.391,
+            "hidden": false
+          },
+          "bodyHeight": 174.44,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "yTop": 0,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3306,10 +3302,32 @@
           ]
         },
         {
-          "index": 2,
-          "x": 1536,
+          "index": 3,
+          "x": 2304,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              301.367,
+              452.866
+            ],
+            "angle": 0.49,
+            "hidden": false
+          },
+          "bodyHeight": 171.59,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3328,10 +3346,32 @@
           ]
         },
         {
-          "index": 3,
-          "x": 2304,
-          "yTop": 0,
-          "pico2dY": 1920,
+          "index": 5,
+          "x": 768,
+          "yTop": 640,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              301.367,
+              452.866
+            ],
+            "angle": 0.7,
+            "hidden": false
+          },
+          "bodyHeight": 171.59,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3350,10 +3390,32 @@
           ]
         },
         {
-          "index": 4,
-          "x": 0,
+          "index": 7,
+          "x": 2304,
           "yTop": 640,
-          "pico2dY": 1280,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              283.18,
+              445.372
+            ],
+            "angle": 1.16,
+            "hidden": false
+          },
+          "bodyHeight": 167.32,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3372,10 +3434,32 @@
           ]
         },
         {
-          "index": 5,
+          "index": 9,
           "x": 768,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              283.18,
+              445.372
+            ],
+            "angle": 1.88,
+            "hidden": false
+          },
+          "bodyHeight": 167.32,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 10,
+          "x": 1536,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3394,10 +3478,32 @@
           ]
         },
         {
-          "index": 6,
-          "x": 1536,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              311.14,
+              401.44
+            ],
+            "angle": -2.92,
+            "hidden": false
+          },
+          "index": 11,
+          "x": 2304,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3407,11 +3513,7 @@
               437.973
             ],
             "angle": -2.78,
-            "hidden": false,
-            "turnWindow": [
-              0.3,
-              0.94
-            ]
+            "hidden": false
           },
           "bodyHeight": 165.9,
           "registration": [
@@ -3420,10 +3522,32 @@
           ]
         },
         {
-          "index": 7,
-          "x": 2304,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 168.74,
+          "weapon": {
+            "hand": [
+              370.28,
+              397.34
+            ],
+            "angle": -2.03,
+            "hidden": false
+          },
+          "index": 13,
+          "x": 768,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 14,
+          "x": 1536,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3433,11 +3557,7 @@
               437.973
             ],
             "angle": -1.64,
-            "hidden": false,
-            "turnWindow": [
-              0.39,
-              0.94
-            ]
+            "hidden": false
           },
           "bodyHeight": 165.9,
           "registration": [
@@ -3446,10 +3566,32 @@
           ]
         },
         {
-          "index": 8,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              377.45,
+              418.78
+            ],
+            "angle": -0.88,
+            "hidden": false
+          },
+          "index": 15,
+          "x": 2304,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 16,
           "x": 0,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3468,10 +3610,32 @@
           ]
         },
         {
-          "index": 9,
+          "index": 17,
           "x": 768,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              406.193,
+              402.084
+            ],
+            "angle": -0.13,
+            "hidden": false
+          },
+          "bodyHeight": 161.62,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 18,
+          "x": 1536,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3490,10 +3654,32 @@
           ]
         },
         {
-          "index": 10,
-          "x": 1536,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "index": 19,
+          "x": 2304,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              406.193,
+              402.084
+            ],
+            "angle": -0.05,
+            "hidden": false
+          },
+          "bodyHeight": 161.62,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 20,
+          "x": 0,
+          "yTop": 3200,
+          "pico2dY": 1280,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3512,10 +3698,32 @@
           ]
         },
         {
-          "index": 11,
-          "x": 2304,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "index": 21,
+          "x": 768,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              408.027,
+              406.598
+            ],
+            "angle": 0.08,
+            "hidden": false
+          },
+          "bodyHeight": 157.35,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 22,
+          "x": 1536,
+          "yTop": 3200,
+          "pico2dY": 1280,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3534,10 +3742,32 @@
           ]
         },
         {
-          "index": 12,
+          "index": 23,
+          "x": 2304,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              408.027,
+              406.598
+            ],
+            "angle": 0.19,
+            "hidden": false
+          },
+          "bodyHeight": 157.35,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 24,
           "x": 0,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3556,31 +3786,75 @@
           ]
         },
         {
-          "index": 13,
+          "index": 25,
           "x": 768,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
             "hand": [
-              333.187,
-              474.982
+              377.685,
+              445.669
             ],
-            "angle": 0.59,
+            "angle": 0.34,
             "hidden": false
           },
-          "bodyHeight": 149.52,
+          "bodyHeight": 154.5,
           "registration": [
             0,
             0
           ]
         },
         {
-          "index": 14,
+          "index": 26,
           "x": 1536,
-          "yTop": 1920,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              333.187,
+              474.982
+            ],
+            "angle": 0.59,
+            "hidden": false
+          },
+          "bodyHeight": 149.52,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 27,
+          "x": 2304,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              333.187,
+              474.982
+            ],
+            "angle": 0.59,
+            "hidden": false
+          },
+          "bodyHeight": 149.52,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 28,
+          "x": 0,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -3600,9 +3874,53 @@
           ]
         },
         {
-          "index": 15,
+          "index": 29,
+          "x": 768,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              333.187,
+              474.982
+            ],
+            "angle": 0.59,
+            "hidden": false
+          },
+          "bodyHeight": 149.52,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 30,
+          "x": 1536,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              333.187,
+              474.982
+            ],
+            "angle": 0.59,
+            "hidden": false
+          },
+          "bodyHeight": 149.52,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 31,
           "x": 2304,
-          "yTop": 1920,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -3623,25 +3941,41 @@
         }
       ],
       "frameDurations": [
-        0.019,
-        0.02,
-        0.021,
-        0.025,
-        0.027,
-        0.029,
-        0.018,
-        0.014,
-        0.039,
-        0.025,
-        0.029,
-        0.025,
-        0.029,
-        0.027,
-        0.023,
-        0.02
+        0.0095,
+        0.0095,
+        0.01,
+        0.01,
+        0.0105,
+        0.0105,
+        0.0125,
+        0.0125,
+        0.0135,
+        0.0135,
+        0.0145,
+        0.0145,
+        0.009,
+        0.009,
+        0.007,
+        0.007,
+        0.0195,
+        0.0195,
+        0.0125,
+        0.0125,
+        0.0145,
+        0.0145,
+        0.0125,
+        0.0125,
+        0.0145,
+        0.0145,
+        0.0135,
+        0.0135,
+        0.0115,
+        0.0115,
+        0.01,
+        0.01
       ],
-      "chainFrame": 14,
-      "sha256": "e4ff2a6895ea9b688ae7a3a80c385c1066045f6c937c7fa52fe44986df489388"
+      "chainFrame": 28,
+      "sha256": "bd5089b4831757d320940e863c087a38a0a534b1aca9d6c7fe9a8637fab6d2ae"
     },
     {
       "id": "slash_2",
@@ -3652,9 +3986,9 @@
       "motion": "one rising diagonal sword slash: start with sword chambered low left, knees bent, unwind torso, sword rises across chest, blade crosses above head, extend arm upward right, settle hips, end sword raised above right shoulder",
       "index": 12,
       "file": "HD/slash_2.png",
-      "frameCount": 16,
+      "frameCount": 32,
       "columns": 4,
-      "rows": 4,
+      "rows": 8,
       "frameWidth": 768,
       "frameHeight": 640,
       "pivot": {
@@ -3663,13 +3997,13 @@
       },
       "facing": "right",
       "width": 3072,
-      "height": 2560,
+      "height": 5120,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3691,7 +4025,29 @@
           "index": 1,
           "x": 768,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              316.942,
+              453.786
+            ],
+            "angle": 0.77,
+            "hidden": false
+          },
+          "bodyHeight": 160.91,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "yTop": 0,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3710,10 +4066,32 @@
           ]
         },
         {
-          "index": 2,
-          "x": 1536,
+          "index": 3,
+          "x": 2304,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              316.942,
+              453.786
+            ],
+            "angle": 0.91,
+            "hidden": false
+          },
+          "bodyHeight": 160.91,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3732,10 +4110,32 @@
           ]
         },
         {
-          "index": 3,
-          "x": 2304,
-          "yTop": 0,
-          "pico2dY": 1920,
+          "index": 5,
+          "x": 768,
+          "yTop": 640,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              257.42,
+              484.396
+            ],
+            "angle": 1.26,
+            "hidden": false
+          },
+          "bodyHeight": 154.5,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3754,10 +4154,32 @@
           ]
         },
         {
-          "index": 4,
-          "x": 0,
+          "index": 7,
+          "x": 2304,
           "yTop": 640,
-          "pico2dY": 1280,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              257.42,
+              484.396
+            ],
+            "angle": 1.64,
+            "hidden": false
+          },
+          "bodyHeight": 154.5,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3776,10 +4198,32 @@
           ]
         },
         {
-          "index": 5,
+          "index": 9,
           "x": 768,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              257.42,
+              484.396
+            ],
+            "angle": 1.67,
+            "hidden": false
+          },
+          "bodyHeight": 154.5,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 10,
+          "x": 1536,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3798,10 +4242,32 @@
           ]
         },
         {
-          "index": 6,
-          "x": 1536,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "index": 11,
+          "x": 2304,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              350.775,
+              415.053
+            ],
+            "angle": 1.3,
+            "hidden": false
+          },
+          "bodyHeight": 162.34,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3811,11 +4277,7 @@
               415.053
             ],
             "angle": 0.93,
-            "hidden": false,
-            "turnWindow": [
-              0.3,
-              0.94
-            ]
+            "hidden": false
           },
           "bodyHeight": 162.34,
           "registration": [
@@ -3824,10 +4286,32 @@
           ]
         },
         {
-          "index": 7,
-          "x": 2304,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 164.47,
+          "weapon": {
+            "hand": [
+              360.37,
+              394.83
+            ],
+            "angle": 0.65,
+            "hidden": false
+          },
+          "index": 13,
+          "x": 768,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 14,
+          "x": 1536,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3837,11 +4321,7 @@
               415.053
             ],
             "angle": 0.45,
-            "hidden": false,
-            "turnWindow": [
-              0.39,
-              0.94
-            ]
+            "hidden": false
           },
           "bodyHeight": 162.34,
           "registration": [
@@ -3850,10 +4330,32 @@
           ]
         },
         {
-          "index": 8,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              391.58,
+              366.05
+            ],
+            "angle": -0.16,
+            "hidden": false
+          },
+          "index": 15,
+          "x": 2304,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 16,
           "x": 0,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3872,10 +4374,32 @@
           ]
         },
         {
-          "index": 9,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              393.58,
+              366.05
+            ],
+            "angle": -0.49,
+            "hidden": false
+          },
+          "index": 17,
           "x": 768,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 18,
+          "x": 1536,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3894,10 +4418,32 @@
           ]
         },
         {
-          "index": 10,
-          "x": 1536,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "index": 19,
+          "x": 2304,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              398.342,
+              359.676
+            ],
+            "angle": -0.57,
+            "hidden": false
+          },
+          "bodyHeight": 165.18,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 20,
+          "x": 0,
+          "yTop": 3200,
+          "pico2dY": 1280,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3916,10 +4462,32 @@
           ]
         },
         {
-          "index": 11,
-          "x": 2304,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "index": 21,
+          "x": 768,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              373.87,
+              341.58
+            ],
+            "angle": -0.82,
+            "hidden": false
+          },
+          "bodyHeight": 168.03,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 22,
+          "x": 1536,
+          "yTop": 3200,
+          "pico2dY": 1280,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3938,10 +4506,32 @@
           ]
         },
         {
-          "index": 12,
+          "index": 23,
+          "x": 2304,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              373.87,
+              341.58
+            ],
+            "angle": -0.93,
+            "hidden": false
+          },
+          "bodyHeight": 168.03,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 24,
           "x": 0,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -3960,31 +4550,75 @@
           ]
         },
         {
-          "index": 13,
+          "index": 25,
           "x": 768,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
           "weapon": {
             "hand": [
-              299.627,
-              368.534
+              287.76,
+              359.489
             ],
-            "angle": -1.31,
+            "angle": -1.23,
             "hidden": false
           },
-          "bodyHeight": 165.18,
+          "bodyHeight": 166.61,
           "registration": [
             0,
             0
           ]
         },
         {
-          "index": 14,
+          "index": 26,
           "x": 1536,
-          "yTop": 1920,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              299.627,
+              368.534
+            ],
+            "angle": -1.31,
+            "hidden": false
+          },
+          "bodyHeight": 165.18,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 27,
+          "x": 2304,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              299.627,
+              368.534
+            ],
+            "angle": -1.31,
+            "hidden": false
+          },
+          "bodyHeight": 165.18,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 28,
+          "x": 0,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -4004,9 +4638,53 @@
           ]
         },
         {
-          "index": 15,
+          "index": 29,
+          "x": 768,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              299.627,
+              368.534
+            ],
+            "angle": -1.31,
+            "hidden": false
+          },
+          "bodyHeight": 165.18,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 30,
+          "x": 1536,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              299.627,
+              368.534
+            ],
+            "angle": -1.31,
+            "hidden": false
+          },
+          "bodyHeight": 165.18,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 31,
           "x": 2304,
-          "yTop": 1920,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -4027,25 +4705,41 @@
         }
       ],
       "frameDurations": [
-        0.017,
-        0.018,
-        0.022,
-        0.025,
-        0.025,
-        0.023,
-        0.016,
-        0.014,
-        0.041,
-        0.025,
-        0.029,
-        0.022,
-        0.025,
-        0.027,
-        0.022,
-        0.02
+        0.0085,
+        0.0085,
+        0.009,
+        0.009,
+        0.011,
+        0.011,
+        0.0125,
+        0.0125,
+        0.0125,
+        0.0125,
+        0.0115,
+        0.0115,
+        0.008,
+        0.008,
+        0.007,
+        0.007,
+        0.0205,
+        0.0205,
+        0.0125,
+        0.0125,
+        0.0145,
+        0.0145,
+        0.011,
+        0.011,
+        0.0125,
+        0.0125,
+        0.0135,
+        0.0135,
+        0.011,
+        0.011,
+        0.01,
+        0.01
       ],
-      "chainFrame": 14,
-      "sha256": "dcbf0469b40c1bec5a0bf8eb169d2ff3166f99fafd9332ad5580b61053db8cc6"
+      "chainFrame": 28,
+      "sha256": "3b4cdad273bbdc77560118bcd7ff7ed060bc277bf2d4275a149cea8e1024a4d6"
     },
     {
       "id": "slash_3",
@@ -4056,9 +4750,9 @@
       "motion": "strong downward finishing slash: begin sword above head, elbow coils, lift on toes, shoulders drive down, sword cuts diagonally down right, knee compresses, blade decelerates near low right, finish deep forward follow-through",
       "index": 13,
       "file": "HD/slash_3.png",
-      "frameCount": 16,
+      "frameCount": 32,
       "columns": 4,
-      "rows": 4,
+      "rows": 8,
       "frameWidth": 768,
       "frameHeight": 640,
       "pivot": {
@@ -4067,13 +4761,13 @@
       },
       "facing": "right",
       "width": 3072,
-      "height": 2560,
+      "height": 5120,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4095,7 +4789,29 @@
           "index": 1,
           "x": 768,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              296.647,
+              340.159
+            ],
+            "angle": -1.71,
+            "hidden": false
+          },
+          "bodyHeight": 170.17,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "yTop": 0,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4114,10 +4830,32 @@
           ]
         },
         {
-          "index": 2,
-          "x": 1536,
+          "index": 3,
+          "x": 2304,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              296.647,
+              340.159
+            ],
+            "angle": -1.87,
+            "hidden": false
+          },
+          "bodyHeight": 170.17,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4136,10 +4874,32 @@
           ]
         },
         {
-          "index": 3,
-          "x": 2304,
-          "yTop": 0,
-          "pico2dY": 1920,
+          "index": 5,
+          "x": 768,
+          "yTop": 640,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              297.404,
+              330.402
+            ],
+            "angle": -2.19,
+            "hidden": false
+          },
+          "bodyHeight": 177.29,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4158,10 +4918,32 @@
           ]
         },
         {
-          "index": 4,
-          "x": 0,
+          "index": 7,
+          "x": 2304,
           "yTop": 640,
-          "pico2dY": 1280,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              297.404,
+              330.402
+            ],
+            "angle": -2.26,
+            "hidden": false
+          },
+          "bodyHeight": 177.29,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4180,10 +4962,32 @@
           ]
         },
         {
-          "index": 5,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 166.61,
+          "weapon": {
+            "hand": [
+              375.95,
+              344.21
+            ],
+            "angle": -1.98,
+            "hidden": false
+          },
+          "index": 9,
           "x": 768,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 10,
+          "x": 1536,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4202,10 +5006,32 @@
           ]
         },
         {
-          "index": 6,
-          "x": 1536,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "index": 11,
+          "x": 2304,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              376.838,
+              401.514
+            ],
+            "angle": -1.71,
+            "hidden": false
+          },
+          "bodyHeight": 159.49,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4215,11 +5041,7 @@
               401.514
             ],
             "angle": -1.32,
-            "hidden": false,
-            "turnWindow": [
-              0.3,
-              0.94
-            ]
+            "hidden": false
           },
           "bodyHeight": 159.49,
           "registration": [
@@ -4228,10 +5050,32 @@
           ]
         },
         {
-          "index": 7,
-          "x": 2304,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "index": 13,
+          "x": 768,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              376.838,
+              401.514
+            ],
+            "angle": -1.32,
+            "hidden": false
+          },
+          "bodyHeight": 159.49,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 14,
+          "x": 1536,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4241,11 +5085,7 @@
               401.514
             ],
             "angle": -0.68,
-            "hidden": false,
-            "turnWindow": [
-              0.39,
-              0.94
-            ]
+            "hidden": false
           },
           "bodyHeight": 159.49,
           "registration": [
@@ -4254,10 +5094,32 @@
           ]
         },
         {
-          "index": 8,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 152.37,
+          "weapon": {
+            "hand": [
+              409.61,
+              464.0
+            ],
+            "angle": -0.12,
+            "hidden": false
+          },
+          "index": 15,
+          "x": 2304,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 16,
           "x": 0,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4276,10 +5138,32 @@
           ]
         },
         {
-          "index": 9,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 152.37,
+          "weapon": {
+            "hand": [
+              412.61,
+              464.0
+            ],
+            "angle": 0.52,
+            "hidden": false
+          },
+          "index": 17,
           "x": 768,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 18,
+          "x": 1536,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4298,10 +5182,32 @@
           ]
         },
         {
-          "index": 10,
-          "x": 1536,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "index": 19,
+          "x": 2304,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              409.275,
+              475.122
+            ],
+            "angle": 0.52,
+            "hidden": false
+          },
+          "bodyHeight": 153.08,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 20,
+          "x": 0,
+          "yTop": 3200,
+          "pico2dY": 1280,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4320,9 +5226,75 @@
           ]
         },
         {
-          "index": 11,
+          "index": 21,
+          "x": 768,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              410.46,
+              490.286
+            ],
+            "angle": 0.66,
+            "hidden": false
+          },
+          "bodyHeight": 152.37,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 22,
+          "x": 1536,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              410.46,
+              490.286
+            ],
+            "angle": 0.73,
+            "hidden": false
+          },
+          "bodyHeight": 152.37,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 23,
           "x": 2304,
-          "yTop": 1280,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              410.46,
+              490.286
+            ],
+            "angle": 0.73,
+            "hidden": false
+          },
+          "bodyHeight": 152.37,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 24,
+          "x": 0,
+          "yTop": 3840,
           "pico2dY": 640,
           "width": 768,
           "height": 640,
@@ -4342,10 +5314,10 @@
           ]
         },
         {
-          "index": 12,
-          "x": 0,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "index": 25,
+          "x": 768,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4364,10 +5336,10 @@
           ]
         },
         {
-          "index": 13,
-          "x": 768,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "index": 26,
+          "x": 1536,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -4386,9 +5358,31 @@
           ]
         },
         {
-          "index": 14,
-          "x": 1536,
-          "yTop": 1920,
+          "index": 27,
+          "x": 2304,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              316.058,
+              445.5
+            ],
+            "angle": 0.61,
+            "hidden": false
+          },
+          "bodyHeight": 165.9,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 28,
+          "x": 0,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -4408,9 +5402,53 @@
           ]
         },
         {
-          "index": 15,
+          "index": 29,
+          "x": 768,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              316.058,
+              445.5
+            ],
+            "angle": 0.51,
+            "hidden": false
+          },
+          "bodyHeight": 165.9,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 30,
+          "x": 1536,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              316.058,
+              445.5
+            ],
+            "angle": 0.51,
+            "hidden": false
+          },
+          "bodyHeight": 165.9,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 31,
           "x": 2304,
-          "yTop": 1920,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -4431,24 +5469,40 @@
         }
       ],
       "frameDurations": [
-        0.02,
-        0.019,
-        0.027,
-        0.025,
-        0.028,
-        0.023,
-        0.016,
-        0.013,
-        0.052,
-        0.029,
-        0.033,
-        0.024,
-        0.024,
+        0.01,
+        0.01,
+        0.0095,
+        0.0095,
+        0.0135,
+        0.0135,
+        0.0125,
+        0.0125,
+        0.014,
+        0.014,
+        0.0115,
+        0.0115,
+        0.008,
+        0.008,
+        0.0065,
+        0.0065,
         0.026,
-        0.025,
-        0.023
+        0.026,
+        0.0145,
+        0.0145,
+        0.0165,
+        0.0165,
+        0.012,
+        0.012,
+        0.012,
+        0.012,
+        0.013,
+        0.013,
+        0.0125,
+        0.0125,
+        0.0115,
+        0.0115
       ],
-      "sha256": "18df465b929131be10768457ca0629e073507e362cda030cd214736b8abc3fac"
+      "sha256": "5c3344fd5fa493636c60ebb8d12af581044727f5004eb8b0ddeedb799b85e247"
     },
     {
       "id": "heavy_charge",
@@ -5293,9 +6347,9 @@
       "motion": "dashing slash in place: low dash pose sword trailing, shoulders coil, sword accelerates across front, blade extends right horizontally, low lunge, scarf follows, braking knee bends, end low sword-forward lunge; no afterimage",
       "index": 18,
       "file": "HD/dash_slash.png",
-      "frameCount": 16,
+      "frameCount": 32,
       "columns": 4,
-      "rows": 4,
+      "rows": 8,
       "frameWidth": 768,
       "frameHeight": 640,
       "pivot": {
@@ -5304,13 +6358,13 @@
       },
       "facing": "right",
       "width": 3072,
-      "height": 2560,
+      "height": 5120,
       "frames": [
         {
           "index": 0,
           "x": 0,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5332,7 +6386,29 @@
           "index": 1,
           "x": 768,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              261.581,
+              468.33
+            ],
+            "angle": 2.64,
+            "hidden": false
+          },
+          "bodyHeight": 170.88,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "x": 1536,
+          "yTop": 0,
+          "pico2dY": 4480,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5351,10 +6427,32 @@
           ]
         },
         {
-          "index": 2,
-          "x": 1536,
+          "index": 3,
+          "x": 2304,
           "yTop": 0,
-          "pico2dY": 1920,
+          "pico2dY": 4480,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              261.581,
+              468.33
+            ],
+            "angle": 2.68,
+            "hidden": false
+          },
+          "bodyHeight": 170.88,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5373,10 +6471,32 @@
           ]
         },
         {
-          "index": 3,
-          "x": 2304,
-          "yTop": 0,
-          "pico2dY": 1920,
+          "index": 5,
+          "x": 768,
+          "yTop": 640,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              280.624,
+              456.746
+            ],
+            "angle": 2.85,
+            "hidden": false
+          },
+          "bodyHeight": 151.66,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "x": 1536,
+          "yTop": 640,
+          "pico2dY": 3840,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5395,10 +6515,32 @@
           ]
         },
         {
-          "index": 4,
-          "x": 0,
+          "index": 7,
+          "x": 2304,
           "yTop": 640,
-          "pico2dY": 1280,
+          "pico2dY": 3840,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              279.456,
+              460.605
+            ],
+            "angle": -2.68,
+            "hidden": false
+          },
+          "bodyHeight": 153.79,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 8,
+          "x": 0,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5408,11 +6550,7 @@
               429.15
             ],
             "angle": -1.94,
-            "hidden": false,
-            "turnWindow": [
-              0.18,
-              0.85
-            ]
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -5421,10 +6559,32 @@
           ]
         },
         {
-          "index": 5,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              323.14,
+              401.44
+            ],
+            "angle": -1.66,
+            "hidden": false
+          },
+          "index": 9,
           "x": 768,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 10,
+          "x": 1536,
+          "yTop": 1280,
+          "pico2dY": 3200,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5434,11 +6594,7 @@
               429.15
             ],
             "angle": -1.36,
-            "hidden": false,
-            "turnWindow": [
-              0.34,
-              0.96
-            ]
+            "hidden": false
           },
           "bodyHeight": 160.91,
           "registration": [
@@ -5447,10 +6603,32 @@
           ]
         },
         {
-          "index": 6,
-          "x": 1536,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              383.45,
+              418.78
+            ],
+            "angle": -0.57,
+            "hidden": false
+          },
+          "index": 11,
+          "x": 2304,
+          "yTop": 1280,
+          "pico2dY": 3200,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 12,
+          "x": 0,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5469,10 +6647,32 @@
           ]
         },
         {
-          "index": 7,
-          "x": 2304,
-          "yTop": 640,
-          "pico2dY": 1280,
+          "index": 13,
+          "x": 768,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              387.824,
+              413.68
+            ],
+            "angle": -0.09,
+            "hidden": false
+          },
+          "bodyHeight": 160.91,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 14,
+          "x": 1536,
+          "yTop": 1920,
+          "pico2dY": 2560,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5491,10 +6691,32 @@
           ]
         },
         {
-          "index": 8,
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              384.45,
+              418.78
+            ],
+            "angle": 0.06,
+            "hidden": false
+          },
+          "index": 15,
+          "x": 2304,
+          "yTop": 1920,
+          "pico2dY": 2560,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 16,
           "x": 0,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5513,10 +6735,32 @@
           ]
         },
         {
-          "index": 9,
+          "index": 17,
           "x": 768,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              414.059,
+              400.812
+            ],
+            "angle": 0.14,
+            "hidden": false
+          },
+          "bodyHeight": 166.61,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 18,
+          "x": 1536,
+          "yTop": 2560,
+          "pico2dY": 1920,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5535,32 +6779,32 @@
           ]
         },
         {
-          "index": 10,
-          "x": 1536,
-          "yTop": 1280,
-          "pico2dY": 640,
-          "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hand": [
-              397.044,
-              433.584
-            ],
-            "angle": 0.31,
-            "hidden": false
-          },
-          "bodyHeight": 158.06,
-          "registration": [
-            0,
-            0
-          ]
-        },
-        {
-          "index": 11,
+          "index": 19,
           "x": 2304,
-          "yTop": 1280,
-          "pico2dY": 640,
+          "yTop": 2560,
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              414.724,
+              406.522
+            ],
+            "angle": 0.23,
+            "hidden": false
+          },
+          "bodyHeight": 168.03,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 20,
+          "x": 0,
+          "yTop": 3200,
+          "pico2dY": 1280,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5579,10 +6823,76 @@
           ]
         },
         {
-          "index": 12,
+          "index": 21,
+          "x": 768,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              397.044,
+              433.584
+            ],
+            "angle": 0.31,
+            "hidden": false
+          },
+          "bodyHeight": 158.06,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 22,
+          "x": 1536,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              397.044,
+              433.584
+            ],
+            "angle": 0.31,
+            "hidden": false
+          },
+          "bodyHeight": 158.06,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 23,
+          "x": 2304,
+          "yTop": 3200,
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              397.044,
+              433.584
+            ],
+            "angle": 0.31,
+            "hidden": false
+          },
+          "bodyHeight": 158.06,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 24,
           "x": 0,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5601,10 +6911,32 @@
           ]
         },
         {
-          "index": 13,
+          "index": 25,
           "x": 768,
-          "yTop": 1920,
-          "pico2dY": 0,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              317.226,
+              452.54
+            ],
+            "angle": 0.39,
+            "hidden": false
+          },
+          "bodyHeight": 164.47,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 26,
+          "x": 1536,
+          "yTop": 3840,
+          "pico2dY": 640,
           "width": 768,
           "height": 640,
           "renderScale": 0.712,
@@ -5623,9 +6955,31 @@
           ]
         },
         {
-          "index": 14,
-          "x": 1536,
-          "yTop": 1920,
+          "index": 27,
+          "x": 2304,
+          "yTop": 3840,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              317.835,
+              450.667
+            ],
+            "angle": 0.4,
+            "hidden": false
+          },
+          "bodyHeight": 166.61,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 28,
+          "x": 0,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -5645,9 +6999,53 @@
           ]
         },
         {
-          "index": 15,
+          "index": 29,
+          "x": 768,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              295.512,
+              458.91
+            ],
+            "angle": 0.41,
+            "hidden": false
+          },
+          "bodyHeight": 173.73,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 30,
+          "x": 1536,
+          "yTop": 4480,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640,
+          "renderScale": 0.712,
+          "weapon": {
+            "hand": [
+              295.512,
+              458.91
+            ],
+            "angle": 0.41,
+            "hidden": false
+          },
+          "bodyHeight": 173.73,
+          "registration": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 31,
           "x": 2304,
-          "yTop": 1920,
+          "yTop": 4480,
           "pico2dY": 0,
           "width": 768,
           "height": 640,
@@ -5668,25 +7066,41 @@
         }
       ],
       "frameDurations": [
-        0.02,
-        0.019,
-        0.024,
-        0.022,
-        0.024,
-        0.016,
-        0.042,
-        0.03,
-        0.033,
-        0.026,
-        0.025,
-        0.024,
-        0.024,
-        0.024,
-        0.023,
-        0.022
+        0.01,
+        0.01,
+        0.0095,
+        0.0095,
+        0.012,
+        0.012,
+        0.011,
+        0.011,
+        0.012,
+        0.012,
+        0.008,
+        0.008,
+        0.021,
+        0.021,
+        0.015,
+        0.015,
+        0.0165,
+        0.0165,
+        0.013,
+        0.013,
+        0.0125,
+        0.0125,
+        0.012,
+        0.012,
+        0.012,
+        0.012,
+        0.012,
+        0.012,
+        0.0115,
+        0.0115,
+        0.011,
+        0.011
       ],
-      "dashEntryFrame": 2,
-      "sha256": "e18dcb5db72d45c8da391ea000cdb70b7248672da12e80cc353c57cf5be42b2c"
+      "dashEntryFrame": 4,
+      "sha256": "8e333ad1bcbbb477ce2187d721e13425245dde6f56688229665495f950608e20"
     },
     {
       "id": "crouch_slash",
@@ -8767,272 +10181,294 @@
       "height": 2560,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 170.17,
+          "weapon": {
+            "hand": [
+              308.4,
+              459.2
+            ],
+            "angle": 2.58,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 1920,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              288.815,
-              463.105
-            ],
-            "angle": 0.4
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 168.74,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 170.17,
           "weapon": {
-            "hidden": false,
             "hand": [
-              288.815,
-              463.105
+              308.4,
+              459.2
             ],
-            "angle": 0.4
+            "angle": 2.58,
+            "hidden": false
           },
           "index": 1,
           "x": 768,
           "yTop": 0,
-          "pico2dY": 1920
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              308.4,
+              457.2
+            ],
+            "angle": 2.49,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 1920,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              288.815,
-              463.105
-            ],
-            "angle": 0.4
-          },
-          "bodyHeight": 168.74,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 160.91,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 169.46,
           "weapon": {
-            "hidden": false,
             "hand": [
-              280.98,
-              468.775
+              308.4,
+              457.2
             ],
-            "angle": 0.26
+            "angle": 2.49,
+            "hidden": false
           },
           "index": 3,
           "x": 2304,
           "yTop": 0,
-          "pico2dY": 1920
+          "pico2dY": 1920,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 153.08,
+          "weapon": {
+            "hand": [
+              304.4,
+              455.14
+            ],
+            "angle": 2.53,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              280.98,
-              468.775
-            ],
-            "angle": 0.26
-          },
-          "bodyHeight": 160.91,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 170.88,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 153.08,
           "weapon": {
-            "hidden": false,
             "hand": [
-              261.825,
-              469.55
+              304.4,
+              455.14
             ],
-            "angle": 2.64
+            "angle": 2.53,
+            "hidden": false
           },
           "index": 5,
           "x": 768,
           "yTop": 640,
-          "pico2dY": 1280
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              290.87,
+              462.75
+            ],
+            "angle": 1.36,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 1280,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              261.825,
-              469.55
-            ],
-            "angle": 2.64
-          },
-          "bodyHeight": 170.88,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 185.83,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 160.2,
           "weapon": {
-            "hidden": false,
             "hand": [
-              271.67,
-              465.97
+              290.87,
+              462.75
             ],
-            "angle": 0.63
+            "angle": 1.36,
+            "hidden": false
           },
           "index": 7,
           "x": 2304,
           "yTop": 640,
-          "pico2dY": 1280
+          "pico2dY": 1280,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              290.87,
+              462.75
+            ],
+            "angle": 1.36,
+            "hidden": false
+          },
           "index": 8,
           "x": 0,
           "yTop": 1280,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              271.67,
-              465.97
-            ],
-            "angle": 0.63
-          },
-          "bodyHeight": 185.83,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 194.38,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 165.18,
           "weapon": {
-            "hidden": false,
             "hand": [
-              285.99,
-              464.18
+              307.35,
+              463.38
             ],
-            "angle": 0.42
+            "angle": 0.52,
+            "hidden": false
           },
           "index": 9,
           "x": 768,
           "yTop": 1280,
-          "pico2dY": 640
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              307.35,
+              463.38
+            ],
+            "angle": 0.52,
+            "hidden": false
+          },
           "index": 10,
           "x": 1536,
           "yTop": 1280,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              285.99,
-              464.18
-            ],
-            "angle": 0.42
-          },
-          "bodyHeight": 194.38,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
-          "width": 768,
-          "height": 640,
           "renderScale": 0.712,
-          "bodyHeight": 173.02,
           "registration": [
             0,
             0
           ],
+          "bodyHeight": 165.18,
           "weapon": {
-            "hidden": false,
             "hand": [
-              280.0,
-              463.0
+              307.35,
+              463.38
             ],
-            "angle": 0.41
+            "angle": 0.52,
+            "hidden": false
           },
           "index": 11,
           "x": 2304,
           "yTop": 1280,
-          "pico2dY": 640
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 167.32,
+          "weapon": {
+            "hand": [
+              302.2,
+              462.73
+            ],
+            "angle": 0.42,
+            "hidden": false
+          },
           "index": 12,
           "x": 0,
+          "yTop": 1920,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "index": 13,
+          "x": 768,
           "yTop": 1920,
           "pico2dY": 0,
           "width": 768,
@@ -9041,38 +10477,16 @@
           "weapon": {
             "hidden": false,
             "hand": [
-              280.0,
-              463.0
-            ],
-            "angle": 0.41
-          },
-          "bodyHeight": 173.02,
-          "registration": [
-            0,
-            0
-          ]
-        },
-        {
-          "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "bodyHeight": 174.44,
-          "registration": [
-            0,
-            0
-          ],
-          "weapon": {
-            "hidden": false,
-            "hand": [
               301.0,
               457.0
             ],
             "angle": 0.391
           },
-          "index": 13,
-          "x": 768,
-          "yTop": 1920,
-          "pico2dY": 0
+          "bodyHeight": 174.44,
+          "registration": [
+            0,
+            0
+          ]
         },
         {
           "index": 14,
@@ -9097,174 +10511,8 @@
           ]
         }
       ],
-      "sha256": "980b86712a68034e2427c6418013be9a3cfae261ea013c096867b123f380eae4",
-      "entryFrames": {
-        "idle_breathe": [
-          4,
-          4,
-          4,
-          2,
-          4,
-          4,
-          4,
-          4
-        ],
-        "walk": [
-          0,
-          0,
-          4,
-          0,
-          0,
-          0,
-          0,
-          4,
-          0,
-          0,
-          0,
-          0
-        ],
-        "run": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "crouch_idle": [
-          2,
-          0,
-          0,
-          2,
-          2,
-          2,
-          2,
-          2
-        ],
-        "crouch_walk": [
-          2,
-          6,
-          2,
-          6,
-          6,
-          6,
-          4,
-          2
-        ],
-        "jump_rise": [
-          0,
-          4,
-          0,
-          4,
-          0,
-          2,
-          6,
-          6
-        ],
-        "jump_apex": [
-          6,
-          6,
-          6,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "fall": [
-          0,
-          0,
-          2,
-          2,
-          0,
-          0,
-          0,
-          0
-        ],
-        "dash_ground": [
-          6,
-          6,
-          0,
-          0,
-          0,
-          0,
-          4,
-          6,
-          0,
-          0,
-          6,
-          0
-        ],
-        "dash_air": [
-          4,
-          6,
-          6,
-          6,
-          6,
-          6,
-          4,
-          4,
-          4,
-          4,
-          4,
-          4
-        ],
-        "land_soft": [
-          0,
-          0,
-          0,
-          0,
-          2,
-          0,
-          0,
-          4
-        ],
-        "land_hard": [
-          0,
-          2,
-          6,
-          6,
-          2,
-          0,
-          0,
-          4
-        ]
-      },
-      "frameDurations": [
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.0225,
-        0.045
-      ]
+      "sha256": "a4b81f4db3fa1951de5ea8338e10cbd03d65920984a14591851b1b65c6310a51",
+      "entryFrames": {}
     },
     {
       "id": "crouch_down",
@@ -10013,161 +11261,161 @@
           ]
         },
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 125.31,
+          "weapon": {
+            "hand": [
+              281.98,
+              500.01
+            ],
+            "angle": 0.38,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              301.0,
-              457.0
-            ],
-            "angle": 0.391
-          },
-          "bodyHeight": 174.44,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 125.31,
+          "weapon": {
+            "hand": [
+              281.98,
+              500.01
+            ],
+            "angle": 0.55,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              271.0,
-              470.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 154.5,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 125.31,
+          "weapon": {
+            "hand": [
+              281.98,
+              500.01
+            ],
+            "angle": 0.73,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              271.0,
-              470.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 154.5,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              290.94,
+              484.33
+            ],
+            "angle": 1.86,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              269.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 145.25,
+          "weapon": {
+            "hand": [
+              290.94,
+              484.33
+            ],
+            "angle": 2.1,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              269.0,
-              447.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 170.17,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.3,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              264.0,
-              449.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 164.47,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 159.49,
+          "weapon": {
+            "hand": [
+              373.86,
+              409.74
+            ],
+            "angle": 2.4,
+            "hidden": false
+          },
           "index": 7,
           "x": 2304,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              264.0,
-              449.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 164.47,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         }
       ],
-      "sha256": "50f6f9c0218533de49474716ac27bed15d0678a0ebe4b7f9189cbec29747ebcc",
+      "sha256": "e2ecf4eaab7ff7dffb30f83e993ce71da073c607b1178d7b5e2b54a768f7e8a5",
       "entryFrames": {
         "idle_breathe": [
           0,
@@ -10342,136 +11590,136 @@
       "height": 1280,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              294.47,
+              457.71
+            ],
+            "angle": 2.58,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              277.0,
-              444.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 172.3,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 125.31,
+          "weapon": {
+            "hand": [
+              281.98,
+              500.01
+            ],
+            "angle": 1.3,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              277.0,
-              444.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 172.3,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 125.31,
+          "weapon": {
+            "hand": [
+              281.98,
+              500.01
+            ],
+            "angle": 0.69,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              274.0,
-              474.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 150.23,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 125.31,
+          "weapon": {
+            "hand": [
+              281.98,
+              500.01
+            ],
+            "angle": 0.5,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              274.0,
-              474.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 150.23,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              304.35,
+              463.38
+            ],
+            "angle": 0.44,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              304.0,
-              455.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 176.58,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              304.35,
+              463.38
+            ],
+            "angle": 0.4,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              304.0,
-              455.0
-            ],
-            "angle": 0.39
-          },
-          "bodyHeight": 176.58,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
           "index": 6,
@@ -10518,7 +11766,7 @@
           ]
         }
       ],
-      "sha256": "43de02c69aeeea090de630774634f00bf1087784760d0d79e05d9ac1448fbc49",
+      "sha256": "ad2e766f462bb59598c0c03ac54d8a2177d6e4fbd3b07a719e907ca44f4c9687",
       "entryFrames": {
         "idle_breathe": [
           2,
@@ -11024,183 +12272,183 @@
       "height": 1280,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              279.55,
+              442.88
+            ],
+            "angle": 2.64,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              301.0,
-              457.0
-            ],
-            "angle": 0.391
-          },
-          "bodyHeight": 174.44,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              279.55,
+              442.88
+            ],
+            "angle": 2.64,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              301.0,
-              457.0
-            ],
-            "angle": 0.391
-          },
-          "bodyHeight": 174.44,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              279.55,
+              442.88
+            ],
+            "angle": 2.64,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              235.87,
-              481.185
-            ],
-            "angle": 0.49
-          },
-          "bodyHeight": 156.64,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              279.55,
+              442.88
+            ],
+            "angle": 2.64,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              235.87,
-              481.185
-            ],
-            "angle": 0.49
-          },
-          "bodyHeight": 156.64,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.62,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              225.13,
-              471.34000000000003
-            ],
-            "angle": 2.65
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.62,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              225.13,
-              471.34000000000003
-            ],
-            "angle": 2.65
-          },
-          "bodyHeight": 158.78,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.62,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              236.765,
-              497.295
-            ],
-            "angle": 2.79
-          },
-          "bodyHeight": 136.7,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              286.55,
+              442.88
+            ],
+            "angle": 2.62,
+            "hidden": false
+          },
           "index": 7,
           "x": 2304,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              236.765,
-              497.295
-            ],
-            "angle": 2.79
-          },
-          "bodyHeight": 136.7,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         }
       ],
-      "sha256": "c84ad45768dd9bb8e45e507a68c486818f39fbb4c76b9985d51b32bbf659c6b0",
+      "sha256": "dcf2410903a273a89087d80d4376eb296649d62abff5a82ca64daef694bddca0",
       "entryFrames": {
         "idle_breathe": [
           0,
@@ -11375,158 +12623,158 @@
       "height": 1280,
       "frames": [
         {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 158.78,
+          "weapon": {
+            "hand": [
+              274.49,
+              467.26
+            ],
+            "angle": 2.72,
+            "hidden": false
+          },
           "index": 0,
           "x": 0,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              244.82,
-              470.445
-            ],
-            "angle": 2.77
-          },
-          "bodyHeight": 154.5,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 158.78,
+          "weapon": {
+            "hand": [
+              274.49,
+              467.26
+            ],
+            "angle": 2.72,
+            "hidden": false
+          },
           "index": 1,
           "x": 768,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              244.82,
-              470.445
-            ],
-            "angle": 2.77
-          },
-          "bodyHeight": 154.5,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              283.87,
+              462.75
+            ],
+            "angle": 2.03,
+            "hidden": false
+          },
           "index": 2,
           "x": 1536,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              261.825,
-              469.55
-            ],
-            "angle": 2.64
-          },
-          "bodyHeight": 170.88,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              283.87,
+              462.75
+            ],
+            "angle": 2.03,
+            "hidden": false
+          },
           "index": 3,
           "x": 2304,
           "yTop": 0,
           "pico2dY": 640,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              261.825,
-              469.55
-            ],
-            "angle": 2.64
-          },
-          "bodyHeight": 170.88,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 160.2,
+          "weapon": {
+            "hand": [
+              283.87,
+              462.75
+            ],
+            "angle": 2.03,
+            "hidden": false
+          },
           "index": 4,
           "x": 0,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              271.67,
-              465.97
-            ],
-            "angle": 0.63
-          },
-          "bodyHeight": 185.83,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              304.35,
+              463.38
+            ],
+            "angle": 0.5,
+            "hidden": false
+          },
           "index": 5,
           "x": 768,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
+          "height": 640
+        },
+        {
           "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              285.99,
-              464.18
-            ],
-            "angle": 0.42
-          },
-          "bodyHeight": 194.38,
           "registration": [
             0,
             0
-          ]
-        },
-        {
+          ],
+          "bodyHeight": 165.18,
+          "weapon": {
+            "hand": [
+              304.35,
+              463.38
+            ],
+            "angle": 0.5,
+            "hidden": false
+          },
           "index": 6,
           "x": 1536,
           "yTop": 640,
           "pico2dY": 0,
           "width": 768,
-          "height": 640,
-          "renderScale": 0.712,
-          "weapon": {
-            "hidden": false,
-            "hand": [
-              285.99,
-              464.18
-            ],
-            "angle": 0.42
-          },
-          "bodyHeight": 194.38,
-          "registration": [
-            0,
-            0
-          ]
+          "height": 640
         },
         {
           "index": 7,
@@ -11551,7 +12799,7 @@
           ]
         }
       ],
-      "sha256": "6a9226829d819cfef09457a6fe4134f37b7bbebd6838b8ef9ff24f26985adb5a",
+      "sha256": "061ae3278f47fbf288d387f7c9966bc6ba2884515740a065d42de1215c651e28",
       "entryFrames": {
         "idle_breathe": [
           2,
@@ -16443,6 +17691,207 @@
           0
         ]
       }
+    },
+    {
+      "id": "land_run",
+      "label": "가벼운 착지",
+      "folder": "HD",
+      "fps": 28.57142857142857,
+      "playback": "once",
+      "motion": "soft jump landing: airborne falling feet extended, toes touch baseline, knees absorb landing, moderate crouch, cloak settles down, hips rise, torso straightens, end canonical neutral low sword idle",
+      "index": 34,
+      "file": "HD/land_run.png",
+      "frameCount": 8,
+      "columns": 4,
+      "rows": 2,
+      "frameWidth": 768,
+      "frameHeight": 640,
+      "pivot": {
+        "x": 320,
+        "y": 568
+      },
+      "facing": "right",
+      "width": 3072,
+      "height": 1280,
+      "frames": [
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              303.47,
+              457.71
+            ],
+            "angle": 2.66,
+            "hidden": false
+          },
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 168.03,
+          "weapon": {
+            "hand": [
+              294.47,
+              457.71
+            ],
+            "angle": 2.67,
+            "hidden": false
+          },
+          "index": 1,
+          "x": 768,
+          "yTop": 0,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 158.78,
+          "weapon": {
+            "hand": [
+              288.49,
+              467.26
+            ],
+            "angle": 2.72,
+            "hidden": false
+          },
+          "index": 2,
+          "x": 1536,
+          "yTop": 0,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 158.78,
+          "weapon": {
+            "hand": [
+              279.49,
+              467.26
+            ],
+            "angle": 2.71,
+            "hidden": false
+          },
+          "index": 3,
+          "x": 2304,
+          "yTop": 0,
+          "pico2dY": 640,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 167.32,
+          "weapon": {
+            "hand": [
+              285.68,
+              454.11
+            ],
+            "angle": 2.63,
+            "hidden": false
+          },
+          "index": 4,
+          "x": 0,
+          "yTop": 640,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 167.32,
+          "weapon": {
+            "hand": [
+              288.68,
+              454.11
+            ],
+            "angle": 2.59,
+            "hidden": false
+          },
+          "index": 5,
+          "x": 768,
+          "yTop": 640,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 167.32,
+          "weapon": {
+            "hand": [
+              298.6,
+              456.98
+            ],
+            "angle": 2.54,
+            "hidden": false
+          },
+          "index": 6,
+          "x": 1536,
+          "yTop": 640,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
+        },
+        {
+          "renderScale": 0.712,
+          "registration": [
+            0,
+            0
+          ],
+          "bodyHeight": 169.46,
+          "weapon": {
+            "hand": [
+              308.4,
+              457.2
+            ],
+            "angle": 2.49,
+            "hidden": false
+          },
+          "index": 7,
+          "x": 2304,
+          "yTop": 640,
+          "pico2dY": 0,
+          "width": 768,
+          "height": 640
+        }
+      ],
+      "sha256": "884971ca1b2291a487bad7739cdd6fe5204467e6e015fd97dfed93d5a57097fa"
     }
   ],
   "weapon": {

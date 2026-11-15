@@ -13,7 +13,7 @@ from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
-LANDING = {'land_soft', 'land_hard', 'air_attack_land'}
+LANDING = {'land_soft', 'land_hard', 'air_attack_land', 'land_run'}
 CROUCH_GAITS = {'crouch_idle', 'crouch_walk'}
 CROUCH_POSES = CROUCH_GAITS | {'crouch_down', 'crouch_slash', 'crouch_attack_recovery'}
 GAIT_STRIDE = {'walk': 116, 'run': 188, 'crouch_walk': 89}
@@ -32,9 +32,10 @@ class Player:
     RUN_SPEED = 330.0
     CROUCH_SPEED = 85.0
     AIR_SPEED = 285.0
-    DASH_DISTANCE = 152.0
-    DASH_CLIP_TIMES = {'dash_start': .125, 'dash_ground': .30, 'dash_end': 8/48, 'dash_air': .30}
-    DASH_DISTANCE_SHARES = {'dash_start': .13, 'dash_ground': .72, 'dash_end': .15, 'dash_air': 1.0}
+    DASH_DISTANCE = 166.0
+    DASH_DURATION = .32
+    DASH_PHASES = {'dash_start': (0,.05), 'dash_ground': (.05,.27), 'dash_end': (.27,.32),
+                   'dash_air': (0,.32)}
     DASH_ATTACK_SPEED = 760.0
     BODY_HEIGHT = 180
     DASH_ATTACK_GRACE = 0.4
@@ -64,6 +65,8 @@ class Player:
         self.combo_queued = False
         self.air_dash_ready = True
         self.dash_attack_remaining = 0.0
+        self.dash_elapsed = 0.0
+        self.land_distance = 0.0
         self.jump_launched = False
         self.horizontal_speed = self.brake_speed = 0.0
         self.attack_pending = False
@@ -91,6 +94,15 @@ class Player:
         self.combo_queued = False
         self.followups = deque(followups)
         self.animation.play(clip,start_frame=start_frame)
+
+    def land(self, direction):
+        if self.animation.name=='air_slash':
+            self._action('air_attack_land')
+        elif direction and not self.crouching:
+            self.land_distance = 0.0
+            self._action('land_run')
+        else:
+            self._action('land_soft')
 
     def take_damage(self, amount):
         if self.mode == 'dead' or self.invulnerable > 0:
@@ -171,6 +183,7 @@ class Player:
         elif key in SHIFT and (self.mode == 'free' or self.landing or self.mode == 'jump' and not self.grounded):
             if self.grounded or self.air_dash_ready:
                 self.dash_attack_remaining = 0.0
+                self.dash_elapsed = 0.0
                 self.mode, self.gait = 'dash', None
                 if self.grounded:
                     self.play_dash('dash_start')
@@ -185,24 +198,19 @@ class Player:
             self.animation.play('magic_charge')
 
     def play_dash(self, name):
-        self.animation.play(name, fps=self.animation.clips[name]['frameCount']/self.DASH_CLIP_TIMES[name],
+        start,end=self.DASH_PHASES[name]
+        self.animation.play(name, fps=self.animation.clips[name]['frameCount']/(end-start),
                             once=True,start_frame=0)
+        self.animation.elapsed=max(0,self.dash_elapsed-start)
 
     def dash_step(self, dt):
-        """지상과 공중에서 같은 총거리를 쓰고, 회복 동작에서는 제동한다."""
-        if self.mode != 'dash':
+        """지상과 공중 대시가 같은 시간과 가속 곡선을 쓴다."""
+        if self.mode != 'dash' or self.animation.name not in self.DASH_PHASES:
             return 0.0
-        name = self.animation.name
-        if name not in self.DASH_DISTANCE_SHARES:
-            return 0.0
-        duration = self.animation.duration
-        start = min(1, self.animation.elapsed/duration)
-        end = min(1, (self.animation.elapsed+dt)/duration)
-        if name in {'dash_start','dash_air'}:
-            start, end = (t*t*(3-2*t) for t in (start,end))
-        elif name=='dash_end':
-            start, end = (2*t-t*t for t in (start,end))
-        return self.facing * self.DASH_DISTANCE * self.DASH_DISTANCE_SHARES[name] * (end-start)
+        start=self.dash_elapsed/self.DASH_DURATION
+        self.dash_elapsed=min(self.DASH_DURATION,self.dash_elapsed+dt)
+        end=self.dash_elapsed/self.DASH_DURATION
+        return self.facing*self.DASH_DISTANCE*(end*end*(3-2*end)-start*start*(3-2*start))
 
     def _finish_combo(self):
         name = self.animation.name
@@ -237,16 +245,18 @@ class Player:
                 anim.play(self.followups.popleft())
             else:
                 self.mode = 'free'
-        elif self.mode == 'dash' and anim.finished:
-            if anim.name == 'dash_start':
-                self.play_dash('dash_ground')
-            elif anim.name == 'dash_ground':
+        elif self.mode == 'dash':
+            if anim.name in self.DASH_PHASES and self.dash_elapsed >= self.DASH_DURATION:
                 self.dash_attack_remaining = self.DASH_ATTACK_GRACE
-                self.play_dash('dash_end')
-            elif anim.name == 'dash_air':
-                self.dash_attack_remaining = self.DASH_ATTACK_GRACE
-                anim.play('air_dash_recovery')
-            else:
+                if anim.name=='dash_air':
+                    anim.play('air_dash_recovery')
+                else:
+                    self.mode = 'free'
+            elif anim.name in {'dash_start','dash_ground','dash_end'}:
+                name='dash_start' if self.dash_elapsed<.05 else 'dash_ground' if self.dash_elapsed<.27 else 'dash_end'
+                if anim.name!=name:
+                    self.play_dash(name)
+            elif anim.finished:
                 self.mode = 'free'
         elif self.mode == 'magic':
             if anim.finished:
@@ -354,7 +364,7 @@ class Player:
             self.dash_attack_remaining = max(0.0, self.dash_attack_remaining - dt)
         self.invulnerable = max(0.0, self.invulnerable - dt)
         # 지상 보행은 시간 대신 실제 이동 거리로 한 번만 진행한다.
-        if self.mode != 'free' or self.animation.name not in GAIT_STRIDE:
+        if self.animation.name!='land_run' and (self.mode != 'free' or self.animation.name not in GAIT_STRIDE):
             self.animation.update(dt)
         combo_advance=self._combo_advance(keys)
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
@@ -363,8 +373,15 @@ class Player:
         else:
             self.move_time = 0.0
         self.previous_direction = direction
-        if self.landing and self.animation.finished and direction and SDLK_DOWN not in keys:
+        if self.landing and self.animation.name=='land_run' and (not direction or self.crouching):
+            self._action('land_soft',start_frame=3)
+        elif (self.landing and direction and not self.crouching and self.animation.name!='land_run'
+              and (self.animation.name!='air_attack_land' or self.animation.progress>=.24)):
+            self.land(direction)
+        if self.landing and self.animation.name=='land_run' and self.animation.finished:
             self.gait = 'run' if self.move_time >= .55 else 'walk'
+            self.mode = 'free'
+            self.animation.play(self.gait,start_frame=12 if self.gait=='run' else 0)
         self._update_action(keys)
 
         speed = 0.0
@@ -416,12 +433,21 @@ class Player:
                 'dash_slash', 'dash_attack_recovery',
             }
             if airborne and not keep_dash_attack and self.mode not in {'hurt', 'dead'}:
-                landing = 'air_attack_land' if self.animation.name == 'air_slash' else 'land_soft'
-                self._action(landing)
+                self.land(direction)
 
         self.effects.update(dt, self)
 
     def advance_gait(self, distance):
+        if self.animation.name=='land_run':
+            # A wall can stop the player's position even while a direction is held.
+            if abs(distance)<.01:
+                self.mode = 'free'
+                self.gait = 'idle_breathe'
+                self.animation.play('idle_breathe')
+                return
+            self.land_distance += abs(distance)
+            self.animation.elapsed = self.animation.duration*min(1,self.land_distance/52)
+            return
         stride = GAIT_STRIDE.get(self.animation.name)
         if stride and self.mode == 'free':
             self.animation.update(abs(distance) / stride * self.animation.duration)

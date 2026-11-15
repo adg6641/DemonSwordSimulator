@@ -3035,6 +3035,286 @@
         "right": 1196,
         "y": 0
       }
+    },
+    {
+      "id": "stage_support_1",
+      "file": "terrain/support_1.png",
+      "label": "stage_support_1",
+      "group": "장식과 안내",
+      "width": 460,
+      "height": 378,
+      "frameWidth": 460,
+      "frameHeight": 378,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 230.0,
+        "y": 378
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 460,
+          "height": 378
+        }
+      ]
+    },
+    {
+      "id": "stage_support_2",
+      "file": "terrain/support_2.png",
+      "label": "stage_support_2",
+      "group": "장식과 안내",
+      "width": 460,
+      "height": 306,
+      "frameWidth": 460,
+      "frameHeight": 306,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 230.0,
+        "y": 306
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 460,
+          "height": 306
+        }
+      ]
+    },
+    {
+      "id": "stage_support_3",
+      "file": "terrain/support_3.png",
+      "label": "stage_support_3",
+      "group": "장식과 안내",
+      "width": 460,
+      "height": 351,
+      "frameWidth": 460,
+      "frameHeight": 351,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 230.0,
+        "y": 351
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 460,
+          "height": 351
+        }
+      ]
+    },
+    {
+      "id": "stage_support_4",
+      "file": "terrain/support_4.png",
+      "label": "stage_support_4",
+      "group": "장식과 안내",
+      "width": 460,
+      "height": 320,
+      "frameWidth": 460,
+      "frameHeight": 320,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 230.0,
+        "y": 320
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 460,
+          "height": 320
+        }
+      ]
+    },
+    {
+      "id": "stage_support_5",
+      "file": "terrain/support_5.png",
+      "label": "stage_support_5",
+      "group": "장식과 안내",
+      "width": 441,
+      "height": 590,
+      "frameWidth": 441,
+      "frameHeight": 590,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 220.5,
+        "y": 590
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 441,
+          "height": 590
+        }
+      ]
+    },
+    {
+      "id": "stage_support_6",
+      "file": "terrain/support_6.png",
+      "label": "stage_support_6",
+      "group": "장식과 안내",
+      "width": 460,
+      "height": 520,
+      "frameWidth": 460,
+      "frameHeight": 520,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 230.0,
+        "y": 520
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 460,
+          "height": 520
+        }
+      ]
+    },
+    {
+      "id": "stage_support_7",
+      "file": "terrain/support_7.png",
+      "label": "stage_support_7",
+      "group": "장식과 안내",
+      "width": 313,
+      "height": 590,
+      "frameWidth": 313,
+      "frameHeight": 590,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 156.5,
+        "y": 590
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 313,
+          "height": 590
+        }
+      ]
+    },
+    {
+      "id": "stage_support_8",
+      "file": "terrain/support_8.png",
+      "label": "stage_support_8",
+      "group": "장식과 안내",
+      "width": 452,
+      "height": 590,
+      "frameWidth": 452,
+      "frameHeight": 590,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 226.0,
+        "y": 590
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 452,
+          "height": 590
+        }
+      ]
+    },
+    {
+      "id": "route_pointer",
+      "file": "fiction/route_pointer.png",
+      "label": "route_pointer",
+      "group": "장식과 안내",
+      "width": 160,
+      "height": 66,
+      "frameWidth": 160,
+      "frameHeight": 66,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 1,
+      "pivot": {
+        "x": 80.0,
+        "y": 33.0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 160,
+          "height": 66
+        }
+      ]
+    },
+    {
+      "id": "landing_dust",
+      "file": "terrain/landing_dust.png",
+      "label": "landing_dust",
+      "group": "장식과 안내",
+      "width": 155,
+      "height": 69,
+      "frameWidth": 155,
+      "frameHeight": 69,
+      "frameCount": 1,
+      "fps": 0,
+      "playback": "hold",
+      "recommendedScale": 0.32,
+      "pivot": {
+        "x": 77.5,
+        "y": 69
+      },
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "yTop": 0,
+          "pico2dY": 0,
+          "width": 155,
+          "height": 69
+        }
+      ]
     }
   ],
   "bodies": {

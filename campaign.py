@@ -233,6 +233,7 @@ class Campaign:
         self.player.effects.waves.clear()
         self.player.effects.bursts.clear()
         self.player.effects.trail = None
+        self.player.effects.clear_blade_trail()
         self.player.effects.last_hit_state = None
         self.attack_hits.clear()
         self.player.dash_attack_remaining = 0
@@ -537,8 +538,28 @@ class Campaign:
 
     def pause(self):
         self.open('일시 정지', '',
-                  [('계속하기', self.close_modal), ('모험 기록', self.open_journal),
-                   ('저장과 종료', self.pause_save)], kind='pause')
+                  [('계속하기', self.close_modal), ('저장과 종료', self.pause_save),
+                   ('다시 시작 · 은퇴', self.pause_run)], kind='pause')
+
+    def pause_run(self):
+        self.open('이번 모험', '', [('처음부터 다시 시작', self.confirm_restart),
+                  ('은퇴하기', self.confirm_retire), ('뒤로', self.pause)], kind='pause_menu')
+
+    def confirm_restart(self):
+        self.open('다시 시작', '이번 진행을 지우고 첫 장부터 시작할까?',
+                  [('다시 시작',lambda: setattr(self,'request','new')),
+                   ('돌아가기',self.pause_run)],kind='pause_menu')
+
+    def confirm_retire(self):
+        self.open('은퇴하기', '이번 모험을 끝내고 시작 화면으로 갈까?',
+                  [('은퇴하기',self.retire),('돌아가기',self.pause_run)],kind='pause_menu')
+
+    def retire(self):
+        if not self.store.discard_checkpoint():
+            self.notify('진행 기록을 지우지 못했다. 다시 시도해 보자.')
+            return
+        self.open('마검사의 조기 은퇴', '마왕에게 잡혔다. 첫 임무는 마왕성 복도 청소였다.',
+                  [('시작 화면',lambda: setattr(self,'request','menu'))],kind='retired')
 
     def pause_save(self):
         self.open('저장과 종료', '', [('현재 위치 저장',self.manual_save),
@@ -1012,8 +1033,9 @@ class Campaign:
                 top = max(o['y'] for o in landed)
                 was_air = old_y > top+2
                 p.y, p.vy, p.floor_y, p.air_dash_ready = top, 0, top, True
-                if was_air and p is self.player and p.mode not in {'hurt', 'dead'}:
-                    p._action('air_attack_land' if p.animation.name == 'air_slash' else 'land_soft')
+                if (was_air and p is self.player and p.mode not in {'hurt','dead'}
+                        and p.animation.name not in {'dash_slash','dash_attack_recovery'}):
+                    p.land(p.previous_direction)
                 elif was_air and p is not self.player:
                     p.motion.play('lunea/land_soft')
 

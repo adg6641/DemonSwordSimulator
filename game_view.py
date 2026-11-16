@@ -231,7 +231,7 @@ class CampaignView:
                     p=s.player
                     depth=max(0,(t-.35)/.59)
                     p.animation.draw(p.x,p.y+22*depth,p.facing,s.camera,1-.46*depth)
-            elif not (s.player.invulnerable>.05 and int(s.time*16)%2 and s.player.mode not in {'hurt', 'dead'}):
+            else:
                 s.player.draw(s.camera)
             if s.player.mode=='free' and s.player.previous_direction and s.player.grounded:
                 s.assets.draw('adv/grass_dust__foot_dust', s.player.x-25*s.player.facing, s.player.y, s.camera, .18, s.time)

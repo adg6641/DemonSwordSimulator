@@ -10,6 +10,7 @@ from video import IntroVideo
 from progress import SaveStore
 from campaign import Campaign
 from transitions import FrameBlend
+from sound import Sounds
 
 
 class GameApplication:
@@ -18,6 +19,7 @@ class GameApplication:
         self.assets = self.root / 'assets'
         self.ui = Interface(self.assets)
         self.store = SaveStore(self.root)
+        self.sounds = Sounds(self.assets / 'audio')
         self.video = None if skip_intro else IntroVideo(self.assets / 'cinematic/intro.mp4')
         self.music = load_music(str(self.assets / 'cinematic/intro.ogg')) if engine.audio_on and not skip_intro else None
         if self.music:
@@ -29,6 +31,8 @@ class GameApplication:
         self.game = None
         self.new_selected = 1
         self.blend=FrameBlend()
+        if skip_intro:
+            self.sounds.set_scene('menu')
 
     @property
     def player(self):
@@ -40,20 +44,25 @@ class GameApplication:
             self.video = None
         if self.music:
             self.music.stop()
+            self.music = None
         if self.game:
             self.game.close()
         self.game = None
+        self.sounds.clear_scene_events()
+        self.sounds.set_scene('menu')
         self.state, self.selected, self.elapsed = 'menu', 0, 0.0
         self.keys = set()
 
     def _start(self, resume=None):
         if self.game:
             self.game.close()
-        self.game = Campaign(self.root, self.ui, self.store, bool(self.store.checkpoint) if resume is None else resume)
+        self.game = Campaign(self.root, self.ui, self.store, bool(self.store.checkpoint) if resume is None else resume,
+                             sounds=self.sounds)
         self.keys = self.game.keys
         self.state = 'game'
 
     def _choose(self):
+        self.sounds.play('ui_accept')
         if self.selected == 0:
             self._start()
         elif self.selected == 1:
@@ -70,34 +79,43 @@ class GameApplication:
                 self._menu()
         elif self.state == 'controls':
             if event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+                self.sounds.play('ui_back')
                 self.state = 'menu'
             elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
                 if 520 <= event.x <= 760 and 659 <= event.y <= 702:
+                    self.sounds.play('ui_back')
                     self.state = 'menu'
         elif self.state == 'confirm_new':
             if event.type == SDL_KEYDOWN:
                 if event.key in {SDLK_UP, SDLK_DOWN}:
+                    self.sounds.play('ui_move')
                     self.new_selected = 1-self.new_selected
                 elif event.key in {SDLK_RETURN, SDLK_SPACE}:
+                    self.sounds.play('ui_accept' if self.new_selected == 0 else 'ui_back')
                     if self.new_selected == 0:
                         self._start(resume=False)
                     else:
                         self.state = 'menu'
                 elif event.key == SDLK_ESCAPE:
+                    self.sounds.play('ui_back')
                     self.state = 'menu'
         elif self.state == 'menu':
             if event.type in {SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN}:
                 hit = self.ui.hit(event.x, 720-event.y)
                 if hit is not None:
+                    if self.selected != hit and event.type == SDL_MOUSEMOTION:
+                        self.sounds.play('ui_move')
                     self.selected = hit
                     if event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
                         self._choose()
             elif event.type == SDL_KEYDOWN:
                 if event.key in {SDLK_UP, SDLK_DOWN}:
+                    self.sounds.play('ui_move')
                     self.selected = (self.selected+(1 if event.key == SDLK_DOWN else -1))%3
                 elif event.key in {SDLK_RETURN, SDLK_SPACE}:
                     self._choose()
                 elif event.key == SDLK_n:
+                    self.sounds.play('ui_open')
                     if self.store.checkpoint:
                         self.state, self.new_selected = 'confirm_new', 1
                     else:
@@ -108,6 +126,7 @@ class GameApplication:
             self.game.handle(event)
 
     def update(self, dt):
+        self.sounds.update(dt)
         self.blend.update(dt)
         self.ui.update(dt)
         if self.state == 'intro':
@@ -161,4 +180,5 @@ class GameApplication:
             self.music = None
         if self.game:
             self.game.close()
+        self.sounds.close()
         self.game = self.ui = None

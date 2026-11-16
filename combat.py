@@ -84,7 +84,7 @@ class Enemy:
         if clip:
             self.motion.play(clip, restart=True)
 
-    def hurt(self, damage, direction, scene):
+    def hurt(self, damage, direction, scene, *, magic=False):
         if not self.alive:
             return False
         self.hp = max(0, self.hp - damage)
@@ -95,7 +95,7 @@ class Enemy:
             self.x = max(90, min(scene.world.width-90, self.x + direction*9))
             self.keep_on_perch()
             self.change('hurt', self.key('hurt'))
-        scene.feedback(self.x, self.y+85, round(damage), 'hit_impacts__hit_metal' if self.number in {2, 8, 9, 11, 14, 17, 18, 20} else 'hit_impacts__hit_soft')
+        scene.feedback(self.x, self.y+85, round(damage), 'hit_impacts__hit_metal' if self.number in {2, 8, 9, 11, 14, 17, 18, 20} else 'hit_impacts__hit_soft', magic=magic)
         return True
 
     def patterns(self):
@@ -129,6 +129,7 @@ class Enemy:
         self.facing = 1 if self.target_x > self.x else -1
         self.did_hit = False
         self.change('windup', self.attack_key)
+        scene.sound_at('enemy_warn', self.x, self.y, gain=1.25 if self.boss else 1)
 
     def update(self, dt, scene):
         self.motion.update(dt)
@@ -152,6 +153,8 @@ class Enemy:
             delay = (.75 if self.boss else .5) + (.25 if self.marked > 0 else 0)
             if self.age >= delay:
                 self.change('attack', self.attack_key)
+                if self.pattern == 'charge':
+                    scene.sound_at('enemy_charge', self.x, self.y)
             return
         if self.state == 'attack':
             length = self.assets.duration(self.attack_key)
@@ -193,6 +196,7 @@ class Enemy:
     def strike(self, scene):
         p = scene.player
         if self.pattern in {'spore', 'paper', 'needle', 'night'}:
+            scene.sound_at('bolt_' + self.pattern, self.x, self.y)
             kinds = {'spore': 'spore_fly', 'paper': 'paper_fly', 'needle': 'needle_fly', 'night': 'night_orb'}
             dx, dy = p.x-self.x, p.y+65-(self.y+85)
             length = max(1, hypot(dx, dy))
@@ -200,12 +204,15 @@ class Enemy:
             for spread in ([-.2, 0, .2] if self.boss and self.hp < self.max_hp*.5 else [0]):
                 scene.shots.append(Shot(self.x+self.facing*55, self.y+85, dx/length*speed, dy/length*speed+spread*180, self.damage, 'adv/projectiles__'+kinds[self.pattern], radius=24 if self.boss else 16))
         elif self.pattern in {'seal', 'root'}:
+            scene.sound_at('trap_warn', self.target_x, p.floor_y)
             scene.hazards.append(dict(x=self.target_x, y=p.floor_y, age=0, wait=.75, life=1.6, hit=False, kind=self.pattern, damage=self.damage, radius=95))
         elif self.pattern == 'slam':
+            scene.sound_at('enemy_slam', self.x, self.y)
             scene.burst('adv/hit_impacts__hit_metal', self.x+self.facing*105, self.y+30, .75)
             if abs(p.x-(self.x+self.facing*90)) < (190 if self.boss else 100) and abs(p.y-self.y)<90:
                 scene.damage_player(self.damage*1.3, self.x)
         elif self.pattern == 'melee':
+            scene.sound_at('enemy_swipe', self.x, self.y)
             if abs(p.x-(self.x+self.facing*55)) < (150 if self.boss else 85) and abs(p.y-self.y) < 140:
                 scene.damage_player(self.damage, self.x)
 
@@ -286,6 +293,7 @@ class Companion:
             self.motion.play('lunea/jump_takeoff')
             if not cinematic:
                 p.effects.burst('lunea_takeoff', self.x, self.y, direction)
+                scene.sound_at('jump', self.x, self.y, gain=.47)
         if self.skill > 0:
             self.ground_speed = 0.0
         else:
@@ -305,6 +313,7 @@ class Companion:
                     self.motion.play('lunea/land_soft')
                 if not cinematic:
                     p.effects.burst('lunea_land', self.x, self.y, direction)
+                    scene.sound_at('ally_land', self.x, self.y)
         moved = abs(self.x-old_x)
         moving = moved > 23*dt
         if moving:
@@ -343,9 +352,11 @@ class Companion:
                 phase = self.gait_phase
                 stride = 245 if self.running else 145
                 self.walk_cycle('lunea/run' if self.running else 'lunea/walk', moved, stride)
-                if not cinematic and self.running and int(phase * 2) != int((phase + moved / stride) * 2):
-                    foot = 9 if self.gait_phase < .5 else -8
-                    p.effects.burst('lunea_step', self.x + self.facing * foot, self.y, self.facing)
+                if not cinematic and int(phase * 2) != int((phase + moved / stride) * 2):
+                    scene.sound_at('ally_step', self.x, self.y, gain=.9 if self.running else .62)
+                    if self.running:
+                        foot = 9 if self.gait_phase < .5 else -8
+                        p.effects.burst('lunea_step', self.x + self.facing * foot, self.y, self.facing)
         elif self.motion.key in {'lunea/run', 'lunea/walk'}:
             stop = self.assets.clips['lunea/move_stop']
             previous = self.assets.frame(self.motion.key, self.motion.age)
@@ -365,14 +376,17 @@ class Companion:
 
     def support(self, scene, enemy=None):
         if self.cooldown > 0:
+            scene.sounds.play('ui_lock')
             scene.notify(f'달빛 지원 준비 중 · {self.cooldown:.0f}초')
             return False
         self.cooldown, self.skill = 12, 1.15
         if enemy:
+            scene.sound_at('moon_cast', self.x, self.y)
             enemy.marked, enemy.slow = 4.0, 2.0
             scene.burst('lunea/fx_seal', enemy.x, 0, .6)
             scene.burst('lunea/fx_projectile', (enemy.x+self.x)/2, 95, .45)
         else:
+            scene.sound_at('moon_shield', self.x, self.y)
             scene.shield = 3.0
             scene.burst('lunea/fx_barrier', scene.player.x, 0, .65)
         return True

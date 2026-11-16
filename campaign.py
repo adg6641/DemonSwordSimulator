@@ -18,8 +18,25 @@ from campaign_data import SPAWNS, BOSSES, PAGES, PAGE_WIDTH, PLATFORM_ROUTES, EV
 from story import CHAPTERS, INTRO, EVENT_LINES, SPEAKERS, RECORDS
 
 
+STAGE_AMBIENCE = ('village', 'forest', 'deep', 'ruins', 'shrine', 'gate', 'corridor', 'throne')
+SWING_SOUNDS = {
+    'slash_1': 'swing_1', 'slash_2': 'swing_2', 'slash_3': 'swing_3',
+    'air_slash': 'swing_air', 'crouch_slash': 'swing_low', 'dash_slash': 'swing_dash',
+}
+STORY_SOUNDS = {
+    ('rescue', 'careful'): 'companion_join', ('rescue', 'force'): 'companion_join',
+    ('merchant', 'help'): 'merchant', ('merchant', 'take'): 'absorb',
+    ('altar', 'purify'): 'purify', ('altar', 'absorb'): 'absorb',
+    ('memory', 'repair'): 'purify', ('envoy', 'warn'): 'pact',
+    ('envoy', 'contract'): 'absorb', ('healer', 'heal'): 'heal',
+    ('mirror', 'remember'): 'record', ('side_seal', 'open'): 'seal_break',
+}
+MENU_SOUNDS = {'journal': 'ui_page', 'pause': 'ui_open', 'pause_menu': 'ui_open',
+               'stats': 'ui_open', 'skills': 'ui_open', 'path': 'ui_open'}
+
+
 class Campaign:
-    def __init__(self, root, ui, store, resume=False):
+    def __init__(self, root, ui, store, resume=False, *, sounds=None):
         self.root, self.ui, self.store = root, ui, store
         self.assets = Assets(root / 'assets')
         self.world = World(root / 'assets/world', 1280)
@@ -30,7 +47,9 @@ class Campaign:
         self.player.effects.preload()
         self.assets.lunea_atlas.preload()
         self.run = Run()
-        self.sounds = Sounds()
+        self.owns_sounds = sounds is None
+        self.sounds = sounds if sounds is not None else Sounds(root / 'assets/audio')
+        self.foot_contact = None
         self.mp = 80.0
         self.time = 0.0
         self.keys = set()
@@ -90,6 +109,15 @@ class Campaign:
         self.toast_time = 0
         previous = self.modal
         self.modal = dict(title=title, text=text, options=options, portrait=portrait, kind=kind, visual=visual)
+        self.sounds.set_context(quiet=True, camp=visual == 'camp')
+        if kind == 'boss':
+            self.sounds.play('boss_warn')
+        elif kind == 'final':
+            self.sounds.play('story_turn')
+        elif kind == 'dialogue':
+            self.sounds.play('dialogue', gain=.65 if previous else 1.0)
+        elif kind in MENU_SOUNDS:
+            self.sounds.play(MENU_SOUNDS[kind])
         if kind in {'dialogue', 'boss', 'final'}:
             if self.player.attack_pending:
                 self.player.attack_pending=False;self.player.mode='free';self.player.gait=None
@@ -162,6 +190,7 @@ class Campaign:
         story = self.modal and self.modal['kind'] in {'dialogue','boss','final'}
         seats = self.modal.get('camp_seats') if visual == 'camp' else None
         self.modal = None
+        self.sounds.set_context()
         self.story_context = None
         self.keys.clear()
         if story:
@@ -185,9 +214,10 @@ class Campaign:
             return
         option = self.modal['options'][index]
         if len(option) > 2 and option[2]:
+            self.sounds.play('ui_lock')
             self.notify(option[2], 4)
             return
-        self.sounds.play('select')
+        self.sounds.play('ui_accept')
         option[1]()
 
     def enter_stage(self, index, x=180, checkpoint=True, *, page=0, y=0):
@@ -196,6 +226,9 @@ class Campaign:
         self.run.unlocked = max(self.run.unlocked, index)
         self.world.set_stage(index)
         self.world.width = PAGE_WIDTH[self.region]
+        self.sounds.clear_scene_events()
+        self.sounds.set_scene(self.region if self.story_only else STAGE_AMBIENCE[index])
+        self.foot_contact = None
         self.objects = page_objects(index, page)
         self.door_entry = self.pending_event = None
         self.opened_final = False
@@ -290,6 +323,7 @@ class Campaign:
             self.pending_event=self.region
         self.ui_serial+=1
         self.camera.follow(self.player, self.world.width, snap=True)
+        self.sounds.play('respawn')
         self.burst('adv/failure_respawn__checkpoint_return', self.player.x, 0, .8)
         self.highlight('checkpoint', '저장했던 불빛 곁에서 다시 시작합니다')
 
@@ -337,6 +371,7 @@ class Campaign:
                   + [('뒤로', self.grow)], kind='stats')
 
     def pick_path(self, path):
+        self.sounds.play('skill')
         self.run.set_path(path)
         self.run.choose('첫 기술', {'physical':'대시공격','magic':'마검파'}[path])
         self.sync_stats()
@@ -344,6 +379,7 @@ class Campaign:
 
     def allocate(self, key):
         if self.run.allocate(key):
+            self.sounds.play('skill', gain=.74)
             self.run.choose('레벨 성장', {'attack':'공격력 +5','magic':'마력 +6','vitality':'최대 HP +20','focus':'최대 MP +15'}[key])
         self.sync_stats()
         if self.run.unspent:
@@ -364,6 +400,7 @@ class Campaign:
 
     def pick_skill(self, key):
         if self.run.upgrade(key):
+            self.sounds.play('skill')
             self.run.choose('기술 성장', next(title for skill,title,*_ in PERKS if skill==key))
             if key == 'supply':
                 self.run.shards += 2
@@ -378,8 +415,32 @@ class Campaign:
             key = 'adv/'+key
         self.bursts.append(dict(key=key, x=x, y=y, scale=scale, age=0, life=life or self.assets.duration(key)))
 
-    def feedback(self, x, y, number, key):
-        self.sounds.play('hit')
+    def sound_at(self, name, x, y, *, gain=1.0):
+        p = self.player
+        self.sounds.at(name, x - p.x, y - p.y, gain=gain)
+
+    def surface(self):
+        if self.player.floor_y > 1:
+            return 'wood' if self.run.stage < 3 else 'stone'
+        return 'earth' if self.run.stage < 3 else 'stone'
+
+    def footstep(self, distance):
+        p = self.player
+        animation = p.animation
+        if not p.grounded or animation.name not in {'walk', 'run', 'crouch_walk', 'land_walk', 'land_run'}:
+            self.foot_contact = None
+            return
+        if abs(distance) < .1:
+            return
+        contact = (animation.serial, int(animation.elapsed / animation.duration * 2))
+        if contact != self.foot_contact:
+            self.foot_contact = contact
+            gain = {'run': 1, 'crouch_walk': .46}.get(animation.name, .7)
+            self.sounds.play('step_' + self.surface(), gain=gain)
+
+    def feedback(self, x, y, number, key, *, magic=False):
+        sound = 'wave_hit' if magic else 'hit_metal' if key.endswith('_metal') else 'hit_flesh'
+        self.sound_at(sound, x, y)
         self.player.effects.burst('impact',x,y,self.player.facing)
         self.numbers.append(dict(x=x, y=y, text=str(number), age=0, hurt=False))
         self.hitstop = max(self.hitstop, {
@@ -391,14 +452,14 @@ class Campaign:
         if p.hp <= 0 or p.invulnerable > 0:
             return 0
         if self.shield > 0:
-            self.sounds.play('guard')
+            self.sounds.play('moon_impact')
             self.shield = 0
             self.burst('lunea/fx_barrier', p.x, p.y, .6)
             p.invulnerable = .4
             return 0
         front = (source-p.x)*p.facing >= 0
         if p.mode == 'guard' and front and p.animation.name == 'guard_raise' and p.animation.elapsed <= .24:
-            self.sounds.play('guard')
+            self.sounds.play('parry')
             p.invulnerable = .28
             p.animation.play('guard_impact')
             self.guard_sparks()
@@ -409,7 +470,8 @@ class Campaign:
         if p.mode == 'guard' and not front:
             p.mode = 'free'
         damage = p.take_damage(amount)
-        self.sounds.play('hit')
+        if p.hp > 0:
+            self.sounds.play('guard' if guard else 'hurt_player')
         self.run.hits += 1
         if guard and p.hp > 0:
             self.guard_sparks()
@@ -435,9 +497,10 @@ class Campaign:
             return
         if key == SDLK_h:
             if self.run.shards <= 0:
+                self.sounds.play('ui_lock')
                 self.notify('회복 파편이 없습니다. 상자와 쉼터를 찾아보세요.')
             elif p.hp > 0 and p.hp < self.run.max_hp:
-                self.sounds.play('pickup')
+                self.sounds.play('heal')
                 self.run.shards -= 1
                 p.hp = min(self.run.max_hp, p.hp+45+8*self.run.skills.get('supply', 0))
                 self.burst('pickup_fx__pickup', p.x, p.y+60, .55)
@@ -446,33 +509,37 @@ class Campaign:
             if self.companion:
                 self.companion.support(self)
             else:
+                self.sounds.play('ui_lock')
                 self.notify('아직 함께 모험하는 동료가 없습니다.')
             return
         if key == SDLK_l:
             if self.run.earned:
                 self.grow()
             else:
+                self.sounds.play('ui_lock')
                 self.notify('첫 레벨업 후 기술을 고를 수 있다.')
             return
         if key == SDLK_z:
             cost = max(12, 24-self.run.skills.get('quick', 0)*2)
             if not p.magic_unlocked:
+                self.sounds.play('ui_lock')
                 self.notify('첫 성장에서 마법·균형 방향 또는 기술 강화의 마검파를 선택하세요.')
                 return
             if self.mp < cost:
+                self.sounds.play('ui_lock')
                 self.notify('집중할 MP가 부족합니다. 잠시 회복하거나 쉼터에서 쉬세요.')
                 return
             before = p.animation.serial
             p.press(key, self.keys)
             if p.animation.serial != before:
-                self.sounds.play('magic')
+                self.sounds.play('magic_charge')
                 self.mp -= cost
                 p.animation.fps *= 1 + self.run.skills.get('quick', 0)*.13
             return
         serial = p.animation.serial
         p.press(key, self.keys)
-        if p.animation.serial != serial and (key == SDLK_UP or key in SHIFT):
-            self.sounds.play('jump' if key == SDLK_UP else 'dash')
+        if p.animation.serial != serial and key in SHIFT and p.mode == 'dash':
+            self.sounds.play('dash_air' if p.animation.name == 'dash_air' else 'dash_ground')
 
     def handle(self, event):
         if event.type == SDL_KEYUP:
@@ -484,27 +551,35 @@ class Campaign:
             if self.modal['kind'] == 'journal':
                 if event.type == SDL_KEYDOWN:
                     if event.key in {SDLK_ESCAPE, SDLK_TAB}:
+                        self.sounds.play('ui_back')
                         self.close_modal()
                     elif event.key in {SDLK_LEFT, SDLK_RIGHT}:
+                        self.sounds.play('ui_page')
                         self.journal_page = (self.journal_page+(1 if event.key == SDLK_RIGHT else -1))%3
                     elif self.journal_page==1 and event.key in {SDLK_UP,SDLK_DOWN}:
+                        self.sounds.play('ui_page')
                         self.history_index += 1 if event.key==SDLK_DOWN else -1
                 return
             if event.type in {SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN}:
                 for x, y, w, h, index in self.hitboxes:
                     if x <= event.x <= x+w and y <= 720-event.y <= y+h:
+                        if self.selected != index and event.type == SDL_MOUSEMOTION:
+                            self.sounds.play('ui_move')
                         self.selected = index
                         if event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
                             self.choose(index)
                         break
             elif event.type == SDL_KEYDOWN:
                 if event.key in {SDLK_UP, SDLK_LEFT, SDLK_DOWN, SDLK_RIGHT}:
+                    if len(self.modal['options']) > 1:
+                        self.sounds.play('ui_move')
                     self.selected = (self.selected+(1 if event.key in {SDLK_DOWN, SDLK_RIGHT} else -1))%len(self.modal['options'])
                 elif event.key in {SDLK_RETURN, SDLK_SPACE}:
                     self.choose(self.selected)
                 elif SDLK_1 <= event.key <= SDLK_1+2:
                     self.choose(event.key-SDLK_1)
                 elif event.key == SDLK_ESCAPE and self.modal['kind'] in {'pause','pause_menu','stats','skills'}:
+                    self.sounds.play('ui_back')
                     self.close_modal()
             return
         if event.type != SDL_KEYDOWN:
@@ -529,6 +604,7 @@ class Campaign:
             if self.developer or index <= self.run.unlocked:
                 self.travel_stage(index)
             else:
+                self.sounds.play('ui_lock')
                 self.notify('아직 가 보지 않은 지역입니다. 오른쪽 길을 따라 진행하세요.')
         elif self.developer and SDLK_F1 <= event.key <= SDLK_F7:
             self.player.effects.set_level(event.key-SDLK_F1+1)
@@ -558,6 +634,7 @@ class Campaign:
         if not self.store.discard_checkpoint():
             self.notify('진행 기록을 지우지 못했다. 다시 시도해 보자.')
             return
+        self.sounds.play('retire')
         self.open('마검사의 조기 은퇴', '마왕에게 잡혔다. 첫 임무는 마왕성 복도 청소였다.',
                   [('시작 화면',lambda: setattr(self,'request','menu'))],kind='retired')
 
@@ -571,7 +648,8 @@ class Campaign:
             return
         self.save_checkpoint()
         self.close_modal()
-        self.notify('현재 위치와 선택을 저장했습니다.')
+        self.sounds.play('ui_lock' if self.store.error else 'save')
+        self.notify(self.store.error or '현재 위치와 선택을 저장했습니다.')
 
     def open_journal(self):
         self.open('모험 기록책', '', [('닫기', self.close_modal)], kind='journal')
@@ -601,25 +679,29 @@ class Campaign:
 
     def interact(self):
         if not self.player.grounded:
+            self.sounds.play('ui_lock')
             self.notify('착지한 뒤 E를 눌러 살펴보세요.', 1.5)
             return
         obj = self.nearest()
         if not obj:
+            self.sounds.play('ui_lock')
             self.notify('상호작용할 물건 가까이에서 E를 누르세요.')
             return
         kind, uid = obj['kind'], self.obj_uid(obj)
         if kind=='door':
             if self.door_ready(obj):
+                self.sound_at('door', obj['x'], obj['y'])
                 self.door_entry=dict(door=obj, age=0.0, start_x=self.player.x)
                 self.bursts.clear()
                 self.keys.clear()
                 self.player.animation.play('walk')
                 self.player.facing=1 if obj['x']>=self.player.x else -1
             else:
+                self.sounds.play('ui_lock')
                 self.notify('사슬 스위치를 먼저 당기자.' if obj.get('lock')=='lever' else '문지기를 먼저 쓰러뜨리자.')
         elif kind == 'record':
             if obj['record'] not in self.run.records:
-                self.sounds.play('pickup')
+                self.sound_at('record', obj['x'], obj['y'])
                 self.run.records.append(obj['record'])
                 self.gain_xp(30)
                 self.player._action('adv/hero_pickup__hero_reach', 'adv/hero_pickup__hero_reach_up')
@@ -629,10 +711,11 @@ class Campaign:
                 self.open(RECORDS[obj['record']][0], RECORDS[obj['record']][1], [('기억하고 길을 나선다', self.close_modal)],
                           'portrait_hero__hero_think', speaker='기록의 목소리', focus=obj['x'])
             else:
+                self.sounds.play('ui_lock')
                 self.notify('이미 기록책에 적어 둔 문양입니다.')
         elif kind == 'chest':
             if uid not in self.run.taken:
-                self.sounds.play('pickup')
+                self.sound_at('chest', obj['x'], obj['y'])
                 self.run.taken.append(uid)
                 self.run.shards += 2
                 self.gain_xp(25)
@@ -640,8 +723,12 @@ class Campaign:
                 self.burst('pickup_fx__pickup', obj['x'], obj['y']+80, .6)
                 self.notify('회복 파편 2개 · 경험치 25')
             else:
+                self.sounds.play('ui_lock')
                 self.notify('이 상자는 이미 열었습니다.')
         elif kind == 'lever':
+            self.sound_at('lever', obj['x'], obj['y'])
+            if not self.run.has('gate_open'):
+                self.sounds.play('gate', gain=.74)
             self.run.mark('gate_open')
             self.run.mark('gate_time_set')
             self.notify('성문이 열렸다. 문 앞에서 E를 누르자.')
@@ -694,6 +781,10 @@ class Campaign:
     def event_result(self, key, value):
         r = self.run
         first = not r.has(key+'_done')
+        if first or key in {'healer', 'memory'}:
+            cue = STORY_SOUNDS.get((key, value))
+            if cue:
+                self.sounds.play(cue)
         r.choose(key, value)
         text, portrait = '선택이 다음 지역과 결말에 남는다.', 'portrait_hero__hero_think'
         if key == 'rescue':
@@ -800,9 +891,11 @@ class Campaign:
 
     def camp(self):
         if any(e.alive and abs(e.x-self.player.x) < 650 and abs(e.y-self.player.y)<220 for e in self.enemies) or any(abs(s.y-self.player.y)<180 for s in self.shots) or (self.hazards and self.player.y<180):
+            self.sounds.play('ui_lock')
             self.notify('주변의 위협을 정리한 뒤 모닥불에서 쉴 수 있습니다.')
             return
         self.save_checkpoint(heal=True)
+        self.sounds.play('rest')
         r = self.run
         actions = []
         if r.companion:
@@ -834,6 +927,7 @@ class Campaign:
         self.close_modal()
 
     def camp_pact(self, key):
+        self.sounds.play('purify' if key == 'memory' else 'pact')
         if key not in self.run.pacts:
             self.run.pacts.append(key)
         if key == 'memory':
@@ -885,6 +979,12 @@ class Campaign:
         if self.run.ending or self.player.hp <= 0:
             return
         self.run.ending = ending
+        self.sounds.clear_scene_events()
+        self.sounds.set_context(quiet=True)
+        cue = 'ending_hidden' if ending == 'H1' else {
+            '1': 'ending_good', '2': 'ending_bitter', '3': 'ending_bitter', '4': 'ending_dark'
+        }[ending[-1]]
+        self.sounds.play(cue)
         self.finished_age = 0
         self.modal = None
         self.keys.clear()
@@ -919,7 +1019,10 @@ class Campaign:
         if not state or p.hp <= 0:
             return
         if state['serial']==a.serial and self.slash_sound_serial!=a.serial:
-            self.sounds.play('slash');self.slash_sound_serial=a.serial
+            cue = SWING_SOUNDS.get(state['name'])
+            if cue:
+                self.sounds.play(cue)
+            self.slash_sound_serial = a.serial
         # 같은 베기의 검기·칼날·사라지는 잔상에 여러 번 닿아도 피해는 한 번이다.
         self.hit_ids = self.attack_hits.setdefault(state['serial'],set())
         self.attack_hits = {key:value for key,value in self.attack_hits.items() if key>=a.serial-8}
@@ -940,10 +1043,13 @@ class Campaign:
                 obj['hp'] -= damage
                 self.hit_ids.add(uid)
                 p.effects.burst('impact',obj['x'],obj['y']+45,p.facing)
+                stone = obj['kind'] == 'pillar'
                 if obj['hp'] <= 0:
+                    self.sound_at('stone_break' if stone else 'wood_break', obj['x'], obj['y'])
                     r.broken.append(uid)
                     obj['broken_time'] = self.time
                     r.shards += 1
+                    self.sound_at('pickup', obj['x'], obj['y'], gain=.6)
                     self.gain_xp(15)
                     if obj['kind'] == 'pillar':
                         for enemy in self.enemies:
@@ -951,6 +1057,8 @@ class Campaign:
                                 enemy.change('hurt', enemy.key('hurt'))
                                 enemy.slow = 4
                         self.notify('봉인 기둥이 무너졌다. 왕의 움직임이 잠시 멎는다.')
+                else:
+                    self.sound_at('hit_stone' if stone else 'hit_wood', obj['x'], obj['y'])
         p.effects.last_hit_state = state
 
     @staticmethod
@@ -961,7 +1069,9 @@ class Campaign:
         p, r = self.player, self.run
         settings = p.effects.settings['waveMotion']
         for wave in p.effects.waves:
-            wave.setdefault('hit', set())
+            if 'hit' not in wave:
+                self.sounds.play('wave_launch')
+                wave['hit'] = set()
             wave.setdefault('damage', (6+r.magic*(1.45+.18*r.skills.get('wave', 0))) * (1.35 if self.hybrid_time > 0 and r.skills.get('hybrid', 0) else 1))
             wave.setdefault('size', 1+.14*r.skills.get('wide', 0))
             # 실제 픽셀 모양을 지나온 위치마다 확인해 빠른 파동도 적을 건너뛰지 않는다.
@@ -969,7 +1079,7 @@ class Campaign:
             samples = p.effects.wave_samples(wave, wave.get('hit_age', 0)) if targets else ()
             for enemy in targets:
                 if p.effects.wave_hits(wave, enemy.hurtbox(), samples=samples):
-                    enemy.hurt(wave['damage'], wave['facing'], self)
+                    enemy.hurt(wave['damage'], wave['facing'], self, magic=True)
                     wave['hit'].add(enemy.uid)
                     if len(wave['hit']) >= 1+r.skills.get('pierce', 0):
                         wave['age'] = settings['lifetime']
@@ -999,6 +1109,9 @@ class Campaign:
             motion=o.get('motion')
             if motion=='lift':
                 o['y']=o['base_y']+o['travel']*(.5-.5*sin(self.time*2*pi/o['period']+pi/2))
+                lower, upper = o['base_y'] + 4, o['base_y'] + o['travel'] - 4
+                if riders and (previous_y <= lower < o['y'] or previous_y >= upper > o['y']):
+                    self.sound_at('lift', o['x'], o['y'])
             elif motion=='moving':
                 o['x']=o['base_x']+o['travel']*sin(self.time*2*pi/o['period'])
             elif motion=='crumble':
@@ -1006,6 +1119,7 @@ class Campaign:
                 o['stepped']=o.get('stepped',0)+dt if riders else max(0,o.get('stepped',0)-dt)
                 if o['stepped']>.75:
                     o['disabled_until']=self.time+4;o['stepped']=0
+                    self.sound_at('crumble', o['x'], o['y'])
                     self.burst('adv/hit_impacts__hit_metal',o['x'],o['y'],.35)
                     continue
             for p in riders:
@@ -1063,6 +1177,7 @@ class Campaign:
         """지역을 바꾼 직후 잠깐 멈춰 교차 전환을 읽을 시간을 준다."""
         self.keys.clear()
         self.enter_stage(index,x,page=page)
+        self.sounds.play('portal')
         self.stage_settle=.48
         if self.story_only:
             self.pending_event=self.region
@@ -1107,6 +1222,7 @@ class Campaign:
         old=p.x
         p.x=entry['start_x']+(x-entry['start_x'])*min(1,t*1.4)
         p.advance_gait(p.x-old)
+        self.footstep(p.x-old)
         ally=self.companion
         if ally and ally.floor_y==p.floor_y and abs(ally.x-x)<265:
             dx=x-ally.x
@@ -1120,6 +1236,8 @@ class Campaign:
             self.next_page()
 
     def update(self, dt):
+        if self.owns_sounds:
+            self.sounds.update(dt)
         self.time += dt
         if self.stage_settle>0:
             self.stage_settle=max(0,self.stage_settle-dt)
@@ -1175,6 +1293,7 @@ class Campaign:
                         p.gait='idle_breathe'
                 if p.animation.name == 'walk':
                     p.advance_gait(p.x - old_x)
+                    self.footstep(p.x - old_x)
                 else:
                     p.animation.update(dt)
                 if self.companion:
@@ -1214,23 +1333,34 @@ class Campaign:
         old_x,old_y,old_vy=p.x,p.y,p.vy
         p.floor_y = self.floor_beneath(p)
         self.update_posture(p)
+        previous_animation = p.animation.name
         p.update(dt, self.keys)
+        if p.animation.name != previous_animation and p.animation.name in {'guard_raise', 'magic_release'}:
+            self.sounds.play(p.animation.name)
         self.platforms(old_y)
         self.blockers(old_x)
-        if p.grounded and old_y>p.y+1 and old_vy < -245:
-            p.effects.burst('land',p.x,p.y,p.facing)
+        if p.grounded and old_y > p.y + 1 and old_vy < -70:
+            self.sounds.play('land_' + self.surface(), gain=min(1, abs(old_vy) / 550))
+            if old_vy < -245:
+                p.effects.burst('land',p.x,p.y,p.facing)
+        sprang = False
         for o in self.objects:
             if o['kind']=='spring' and abs(p.x-o['x'])<52 and p.mode=='jump' and p.jump_launched and p.y<55 and p.vy>300 and self.time>=o.get('next_bounce',0):
                 p.vy=1160;p.floor_y=0;p.mode='free';p.gait=None;p.air_dash_ready=True
                 o['next_bounce']=self.time+1
-                self.sounds.play('jump')
+                sprang = True
+                self.sound_at('spring', o['x'], o['y'])
                 self.burst('adv/pickup_fx__pickup',o['x'],0,.5)
             elif o['kind']=='crystal' and self.obj_uid(o) not in r.taken and abs(p.x-o['x'])<42 and abs(p.y+65-o['y'])<65:
                 r.taken.append(self.obj_uid(o));self.mp=min(r.max_mp,self.mp+12)
-                self.gain_xp(28);self.sounds.play('pickup')
+                self.gain_xp(28)
+                self.sound_at('crystal', o['x'], o['y'])
                 self.burst('adv/pickup_fx__pickup',o['x'],o['y'],.3)
         p.x = max(75, min(self.world.width-75, p.x))
         p.advance_gait(p.x - old_x)
+        self.footstep(p.x - old_x)
+        if not sprang and p.mode == 'jump' and old_vy <= 0 < p.vy:
+            self.sounds.play('jump')
         boss = next((e for e in self.enemies if e.boss and e.alive and abs(e.x-p.x)<620), None)
         if boss and p.grounded and p.mode=='free' and not r.has('met_boss_'+str(boss.number)):
             r.mark('met_boss_'+str(boss.number))
@@ -1251,22 +1381,26 @@ class Campaign:
             enemy.update(dt, self)
             if enemy.defeated and not enemy.rewarded:
                 enemy.rewarded = True
+                self.sound_at('boss_fall' if enemy.boss else 'enemy_fall', enemy.x, enemy.y)
                 if enemy.uid not in r.killed:
                     r.killed.append(enemy.uid)
                     r.kills += 1
                     r.shards += 1 if enemy.boss else 0
                     self.gain_xp(140+30*r.stage if enemy.boss else 24+8*r.stage)
                     if enemy.boss:
+                        self.sounds.play('victory', gain=.8)
                         self.highlight('victory', enemy.actor['name']+'을 넘어섰다')
         for shot in self.shots:
             shot.update(dt)
             for obj in self.objects:
                 if obj['kind'] == 'cover' and abs(shot.x-obj['x']) < obj.get('w', 100)/2 and 0 < shot.y < obj.get('h', 72):
                     shot.age = shot.life
+                    self.sound_at('bolt_impact', shot.x, shot.y)
                     self.burst('hit_impacts__hit_metal', shot.x, shot.y, .3)
             if not shot.dead and abs(shot.x-p.x) < shot.radius+20 and p.y+15 < shot.y+shot.radius and shot.y-shot.radius < p.y+p.collision_height:
                 self.damage_player(shot.damage, shot.x)
                 shot.age = shot.life
+                self.sound_at('bolt_impact', shot.x, shot.y, gain=.55)
                 kind = 'spore_burst' if 'spore' in shot.key else 'paper_break' if 'paper' in shot.key else 'thread_snap' if 'needle' in shot.key else 'night_impact'
                 self.burst('projectile_impacts__'+kind, shot.x, shot.y, .4)
         self.shots = [s for s in self.shots if not s.dead and -100 < s.x < self.world.width+100]
@@ -1274,6 +1408,7 @@ class Campaign:
             hazard['age'] += dt
             if hazard['age'] >= hazard['wait'] and not hazard['hit']:
                 hazard['hit'] = True
+                self.sound_at('trap_' + hazard['kind'], hazard['x'], hazard['y'])
                 self.burst('root_spike__root_spike' if hazard['kind'] == 'root' else 'seal_warning__seal_burst', hazard['x'], hazard['y'], .65)
                 if abs(p.x-hazard['x']) < hazard['radius'] and -62<p.y-hazard['y']<125:
                     self.damage_player(hazard['damage'], hazard['x'])
@@ -1282,8 +1417,10 @@ class Campaign:
             self.companion.update(dt, self)
         for obj in self.objects:
             if obj['kind'] == 'hazard' and abs(p.x-obj['x']) < 320 and int(self.time)%6 == 0 and not self.hazards:
+                self.sound_at('trap_warn', obj['x'], obj['y'])
                 self.hazards.append(dict(x=obj['x'], y=0, age=0, wait=1, life=2, hit=False, kind='rock', damage=18, radius=70))
             if obj['kind'] == 'wind' and abs(p.x-obj['x']) < obj['w']/2 and p.y < 140:
+                self.sound_at('wind_zone', obj['x'], obj['y'])
                 p.x += dt*35
         # 동시에 쓰러지면 승리 연출보다 HP 0의 재도전을 먼저 처리한다.
         if p.hp <= 0:
@@ -1308,4 +1445,5 @@ class Campaign:
         self.view.draw()
 
     def close(self):
-        self.sounds.close()
+        if self.owns_sounds:
+            self.sounds.close()

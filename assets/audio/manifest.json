@@ -1,0 +1,1037 @@
+{
+  "step_earth": {
+    "files": [
+      "step_earth-01.wav",
+      "step_earth-02.wav",
+      "step_earth-03.wav",
+      "step_earth-04.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.39,
+    "cooldown": 0.075,
+    "priority": 1
+  },
+  "step_stone": {
+    "files": [
+      "step_stone-01.wav",
+      "step_stone-02.wav",
+      "step_stone-03.wav",
+      "step_stone-04.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.39,
+    "cooldown": 0.075,
+    "priority": 1
+  },
+  "step_wood": {
+    "files": [
+      "step_wood-01.wav",
+      "step_wood-02.wav",
+      "step_wood-03.wav",
+      "step_wood-04.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.39,
+    "cooldown": 0.075,
+    "priority": 1
+  },
+  "jump": {
+    "files": [
+      "jump-01.wav",
+      "jump-02.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.54,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "land_earth": {
+    "files": [
+      "land_earth-01.wav",
+      "land_earth-02.wav",
+      "land_earth-03.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.63,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "land_stone": {
+    "files": [
+      "land_stone-01.wav",
+      "land_stone-02.wav",
+      "land_stone-03.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.63,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "land_wood": {
+    "files": [
+      "land_wood-01.wav",
+      "land_wood-02.wav",
+      "land_wood-03.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.63,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "ally_step": {
+    "files": [
+      "ally_step-01.wav",
+      "ally_step-02.wav",
+      "ally_step-03.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.24,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "ally_land": {
+    "files": [
+      "ally_land-01.wav",
+      "ally_land-02.wav"
+    ],
+    "bus": "steps",
+    "gain": 0.38,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "dash_ground": {
+    "files": [
+      "dash_ground-01.wav",
+      "dash_ground-02.wav",
+      "dash_ground-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.77,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "dash_air": {
+    "files": [
+      "dash_air-01.wav",
+      "dash_air-02.wav",
+      "dash_air-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.72,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "swing_1": {
+    "files": [
+      "swing_1-01.wav",
+      "swing_1-02.wav",
+      "swing_1-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.77,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "swing_2": {
+    "files": [
+      "swing_2-01.wav",
+      "swing_2-02.wav",
+      "swing_2-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.83,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "swing_3": {
+    "files": [
+      "swing_3-01.wav",
+      "swing_3-02.wav",
+      "swing_3-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.91,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "swing_air": {
+    "files": [
+      "swing_air-01.wav",
+      "swing_air-02.wav",
+      "swing_air-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.73,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "swing_low": {
+    "files": [
+      "swing_low-01.wav",
+      "swing_low-02.wav",
+      "swing_low-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.61,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "swing_dash": {
+    "files": [
+      "swing_dash-01.wav",
+      "swing_dash-02.wav",
+      "swing_dash-03.wav"
+    ],
+    "bus": "player",
+    "gain": 0.94,
+    "cooldown": 0.055,
+    "priority": 1
+  },
+  "hit_flesh": {
+    "files": [
+      "hit_flesh-01.wav",
+      "hit_flesh-02.wav",
+      "hit_flesh-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.87,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "hit_metal": {
+    "files": [
+      "hit_metal-01.wav",
+      "hit_metal-02.wav",
+      "hit_metal-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.83,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "hurt_player": {
+    "files": [
+      "hurt_player-01.wav",
+      "hurt_player-02.wav",
+      "hurt_player-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.89,
+    "cooldown": 0.07,
+    "priority": 3
+  },
+  "guard": {
+    "files": [
+      "guard-01.wav",
+      "guard-02.wav",
+      "guard-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.75,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "parry": {
+    "files": [
+      "parry-01.wav",
+      "parry-02.wav",
+      "parry-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.89,
+    "cooldown": 0.07,
+    "priority": 3
+  },
+  "hit_wood": {
+    "files": [
+      "hit_wood-01.wav",
+      "hit_wood-02.wav",
+      "hit_wood-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.65,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "hit_stone": {
+    "files": [
+      "hit_stone-01.wav",
+      "hit_stone-02.wav",
+      "hit_stone-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.74,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "wood_break": {
+    "files": [
+      "wood_break-01.wav",
+      "wood_break-02.wav",
+      "wood_break-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.78,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "stone_break": {
+    "files": [
+      "stone_break-01.wav",
+      "stone_break-02.wav",
+      "stone_break-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.83,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "enemy_slam": {
+    "files": [
+      "enemy_slam-01.wav",
+      "enemy_slam-02.wav",
+      "enemy_slam-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.82,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "enemy_fall": {
+    "files": [
+      "enemy_fall-01.wav",
+      "enemy_fall-02.wav",
+      "enemy_fall-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.69,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "boss_fall": {
+    "files": [
+      "boss_fall-01.wav",
+      "boss_fall-02.wav",
+      "boss_fall-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.91,
+    "cooldown": 0.07,
+    "priority": 3
+  },
+  "crumble": {
+    "files": [
+      "crumble-01.wav",
+      "crumble-02.wav",
+      "crumble-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.6,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "trap_root": {
+    "files": [
+      "trap_root-01.wav",
+      "trap_root-02.wav",
+      "trap_root-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.71,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "trap_rock": {
+    "files": [
+      "trap_rock-01.wav",
+      "trap_rock-02.wav",
+      "trap_rock-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.82,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "bolt_impact": {
+    "files": [
+      "bolt_impact-01.wav",
+      "bolt_impact-02.wav",
+      "bolt_impact-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.58,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "gate": {
+    "files": [
+      "gate-01.wav",
+      "gate-02.wav",
+      "gate-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.76,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "lever": {
+    "files": [
+      "lever-01.wav",
+      "lever-02.wav",
+      "lever-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.77,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "chest": {
+    "files": [
+      "chest-01.wav",
+      "chest-02.wav",
+      "chest-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.68,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "door": {
+    "files": [
+      "door-01.wav",
+      "door-02.wav",
+      "door-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.64,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "spring": {
+    "files": [
+      "spring-01.wav",
+      "spring-02.wav",
+      "spring-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.61,
+    "cooldown": 0.07,
+    "priority": 1
+  },
+  "enemy_swipe": {
+    "files": [
+      "enemy_swipe-01.wav",
+      "enemy_swipe-02.wav",
+      "enemy_swipe-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.65,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "enemy_charge": {
+    "files": [
+      "enemy_charge-01.wav",
+      "enemy_charge-02.wav",
+      "enemy_charge-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.78,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "bolt_spore": {
+    "files": [
+      "bolt_spore-01.wav",
+      "bolt_spore-02.wav",
+      "bolt_spore-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.47,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "bolt_paper": {
+    "files": [
+      "bolt_paper-01.wav",
+      "bolt_paper-02.wav",
+      "bolt_paper-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.42,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "bolt_needle": {
+    "files": [
+      "bolt_needle-01.wav",
+      "bolt_needle-02.wav",
+      "bolt_needle-03.wav"
+    ],
+    "bus": "world",
+    "gain": 0.49,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "dialogue": {
+    "files": [
+      "dialogue-01.wav",
+      "dialogue-02.wav",
+      "dialogue-03.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.25,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "story_turn": {
+    "files": [
+      "story_turn-01.wav",
+      "story_turn-02.wav",
+      "story_turn-03.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.23,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "ui_page": {
+    "files": [
+      "ui_page-01.wav",
+      "ui_page-02.wav",
+      "ui_page-03.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.36,
+    "cooldown": 0.09,
+    "priority": 1
+  },
+  "magic_charge": {
+    "files": [
+      "magic_charge-01.wav"
+    ],
+    "bus": "player",
+    "gain": 0.72,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "magic_release": {
+    "files": [
+      "magic_release-01.wav"
+    ],
+    "bus": "player",
+    "gain": 0.74,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "wave_launch": {
+    "files": [
+      "wave_launch-01.wav",
+      "wave_launch-02.wav"
+    ],
+    "bus": "player",
+    "gain": 0.78,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "wave_hit": {
+    "files": [
+      "wave_hit-01.wav",
+      "wave_hit-02.wav"
+    ],
+    "bus": "world",
+    "gain": 0.72,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "enemy_warn": {
+    "files": [
+      "enemy_warn-01.wav",
+      "enemy_warn-02.wav"
+    ],
+    "bus": "world",
+    "gain": 0.54,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "boss_warn": {
+    "files": [
+      "boss_warn-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.77,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "bolt_night": {
+    "files": [
+      "bolt_night-01.wav",
+      "bolt_night-02.wav"
+    ],
+    "bus": "world",
+    "gain": 0.67,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "trap_warn": {
+    "files": [
+      "trap_warn-01.wav"
+    ],
+    "bus": "world",
+    "gain": 0.57,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "trap_seal": {
+    "files": [
+      "trap_seal-01.wav"
+    ],
+    "bus": "world",
+    "gain": 0.73,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "absorb": {
+    "files": [
+      "absorb-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.72,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "moon_cast": {
+    "files": [
+      "moon_cast-01.wav"
+    ],
+    "bus": "player",
+    "gain": 0.69,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "moon_impact": {
+    "files": [
+      "moon_impact-01.wav"
+    ],
+    "bus": "world",
+    "gain": 0.67,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "portal": {
+    "files": [
+      "portal-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.7,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "rescue_pool": {
+    "files": [
+      "rescue_pool-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.49,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "knot_wrong": {
+    "files": [
+      "knot_wrong-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.55,
+    "cooldown": 0.13,
+    "priority": 1
+  },
+  "seal_break": {
+    "files": [
+      "seal_break-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.7,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "ending_hidden": {
+    "files": [
+      "ending_hidden-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.87,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "death": {
+    "files": [
+      "death-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.81,
+    "cooldown": 0.13,
+    "priority": 3
+  },
+  "ui_move": {
+    "files": [
+      "ui_move-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.32,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "ui_accept": {
+    "files": [
+      "ui_accept-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.48,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "ui_back": {
+    "files": [
+      "ui_back-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.36,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "ui_lock": {
+    "files": [
+      "ui_lock-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.54,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "ui_open": {
+    "files": [
+      "ui_open-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.42,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "pickup": {
+    "files": [
+      "pickup-01.wav"
+    ],
+    "bus": "world",
+    "gain": 0.57,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "crystal": {
+    "files": [
+      "crystal-01.wav"
+    ],
+    "bus": "world",
+    "gain": 0.6,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "record": {
+    "files": [
+      "record-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.65,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "level": {
+    "files": [
+      "level-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.81,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "skill": {
+    "files": [
+      "skill-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.69,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "heal": {
+    "files": [
+      "heal-01.wav"
+    ],
+    "bus": "player",
+    "gain": 0.7,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "rest": {
+    "files": [
+      "rest-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.62,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "save": {
+    "files": [
+      "save-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.56,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "respawn": {
+    "files": [
+      "respawn-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.64,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "purify": {
+    "files": [
+      "purify-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.76,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "moon_shield": {
+    "files": [
+      "moon_shield-01.wav"
+    ],
+    "bus": "player",
+    "gain": 0.66,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "knot_correct": {
+    "files": [
+      "knot_correct-01.wav"
+    ],
+    "bus": "ui",
+    "gain": 0.63,
+    "cooldown": 0.12,
+    "priority": 1
+  },
+  "companion_join": {
+    "files": [
+      "companion_join-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.75,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "merchant": {
+    "files": [
+      "merchant-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.62,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "pact": {
+    "files": [
+      "pact-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.65,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "victory": {
+    "files": [
+      "victory-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.85,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "ending_good": {
+    "files": [
+      "ending_good-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.87,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "ending_bitter": {
+    "files": [
+      "ending_bitter-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.75,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "ending_dark": {
+    "files": [
+      "ending_dark-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.83,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "retire": {
+    "files": [
+      "retire-01.wav"
+    ],
+    "bus": "critical",
+    "gain": 0.6,
+    "cooldown": 0.12,
+    "priority": 4
+  },
+  "amb_menu": {
+    "files": [
+      "amb_menu-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_village": {
+    "files": [
+      "amb_village-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_forest": {
+    "files": [
+      "amb_forest-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_deep": {
+    "files": [
+      "amb_deep-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_ruins": {
+    "files": [
+      "amb_ruins-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_shrine": {
+    "files": [
+      "amb_shrine-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_gate": {
+    "files": [
+      "amb_gate-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_corridor": {
+    "files": [
+      "amb_corridor-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_throne": {
+    "files": [
+      "amb_throne-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_rescue": {
+    "files": [
+      "amb_rescue-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_merchant": {
+    "files": [
+      "amb_merchant-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.31,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "amb_camp": {
+    "files": [
+      "amb_camp-01.wav"
+    ],
+    "bus": "ambient",
+    "gain": 0.26,
+    "cooldown": 0.036,
+    "priority": 1
+  },
+  "wind_zone": {
+    "files": [
+      "wind_zone-01.wav"
+    ],
+    "bus": "world",
+    "gain": 0.46,
+    "cooldown": 1.05,
+    "priority": 1
+  },
+  "lift": {
+    "files": [
+      "lift-01.wav",
+      "lift-02.wav"
+    ],
+    "bus": "world",
+    "gain": 0.43,
+    "cooldown": 0.55,
+    "priority": 1
+  },
+  "guard_raise": {
+    "files": [
+      "guard_raise-01.wav",
+      "guard_raise-02.wav"
+    ],
+    "bus": "player",
+    "gain": 0.36,
+    "cooldown": 0.036,
+    "priority": 1
+  }
+}

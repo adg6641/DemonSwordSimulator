@@ -16,12 +16,14 @@ class RescueStory:
         s.modal['shot_zoom']=.86 if image=='discovery' else 1.23 if image=='reflection' else 1.05
 
     def start(self):
+        self.s.sounds.play('rescue_pool')
         self.show('거울 웅덩이',
           '웅덩이에 별이 떠 있다. 물속 그림자가 소녀를 붙잡고 있다.',
           [('빛의 신호를 살핀다',self.listen),('마검으로 그림자를 벤다',self.force),('표식을 남기고 떠난다',self.leave)],zoom=(1.0,1.025))
 
     def listen(self):
         self.mode='careful'
+        self.s.sounds.play('story_turn')
         self.show('밤을 비추는 물',
           '반사 속 내 모습이 왕관을 쓰고 있다. 소녀는 손을 내밀지 말라고 고개를 젓는다.',
           [('소녀의 신호를 기다린다',self.voice)],image='reflection',zoom=(1.10,1.20))
@@ -45,8 +47,8 @@ class RescueStory:
 
     def touch(self,index):
         if index!=self.knot:
-            self.mistakes+=1;self.s.sounds.play('hurt');self.knots(True);return
-        self.s.sounds.play('magic');self.knot+=1
+            self.mistakes+=1;self.s.sounds.play('knot_wrong');self.knots(True);return
+        self.s.sounds.play('knot_correct');self.knot+=1
         if self.knot==3:self.pull()
         else:self.knots()
 
@@ -59,6 +61,7 @@ class RescueStory:
         self.mode='force';self.pull()
 
     def pull(self):
+        self.s.sounds.play('seal_break')
         self.show('잡은 손',
           '검은 실이 풀렸다. 소녀가 손을 뻗는다.' if self.mode=='careful' else
           '검은 실이 끊어졌다. 소녀의 부적에 금이 갔다.',

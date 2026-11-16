@@ -12,6 +12,15 @@ from pico2d import (SDL_Rect, SDL_FRect, SDL_RenderCopyExF,
 from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest, SDL_ScaleModeLinear
 
 
+MOVEMENT_BRIDGES = frozenset({
+    'idle_breathe', 'idle_to_walk', 'walk', 'walk_to_run', 'walk_to_idle',
+    'run', 'run_start', 'run_stop', 'run_to_walk', 'jump_takeoff', 'running_takeoff',
+    'jump_rise', 'jump_apex', 'fall', 'land_soft', 'land_hard', 'land_walk', 'land_run',
+    'dash_start', 'dash_ground', 'dash_end', 'dash_air', 'air_dash_recovery',
+    'dash_run_out', 'dash_walk_out', 'dash_stop_out',
+})
+
+
 def load_pixel_image(path, *, smooth=False):
     image = load_image(str(path))
     # 확대할 때 이웃 픽셀의 색을 섞지 않아 지면과 스프라이트가 흐려지지 않는다.
@@ -89,6 +98,11 @@ class Animation:
     def play(self, name, *, fps=None, once=False, start_frame=None):
         previous_name = self.name
         previous_frame = self.frame if self.name and self.name != 'idle_breathe' else 0
+        old_head = None
+        if previous_name in MOVEMENT_BRIDGES and name in MOVEMENT_BRIDGES:
+            old_head = self.clip['frames'][self.frame].get('headAnchorX')
+            if old_head is not None:
+                old_head += self.bridge_x
         self.name = name
         self.serial += 1
         self.clip = self.clips[name]
@@ -102,6 +116,15 @@ class Animation:
         start_frame=max(0,min(self.clip['frameCount']-1,start_frame))
         self.elapsed = self.frame_start(start_frame)
         self.started_at=self.elapsed
+        new_head = self.clip['frames'][start_frame].get('headAnchorX')
+        self.bridge_start_x = (max(-9.0,min(9.0,old_head-new_head))
+                               if old_head is not None and new_head is not None else 0.0)
+
+    @property
+    def bridge_x(self):
+        """Ease a few pixels of registration difference across a movement clip change."""
+        remaining = max(0,min(1,1-(self.elapsed-self.started_at)/.095))
+        return self.bridge_start_x * remaining**2 * (3-2*remaining)
 
     @property
     def progress(self):
@@ -174,7 +197,7 @@ class Animation:
         angle-=self.breath*.022
         factor=cell.get('renderScale',1);pivot=self.clip['pivot']
         dx, dy = cell.get('registration', (0, 0))
-        hand = ((point['hand'][0]+dx-pivot['x'])*factor,
+        hand = ((point['hand'][0]+dx-pivot['x']+self.bridge_x)*factor,
                 (point['hand'][1]+dy-pivot['y'])*factor)
         length=self.weapon['handToTip']
         tip=(hand[0]+cos(angle)*length,hand[1]+sin(angle)*length)
@@ -185,7 +208,9 @@ class Animation:
         frame = self.frame
         cell = self.clip['frames'][frame]
         body, hand = self.atlas.clips[self.name][frame]
-        self.atlas.draw(body, x, y, cell.get('renderScale', 1) * scale, facing)
+        body_scale = cell.get('renderScale', 1) * scale
+        body_x = x + facing*self.bridge_x*body_scale
+        self.atlas.draw(body, body_x, y, body_scale, facing)
         pose = self.weapon_pose
         if pose:
             image = self._sword_image()
@@ -197,4 +222,4 @@ class Animation:
             cy = pose['hand'][1]*scale + dx*sin(angle) + dy*cos(angle)
             draw_region(image, (0, 0, image.w, image.h), x+facing*cx, y-cy,
                         blade_scale, facing, angle*facing)
-            self.atlas.draw(hand, x, y, cell.get('renderScale', 1) * scale, facing)
+            self.atlas.draw(hand, body_x, y, body_scale, facing)

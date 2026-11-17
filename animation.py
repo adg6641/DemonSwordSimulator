@@ -107,7 +107,7 @@ class Animation:
         self.serial += 1
         self.clip = self.clips[name]
         self.fps = fps or self.clip['fps']
-        durations=self.clip.get('frameDurations') if fps is None else None
+        durations = self.clip.get('frameDurations') if fps is None or 'motionPhases' in self.clip else None
         self.frame_ends=list(accumulate(durations)) if durations else None
         self.loop = self.clip['playback'] == 'loop' and not once
         if start_frame is None:
@@ -163,6 +163,20 @@ class Animation:
         elapsed = self.clip_time*self.fps/self.clip['fps']
         phase = max(0, min(1, (elapsed-start)/(self.frame_ends[i]-start)))
         return i+phase
+
+    def motion_phase(self, frame):
+        """그림 수가 달라져도 전투 동작의 시작과 끝은 같은 시점에 둔다."""
+        phases = self.clip.get('motionPhases')
+        if phases is None:
+            return frame / self.clip['frameCount']
+        return phases[frame] if frame < len(phases) else 1.0
+
+    @property
+    def motion_progress(self):
+        time = self.pose_time
+        index = int(time)
+        start, end = self.motion_phase(index), self.motion_phase(index + 1)
+        return start + (end - start) * (time - index)
 
     @property
     def finished(self):

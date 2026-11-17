@@ -349,10 +349,10 @@ class Player:
             return 0.0
         if animation.serial != self.step_serial:
             self.step_serial, self.step_progress = animation.serial, 0.0
-        time = animation.pose_time * 8 / animation.clip['frameCount']
+        time = animation.motion_progress * 8
         start, end = ((1.55, 5.45), (1.35, 5.35), (1.80, 6.05))[self.combo_step-1]
         chain = animation.clip.get('chainFrame', animation.clip['frameCount'])
-        end = min(end, chain * 8 / animation.clip['frameCount'])
+        end = min(end, animation.motion_phase(chain) * 8)
         phase = max(0, min(1, (time-start) / (end-start)))
         previous, self.step_progress = self.step_progress, phase
         direction = int(SDLK_RIGHT in keys) - int(SDLK_LEFT in keys)
@@ -423,7 +423,7 @@ class Player:
             if self.attack_pending:
                 speed=self.brake_speed*(1-self.animation.progress)**2
             elif self.animation.name == 'dash_slash':
-                phase=self.animation.pose_time/self.animation.clip['frameCount']
+                phase=self.animation.motion_progress
                 speed = self.facing * self.DASH_ATTACK_SPEED * sin(pi*(phase-.16)/.52)**.86 if .16<phase<.68 else 0
             elif self.landing:
                 if direction:

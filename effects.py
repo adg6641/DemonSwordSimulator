@@ -85,7 +85,7 @@ class CombatEffects:
         item=(self.time,anim.serial,player.facing,self.level,hand,tip)
         self.blade_samples.append(item)
         timing=self.timing(anim,self.ATTACKS[anim.name])
-        if self.glint_serial!=anim.serial and anim.pose_time*8/anim.clip['frameCount'] >= timing['peak']:
+        if self.glint_serial!=anim.serial and anim.motion_progress*8 >= timing['peak']:
             self.glint_serial=anim.serial
             angle=atan2(hand[1]-tip[1],tip[0]-hand[0])
             self.blade_glints.append((self.time,*tip,angle,self.level))
@@ -196,7 +196,7 @@ class CombatEffects:
         if not motion or motion == 'dash' or self.fired or self.buff_remaining <= 0:
             return
         timing = self.timing(animation,motion)
-        time = animation.pose_time * 8 / animation.clip['frameCount']
+        time = animation.motion_progress * 8
         if time >= timing['fire']:
             wave = dict(facing=player.facing, level=self.level, age=0.0)
             if animation.name in self.GROUND_COMBO:
@@ -275,7 +275,7 @@ class CombatEffects:
         if not motion:
             return
         timing = self.timing(animation,motion)
-        time = animation.pose_time * 8 / animation.clip['frameCount']
+        time = animation.motion_progress * 8
         if not timing['start'] < time < timing['end']:
             return
         pose = self.blade(animation)

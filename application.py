@@ -152,15 +152,17 @@ class GameApplication:
         if self.state == 'intro':
             self.video.draw()
         elif self.state in {'menu', 'confirm_new'}:
-            self.ui.BUTTONS = ('이어하기' if self.store.checkpoint else '게임 시작', '조작 설명', '종료')
-            self.ui.draw_menu(self.selected)
-            self.ui.text('N · 새로운 세계선 시작', 122, 52, 16, (185, 180, 196))
+            self.ui.draw_menu(self.selected, resume=bool(self.store.checkpoint))
             if self.state == 'confirm_new':
+                fill(0, 0, 1280, 720, (4, 7, 13, 145))
                 fill(200, 170, 880, 350, (8, 15, 24, 248))
-                self.ui.text('새 모험을 시작할까요?', 640, 455, 34, center=True)
+                self.ui.lettering('new_question', 640, 455, 33, center=True)
                 self.ui.text('이전 완결 기록은 남고, 진행 중인 저장 지점은 새 모험으로 바뀝니다.', 640, 396, 20, center=True)
-                for i, text in enumerate(['새로운 세계선 시작', '돌아가기']):
-                    self.ui.text(('▶ ' if self.new_selected==i else '   ')+text, 640, 310-i*65, 26, center=True)
+                for i, label in enumerate(('new_world', 'back')):
+                    y = 310-i*65
+                    if self.new_selected == i:
+                        fill(453, y-24, 374, 48, (52, 39, 65, 242))
+                    self.ui.lettering(label, 640, y, 24, center=True)
             elif self.elapsed < .7:
                 fill(0, 0, 1280, 720, (0, 0, 0, round(255*(1-self.elapsed/.7))))
             if self.store.error:

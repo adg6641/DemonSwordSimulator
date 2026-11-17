@@ -35,15 +35,19 @@ def speech_tail(a,b,tip):
 
 
 class Interface:
-    BUTTONS = ('게임 시작', '조작 설명', '종료')
+    BUTTON_ART = ('start', 'controls', 'quit')
     RECTS = ((120, 318, 360, 64), (120, 230, 360, 64), (120, 142, 360, 64))
 
     def __init__(self, assets):
         font = Path('C:/Windows/Fonts/malgun.ttf')
         bold = Path('C:/Windows/Fonts/malgunbd.ttf')
-        self.fonts = {size: load_font(str(bold if size >= 30 else font), size) for size in (16, 18, 20, 22, 26, 34, 48, 76)}
+        self.fonts = {size: load_font(str(bold if size >= 30 else font), size) for size in (16, 18, 20, 22, 26, 34)}
         self.background = load_pixel_image(assets / 'ui/menu_background.png')
         self.book = load_pixel_image(assets / 'ui/controls_book.png')
+        lettering = assets / 'ui/menu_lettering'
+        self.title_art = load_pixel_image(lettering / 'title.png', smooth=True)
+        self.label_art = load_pixel_image(lettering / 'labels.png', smooth=True)
+        self.art_rects = json.loads((lettering / 'labels.json').read_text(encoding='utf8'))
         data = json.loads((assets / 'cinematic/cinematic.json').read_text(encoding='utf8'))
         self.layout = data['menuLayout']
         self.weapon = data['assets']['black_sword']
@@ -111,7 +115,14 @@ class Interface:
             self._piece(self.smoke_image, item['geometry'])
         self.smoke_image.opacify(1.0)
 
-    def draw_menu(self, selected):
+    def lettering(self, name, x, y, height, *, center=False):
+        """투명 글자 시트에서 문구 하나를 원래 비율로 꺼내 그린다."""
+        left, top, w, h = self.art_rects[name]
+        width = round(height * w / h)
+        self.label_art.clip_draw(left, self.label_art.h-top-h, w, h,
+                                 round(x if center else x+width/2), y, width, height)
+
+    def draw_menu(self, selected, resume=False):
         self.background.draw(640, 360, 1280, 720)
         geometry = sword_layout(self.weapon, self.layout)
         self._piece(self.socket_image, socket_layout(self.socket, self.layout))
@@ -121,38 +132,38 @@ class Interface:
         self._blade_smoke(geometry, front=True)
         for x in range(0, 660, 20):
             fill(x, 0, 20, 720, (5, 8, 16, round(85 * (1 - x / 660) ** 2)))
-        self.text('DEMON SWORD', 122, 619, 18, (166, 151, 190))
-        self.text('마검사', 116, 554, 76)
-        self.text('시뮬레이터', 120, 476, 48, (201, 183, 224))
-        fill(122, 435, 356, 1, (168, 140, 196, 150))
-        self.text('당신의 선택이 마검사의 운명을 바꾼다', 122, 410, 18, (173, 176, 191))
+        self.title_art.draw(300, 532, 412, round(412 * self.title_art.h / self.title_art.w))
+        fill(120, 434, 360, 1, (181, 143, 102, 145))
+        self.lettering('tagline', 300, 408, 18, center=True)
         for i, (left, bottom, w, h) in enumerate(self.RECTS):
             active = i == selected
             fill(left, bottom, w, h, (48, 35, 66, 224) if active else (12, 15, 25, 210))
-            SDL_SetRenderDrawColor(engine.renderer, *( (201, 169, 231, 245) if active else (84, 78, 105, 220) ))
+            SDL_SetRenderDrawColor(engine.renderer, *((228, 194, 135, 245) if active else (102, 86, 95, 220)))
             SDL_RenderDrawRect(engine.renderer, SDL_Rect(left, 720 - bottom - h, w, h))
-            self.text(self.BUTTONS[i], left + w / 2, bottom + h / 2, 26, center=True)
-        self.text('↑ ↓ 선택   Enter 확인   마우스 클릭', 122, 83, 16, (157, 157, 175))
+            label = 'resume' if i == 0 and resume else self.BUTTON_ART[i]
+            self.lettering(label, left + w / 2, bottom + h / 2, 26, center=True)
+        self.lettering('navigation', 122, 83, 15)
+        self.lettering('new_shortcut', 122, 52, 15)
 
     def draw_controls(self):
         self.background.draw(640,360,1280,720)
         fill(0,0,1280,720,(10,16,27,185))
         ink, gold = (235,228,214), (242,209,144)
-        self.text('조작 설명',640,621,34,gold,True)
+        self.lettering('controls', 640, 621, 35, center=True)
         left = [('← →','걷기 · 길게 누르면 달리기'),('↑ / ↓','점프 / 웅크리기'),
                 ('Shift','지상 · 공중 대시'),('X','방어'),('E / H / Q','상호작용 / 회복 / 동료 지원')]
         right = [('C 연타','3연속 베기'),('대시 뒤 C','대시공격'),('Z 뒤 C','마검파'),
                  ('Tab / L','기록 / 남은 성장 포인트'),('↑ ↓ / Enter','선택 / 확인')]
-        for x,title,rows in ((152,'이동',left),(656,'전투와 메뉴',right)):
+        for x,title,rows in ((152,'movement',left),(656,'combat',right)):
             fill(x,155,472,377,(13,23,36,237))
-            self.text(title,x+24,500,23,gold)
+            self.lettering(title, x+24, 500, 23)
             for i,(key,detail) in enumerate(rows):
                 y=449-i*57
                 fill(x+22,y-24,428,1,(108,118,136,115))
                 self.text(key,x+24,y,17,gold)
                 self.text(detail,x+174,y,18,ink)
         fill(520, 18, 240, 43, (18, 13, 15, 220))
-        self.text('Esc 돌아가기', 640, 40, 20, gold, True)
+        self.lettering('escape', 640, 40, 20, center=True)
 
     def draw_hud(self, player):
         fill(22, 653, 306, 45, (9, 12, 22, 185))

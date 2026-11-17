@@ -17,7 +17,7 @@ LANDING = {'land_soft', 'land_hard', 'air_attack_land', 'land_run', 'land_walk'}
 MOVING_LANDINGS = {'land_run', 'land_walk'}
 CROUCH_GAITS = {'crouch_idle', 'crouch_walk'}
 CROUCH_POSES = CROUCH_GAITS | {'crouch_down', 'crouch_slash', 'crouch_attack_recovery'}
-GAIT_STRIDE = {'walk': 116, 'run': 188, 'crouch_walk': 89}
+GAIT_STRIDE = {'walk': 116, 'run': 224, 'crouch_walk': 89}
 MOVE_TRANSITIONS = {
     ('idle_breathe', 'walk'): 'idle_to_walk',
     ('idle_breathe', 'run'): 'run_start',

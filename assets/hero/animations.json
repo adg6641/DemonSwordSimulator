@@ -1,6 +1,6 @@
 {
   "title": "마검사 주인공 애니메이션",
-  "version": 27,
+  "version": 29,
   "conventions": {
     "frameWidth": 768,
     "frameHeight": 640,
@@ -336,12 +336,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -359,12 +359,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.432,
-              457.467
+              309.933,
+              457.606
             ],
             "angle": 2.63,
             "hidden": false
@@ -386,8 +386,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.608,
-              457.033
+              309.882,
+              457.556
             ],
             "angle": 2.63,
             "hidden": false
@@ -409,8 +409,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.618,
-              456.756
+              309.904,
+              457.281
             ],
             "angle": 2.63,
             "hidden": false
@@ -428,12 +428,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.543,
-              458.77
+              309.809,
+              458.34
             ],
             "angle": 2.63,
             "hidden": false
@@ -451,12 +451,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 173.728,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.761,
-              459.923
+              309.37,
+              459.112
             ],
             "angle": 2.63,
             "hidden": false
@@ -474,12 +474,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              308.968,
-              460.378
+              308.982,
+              459.566
             ],
             "angle": 2.63,
             "hidden": false
@@ -497,12 +497,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 175.152,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              306.233,
-              450.965
+              306.007,
+              449.663
             ],
             "angle": 2.63,
             "hidden": false
@@ -520,12 +520,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.069,
-              460.485
+              308.861,
+              459.289
             ],
             "angle": 2.63,
             "hidden": false
@@ -538,7 +538,7 @@
           "height": 640
         }
       ],
-      "sha256": "fcdfa1fefd4f255b2e617b9f34b81668d900c48eaf3c60abaaa0c272921c4840",
+      "sha256": "6c31e30fe9749eb03f703f407b0f7bc1371daeb2115f281e9b5ee68a360628a3",
       "frameDurations": [
         0.23879781420765028,
         0.20765027322404372,
@@ -579,12 +579,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              296.344,
-              469.214
+              296.651,
+              467.999
             ],
             "angle": 2.58,
             "hidden": false
@@ -606,8 +606,8 @@
           "headAnchorX": 8.0,
           "weapon": {
             "hand": [
-              298.104,
-              469.435
+              299.129,
+              467.327
             ],
             "angle": 2.59,
             "hidden": false
@@ -625,12 +625,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              288.918,
-              468.137
+              290.026,
+              466.909
             ],
             "angle": 2.6,
             "hidden": false
@@ -648,12 +648,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 172.304,
           "headAnchorX": 7.5,
           "weapon": {
             "hand": [
-              291.402,
-              466.909
+              292.452,
+              465.84
             ],
             "angle": 2.64,
             "hidden": false
@@ -671,12 +671,12 @@
             0,
             0
           ],
-          "bodyHeight": 174.44,
+          "bodyHeight": 171.592,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              294.535,
-              468.353
+              295.423,
+              468.365
             ],
             "angle": 2.68,
             "hidden": false
@@ -694,12 +694,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 7.0,
           "weapon": {
             "hand": [
-              293.88,
-              467.159
+              294.318,
+              466.358
             ],
             "angle": 2.6950000000000003,
             "hidden": false
@@ -717,12 +717,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 170.88,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              286.915,
-              469.079
+              287.33,
+              467.843
             ],
             "angle": 2.71,
             "hidden": false
@@ -744,8 +744,8 @@
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              355.285,
-              449.247
+              355.162,
+              446.917
             ],
             "angle": 2.7,
             "hidden": false
@@ -763,12 +763,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 173.016,
           "headAnchorX": 8.0,
           "weapon": {
             "hand": [
-              357.83,
-              447.277
+              357.529,
+              444.134
             ],
             "angle": 2.68,
             "hidden": false
@@ -786,12 +786,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 175.152,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              361.352,
-              447.34
+              360.328,
+              445.202
             ],
             "angle": 2.66,
             "hidden": false
@@ -809,12 +809,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 172.304,
           "headAnchorX": 7.5,
           "weapon": {
             "hand": [
-              361.385,
-              448.32
+              360.867,
+              445.529
             ],
             "angle": 2.625,
             "hidden": false
@@ -832,12 +832,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 172.304,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              313.913,
-              442.841
+              313.708,
+              443.082
             ],
             "angle": 2.59,
             "hidden": false
@@ -855,12 +855,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 171.592,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              322.692,
-              464.329
+              323.043,
+              465.079
             ],
             "angle": 2.57,
             "hidden": false
@@ -882,8 +882,8 @@
           "headAnchorX": 7.5,
           "weapon": {
             "hand": [
-              321.458,
-              465.895
+              321.094,
+              465.18
             ],
             "angle": 2.575,
             "hidden": false
@@ -901,12 +901,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              302.459,
-              469.024
+              303.288,
+              468.334
             ],
             "angle": 2.58,
             "hidden": false
@@ -924,12 +924,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 173.728,
           "headAnchorX": 8.0,
           "weapon": {
             "hand": [
-              304.832,
-              468.792
+              304.968,
+              467.3
             ],
             "angle": 2.58,
             "hidden": false
@@ -942,7 +942,7 @@
           "height": 640
         }
       ],
-      "sha256": "3b593c5b44418731dfe1a02ab6ea3e839ba09e41d35f5460ff6d12e01a0b0fb8",
+      "sha256": "1d60a069bccf217dd4f68dcdfac09d25f79dbe7bbebb5c4d4822b82d71df565a",
       "frameDurations": [
         0.05142857142857142,
         0.05142857142857142,
@@ -1030,12 +1030,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 172.304,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              301.757,
-              457.99
+              303.967,
+              455.591
             ],
             "angle": 2.67,
             "hidden": false
@@ -1053,12 +1053,12 @@
             0,
             0
           ],
-          "bodyHeight": 174.44,
+          "bodyHeight": 171.592,
           "headAnchorX": 27.0,
           "weapon": {
             "hand": [
-              304.032,
-              460.678
+              306.369,
+              457.308
             ],
             "angle": 2.675,
             "hidden": false
@@ -1076,12 +1076,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 170.88,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              304.742,
-              462.932
+              307.048,
+              460.025
             ],
             "angle": 2.68,
             "hidden": false
@@ -1099,12 +1099,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 170.168,
           "headAnchorX": 26.5,
           "weapon": {
             "hand": [
-              306.899,
-              463.007
+              309.091,
+              459.674
             ],
             "angle": 2.6900000000000004,
             "hidden": false
@@ -1122,12 +1122,12 @@
             0,
             0
           ],
-          "bodyHeight": 170.88,
+          "bodyHeight": 170.168,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              305.739,
-              468.939
+              307.239,
+              465.024
             ],
             "angle": 2.7,
             "hidden": false
@@ -1145,12 +1145,12 @@
             0,
             0
           ],
-          "bodyHeight": 170.168,
+          "bodyHeight": 169.456,
           "headAnchorX": 26.0,
           "weapon": {
             "hand": [
-              306.931,
-              468.415
+              309.058,
+              462.987
             ],
             "angle": 2.6900000000000004,
             "hidden": false
@@ -1168,12 +1168,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 170.168,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              318.861,
-              464.893
+              320.098,
+              461.413
             ],
             "angle": 2.68,
             "hidden": false
@@ -1191,12 +1191,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.216,
+          "bodyHeight": 168.744,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              306.942,
-              446.566
+              307.166,
+              459.496
             ],
             "angle": 2.66,
             "hidden": false
@@ -1214,12 +1214,12 @@
             0,
             0
           ],
-          "bodyHeight": 154.504,
+          "bodyHeight": 167.32,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              358.789,
-              407.971
+              358.631,
+              414.747
             ],
             "angle": 2.63,
             "hidden": false
@@ -1241,8 +1241,8 @@
           "headAnchorX": 28,
           "weapon": {
             "hand": [
-              365.964,
-              415.033
+              365.186,
+              414.983
             ],
             "angle": 2.61,
             "hidden": false
@@ -1260,12 +1260,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.184,
+          "bodyHeight": 168.744,
           "headAnchorX": 28.0,
           "weapon": {
             "hand": [
-              366.526,
-              415.324
+              365.786,
+              412.434
             ],
             "angle": 2.59,
             "hidden": false
@@ -1283,12 +1283,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 172.304,
           "headAnchorX": 28,
           "weapon": {
             "hand": [
-              371.202,
-              422.825
+              370.629,
+              418.347
             ],
             "angle": 2.57,
             "hidden": false
@@ -1306,12 +1306,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 27.5,
           "weapon": {
             "hand": [
-              372.663,
-              420.511
+              371.209,
+              415.36
             ],
             "angle": 2.5599999999999996,
             "hidden": false
@@ -1329,12 +1329,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 171.592,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              375.157,
-              418.542
+              373.567,
+              414.987
             ],
             "angle": 2.55,
             "hidden": false
@@ -1352,12 +1352,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 168.744,
           "headAnchorX": 26.5,
           "weapon": {
             "hand": [
-              375.256,
-              416.823
+              373.705,
+              412.872
             ],
             "angle": 2.58,
             "hidden": false
@@ -1375,12 +1375,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 166.608,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              375.796,
-              415.844
+              374.311,
+              415.961
             ],
             "angle": 2.61,
             "hidden": false
@@ -1398,12 +1398,12 @@
             0,
             0
           ],
-          "bodyHeight": 148.096,
+          "bodyHeight": 166.608,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              355.601,
-              422.888
+              355.905,
+              437.883
             ],
             "angle": 2.61,
             "hidden": false
@@ -1421,12 +1421,12 @@
             0,
             0
           ],
-          "bodyHeight": 153.08,
+          "bodyHeight": 165.896,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              317.29,
-              437.295
+              317.691,
+              450.379
             ],
             "angle": 2.64,
             "hidden": false
@@ -1444,12 +1444,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 165.184,
           "headAnchorX": 26,
           "weapon": {
             "hand": [
-              287.871,
-              449.485
+              290.578,
+              449.657
             ],
             "angle": 2.66,
             "hidden": false
@@ -1467,12 +1467,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 168.744,
           "headAnchorX": 26.5,
           "weapon": {
             "hand": [
-              291.923,
-              451.3
+              294.067,
+              449.934
             ],
             "angle": 2.665,
             "hidden": false
@@ -1485,7 +1485,7 @@
           "height": 640
         }
       ],
-      "sha256": "13314a072e47c4b54f48129043a1b5e5c10a7b6a9694894380623736b62e055e",
+      "sha256": "80a29716b39e961b123e0a06050f4d29a07df24f427971195a5ed554a4335a2b",
       "frameDurations": [
         0.030909100000000002,
         0.030909100000000002,
@@ -1580,12 +1580,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -1603,12 +1603,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 172.304,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              311.646,
-              456.446
+              311.488,
+              454.821
             ],
             "angle": 2.63,
             "hidden": false
@@ -1626,12 +1626,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 170.88,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              308.963,
-              448.127
+              309.628,
+              445.443
             ],
             "angle": 2.65,
             "hidden": false
@@ -1649,12 +1649,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              297.415,
-              462.022
+              297.893,
+              455.831
             ],
             "angle": 2.66,
             "hidden": false
@@ -1672,12 +1672,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 165.896,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              283.3,
-              457.986
+              284.025,
+              452.38
             ],
             "angle": 2.67,
             "hidden": false
@@ -1695,12 +1695,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              296.344,
-              469.214
+              296.651,
+              467.999
             ],
             "angle": 2.58,
             "hidden": false
@@ -1713,7 +1713,7 @@
           "height": 640
         }
       ],
-      "sha256": "4a283dfe186a729cff0873afe7ee064acfd5c60970ddde2b032e0a2bba232f41",
+      "sha256": "4d8d1c48f7f347c4b76b2b26cd22c88b828d4f42ac90b36d6ea20a507772fb56",
       "frameDurations": [
         0.034999999999999996,
         0.034999999999999996,
@@ -1751,12 +1751,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              297.415,
-              462.022
+              297.893,
+              455.831
             ],
             "angle": 2.66,
             "hidden": false
@@ -1774,12 +1774,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 165.896,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              283.3,
-              457.986
+              284.025,
+              452.38
             ],
             "angle": 2.67,
             "hidden": false
@@ -1797,12 +1797,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 17,
           "weapon": {
             "hand": [
-              268.217,
-              450.739
+              269.324,
+              449.438
             ],
             "angle": 2.68,
             "hidden": false
@@ -1824,8 +1824,8 @@
           "headAnchorX": 20,
           "weapon": {
             "hand": [
-              268.615,
-              441.347
+              270.375,
+              437.879
             ],
             "angle": 2.68,
             "hidden": false
@@ -1843,12 +1843,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 168.744,
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              300.956,
-              449.87
+              301.372,
+              439.89
             ],
             "angle": 2.67,
             "hidden": false
@@ -1866,12 +1866,12 @@
             0,
             0
           ],
-          "bodyHeight": 157.352,
+          "bodyHeight": 158.776,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
               366,
-              419
+              415
             ],
             "angle": 2.66,
             "hidden": false
@@ -1889,12 +1889,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 172.304,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              301.757,
-              457.99
+              303.967,
+              455.591
             ],
             "angle": 2.67,
             "hidden": false
@@ -1907,7 +1907,7 @@
           "height": 640
         }
       ],
-      "sha256": "6683382e766ae61924abf5d3c5cdb34e61b7036af80513bd1d98a7f42b8f78f1",
+      "sha256": "a44ab5cf3e2695a8603179d674f08ef683b3c9ab928133949813381629b226ab",
       "frameDurations": [
         0.03428571428571429,
         0.03428571428571429,
@@ -1931,12 +1931,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -1954,12 +1954,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 172.304,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              311.646,
-              456.446
+              311.488,
+              454.821
             ],
             "angle": 2.63,
             "hidden": false
@@ -1977,12 +1977,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 170.88,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              308.963,
-              448.127
+              309.628,
+              445.443
             ],
             "angle": 2.65,
             "hidden": false
@@ -2000,12 +2000,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              297.415,
-              462.022
+              297.893,
+              455.831
             ],
             "angle": 2.66,
             "hidden": false
@@ -2023,12 +2023,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 165.896,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              283.3,
-              457.986
+              284.025,
+              452.38
             ],
             "angle": 2.67,
             "hidden": false
@@ -2046,12 +2046,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 17,
           "weapon": {
             "hand": [
-              268.217,
-              450.739
+              269.324,
+              449.438
             ],
             "angle": 2.68,
             "hidden": false
@@ -2073,8 +2073,8 @@
           "headAnchorX": 20,
           "weapon": {
             "hand": [
-              268.615,
-              441.347
+              270.375,
+              437.879
             ],
             "angle": 2.68,
             "hidden": false
@@ -2092,12 +2092,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 168.744,
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              300.956,
-              449.87
+              301.372,
+              439.89
             ],
             "angle": 2.67,
             "hidden": false
@@ -2115,12 +2115,12 @@
             0,
             0
           ],
-          "bodyHeight": 157.352,
+          "bodyHeight": 158.776,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
               366,
-              419
+              415
             ],
             "angle": 2.66,
             "hidden": false
@@ -2138,12 +2138,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 172.304,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              301.757,
-              457.99
+              303.967,
+              455.591
             ],
             "angle": 2.67,
             "hidden": false
@@ -2169,7 +2169,7 @@
       },
       "fps": 34.48275862068966,
       "folder": "HD",
-      "sha256": "6a8f860a7e74b88de35214b9b78fb108baff711e88ae795c35ef836e18960104",
+      "sha256": "cdde8dfd750bcd57c93636f0bfe75b2dd9b1deade91bee825b6792e36c6aa88d",
       "frameDurations": [
         0.028999999999999998,
         0.028999999999999998,
@@ -2211,12 +2211,12 @@
             0,
             0
           ],
-          "bodyHeight": 163.76,
+          "bodyHeight": 169.456,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              290.736,
-              455.671
+              292.588,
+              447.329
             ],
             "angle": 2.63,
             "hidden": false
@@ -2238,8 +2238,8 @@
           "headAnchorX": 23,
           "weapon": {
             "hand": [
-              329.576,
-              457.237
+              330.232,
+              454.728
             ],
             "angle": 2.64,
             "hidden": false
@@ -2257,12 +2257,12 @@
             0,
             0
           ],
-          "bodyHeight": 167.32,
+          "bodyHeight": 168.032,
           "headAnchorX": 18,
           "weapon": {
             "hand": [
-              319.979,
-              467.982
+              319.929,
+              464.714
             ],
             "angle": 2.66,
             "hidden": false
@@ -2280,12 +2280,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 167.32,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              319.621,
-              462.081
+              320.093,
+              459.938
             ],
             "angle": 2.68,
             "hidden": false
@@ -2303,12 +2303,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 169.456,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              309.916,
-              462.993
+              310.424,
+              460.88
             ],
             "angle": 2.67,
             "hidden": false
@@ -2326,12 +2326,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              296.344,
-              469.214
+              296.651,
+              467.999
             ],
             "angle": 2.58,
             "hidden": false
@@ -2344,7 +2344,7 @@
           "height": 640
         }
       ],
-      "sha256": "fc46ca36126cacd2233494e985e99d31d72d51b49718f883f4ad860b060e75b9",
+      "sha256": "0087c7190734697ef9fc906ff9df178bebcab3295a89a1e03050c7040d61ab34",
       "frameDurations": [
         0.03833333333333334,
         0.03833333333333334,
@@ -2382,12 +2382,12 @@
             0,
             0
           ],
-          "bodyHeight": 163.76,
+          "bodyHeight": 169.456,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              290.736,
-              455.671
+              292.588,
+              447.329
             ],
             "angle": 2.63,
             "hidden": false
@@ -2409,8 +2409,8 @@
           "headAnchorX": 23,
           "weapon": {
             "hand": [
-              329.576,
-              457.237
+              330.232,
+              454.728
             ],
             "angle": 2.64,
             "hidden": false
@@ -2428,12 +2428,12 @@
             0,
             0
           ],
-          "bodyHeight": 167.32,
+          "bodyHeight": 168.032,
           "headAnchorX": 18,
           "weapon": {
             "hand": [
-              319.979,
-              467.982
+              319.929,
+              464.714
             ],
             "angle": 2.66,
             "hidden": false
@@ -2451,12 +2451,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 167.32,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              319.621,
-              462.081
+              320.093,
+              459.938
             ],
             "angle": 2.68,
             "hidden": false
@@ -2474,12 +2474,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 169.456,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              309.916,
-              462.993
+              310.424,
+              460.88
             ],
             "angle": 2.67,
             "hidden": false
@@ -2497,12 +2497,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 169.456,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              308.601,
-              464.846
+              309.322,
+              461.784
             ],
             "angle": 2.65,
             "hidden": false
@@ -2520,12 +2520,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              306.733,
-              462.245
+              307.385,
+              461.879
             ],
             "angle": 2.65,
             "hidden": false
@@ -2543,12 +2543,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -2570,8 +2570,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -2589,12 +2589,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -2607,7 +2607,7 @@
           "height": 640
         }
       ],
-      "sha256": "9a4bc091fd8a9ab71a1717c944ed9c3cd837ac86fefc602db0231658caa4cea7",
+      "sha256": "4b408706df06e3866b825ec1eed119c617a1494e3154391c33d4e50fb13136fa",
       "frameDurations": [
         0.025,
         0.025,
@@ -2673,12 +2673,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 167.32,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              319.621,
-              462.081
+              320.093,
+              459.938
             ],
             "angle": 2.68,
             "hidden": false
@@ -2696,12 +2696,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 169.456,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              309.916,
-              462.993
+              310.424,
+              460.88
             ],
             "angle": 2.67,
             "hidden": false
@@ -2719,12 +2719,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 169.456,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              308.601,
-              464.846
+              309.322,
+              461.784
             ],
             "angle": 2.65,
             "hidden": false
@@ -2742,12 +2742,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              306.733,
-              462.245
+              307.385,
+              461.879
             ],
             "angle": 2.65,
             "hidden": false
@@ -2765,12 +2765,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -2792,8 +2792,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -2811,12 +2811,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -2829,7 +2829,7 @@
           "height": 640
         }
       ],
-      "sha256": "63ca504cafc6f913b576ec6616a90f30c125fc32a6249491d5b3f372950e0cb3",
+      "sha256": "9a0d88f4a7a71adc36d2160070a86327ecb067f7663b1e4ff5dfe9408c80ea77",
       "frameDurations": [
         0.027142857142857142,
         0.027142857142857142,
@@ -2888,12 +2888,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -2911,12 +2911,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 169.456,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              289.855,
-              462.554
+              290.17,
+              463.4
             ],
             "angle": 2.68,
             "hidden": false
@@ -2934,12 +2934,12 @@
             0,
             0
           ],
-          "bodyHeight": 167.32,
+          "bodyHeight": 164.472,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              256.93,
-              450.156
+              258.316,
+              449.676
             ],
             "angle": 2.74,
             "hidden": false
@@ -2957,12 +2957,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 167.32,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              274.486,
-              445.567
+              275.064,
+              445.295
             ],
             "angle": 2.79,
             "hidden": false
@@ -2980,12 +2980,12 @@
             0,
             0
           ],
-          "bodyHeight": 159.488,
+          "bodyHeight": 160.2,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              278.914,
-              450.176
+              279.794,
+              451.734
             ],
             "angle": 2.79,
             "hidden": false
@@ -2998,7 +2998,7 @@
           "height": 640
         }
       ],
-      "sha256": "95b9603839943fb21e582e2a5f6fe090ef20069282ff60c1e7c38682779b1205",
+      "sha256": "cb50bbdb3c392dbda8b3c6a99516b934e882adea447e5d0c5c7f554b89cac58c",
       "frameDurations": [
         0.02802874743326489,
         0.026694045174537988,
@@ -3032,12 +3032,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 168.744,
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              300.956,
-              449.87
+              301.372,
+              439.89
             ],
             "angle": 2.67,
             "hidden": false
@@ -3055,12 +3055,12 @@
             0,
             0
           ],
-          "bodyHeight": 167.32,
+          "bodyHeight": 164.472,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              256.93,
-              450.156
+              258.316,
+              449.676
             ],
             "angle": 2.74,
             "hidden": false
@@ -3078,12 +3078,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 167.32,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              274.486,
-              445.567
+              275.064,
+              445.295
             ],
             "angle": 2.79,
             "hidden": false
@@ -3101,12 +3101,12 @@
             0,
             0
           ],
-          "bodyHeight": 159.488,
+          "bodyHeight": 160.2,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              278.914,
-              450.176
+              279.794,
+              451.734
             ],
             "angle": 2.79,
             "hidden": false
@@ -3119,7 +3119,7 @@
           "height": 640
         }
       ],
-      "sha256": "f020876db8c4687402a9b7fc6d9f311a7c1584efbbefdb8862adcdd00c523a24",
+      "sha256": "4239a3b9d0008d2d919eb232466a51bfa9d7b76b9d259be47172afe040478459",
       "frameDurations": [
         0.02732984293193717,
         0.03947643979057591,
@@ -3155,12 +3155,12 @@
             0,
             0
           ],
-          "bodyHeight": 159.488,
+          "bodyHeight": 160.2,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              278.914,
-              450.176
+              279.794,
+              451.734
             ],
             "angle": 2.79,
             "hidden": false
@@ -3178,12 +3178,12 @@
             0,
             0
           ],
-          "bodyHeight": 132.432,
+          "bodyHeight": 133.856,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              267.77,
-              445.231
+              268.908,
+              447.753
             ],
             "angle": 2.72,
             "hidden": false
@@ -3196,7 +3196,7 @@
           "height": 640
         }
       ],
-      "sha256": "c53ade558742367992891e3498e03ddf48fa7a3554591ac5e262e379c171a703",
+      "sha256": "aa98f8de6d74e41b6e6dcba92b34fcb457fcf1fb333372e8c7db9db3cb234ad1",
       "frameDurations": [
         0.09,
         0.09
@@ -3230,12 +3230,12 @@
             0,
             0
           ],
-          "bodyHeight": 132.432,
+          "bodyHeight": 133.856,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              267.77,
-              445.231
+              268.908,
+              447.753
             ],
             "angle": 2.72,
             "hidden": false
@@ -3253,12 +3253,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 163.76,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              277.757,
-              463.53
+              279.059,
+              460.803
             ],
             "angle": 2.66,
             "hidden": false
@@ -3271,7 +3271,7 @@
           "height": 640
         }
       ],
-      "sha256": "63726a8f0a548d100a958a17a312e4ba55e6fda5f81b4cbbfac6655d273669b8",
+      "sha256": "89bab22654f7d1097a5cd6b8edefcad46614ff57ecce566f5082533a4541651a",
       "frameDurations": [
         0.07,
         0.07
@@ -3305,12 +3305,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 163.76,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              277.757,
-              463.53
+              279.059,
+              460.803
             ],
             "angle": 2.66,
             "hidden": false
@@ -3328,12 +3328,12 @@
             0,
             0
           ],
-          "bodyHeight": 181.56,
+          "bodyHeight": 168.032,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              276.415,
-              460.539
+              278.034,
+              453.777
             ],
             "angle": 2.66,
             "hidden": false
@@ -3351,12 +3351,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 170.168,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              283.191,
-              462.157
+              283.819,
+              462.426
             ],
             "angle": 2.66,
             "hidden": false
@@ -3369,7 +3369,7 @@
           "height": 640
         }
       ],
-      "sha256": "b384aac06646c95212af46104379aaae91422612901710c48441071a75e12b5a",
+      "sha256": "d2a1ef13f908242d1b0e6f2c0305779690c6499edc14bd908fb16795abc6519a",
       "frameDurations": [
         0.06999999999999999,
         0.06999999999999999,
@@ -3408,8 +3408,8 @@
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              301.925,
-              466.586
+              301.903,
+              466.684
             ],
             "angle": 2.66,
             "hidden": false
@@ -3427,12 +3427,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 160.912,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.492,
-              468.247
+              297.2,
+              468.72
             ],
             "angle": 2.68,
             "hidden": false
@@ -3450,12 +3450,12 @@
             0,
             0
           ],
-          "bodyHeight": 154.504,
+          "bodyHeight": 153.792,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.828,
-              476.083
+              297.157,
+              476.168
             ],
             "angle": 2.74,
             "hidden": false
@@ -3473,12 +3473,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 149.52,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              300.855,
-              478.674
+              301.095,
+              478.563
             ],
             "angle": 2.78,
             "hidden": false
@@ -3496,12 +3496,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 157.352,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.302,
-              473.073
+              299.783,
+              471.828
             ],
             "angle": 2.74,
             "hidden": false
@@ -3519,12 +3519,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 164.472,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              298.865,
-              464.449
+              298.931,
+              464.727
             ],
             "angle": 2.69,
             "hidden": false
@@ -3546,8 +3546,8 @@
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              302.107,
-              464.137
+              302.05,
+              463.271
             ],
             "angle": 2.65,
             "hidden": false
@@ -3565,12 +3565,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -3583,7 +3583,7 @@
           "height": 640
         }
       ],
-      "sha256": "fcfa4a70043f04debf81667a35661136c405d67076f675313fef2d3c18980e11",
+      "sha256": "a779a1ae53b5b45ca59dc1ca7db14af8e276e3102373016ec421ebf1155ad7cf",
       "frameDurations": [
         0.02875,
         0.02875,
@@ -3627,8 +3627,8 @@
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              301.925,
-              466.586
+              301.903,
+              466.684
             ],
             "angle": 2.66,
             "hidden": false
@@ -3646,12 +3646,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 160.912,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.492,
-              468.247
+              297.2,
+              468.72
             ],
             "angle": 2.68,
             "hidden": false
@@ -3669,12 +3669,12 @@
             0,
             0
           ],
-          "bodyHeight": 154.504,
+          "bodyHeight": 153.792,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.828,
-              476.083
+              297.157,
+              476.168
             ],
             "angle": 2.74,
             "hidden": false
@@ -3692,12 +3692,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 149.52,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              300.855,
-              478.674
+              301.095,
+              478.563
             ],
             "angle": 2.78,
             "hidden": false
@@ -3715,12 +3715,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 157.352,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.302,
-              473.073
+              299.783,
+              471.828
             ],
             "angle": 2.74,
             "hidden": false
@@ -3738,12 +3738,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 164.472,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              298.865,
-              464.449
+              298.931,
+              464.727
             ],
             "angle": 2.69,
             "hidden": false
@@ -3765,8 +3765,8 @@
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              302.107,
-              464.137
+              302.05,
+              463.271
             ],
             "angle": 2.65,
             "hidden": false
@@ -3784,12 +3784,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 173.016,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              304.701,
-              461.464
+              304.846,
+              460.031
             ],
             "angle": 2.63,
             "hidden": false
@@ -3807,12 +3807,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.835,
-              461.45
+              307.857,
+              460.021
             ],
             "angle": 2.63,
             "hidden": false
@@ -3830,12 +3830,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -3848,7 +3848,7 @@
           "height": 640
         }
       ],
-      "sha256": "6431d1355cb1f4a0c3676727fa006ef48f454c6f70563ab479919b2de34c37e6",
+      "sha256": "41cf0ca659dfaeaf27eb07e24292c158eb5fedfb72b49b7d19ac68cb85d10956",
       "frameDurations": [
         0.029381443298969072,
         0.030927835051546393,
@@ -3894,8 +3894,8 @@
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              301.925,
-              466.586
+              301.903,
+              466.684
             ],
             "angle": 2.66,
             "hidden": false
@@ -3913,12 +3913,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 160.912,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.492,
-              468.247
+              297.2,
+              468.72
             ],
             "angle": 2.68,
             "hidden": false
@@ -3936,12 +3936,12 @@
             0,
             0
           ],
-          "bodyHeight": 154.504,
+          "bodyHeight": 153.792,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.828,
-              476.083
+              297.157,
+              476.168
             ],
             "angle": 2.74,
             "hidden": false
@@ -3959,12 +3959,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 149.52,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              300.855,
-              478.674
+              301.095,
+              478.563
             ],
             "angle": 2.78,
             "hidden": false
@@ -3982,12 +3982,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 157.352,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.302,
-              473.073
+              299.783,
+              471.828
             ],
             "angle": 2.74,
             "hidden": false
@@ -4005,12 +4005,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 165.896,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              283.3,
-              457.986
+              284.025,
+              452.38
             ],
             "angle": 2.67,
             "hidden": false
@@ -4028,12 +4028,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 17,
           "weapon": {
             "hand": [
-              268.217,
-              450.739
+              269.324,
+              449.438
             ],
             "angle": 2.68,
             "hidden": false
@@ -4051,12 +4051,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 172.304,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              301.757,
-              457.99
+              303.967,
+              455.591
             ],
             "angle": 2.67,
             "hidden": false
@@ -4069,7 +4069,7 @@
           "height": 640
         }
       ],
-      "sha256": "d71b634f87881840f604981298b1d987e2e9411f5f3bf5ecaf504c1e11317d95",
+      "sha256": "1d8ad93c7d8550f42eeec4db284e417c6cda7cb7e6982fd99352e2ad5c2d54c3",
       "frameDurations": [
         0.025000037500000002,
         0.025000037500000002,
@@ -4110,8 +4110,8 @@
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              301.925,
-              466.586
+              301.903,
+              466.684
             ],
             "angle": 2.66,
             "hidden": false
@@ -4129,12 +4129,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 160.912,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.492,
-              468.247
+              297.2,
+              468.72
             ],
             "angle": 2.68,
             "hidden": false
@@ -4152,12 +4152,12 @@
             0,
             0
           ],
-          "bodyHeight": 154.504,
+          "bodyHeight": 153.792,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.828,
-              476.083
+              297.157,
+              476.168
             ],
             "angle": 2.74,
             "hidden": false
@@ -4175,12 +4175,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 149.52,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              300.855,
-              478.674
+              301.095,
+              478.563
             ],
             "angle": 2.78,
             "hidden": false
@@ -4198,12 +4198,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 157.352,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.302,
-              473.073
+              299.783,
+              471.828
             ],
             "angle": 2.74,
             "hidden": false
@@ -4221,12 +4221,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 164.472,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              298.865,
-              464.449
+              298.931,
+              464.727
             ],
             "angle": 2.69,
             "hidden": false
@@ -4244,12 +4244,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 170.88,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              308.963,
-              448.127
+              309.628,
+              445.443
             ],
             "angle": 2.65,
             "hidden": false
@@ -4267,12 +4267,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              297.415,
-              462.022
+              297.893,
+              455.831
             ],
             "angle": 2.66,
             "hidden": false
@@ -4290,12 +4290,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 165.896,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              283.3,
-              457.986
+              284.025,
+              452.38
             ],
             "angle": 2.67,
             "hidden": false
@@ -4313,12 +4313,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              296.344,
-              469.214
+              296.651,
+              467.999
             ],
             "angle": 2.58,
             "hidden": false
@@ -4331,7 +4331,7 @@
           "height": 640
         }
       ],
-      "sha256": "3f3d79a14f262d5fca8f7771ba7966bc8ff5011d6b761bb43e2007813a2cb516",
+      "sha256": "4d7899499fd65f312634efe203beae3de7ea2406f37bd49b9ede9d370ee8f9c9",
       "frameDurations": [
         0.020999999999999998,
         0.020999999999999998,
@@ -4373,12 +4373,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              306.75,
-              450.785
+              307.42,
+              452.014
             ],
             "angle": 2.63,
             "hidden": false
@@ -4396,12 +4396,12 @@
             0,
             0
           ],
-          "bodyHeight": 166.608,
+          "bodyHeight": 163.76,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              304.713,
-              455.798
+              305.49,
+              455.207
             ],
             "angle": 2.67,
             "hidden": false
@@ -4419,12 +4419,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 153.792,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              300.851,
-              455.821
+              301.742,
+              455.175
             ],
             "angle": 2.76,
             "hidden": false
@@ -4437,7 +4437,7 @@
           "height": 640
         }
       ],
-      "sha256": "8406c1950b810d69a4b7c678b08002431e6ec87949447ec1bc10a35596f2c1c1",
+      "sha256": "af6804340ccfa7c2e3dca643a153b46de3fca0ef6ad000a3e7c8155820f12849",
       "frameDurations": [
         0.019063604240282684,
         0.022968197879858657,
@@ -4472,12 +4472,12 @@
             0,
             0
           ],
-          "bodyHeight": 144.536,
+          "bodyHeight": 145.96,
           "headAnchorX": 37,
           "weapon": {
             "hand": [
-              328.633,
-              453.111
+              328.997,
+              450.421
             ],
             "angle": 2.95,
             "hidden": false
@@ -4495,12 +4495,12 @@
             0,
             0
           ],
-          "bodyHeight": 148.096,
+          "bodyHeight": 147.384,
           "headAnchorX": 46,
           "weapon": {
             "hand": [
-              324.928,
-              457.101
+              268.76,
+              458.365
             ],
             "angle": 3.02,
             "hidden": false
@@ -4522,8 +4522,8 @@
           "headAnchorX": 42,
           "weapon": {
             "hand": [
-              324.982,
-              453.238
+              325.647,
+              452.538
             ],
             "angle": 3.0,
             "hidden": false
@@ -4536,7 +4536,7 @@
           "height": 640
         }
       ],
-      "sha256": "734efad37f19b67d29d8a1f9213efa5c49d676bcf46b08f047006bd736406336",
+      "sha256": "45f8b88a4ae51198a5b65c3d0d90785e0a17a9ebcc14f341aeeac7dffb1a392c",
       "frameDurations": [
         0.0560655737704918,
         0.07163934426229507,
@@ -4571,12 +4571,12 @@
             0,
             0
           ],
-          "bodyHeight": 156.64,
+          "bodyHeight": 159.488,
           "headAnchorX": 35,
           "weapon": {
             "hand": [
-              328.552,
-              456.935
+              322.244,
+              454.78
             ],
             "angle": 2.85,
             "hidden": false
@@ -4598,8 +4598,8 @@
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              322.99,
-              454.357
+              322.963,
+              452.777
             ],
             "angle": 2.71,
             "hidden": false
@@ -4612,7 +4612,7 @@
           "height": 640
         }
       ],
-      "sha256": "e7f462abdb86c7aa1516eb123b42475f2f87739624291d4c6ff085ec7e3634ae",
+      "sha256": "779e82af80a9112df9b27f65e631efb28608827d6d46d4bd2f8b58652d985e54",
       "frameDurations": [
         0.0349074074074074,
         0.03009259259259259
@@ -4647,8 +4647,8 @@
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              322.99,
-              454.357
+              322.963,
+              452.777
             ],
             "angle": 2.71,
             "hidden": false
@@ -4666,12 +4666,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 168.744,
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              300.956,
-              449.87
+              301.372,
+              439.89
             ],
             "angle": 2.67,
             "hidden": false
@@ -4689,12 +4689,12 @@
             0,
             0
           ],
-          "bodyHeight": 157.352,
+          "bodyHeight": 158.776,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
               366,
-              419
+              415
             ],
             "angle": 2.66,
             "hidden": false
@@ -4712,12 +4712,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 172.304,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              301.757,
-              457.99
+              303.967,
+              455.591
             ],
             "angle": 2.67,
             "hidden": false
@@ -4730,7 +4730,7 @@
           "height": 640
         }
       ],
-      "sha256": "5459f4136991684333bae96d9978f14c13aff53077e2763298b65f5a72de352b",
+      "sha256": "34f20a9103132c41039feff21bee835737748d0ae4e36e71cf3f8f4b67dde435",
       "frameDurations": [
         0.03749999999999999,
         0.03749999999999999,
@@ -4767,8 +4767,8 @@
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              322.99,
-              454.357
+              322.963,
+              452.777
             ],
             "angle": 2.71,
             "hidden": false
@@ -4786,12 +4786,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 167.32,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              319.621,
-              462.081
+              320.093,
+              459.938
             ],
             "angle": 2.68,
             "hidden": false
@@ -4809,12 +4809,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 169.456,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              309.916,
-              462.993
+              310.424,
+              460.88
             ],
             "angle": 2.67,
             "hidden": false
@@ -4832,12 +4832,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              296.344,
-              469.214
+              296.651,
+              467.999
             ],
             "angle": 2.58,
             "hidden": false
@@ -4850,7 +4850,7 @@
           "height": 640
         }
       ],
-      "sha256": "3186ffba2b985ae54e7c2fe68eb7efcd7c38eeb0a6ba4427927fcbf7795be8c1",
+      "sha256": "68f3044d213f7747038c72a243a1b217ffd235801e9b88acf53a9df9237c400b",
       "frameDurations": [
         0.037500000000000006,
         0.037500000000000006,
@@ -4887,8 +4887,8 @@
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              322.99,
-              454.357
+              322.963,
+              452.777
             ],
             "angle": 2.71,
             "hidden": false
@@ -4906,12 +4906,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              312.598,
-              454.081
+              313.148,
+              452.75
             ],
             "angle": 2.65,
             "hidden": false
@@ -4929,12 +4929,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -4956,8 +4956,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -4975,12 +4975,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -4993,7 +4993,7 @@
           "height": 640
         }
       ],
-      "sha256": "29637946faefa0cf3153bbc8d2cbf36885a5e0f6b0a1845719d7ec9180aa26c7",
+      "sha256": "520c848f62e16a977743eaf51b51570cdbf9e9be4dc2986ae32a65999a24d745",
       "frameDurations": [
         0.032,
         0.032,
@@ -5030,12 +5030,12 @@
             0,
             0
           ],
-          "bodyHeight": 166.608,
+          "bodyHeight": 163.76,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              304.713,
-              450.798
+              305.49,
+              450.207
             ],
             "angle": 2.67,
             "hidden": false
@@ -5053,12 +5053,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 153.792,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              300.851,
-              450.821
+              301.742,
+              450.175
             ],
             "angle": 2.76,
             "hidden": false
@@ -5076,12 +5076,12 @@
             0,
             0
           ],
-          "bodyHeight": 144.536,
+          "bodyHeight": 145.96,
           "headAnchorX": 37,
           "weapon": {
             "hand": [
-              328.633,
-              448.111
+              328.997,
+              445.421
             ],
             "angle": 2.95,
             "hidden": false
@@ -5099,12 +5099,12 @@
             0,
             0
           ],
-          "bodyHeight": 148.096,
+          "bodyHeight": 147.384,
           "headAnchorX": 46,
           "weapon": {
             "hand": [
-              324.928,
-              452.101
+              268.76,
+              453.365
             ],
             "angle": 3.02,
             "hidden": false
@@ -5126,8 +5126,8 @@
           "headAnchorX": 42,
           "weapon": {
             "hand": [
-              324.982,
-              448.238
+              325.647,
+              447.538
             ],
             "angle": 3.0,
             "hidden": false
@@ -5145,12 +5145,12 @@
             0,
             0
           ],
-          "bodyHeight": 156.64,
+          "bodyHeight": 159.488,
           "headAnchorX": 35,
           "weapon": {
             "hand": [
-              328.552,
-              451.935
+              322.244,
+              449.78
             ],
             "angle": 2.85,
             "hidden": false
@@ -5172,8 +5172,8 @@
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              322.99,
-              449.357
+              322.963,
+              447.777
             ],
             "angle": 2.71,
             "hidden": false
@@ -5186,7 +5186,7 @@
           "height": 640
         }
       ],
-      "sha256": "a07ac4afb9a68f1fac575ac115e81e8f67a97c48eee57bd068f65bfe0c780502",
+      "sha256": "07839e1539e2126a121cbc33ea110349b5249ef46100c355e85fdef543a6c462",
       "frameDurations": [
         0.045714285714285714,
         0.045714285714285714,
@@ -5229,8 +5229,8 @@
           "headAnchorX": 24,
           "weapon": {
             "hand": [
-              322.99,
-              449.357
+              322.963,
+              447.777
             ],
             "angle": 2.71,
             "hidden": false
@@ -5248,12 +5248,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 163.76,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              277.757,
-              463.53
+              279.059,
+              460.803
             ],
             "angle": 2.66,
             "hidden": false
@@ -5271,12 +5271,12 @@
             0,
             0
           ],
-          "bodyHeight": 181.56,
+          "bodyHeight": 168.032,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              276.415,
-              460.539
+              278.034,
+              453.777
             ],
             "angle": 2.66,
             "hidden": false
@@ -5294,12 +5294,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 170.168,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              283.191,
-              462.157
+              283.819,
+              462.426
             ],
             "angle": 2.66,
             "hidden": false
@@ -5312,7 +5312,7 @@
           "height": 640
         }
       ],
-      "sha256": "722fa344f780f86308bd90403da68fc5d4b4a54a06a99c659cbf06ec90a26756",
+      "sha256": "2eb4121e45989a6ba50e41f1f0dc7c4f5a80be7314c0d1db6487dfd92bf00b79",
       "frameDurations": [
         0.04,
         0.04,
@@ -5348,12 +5348,12 @@
             0,
             0
           ],
-          "bodyHeight": 177.288,
+          "bodyHeight": 175.152,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              311.499,
-              457.326
+              311.202,
+              459.161
             ],
             "angle": 2.67,
             "hidden": false
@@ -5371,12 +5371,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              325.777,
-              411.171
+              325.659,
+              410.797
             ],
             "angle": 2.54,
             "hidden": false
@@ -5398,8 +5398,8 @@
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              343.477,
-              429.949
+              343.59,
+              429.092
             ],
             "angle": 3.17,
             "hidden": false
@@ -5417,12 +5417,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.184,
+          "bodyHeight": 166.608,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              320.081,
-              420.123
+              320.233,
+              418.661
             ],
             "angle": 4.12,
             "hidden": false
@@ -5440,12 +5440,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 166.608,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              392.922,
-              403.698
+              393.023,
+              401.75
             ],
             "angle": 5.95,
             "hidden": false
@@ -5463,12 +5463,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 164.472,
           "headAnchorX": 30,
           "weapon": {
             "hand": [
-              419.345,
-              401.3
+              419.315,
+              400.347
             ],
             "angle": 6.39,
             "hidden": false
@@ -5486,12 +5486,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 165.184,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              401.075,
-              411.81
+              400.531,
+              412.343
             ],
             "angle": 6.63,
             "hidden": false
@@ -5509,12 +5509,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 169.456,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              321.311,
-              442.874
+              321.818,
+              442.14
             ],
             "angle": 7.17,
             "hidden": false
@@ -5532,12 +5532,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              306.882,
-              460.124
+              306.857,
+              459.114
             ],
             "angle": 8.3,
             "hidden": false
@@ -5550,7 +5550,7 @@
           "height": 640
         }
       ],
-      "sha256": "99de1fd300feb38d9a5f02449e642e71557aedfdef920892c8771179a6ce23d6",
+      "sha256": "76b88ed8f78a15198cdc3761772ae4cd8672b13272705e9bf2529f8277880cca",
       "frameDurations": [
         0.05280000000000001,
         0.0488888888888889,
@@ -5592,12 +5592,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 168.744,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              321.336,
-              444.171
+              321.732,
+              442.074
             ],
             "angle": 1.95,
             "hidden": false
@@ -5615,12 +5615,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              288.842,
-              475.047
+              290.101,
+              473.703
             ],
             "angle": 1.65,
             "hidden": false
@@ -5638,12 +5638,12 @@
             0,
             0
           ],
-          "bodyHeight": 170.168,
+          "bodyHeight": 163.76,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              290.992,
-              476.104
+              292.635,
+              475.806
             ],
             "angle": 1.18,
             "hidden": false
@@ -5661,12 +5661,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 165.896,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              321.175,
-              431.821
+              321.59,
+              433.845
             ],
             "angle": 0.67,
             "hidden": false
@@ -5684,12 +5684,12 @@
             0,
             0
           ],
-          "bodyHeight": 177.288,
+          "bodyHeight": 168.744,
           "headAnchorX": 20,
           "weapon": {
             "hand": [
-              374.282,
-              377.327
+              360.06,
+              385.482
             ],
             "angle": 0.1,
             "hidden": false
@@ -5707,12 +5707,12 @@
             0,
             0
           ],
-          "bodyHeight": 179.424,
+          "bodyHeight": 170.168,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              389.053,
-              358.654
+              380.31,
+              367.714
             ],
             "angle": -0.47,
             "hidden": false
@@ -5730,12 +5730,12 @@
             0,
             0
           ],
-          "bodyHeight": 181.56,
+          "bodyHeight": 172.304,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              387.209,
-              347.06
+              379.855,
+              356.673
             ],
             "angle": -1.01,
             "hidden": false
@@ -5753,12 +5753,12 @@
             0,
             0
           ],
-          "bodyHeight": 184.408,
+          "bodyHeight": 172.304,
           "headAnchorX": 18,
           "weapon": {
             "hand": [
-              295.615,
-              334.574
+              302.961,
+              348.078
             ],
             "angle": -1.28,
             "hidden": false
@@ -5776,12 +5776,12 @@
             0,
             0
           ],
-          "bodyHeight": 185.832,
+          "bodyHeight": 173.016,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              287.547,
-              318.154
+              297.235,
+              334.725
             ],
             "angle": -1.4,
             "hidden": false
@@ -5794,7 +5794,7 @@
           "height": 640
         }
       ],
-      "sha256": "2acba951e128b645edefc0dba8441fa05cceeec247fab6ead296bb47c1b42b39",
+      "sha256": "c56e5c283c58cfdaafe818aa1a9e742e78a8b17cf6dce472e24197be2f29aa8b",
       "frameDurations": [
         0.05500000000000001,
         0.051000000000000004,
@@ -5837,12 +5837,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 177.288,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              271.663,
-              330.929
+              283.948,
+              330.339
             ],
             "angle": -1.4,
             "hidden": false
@@ -5860,12 +5860,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 171.592,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              282.958,
-              344.265
+              291.873,
+              339.553
             ],
             "angle": -1.58,
             "hidden": false
@@ -5883,12 +5883,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 168.032,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              311.41,
-              373.915
+              315.371,
+              364.256
             ],
             "angle": -1.31,
             "hidden": false
@@ -5906,12 +5906,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 165.184,
           "headAnchorX": 23,
           "weapon": {
             "hand": [
-              359.61,
-              408.218
+              358.181,
+              405.61
             ],
             "angle": -0.83,
             "hidden": false
@@ -5929,12 +5929,12 @@
             0,
             0
           ],
-          "bodyHeight": 166.608,
+          "bodyHeight": 162.336,
           "headAnchorX": 31,
           "weapon": {
             "hand": [
-              384.766,
-              447.768
+              383.612,
+              446.946
             ],
             "angle": 0.02,
             "hidden": false
@@ -5952,12 +5952,12 @@
             0,
             0
           ],
-          "bodyHeight": 164.472,
+          "bodyHeight": 161.624,
           "headAnchorX": 34,
           "weapon": {
             "hand": [
-              396.822,
-              471.1
+              395.016,
+              469.448
             ],
             "angle": 0.56,
             "hidden": false
@@ -5975,12 +5975,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 164.472,
           "headAnchorX": 28,
           "weapon": {
             "hand": [
-              384.278,
-              476.861
+              383.071,
+              475.869
             ],
             "angle": 0.89,
             "hidden": false
@@ -5998,12 +5998,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 168.032,
           "headAnchorX": 19,
           "weapon": {
             "hand": [
-              314.741,
-              442.466
+              315.616,
+              443.013
             ],
             "angle": 1.25,
             "hidden": false
@@ -6021,12 +6021,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 171.592,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.559,
-              445.352
+              300.102,
+              442.395
             ],
             "angle": 2.32,
             "hidden": false
@@ -6039,7 +6039,7 @@
           "height": 640
         }
       ],
-      "sha256": "37f1d162eadf47c59acb3ea3700ed66611bbe96b50b4660c349ca72be22ddc15",
+      "sha256": "500bfd26d7c922dfb47deff02a42de28c677033327172aef62fc836aa60155e9",
       "frameDurations": [
         0.05778877887788779,
         0.05891089108910892,
@@ -6081,12 +6081,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 169.456,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              321.311,
-              442.874
+              321.818,
+              442.14
             ],
             "angle": 7.17,
             "hidden": false
@@ -6104,12 +6104,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 168.744,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              321.336,
-              444.171
+              321.732,
+              442.074
             ],
             "angle": 1.95,
             "hidden": false
@@ -6127,12 +6127,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              288.842,
-              475.047
+              290.101,
+              473.703
             ],
             "angle": 1.65,
             "hidden": false
@@ -6145,7 +6145,7 @@
           "height": 640
         }
       ],
-      "sha256": "515841c01510a94b07090bd2515cca696c8776a2ef2f612ba448891359e9935c",
+      "sha256": "67efb3ef6c43d06db44d05e2f413f23003af1d7e3361386c42c57a4369207f4a",
       "frameDurations": [
         0.02332608695652174,
         0.027884057971014495,
@@ -6180,12 +6180,12 @@
             0,
             0
           ],
-          "bodyHeight": 185.832,
+          "bodyHeight": 173.016,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              287.547,
-              318.154
+              297.235,
+              334.725
             ],
             "angle": -1.4,
             "hidden": false
@@ -6203,12 +6203,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 177.288,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              271.663,
-              330.929
+              283.948,
+              330.339
             ],
             "angle": -1.4,
             "hidden": false
@@ -6226,12 +6226,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 171.592,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              282.958,
-              344.265
+              291.873,
+              339.553
             ],
             "angle": -1.58,
             "hidden": false
@@ -6244,7 +6244,7 @@
           "height": 640
         }
       ],
-      "sha256": "26ae47e6104781f1c0cf8accee9c321240ef14fdb5c7e5472f9d23ec718a8b29",
+      "sha256": "eb7c64fe49a26f7587ef7d3aa941b674f2b55840df335c70f768a6fa55a9bd8d",
       "frameDurations": [
         0.022829090909090907,
         0.026545454545454542,
@@ -6279,12 +6279,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 174.44,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              306.882,
-              460.124
+              306.857,
+              459.114
             ],
             "angle": 8.3,
             "hidden": false
@@ -6302,12 +6302,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -6329,8 +6329,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -6348,12 +6348,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -6366,7 +6366,7 @@
           "height": 640
         }
       ],
-      "sha256": "1920c2eb2f38ce5e97e8a1665bbd627b173262f588e6da913554390e42c38f09",
+      "sha256": "e06a96470d3c81cd3371f96894d3bad0606a6a1e8d0f9c35f2ad49be1ddffacc",
       "frameDurations": [
         0.0625,
         0.0625,
@@ -6402,12 +6402,12 @@
             0,
             0
           ],
-          "bodyHeight": 185.832,
+          "bodyHeight": 173.016,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              287.547,
-              318.154
+              297.235,
+              334.725
             ],
             "angle": -1.4,
             "hidden": false
@@ -6425,12 +6425,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              331.017,
-              430.896
+              330.639,
+              431.629
             ],
             "angle": 4.84,
             "hidden": false
@@ -6448,12 +6448,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              338.508,
-              419.021
+              338.302,
+              419.817
             ],
             "angle": 4.59,
             "hidden": false
@@ -6471,12 +6471,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              332.938,
-              431.643
+              333.404,
+              432.162
             ],
             "angle": 4.05,
             "hidden": false
@@ -6494,12 +6494,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 173.728,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              323.344,
-              439.946
+              323.143,
+              440.867
             ],
             "angle": 3.43,
             "hidden": false
@@ -6517,12 +6517,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -6535,7 +6535,7 @@
           "height": 640
         }
       ],
-      "sha256": "b5708455dac756077bc24526a65e3c48620fb57503b5da68f0a9683320d458ee",
+      "sha256": "f496fb77a970d282f0bb4fde989dfa5e8b5c8a7c21fda4260c614b9bb330b665",
       "frameDurations": [
         0.041666666666666664,
         0.041666666666666664,
@@ -6573,12 +6573,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 171.592,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.559,
-              445.352
+              300.102,
+              442.395
             ],
             "angle": 2.32,
             "hidden": false
@@ -6596,12 +6596,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              306.733,
-              462.245
+              307.385,
+              461.879
             ],
             "angle": 2.65,
             "hidden": false
@@ -6619,12 +6619,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -6646,8 +6646,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -6665,12 +6665,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -6683,7 +6683,7 @@
           "height": 640
         }
       ],
-      "sha256": "558413178c15519e967160a9521921af67ff55aca704b4aae37371fc676b11eb",
+      "sha256": "778a7fddaf3269674078fffa4c5309e02937cf542320427e6bc5b80b746b7c63",
       "frameDurations": [
         0.06,
         0.06,
@@ -6720,12 +6720,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 177.288,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              271.663,
-              330.929
+              283.948,
+              330.339
             ],
             "angle": -1.4,
             "hidden": false
@@ -6743,12 +6743,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 171.592,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              282.958,
-              344.265
+              291.873,
+              339.553
             ],
             "angle": -1.58,
             "hidden": false
@@ -6766,12 +6766,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 168.032,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              311.41,
-              373.915
+              315.371,
+              364.256
             ],
             "angle": -1.31,
             "hidden": false
@@ -6784,7 +6784,7 @@
           "height": 640
         }
       ],
-      "sha256": "ad5ecd74aa7b9a20834bae2920923c908ed9900bcb30cc2573630166b53f9783",
+      "sha256": "bf6abf15991537fd4b4186f8de2a04fc8d5ab2ba2d50a35ded82684ace532f1c",
       "frameDurations": [
         0.07619047619047618,
         0.07238095238095238,
@@ -6819,12 +6819,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 177.288,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              271.663,
-              330.929
+              283.948,
+              330.339
             ],
             "angle": -1.4,
             "hidden": false
@@ -6842,12 +6842,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 171.592,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              282.958,
-              344.265
+              291.873,
+              339.553
             ],
             "angle": -1.58,
             "hidden": false
@@ -6865,12 +6865,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 168.032,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              311.41,
-              373.915
+              315.371,
+              364.256
             ],
             "angle": -1.31,
             "hidden": false
@@ -6888,12 +6888,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 165.184,
           "headAnchorX": 23,
           "weapon": {
             "hand": [
-              359.61,
-              408.218
+              358.181,
+              405.61
             ],
             "angle": -0.83,
             "hidden": false
@@ -6911,12 +6911,12 @@
             0,
             0
           ],
-          "bodyHeight": 166.608,
+          "bodyHeight": 162.336,
           "headAnchorX": 31,
           "weapon": {
             "hand": [
-              384.766,
-              447.768
+              383.612,
+              446.946
             ],
             "angle": 0.02,
             "hidden": false
@@ -6934,12 +6934,12 @@
             0,
             0
           ],
-          "bodyHeight": 164.472,
+          "bodyHeight": 161.624,
           "headAnchorX": 34,
           "weapon": {
             "hand": [
-              396.822,
-              471.1
+              395.016,
+              469.448
             ],
             "angle": 0.56,
             "hidden": false
@@ -6957,12 +6957,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 164.472,
           "headAnchorX": 28,
           "weapon": {
             "hand": [
-              384.278,
-              476.861
+              383.071,
+              475.869
             ],
             "angle": 0.89,
             "hidden": false
@@ -6980,12 +6980,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 168.032,
           "headAnchorX": 19,
           "weapon": {
             "hand": [
-              314.741,
-              442.466
+              315.616,
+              443.013
             ],
             "angle": 1.25,
             "hidden": false
@@ -7003,12 +7003,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 171.592,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.559,
-              445.352
+              300.102,
+              442.395
             ],
             "angle": 2.32,
             "hidden": false
@@ -7021,7 +7021,7 @@
           "height": 640
         }
       ],
-      "sha256": "37f1d162eadf47c59acb3ea3700ed66611bbe96b50b4660c349ca72be22ddc15",
+      "sha256": "500bfd26d7c922dfb47deff02a42de28c677033327172aef62fc836aa60155e9",
       "frameDurations": [
         0.08108108108108109,
         0.07459459459459458,
@@ -7062,12 +7062,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 171.592,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.559,
-              445.352
+              300.102,
+              442.395
             ],
             "angle": 2.32,
             "hidden": false
@@ -7085,12 +7085,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              306.733,
-              462.245
+              307.385,
+              461.879
             ],
             "angle": 2.65,
             "hidden": false
@@ -7108,12 +7108,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -7135,8 +7135,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -7154,12 +7154,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -7172,7 +7172,7 @@
           "height": 640
         }
       ],
-      "sha256": "558413178c15519e967160a9521921af67ff55aca704b4aae37371fc676b11eb",
+      "sha256": "778a7fddaf3269674078fffa4c5309e02937cf542320427e6bc5b80b746b7c63",
       "frameDurations": [
         0.05600000000000001,
         0.05600000000000001,
@@ -7213,7 +7213,7 @@
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              352.736,
+              352.413,
               409.224
             ],
             "angle": 2.61,
@@ -7236,7 +7236,7 @@
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              314.332,
+              314.87,
               438.183
             ],
             "angle": 2.77,
@@ -7255,11 +7255,11 @@
             0,
             0
           ],
-          "bodyHeight": 170.168,
+          "bodyHeight": 168.744,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              312.859,
+              312.633,
               442.756
             ],
             "angle": -2.79,
@@ -7278,11 +7278,11 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 161.624,
           "headAnchorX": 20,
           "weapon": {
             "hand": [
-              350.205,
+              350.118,
               433.048
             ],
             "angle": -0.76,
@@ -7305,7 +7305,7 @@
           "headAnchorX": 30,
           "weapon": {
             "hand": [
-              416.75,
+              415.7,
               404.598
             ],
             "angle": -0.08,
@@ -7324,11 +7324,11 @@
             0,
             0
           ],
-          "bodyHeight": 160.2,
+          "bodyHeight": 160.912,
           "headAnchorX": 32,
           "weapon": {
             "hand": [
-              418.708,
+              417.753,
               405.429
             ],
             "angle": 0.02,
@@ -7347,12 +7347,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 167.32,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              378.008,
-              405.813
+              377.568,
+              405.7
             ],
             "angle": 0.2,
             "hidden": false
@@ -7370,11 +7370,11 @@
             0,
             0
           ],
-          "bodyHeight": 170.168,
+          "bodyHeight": 169.456,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              330.46,
+              331.003,
               428.087
             ],
             "angle": 0.56,
@@ -7393,11 +7393,11 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              349.397,
+              349.765,
               413.767
             ],
             "angle": 2.57,
@@ -7411,7 +7411,7 @@
           "height": 640
         }
       ],
-      "sha256": "e4bdd6458bf5d2d8a1d98013b92651c8553d3d1973712e17e2f3182ebd701ded",
+      "sha256": "8fce54b14ad47c74f138e694501305eb6ebc81cfeeaab70ce15f46c7f2c9fd7a",
       "frameDurations": [
         0.05482642777155655,
         0.05643896976483763,
@@ -7452,12 +7452,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 167.32,
           "headAnchorX": 25,
           "weapon": {
             "hand": [
-              378.008,
-              405.813
+              377.568,
+              405.7
             ],
             "angle": 0.2,
             "hidden": false
@@ -7475,11 +7475,11 @@
             0,
             0
           ],
-          "bodyHeight": 170.168,
+          "bodyHeight": 169.456,
           "headAnchorX": 16,
           "weapon": {
             "hand": [
-              330.46,
+              331.003,
               428.087
             ],
             "angle": 0.56,
@@ -7498,11 +7498,11 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              349.397,
+              349.765,
               413.767
             ],
             "angle": 2.57,
@@ -7521,12 +7521,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -7539,7 +7539,7 @@
           "height": 640
         }
       ],
-      "sha256": "5e3d8f356f4861ef8932a21d418486a4f860f98091c16e93bd082204d3d85aa8",
+      "sha256": "c7d2f6ac6009043f7e0311da27399ad8b39978fbf53d9318d1dced9ec35031fb",
       "frameDurations": [
         0.05,
         0.05,
@@ -7575,12 +7575,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.744,
+          "bodyHeight": 165.184,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              311.463,
-              459.653
+              312.632,
+              458.608
             ],
             "angle": 2.88,
             "hidden": false
@@ -7598,12 +7598,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 164.472,
           "headAnchorX": 28,
           "weapon": {
             "hand": [
-              307.099,
-              450.033
+              308.043,
+              449.416
             ],
             "angle": 3.09,
             "hidden": false
@@ -7621,12 +7621,12 @@
             0,
             0
           ],
-          "bodyHeight": 163.048,
+          "bodyHeight": 160.912,
           "headAnchorX": 29,
           "weapon": {
             "hand": [
-              309.261,
-              461.831
+              310.888,
+              457.581
             ],
             "angle": 3.85,
             "hidden": false
@@ -7644,12 +7644,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 160.2,
           "headAnchorX": 37,
           "weapon": {
             "hand": [
-              380.521,
-              429.343
+              379.985,
+              424.273
             ],
             "angle": 5.28,
             "hidden": false
@@ -7667,12 +7667,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 158.776,
           "headAnchorX": 43,
           "weapon": {
             "hand": [
-              438.971,
-              410.024
+              436.468,
+              408.169
             ],
             "angle": 6.14,
             "hidden": false
@@ -7690,12 +7690,12 @@
             0,
             0
           ],
-          "bodyHeight": 162.336,
+          "bodyHeight": 159.488,
           "headAnchorX": 40,
           "weapon": {
             "hand": [
-              415.542,
-              414.612
+              414.059,
+              409.845
             ],
             "angle": 6.52,
             "hidden": false
@@ -7713,12 +7713,12 @@
             0,
             0
           ],
-          "bodyHeight": 166.608,
+          "bodyHeight": 165.184,
           "headAnchorX": 32,
           "weapon": {
             "hand": [
-              385.288,
-              414.539
+              383.685,
+              410.617
             ],
             "angle": 6.82,
             "hidden": false
@@ -7736,12 +7736,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 169.456,
           "headAnchorX": 20,
           "weapon": {
             "hand": [
-              325.092,
-              443.885
+              325.45,
+              443.407
             ],
             "angle": 7.3,
             "hidden": false
@@ -7759,12 +7759,12 @@
             0,
             0
           ],
-          "bodyHeight": 182.272,
+          "bodyHeight": 173.728,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              304.903,
-              458.871
+              305.837,
+              461.812
             ],
             "angle": 8.72,
             "hidden": false
@@ -7777,7 +7777,7 @@
           "height": 640
         }
       ],
-      "sha256": "fa347147fa697737c8cc4a40e08c24d0e1bd5375977b451caf0ff5a7134a39e3",
+      "sha256": "331bcecb7a771c59b01dbeec32bc1836ab1fafde9ac84a3d30efcd000264b865",
       "frameDurations": [
         0.04468085106382979,
         0.04085106382978724,
@@ -7818,12 +7818,12 @@
             0,
             0
           ],
-          "bodyHeight": 182.272,
+          "bodyHeight": 173.728,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              304.903,
-              458.871
+              305.837,
+              461.812
             ],
             "angle": 8.72,
             "hidden": false
@@ -7841,12 +7841,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 171.592,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              306.733,
-              462.245
+              307.385,
+              461.879
             ],
             "angle": 2.65,
             "hidden": false
@@ -7864,12 +7864,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.157,
-              462.142
+              305.833,
+              461.215
             ],
             "angle": 2.63,
             "hidden": false
@@ -7891,8 +7891,8 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.071,
-              462.528
+              307.457,
+              461.045
             ],
             "angle": 2.63,
             "hidden": false
@@ -7910,12 +7910,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -7928,7 +7928,7 @@
           "height": 640
         }
       ],
-      "sha256": "8d0669e03c5557be25025c95a1d2a14aeac0bbe555722a6f18c917db947c2bbf",
+      "sha256": "21c3f0156215b82d883ea83e5380de9e331ddc85a07a811f1ccc094da65b3f37",
       "frameDurations": [
         0.036,
         0.036,
@@ -7965,12 +7965,12 @@
             0,
             0
           ],
-          "bodyHeight": 159.488,
+          "bodyHeight": 158.064,
           "headAnchorX": 12,
           "weapon": {
             "hand": [
-              285.779,
-              470.052
+              286.288,
+              469.89
             ],
             "angle": 2.75,
             "hidden": false
@@ -7988,11 +7988,11 @@
             0,
             0
           ],
-          "bodyHeight": 151.656,
+          "bodyHeight": 150.232,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              298.268,
+              298.723,
               420.639
             ],
             "angle": 3.05,
@@ -8011,12 +8011,12 @@
             0,
             0
           ],
-          "bodyHeight": 157.352,
+          "bodyHeight": 155.216,
           "headAnchorX": 15,
           "weapon": {
             "hand": [
-              290.915,
-              413.094
+              291.602,
+              412.388
             ],
             "angle": 3.58,
             "hidden": false
@@ -8034,12 +8034,12 @@
             0,
             0
           ],
-          "bodyHeight": 163.048,
+          "bodyHeight": 160.2,
           "headAnchorX": 22,
           "weapon": {
             "hand": [
-              338.684,
-              417.977
+              339.201,
+              419.85
             ],
             "angle": 4.94,
             "hidden": false
@@ -8057,12 +8057,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 159.488,
           "headAnchorX": 28,
           "weapon": {
             "hand": [
-              399.446,
-              433.39
+              398.792,
+              434.813
             ],
             "angle": 5.92,
             "hidden": false
@@ -8080,12 +8080,12 @@
             0,
             0
           ],
-          "bodyHeight": 158.776,
+          "bodyHeight": 157.352,
           "headAnchorX": 27,
           "weapon": {
             "hand": [
-              408.902,
-              447.252
+              408.159,
+              447.669
             ],
             "angle": 6.58,
             "hidden": false
@@ -8103,12 +8103,12 @@
             0,
             0
           ],
-          "bodyHeight": 164.472,
+          "bodyHeight": 163.048,
           "headAnchorX": 21,
           "weapon": {
             "hand": [
-              382.763,
-              435.598
+              381.704,
+              435.846
             ],
             "angle": 7.15,
             "hidden": false
@@ -8126,12 +8126,12 @@
             0,
             0
           ],
-          "bodyHeight": 167.32,
+          "bodyHeight": 166.608,
           "headAnchorX": 14,
           "weapon": {
             "hand": [
-              331.001,
-              429.974
+              331.52,
+              431.236
             ],
             "angle": 8.1,
             "hidden": false
@@ -8149,12 +8149,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              307.112,
-              466.182
+              306.899,
+              464.693
             ],
             "angle": 8.85,
             "hidden": false
@@ -8167,7 +8167,7 @@
           "height": 640
         }
       ],
-      "sha256": "b1e766a34bec22245edf6ddc903b58b572c90587915bcfd248773c5af9e0fe7e",
+      "sha256": "2a2f87791affa5d94f3377c473f8ec6882210b844e96abfbd694f215131fba68",
       "frameDurations": [
         0.05338530066815145,
         0.05757238307349667,
@@ -8208,12 +8208,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 166.608,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              307.112,
-              466.182
+              306.899,
+              464.693
             ],
             "angle": 8.85,
             "hidden": false
@@ -8235,8 +8235,8 @@
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              301.925,
-              466.586
+              301.903,
+              466.684
             ],
             "angle": 2.66,
             "hidden": false
@@ -8254,12 +8254,12 @@
             0,
             0
           ],
-          "bodyHeight": 161.624,
+          "bodyHeight": 160.912,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.492,
-              468.247
+              297.2,
+              468.72
             ],
             "angle": 2.68,
             "hidden": false
@@ -8277,12 +8277,12 @@
             0,
             0
           ],
-          "bodyHeight": 154.504,
+          "bodyHeight": 153.792,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              296.828,
-              476.083
+              297.157,
+              476.168
             ],
             "angle": 2.74,
             "hidden": false
@@ -8300,12 +8300,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 149.52,
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              300.855,
-              478.674
+              301.095,
+              478.563
             ],
             "angle": 2.78,
             "hidden": false
@@ -8323,12 +8323,12 @@
             0,
             0
           ],
-          "bodyHeight": 155.928,
+          "bodyHeight": 157.352,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              299.302,
-              473.073
+              299.783,
+              471.828
             ],
             "angle": 2.74,
             "hidden": false
@@ -8346,12 +8346,12 @@
             0,
             0
           ],
-          "bodyHeight": 165.896,
+          "bodyHeight": 164.472,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              298.865,
-              464.449
+              298.931,
+              464.727
             ],
             "angle": 2.69,
             "hidden": false
@@ -8369,12 +8369,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -8387,7 +8387,7 @@
           "height": 640
         }
       ],
-      "sha256": "dfbd4352b2fa2a08a7c4b1b080a1b5f0addd46bcd01284100c4349129c94c409",
+      "sha256": "48c75012e987804c2c9d60eb98d06eba9d32d4314fe15d2fdf8ed05aba7c796e",
       "frameDurations": [
         0.030000000000000002,
         0.030000000000000002,
@@ -8427,12 +8427,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              291.055,
-              509.341
+              292.267,
+              510.294
             ],
             "angle": 3.03,
             "hidden": false
@@ -8450,12 +8450,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 128.872,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              269.763,
-              487.531
+              272.215,
+              489.083
             ],
             "angle": 3.12,
             "hidden": false
@@ -8473,12 +8473,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 128.872,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              273.594,
-              461.168
+              275.983,
+              463.862
             ],
             "angle": 4.04,
             "hidden": false
@@ -8496,12 +8496,12 @@
             0,
             0
           ],
-          "bodyHeight": 135.28,
+          "bodyHeight": 128.16,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              376.419,
-              466.137
+              374.765,
+              468.003
             ],
             "angle": 5.53,
             "hidden": false
@@ -8519,12 +8519,12 @@
             0,
             0
           ],
-          "bodyHeight": 131.008,
+          "bodyHeight": 126.736,
           "headAnchorX": 18,
           "weapon": {
             "hand": [
-              398.342,
-              464.885
+              395.877,
+              465.045
             ],
             "angle": 6.12,
             "hidden": false
@@ -8542,12 +8542,12 @@
             0,
             0
           ],
-          "bodyHeight": 128.872,
+          "bodyHeight": 126.736,
           "headAnchorX": 20,
           "weapon": {
             "hand": [
-              367.33,
-              513.076
+              365.994,
+              511.252
             ],
             "angle": 6.35,
             "hidden": false
@@ -8565,12 +8565,12 @@
             0,
             0
           ],
-          "bodyHeight": 135.28,
+          "bodyHeight": 128.872,
           "headAnchorX": 13,
           "weapon": {
             "hand": [
-              317.937,
-              514.213
+              318.658,
+              515.033
             ],
             "angle": 6.65,
             "hidden": false
@@ -8588,12 +8588,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.128,
+          "bodyHeight": 130.296,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              295.711,
-              496.064
+              297.077,
+              497.241
             ],
             "angle": 8.62,
             "hidden": false
@@ -8611,12 +8611,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 130.296,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              292.04,
-              509.344
+              293.477,
+              510.297
             ],
             "angle": 9.05,
             "hidden": false
@@ -8629,7 +8629,7 @@
           "height": 640
         }
       ],
-      "sha256": "0fdd2d7b5f6548ea8debc7d208fb0ecde4686dea3d6438b46e57cd2928612570",
+      "sha256": "d81a35b4323113297773cff51ea39cf5a90c30da0b75ca12d44c785aafca9912",
       "frameDurations": [
         0.05628476084538377,
         0.0460511679644049,
@@ -8670,12 +8670,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.128,
+          "bodyHeight": 130.296,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              295.711,
-              496.064
+              297.077,
+              497.241
             ],
             "angle": 8.62,
             "hidden": false
@@ -8693,12 +8693,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 130.296,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              292.04,
-              509.344
+              293.477,
+              510.297
             ],
             "angle": 9.05,
             "hidden": false
@@ -8716,12 +8716,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 131.72,
           "headAnchorX": -2,
           "weapon": {
             "hand": [
-              289.038,
-              493.33
+              290.105,
+              492.732
             ],
             "angle": 3.01,
             "hidden": false
@@ -8739,12 +8739,12 @@
             0,
             0
           ],
-          "bodyHeight": 131.72,
+          "bodyHeight": 130.296,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              289.777,
-              494.874
+              290.345,
+              493.518
             ],
             "angle": 3.01,
             "hidden": false
@@ -8757,7 +8757,7 @@
           "height": 640
         }
       ],
-      "sha256": "4083b301f00e5eeb3b2c7115ac9a0a4ab80748788a6f37ef0031929456b8b9fd",
+      "sha256": "710f6c59df711912d5f26575b89d91d221d8f6f36879b7a61235361bbc47d550",
       "frameDurations": [
         0.045,
         0.045,
@@ -8793,12 +8793,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -8816,12 +8816,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 170.88,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              306.187,
-              455.505
+              306.939,
+              455.882
             ],
             "angle": 2.65,
             "hidden": false
@@ -8839,12 +8839,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 164.472,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              302.311,
-              456.545
+              302.387,
+              458.366
             ],
             "angle": 2.67,
             "hidden": false
@@ -8862,12 +8862,12 @@
             0,
             0
           ],
-          "bodyHeight": 156.64,
+          "bodyHeight": 154.504,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              298.656,
-              471.948
+              299.204,
+              471.915
             ],
             "angle": 2.75,
             "hidden": false
@@ -8885,12 +8885,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.232,
+          "bodyHeight": 146.672,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              293.116,
-              478.194
+              293.46,
+              478.94
             ],
             "angle": 2.82,
             "hidden": false
@@ -8908,12 +8908,12 @@
             0,
             0
           ],
-          "bodyHeight": 141.688,
+          "bodyHeight": 138.84,
           "headAnchorX": 0,
           "weapon": {
             "hand": [
-              287.756,
-              484.875
+              288.046,
+              485.23
             ],
             "angle": 2.93,
             "hidden": false
@@ -8931,12 +8931,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 131.72,
           "headAnchorX": -2,
           "weapon": {
             "hand": [
-              289.038,
-              493.33
+              290.105,
+              492.732
             ],
             "angle": 3.01,
             "hidden": false
@@ -8954,12 +8954,12 @@
             0,
             0
           ],
-          "bodyHeight": 131.72,
+          "bodyHeight": 130.296,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              289.777,
-              494.874
+              290.345,
+              493.518
             ],
             "angle": 3.01,
             "hidden": false
@@ -8972,7 +8972,7 @@
           "height": 640
         }
       ],
-      "sha256": "52ed4607631f63916c934a1c4d8ec4f18c96eae22922f353459710a7be9cf2fb",
+      "sha256": "d9c7d3c7d7980d271a60e7e53ab1dc459fa6a50e8716214f7dca4e12d5975f67",
       "frameDurations": [
         0.023749999999999997,
         0.023749999999999997,
@@ -9012,12 +9012,12 @@
             0,
             0
           ],
-          "bodyHeight": 131.72,
+          "bodyHeight": 130.296,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              289.777,
-              494.874
+              290.345,
+              493.518
             ],
             "angle": 3.01,
             "hidden": false
@@ -9035,12 +9035,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 131.72,
           "headAnchorX": -2,
           "weapon": {
             "hand": [
-              289.038,
-              493.33
+              290.105,
+              492.732
             ],
             "angle": 3.01,
             "hidden": false
@@ -9058,12 +9058,12 @@
             0,
             0
           ],
-          "bodyHeight": 141.688,
+          "bodyHeight": 138.84,
           "headAnchorX": 0,
           "weapon": {
             "hand": [
-              287.756,
-              484.875
+              288.046,
+              485.23
             ],
             "angle": 2.93,
             "hidden": false
@@ -9081,12 +9081,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.232,
+          "bodyHeight": 146.672,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              293.116,
-              478.194
+              293.46,
+              478.94
             ],
             "angle": 2.82,
             "hidden": false
@@ -9104,12 +9104,12 @@
             0,
             0
           ],
-          "bodyHeight": 156.64,
+          "bodyHeight": 154.504,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              298.656,
-              471.948
+              299.204,
+              471.915
             ],
             "angle": 2.75,
             "hidden": false
@@ -9127,12 +9127,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 164.472,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              302.311,
-              456.545
+              302.387,
+              458.366
             ],
             "angle": 2.67,
             "hidden": false
@@ -9150,12 +9150,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 170.88,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              306.187,
-              455.505
+              306.939,
+              455.882
             ],
             "angle": 2.65,
             "hidden": false
@@ -9173,12 +9173,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -9191,7 +9191,7 @@
           "height": 640
         }
       ],
-      "sha256": "f11ee6b588663dd07132fbb4b04f1833e1cf5048fc4375328067e49b203bd7ec",
+      "sha256": "1934b4ab4ed81ead0045edd33c414f036c82943b06b04f67402bebe1494e027c",
       "frameDurations": [
         0.025,
         0.025,
@@ -9231,12 +9231,12 @@
             0,
             0
           ],
-          "bodyHeight": 131.72,
+          "bodyHeight": 130.296,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              289.777,
-              494.874
+              290.345,
+              493.518
             ],
             "angle": 3.01,
             "hidden": false
@@ -9254,12 +9254,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 132.432,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              293.074,
-              495.143
+              293.098,
+              494.739
             ],
             "angle": 3.0,
             "hidden": false
@@ -9277,12 +9277,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 131.72,
           "headAnchorX": -2,
           "weapon": {
             "hand": [
-              289.038,
-              493.33
+              290.105,
+              492.732
             ],
             "angle": 3.01,
             "hidden": false
@@ -9295,7 +9295,7 @@
           "height": 640
         }
       ],
-      "sha256": "14f9551da8be18d205956c8bb2caa5b8abd671a002112a75a9d840b072581233",
+      "sha256": "a33d173a4d48036d82685a6b1bafbb76e544bac0218fa18ecf7ffcb3c8f2da48",
       "frameDurations": [
         0.26666666666666666,
         0.26666666666666666,
@@ -9330,12 +9330,12 @@
             0,
             0
           ],
-          "bodyHeight": 140.976,
+          "bodyHeight": 131.008,
           "headAnchorX": 0,
           "weapon": {
             "hand": [
-              254.341,
-              501.059
+              259.326,
+              501.361
             ],
             "angle": 3.04,
             "hidden": false
@@ -9353,12 +9353,12 @@
             0,
             0
           ],
-          "bodyHeight": 137.416,
+          "bodyHeight": 130.296,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              253.923,
-              503.923
+              258.767,
+              501.866
             ],
             "angle": 3.04,
             "hidden": false
@@ -9376,12 +9376,12 @@
             0,
             0
           ],
-          "bodyHeight": 133.856,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              263.424,
-              512.71
+              267.406,
+              509.343
             ],
             "angle": 3.03,
             "hidden": false
@@ -9399,12 +9399,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 130.296,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              246.073,
-              498.425
+              251.656,
+              494.222
             ],
             "angle": 3.01,
             "hidden": false
@@ -9422,12 +9422,12 @@
             0,
             0
           ],
-          "bodyHeight": 133.144,
+          "bodyHeight": 131.72,
           "headAnchorX": 0,
           "weapon": {
             "hand": [
-              255.705,
-              507.324
+              259.924,
+              502.089
             ],
             "angle": 3.0,
             "hidden": false
@@ -9445,12 +9445,12 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 131.008,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              281.1,
-              506.46
+              283.572,
+              502.743
             ],
             "angle": 3.02,
             "hidden": false
@@ -9468,12 +9468,12 @@
             0,
             0
           ],
-          "bodyHeight": 133.856,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              281.787,
-              493.416
+              284.638,
+              488.874
             ],
             "angle": 3.04,
             "hidden": false
@@ -9491,12 +9491,12 @@
             0,
             0
           ],
-          "bodyHeight": 133.856,
+          "bodyHeight": 130.296,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              253.013,
-              503.001
+              257.963,
+              498.871
             ],
             "angle": 3.05,
             "hidden": false
@@ -9514,12 +9514,12 @@
             0,
             0
           ],
-          "bodyHeight": 136.704,
+          "bodyHeight": 131.008,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              256.114,
-              501.422
+              260.772,
+              498.908
             ],
             "angle": 3.05,
             "hidden": false
@@ -9532,7 +9532,7 @@
           "height": 640
         }
       ],
-      "sha256": "d8ef1a2fb6d31cad664528f41ec7194269e2859d9e995caa69e9529563cee298",
+      "sha256": "cad7f8a97766a6c6461dc5db08d1a2c53f0de3ddc8e2df540a4dcf51d49bb0ff",
       "frameDurations": [
         0.10625,
         0.10625,
@@ -9577,12 +9577,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -9600,12 +9600,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              317.717,
-              452.95
+              317.49,
+              453.388
             ],
             "angle": 2.9,
             "hidden": false
@@ -9623,12 +9623,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 173.728,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              323.344,
-              439.946
+              323.143,
+              440.867
             ],
             "angle": 3.43,
             "hidden": false
@@ -9646,12 +9646,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              332.938,
-              431.643
+              333.404,
+              432.162
             ],
             "angle": 4.05,
             "hidden": false
@@ -9669,12 +9669,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              338.508,
-              419.021
+              338.302,
+              419.817
             ],
             "angle": 4.59,
             "hidden": false
@@ -9692,12 +9692,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              331.017,
-              430.896
+              330.639,
+              431.629
             ],
             "angle": 4.84,
             "hidden": false
@@ -9710,7 +9710,7 @@
           "height": 640
         }
       ],
-      "sha256": "7584220c587455a81049ea3fcb023503ffedf79c0afb1a5ed6d87d2086e50a1f",
+      "sha256": "906a0103294a2071eaa6fa22f2a62296dc9b56c8b10e5d5a141dbb9b23280998",
       "frameDurations": [
         0.03,
         0.03,
@@ -9748,12 +9748,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              331.017,
-              430.896
+              330.639,
+              431.629
             ],
             "angle": 4.84,
             "hidden": false
@@ -9771,12 +9771,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              346.207,
-              425.607
+              346.45,
+              426.368
             ],
             "angle": 4.83,
             "hidden": false
@@ -9794,12 +9794,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              336.665,
-              418.463
+              336.871,
+              412.846
             ],
             "angle": 4.82,
             "hidden": false
@@ -9812,7 +9812,7 @@
           "height": 640
         }
       ],
-      "sha256": "aede7052bf390f68ad15ebb054c32689b8cb6429546d248fcb1a376473c5e56c",
+      "sha256": "fa5a3b28a55da097a8a41242554a79c3f24bb1d05f53531e0271c890f0144e04",
       "frameDurations": [
         0.20666666666666667,
         0.20666666666666667,
@@ -9847,12 +9847,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              331.017,
-              430.896
+              330.639,
+              431.629
             ],
             "angle": 4.84,
             "hidden": false
@@ -9870,12 +9870,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              338.508,
-              419.021
+              338.302,
+              419.817
             ],
             "angle": 4.59,
             "hidden": false
@@ -9893,12 +9893,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              332.938,
-              431.643
+              333.404,
+              432.162
             ],
             "angle": 4.05,
             "hidden": false
@@ -9916,12 +9916,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 173.728,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              323.344,
-              439.946
+              323.143,
+              440.867
             ],
             "angle": 3.43,
             "hidden": false
@@ -9939,12 +9939,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              317.717,
-              452.95
+              317.49,
+              453.388
             ],
             "angle": 2.9,
             "hidden": false
@@ -9962,12 +9962,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -9980,7 +9980,7 @@
           "height": 640
         }
       ],
-      "sha256": "78d865d65f037a097d65e467971ff2d208f39c54fce199e2f16507ec77932fae",
+      "sha256": "aa437d7c8cea9e7a307b3a361cd8fe393678f16ec59af8e42f0651ec7a709dc8",
       "frameDurations": [
         0.02666666666666667,
         0.02666666666666667,
@@ -10018,12 +10018,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              331.017,
-              430.896
+              330.639,
+              431.629
             ],
             "angle": 4.84,
             "hidden": false
@@ -10045,8 +10045,8 @@
           "headAnchorX": 1,
           "weapon": {
             "hand": [
-              333.688,
-              413.779
+              333.385,
+              414.138
             ],
             "angle": 4.68,
             "hidden": false
@@ -10064,12 +10064,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              336.665,
-              418.463
+              336.871,
+              412.846
             ],
             "angle": 4.82,
             "hidden": false
@@ -10087,12 +10087,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              346.207,
-              425.607
+              346.45,
+              426.368
             ],
             "angle": 4.83,
             "hidden": false
@@ -10110,12 +10110,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.016,
+          "bodyHeight": 174.44,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              331.017,
-              430.896
+              330.639,
+              431.629
             ],
             "angle": 4.84,
             "hidden": false
@@ -10128,7 +10128,7 @@
           "height": 640
         }
       ],
-      "sha256": "2a881c40aecde5245e37fc76ceac1f45279bd9a0fc2fbd5d8f0b47913b28704c",
+      "sha256": "0d8c27dae9ec020c6904d0831813b7f31f7ef9b25ee9070eb5293608a350b712",
       "frameDurations": [
         0.044000000000000004,
         0.044000000000000004,
@@ -10169,8 +10169,8 @@
           "headAnchorX": 1,
           "weapon": {
             "hand": [
-              333.688,
-              413.779
+              333.385,
+              414.138
             ],
             "angle": 4.68,
             "hidden": false
@@ -10188,12 +10188,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 173.728,
           "headAnchorX": -6,
           "weapon": {
             "hand": [
-              331.361,
-              455.119
+              331.085,
+              456.333
             ],
             "angle": 2.8,
             "hidden": false
@@ -10211,12 +10211,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 169.456,
           "headAnchorX": -10,
           "weapon": {
             "hand": [
-              310.177,
-              465.013
+              310.656,
+              465.415
             ],
             "angle": 2.86,
             "hidden": false
@@ -10234,12 +10234,12 @@
             0,
             0
           ],
-          "bodyHeight": 163.048,
+          "bodyHeight": 160.912,
           "headAnchorX": -4,
           "weapon": {
             "hand": [
-              276.435,
-              466.445
+              277.349,
+              467.048
             ],
             "angle": 2.77,
             "hidden": false
@@ -10257,12 +10257,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 148.808,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              288.213,
-              477.21
+              289.104,
+              476.829
             ],
             "angle": 2.72,
             "hidden": false
@@ -10280,12 +10280,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              296.765,
-              470.452
+              297.458,
+              470.66
             ],
             "angle": 2.68,
             "hidden": false
@@ -10298,7 +10298,7 @@
           "height": 640
         }
       ],
-      "sha256": "e6c3a5144053fa55c7161e5dcfef55d769909159b0ef9f2f59530d9c3f24ea16",
+      "sha256": "6f1cf75688c98a0ddaf1b5fc82bd97db69dd98fdcf46894601f6a230351ee5d4",
       "frameDurations": [
         0.039999999999999994,
         0.039999999999999994,
@@ -10336,12 +10336,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -10359,12 +10359,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              304.751,
-              459.439
+              305.029,
+              458.616
             ],
             "angle": 2.64,
             "hidden": false
@@ -10382,12 +10382,12 @@
             0,
             0
           ],
-          "bodyHeight": 170.88,
+          "bodyHeight": 173.016,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              297.864,
-              460.984
+              298.48,
+              459.985
             ],
             "angle": 2.71,
             "hidden": false
@@ -10405,12 +10405,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 174.44,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              303.214,
-              456.126
+              303.04,
+              456.469
             ],
             "angle": 2.72,
             "hidden": false
@@ -10428,12 +10428,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 175.864,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              308.731,
-              451.65
+              308.454,
+              452.793
             ],
             "angle": 2.77,
             "hidden": false
@@ -10446,7 +10446,7 @@
           "height": 640
         }
       ],
-      "sha256": "003965dad5c201ef339490de6c5d3c9fdbfcfc8bf2506a66f702d29ab497e237",
+      "sha256": "9421b491a7879c57c94c7309ca09a9b90b422834e34e00147d0df4a595f46f8e",
       "frameDurations": [
         0.144,
         0.144,
@@ -10483,12 +10483,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.152,
+          "bodyHeight": 175.864,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              308.731,
-              451.65
+              308.454,
+              452.793
             ],
             "angle": 2.77,
             "hidden": false
@@ -10510,8 +10510,8 @@
           "headAnchorX": 11,
           "weapon": {
             "hand": [
-              308.86,
-              448.883
+              309.023,
+              450.458
             ],
             "angle": 2.82,
             "hidden": false
@@ -10533,8 +10533,8 @@
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              309.029,
-              451.022
+              309.662,
+              451.169
             ],
             "angle": 2.8,
             "hidden": false
@@ -10556,8 +10556,8 @@
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              309.812,
-              454.779
+              309.672,
+              455.507
             ],
             "angle": 2.72,
             "hidden": false
@@ -10570,7 +10570,7 @@
           "height": 640
         }
       ],
-      "sha256": "f08e01016dc0e4785fe188438ec9cdbd03bcf71529664a728350c29d93c64c1b",
+      "sha256": "716671fccfe5b12d77d081fa288d2361c6642236733f1c51f53a38cf4ebacdf4",
       "frameDurations": [
         0.0725,
         0.0725,
@@ -10610,8 +10610,8 @@
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              309.812,
-              454.779
+              309.672,
+              455.507
             ],
             "angle": 2.72,
             "hidden": false
@@ -10629,12 +10629,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 173.016,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.281,
-              458.37
+              309.046,
+              458.508
             ],
             "angle": 2.63,
             "hidden": false
@@ -10652,12 +10652,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -10670,7 +10670,7 @@
           "height": 640
         }
       ],
-      "sha256": "42b80e77c95994aa4830e6947be09bd23abb3249be26d980e1ae8e2348016fd9",
+      "sha256": "6dcbe0d70773b227a00e17f6e165da3a10102959aab9c6666a4c77956b8c5685",
       "frameDurations": [
         0.06666666666666667,
         0.06666666666666667,
@@ -10705,12 +10705,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              309.935,
-              459.867
+              309.596,
+              459.706
             ],
             "angle": 2.63,
             "hidden": false
@@ -10728,12 +10728,12 @@
             0,
             0
           ],
-          "bodyHeight": 172.304,
+          "bodyHeight": 173.016,
           "headAnchorX": 0,
           "weapon": {
             "hand": [
-              321.989,
-              456.357
+              321.65,
+              457.167
             ],
             "angle": 2.64,
             "hidden": false
@@ -10751,12 +10751,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 173.728,
           "headAnchorX": -6,
           "weapon": {
             "hand": [
-              331.361,
-              455.119
+              331.085,
+              456.333
             ],
             "angle": 2.8,
             "hidden": false
@@ -10774,12 +10774,12 @@
             0,
             0
           ],
-          "bodyHeight": 168.032,
+          "bodyHeight": 169.456,
           "headAnchorX": -10,
           "weapon": {
             "hand": [
-              310.177,
-              465.013
+              310.656,
+              465.415
             ],
             "angle": 2.86,
             "hidden": false
@@ -10797,12 +10797,12 @@
             0,
             0
           ],
-          "bodyHeight": 163.048,
+          "bodyHeight": 160.912,
           "headAnchorX": -4,
           "weapon": {
             "hand": [
-              276.435,
-              466.445
+              277.349,
+              467.048
             ],
             "angle": 2.77,
             "hidden": false
@@ -10820,12 +10820,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 148.808,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              288.213,
-              477.21
+              289.104,
+              476.829
             ],
             "angle": 2.72,
             "hidden": false
@@ -10843,12 +10843,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              296.765,
-              470.452
+              297.458,
+              470.66
             ],
             "angle": 2.68,
             "hidden": false
@@ -10866,12 +10866,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 169.456,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              304.747,
-              459.89
+              305.279,
+              460.876
             ],
             "angle": 2.64,
             "hidden": false
@@ -10889,12 +10889,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.966,
-              460.498
+              308.515,
+              460.89
             ],
             "angle": 2.63,
             "hidden": false
@@ -10907,7 +10907,7 @@
           "height": 640
         }
       ],
-      "sha256": "ede0530e78887fda04ad7af236c36525d493e9bd9b218a0001155fd7d4b6df73",
+      "sha256": "5160e358363ecb7cad916ec8e12ba3031400bea1b91e18459745ef81cf580cc2",
       "frameDurations": [
         0.05777777777777778,
         0.05777777777777778,
@@ -10948,12 +10948,12 @@
             0,
             0
           ],
-          "bodyHeight": 150.944,
+          "bodyHeight": 148.808,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              288.213,
-              477.21
+              289.104,
+              476.829
             ],
             "angle": 2.72,
             "hidden": false
@@ -10971,12 +10971,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              296.765,
-              470.452
+              297.458,
+              470.66
             ],
             "angle": 2.68,
             "hidden": false
@@ -10994,12 +10994,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 169.456,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              304.747,
-              459.89
+              305.279,
+              460.876
             ],
             "angle": 2.64,
             "hidden": false
@@ -11017,12 +11017,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.966,
-              460.498
+              308.515,
+              460.89
             ],
             "angle": 2.63,
             "hidden": false
@@ -11040,12 +11040,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -11058,7 +11058,7 @@
           "height": 640
         }
       ],
-      "sha256": "edcb7f0d49bf1c2331e6646f2e801ee47d384a7210b5695f5700a817969531fb",
+      "sha256": "249b9e0e9f68e5ed66338ed0e726a39f4f8e5c9cada6d2e6f176f3c1fdba5014",
       "frameDurations": [
         0.05600000000000001,
         0.05600000000000001,
@@ -11095,11 +11095,11 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 177.288,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              304.905,
+              305.343,
               456.99
             ],
             "angle": 2.7,
@@ -11118,11 +11118,11 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 173.728,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              340.897,
+              341.108,
               455.606
             ],
             "angle": 2.74,
@@ -11141,11 +11141,11 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 163.048,
           "headAnchorX": -10,
           "weapon": {
             "hand": [
-              327.831,
+              327.419,
               450.072
             ],
             "angle": 2.82,
@@ -11164,11 +11164,11 @@
             0,
             0
           ],
-          "bodyHeight": 143.112,
+          "bodyHeight": 141.688,
           "headAnchorX": -15,
           "weapon": {
             "hand": [
-              284.32,
+              284.979,
               483.185
             ],
             "angle": 2.94,
@@ -11187,11 +11187,11 @@
             0,
             0
           ],
-          "bodyHeight": 122.464,
+          "bodyHeight": 117.48,
           "headAnchorX": -17,
           "weapon": {
             "hand": [
-              284.277,
+              260.862,
               494.957
             ],
             "angle": 3.05,
@@ -11210,11 +11210,11 @@
             0,
             0
           ],
-          "bodyHeight": 110.36,
+          "bodyHeight": 105.376,
           "headAnchorX": -19,
           "weapon": {
             "hand": [
-              251.55,
+              252.639,
               503.426
             ],
             "angle": 3.06,
@@ -11297,7 +11297,7 @@
           "height": 640
         }
       ],
-      "sha256": "e76176802ef6e6567ecfeb451a44ab981a35180df37f625268feb6a48c2b67d7",
+      "sha256": "40e19c7b22408ed65c38ed503ed688b20d157314b8f3d2566874e6761206c2e1",
       "frameDurations": [
         0.08333333333333333,
         0.08333333333333333,
@@ -11338,11 +11338,11 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 177.288,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              304.905,
+              305.343,
               456.99
             ],
             "angle": 2.7,
@@ -11361,11 +11361,11 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 173.728,
           "headAnchorX": -3,
           "weapon": {
             "hand": [
-              340.897,
+              341.108,
               455.606
             ],
             "angle": 2.74,
@@ -11384,11 +11384,11 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 163.048,
           "headAnchorX": -10,
           "weapon": {
             "hand": [
-              327.831,
+              327.419,
               450.072
             ],
             "angle": 2.82,
@@ -11407,11 +11407,11 @@
             0,
             0
           ],
-          "bodyHeight": 143.112,
+          "bodyHeight": 141.688,
           "headAnchorX": -15,
           "weapon": {
             "hand": [
-              284.32,
+              284.979,
               483.185
             ],
             "angle": 2.94,
@@ -11430,11 +11430,11 @@
             0,
             0
           ],
-          "bodyHeight": 122.464,
+          "bodyHeight": 117.48,
           "headAnchorX": -17,
           "weapon": {
             "hand": [
-              284.277,
+              260.862,
               494.957
             ],
             "angle": 3.05,
@@ -11453,11 +11453,11 @@
             0,
             0
           ],
-          "bodyHeight": 110.36,
+          "bodyHeight": 105.376,
           "headAnchorX": -19,
           "weapon": {
             "hand": [
-              251.55,
+              252.639,
               503.426
             ],
             "angle": 3.06,
@@ -11540,7 +11540,7 @@
           "height": 640
         }
       ],
-      "sha256": "e76176802ef6e6567ecfeb451a44ab981a35180df37f625268feb6a48c2b67d7",
+      "sha256": "40e19c7b22408ed65c38ed503ed688b20d157314b8f3d2566874e6761206c2e1",
       "frameDurations": [
         0.10555555555555556,
         0.10555555555555556,
@@ -11650,11 +11650,11 @@
             0,
             0
           ],
-          "bodyHeight": 110.36,
+          "bodyHeight": 105.376,
           "headAnchorX": -19,
           "weapon": {
             "hand": [
-              251.55,
+              252.639,
               503.426
             ],
             "angle": 3.06,
@@ -11673,11 +11673,11 @@
             0,
             0
           ],
-          "bodyHeight": 122.464,
+          "bodyHeight": 117.48,
           "headAnchorX": -17,
           "weapon": {
             "hand": [
-              284.277,
+              260.862,
               494.957
             ],
             "angle": 3.05,
@@ -11696,11 +11696,11 @@
             0,
             0
           ],
-          "bodyHeight": 143.112,
+          "bodyHeight": 141.688,
           "headAnchorX": -15,
           "weapon": {
             "hand": [
-              284.32,
+              284.979,
               483.185
             ],
             "angle": 2.94,
@@ -11719,11 +11719,11 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 163.048,
           "headAnchorX": -10,
           "weapon": {
             "hand": [
-              327.831,
+              327.419,
               450.072
             ],
             "angle": 2.82,
@@ -11742,12 +11742,12 @@
             0,
             0
           ],
-          "bodyHeight": 160.912,
+          "bodyHeight": 158.776,
           "headAnchorX": 7,
           "weapon": {
             "hand": [
-              296.765,
-              470.452
+              297.458,
+              470.66
             ],
             "angle": 2.68,
             "hidden": false
@@ -11765,12 +11765,12 @@
             0,
             0
           ],
-          "bodyHeight": 171.592,
+          "bodyHeight": 169.456,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              304.747,
-              459.89
+              305.279,
+              460.876
             ],
             "angle": 2.64,
             "hidden": false
@@ -11788,12 +11788,12 @@
             0,
             0
           ],
-          "bodyHeight": 175.864,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              307.966,
-              460.498
+              308.515,
+              460.89
             ],
             "angle": 2.63,
             "hidden": false
@@ -11811,12 +11811,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": false
@@ -11829,7 +11829,7 @@
           "height": 640
         }
       ],
-      "sha256": "292ac72b945d7f98d019685ea26a9d75bb123e6bad0e550ee850bd6350f46aae",
+      "sha256": "27a018007a6b03d904fde1db531ec1141ecea7532e9a48c7021b63a2bc1ce6e6",
       "frameDurations": [
         0.05,
         0.05,
@@ -11869,12 +11869,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -11892,12 +11892,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 167.32,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              320.22,
-              464.432
+              320.707,
+              464.434
             ],
             "angle": 0,
             "hidden": true
@@ -11915,12 +11915,12 @@
             0,
             0
           ],
-          "bodyHeight": 158.776,
+          "bodyHeight": 153.792,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              302.775,
-              469.846
+              303.454,
+              470.711
             ],
             "angle": 0,
             "hidden": true
@@ -11938,12 +11938,12 @@
             0,
             0
           ],
-          "bodyHeight": 147.384,
+          "bodyHeight": 142.4,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              304.632,
-              480.671
+              305.321,
+              480.767
             ],
             "angle": 0,
             "hidden": true
@@ -11961,12 +11961,12 @@
             0,
             0
           ],
-          "bodyHeight": 140.264,
+          "bodyHeight": 134.568,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              309.26,
-              482.956
+              309.814,
+              482.88
             ],
             "angle": 0,
             "hidden": true
@@ -11984,12 +11984,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.128,
+          "bodyHeight": 131.008,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              290.315,
-              486.116
+              291.275,
+              486.265
             ],
             "angle": 0,
             "hidden": true
@@ -12007,12 +12007,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              292.067,
-              489.266
+              293.632,
+              490.062
             ],
             "angle": 0,
             "hidden": true
@@ -12030,12 +12030,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.128,
+          "bodyHeight": 128.872,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              296.423,
-              491.623
+              297.803,
+              491.431
             ],
             "angle": 0,
             "hidden": true
@@ -12053,12 +12053,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              296.726,
-              492.019
+              297.547,
+              491.662
             ],
             "angle": 0,
             "hidden": true
@@ -12071,7 +12071,7 @@
           "height": 640
         }
       ],
-      "sha256": "d6b969b22a8c161d10958b4ae5fce5d15d7a1f8ffcd76f7c5e73eac586105cc1",
+      "sha256": "98d4cf4cb5b774e38d53201813e1dc2e0426a3bf8b6176eb62c102792dd3da8c",
       "frameDurations": [
         0.07222222222222223,
         0.07222222222222223,
@@ -12109,12 +12109,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              296.726,
-              492.019
+              297.547,
+              491.662
             ],
             "angle": 0,
             "hidden": true
@@ -12132,12 +12132,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.128,
+          "bodyHeight": 128.872,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              296.423,
-              491.623
+              297.803,
+              491.431
             ],
             "angle": 0,
             "hidden": true
@@ -12155,12 +12155,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.84,
+          "bodyHeight": 129.584,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              292.067,
-              489.266
+              293.632,
+              490.062
             ],
             "angle": 0,
             "hidden": true
@@ -12178,12 +12178,12 @@
             0,
             0
           ],
-          "bodyHeight": 138.128,
+          "bodyHeight": 131.008,
           "headAnchorX": 2,
           "weapon": {
             "hand": [
-              290.315,
-              486.116
+              291.275,
+              486.265
             ],
             "angle": 0,
             "hidden": true
@@ -12201,12 +12201,12 @@
             0,
             0
           ],
-          "bodyHeight": 140.264,
+          "bodyHeight": 134.568,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              309.26,
-              482.956
+              309.814,
+              482.88
             ],
             "angle": 0,
             "hidden": true
@@ -12224,12 +12224,12 @@
             0,
             0
           ],
-          "bodyHeight": 147.384,
+          "bodyHeight": 142.4,
           "headAnchorX": 3,
           "weapon": {
             "hand": [
-              304.632,
-              480.671
+              305.321,
+              480.767
             ],
             "angle": 0,
             "hidden": true
@@ -12247,12 +12247,12 @@
             0,
             0
           ],
-          "bodyHeight": 158.776,
+          "bodyHeight": 153.792,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              302.775,
-              469.846
+              303.454,
+              470.711
             ],
             "angle": 0,
             "hidden": true
@@ -12270,12 +12270,12 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 167.32,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              320.22,
-              464.432
+              320.707,
+              464.434
             ],
             "angle": 0,
             "hidden": true
@@ -12293,12 +12293,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12311,7 +12311,7 @@
           "height": 640
         }
       ],
-      "sha256": "86cbdaf002085e03b32930ef96008018a3b8440101938c40f930b2aa624ac670",
+      "sha256": "210dd3c6aa1441e48047a13fdda550e13d3c7750a8a289e617bc621c2814f221",
       "frameDurations": [
         0.06666666666666667,
         0.06666666666666667,
@@ -12349,12 +12349,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12372,11 +12372,11 @@
             0,
             0
           ],
-          "bodyHeight": 169.456,
+          "bodyHeight": 171.592,
           "headAnchorX": 8,
           "weapon": {
             "hand": [
-              314.558,
+              314.721,
               462.524
             ],
             "angle": 0,
@@ -12395,11 +12395,11 @@
             0,
             0
           ],
-          "bodyHeight": 155.216,
+          "bodyHeight": 156.64,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              317.992,
+              318.183,
               467.386
             ],
             "angle": 0,
@@ -12418,11 +12418,11 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 133.144,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              321.291,
+              320.98,
               494.602
             ],
             "angle": 0,
@@ -12441,12 +12441,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12459,7 +12459,7 @@
           "height": 640
         }
       ],
-      "sha256": "6242bde066b2b20608ffe8c338f1111f7b8c74d00962980f7a68d8445d091970",
+      "sha256": "7cce2c240b2cb01a8b5a8213b004e70412b54e3f01a10cd7b396e882f94d3a74",
       "frameDurations": [
         0.1,
         0.1,
@@ -12493,11 +12493,11 @@
             0,
             0
           ],
-          "bodyHeight": 155.216,
+          "bodyHeight": 156.64,
           "headAnchorX": 9,
           "weapon": {
             "hand": [
-              317.992,
+              318.183,
               467.386
             ],
             "angle": 0,
@@ -12516,11 +12516,11 @@
             0,
             0
           ],
-          "bodyHeight": 134.568,
+          "bodyHeight": 133.144,
           "headAnchorX": 10,
           "weapon": {
             "hand": [
-              321.291,
+              320.98,
               494.602
             ],
             "angle": 0,
@@ -12543,7 +12543,7 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.392,
+              305.764,
               466.511
             ],
             "angle": 0,
@@ -12566,7 +12566,7 @@
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              311.523,
+              311.638,
               457.773
             ],
             "angle": 0,
@@ -12585,12 +12585,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12603,7 +12603,7 @@
           "height": 640
         }
       ],
-      "sha256": "ca29ba8b02afb68b91071afe795fbd566c7221507c4da76a2eee4e0788deaa94",
+      "sha256": "263fea6286bfc6c9df13c5c69859242fbdc218e99b1b20cc95cdcc376dd45e3f",
       "frameDurations": [
         0.10200000000000001,
         0.10200000000000001,
@@ -12637,12 +12637,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12664,7 +12664,7 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              305.392,
+              305.764,
               466.511
             ],
             "angle": 0,
@@ -12687,7 +12687,7 @@
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              311.523,
+              311.638,
               457.773
             ],
             "angle": 0,
@@ -12710,7 +12710,7 @@
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              313.224,
+              313.502,
               456.069
             ],
             "angle": 0,
@@ -12733,7 +12733,7 @@
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              311.523,
+              311.638,
               457.773
             ],
             "angle": 0,
@@ -12752,12 +12752,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12770,7 +12770,7 @@
           "height": 640
         }
       ],
-      "sha256": "d75920ddf0120ebb899769f2ffb8c7385aa5f81bde6f2bd04af4313957c83301",
+      "sha256": "1c15b622bf99119d8d0f21ec357c264fae43a06ecb9095a1384af5eafb316c4e",
       "frameDurations": [
         0.11666666666666665,
         0.11666666666666665,
@@ -12805,12 +12805,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12828,11 +12828,11 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 5,
           "weapon": {
             "hand": [
-              310.494,
+              310.625,
               458.485
             ],
             "angle": 0,
@@ -12851,11 +12851,11 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 6,
           "weapon": {
             "hand": [
-              313.967,
+              314.322,
               458.659
             ],
             "angle": 0,
@@ -12874,11 +12874,11 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 175.152,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              316.731,
+              316.848,
               458.929
             ],
             "angle": 0,
@@ -12897,12 +12897,12 @@
             0,
             0
           ],
-          "bodyHeight": 173.728,
+          "bodyHeight": 174.44,
           "headAnchorX": 4,
           "weapon": {
             "hand": [
-              310.109,
-              459.461
+              309.773,
+              458.834
             ],
             "angle": 2.63,
             "hidden": true
@@ -12915,7 +12915,7 @@
           "height": 640
         }
       ],
-      "sha256": "1fbc3acbf32abeb9a6ea4f1dd07c486e956a75a20bdc8cb7a1d911ea397fb3bb",
+      "sha256": "6ab6051892c9659af27d756e4b2a088cb163442efb8ad3edc75abf2526452e85",
       "frameDurations": [
         0.118,
         0.118,
@@ -12942,6 +12942,7 @@
   "quality": {
     "source": "All body drawings regenerated from ordered pose strips.",
     "renderScale": 0.712,
-    "newPoseCount": 219
+    "newPoseCount": 219,
+    "registration": "Idle head size, pose-specific jaw height and planted sole. Grip follows the same map."
   }
 }

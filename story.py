@@ -1,7 +1,7 @@
 """한 번에 하나의 목표와, 인물의 짧은 말로 이야기를 전한다."""
 CHAPTERS = ['마을의 아침', '거울 숲', '깊은 숲', '잊힌 폐허', '달의 제단', '검은 성문', '마지막 회랑', '밤의 왕좌']
-INTRO = ['주운 검을 아는 사람을 찾아서', '물결 속에서 들려오는 구조 신호', '힘을 얻는 방법도 선택이다',
-         '왕관을 쓴 나의 그림자', '잊힌 이름을 지키는 달빛', '마을과 계약 사이의 갈림길', '돌아갈 길을 함께 기억하다', '이제, 힘의 주인을 정할 시간']
+INTRO = ['주운 검을 아는 사람을 찾아서', '물속에 갇힌 소녀를 찾아서', '도움이 필요한 숲의 상인',
+         '거울 속의 낯익은 얼굴', '잊힌 이름을 지키는 달빛', '마을과 계약 사이의 갈림길', '돌아갈 길을 함께 기억하다', '마검과 마왕의 마지막 비밀']
 SPEAKERS = {'elder':'촌장', 'healer':'치유사', 'rescue':'루네아', 'merchant':'상인', 'mirror':'소년',
             'altar':'제단의 기록', 'memory':'루네아', 'envoy':'마왕의 전령', 'side_seal':'소년'}
 RECORDS = {
@@ -22,9 +22,11 @@ CHOICES = {
 }
 
 def choice_label(event,value):
+    if event=='성장 묶음':
+        return '성장 · '+{'physical':'검술','magic':'마법','balance':'균형'}.get(value,value)
     title,values=CHOICES.get(event,(event,{}))
-    return title+' · '+values.get(value,{'physical':'물리 특화','magic':'마법 특화','balance':'균형 성장',
-         'restore':'경계 복원','journey':'여행 계속','moon':'달의 의식','crown':'밤의 왕관'}.get(value,value))
+    return title+' · '+values.get(value,{'physical':'검술 성장','magic':'마법 성장','balance':'균형 성장',
+         'restore':'마검의 힘 돌려주기','journey':'여행 계속','moon':'달의 의식','crown':'밤의 왕관'}.get(value,value))
 EVENT_LINES = {
     'elder': '그 검은 마왕의 것이란다. 짐승들이 검을 쫓고 있어. 숲에서 힘을 길러라.',
     'healer': 'H로 회복 파편을 써. 모닥불에서는 쉬고 저장할 수 있어.',

@@ -364,7 +364,8 @@ class Player:
         moved = phase*phase*(3-2*phase) - previous*previous*(3-2*previous)
         return self.facing * self.COMBO_STEP[self.combo_step-1] * max(0, moved)
 
-    def update(self, dt, keys):
+    def update(self, dt, keys, *, limit_motion=None):
+        old_x=self.x
         dashing = self.mode == 'dash'
         dash_advance = self.dash_step(dt)
         keys=keys|{SDLK_DOWN} if self.forced_crouch else keys
@@ -448,6 +449,8 @@ class Player:
             if airborne and not keep_dash_attack and self.mode not in {'hurt', 'dead'}:
                 self.land(direction)
 
+        if limit_motion is not None:
+            limit_motion(old_x)
         self.effects.update(dt, self)
 
     def advance_gait(self, distance):

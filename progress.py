@@ -21,6 +21,7 @@ ENDINGS = {
 
 @dataclass
 class Run:
+    progression_version: int = 2
     seed: int = field(default_factory=lambda: secrets.randbelow(2**31))
     stage: int = 0
     page: int = 0
@@ -31,6 +32,7 @@ class Run:
     earned: int = 0
     unspent: int = 0
     skill_points: int = 0
+    growth_builds: dict = field(default_factory=lambda: dict(physical=0, magic=0, balance=0))
     spent: dict = field(default_factory=lambda: dict(attack=0, magic=0, vitality=0, focus=0))
     skills: dict = field(default_factory=lambda: dict(dash=0, wave=0))
     path: str = ''
@@ -55,7 +57,7 @@ class Run:
     @classmethod
     def from_dict(cls, data):
         run = cls(**{f.name: data[f.name] for f in fields(cls) if f.name in data})
-        if not 0 <= run.stage < 8 or not 1 <= run.level <= 99 or run.unspent < 0:
+        if not 0 <= run.stage < 8 or not 1 <= run.level <= 100 or run.unspent < 0:
             raise ValueError('잘못된 저장 수치')
         if not 0 <= run.page < len(PAGES[run.stage]):
             raise ValueError('잘못된 구역')
@@ -65,6 +67,16 @@ class Run:
             run.growth_offered=run.level
         if set(run.spent) != {'attack', 'magic', 'vitality', 'focus'} or any(v < 0 for v in run.spent.values()):
             raise ValueError('잘못된 능력치')
+        if 'progression_version' not in data:
+            if run.path:
+                run.growth_builds[run.path] = 1
+            run.unspent = run.level//10 + int(run.level >= 2 and not run.path)
+            run.skill_points = 0
+            run.growth_offered = 1
+            run.xp = min(run.xp, run.xp_needed-1)
+        if set(run.growth_builds) != {'physical', 'magic', 'balance'} or any(
+                not isinstance(v,int) or v < 0 for v in run.growth_builds.values()):
+            raise ValueError('잘못된 성장 방향')
         return run
 
     def data(self):
@@ -82,65 +94,72 @@ class Run:
 
     @property
     def attack(self):
-        return 13 + (self.level - 1) * 2 + self.spent['attack'] * 5
+        return round(13 + (self.level-1)*(.35 if self.path in {'physical','balance'} else .12)
+                     + self.spent['attack']*3, 1)
 
     @property
     def magic(self):
-        return 12 + (self.level - 1) * 2 + self.spent['magic'] * 6
+        return round(12 + (self.level-1)*(.35 if self.path in {'magic','balance'} else .12)
+                     + self.spent['magic']*3, 1)
 
     @property
     def max_hp(self):
-        return 100 + (self.level - 1) * 4 + self.spent['vitality'] * 20
+        return round(100 + (self.level-1)*(.8 if self.path=='physical' else .4)
+                     + self.spent['vitality']*10)
 
     @property
     def max_mp(self):
-        return 80 + (self.level - 1) * 2 + self.spent['focus'] * 15
+        return round(80 + (self.level-1)*(.8 if self.path=='magic' else .4)
+                     + self.spent['focus']*10)
 
     @property
     def tier(self):
-        return min(7, 1 + (self.level - 1) // 2 + max(self.skills.get('dash', 0), self.skills.get('wave', 0)) // 2)
+        return min(7, 1 + max(self.skills.get('dash',0),self.skills.get('wave',0))//2
+                   + (self.level-1)//20)
 
     @property
     def xp_needed(self):
-        return 40 + (self.level - 1) * 20
+        return 120 + (self.level-1)*50 + (self.level-1)**2*8
 
     def gain_xp(self, amount):
-        self.xp += amount
+        if self.level >= 100:
+            self.xp = 0
+            return 0
+        self.xp += max(0, amount)
         count = 0
-        while self.xp >= self.xp_needed and self.level < 99:
+        while self.xp >= self.xp_needed and self.level < 100:
             self.xp -= self.xp_needed
             self.level += 1
-            self.earned += 2
-            self.unspent += 2
-            self.skill_points += 1
+            if self.level == 2 or self.level % 10 == 0:
+                self.earned += 1
+                self.unspent += 1
             count += 1
+        if self.level == 100:
+            self.xp = 0
         return count
 
-    def allocate(self, stat):
-        if stat not in self.spent or self.unspent <= 0:
+    def choose_bundle(self, path):
+        """한 번 고르면 기술·관련 능력치가 함께 오른다."""
+        if path not in self.growth_builds or self.unspent <= 0:
             return False
-        self.spent[stat] += 1
         self.unspent -= 1
-        return True
-
-    def set_path(self, path):
-        if self.path or path not in {'physical', 'magic', 'balance'}:
-            return False
-        self.path = path
-        for skill in ('dash', 'wave'):
+        self.growth_builds[path] += 1
+        if not self.path:
+            self.path = path
+        for skill in ('dash','wave'):
             if path == 'balance' or path == ('physical' if skill == 'dash' else 'magic'):
-                self.skills[skill] = 1
-        return True
-
-    def upgrade(self, skill):
-        if self.skill_points <= 0 or self.skills.get(skill, 0) >= 6:
-            return False
-        self.skills[skill] = self.skills.get(skill, 0) + 1
-        self.skill_points -= 1
+                self.skills[skill] = min(6,self.skills.get(skill,0)+1)
+        additions = {'physical': {'attack':2,'vitality':2},
+                     'magic': {'magic':2,'focus':2},
+                     'balance': {'attack':1,'magic':1,'vitality':1,'focus':1}}[path]
+        for key,value in additions.items():
+            self.spent[key] += value
         return True
 
     def all_magic(self):
-        return self.earned > 0 and self.unspent == 0 and self.spent['magic'] == self.earned and sum(self.spent.values()) == self.earned
+        return (self.path=='magic' and self.unspent==0 and self.growth_builds['magic']>0
+                and not self.growth_builds['physical'] and not self.growth_builds['balance']
+                and self.spent['attack']==0)
 
     def missing_restore(self):
         missing = []

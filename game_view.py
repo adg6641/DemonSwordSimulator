@@ -2,7 +2,8 @@
 from math import atan2, hypot, sin
 import pico2d.pico2d as engine
 from pico2d import SDL_RenderSetScale, SDL_Rect, SDL_SetRenderDrawColor, SDL_RenderDrawRect
-from interface import fill
+from interface import fill, speech_tail
+from battle_ui import BattleArt
 from animation import draw_region, load_pixel_image
 from progress import Run, ENDINGS
 from story import CHAPTERS, objective, choice_label
@@ -35,6 +36,7 @@ class CampaignView:
         self.s = scene
         self.a, self.ui = scene.assets, scene.ui
         self.wrap_cache = {}
+        self.battle_art = BattleArt(scene.root/'assets')
         self.hud_icons = load_pixel_image(scene.root/'assets/ui/hud_icons.png', smooth=True)
         self.guide_arrow = self.a.image(self.a.clips['polish/route_pointer']['path'])
 
@@ -246,7 +248,7 @@ class CampaignView:
         for b in s.bursts:
             s.assets.draw(b['key'], b['x'], b['y'], s.camera, b['scale'], b['age'])
         for n in s.numbers:
-            self.text(n['text'], n['x']-s.camera.x, n['y']-s.camera.y+n['age']*65, 23, (241, 131, 136) if n['hurt'] else GOLD, True)
+            self.battle_art.damage(n['text'], n['x']-s.camera.x, n['y']-s.camera.y, n['age'], n['hurt'])
         for o in s.objects:
             if o['kind']=='door':
                 s.assets.draw('adv/gate_open__gate_open',o['x'],o['y'],s.camera,.65,
@@ -272,75 +274,45 @@ class CampaignView:
 
     def hud(self):
         s,r,p=self.s,self.s.run,self.s.player
-        panel(24,578,310,118)
-        fill(25,693,308,2,ACCENT)
-        panel(37,613,58,62, background=(22,35,47,255))
-        self.a.fit('adv/portrait_hero__hero_focus',66,645,51,56)
-        self.text(f'레벨 {r.level}',108,675,22,BRIGHT)
-        path={'physical':'물리 특화','magic':'마력 특화','balance':'균형 성장'}.get(r.path,'마검사')
-        self.text(path,216,675,15,GOLD)
-        self.meter(108,639,210,'HP',p.hp,r.max_hp,(154,62,77,255),0)
-        self.meter(108,614,210,'MP',s.mp,r.max_mp,(47,106,148,255),1)
-        self.icon(2,47,597,16)
-        self.text('경험치',61,597,13,MUTED)
-        fill(108,593,210,7,(32,43,50,255))
-        fill(108,593,210*min(1,r.xp/max(1,r.xp_needed)),7,(200,158,83,255))
-
+        # 주인공 정보와 조작키는 화면 아래 가운데 한곳에 둔다.
+        self.battle_art.frame.draw(640,64,804,119)
+        self.text(f'Lv. {r.level}',264,103,17,GOLD)
+        self.meter(350,93,230,'HP',p.hp,r.max_hp,(163,67,82,255),0)
+        self.meter(609,93,230,'MP',s.mp,r.max_mp,(55,108,158,255),1)
+        self.text(f'공격 {r.attack:g}  마력 {r.magic:g}',858,102,14,CREAM)
+        fill(264,77,752,3,(31,40,50,220))
+        fill(264,77,752*min(1,r.xp/max(1,r.xp_needed)),3,(183,145,84,230))
+        cd=s.magic_cooldown
+        actions=[
+            ('C','연속 베기',True,None),
+            ('Shift','대시 → C',p.dash_unlocked,None),
+            ('Z','마검파',p.magic_unlocked,cd),
+            ('X','방어',True,None),
+            ('Q','달빛',bool(s.companion),s.companion.cooldown if s.companion else None),
+            ('H',f'회복 {r.shards}',r.shards>0,None)]
+        for i,(key,name,unlocked,cooldown) in enumerate(actions):
+            x=266+i*126
+            self.key(key,x,35,48 if key=='Shift' else 30,strong=unlocked and not cooldown)
+            label=(f'{name} {cooldown:.0f}s' if cooldown and cooldown>0
+                   else name if unlocked else '미습득')
+            self.text(label,x,23,14,CREAM if unlocked else MUTED)
         goal,gx,gy=objective(s)
+        panel(10,654,314,56,background=(10,18,28,170))
+        self.text(f'{r.stage+1}-{r.page+1}  {CHAPTERS[r.stage]}',24,683,18,GOLD)
+        self.text('Esc 메뉴   Tab 기록',24,665,13,MUTED)
+        if goal:
+            panel(896,654,374,56,background=(10,18,28,170))
+            self.wrap(goal,910,688,347,17,CREAM,1.2,2)
         boss=next((e for e in s.enemies if e.boss and e.alive),None)
-        if s.region=='boss' and boss:
-            panel(383,619,414,65,edge=(167,102,105,195))
-            self.text(boss.actor['name'],590,665,20,GOLD,True)
-            fill(401,638,378,11,(47,32,41,230))
-            fill(401,638,378*max(0,boss.hp)/boss.max_hp,11,(180,73,91,255))
-            self.text(f'H 회복 {r.shards}',1100,52,16,BRIGHT)
-            self.route_arrow(gx,gy)
-            return
-
-        panel(824,603,432,93)
-        fill(825,693,430,2,ACCENT)
-        self.icon(3,847,673,25)
-        self.text(f'{r.stage+1}-{r.page+1}  {CHAPTERS[r.stage]}',871,672,18,GOLD)
-        self.wrap(goal,871,640,365,20,BRIGHT,1.2,2)
-
-        panel(24,22,420,62)
-        actions=[('C','연속 베기',True),('Shift','대시 베기',r.skills.get('dash',0)>0),('Z','마검파',r.skills.get('wave',0)>0)]
-        for i,(key,name,ready) in enumerate(actions):
-            x=36+136*i
-            if i:
-                fill(x-8,34,1,37,(73,93,105,210))
-            self.key(key,x,48,47 if i==1 else 30,strong=bool(ready))
-            self.text(name,x+10,35,15,BRIGHT if ready else MUTED)
-            if i and ready:
-                self.text('→ C',x+54,61,14,TEAL)
-        panel(454,22,281 if s.companion else 129,62)
-        self.key('H',464,39)
-        self.text(f'회복 {r.shards}',499,52,16,BRIGHT)
-        if s.companion:
-            self.icon(5,604,52,20)
-            cooldown=s.companion.cooldown
-            self.text(f'Q  달빛 · {cooldown:.0f}초' if cooldown>0 else 'Q  달빛 준비',621,52,16,TEAL)
-        if p.effects.buff_remaining>0:
-            panel(562,84,156,30,edge=ACCENT)
-            self.text(f'마검파 {p.effects.buff_remaining:.1f}초',640,99,15,TEAL,True)
-        panel(1032,22,224,42)
-        self.text('Tab 기록   Esc 메뉴',1144,43,16,BRIGHT,True)
-        if r.unspent or r.skill_points:
-            panel(24,540,310,30,edge=ACCENT)
-            self.text(f'남은 스탯 {r.unspent} · 기술 {r.skill_points}',39,555,16,BRIGHT)
-        hint = ('↓   누른 채 좌우로 이동' if s.near_crawl(p.x,p.y) else
-                '↓ + ↑   발판 아래로' if p.floor_y>0 else
-                '↑   도약 문양 위에서 높이 점프' if any(o['kind']=='spring' and abs(o['x']-p.x)<110 for o in s.objects)
-                else '')
-        if hint:
-            y=122 if p.effects.buff_remaining>0 else 88
-            panel(508,y,264,34)
-            self.text(hint,640,y+17,16,BRIGHT,True)
+        if boss and s.region=='boss':
+            self.text(boss.actor['name'],640,690,18,GOLD,True)
+            fill(435,663,410,8,(42,31,39,230))
+            fill(435,663,410*max(0,boss.hp)/boss.max_hp,8,(170,62,80,255))
+        if r.unspent:
+            self.text(f'L 성장 선택 · {r.unspent}회',1034,632,16,GOLD)
         self.interaction_markers(gx,gy)
         self.route_arrow(gx,gy)
         self.crawl_markers()
-        if s.developer:
-            self.text('연습 모드 · F9',1123,582,14,GOLD)
 
     def interaction_markers(self, goal_x, goal_y):
         s,p,r=self.s,self.s.player,self.s.run
@@ -417,66 +389,42 @@ class CampaignView:
                     self.a.fit('polish/crawl_marker',x,y,32,36)
 
     def fiction_card(self):
-        s, m = self.s, self.s.modal
+        s,m=self.s,self.s.modal
         story=m['kind'] in {'dialogue','boss','final'}
         if story:
-            left,width = 370,848
-            if not m.get('cine') and m.get('portrait') and s.region!='merchant':
-                panel(54,49,293,312,background=(9,16,25,132))
-                self.a.fit('adv/'+m['portrait'],200,210,263,255)
+            sx,sy=s.camera.project(m.get('speaker_x',s.player.x),m.get('speaker_y',s.player.y+165))
+            width=520
+            left=max(16,min(1264-width,sx-width/2))
+            lines=self.text_lines(m['text'],width-42,19)
+            height=68+25*len(lines)
+            bottom=max(285,min(690-height,sy+25))
+            speech_tail((max(left+22,min(left+width-36,sx-12)),bottom),
+                        (max(left+36,min(left+width-22,sx+12)),bottom),
+                        (max(12,min(1268,sx)),min(bottom-10,sy+8)))
+            panel(left,bottom,width,height,edge=ACCENT,background=(8,17,39,237))
+            self.text(m.get('speaker','소년'),left+20,bottom+height-22,15,GOLD)
+            visible=m['text'][:max(1,int(s.interaction_age*48))] if not m.get('revealed') else m['text']
+            if len(visible)==len(m['text']):m['revealed']=True
+            self.wrap(visible,left+20,bottom+height-53,width-40,19,CREAM,1.3,5)
+            left,width,bottom=280,720,18
         else:
-            left,width=267,746
-        options=m['options']
-        rows=options
-        bottom=34 if story else 75
-        label=m.get('speaker') if story else None
-        show_speaker=label and label not in {'이야기','소년'}
-        lines=self.text_lines(m['text'],width-56,19) if m['text'] else []
-        top=bottom+121+48*len(rows)+20*len(lines)+(19 if show_speaker else 0)
-        panel(left,bottom,width,top-bottom,edge=ACCENT,background=(10,18,29,211))
-        self.a.fit('polish/fiction_header',left+width/2,top-35,width-24,70,alpha=.95)
-        wordmark={'거울 웅덩이':'label_rescue','숲의 상인':'label_merchant',
-                  '일시 정지':'label_pause','능력치 성장':'label_stat_growth',
-                  '기술 성장':'label_skill_growth'}.get(m['title'])
-        if m['kind']=='path':
-            wordmark='label_level'
-        if wordmark:
-            self.a.fit('polish/'+wordmark,left+width/2,top-35,230,28)
-        else:
-            self.text(m['title'],left+width/2,top-35,25,GOLD,True)
-        if show_speaker:
-            self.text(label,left+26,top-70,16,TEAL)
-        content_y=top-92 if show_speaker else top-75
-        for j,line in enumerate(lines):
-            self.text(line,left+28,content_y-j*22,19,CREAM)
-        for offset, option in enumerate(rows):
-            i=offset
-            y=bottom+27+(len(rows)-1-offset)*48
+            left,width,bottom=280,720,164
+            panel(left,bottom,width,349,edge=ACCENT,background=(8,17,29,240))
+            self.text(m['title'],640,478,26,GOLD,True)
+            self.wrap(m['text'],left+28,435,width-56,18,CREAM,1.3,3)
+        rows=m['options']
+        for i,option in enumerate(rows):
+            y=bottom+27+(len(rows)-1-i)*48
             selected=i==s.selected
             disabled=len(option)>2 and bool(option[2])
-            asset='polish/fiction_selected' if selected else 'polish/fiction_row'
-            fill(left+22,y+3,width-44,37,(10,19,30,221 if selected else 189))
-            self.a.panel(asset,left+19,y,width-38,43,.96 if selected else .80)
-            tip=option[3] if len(option)>3 else None
-            if tip:
-                icon='polish/'+tip if tip.startswith('path_') else 'adv/'+tip
-                self.a.fit(icon,left+74,y+22,31,31)
-            self.text(str(offset+1),left+39,y+22,14,GOLD,True)
-            color=MUTED if disabled else BRIGHT if selected else CREAM
-            stat_art={'공격력 +5':'attack','마력 +6':'magic','최대 HP +20':'vitality','최대 MP +15':'focus',
-                      '마검파':'wave','대시공격':'dash'}.get(option[0])
-            if stat_art:
-                art='polish/label_'+stat_art
-                info=self.a.clips[art]
-                w=22*info['width']/info['height']
-                inset=98 if tip else 62
-                self.a.fit(art,left+inset+w/2,y+22,w,22)
-            else:
-                text_width=width-(140 if tip else 102)
-                text_y=y+31 if len(self.text_lines(option[0],text_width,19))>1 else y+22
-                self.wrap(option[0],left+(98 if tip else 62),text_y,text_width,19,color,1.0,2)
-            s.hitboxes.append((left+19,y,width-38,43,i))
-        self.text('↑ ↓ 선택   ·   Enter 확인',left+23,bottom+13,13,MUTED)
+            panel(left+14,y,width-28,42,edge=ACCENT if selected else EDGE,
+                  background=(53,42,62,236) if selected else (9,19,32,220))
+            self.text(str(i+1),left+37,y+21,15,GOLD,True)
+            self.wrap(option[0],left+60,y+22,width-89,18,
+                      MUTED if disabled else BRIGHT if selected else CREAM,1.0,1)
+            s.hitboxes.append((left+14,y,width-28,42,i))
+        self.text('Enter 계속' if len(rows)==1 else '1 · 2 · 3 선택  /  Enter 확인',
+                  640,bottom+12,12,MUTED,True)
 
     def banner(self):
         b=self.s.banner
@@ -490,32 +438,8 @@ class CampaignView:
         self.text(b['subtitle'],640,y-30,17,BRIGHT,True)
 
     def cinematic(self):
-        s=self.s
-        if s.region=='merchant' and s.modal:
-            age=s.interaction_age
-            self.a.cover('polish/merchant_story',640,360,1280,720,
-                         zoom=1+min(1,age/5)*.025,alpha=min(1,age/.25))
-            fill(0,696,1280,24,(3,7,14,163))
-            return
-        cine=s.modal.get('cine') if s.modal else s.cine_out
-        if not cine:return
-        age=s.interaction_age if s.modal else cine['age']
-        alpha=1 if s.modal else max(0,1-age/.6)
-        t=min(1,age/5);t=t*t*(3-2*t)
-        start,end=cine.get('zoom',(1,1.05));z=start+(end-start)*t
-        dx=cine.get('pan',(1-t)*10)
-        if cine.get('shake') and age<.5:dx+=sin(age*56)*(1-age/.5)*7
-        key='v3/rescue_'+cine['image']
-        if s.modal and cine.get('previous'):
-            self.a.cover('v3/rescue_'+cine['previous'],640+cine.get('previous_pan',0),360,1280,720,zoom=cine.get('previous_zoom',start))
-            alpha=min(1,age/.4)
-        self.a.cover(key,640+dx,360,1280,720,zoom=max(1,z),alpha=alpha)
-        fill(0,696,1280,24,(3,7,14,230))
-        if cine.get('fx') and s.modal:
-            fx_x,fx_y=(710,450) if cine['image']=='pull' else (890,445)
-            self.a.draw('v3/rescue_glow',fx_x,fx_y,None,.55,s.interaction_age,alpha=.25+.15*sin(age*2)**2)
-            if cine['fx']=='break' and age<1.3:
-                self.a.draw('v3/rescue_break',fx_x,fx_y,None,.85,age,alpha=max(0,1-age/1.3))
+        # 대화는 같은 공간의 인물과 말풍선으로 이어 간다.
+        return
 
     def modal(self):
         m=self.s.modal
@@ -558,7 +482,7 @@ class CampaignView:
             y=358-(i//2)*72
             self.text(label,x,y,16,MUTED)
             self.text(value,x,y-33,26,BRIGHT)
-        self.text(f'남은 포인트   스탯 {r.unspent}   기술 {r.skill_points}',215,226,15,TEAL)
+        self.text(f'다음 성장 선택  Lv.{max(10, (r.level//10+1)*10)} · 남은 선택 {r.unspent}회',215,226,15,TEAL)
         panel(620,205,463,333,edge=EDGE,background=(20,32,45,235))
         self.text('여정',643,509,24,GOLD)
         notes=[('동행','루네아' if r.companion else '혼자'),
@@ -641,7 +565,7 @@ class CampaignView:
                 self.world()
             finally:
                 SDL_RenderSetScale(engine.renderer, 1, 1)
-            self.cinematic()
+            self.battle_art.hurt_border(s.damage_flash)
             if not s.modal and not s.story_only and not s.door_entry:
                 self.hud()
                 self.banner()
@@ -653,6 +577,6 @@ class CampaignView:
         if s.modal:
             self.modal()
         if s.toast_time > 0 and not s.door_entry and (not s.story_only or s.modal):
-            bottom = 608 if s.modal else 200
-            panel(300,bottom,680,51,edge=ACCENT)
-            self.wrap(s.toast, 320, bottom+33, 640, 16, GOLD, 1.2, 2)
+            bottom = 580 if s.modal else 133
+            panel(380,bottom,520,38,edge=EDGE)
+            self.wrap(s.toast, 396, bottom+25, 488, 15, GOLD, 1.2, 1)

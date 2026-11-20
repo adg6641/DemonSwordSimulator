@@ -24,23 +24,30 @@ class ProgressTests(unittest.TestCase):
         self.assertIsNone(run.resolve_ending('restore', alive=False))
         self.assertEqual(len(found|{'H1'}), 9)
 
-    def test_all_magic_requires_real_allocated_points(self):
+    def test_bundled_growth_only_at_milestones(self):
         run = Run()
         self.assertFalse(run.all_magic())
-        run.gain_xp(40)
-        self.assertEqual((run.level, run.unspent, run.skill_points), (2, 2, 1))
-        run.set_path('magic')
-        run.allocate('magic')
-        self.assertFalse(run.all_magic())
-        run.allocate('magic')
+        self.assertEqual(run.gain_xp(119),0)
+        self.assertEqual(run.gain_xp(1),1)
+        self.assertEqual((run.level,run.unspent,run.skill_points),(2,1,0))
+        self.assertTrue(run.choose_bundle('magic'))
+        self.assertEqual((run.skills['wave'],run.skills['dash']),(1,0))
+        self.assertEqual((run.spent['magic'],run.spent['focus']),(2,2))
         self.assertTrue(run.all_magic())
-        run.upgrade('wave')
-        self.assertTrue(run.all_magic(), '기술 포인트는 능력치 몰빵 판정에 섞지 않음')
-        run.gain_xp(60)
-        self.assertFalse(run.all_magic(), '새로 받은 미배분 포인트')
-        run.allocate('vitality')
-        run.allocate('magic')
+        for level in range(3,10):
+            run.gain_xp(run.xp_needed)
+            self.assertEqual((run.level,run.unspent),(level,0))
+        run.gain_xp(run.xp_needed)
+        self.assertEqual((run.level,run.unspent),(10,1))
+        self.assertTrue(run.choose_bundle('balance'))
         self.assertFalse(run.all_magic())
+
+    def test_level_100_is_saved_and_does_not_overflow(self):
+        run=Run()
+        run.gain_xp(10**9)
+        self.assertEqual((run.level,run.xp,run.unspent),(100,0,11))
+        self.assertEqual(Run.from_dict(run.data()).level,100)
+        self.assertEqual(run.gain_xp(10**9),0)
 
     def test_solo_has_no_companion_requirements(self):
         run = self.prepared(False)
@@ -59,16 +66,27 @@ class ProgressTests(unittest.TestCase):
         self.assertEqual(run.resolve_ending('moon'), 'D3')
         self.assertFalse(run.ending)
 
-    def test_path_unlocks_and_allocation_are_separate(self):
+    def test_bundles_unlock_skills_and_add_related_stats(self):
         for path, skills in [('physical', (1, 0)), ('magic', (0, 1)), ('balance', (1, 1))]:
             run = Run()
-            run.gain_xp(40)
-            run.set_path(path)
+            run.gain_xp(run.xp_needed)
+            self.assertTrue(run.choose_bundle(path))
             self.assertEqual((run.skills['dash'], run.skills['wave']), skills)
-            self.assertEqual(run.unspent, 2)
-            self.assertFalse(run.set_path('balance'))
-            self.assertFalse(run.allocate('wrong'))
-        self.assertFalse(Run().allocate('magic'))
+            self.assertEqual(run.unspent,0)
+            self.assertFalse(run.choose_bundle(path))
+            self.assertEqual(run.path,path)
+        self.assertFalse(Run().choose_bundle('magic'))
+
+    def test_old_save_keeps_stats_and_migrates_pending_choices(self):
+        data=Run(level=22,path='magic',spent=dict(attack=0,magic=9,vitality=0,focus=4)).data()
+        del data['progression_version']
+        del data['growth_builds']
+        data.update(unspent=31,skill_points=14,xp=400)
+        run=Run.from_dict(data)
+        self.assertEqual(run.spent,data['spent'])
+        self.assertEqual((run.unspent,run.skill_points),(2,0))
+        self.assertEqual(run.growth_builds['magic'],1)
+        self.assertEqual(Run.from_dict(run.data()).data(),run.data())
 
     def test_checkpoint_rolls_back_rewards_and_story_together(self):
         with tempfile.TemporaryDirectory() as folder:

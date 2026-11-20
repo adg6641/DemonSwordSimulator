@@ -61,6 +61,9 @@ class Campaign:
         self.last_serial = -1
         self.slash_sound_serial=-1
         self.shield = self.hitstop = self.death_age = 0.0
+        self.damage_flash = 0.0
+        self.magic_cooldown = 0.0
+        self.contact_target = None
         self.hybrid_time = 0.0
         self.finished_age = 0.0
         self.request = ''
@@ -86,9 +89,9 @@ class Campaign:
             self.notify('저장 지점에서 모험을 이어갑니다.')
         else:
             self.enter_stage(0)
-            self.open('검을 주운 다음 날',
-                      '검을 주운 뒤 짐승들이 나타났다. 촌장에게 검의 정체를 묻자.',
-                      [('모험을 시작한다', self.close_modal)], 'portrait_hero__hero_resolve')
+            self.talk([('소년','검을 주운 뒤로 짐승들이 날 따라와.'),
+                       ('소년','촌장님께 이 검을 보여 드려야겠어.')],
+                      [('출발',self.close_modal)])
         self.sync_stats()
         from game_view import CampaignView
         self.view = CampaignView(self)
@@ -220,6 +223,16 @@ class Campaign:
         self.sounds.play('ui_accept')
         option[1]()
 
+    def talk(self, lines, options, *, title='', portrait=None, visual=None):
+        """짧은 말을 인물별 말풍선으로 잇고 마지막에만 선택한다."""
+        def advance(index):
+            speaker,text=lines[index]
+            buttons=options if index==len(lines)-1 else [('계속',lambda:advance(index+1))]
+            approach=self.modal.get('step_to') if self.modal else None
+            self.open(title or speaker,text,buttons,portrait,speaker=speaker,visual=visual)
+            if approach is not None:self.modal['step_to']=approach
+        advance(0)
+
     def enter_stage(self, index, x=180, checkpoint=True, *, page=0, y=0):
         self.run.stage = index
         self.run.page = page
@@ -269,6 +282,8 @@ class Campaign:
         self.player.effects.clear_blade_trail()
         self.player.effects.last_hit_state = None
         self.attack_hits.clear()
+        self.contact_target=None
+        self.hitstop=self.damage_flash=0
         self.player.dash_attack_remaining = 0
         self.shots, self.hazards, self.bursts, self.numbers = [], [], [], []
         self.companion = Companion(self.assets, x-90) if self.run.companion else None
@@ -343,72 +358,22 @@ class Campaign:
         p.DASH_DISTANCE = Player.DASH_DISTANCE + 4*r.skills.get('dash_distance', 0)
 
     def grow(self):
-        if self.run.earned <= 0:
-            self.notify('첫 전투를 마치고 레벨업하면 성장 방향을 고를 수 있습니다.')
+        if self.run.unspent <= 0:
+            self.notify('2레벨에 첫 성장, 이후 10레벨마다 골라요.')
             self.close_modal()
             return
         self.run.growth_offered=self.run.level
-        if not self.run.path:
-            self.open('첫 기술 선택', '먼저 배울 기술을 하나 고른다.',
-                      [('마검파', lambda: self.pick_path('magic'), '', 'path_magic'),
-                       ('대시공격', lambda: self.pick_path('physical'), '', 'path_physical')], kind='path')
-        elif self.run.unspent:
-            self.open('능력치 성장', f'스탯 {self.run.unspent}점',
-                      [('공격 · 마력', lambda: self.stat_choices(True)),
-                       ('체력 · 마나', lambda: self.stat_choices(False)),
-                       ('나중에 배분', self.close_modal)], kind='stats')
-        elif self.run.skill_points and any(self.run.skills.get(k,0)<6 for k in ('wave','dash')):
-            self.grow_skill()
-        else:
-            self.notify('남은 성장 포인트가 없다.')
-            self.close_modal()
+        self.open('성장 방향', '하나만 고르면 기술과 능력치가 함께 올라요.',
+                  [('검술 · 대시 베기 + 공격력 + HP',lambda:self.pick_bundle('physical')),
+                   ('마법 · 마검파 + 마력 + MP',lambda:self.pick_bundle('magic')),
+                   ('균형 · 두 기술 + 고른 능력치',lambda:self.pick_bundle('balance'))],kind='path')
 
-    def stat_choices(self, offense):
-        stats=(('attack','공격력 +5'),('magic','마력 +6')) if offense else (
-            ('vitality','최대 HP +20'),('focus','최대 MP +15'))
-        self.open('올릴 능력치', f'스탯 {self.run.unspent}점',
-                  [(label, lambda key=key: self.allocate(key)) for key,label in stats]
-                  + [('뒤로', self.grow)], kind='stats')
-
-    def pick_path(self, path):
-        self.sounds.play('skill')
-        self.run.set_path(path)
-        self.run.choose('첫 기술', {'physical':'대시공격','magic':'마검파'}[path])
-        self.sync_stats()
-        self.grow()
-
-    def allocate(self, key):
-        if self.run.allocate(key):
-            self.sounds.play('skill', gain=.74)
-            self.run.choose('레벨 성장', {'attack':'공격력 +5','magic':'마력 +6','vitality':'최대 HP +20','focus':'최대 MP +15'}[key])
-        self.sync_stats()
-        if self.run.unspent:
-            self.grow()
-        elif self.run.skill_points and any(self.run.skills.get(k,0)<6 for k in ('wave','dash')):
-            self.grow_skill()
-        else:
-            self.close_modal()
-
-    def grow_skill(self):
-        options = []
-        for key,title,icon in [('wave','마검파','path_magic'),('dash','대시공격','path_physical')]:
-            level = self.run.skills.get(key, 0)
-            action='배우기' if level==0 else f'{level+1}단계' if level<6 else '최대 단계'
-            options.append((f'{title} · {action}', lambda key=key: self.pick_skill(key),
-                            '이미 최대 단계다.' if level>=6 else '', icon))
-        self.open('기술 성장', f'기술 {self.run.skill_points}점 · Esc로 닫기', options, kind='skills')
-
-    def pick_skill(self, key):
-        if self.run.upgrade(key):
+    def pick_bundle(self, path):
+        if self.run.choose_bundle(path):
             self.sounds.play('skill')
-            self.run.choose('기술 성장', next(title for skill,title,*_ in PERKS if skill==key))
-            if key == 'supply':
-                self.run.shards += 2
+            self.run.choose('성장 묶음',path)
             self.sync_stats()
-        if self.run.skill_points and any(self.run.skills.get(k,0)<6 for k in ('wave','dash')):
-            self.grow_skill()
-        else:
-            self.close_modal()
+        self.close_modal()
 
     def burst(self, key, x, y, scale=.5, life=None):
         if not key.startswith(('adv/', 'lunea/')):
@@ -443,9 +408,44 @@ class Campaign:
         self.sound_at(sound, x, y)
         self.player.effects.burst('impact',x,y,self.player.facing)
         self.numbers.append(dict(x=x, y=y, text=str(number), age=0, hurt=False))
-        self.hitstop = max(self.hitstop, {
-            'slash_1': .032, 'slash_2': .040, 'slash_3': .052, 'dash_slash': .052,
-        }.get(self.player.animation.name, .025))
+        if not magic:
+            self.hitstop = max(self.hitstop, {
+                'slash_1': .060, 'slash_2': .074, 'slash_3': .095, 'dash_slash': .085,
+            }.get(self.player.animation.name, .050))
+
+    def keep_attack_distance(self, old_x):
+        """베기는 닿는 거리에서 멈춘다. 적의 몸 안으로 전진하지 않는다."""
+        p=self.player
+        attacking=p.mode=='combo' or p.animation.name=='dash_slash' and p.mode=='action'
+        if not attacking:
+            self.contact_target=None
+            return
+        advance=(p.x-old_x)*p.facing
+        if advance <= 0:
+            return
+        boxes=[enemy.hurtbox() for enemy in self.enemies if enemy.alive]
+        boxes.extend((obj['x']-35,obj['y'],obj['x']+35,obj['y']+130)
+                     for obj in self.objects if obj['kind'] in {'crate','barrier','pillar'}
+                     and self.obj_uid(obj) not in self.run.broken)
+        allowed=advance
+        for left,bottom,right,top in boxes:
+            edge=left if p.facing>0 else right
+            distance=(edge-old_x)*p.facing
+            if distance < 0 or bottom>p.y+p.collision_height or top<p.y+12:
+                continue
+            gap=46
+            contact=self.contact_target
+            if contact:
+                enemy=contact.get('enemy')
+                obj=contact.get('obj')
+                contact_box=enemy.hurtbox() if enemy and enemy.alive else (
+                    (obj['x']-35,obj['y'],obj['x']+35,obj['y']+130) if obj else None)
+                if contact_box==(left,bottom,right,top):
+                    if 'gap' not in contact:
+                        contact['gap']=max(46,min(106,distance))
+                    gap=contact['gap']
+            allowed=min(allowed,max(0,distance-gap))
+        p.x=old_x+p.facing*allowed
 
     def damage_player(self, amount, source):
         p = self.player
@@ -470,6 +470,8 @@ class Campaign:
         if p.mode == 'guard' and not front:
             p.mode = 'free'
         damage = p.take_damage(amount)
+        self.damage_flash = .32
+        self.hitstop = max(self.hitstop,.055 if guard else .080)
         if p.hp > 0:
             self.sounds.play('guard' if guard else 'hurt_player')
         self.run.hits += 1
@@ -517,13 +519,15 @@ class Campaign:
                 self.grow()
             else:
                 self.sounds.play('ui_lock')
-                self.notify('첫 레벨업 후 기술을 고를 수 있다.')
+                self.notify('2레벨에 첫 성장, 이후 10레벨마다 선택해요.')
             return
         if key == SDLK_z:
             cost = max(12, 24-self.run.skills.get('quick', 0)*2)
             if not p.magic_unlocked:
                 self.sounds.play('ui_lock')
-                self.notify('첫 성장에서 마법·균형 방향 또는 기술 강화의 마검파를 선택하세요.')
+                self.notify('성장 방향에서 마법이나 균형을 고르면 쓸 수 있어요.')
+                return
+            if self.magic_cooldown > 0:
                 return
             if self.mp < cost:
                 self.sounds.play('ui_lock')
@@ -534,6 +538,7 @@ class Campaign:
             if p.animation.serial != before:
                 self.sounds.play('magic_charge')
                 self.mp -= cost
+                self.magic_cooldown = 7.0
                 p.animation.fps *= 1 + self.run.skills.get('quick', 0)*.13
             return
         serial = p.animation.serial
@@ -775,8 +780,23 @@ class Campaign:
         if key == 'rescue' and self.run.companion:
             self.open('풀려난 거울 웅덩이', '아직도 물결이 조금 무섭네. 그래도 이제 혼자가 아니니까.\n가자. 네가 돌아갈 길도 함께 찾고 싶어.', [('함께 간다', self.close_modal)], 'portrait_lunea__lunea_relief')
             return
-        self.open(title, text, [(label, lambda key=key, value=value: self.event_result(key, value)) for label, value in options], portrait, visual='rescue' if key == 'rescue' else 'memory' if key == 'memory' else None,
-                  emphasis='choice' if key in {'rescue','merchant','altar','envoy'} else None)
+        short_labels={
+            'elder':('검의 이야기를 듣는다',),'healer':('회복한다','떠난다'),
+            'merchant':('붕대를 준다','봉인석의 힘을 받는다','떠난다'),
+            'mirror':('기록해 둔다',),'altar':('검을 정화한다','힘을 받는다'),
+            'memory':('부적을 고친다','다음에 고친다'),
+            'envoy':('마을에 알린다','계약한다','거절한다')}
+        lines={
+            'elder':[('소년','촌장님, 이 검을 주웠어요. 짐승들이 날 따라와요.'),
+                     ('촌장','마왕의 검이구나. 힘을 기르고 네가 지킬 것을 정하거라.')],
+            'merchant':[('소년','괜찮으세요?'),('상인','다리를 다쳤네. 붕대가 있니? 이 돌은 마을을 지키는 봉인석이야.')],
+            'envoy':[('마왕의 전령','검을 넘기겠다고 약속해라. 추격을 멈추지.'),
+                     ('소년','마을에 알려야 하나? 아니면 시간을 벌까?')]}
+        options=[(short_labels.get(key,tuple(label for label,_ in options))[i],
+                  lambda key=key,value=value:self.event_result(key,value))
+                 for i,(_,value) in enumerate(options)]
+        self.talk(lines.get(key,[(SPEAKERS.get(key,'소년'),text)]),options,
+                  title=title,portrait=portrait,visual='memory' if key=='memory' else None)
 
     def event_result(self, key, value):
         r = self.run
@@ -896,47 +916,44 @@ class Campaign:
             return
         self.save_checkpoint(heal=True)
         self.sounds.play('rest')
-        r = self.run
-        actions = []
-        if r.companion:
-            if 'secret' not in r.pacts:
-                actions.append(('검의 비밀을 나눈다', lambda: self.camp_pact('secret')))
-            if r.stage >= 4 and ('memory' not in r.pacts or r.fracture):
-                actions.append(('부적을 고친다', lambda: self.camp_pact('memory')))
-            if r.stage >= 6 and 'plan' not in r.pacts:
-                actions.insert(0,('마지막 계획을 세운다', lambda: self.camp_pact('plan')))
-        if r.stage >= 6 and r.erosion:
-            actions.append(('검의 힘을 누른다 · 침식 −1', self.calm))
-        self.camp_choices(actions)
+        self.camp_choices()
 
-    def camp_choices(self, actions):
+    def camp_choices(self):
         leave=('떠난다',self.leave_camp)
-        if len(actions)>2:
-            options=[actions[0],('다른 이야기',lambda: self.camp_choices(actions[1:])),leave]
-        else:
-            options=actions+[leave]
+        options=([('루네아와 이야기',self.camp_talk)] if self.run.companion else [])
+        if self.run.stage>=6 and self.run.erosion:
+            options.append(('검을 진정시킨다',self.calm))
+        options.append(leave)
         r=self.run
         self.open('모닥불', '회복하고 저장했다.',options,
                   'portrait_lunea__lunea_smile' if r.companion else 'portrait_hero__hero_relief',
                   visual='camp',speaker='루네아' if r.companion else '소년')
+
+    def camp_talk(self):
+        r=self.run
+        self.sounds.play('pact')
+        lines=[]
+        if 'secret' not in r.pacts:
+            r.pacts.append('secret')
+            lines += [('소년','검을 쓸 때마다 손의 상처가 뜨거워져.'),
+                      ('루네아','혼자 참지 마. 내가 네 이름을 기억할게.')]
+        if r.stage>=4 and ('memory' not in r.pacts or r.fracture):
+            if 'memory' not in r.pacts:r.pacts.append('memory')
+            r.fracture=False
+            lines += [('루네아','부적이 고쳐졌어. 함께 기억해 줘서 고마워.')]
+        if r.stage>=6 and 'plan' not in r.pacts:
+            r.pacts.append('plan')
+            lines += [('소년','검의 힘을 돌려주고, 같이 집에 돌아가자.'),
+                      ('루네아','응. 마지막까지 함께할게.')]
+        self.save_checkpoint(heal=True)
+        self.talk(lines or [('루네아','조금 쉬었다 가자. 내가 곁에 있을게.')],
+                  [('출발',self.leave_camp)],visual='camp')
 
     def leave_camp(self):
         if self.run.stage==6 and 'plan' not in self.run.pacts:
             self.run.mark('plan_deferred')
             self.save_checkpoint()
         self.close_modal()
-
-    def camp_pact(self, key):
-        self.sounds.play('purify' if key == 'memory' else 'pact')
-        if key not in self.run.pacts:
-            self.run.pacts.append(key)
-        if key == 'memory':
-            self.run.fracture = False
-        self.save_checkpoint(heal=True)
-        lines = {'secret':'검과 손등의 상처 이야기를 나눴다.',
-                 'memory':'잊힌 이름을 부르자 부적의 금이 메워졌다.',
-                 'plan':'검의 힘을 옛 문양에 돌려주기로 했다.'}
-        self.open('함께한 약속', lines[key], [('더 이야기한다', self.camp), ('출발한다', self.leave_camp)], 'portrait_lunea__lunea_hope', visual='camp')
 
     def calm(self):
         self.run.erosion = max(0, self.run.erosion-1)
@@ -950,13 +967,13 @@ class Campaign:
             return
         missing = self.run.missing_restore()
         restore=('준비하러 돌아간다', self.return_hall) if missing else (
-            '경계를 복원한다', lambda: self.end_choice('restore'))
+            '마검의 힘을 돌려준다', lambda: self.end_choice('restore'))
         self.open('마검의 운명', '왕이 쓰러졌다. 마검의 힘을 어떻게 할까?',
                   [restore, ('마검을 봉인한다', lambda: self.end_choice('journey')),
                    ('다른 길을 택한다', self.other_endings)], 'portrait_hero__hero_focus', kind='final')
 
     def other_endings(self):
-        self.open('다른 길', '달의 의식과 밤의 왕관이 남아 있다.',
+        self.open('다른 길', '달의 힘으로 밤을 끝내거나, 내가 새 왕이 될 수 있어.',
                   [('달의 의식을 시작한다', lambda: self.end_choice('moon')),
                    ('밤의 왕관을 받는다', self.confirm_crown), ('뒤로', self.final_choice)],
                   'portrait_hero__hero_focus',kind='final')
@@ -1002,7 +1019,10 @@ class Campaign:
             self.sync_stats()
             self.player.hp = min(self.run.max_hp, self.player.hp+25) if self.player.hp > 0 else 0
             self.burst('levelup_fx__levelup', self.player.x, self.player.y, .8)
-            self.highlight('growth', f'레벨 {self.run.level} · 성장 선택')
+            if self.run.unspent:
+                self.highlight('growth', f'레벨 {self.run.level} · 성장 묶음을 골라요')
+            else:
+                self.notify(f'레벨 {self.run.level} · 기본 능력치가 조금 올랐어요.',1.6)
 
     def attack_player(self):
         p, r = self.player, self.run
@@ -1033,6 +1053,7 @@ class Campaign:
         for enemy in self.enemies:
             if enemy.uid not in self.hit_ids and enemy.alive and p.effects.melee_hits(state, enemy.hurtbox()):
                 enemy.hurt(damage, state['facing'], self)
+                self.contact_target = dict(enemy=enemy,serial=a.serial,facing=p.facing)
                 self.hit_ids.add(enemy.uid)
         for obj in self.objects:
             uid = self.obj_uid(obj)
@@ -1041,6 +1062,9 @@ class Campaign:
             target = (obj['x']-35,obj['y'],obj['x']+35,obj['y']+130)
             if p.effects.melee_hits(state,target):
                 obj['hp'] -= damage
+                self.contact_target = dict(obj=obj,serial=a.serial,facing=p.facing)
+                self.numbers.append(dict(x=obj['x'],y=obj['y']+70,text=str(round(damage)),age=0,hurt=False))
+                self.hitstop=max(self.hitstop,{'slash_1':.060,'slash_2':.074,'slash_3':.095}.get(a.name,.060))
                 self.hit_ids.add(uid)
                 p.effects.burst('impact',obj['x'],obj['y']+45,p.facing)
                 stone = obj['kind'] == 'pillar'
@@ -1206,9 +1230,11 @@ class Campaign:
 
     def offer_growth(self):
         r,p=self.run,self.player
-        if (r.level>r.growth_offered and (r.unspent or r.skill_points or not r.path)
+        if (r.unspent and r.level>r.growth_offered
                 and not self.story_only and p.grounded and p.mode=='free'
-                and not (p.crouching or p.forced_crouch)):
+                and not (p.crouching or p.forced_crouch)
+                and not any(e.alive and abs(e.x-p.x)<500 and abs(e.y-p.y)<190 for e in self.enemies)
+                and not self.shots and not self.hazards):
             self.grow()
             return True
         return False
@@ -1256,6 +1282,7 @@ class Campaign:
             self.cine_out['age']+=dt
             if self.cine_out['age']>.6:self.cine_out=None
         self.toast_time = max(0, self.toast_time-dt)
+        self.damage_flash = max(0,self.damage_flash-dt)
         for b in self.bursts:
             b['age'] += dt
         self.bursts = [b for b in self.bursts if b['age'] < b['life']]
@@ -1328,13 +1355,14 @@ class Campaign:
         r.seconds += dt
         self.shield = max(0, self.shield-dt)
         self.hybrid_time = max(0, self.hybrid_time-dt)
+        self.magic_cooldown = max(0,self.magic_cooldown-dt)
         self.mp = min(r.max_mp, self.mp+dt*(7 if p.mode == 'free' else 2.5))
         self.update_terrain(dt)
         old_x,old_y,old_vy=p.x,p.y,p.vy
         p.floor_y = self.floor_beneath(p)
         self.update_posture(p)
         previous_animation = p.animation.name
-        p.update(dt, self.keys)
+        p.update(dt, self.keys,limit_motion=self.keep_attack_distance)
         if p.animation.name != previous_animation and p.animation.name in {'guard_raise', 'magic_release'}:
             self.sounds.play(p.animation.name)
         self.platforms(old_y)

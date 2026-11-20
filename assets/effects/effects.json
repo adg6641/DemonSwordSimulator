@@ -23676,18 +23676,34 @@
     },
     "clipTiming": {
       "air_slash": {
-        "start": 1.2,
-        "peak": 3.5,
-        "end": 5.8,
-        "fire": 3.4,
-        "direction": "cw"
+        "start": 3.0,
+        "peak": 4.2,
+        "end": 6.1,
+        "fire": 4.2,
+        "direction": "cw",
+        "fadeIn": 0.22,
+        "fadeOut": 0.9,
+        "trailDuration": 0.1
       },
       "crouch_slash": {
-        "start": 1.4,
-        "peak": 3.6,
-        "end": 5.8,
-        "fire": 3.5,
-        "direction": "cw"
+        "start": 3.0,
+        "peak": 4.1,
+        "end": 6.2,
+        "fire": 4.1,
+        "direction": "cw",
+        "fadeIn": 0.22,
+        "fadeOut": 0.9,
+        "trailDuration": 0.1
+      },
+      "dash_slash": {
+        "start": 3.0,
+        "peak": 4.15,
+        "end": 6.0,
+        "fire": 4.15,
+        "direction": "cw",
+        "fadeIn": 0.22,
+        "fadeOut": 0.9,
+        "trailDuration": 0.1
       }
     },
     "hitMasks": {

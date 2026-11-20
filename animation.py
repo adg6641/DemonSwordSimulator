@@ -3,7 +3,7 @@
 import json
 from bisect import bisect_right
 from itertools import accumulate
-from math import cos, sin, pi, degrees, floor
+from math import cos, sin, pi, degrees, floor, atan2, hypot
 
 import pico2d.pico2d as engine
 from pico2d import (SDL_Rect, SDL_FRect, SDL_RenderCopyExF,
@@ -16,6 +16,8 @@ MOVEMENT_BRIDGES = frozenset({
     'idle_breathe', 'idle_to_walk', 'walk', 'walk_to_run', 'walk_to_idle',
     'run', 'run_start', 'run_stop', 'run_to_walk', 'jump_takeoff', 'running_takeoff',
     'jump_rise', 'jump_apex', 'fall', 'land_soft', 'land_hard', 'land_walk', 'land_run',
+    'fall_brace','land_upper','land_drop','land_upper_walk','land_upper_run',
+    'land_drop_walk','land_drop_run',
     'dash_start', 'dash_ground', 'dash_end', 'dash_air', 'air_dash_recovery',
     'dash_run_out', 'dash_walk_out', 'dash_stop_out',
 })
@@ -192,7 +194,7 @@ class Animation:
 
     @property
     def weapon_pose(self):
-        """손은 현재 그림에 고정하고, 검은 길이를 바꾸지 않은 채 회전한다."""
+        """그림에 그려진 손과 칼끝 좌표를 검기·타격 판정에도 함께 쓴다."""
         if not self.weapon:
             return None
         frames=self.clip['frames']
@@ -201,6 +203,15 @@ class Animation:
         if not point or point.get('hidden'):
             return None
         following=frames[(index+1)%len(frames)] if self.loop or index+1<len(frames) else cell
+        if point.get('baked'):
+            factor=cell.get('renderScale',1);pivot=self.clip['pivot']
+            dx,dy=cell.get('registration',(0,0))
+            hand=((point['hand'][0]+dx-pivot['x']+self.bridge_x)*factor,
+                  (point['hand'][1]+dy-pivot['y'])*factor)
+            tip=((point['tip'][0]+dx-pivot['x']+self.bridge_x)*factor,
+                 (point['tip'][1]+dy-pivot['y'])*factor)
+            return dict(hand=hand,tip=tip,angle=atan2(tip[1]-hand[1],tip[0]-hand[0]),
+                        length=hypot(tip[0]-hand[0],tip[1]-hand[1]))
         angle=point['angle'];next_angle=following.get('weapon',point)['angle']
         turn=(next_angle-angle+pi)%(2*pi)-pi
         phase = self.pose_time - floor(self.pose_time)
@@ -226,7 +237,7 @@ class Animation:
         body_x = x + facing*self.bridge_x*body_scale
         self.atlas.draw(body, body_x, y, body_scale, facing)
         pose = self.weapon_pose
-        if pose:
+        if pose and not cell['weapon'].get('baked'):
             image = self._sword_image()
             grip = self.weapon['grip']
             blade_scale = self.weapon['scale']*scale

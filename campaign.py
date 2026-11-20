@@ -8,7 +8,7 @@ from pico2d import (
     SDLK_1, SDLK_8, SDLK_e, SDLK_q, SDLK_h, SDLK_l, SDLK_TAB, SDLK_c, SDLK_z, SDLK_x,
     SDLK_F9, SDLK_F1, SDLK_F7,
 )
-from player import Player, SHIFT
+from player import Player, SHIFT, MOVING_LANDINGS
 from world import World, Camera
 from game_assets import Assets
 from progress import Run, ENDINGS
@@ -275,6 +275,8 @@ class Campaign:
         self.player.combo_queued=False;self.player.followups.clear()
         self.player.forced_crouch=self.player.crouching=False
         self.player.previous_direction=self.player.move_time=0
+        self.player.last_ground_y=self.player.flight_origin_y=self.player.flight_peak_y=y
+        self.player.in_flight=False
         self.player.animation.play('idle_breathe')
         self.player.effects.waves.clear()
         self.player.effects.bursts.clear()
@@ -392,7 +394,7 @@ class Campaign:
     def footstep(self, distance):
         p = self.player
         animation = p.animation
-        if not p.grounded or animation.name not in {'walk', 'run', 'crouch_walk', 'land_walk', 'land_run'}:
+        if not p.grounded or animation.name not in {'walk', 'run', 'crouch_walk'} | MOVING_LANDINGS:
             self.foot_contact = None
             return
         if abs(distance) < .1:
@@ -1169,13 +1171,17 @@ class Campaign:
             landed = [o for o in tops if old_y >= o['y']-1 and p.y <= o['y']]
             if landed:
                 top = max(o['y'] for o in landed)
-                was_air = old_y > top+2
+                was_air = (old_y > top+.01 and p.vy<0) or getattr(p,'in_flight',False)
+                impact_speed=p.vy
                 p.y, p.vy, p.floor_y, p.air_dash_ready = top, 0, top, True
                 if (was_air and p is self.player and p.mode not in {'hurt','dead'}
                         and p.animation.name not in {'dash_slash','dash_attack_recovery'}):
-                    p.land(p.previous_direction)
+                    p.land(p.previous_direction,impact_speed)
                 elif was_air and p is not self.player:
                     p.motion.play('lunea/land_soft')
+                elif was_air:
+                    p.in_flight=False
+                    p.last_ground_y=top
 
     def blockers(self, old_x, actor=None, crouched=False):
         p = self.player if actor is None else actor

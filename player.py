@@ -13,8 +13,11 @@ from effects import CombatEffects
 
 
 SHIFT = {SDLK_LSHIFT, SDLK_RSHIFT}
-LANDING = {'land_soft', 'land_hard', 'air_attack_land', 'land_run', 'land_walk'}
-MOVING_LANDINGS = {'land_run', 'land_walk'}
+MOVING_LANDINGS = {'land_run', 'land_walk', 'land_upper_run', 'land_upper_walk',
+                  'land_drop_run', 'land_drop_walk'}
+LANDING = MOVING_LANDINGS | {'land_soft','land_hard','air_attack_land','land_upper','land_drop'}
+LANDING_STRIDE = {'land_run':61,'land_walk':39,'land_upper_run':61,'land_upper_walk':39,
+                  'land_drop_run':76,'land_drop_walk':48}
 CROUCH_GAITS = {'crouch_idle', 'crouch_walk'}
 CROUCH_POSES = CROUCH_GAITS | {'crouch_down', 'crouch_slash', 'crouch_attack_recovery'}
 GAIT_STRIDE = {'walk': 116, 'run': 224, 'crouch_walk': 89}
@@ -72,6 +75,9 @@ class Player:
         self.horizontal_speed = self.brake_speed = 0.0
         self.attack_pending = False
         self.step_serial, self.step_progress = -1, 0.0
+        self.last_ground_y=self.flight_origin_y=self.flight_peak_y=0.0
+        self.in_flight=False
+        self.landing_kind='soft'
 
     @property
     def grounded(self):
@@ -96,14 +102,32 @@ class Player:
         self.followups = deque(followups)
         self.animation.play(clip,start_frame=start_frame)
 
-    def land(self, direction):
-        if self.animation.name=='air_slash':
+    def track_flight(self):
+        if not self.grounded:
+            if not self.in_flight:
+                self.flight_origin_y=self.last_ground_y
+                self.flight_peak_y=self.y
+                self.in_flight=True
+            self.flight_peak_y=max(self.flight_peak_y,self.y)
+        elif not self.in_flight:
+            self.last_ground_y=self.floor_y
+
+    def land(self, direction, impact_speed=0):
+        # 출발한 발판보다 낮게 떨어진 착지는 무릎을 더 깊이 굽힌다.
+        drop=(self.floor_y < self.flight_origin_y-35
+              or self.flight_peak_y-self.floor_y>260 or impact_speed < -1000)
+        self.landing_kind='drop' if drop else 'upper' if self.floor_y>self.flight_origin_y+35 else 'soft'
+        self.last_ground_y=self.floor_y
+        self.in_flight=False
+        if self.animation.name=='air_slash' and self.landing_kind=='soft':
             self._action('air_attack_land')
         elif direction and not self.crouching:
             self.land_distance = 0.0
-            self._action('land_run' if self.move_time >= .55 else 'land_walk')
+            gait='run' if self.move_time>=.55 else 'walk'
+            prefix='land' if self.landing_kind=='soft' else 'land_'+self.landing_kind
+            self._action(prefix+'_'+gait)
         else:
-            self._action('land_soft')
+            self._action('land_soft' if self.landing_kind=='soft' else 'land_'+self.landing_kind)
 
     def take_damage(self, amount):
         if self.mode == 'dead' or self.invulnerable > 0:
@@ -302,7 +326,8 @@ class Player:
 
     def _locomotion(self, direction, keys):
         if not self.grounded:
-            target = 'jump_rise' if self.vy > 160 else 'jump_apex' if self.vy > -160 else 'fall'
+            target = ('jump_rise' if self.vy>160 else 'jump_apex' if self.vy>-160
+                      else 'fall_brace' if self.vy<-800 else 'fall')
         elif SDLK_DOWN in keys:
             target = 'crouch_walk' if direction else 'crouch_idle'
         elif direction:
@@ -386,12 +411,19 @@ class Player:
             self.move_time = 0.0
         self.previous_direction = direction
         if self.landing and self.animation.name in MOVING_LANDINGS and (not direction or self.crouching):
-            self._action('land_soft',start_frame=3)
+            target='land_soft' if self.landing_kind=='soft' else 'land_'+self.landing_kind
+            phase=self.animation.clip_time/self.animation.duration
+            self._action(target,start_frame=round(phase*(self.animation.clips[target]['frameCount']-1)))
         elif (self.landing and direction and not self.crouching and self.animation.name not in MOVING_LANDINGS
               and (self.animation.name!='air_attack_land' or self.animation.progress>=.24)):
-            self.land(direction)
+            gait='run' if self.move_time>=.55 else 'walk'
+            prefix='land' if self.landing_kind=='soft' else 'land_'+self.landing_kind
+            old_progress=self.animation.clip_time/self.animation.duration
+            target=prefix+'_'+gait
+            self._action(target,start_frame=round(old_progress*(self.animation.clips[target]['frameCount']-1)))
+            self.land_distance=LANDING_STRIDE[target]*self.animation.clip_time/self.animation.duration
         if self.landing and self.animation.name in MOVING_LANDINGS and self.animation.finished:
-            self.gait = 'run' if self.animation.name == 'land_run' else 'walk'
+            self.gait = 'run' if self.animation.name.endswith('_run') else 'walk'
             self.mode = 'free'
             self.animation.play(self.gait)
         self._update_action(keys)
@@ -436,18 +468,23 @@ class Player:
         self.x += speed * dt + combo_advance + dash_advance
         self.horizontal_speed=dash_advance/dt if dashing and dt else speed
         airborne = not self.grounded
+        self.track_flight()
         floating_dash = self.mode == 'dash' and self.animation.name == 'dash_air'
         if airborne and not floating_dash:
             self.y += self.vy * dt - self.GRAVITY * dt * dt / 2
             self.vy -= self.GRAVITY * dt
         if self.y <= self.floor_y:
+            impact_speed=self.vy
             self.y, self.vy = self.floor_y, 0.0
             self.air_dash_ready = True
             keep_dash_attack = self.mode == 'action' and self.animation.name in {
                 'dash_slash', 'dash_attack_recovery',
             }
             if airborne and not keep_dash_attack and self.mode not in {'hurt', 'dead'}:
-                self.land(direction)
+                self.land(direction,impact_speed)
+            elif airborne:
+                self.in_flight=False
+                self.last_ground_y=self.floor_y
 
         if limit_motion is not None:
             limit_motion(old_x)
@@ -457,12 +494,12 @@ class Player:
         if self.animation.name in MOVING_LANDINGS:
             # A wall can stop the player's position even while a direction is held.
             if abs(distance)<.01:
-                self.mode = 'free'
-                self.gait = 'idle_breathe'
-                self.animation.play('idle_breathe')
+                phase=self.animation.clip_time/self.animation.duration
+                target='land_soft' if self.landing_kind=='soft' else 'land_'+self.landing_kind
+                self._action(target,start_frame=round(phase*(self.animation.clips[target]['frameCount']-1)))
                 return
             self.land_distance += abs(distance)
-            stride = 61 if self.animation.name == 'land_run' else 39
+            stride = LANDING_STRIDE[self.animation.name]
             self.animation.elapsed = self.animation.duration*min(1,self.land_distance/stride)
             return
         stride = GAIT_STRIDE.get(self.animation.name)

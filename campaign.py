@@ -7,6 +7,8 @@ from pico2d import (
     SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN, SDLK_RETURN, SDLK_SPACE, SDLK_ESCAPE,
     SDLK_1, SDLK_8, SDLK_e, SDLK_q, SDLK_h, SDLK_l, SDLK_TAB, SDLK_c, SDLK_z, SDLK_x,
     SDLK_F9, SDLK_F1, SDLK_F7,
+    SDL_TEXTINPUT,SDL_TEXTEDITING,SDL_StartTextInput,SDL_StopTextInput,SDL_SetTextInputRect,
+    SDL_Rect,SDLK_BACKSPACE,SDLK_v,KMOD_CTRL,SDL_GetClipboardText,
 )
 from player import Player, SHIFT, MOVING_LANDINGS
 from world import World, Camera
@@ -16,6 +18,7 @@ from combat import Enemy, Companion, Shot
 from sound import Sounds
 from campaign_data import SPAWNS, BOSSES, PAGES, PAGE_WIDTH, PLATFORM_ROUTES, EVENT_TEXT, PERKS, page_objects
 from story import CHAPTERS, INTRO, EVENT_LINES, SPEAKERS, RECORDS
+from naming import NameEntry
 
 
 STAGE_AMBIENCE = ('village', 'forest', 'deep', 'ruins', 'shrine', 'gate', 'corridor', 'throne')
@@ -135,7 +138,8 @@ class Campaign:
                 elif name=='상인' and obj: sx=obj.get('actor_x',obj['x'])
                 elif name in {'소년','이야기'}: sx=self.player.x
             sx = max(self.player.x-620, min(self.player.x+620, sx))
-            self.modal.update(speaker=name, speaker_x=sx, speaker_y=max(0,self.player.y)+165,
+            label=self.run.display_name if name=='소년' else name
+            self.modal.update(speaker=label, speaker_x=sx, speaker_y=max(0,self.player.y)+165,
                               focus_x=(self.player.x+sx)/2, focus_y=max(0,self.player.y)+10,
                               emphasis=emphasis, revealed=False)
             if obj and obj.get('npc') and abs(sx-self.player.x)<96 and self.player.grounded:
@@ -183,6 +187,8 @@ class Campaign:
                           focus_x=(hx+lx)/2,focus_y=y+15)
 
     def close_modal(self):
+        if self.modal and self.modal.get('name_entry'):
+            SDL_StopTextInput()
         self.ui_serial+=1
         if self.modal and self.modal.get('cine'):
             self.cine_out=dict(self.modal['cine'],age=0)
@@ -549,6 +555,9 @@ class Campaign:
             self.sounds.play('dash_air' if p.animation.name == 'dash_air' else 'dash_ground')
 
     def handle(self, event):
+        if self.modal and self.modal.get('name_entry'):
+            self.handle_name(event)
+            return
         if event.type == SDL_KEYUP:
             self.keys.discard(event.key)
             return
@@ -747,8 +756,50 @@ class Campaign:
         else:
             self.event(obj['event'])
 
+    def begin_name(self):
+        self.open('촌장과 첫 만남','먼 길을 나서기 전에, 네 이름을 알려 주겠니?',
+                  [('이 이름으로 출발',self.confirm_name)],speaker='촌장')
+        self.modal['name_entry']=NameEntry()
+        SDL_SetTextInputRect(SDL_Rect(430,613,420,42))
+        SDL_StartTextInput()
+
+    def handle_name(self,event):
+        entry=self.modal['name_entry']
+        if event.type==SDL_TEXTINPUT:
+            entry.insert(event.text)
+        elif event.type==SDL_TEXTEDITING:
+            entry.edit(event.text)
+        elif event.type==SDL_KEYDOWN:
+            if event.key==SDLK_BACKSPACE:
+                entry.backspace()
+            elif event.key==SDLK_RETURN:
+                self.confirm_name()
+            elif event.key==SDLK_ESCAPE:
+                self.close_modal()
+            elif event.key==SDLK_v and getattr(event,'mod',0)&KMOD_CTRL:
+                value=SDL_GetClipboardText()
+                if isinstance(value,bytes):entry.insert(value.decode('utf8',errors='ignore'))
+        elif event.type==SDL_MOUSEBUTTONDOWN and event.button==SDL_BUTTON_LEFT:
+            for x,y,w,h,index in self.hitboxes:
+                if x<=event.x<=x+w and y<=720-event.y<=y+h:
+                    self.confirm_name()
+                    break
+
+    def confirm_name(self):
+        if not self.modal or not self.modal.get('name_entry'):return
+        value=self.modal['name_entry'].confirm()
+        if not value:return
+        self.run.nickname=value
+        self.sounds.play('ui_accept')
+        self.close_modal()
+        self.event('elder')
+        self.save_checkpoint()
+
     def event(self, key):
         self.story_context = key
+        if key=='elder' and not self.run.nickname:
+            self.begin_name()
+            return
         if key=='rescue' and not self.run.companion:
             from rescue_story import RescueStory
             self.rescue=RescueStory(self);self.rescue.start();return
@@ -1479,5 +1530,7 @@ class Campaign:
         self.view.draw()
 
     def close(self):
+        if self.modal and self.modal.get('name_entry'):
+            SDL_StopTextInput()
         if self.owns_sounds:
             self.sounds.close()

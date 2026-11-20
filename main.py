@@ -9,7 +9,7 @@ import pico2d.pico2d as engine
 from pico2d import (open_canvas, close_canvas, hide_lattice, clear_canvas, update_canvas,
                     Event, SDL_Event, SDL_PollEvent, SDL_QUIT, SDL_KEYDOWN, SDL_KEYUP,
                     SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP, SDL_MOUSEWHEEL,
-                    SDL_GetKeyboardFocus, SDL_SetWindowTitle)
+                    SDL_GetKeyboardFocus, SDL_SetWindowTitle, SDL_TEXTINPUT, SDL_TEXTEDITING)
 
 from application import GameApplication
 
@@ -28,6 +28,11 @@ def events():
             if raw.key.repeat:
                 continue
             event.key = raw.key.keysym.sym
+            event.mod = raw.key.keysym.mod
+        elif raw.type == SDL_TEXTINPUT:
+            event.text=bytes(raw.text.text).split(b'\0',1)[0].decode('utf8')
+        elif raw.type == SDL_TEXTEDITING:
+            event.text=bytes(raw.edit.text).split(b'\0',1)[0].decode('utf8')
         elif raw.type == SDL_MOUSEMOTION:
             event.x, event.y = raw.motion.x, raw.motion.y
         elif raw.type in (SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP):

@@ -10,6 +10,12 @@ class BattleArt:
         self.numbers=load_pixel_image(folder/'numbers.png',smooth=True)
         self.rects=json.loads((folder/'numbers.json').read_text(encoding='utf8'))
         self.frame=load_pixel_image(folder/'hud.png',smooth=True)
+        self.quest=load_pixel_image(folder/'quest.png',smooth=True)
+
+    def banner(self,x,y,width,height):
+        self.quest.opacify(.60)
+        self.quest.draw(x,y,width,height)
+        self.quest.opacify(1)
 
     def damage(self, number, x, y, age, hurt=False):
         text=str(number).replace('-','−')

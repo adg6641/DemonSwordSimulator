@@ -199,18 +199,12 @@ class CombatEffects:
         time = animation.motion_progress * 8
         if time >= timing['fire']:
             wave = dict(facing=player.facing, level=self.level, age=0.0)
-            if animation.name in self.GROUND_COMBO:
-                # 지상 3연타는 검이 어느 방향을 향하든 같은 높이에서 수평으로 발사한다.
-                wave.update(x=player.x + player.facing * self.COMBO_WAVE_FORWARD,
-                            y=player.y + self.COMBO_WAVE_HEIGHT, angle=0.0,
-                            combo_launch_time=self.time)
-                self.waves.append(wave)
-            else:
-                pose = self.blade(animation)
-                if pose:
-                    wave.update(x=player.x + player.facing * pose['tip'][0],
-                                y=player.y - pose['tip'][1], angle=pose['angle'])
-                    self.waves.append(wave)
+            # 서기·웅크리기·공중 공격 모두 같은 몸 기준 높이에서 수평 발사한다.
+            # 팔이나 칼끝 좌표를 쓰지 않아 공격 프레임이 달라도 출발 높이가 같다.
+            wave.update(x=player.x + player.facing * self.COMBO_WAVE_FORWARD,
+                        y=player.y + self.COMBO_WAVE_HEIGHT, angle=0.0,
+                        combo_launch_time=self.time)
+            self.waves.append(wave)
             self.fired = True
 
     def _image(self, name):

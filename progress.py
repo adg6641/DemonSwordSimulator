@@ -5,6 +5,7 @@ import copy
 import json
 import secrets
 from campaign_data import PAGES
+from naming import clean_name
 
 ENDINGS = {
     'D1': ('함께 맞는 새벽', '둘은 검의 힘을 문양에 돌려주고, 평범한 사람으로 새 아침을 맞았다.'),
@@ -21,6 +22,7 @@ ENDINGS = {
 
 @dataclass
 class Run:
+    nickname: str = ''
     progression_version: int = 2
     seed: int = field(default_factory=lambda: secrets.randbelow(2**31))
     stage: int = 0
@@ -57,6 +59,7 @@ class Run:
     @classmethod
     def from_dict(cls, data):
         run = cls(**{f.name: data[f.name] for f in fields(cls) if f.name in data})
+        run.nickname=clean_name(run.nickname)
         if not 0 <= run.stage < 8 or not 1 <= run.level <= 100 or run.unspent < 0:
             raise ValueError('잘못된 저장 수치')
         if not 0 <= run.page < len(PAGES[run.stage]):
@@ -81,6 +84,10 @@ class Run:
 
     def data(self):
         return asdict(self)
+
+    @property
+    def display_name(self):
+        return self.nickname or '소년'
 
     def has(self, flag):
         return flag in self.flags

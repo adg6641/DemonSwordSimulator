@@ -218,8 +218,9 @@ class Animation:
         if 'turnWindow' in point:
             start, end = point['turnWindow']
             phase = max(0, min(1, (phase - start) / (end - start)))
-        angle += turn * phase
-        angle-=self.breath*.022
+        if not point.get('lockAngle'):
+            angle += turn * phase
+            angle-=self.breath*.022
         factor=cell.get('renderScale',1);pivot=self.clip['pivot']
         dx, dy = cell.get('registration', (0, 0))
         hand = ((point['hand'][0]+dx-pivot['x']+self.bridge_x)*factor,

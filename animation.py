@@ -9,7 +9,8 @@ import pico2d.pico2d as engine
 from pico2d import (SDL_Rect, SDL_FRect, SDL_RenderCopyExF,
                     SDL_FLIP_HORIZONTAL, SDL_FLIP_NONE)
 
-from pico2d import load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest, SDL_ScaleModeLinear
+from pico2d import (load_image, SDL_SetTextureScaleMode, SDL_ScaleModeNearest,
+                    SDL_ScaleModeLinear, SDL_SetTextureColorMod)
 
 
 MOVEMENT_BRIDGES = frozenset({
@@ -58,17 +59,21 @@ class SpriteAtlas:
             self.images[index] = load_pixel_image(self.paths[index], smooth=True)
         return self.images[index]
 
-    def draw(self, region, x, y, scale, facing, alpha=1):
+    def draw(self, region, x, y, scale, facing, alpha=1, tint=None):
         if region:
             page, left, top, width, height, dx, dy = region
             image = self.image(page)
             scale /= self.density
             if alpha != 1:
                 image.opacify(alpha)
+            if tint is not None:
+                SDL_SetTextureColorMod(image.texture, *tint)
             draw_region(image, (left, top, width, height),
                         x+facing*dx*scale, y-dy*scale, scale, facing)
             if alpha != 1:
                 image.opacify(1)
+            if tint is not None:
+                SDL_SetTextureColorMod(image.texture, 255, 255, 255)
 
 
 class Animation:
@@ -229,16 +234,23 @@ class Animation:
         tip=(hand[0]+cos(angle)*length,hand[1]+sin(angle)*length)
         return dict(hand=hand,tip=tip,angle=angle,length=length)
 
-    def draw(self, x, y, facing, camera, scale=1.0):
-        x, y = x-camera.x, y-camera.y
+    def snapshot(self):
+        """잔상이 남은 순간의 몸, 손과 검 자세를 그대로 보관한다."""
         frame = self.frame
         cell = self.clip['frames'][frame]
         body, hand = self.atlas.clips[self.name][frame]
-        body_scale = cell.get('renderScale', 1) * scale
-        body_x = x + facing*self.bridge_x*body_scale
-        self.atlas.draw(body, body_x, y, body_scale, facing)
         pose = self.weapon_pose
-        if pose and not cell['weapon'].get('baked'):
+        if (cell.get('weapon') or {}).get('baked'):
+            pose = None
+        return body, hand, cell.get('renderScale', 1), self.bridge_x, pose
+
+    def draw(self, x, y, facing, camera, scale=1.0, *, snapshot=None, alpha=1, tint=None):
+        x, y = x-camera.x, y-camera.y
+        body, hand, render_scale, bridge_x, pose = snapshot if snapshot is not None else self.snapshot()
+        body_scale = render_scale * scale
+        body_x = x + facing*bridge_x*body_scale
+        self.atlas.draw(body, body_x, y, body_scale, facing, alpha, tint)
+        if pose:
             image = self._sword_image()
             grip = self.weapon['grip']
             blade_scale = self.weapon['scale']*scale
@@ -246,6 +258,14 @@ class Animation:
             angle = pose['angle']
             cx = pose['hand'][0]*scale + dx*cos(angle) - dy*sin(angle)
             cy = pose['hand'][1]*scale + dx*sin(angle) + dy*cos(angle)
+            if alpha != 1:
+                image.opacify(alpha)
+            if tint is not None:
+                SDL_SetTextureColorMod(image.texture, *tint)
             draw_region(image, (0, 0, image.w, image.h), x+facing*cx, y-cy,
                         blade_scale, facing, angle*facing)
-            self.atlas.draw(hand, body_x, y, body_scale, facing)
+            if alpha != 1:
+                image.opacify(1)
+            if tint is not None:
+                SDL_SetTextureColorMod(image.texture, 255, 255, 255)
+            self.atlas.draw(hand, body_x, y, body_scale, facing, alpha, tint)

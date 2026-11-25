@@ -220,7 +220,8 @@ class Enemy:
         if self.state == 'dead' and self.age > 1.2:
             return
         alpha = max(0, 1-(self.age-.6)/.6) if self.state == 'dead' else 1
-        self.motion.draw(self.x, self.y, scene.camera, self.scale, self.facing, alpha)
+        self.motion.draw(self.x, self.y, scene.camera, self.scale, self.facing, alpha,
+                         outline=4 if self.boss else 2)
         if self.state == 'windup':
             scene.assets.draw('adv/seal_warning__seal_telegraph', self.x, self.y, scene.camera, .38 if not self.boss else .65, self.age)
 

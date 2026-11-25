@@ -43,6 +43,8 @@ class Player:
     DASH_ATTACK_SPEED = 760.0
     BODY_HEIGHT = 180
     DASH_ATTACK_GRACE = 0.4
+    AFTERIMAGE_LIFETIME = .34
+    AFTERIMAGE_TINTS = ((115, 247, 222), (166, 161, 255))
     # C의 1·2·3번째 베기에서 각각 앞으로 나아갈 거리.
     COMBO_STEP = (46.0, 54.0, 64.0)
     JUMP_SPEED = 850.0
@@ -70,6 +72,11 @@ class Player:
         self.air_dash_ready = True
         self.dash_attack_remaining = 0.0
         self.dash_elapsed = 0.0
+        self.dash_recharge = 5.0
+        self.dash_cooldown = 0.0
+        self.dash_echoes = deque(maxlen=6)
+        self.echo_time = 0.0
+        self.last_dash_echo = None
         self.land_distance = 0.0
         self.jump_launched = False
         self.horizontal_speed = self.brake_speed = 0.0
@@ -207,7 +214,10 @@ class Player:
                 moving = direction and abs(self.horizontal_speed) > 80
                 self.animation.play('running_takeoff' if moving else 'jump_takeoff', start_frame=0)
         elif key in SHIFT and (self.mode == 'free' or self.landing or self.mode == 'jump' and not self.grounded):
-            if self.grounded or self.air_dash_ready:
+            if self.dash_cooldown <= 0 and (self.grounded or self.air_dash_ready):
+                self.dash_cooldown = self.dash_recharge
+                self.last_dash_echo = None
+                self.capture_dash_echo()
                 self.dash_attack_remaining = 0.0
                 self.dash_elapsed = 0.0
                 self.mode, self.gait = 'dash', None
@@ -390,6 +400,10 @@ class Player:
         return self.facing * self.COMBO_STEP[self.combo_step-1] * max(0, moved)
 
     def update(self, dt, keys, *, limit_motion=None):
+        self.dash_cooldown = max(0.0, self.dash_cooldown - dt)
+        self.echo_time += dt
+        while self.dash_echoes and self.echo_time - self.dash_echoes[0][0] >= self.AFTERIMAGE_LIFETIME:
+            self.dash_echoes.popleft()
         old_x=self.x
         dashing = self.mode == 'dash'
         dash_advance = self.dash_step(dt)
@@ -506,7 +520,21 @@ class Player:
         if stride and self.mode == 'free':
             self.animation.update(abs(distance) / stride * self.animation.duration)
 
+    def capture_dash_echo(self):
+        last = self.last_dash_echo
+        if last is not None and (self.echo_time - last[0] < .038 or
+                                 abs(self.x - last[1]) < 22):
+            return
+        self.last_dash_echo = self.echo_time, self.x
+        tint = self.AFTERIMAGE_TINTS[len(self.dash_echoes) % len(self.AFTERIMAGE_TINTS)]
+        self.dash_echoes.append((self.echo_time, self.x, self.y, self.facing,
+                                 self.animation.snapshot(), tint))
+
     def draw(self, camera):
+        for born, x, y, facing, snapshot, tint in self.dash_echoes:
+            fade = 1 - (self.echo_time - born) / self.AFTERIMAGE_LIFETIME
+            self.animation.draw(x, y, facing, camera, snapshot=snapshot,
+                                alpha=.62 * fade ** 1.25, tint=tint)
         self.animation.draw(self.x, self.y, self.facing, camera)
         self.effects.draw_aura(self, camera)
         self.effects.draw(self, camera)

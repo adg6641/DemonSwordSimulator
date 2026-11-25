@@ -216,28 +216,18 @@ def page_objects(stage, page):
 
 
 EVENT_TEXT = {
-    'elder': ('마을의 어른', 'portrait_npcs__elder_neutral',
-              '길에서 주운 검이 밤의 짐승들을 깨웠구나. 강해지는 방법만큼 어떤 사람으로 남을지도 골라야 한다.\n먼저 길의 상자를 베어 보고, 쉼터의 불빛을 기억하렴.'),
-    'healer': ('마을의 치유사', 'portrait_npcs__healer_thanks',
-               '모닥불에서 쉬면 몸과 마력이 회복돼. 다친 사람을 돕는다면 우리도 네 편이 되어 줄게.\n회복 파편은 H로 사용할 수 있어. 위험할 때 아끼기만 하지는 마.'),
-    'rescue': ('거울 웅덩이', 'portrait_lunea__lunea_worry',
-              '물속 그림자가 소녀의 발과 반대로 움직인다. 초승달·별·원 매듭이 차례로 빛난다.\n잘못 당기면 이름이 지워진다. 소녀는 부적을 꼭 쥔 채 신호를 보내고 있다.'),
-    'merchant': ('숲의 상인', 'portrait_npcs__merchant_worried',
-                '짐승들에게 쫓기다 수레가 부서졌어. 이 봉인석의 힘을 가져가면 네 검이 강해지겠지만, 나는 밤을 버티지 못할 거야.\n붕대를 조금만 나눠 줄 수 있겠니?'),
-    'mirror': ('왕관을 쓴 반사', 'portrait_hero__hero_doubt',
-              '거울 속에는 왕관을 쓴 자신이 서 있다. 검을 쥐는 버릇도, 손등의 초승달 같은 상처도 똑같다.\n거울에 손을 대려 하자 반사 쪽의 손이 아주 조금 늦게 움직였다.'),
-    'altar': ('달이 지킨 이름', 'portrait_lunea__lunea_think',
-             '금 간 제단 안에 오래된 마력이 남아 있다. 힘을 흡수하면 바로 강해질 수 있다.\n문양을 정화하면 밤과 달의 경계를 읽을 단서가 남는다. 동료의 기억 복구는 별도로 할 수 있다.'),
-    'memory': ('달의 기억', 'portrait_lunea__lunea_sad',
-              '루네아의 부적에는 잊힌 이름들이 잠들어 있다. 검의 힘을 사람에게 묶지 않고 문양으로 돌려보낼 수 있을까?\n금 간 부적도 함께 손보면 다시 길을 기억할 수 있다.'),
-    'envoy': ('마왕의 전령', 'portrait_npcs__envoy_decisive',
-              '왕은 자신의 검을 원한다. 이 계약을 받으면 성채의 추격이 줄어들 것이다.\n하지만 마을은 경고를 듣지 못한다. 지금 계약을 받더라도 마지막 왕관을 받을지는 별개의 선택이다.'),
-    'side_seal': ('회랑의 측면 봉인', 'portrait_lunea__lunea_focus',
-                  '문양 아래 좁은 길이 보인다. 루네아의 달빛으로 풀면 전투를 우회할 수 있다.\n혼자라면 사슬 스위치를 찾아 열 수 있다. 어느 길이든 귀환의 기록은 남아 있다.'),
+    'elder': ('마을의 촌장', 'portrait_npcs__elder_neutral'),
+    'healer': ('마을의 치유사', 'portrait_npcs__healer_thanks'),
+    'merchant': ('숲의 상인', 'portrait_npcs__merchant_worried'),
+    'mirror': ('왕관을 쓴 반사', 'portrait_hero__hero_doubt'),
+    'altar': ('달의 제단', 'portrait_lunea__lunea_think'),
+    'memory': ('달의 기억', 'portrait_lunea__lunea_sad'),
+    'envoy': ('마왕의 전령', 'portrait_npcs__envoy_decisive'),
+    'side_seal': ('회랑의 봉인', 'portrait_lunea__lunea_focus'),
 }
 
 PERKS = [
-    ('dash', '대시 베기', '공격력 계수가 높은 돌진 베기. 미해금 기술도 배울 수 있다.', 'dash_level'),
+    ('dash', '대시 베기', '대시가 끝난 뒤 C로 벤다. 강화할수록 다음 대시가 빨리 찬다.', 'dash_level'),
     ('wave', '마검파', '마력 계수가 높은 원거리 검기. Z 집중 후 C로 발사한다.', 'wave_level'),
     ('dash_distance', '긴 대시', '대시의 이동 속도와 공격 도달 거리가 늘어난다.', 'dash_distance'),
     ('recovery', '빠른 회수', '베기와 공격 후 회복 동작이 빨라진다.', 'quick_recover'),

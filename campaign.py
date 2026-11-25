@@ -1,6 +1,7 @@
 """한 판의 진행: 실제 전투, 사건, 성장, 체크포인트, 아홉 결말을 연결한다."""
 import copy
 import random
+from collections import deque
 from math import sin,pi
 from pico2d import (
     SDL_KEYDOWN, SDL_KEYUP, SDL_MOUSEMOTION, SDL_MOUSEBUTTONDOWN, SDL_BUTTON_LEFT,
@@ -17,7 +18,7 @@ from progress import Run, ENDINGS
 from combat import Enemy, Companion, Shot
 from sound import Sounds
 from campaign_data import SPAWNS, BOSSES, PAGES, PAGE_WIDTH, PLATFORM_ROUTES, EVENT_TEXT, PERKS, page_objects
-from story import CHAPTERS, INTRO, EVENT_LINES, SPEAKERS, RECORDS
+from story import CHAPTERS, INTRO, EVENT_DIALOGUE, EVENT_OPTIONS, EVENT_REPLIES, SPEAKERS, RECORDS
 from naming import NameEntry
 
 
@@ -58,6 +59,7 @@ class Campaign:
         self.keys = set()
         self.modal, self.selected = None, 0
         self.toast, self.toast_time = '', 0
+        self.rewards = deque()
         self.bursts, self.numbers, self.shots, self.hazards = [], [], [], []
         self.hit_ids, self.wave_ids = set(), set()
         self.attack_hits = {}
@@ -92,8 +94,8 @@ class Campaign:
             self.notify('저장 지점에서 모험을 이어갑니다.')
         else:
             self.enter_stage(0)
-            self.talk([('소년','검을 주운 뒤로 짐승들이 날 따라와.'),
-                       ('소년','촌장님께 이 검을 보여 드려야겠어.')],
+            self.talk([('소년','아까 그 짐승, 마을 입구까지 따라왔어.'),
+                       ('소년','이 검 때문인가? 촌장님한테 보여 드리자.')],
                       [('출발',self.close_modal)])
         self.sync_stats()
         from game_view import CampaignView
@@ -109,6 +111,15 @@ class Campaign:
             self.banner_queue = self.banner_queue[-3:]
         else:
             self.banner = item
+
+    def reward(self, title, detail, duration=2.4):
+        self.rewards.append(dict(title=title, detail=detail, age=0.0, duration=duration))
+
+    @property
+    def reward_visible(self):
+        if not self.rewards or self.player.hp <= 0 or self.story_only or self.door_entry:
+            return False
+        return self.modal is None or (self.modal['kind']=='path' and self.rewards[0]['title']=='레벨 업!')
 
     def open(self, title, text, options, portrait=None, kind='dialogue', visual=None, speaker=None, focus=None, emphasis=None):
         self.ui_serial+=1
@@ -131,15 +142,16 @@ class Campaign:
             context = self.story_context
             obj = next((o for o in self.objects if o.get('event')==context), None)
             name = speaker or SPEAKERS.get(context, '루네아' if portrait and 'lunea' in portrait else '소년')
-            sx = focus if focus is not None else obj['x'] if obj else self.player.x
+            sx = focus if focus is not None else obj.get('actor_x', obj['x']) if obj else self.player.x
+            sy = obj['y'] if obj else self.player.y
             if focus is None:
                 if name=='루네아' and self.companion: sx=self.companion.x
                 elif name=='루네아' and context=='rescue' and obj: sx=obj['x']+35
                 elif name=='상인' and obj: sx=obj.get('actor_x',obj['x'])
-                elif name in {'소년','이야기'}: sx=self.player.x
+                elif name in {'소년','이야기'}: sx,sy=self.player.x,self.player.y
             sx = max(self.player.x-620, min(self.player.x+620, sx))
             label=self.run.display_name if name=='소년' else name
-            self.modal.update(speaker=label, speaker_x=sx, speaker_y=max(0,self.player.y)+165,
+            self.modal.update(speaker=label, speaker_x=sx, speaker_y=max(0,sy)+165,
                               focus_x=(self.player.x+sx)/2, focus_y=max(0,self.player.y)+10,
                               emphasis=emphasis, revealed=False)
             if obj and obj.get('npc') and abs(sx-self.player.x)<96 and self.player.grounded:
@@ -152,7 +164,9 @@ class Campaign:
                 if abs(sx-self.player.x)>30: self.player.facing = 1 if sx>self.player.x else -1
             if self.companion and visual not in {'camp','rescue'}:
                 self.companion.motion.play('lunea/idle_breathe')
-            if name=='루네아' and self.companion:
+            if name=='소년' and focus is None:
+                self.modal['anchor']='player'
+            elif name=='루네아' and self.companion:
                 self.modal['anchor']='companion'
         if visual == 'camp':
             self.setup_camp_pose(previous)
@@ -293,6 +307,8 @@ class Campaign:
         self.contact_target=None
         self.hitstop=self.damage_flash=0
         self.player.dash_attack_remaining = 0
+        self.player.dash_echoes.clear()
+        self.player.last_dash_echo = None
         self.shots, self.hazards, self.bursts, self.numbers = [], [], [], []
         self.companion = Companion(self.assets, x-90) if self.run.companion else None
         if self.companion:
@@ -320,6 +336,8 @@ class Campaign:
         if 'page' not in point['run'] and self.run.page:
             x,y = 1450,0
         self.enter_stage(self.run.stage, x, checkpoint=False, page=self.run.page,y=y)
+        self.player.dash_cooldown = 0.0
+        self.rewards.clear()
         self.player.floor_y=self.floor_beneath(self.player)
         self.player.forced_crouch=self.under_root(self.player.x,self.player.y)
         if self.player.forced_crouch:
@@ -358,6 +376,7 @@ class Campaign:
         p.hp = min(r.max_hp, p.hp)
         self.mp = min(r.max_mp, self.mp)
         p.dash_unlocked = r.skills.get('dash', 0) > 0
+        p.dash_recharge = r.dash_recharge
         p.magic_unlocked = r.skills.get('wave', 0) > 0
         if not self.developer:
             p.effects.set_level(r.tier)
@@ -367,11 +386,11 @@ class Campaign:
 
     def grow(self):
         if self.run.unspent <= 0:
-            self.notify('2레벨에 첫 성장, 이후 10레벨마다 골라요.')
+            self.notify('성장 방향은 2레벨부터, 이후 10레벨마다 고를 수 있어요.')
             self.close_modal()
             return
         self.run.growth_offered=self.run.level
-        self.open('성장 방향', '하나만 고르면 기술과 능력치가 함께 올라요.',
+        self.open('성장 방향', '앞으로 어떤 기술을 키울까요?',
                   [('검술 · 대시 베기 + 공격력 + HP',lambda:self.pick_bundle('physical')),
                    ('마법 · 마검파 + 마력 + MP',lambda:self.pick_bundle('magic')),
                    ('균형 · 두 기술 + 고른 능력치',lambda:self.pick_bundle('balance'))],kind='path')
@@ -520,26 +539,26 @@ class Campaign:
                 self.companion.support(self)
             else:
                 self.sounds.play('ui_lock')
-                self.notify('아직 함께 모험하는 동료가 없습니다.')
+                self.notify('루네아가 합류하면 Q로 달빛 지원을 받을 수 있어요.')
             return
         if key == SDLK_l:
             if self.run.earned:
                 self.grow()
             else:
                 self.sounds.play('ui_lock')
-                self.notify('2레벨에 첫 성장, 이후 10레벨마다 선택해요.')
+                self.notify('성장 방향은 2레벨부터, 이후 10레벨마다 고를 수 있어요.')
             return
         if key == SDLK_z:
             cost = max(12, 24-self.run.skills.get('quick', 0)*2)
             if not p.magic_unlocked:
                 self.sounds.play('ui_lock')
-                self.notify('성장 방향에서 마법이나 균형을 고르면 쓸 수 있어요.')
+                self.notify('마검파를 배우려면 마법이나 균형을 선택하세요.')
                 return
             if self.magic_cooldown > 0:
                 return
             if self.mp < cost:
                 self.sounds.play('ui_lock')
-                self.notify('집중할 MP가 부족합니다. 잠시 회복하거나 쉼터에서 쉬세요.')
+                self.notify('MP가 부족해요. 잠시 기다리거나 모닥불에서 쉬세요.')
                 return
             before = p.animation.serial
             p.press(key, self.keys)
@@ -638,12 +657,12 @@ class Campaign:
                   ('은퇴하기', self.confirm_retire), ('뒤로', self.pause)], kind='pause_menu')
 
     def confirm_restart(self):
-        self.open('다시 시작', '이번 진행을 지우고 첫 장부터 시작할까?',
+        self.open('다시 시작', '현재 모험을 끝내고 마을에서 다시 시작할까요?',
                   [('다시 시작',lambda: setattr(self,'request','new')),
                    ('돌아가기',self.pause_run)],kind='pause_menu')
 
     def confirm_retire(self):
-        self.open('은퇴하기', '이번 모험을 끝내고 시작 화면으로 갈까?',
+        self.open('은퇴하기', '이번 모험을 끝내고 시작 화면으로 돌아갈까요?',
                   [('은퇴하기',self.retire),('돌아가기',self.pause_run)],kind='pause_menu')
 
     def retire(self):
@@ -651,7 +670,7 @@ class Campaign:
             self.notify('진행 기록을 지우지 못했다. 다시 시도해 보자.')
             return
         self.sounds.play('retire')
-        self.open('마검사의 조기 은퇴', '마왕에게 잡혔다. 첫 임무는 마왕성 복도 청소였다.',
+        self.open('마검사의 조기 은퇴', '마왕에게 잡힌 뒤 빗자루를 받았다. 마왕성 복도가 생각보다 길었다.',
                   [('시작 화면',lambda: setattr(self,'request','menu'))],kind='retired')
 
     def pause_save(self):
@@ -701,7 +720,7 @@ class Campaign:
         obj = self.nearest()
         if not obj:
             self.sounds.play('ui_lock')
-            self.notify('상호작용할 물건 가까이에서 E를 누르세요.')
+            self.notify('사람이나 살펴볼 물건 가까이에서 E를 누르세요.')
             return
         kind, uid = obj['kind'], self.obj_uid(obj)
         if kind=='door':
@@ -757,7 +776,7 @@ class Campaign:
             self.event(obj['event'])
 
     def begin_name(self):
-        self.open('촌장과 첫 만남','먼 길을 나서기 전에, 네 이름을 알려 주겠니?',
+        self.open('촌장과 첫 만남','이리 오렴. 얼굴이 창백하구나. 괜찮아, 먼저 네 이름부터 알려 주겠니?',
                   [('이 이름으로 출발',self.confirm_name)],speaker='촌장')
         self.modal['name_entry']=NameEntry()
         SDL_SetTextInputRect(SDL_Rect(430,613,420,42))
@@ -810,45 +829,34 @@ class Campaign:
                 self.final_choice()
             return
         if key == 'memory' and not self.run.companion:
-            self.open('남겨진 달의 문양', '잊힌 이름을 지키는 문양이다.', [('기억하고 돌아선다', self.close_modal)])
+            self.open('남겨진 달의 문양', '달 모양 아래에 이름이 빼곡해. 이곳을 돌보던 사람이 있었나 봐.',
+                      [('문양을 기억해 둔다', self.close_modal)], speaker='소년')
             return
         if key == 'side_seal':
-            self.open(*EVENT_TEXT[key][:1], EVENT_TEXT[key][2], [('동료의 달빛으로 연다' if self.companion else '사슬의 빈틈을 살핀다', lambda: self.event_result(key, 'open'))], EVENT_TEXT[key][1])
+            title, portrait = EVENT_TEXT[key]
+            line = '내 달빛을 문양에 비춰 볼게. 사슬이 느슨해지면 당겨 줘.' if self.companion else '사슬 뒤에 틈이 있어. 당기면 옆길이 열릴지도 몰라.'
+            self.open(title, line, [('사슬을 당긴다', lambda: self.event_result(key, 'open'))],
+                      portrait, speaker='루네아' if self.companion else '소년')
             return
-        title, portrait, text = EVENT_TEXT[key]
-        text = EVENT_LINES.get(key, text)
-        if self.run.has(key+'_done') and key not in {'healer', 'memory', 'rescue'}:
-            self.open(title, '이미 이야기를 마쳤다.', [('계속 간다', self.close_modal)], portrait, speaker='이야기')
+        if key == 'rescue':
+            self.open('거울 웅덩이', '아직도 여기 물소리를 들으면 등 뒤가 서늘해. 가자, 오래 있고 싶진 않아.',
+                      [('함께 간다', self.close_modal)], 'portrait_lunea__lunea_relief', speaker='루네아')
             return
-        options = {
-            'elder': [('촌장의 말을 듣는다', 'listen')],
-            'healer': [('HP·MP 회복', 'heal'), ('떠난다', 'leave')],
-            'rescue': [('빛의 순서대로 함께 매듭을 푼다', 'careful'), ('마검으로 봉인을 잘라 구한다 · 부적에 금이 감', 'force'), ('구조 표식을 남기고 혼자 간다', 'mark')],
-            'merchant': [('붕대를 나눈다 · 신뢰 +1', 'help'), ('봉인석을 흡수한다 · 침식 +1', 'take'), ('그대로 떠난다', 'leave')],
-            'mirror': [('반사의 버릇을 기억한다', 'remember')],
-            'altar': [('문양을 정화한다 · 침식 −1', 'purify'), ('힘을 흡수한다 · 침식 +1', 'absorb')],
-            'memory': [('이름을 함께 기억하고 부적을 복구한다', 'repair'), ('나중에 다시 살핀다', 'leave')],
-            'envoy': [('마을에 경고한다 · 신뢰 +1', 'warn'), ('계약한다 · 추격 감소 / 침식 +1', 'contract'), ('계약을 거절한다', 'refuse')],
-        }[key]
-        if key == 'rescue' and self.run.companion:
-            self.open('풀려난 거울 웅덩이', '아직도 물결이 조금 무섭네. 그래도 이제 혼자가 아니니까.\n가자. 네가 돌아갈 길도 함께 찾고 싶어.', [('함께 간다', self.close_modal)], 'portrait_lunea__lunea_relief')
+        title, portrait = EVENT_TEXT[key]
+        if self.run.has(key+'_done') and key not in {'healer', 'memory'}:
+            line = {
+                'elder': '숲길은 아직 어둡다. 서두르다 다치지 말고, 불빛이 보이면 잠깐 쉬어 가렴.',
+                'merchant': '나는 여기서 수레를 좀 더 손보고 갈게. 너도 길 조심해.',
+                'mirror': '다시 봐도 내 얼굴이야. 잊어버리기 전에 적어 둔 게 다행이다.',
+                'altar': '제단은 조용해졌다. 이제 다른 기록을 찾아보자.',
+                'envoy': '할 말은 다 했다. 이제 네가 어떻게 할지 두고 보지.',
+            }[key]
+            self.open(title, line, [('길을 나선다', self.close_modal)], portrait,
+                      speaker='소년' if key=='altar' else SPEAKERS[key])
             return
-        short_labels={
-            'elder':('검의 이야기를 듣는다',),'healer':('회복한다','떠난다'),
-            'merchant':('붕대를 준다','봉인석의 힘을 받는다','떠난다'),
-            'mirror':('기록해 둔다',),'altar':('검을 정화한다','힘을 받는다'),
-            'memory':('부적을 고친다','다음에 고친다'),
-            'envoy':('마을에 알린다','계약한다','거절한다')}
-        lines={
-            'elder':[('소년','촌장님, 이 검을 주웠어요. 짐승들이 날 따라와요.'),
-                     ('촌장','마왕의 검이구나. 힘을 기르고 네가 지킬 것을 정하거라.')],
-            'merchant':[('소년','괜찮으세요?'),('상인','다리를 다쳤네. 붕대가 있니? 이 돌은 마을을 지키는 봉인석이야.')],
-            'envoy':[('마왕의 전령','검을 넘기겠다고 약속해라. 추격을 멈추지.'),
-                     ('소년','마을에 알려야 하나? 아니면 시간을 벌까?')]}
-        options=[(short_labels.get(key,tuple(label for label,_ in options))[i],
-                  lambda key=key,value=value:self.event_result(key,value))
-                 for i,(_,value) in enumerate(options)]
-        self.talk(lines.get(key,[(SPEAKERS.get(key,'소년'),text)]),options,
+        options = [(label, lambda value=value: self.event_result(key, value))
+                   for label, value in EVENT_OPTIONS[key]]
+        self.talk(EVENT_DIALOGUE[key], options,
                   title=title,portrait=portrait,visual='memory' if key=='memory' else None)
 
     def event_result(self, key, value):
@@ -859,59 +867,52 @@ class Campaign:
             if cue:
                 self.sounds.play(cue)
         r.choose(key, value)
-        text, portrait = '선택이 다음 지역과 결말에 남는다.', 'portrait_hero__hero_think'
+        portrait = 'portrait_hero__hero_think'
         if key == 'rescue':
             if value in {'careful', 'force'}:
                 r.companion, r.fracture = True, value == 'force'
                 self.companion = Companion(self.assets, self.player.x-90)
                 self.companion.motion.play('adv/lunea_rescue__lunea_freed')
                 r.mark('rescue_done')
-                text = '“루네아.” 소녀는 자신의 이름을 되찾았다. 이제부터 길을 함께 걷는다.' + ('\n급히 끊은 봉인 때문에 부적에 균열이 남았다. 제단이나 마지막 쉼터에서 복구할 수 있다.' if r.fracture else '\n봉인을 함께 풀어 부적도 온전하게 남았다.')
                 portrait = 'portrait_lunea__lunea_grateful'
                 self.gain_xp(35)
-                self.highlight('companion', '루네아가 함께 모험합니다 · Q 달빛 지원')
+                self.reward('달빛 지원 획득', '루네아에게 달빛 지원을 배웠습니다.  ·  Q')
             else:
                 r.mark('aid_marker')
-                text = '표식은 남겼지만 동료가 합류한 것은 아니다. 되돌아와 소녀를 구하면 이후에는 동반 세계선이 된다.'
         elif key == 'merchant':
             if first and value == 'help':
                 r.trust = min(2, r.trust+1)
                 r.shards += 2
                 self.actor_actions['merchant'] = ('adv/merchant_event__merchant_gift', self.time)
-                text, portrait = '상인은 붕대를 감고 보급품을 건넸다. “마을로 돌아가면 네 이야기를 전하마.”\n회복 파편 +2 · 마을 신뢰 +1', 'portrait_npcs__merchant_thanks'
+                portrait = 'portrait_npcs__merchant_thanks'
             elif first and value == 'take':
                 r.erosion = min(3, r.erosion+1)
                 r.mark('ward_taken')
                 self.gain_xp(60)
-                text = '검은 더 쉽게 휘둘러졌다. 그 뒤에서 수레의 작은 불빛이 꺼졌다. 침식 +1'
         elif key == 'altar':
             if first and value == 'purify':
                 r.erosion = max(0, r.erosion-1)
                 r.mark('altar_purified')
                 self.gain_xp(35)
-                text = '제단이 잔잔한 달빛을 되찾았다. 힘을 빼앗지 않아도 이름을 지키는 방법이 보인다.'
             elif first:
                 r.erosion = min(3, r.erosion+1)
                 self.gain_xp(70)
-                text = '오래된 힘이 검으로 흘러들었다. 그림자는 또 조금 늦게 움직였다. 기억의 복구 기회는 남아 있다.'
         elif key == 'memory':
             if value == 'repair':
                 r.fracture = False
                 if 'memory' not in r.pacts:
                     r.pacts.append('memory')
                 self.burst('lunea/fx_heal', self.player.x, 0, .6)
-                text, portrait = '금 간 부적에 은빛 이음새가 남았다. 루네아는 잊지 않겠다는 약속을 지도에 적었다.', 'portrait_lunea__lunea_smile'
+                portrait = 'portrait_lunea__lunea_smile'
         elif key == 'envoy':
             if first and value == 'warn':
                 r.trust = min(2, r.trust+1)
                 r.shards += 2
                 r.mark('village_warned')
-                text = '마을의 등불이 차례로 켜졌다. 주민들은 대피 준비와 마지막 보급을 약속했다.'
                 self.actor_actions['envoy'] = ('adv/envoy_event__envoy_warning', self.time)
             elif first and value == 'contract':
                 r.erosion = min(3, r.erosion+1)
                 r.mark('contract')
-                text = '전령이 추격자들을 물렸다. 계약은 왕관에 대한 마지막 동의가 아니다. 왕좌 앞에서 다시 고를 수 있다.'
                 for enemy in self.enemies:
                     if not enemy.boss and enemy.alive:
                         enemy.hp = 0
@@ -920,11 +921,9 @@ class Campaign:
                         enemy.change('dead', enemy.key('defeat'))
         elif key == 'healer' and value == 'heal':
             self.player.hp, self.mp = r.max_hp, r.max_mp
-            text = '마을의 손길로 몸과 마력이 회복됐다.'
         elif key == 'side_seal':
             r.mark('side_seal_open')
             self.burst('lunea/fx_seal', self.player.x+90, 0, .6)
-            text = '측면 길이 열렸다. 회랑의 추적자 한 무리를 우회할 수 있다.'
             for enemy in self.enemies:
                 if enemy.number == 11 and enemy.alive:
                     enemy.hp, enemy.rewarded = 0, True
@@ -933,34 +932,17 @@ class Campaign:
         if key not in {'healer'} and not (key == 'rescue' and value == 'mark') and not (key == 'memory' and value == 'leave'):
             r.mark(key+'_done')
         self.sync_stats()
-        result_lines = {
-            ('elder','listen'): '먼저 숲길의 짐승을 물리쳐 보거라. 경험을 쌓으면 새로운 기술을 배울 수 있을 게다.\n마검의 힘을 어떻게 쓸지는 네가 정하는 거란다.',
-            ('rescue','careful'): '나는 루네아야. 구해 줘서 고마워.\n네 검을 알아볼 수 있을 것 같아. 나도 함께 가게 해 줘.',
-            ('rescue','force'): '고마워. 나는 루네아야. 함께 가고 싶어.\n부적에 금이 갔지만 괜찮아. 달의 제단에서 함께 고칠 수 있을 거야.',
-            ('rescue','mark'): '도움을 요청하는 표식을 남겼다. 지금은 혼자 길을 나선다.\n마음이 바뀌면 이곳으로 돌아와 소녀를 구할 수 있다.',
-            ('merchant','help'): '고맙구나. 회복 파편 두 개를 가져가렴.',
-            ('merchant','take'): '마력은 강해졌지만 마을을 지키던 봉인석의 불이 꺼졌다.',
-            ('altar','purify'): '문양에 달빛이 돌아왔다. 검의 침식이 잦아들었다.',
-            ('altar','absorb'): '마력을 얻었다. 침식이 깊어졌다.',
-            ('memory','repair'): '기억해 줘서 고마워. 부적도 다시 온전해졌어.\n마지막까지 함께 이름을 지키자.',
-            ('envoy','warn'): '마을에 경고가 닿았다. 주민들이 대피한다.',
-            ('envoy','contract'): '추격자들이 물러났다. 침식이 깊어졌다.',
-            ('envoy','refuse'): '계약을 거절했다. 사슬 스위치를 찾아 성문을 열자.',
-            ('mirror','remember'): '왕관을 쓴 내 모습이다. 폐허의 기록을 찾아보자.',
-            ('merchant','leave'): '상인은 등불을 켜고 다음 여행자를 기다린다.',
-        }
         if value=='leave' and key in {'healer','memory'}:
             if key=='memory':
                 r.mark('memory_deferred')
             self.close_modal()
             return
-        text = result_lines.get((key,value), text)
-        if self.story_only and key in {'merchant','rescue'}:
-            proceed=self.leave_story
-        else:
-            proceed=self.close_modal
-        self.open('길에 남은 선택', text, [('계속 간다', proceed)], portrait,
-                  speaker='루네아' if key in {'rescue','memory'} and r.companion else '상인' if key=='merchant' and value=='help' else {'elder':'촌장','healer':'치유사','mirror':'소년'}.get(key,'이야기'))
+        if key == 'rescue' and value in {'careful','force'}:
+            # 구출 뒤에는 RescueStory가 두 사람의 대화를 이어서 연다.
+            return
+        speaker, line = EVENT_REPLIES[key, value]
+        proceed = self.leave_story if self.story_only else self.close_modal
+        self.open(speaker, line, [('계속', proceed)], portrait, speaker=speaker)
 
     def camp(self):
         if any(e.alive and abs(e.x-self.player.x) < 650 and abs(e.y-self.player.y)<220 for e in self.enemies) or any(abs(s.y-self.player.y)<180 for s in self.shots) or (self.hazards and self.player.y<180):
@@ -978,7 +960,8 @@ class Campaign:
             options.append(('검을 진정시킨다',self.calm))
         options.append(leave)
         r=self.run
-        self.open('모닥불', '회복하고 저장했다.',options,
+        line = '이리 와서 앉아. 불이 아직 따뜻해.' if r.companion else '후, 여긴 좀 쉴 만하네.'
+        self.open('모닥불', line,options,
                   'portrait_lunea__lunea_smile' if r.companion else 'portrait_hero__hero_relief',
                   visual='camp',speaker='루네아' if r.companion else '소년')
 
@@ -988,18 +971,18 @@ class Campaign:
         lines=[]
         if 'secret' not in r.pacts:
             r.pacts.append('secret')
-            lines += [('소년','검을 쓸 때마다 손의 상처가 뜨거워져.'),
-                      ('루네아','혼자 참지 마. 내가 네 이름을 기억할게.')]
+            lines += [('소년','루네아, 이 흉터 말이야. 검을 쓸 때마다 불에 덴 것처럼 아파.'),
+                      ('루네아','왜 이제 말해? 다음에 아프면 바로 알려 줘. 네가 네 이름을 잊으면 내가 다시 불러 줄게.')]
         if r.stage>=4 and ('memory' not in r.pacts or r.fracture):
             if 'memory' not in r.pacts:r.pacts.append('memory')
             r.fracture=False
-            lines += [('루네아','부적이 고쳐졌어. 함께 기억해 줘서 고마워.')]
+            lines += [('루네아','봐, 금이 메워졌어. 아까 네가 읽어 준 이름들 때문인가 봐. 고마워.')]
         if r.stage>=6 and 'plan' not in r.pacts:
             r.pacts.append('plan')
-            lines += [('소년','검의 힘을 돌려주고, 같이 집에 돌아가자.'),
-                      ('루네아','응. 마지막까지 함께할게.')]
+            lines += [('소년','왕을 만나면 바로 검을 뽑지 말고 문양부터 찾자. 그 힘을 돌려보낼 수 있을 거야.'),
+                      ('루네아','좋아. 다 끝나면 네 마을에 들르자. 이번엔 숲길 말고 큰길로 가고 싶어.')]
         self.save_checkpoint(heal=True)
-        self.talk(lines or [('루네아','조금 쉬었다 가자. 내가 곁에 있을게.')],
+        self.talk(lines or [('루네아','발 좀 녹이고 가자. 불 꺼지기 전에 나뭇가지 몇 개 더 넣어 줄래?')],
                   [('출발',self.leave_camp)],visual='camp')
 
     def leave_camp(self):
@@ -1021,18 +1004,18 @@ class Campaign:
         missing = self.run.missing_restore()
         restore=('준비하러 돌아간다', self.return_hall) if missing else (
             '마검의 힘을 돌려준다', lambda: self.end_choice('restore'))
-        self.open('마검의 운명', '왕이 쓰러졌다. 마검의 힘을 어떻게 할까?',
+        self.open('마검의 운명', '왕은 쓰러졌는데 검은 아직 손을 놓아주질 않아. 이 힘을 어디에 둬야 할까?',
                   [restore, ('마검을 봉인한다', lambda: self.end_choice('journey')),
                    ('다른 길을 택한다', self.other_endings)], 'portrait_hero__hero_focus', kind='final')
 
     def other_endings(self):
-        self.open('다른 길', '달의 힘으로 밤을 끝내거나, 내가 새 왕이 될 수 있어.',
+        self.open('다른 길', '달의 의식을 치르면 이 밤을 끝낼 수 있어. 왕관을 쓰면 검을 다스릴 힘을 얻을지도 몰라.',
                   [('달의 의식을 시작한다', lambda: self.end_choice('moon')),
                    ('밤의 왕관을 받는다', self.confirm_crown), ('뒤로', self.final_choice)],
                   'portrait_hero__hero_focus',kind='final')
 
     def confirm_crown(self):
-        self.open('왕관의 무게', '왕관을 받으면 밤이 끝나지 않는다.',
+        self.open('왕관의 무게', '손을 뻗자 왕관이 따뜻해졌다. 이걸 쓰면 아침은 돌아오지 않을 거야.',
                   [('왕관을 받는다', lambda: self.end_choice('crown')), ('다른 방법을 고른다', self.final_choice)], 'portrait_hero__hero_doubt')
 
     def return_hall(self):
@@ -1062,8 +1045,8 @@ class Campaign:
 
     def result(self):
         ending = self.run.ending
-        self.open(ENDINGS[ending][0], ENDINGS[ending][1], [('새로운 세계선 시작', lambda: setattr(self, 'request', 'new')),
-                  ('이번 기록과 엔딩 도감 보기', self.open_journal), ('시작 화면으로', lambda: setattr(self, 'request', 'menu'))], kind='result')
+        self.open(ENDINGS[ending][0], ENDINGS[ending][1], [('새 모험 시작', lambda: setattr(self, 'request', 'new')),
+                  ('모험 기록과 결말 보기', self.open_journal), ('시작 화면으로', lambda: setattr(self, 'request', 'menu'))], kind='result')
 
     def gain_xp(self, amount):
         count = self.run.gain_xp(amount)
@@ -1072,10 +1055,7 @@ class Campaign:
             self.sync_stats()
             self.player.hp = min(self.run.max_hp, self.player.hp+25) if self.player.hp > 0 else 0
             self.burst('levelup_fx__levelup', self.player.x, self.player.y, .8)
-            if self.run.unspent:
-                self.highlight('growth', f'레벨 {self.run.level} · 성장 묶음을 골라요')
-            else:
-                self.notify(f'레벨 {self.run.level} · 기본 능력치가 조금 올랐어요.',1.6)
+            self.reward('레벨 업!', f'Lv. {self.run.level}')
 
     def attack_player(self):
         p, r = self.player, self.run
@@ -1349,6 +1329,11 @@ class Campaign:
         for key, (clip, start) in list(self.actor_actions.items()):
             if self.time-start > self.assets.duration(clip)+1:
                 del self.actor_actions[key]
+        if self.reward_visible:
+            reward = self.rewards[0]
+            reward['age'] += dt
+            if reward['age'] >= reward['duration']:
+                self.rewards.popleft()
         if self.run.ending:
             self.finished_age += dt
             if not self.modal and self.finished_age > (12 if self.run.ending == 'H1' else 5):
@@ -1380,6 +1365,9 @@ class Campaign:
                     self.footstep(p.x - old_x)
                 else:
                     p.animation.update(dt)
+                if self.modal.get('anchor')=='player':
+                    self.modal['speaker_x']=p.x
+                    self.modal['speaker_y']=p.y+165
                 if self.companion:
                     self.companion.update(dt, self, cinematic=True)
                     if self.modal.get('anchor')=='companion':
@@ -1404,7 +1392,7 @@ class Campaign:
                 point = self.store.restore()
                 if point:
                     self.restore(point)
-                    self.notify('직전 저장 지점으로 돌아왔다. 저장 이후의 선택과 보상도 함께 되돌아간다.', 4)
+                    self.notify('마지막 저장 지점에서 다시 시작합니다.', 4)
             return
         if self.hitstop > 0:
             self.hitstop = max(0, self.hitstop-dt)
@@ -1419,6 +1407,7 @@ class Campaign:
         p.floor_y = self.floor_beneath(p)
         self.update_posture(p)
         previous_animation = p.animation.name
+        sampling_dash = p.mode == 'dash' and previous_animation in p.DASH_PHASES
         p.update(dt, self.keys,limit_motion=self.keep_attack_distance)
         if p.animation.name != previous_animation and p.animation.name in {'guard_raise', 'magic_release'}:
             self.sounds.play(p.animation.name)
@@ -1442,6 +1431,8 @@ class Campaign:
                 self.sound_at('crystal', o['x'], o['y'])
                 self.burst('adv/pickup_fx__pickup',o['x'],o['y'],.3)
         p.x = max(75, min(self.world.width-75, p.x))
+        if sampling_dash:
+            p.capture_dash_echo()
         p.advance_gait(p.x - old_x)
         self.footstep(p.x - old_x)
         if not sprang and p.mode == 'jump' and old_vy <= 0 < p.vy:
@@ -1449,11 +1440,11 @@ class Campaign:
         boss = next((e for e in self.enemies if e.boss and e.alive and abs(e.x-p.x)<620), None)
         if boss and p.grounded and p.mode=='free' and not r.has('met_boss_'+str(boss.number)):
             r.mark('met_boss_'+str(boss.number))
-            lines = {16:'뿌리가 길을 막아섰다. 숲의 문지기를 넘어야 성채로 갈 수 있다.',
-                     17:'이름을 지우는 파수자다. 공격 전 바닥에 생기는 문양을 보자.',
-                     18:'성문의 기사가 검을 들었다. 돌진이 끝난 뒤의 빈틈을 노리자.',
-                     19:'마지막 문지기다. 이 길을 넘으면 더는 왕좌를 피할 수 없다.',
-                     20:'마침내 왔구나. 그 검과 함께 쌓아 온 힘… 모두 내게 보여라.'}
+            lines = {16:'저 뿌리, 방금 움직였어. 문지기가 길을 막고 있네. 돌아갈 틈도 없겠어.',
+                     17:'바닥에 문양이 켜졌어! 다음에도 저 빛이 보이면 피해야겠다.',
+                     18:'검을 낮췄어. 달려들 셈인가 봐. 옆으로 피하고 멈췄을 때 치자.',
+                     19:'저 문만 지나면 왕좌야. 여기서 물러나면 지금까지 온 길을 다시 걸어야 해.',
+                     20:'늦었구나. 그 검을 처음 쥐었을 때, 너도 놓고 싶었지? 지금은 어떠냐.'}
             self.open(boss.actor['name'], lines[boss.number], [('맞선다', self.close_modal)],
                       'portrait_hero__hero_focus', kind='boss', focus=boss.x,
                       speaker='바르켄' if boss.number==20 else '소년', emphasis='boss')
@@ -1474,7 +1465,7 @@ class Campaign:
                     self.gain_xp(140+30*r.stage if enemy.boss else 24+8*r.stage)
                     if enemy.boss:
                         self.sounds.play('victory', gain=.8)
-                        self.highlight('victory', enemy.actor['name']+'을 넘어섰다')
+                        self.highlight('victory', enemy.actor['name']+' 격파')
         for shot in self.shots:
             shot.update(dt)
             for obj in self.objects:

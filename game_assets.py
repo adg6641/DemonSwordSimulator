@@ -2,6 +2,7 @@
 from collections import OrderedDict
 import json
 from animation import SpriteAtlas, load_pixel_image
+from pico2d import SDL_SetTextureColorMod
 
 
 class Assets:
@@ -61,7 +62,7 @@ class Assets:
         c = self.clips[key]
         return c['frameCount'] / max(1, c.get('fps', 0))
 
-    def draw(self, key, x, y, camera=None, scale=None, age=0, facing=None, alpha=1, frame=None):
+    def draw(self, key, x, y, camera=None, scale=None, age=0, facing=None, alpha=1, frame=None, *, outline=0):
         c = self.clips[key]
         index = self.frame(key, age) if frame is None else min(c['frameCount'] - 1, frame)
         f = c['frames'][index]
@@ -78,9 +79,20 @@ class Assets:
         px = w - pivot['x'] if flipped else pivot['x']
         cx = round(x - (camera.x if camera else 0) + (w / 2 - px) * s)
         cy = round(y - (camera.y if camera else 0) + (pivot['y'] - h / 2) * s)
-        if alpha != 1:
+        source = f['x'], f['pico2dY'], w, h, 0, 'h' if flipped else ''
+        size = max(1, round(w*s)), max(1, round(h*s))
+        if outline:
+            SDL_SetTextureColorMod(image.texture, 13, 14, 28)
+            image.opacify(alpha * .87)
+            diagonal = max(1, round(outline * .707))
+            for dx, dy in ((-outline,0),(outline,0),(0,-outline),(0,outline),
+                           (-diagonal,-diagonal),(-diagonal,diagonal),
+                           (diagonal,-diagonal),(diagonal,diagonal)):
+                image.clip_composite_draw(*source, cx+dx, cy+dy, *size)
+            SDL_SetTextureColorMod(image.texture, 255, 255, 255)
+        if alpha != 1 or outline:
             image.opacify(max(0, min(1, alpha)))
-        image.clip_composite_draw(f['x'], f['pico2dY'], w, h, 0, 'h' if flipped else '', cx, cy, max(1, round(w*s)), max(1, round(h*s)))
+        image.clip_composite_draw(*source, cx, cy, *size)
         if alpha != 1:
             image.opacify(1)
 
@@ -137,5 +149,5 @@ class Motion:
     def update(self, dt):
         self.age += dt
 
-    def draw(self, x, y, camera, scale=1, facing=None, alpha=1):
-        self.assets.draw(self.key, x, y, camera, scale, self.age, facing, alpha)
+    def draw(self, x, y, camera, scale=1, facing=None, alpha=1, *, outline=0):
+        self.assets.draw(self.key, x, y, camera, scale, self.age, facing, alpha, outline=outline)

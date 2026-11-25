@@ -327,7 +327,7 @@ class CampaignView:
         cd=s.magic_cooldown
         actions=[
             ('C','연속 베기',True,None),
-            ('Shift','대시 → C',p.dash_unlocked,None),
+            ('Shift','대시 → C' if p.dash_unlocked else '대시',True,p.dash_cooldown),
             ('Z','마검파',p.magic_unlocked,cd),
             ('X','방어',True,None),
             ('Q','달빛',bool(s.companion),s.companion.cooldown if s.companion else None),
@@ -336,9 +336,12 @@ class CampaignView:
             x=220+i*142
             kw=42 if key=='Shift' else 24
             self.key(key,x,12,kw,strong=unlocked and not cooldown,height=22)
-            label=(f'{name} {cooldown:.0f}s' if cooldown and cooldown>0
+            label=(f'대시 {cooldown:.1f}초' if key=='Shift' and cooldown
+                   else f'{name} {cooldown:.0f}s' if cooldown and cooldown>0
                    else name if unlocked else '미습득')
             self.text(label,x+kw+7,24,14,CREAM if unlocked else MUTED)
+            if key=='Shift' and cooldown:
+                fill(x+kw+7,12,76*min(1,cooldown/p.dash_recharge),2,ACCENT)
         goal,gx,gy=objective(s)
         self.battle_art.banner(194,675,365,78)
         self.text(f'{r.stage+1}-{r.page+1}  {CHAPTERS[r.stage]}',58,689,23,GOLD)
@@ -347,16 +350,28 @@ class CampaignView:
             self.battle_art.banner(1042,675,455,78)
             self.text('지금 할 일',871,702,14,GOLD)
             self.wrap(goal,871,678,380,23,BRIGHT,1.0,2)
-        boss=next((e for e in s.enemies if e.boss and e.alive),None)
-        if boss and s.region=='boss':
-            self.text(boss.actor['name'],640,631,18,GOLD,True)
-            fill(440,609,400,7,(42,31,39,180))
-            fill(440,609,400*max(0,boss.hp)/boss.max_hp,7,(170,62,80,245))
         if r.unspent:
             self.text(f'L 성장 선택 · {r.unspent}회',875,620,17,GOLD)
         self.interaction_markers(gx,gy)
         self.route_arrow(gx,gy)
         self.crawl_markers()
+
+    def boss_health(self):
+        s = self.s
+        if s.region != 'boss':
+            return
+        boss = next((enemy for enemy in s.enemies if enemy.boss and enemy.alive), None)
+        if boss is None:
+            return
+        width = 660
+        left = 640 - width / 2
+        self.text(boss.actor['name'],641,645,28,(11,13,22),True)
+        self.text(boss.actor['name'],640,647,28,GOLD,True)
+        panel(left-3,602,width+6,26,edge=ACCENT,background=(28,18,30,213))
+        ratio = max(0, min(1, boss.hp / boss.max_hp))
+        fill(left,605,width*ratio,20,(159,42,64,245))
+        fill(left,622,width*ratio,3,(236,128,133,224))
+        self.text(f'{max(0, round(boss.hp)):,} / {boss.max_hp:,}',640,616,14,BRIGHT,True)
 
     def interaction_markers(self, goal_x, goal_y):
         s,p,r=self.s,self.s.player,self.s.run
@@ -484,8 +499,9 @@ class CampaignView:
             self.wrap(option[0],left+60,y+22,width-89,18,
                       MUTED if disabled else BRIGHT if selected else CREAM,1.0,1)
             s.hitboxes.append((left+14,y,width-28,42,i))
-        self.text('Enter 계속' if len(rows)==1 else '1 · 2 · 3 선택  /  Enter 확인',
-                  640,bottom+12,12,MUTED,True)
+        numbers = ' · '.join(str(i + 1) for i in range(len(rows)))
+        hint = 'Enter 계속' if len(rows)==1 else f'{numbers} 선택  /  Enter 확인'
+        self.text(hint,640,bottom+12,12,MUTED,True)
 
     def banner(self):
         b=self.s.banner
@@ -497,6 +513,16 @@ class CampaignView:
               background=(13,22,32,round(181*alpha)))
         self.title_image(b['image'],640,y+13,366,alpha)
         self.text(b['subtitle'],640,y-30,17,BRIGHT,True)
+
+    def reward_notice(self):
+        reward = self.s.rewards[0]
+        age, duration = reward['age'], reward['duration']
+        opacity = max(.35, min(1, age / .18, (duration - age) / .3))
+        y = 550 + 14 * (1 - min(1, age / .23))
+        self.battle_art.banner(640,y,490,73)
+        self.text(reward['title'],640,y+13,28,GOLD,True)
+        self.text(reward['detail'],640,y-16,17,CREAM,True)
+        fill(444,y-31,392*(1-min(1,age/duration)),2,(222,182,112,round(175*opacity)))
 
     def cinematic(self):
         # 대화는 같은 공간의 인물과 말풍선으로 이어 간다.
@@ -543,7 +569,7 @@ class CampaignView:
             y=358-(i//2)*72
             self.text(label,x,y,16,MUTED)
             self.text(value,x,y-33,26,BRIGHT)
-        self.text(f'다음 성장 선택  Lv.{max(10, (r.level//10+1)*10)} · 남은 선택 {r.unspent}회',215,226,15,TEAL)
+        self.text(f'대시 재사용 {r.dash_recharge}초  ·  성장 선택 {r.unspent}회',215,226,15,TEAL)
         panel(620,205,463,333,edge=EDGE,background=(20,32,45,235))
         self.text('여정',643,509,24,GOLD)
         notes=[('동행','루네아' if r.companion else '혼자'),
@@ -606,7 +632,7 @@ class CampaignView:
             frame = min(c['frameCount']-1, int(segment/(4 if age>=6 else 3)*c['frameCount']))
             self.a.draw('adv/'+key, 690, 115, None, 1, frame=frame)
             if age>5:
-                self.text('너의 그 선택들에 대해 후회하지 않을 자신이 있냐?', 640, 70, 23, MUTED, True)
+                self.text('네가 한 선택들, 정말 후회하지 않을 자신이 있냐?', 640, 70, 23, MUTED, True)
         else:
             key = 'adv/'+self.a.endings[ending]['asset']
             self.a.fit(key, 640, 380, 1280, 680)
@@ -630,7 +656,10 @@ class CampaignView:
             self.battle_art.hurt_border(s.damage_flash)
             if not s.modal and not s.story_only and not s.door_entry:
                 self.hud()
-                self.banner()
+                if not s.reward_visible:
+                    self.banner()
+            if not s.door_entry and (not s.modal or s.modal['kind']=='boss'):
+                self.boss_health()
         if s.player.hp <= 0 and not s.run.ending:
             fill(0, 0, 1280, 720, (3, 6, 15, min(230, int(s.death_age*190))))
             self.a.draw('adv/failure_respawn__failure_vision', 640, 250, None, 1.2, s.death_age)
@@ -638,6 +667,8 @@ class CampaignView:
             self.text('마지막 저장 지점에서 다시 시작합니다.  ·  Enter 건너뛰기', 640, 356, 20, MUTED, True)
         if s.modal:
             self.modal()
+        if not s.run.ending and s.reward_visible:
+            self.reward_notice()
         if s.toast_time > 0 and not s.door_entry and (not s.story_only or s.modal):
             bottom = 580 if s.modal else 133
             panel(380,bottom,520,38,edge=EDGE)
